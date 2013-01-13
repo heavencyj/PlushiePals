@@ -51,7 +51,7 @@
 - (void)turnTo:(UISwipeGestureRecognizer *)sender
 {
   self.imageAngle = (sender.direction ==  UISwipeGestureRecognizerDirectionRight) ? self.imageAngle+90:self.imageAngle-90;
-  [self rotateImage:self.turningImage duration:1 curve:UIViewAnimationCurveEaseIn degrees:self.imageAngle];
+  [self rotateImage:self.turningImage duration:0.2 curve:UIViewAnimationCurveEaseIn degrees:self.imageAngle];
 }
 
 - (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration

@@ -12,18 +12,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Canyon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SsF-GQ-MFO"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Pig.png" translatesAutoresizingMaskIntoConstraints="NO" id="Srr-gx-eV7">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="WQO-Ry-FZe"/>
+                                    <constraint firstAttribute="width" constant="140" id="8Zp-vM-Nx9"/>
                                     <constraint firstAttribute="height" constant="140" id="zLu-nl-vIk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Srr-gx-eV7" firstAttribute="centerX" secondItem="hta-2H-y4R" secondAttribute="centerX" type="default" id="RMQ-sD-ffA"/>
+                            <constraint firstItem="Srr-gx-eV7" firstAttribute="centerX" secondItem="SsF-GQ-MFO" secondAttribute="centerX" type="default" id="6nk-9a-Kde"/>
+                            <constraint firstItem="SsF-GQ-MFO" firstAttribute="leading" secondItem="hta-2H-y4R" secondAttribute="leading" type="default" id="OPj-Ue-8P0"/>
+                            <constraint firstItem="SsF-GQ-MFO" firstAttribute="top" secondItem="hta-2H-y4R" secondAttribute="top" type="default" id="Qd8-gb-tHa"/>
                             <constraint firstItem="Srr-gx-eV7" firstAttribute="top" secondItem="hta-2H-y4R" secondAttribute="top" constant="74" id="ToK-lC-RKG"/>
+                            <constraint firstItem="SsF-GQ-MFO" firstAttribute="trailing" secondItem="hta-2H-y4R" secondAttribute="trailing" type="default" id="beC-bl-kvi"/>
+                            <constraint firstItem="SsF-GQ-MFO" firstAttribute="bottom" secondItem="hta-2H-y4R" secondAttribute="bottom" type="default" id="v7I-36-fDW"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <connections>
@@ -61,7 +66,16 @@
                     <view key="view" contentMode="scaleToFill" id="bfp-qU-Rt8">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Jungle.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-rg-K1H"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gUd-rg-K1H" firstAttribute="leading" secondItem="bfp-qU-Rt8" secondAttribute="leading" type="default" id="1lw-PM-Szr"/>
+                            <constraint firstItem="gUd-rg-K1H" firstAttribute="trailing" secondItem="bfp-qU-Rt8" secondAttribute="trailing" type="default" id="E9f-jf-wUu"/>
+                            <constraint firstItem="gUd-rg-K1H" firstAttribute="top" secondItem="bfp-qU-Rt8" secondAttribute="top" type="default" id="TWl-jA-9vd"/>
+                            <constraint firstItem="gUd-rg-K1H" firstAttribute="bottom" secondItem="bfp-qU-Rt8" secondAttribute="bottom" type="default" id="zS1-fg-aZJ"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tap" id="0VZ-Ny-3H2"/>
@@ -92,6 +106,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Canyon.jpg" width="834" height="456"/>
+        <image name="Jungle.jpg" width="834" height="436"/>
         <image name="Pig.png" width="370" height="350"/>
     </resources>
     <classes>
