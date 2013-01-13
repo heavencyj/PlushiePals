@@ -4,41 +4,78 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Plushy Pals Maze View Controller - maze-->
+        <!--Plushy Pals Maze View Controller - Swipe-->
         <scene sceneID="Mvu-ww-SOc">
             <objects>
                 <viewController id="Qpg-Qg-51m" customClass="PlushyPalsMazeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hta-2H-y4R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Pig.png" translatesAutoresizingMaskIntoConstraints="NO" id="Srr-gx-eV7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="WQO-Ry-FZe"/>
+                                    <constraint firstAttribute="height" constant="140" id="zLu-nl-vIk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Srr-gx-eV7" firstAttribute="centerX" secondItem="hta-2H-y4R" secondAttribute="centerX" type="default" id="RMQ-sD-ffA"/>
+                            <constraint firstItem="Srr-gx-eV7" firstAttribute="top" secondItem="hta-2H-y4R" secondAttribute="top" constant="74" id="ToK-lC-RKG"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="f2i-F3-7hr" appends="YES" id="1Fg-84-oD2"/>
+                            <outletCollection property="gestureRecognizers" destination="AbT-6v-5aw" appends="YES" id="VwQ-4t-1OP"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="maze" id="Bwk-9e-OoY"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" id="Bwk-9e-OoY"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="swipeLeft" destination="AbT-6v-5aw" id="rY8-3Q-7vG"/>
+                        <outlet property="swipeRight" destination="f2i-F3-7hr" id="4gZ-iT-fjQ"/>
+                        <outlet property="turningImage" destination="Srr-gx-eV7" id="Lom-t0-Eaq"/>
+                        <outlet property="view" destination="hta-2H-y4R" id="RoQ-qJ-xs8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIE-x5-ePu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="f2i-F3-7hr">
+                    <connections>
+                        <outlet property="delegate" destination="hta-2H-y4R" id="eLD-e1-0LU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="AbT-6v-5aw">
+                    <connections>
+                        <outlet property="delegate" destination="hta-2H-y4R" id="t9p-hQ-Ycw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1275" y="432"/>
+            <point key="canvasLocation" x="1467" y="362"/>
         </scene>
-        <!--Plushy Pals Ball View Controller - ball-->
+        <!--Plushy Pals Ball View Controller - Tap-->
         <scene sceneID="hcR-1p-7pd">
             <objects>
                 <viewController id="8h8-PT-Fuh" customClass="PlushyPalsBallViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bfp-qU-Rt8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ball" id="0VZ-Ny-3H2"/>
+                    <tabBarItem key="tabBarItem" title="Tap" id="0VZ-Ny-3H2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAw-7u-O8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="-221"/>
+            <point key="canvasLocation" x="1459" y="-107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ogi-oz-vUf">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="aNG-I3-wj4" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ga5-AC-r9Z">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -54,12 +91,23 @@
             <point key="canvasLocation" x="741" y="106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pig.png" width="370" height="350"/>
+    </resources>
     <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="PlushyPalsBallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlushyPalsBallViewController.h"/>
         </class>
         <class className="PlushyPalsMazeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlushyPalsMazeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="swipeLeft" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeRight" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="turningImage" candidateClass="UIImageView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PlushyPalsMazeViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRight;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeft;
 
 @end

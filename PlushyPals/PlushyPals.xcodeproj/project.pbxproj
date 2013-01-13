@@ -22,6 +22,11 @@
 		98ED0C6316A3541E0055AB55 /* PlushyPalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6216A3541E0055AB55 /* PlushyPalsViewController.m */; };
 		98ED0C6B16A3574D0055AB55 /* PlushyPalsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6A16A3574D0055AB55 /* PlushyPalsBallViewController.m */; };
 		98ED0C6E16A3576A0055AB55 /* PlushyPalsMazeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6D16A3576A0055AB55 /* PlushyPalsMazeViewController.m */; };
+		98ED0C7516A35B4E0055AB55 /* Canyon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C7016A35B4E0055AB55 /* Canyon.jpg */; };
+		98ED0C7616A35B4E0055AB55 /* Hills.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C7116A35B4E0055AB55 /* Hills.jpg */; };
+		98ED0C7716A35B4E0055AB55 /* Jungle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C7216A35B4E0055AB55 /* Jungle.jpg */; };
+		98ED0C7816A35B4E0055AB55 /* Monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C7316A35B4E0055AB55 /* Monkey.png */; };
+		98ED0C7916A35B4E0055AB55 /* Pig.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C7416A35B4E0055AB55 /* Pig.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		98ED0C6A16A3574D0055AB55 /* PlushyPalsBallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsBallViewController.m; sourceTree = "<group>"; };
 		98ED0C6C16A3576A0055AB55 /* PlushyPalsMazeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlushyPalsMazeViewController.h; sourceTree = "<group>"; };
 		98ED0C6D16A3576A0055AB55 /* PlushyPalsMazeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsMazeViewController.m; sourceTree = "<group>"; };
+		98ED0C7016A35B4E0055AB55 /* Canyon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Canyon.jpg; sourceTree = "<group>"; };
+		98ED0C7116A35B4E0055AB55 /* Hills.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hills.jpg; sourceTree = "<group>"; };
+		98ED0C7216A35B4E0055AB55 /* Jungle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jungle.jpg; sourceTree = "<group>"; };
+		98ED0C7316A35B4E0055AB55 /* Monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monkey.png; sourceTree = "<group>"; };
+		98ED0C7416A35B4E0055AB55 /* Pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pig.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 		98ED0C4516A3541E0055AB55 /* PlushyPals */ = {
 			isa = PBXGroup;
 			children = (
+				98ED0C6F16A35B2F0055AB55 /* Images */,
 				98ED0C4E16A3541E0055AB55 /* PlushyPalsAppDelegate.h */,
 				98ED0C4F16A3541E0055AB55 /* PlushyPalsAppDelegate.m */,
 				98ED0C5716A3541E0055AB55 /* MainStoryboard_iPhone.storyboard */,
@@ -123,6 +134,18 @@
 				98ED0C5516A3541E0055AB55 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98ED0C6F16A35B2F0055AB55 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				98ED0C7016A35B4E0055AB55 /* Canyon.jpg */,
+				98ED0C7116A35B4E0055AB55 /* Hills.jpg */,
+				98ED0C7216A35B4E0055AB55 /* Jungle.jpg */,
+				98ED0C7316A35B4E0055AB55 /* Monkey.png */,
+				98ED0C7416A35B4E0055AB55 /* Pig.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +205,11 @@
 				98ED0C5416A3541E0055AB55 /* Default@2x.png in Resources */,
 				98ED0C5616A3541E0055AB55 /* Default-568h@2x.png in Resources */,
 				98ED0C5916A3541E0055AB55 /* MainStoryboard_iPhone.storyboard in Resources */,
+				98ED0C7516A35B4E0055AB55 /* Canyon.jpg in Resources */,
+				98ED0C7616A35B4E0055AB55 /* Hills.jpg in Resources */,
+				98ED0C7716A35B4E0055AB55 /* Jungle.jpg in Resources */,
+				98ED0C7816A35B4E0055AB55 /* Monkey.png in Resources */,
+				98ED0C7916A35B4E0055AB55 /* Pig.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
