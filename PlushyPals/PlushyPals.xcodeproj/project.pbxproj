@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98ED0C3C16A3541D0055AB55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ED0C3B16A3541D0055AB55 /* UIKit.framework */; };
+		98ED0C3E16A3541D0055AB55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ED0C3D16A3541D0055AB55 /* Foundation.framework */; };
+		98ED0C4016A3541D0055AB55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ED0C3F16A3541D0055AB55 /* CoreGraphics.framework */; };
+		98ED0C4216A3541E0055AB55 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ED0C4116A3541D0055AB55 /* GLKit.framework */; };
+		98ED0C4416A3541E0055AB55 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ED0C4316A3541E0055AB55 /* OpenGLES.framework */; };
+		98ED0C4A16A3541E0055AB55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C4816A3541E0055AB55 /* InfoPlist.strings */; };
+		98ED0C4C16A3541E0055AB55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C4B16A3541E0055AB55 /* main.m */; };
+		98ED0C5016A3541E0055AB55 /* PlushyPalsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C4F16A3541E0055AB55 /* PlushyPalsAppDelegate.m */; };
+		98ED0C5216A3541E0055AB55 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C5116A3541E0055AB55 /* Default.png */; };
+		98ED0C5416A3541E0055AB55 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C5316A3541E0055AB55 /* Default@2x.png */; };
+		98ED0C5616A3541E0055AB55 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C5516A3541E0055AB55 /* Default-568h@2x.png */; };
+		98ED0C5916A3541E0055AB55 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98ED0C5716A3541E0055AB55 /* MainStoryboard_iPhone.storyboard */; };
+		98ED0C6316A3541E0055AB55 /* PlushyPalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6216A3541E0055AB55 /* PlushyPalsViewController.m */; };
+		98ED0C6B16A3574D0055AB55 /* PlushyPalsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6A16A3574D0055AB55 /* PlushyPalsBallViewController.m */; };
+		98ED0C6E16A3576A0055AB55 /* PlushyPalsMazeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED0C6D16A3576A0055AB55 /* PlushyPalsMazeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		98ED0C3716A3541D0055AB55 /* PlushyPals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlushyPals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98ED0C3B16A3541D0055AB55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		98ED0C3D16A3541D0055AB55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		98ED0C3F16A3541D0055AB55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		98ED0C4116A3541D0055AB55 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		98ED0C4316A3541E0055AB55 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		98ED0C4716A3541E0055AB55 /* PlushyPals-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlushyPals-Info.plist"; sourceTree = "<group>"; };
+		98ED0C4916A3541E0055AB55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		98ED0C4B16A3541E0055AB55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98ED0C4D16A3541E0055AB55 /* PlushyPals-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlushyPals-Prefix.pch"; sourceTree = "<group>"; };
+		98ED0C4E16A3541E0055AB55 /* PlushyPalsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlushyPalsAppDelegate.h; sourceTree = "<group>"; };
+		98ED0C4F16A3541E0055AB55 /* PlushyPalsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsAppDelegate.m; sourceTree = "<group>"; };
+		98ED0C5116A3541E0055AB55 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		98ED0C5316A3541E0055AB55 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		98ED0C5516A3541E0055AB55 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		98ED0C5816A3541E0055AB55 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		98ED0C6116A3541E0055AB55 /* PlushyPalsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlushyPalsViewController.h; sourceTree = "<group>"; };
+		98ED0C6216A3541E0055AB55 /* PlushyPalsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsViewController.m; sourceTree = "<group>"; };
+		98ED0C6916A3574D0055AB55 /* PlushyPalsBallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlushyPalsBallViewController.h; sourceTree = "<group>"; };
+		98ED0C6A16A3574D0055AB55 /* PlushyPalsBallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsBallViewController.m; sourceTree = "<group>"; };
+		98ED0C6C16A3576A0055AB55 /* PlushyPalsMazeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlushyPalsMazeViewController.h; sourceTree = "<group>"; };
+		98ED0C6D16A3576A0055AB55 /* PlushyPalsMazeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlushyPalsMazeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98ED0C3416A3541D0055AB55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98ED0C3C16A3541D0055AB55 /* UIKit.framework in Frameworks */,
+				98ED0C3E16A3541D0055AB55 /* Foundation.framework in Frameworks */,
+				98ED0C4016A3541D0055AB55 /* CoreGraphics.framework in Frameworks */,
+				98ED0C4216A3541E0055AB55 /* GLKit.framework in Frameworks */,
+				98ED0C4416A3541E0055AB55 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98ED0C2C16A3541D0055AB55 = {
+			isa = PBXGroup;
+			children = (
+				98ED0C4516A3541E0055AB55 /* PlushyPals */,
+				98ED0C3A16A3541D0055AB55 /* Frameworks */,
+				98ED0C3816A3541D0055AB55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98ED0C3816A3541D0055AB55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98ED0C3716A3541D0055AB55 /* PlushyPals.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98ED0C3A16A3541D0055AB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98ED0C3B16A3541D0055AB55 /* UIKit.framework */,
+				98ED0C3D16A3541D0055AB55 /* Foundation.framework */,
+				98ED0C3F16A3541D0055AB55 /* CoreGraphics.framework */,
+				98ED0C4116A3541D0055AB55 /* GLKit.framework */,
+				98ED0C4316A3541E0055AB55 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98ED0C4516A3541E0055AB55 /* PlushyPals */ = {
+			isa = PBXGroup;
+			children = (
+				98ED0C4E16A3541E0055AB55 /* PlushyPalsAppDelegate.h */,
+				98ED0C4F16A3541E0055AB55 /* PlushyPalsAppDelegate.m */,
+				98ED0C5716A3541E0055AB55 /* MainStoryboard_iPhone.storyboard */,
+				98ED0C6116A3541E0055AB55 /* PlushyPalsViewController.h */,
+				98ED0C6216A3541E0055AB55 /* PlushyPalsViewController.m */,
+				98ED0C6916A3574D0055AB55 /* PlushyPalsBallViewController.h */,
+				98ED0C6A16A3574D0055AB55 /* PlushyPalsBallViewController.m */,
+				98ED0C6C16A3576A0055AB55 /* PlushyPalsMazeViewController.h */,
+				98ED0C6D16A3576A0055AB55 /* PlushyPalsMazeViewController.m */,
+				98ED0C4616A3541E0055AB55 /* Supporting Files */,
+			);
+			path = PlushyPals;
+			sourceTree = "<group>";
+		};
+		98ED0C4616A3541E0055AB55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98ED0C4716A3541E0055AB55 /* PlushyPals-Info.plist */,
+				98ED0C4816A3541E0055AB55 /* InfoPlist.strings */,
+				98ED0C4B16A3541E0055AB55 /* main.m */,
+				98ED0C4D16A3541E0055AB55 /* PlushyPals-Prefix.pch */,
+				98ED0C5116A3541E0055AB55 /* Default.png */,
+				98ED0C5316A3541E0055AB55 /* Default@2x.png */,
+				98ED0C5516A3541E0055AB55 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98ED0C3616A3541D0055AB55 /* PlushyPals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98ED0C6616A3541E0055AB55 /* Build configuration list for PBXNativeTarget "PlushyPals" */;
+			buildPhases = (
+				98ED0C3316A3541D0055AB55 /* Sources */,
+				98ED0C3416A3541D0055AB55 /* Frameworks */,
+				98ED0C3516A3541D0055AB55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlushyPals;
+			productName = PlushyPals;
+			productReference = 98ED0C3716A3541D0055AB55 /* PlushyPals.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98ED0C2E16A3541D0055AB55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PlushyPals;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Heaven Chen";
+			};
+			buildConfigurationList = 98ED0C3116A3541D0055AB55 /* Build configuration list for PBXProject "PlushyPals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 98ED0C2C16A3541D0055AB55;
+			productRefGroup = 98ED0C3816A3541D0055AB55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98ED0C3616A3541D0055AB55 /* PlushyPals */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98ED0C3516A3541D0055AB55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98ED0C4A16A3541E0055AB55 /* InfoPlist.strings in Resources */,
+				98ED0C5216A3541E0055AB55 /* Default.png in Resources */,
+				98ED0C5416A3541E0055AB55 /* Default@2x.png in Resources */,
+				98ED0C5616A3541E0055AB55 /* Default-568h@2x.png in Resources */,
+				98ED0C5916A3541E0055AB55 /* MainStoryboard_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98ED0C3316A3541D0055AB55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98ED0C4C16A3541E0055AB55 /* main.m in Sources */,
+				98ED0C5016A3541E0055AB55 /* PlushyPalsAppDelegate.m in Sources */,
+				98ED0C6316A3541E0055AB55 /* PlushyPalsViewController.m in Sources */,
+				98ED0C6B16A3574D0055AB55 /* PlushyPalsBallViewController.m in Sources */,
+				98ED0C6E16A3576A0055AB55 /* PlushyPalsMazeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		98ED0C4816A3541E0055AB55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98ED0C4916A3541E0055AB55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		98ED0C5716A3541E0055AB55 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98ED0C5816A3541E0055AB55 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98ED0C6416A3541E0055AB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98ED0C6516A3541E0055AB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98ED0C6716A3541E0055AB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlushyPals/PlushyPals-Prefix.pch";
+				INFOPLIST_FILE = "PlushyPals/PlushyPals-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		98ED0C6816A3541E0055AB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlushyPals/PlushyPals-Prefix.pch";
+				INFOPLIST_FILE = "PlushyPals/PlushyPals-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98ED0C3116A3541D0055AB55 /* Build configuration list for PBXProject "PlushyPals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98ED0C6416A3541E0055AB55 /* Debug */,
+				98ED0C6516A3541E0055AB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98ED0C6616A3541E0055AB55 /* Build configuration list for PBXNativeTarget "PlushyPals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98ED0C6716A3541E0055AB55 /* Debug */,
+				98ED0C6816A3541E0055AB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98ED0C2E16A3541D0055AB55 /* Project object */;
+}

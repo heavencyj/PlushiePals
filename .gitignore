@@ -8,3 +8,11 @@
 *.xcscheme
 
 *.plist
+
+PlushyPals/PlushyPals/PlushyPals-Prefix.pch
+
+PlushyPals/PlushyPals/Default@2x.png
+
+PlushyPals/PlushyPals/Default.png
+
+PlushyPals/PlushyPals/Default-568h@2x.png
