@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		9871E5E616A3A924003F2C39 /* Canyon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5E516A3A924003F2C39 /* Canyon.png */; };
 		9871E5F016A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9871E5EF16A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m */; };
+		9871E5F316A3C67F003F2C39 /* Monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5F116A3C67F003F2C39 /* Monkey.png */; };
+		9871E5F416A3C67F003F2C39 /* Pig.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5F216A3C67F003F2C39 /* Pig.png */; };
+		9871E5F616A3CA3B003F2C39 /* Canyon_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5F516A3CA3A003F2C39 /* Canyon_light.png */; };
+		9871E5FE16A3D797003F2C39 /* maze_demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5FD16A3D797003F2C39 /* maze_demo.png */; };
 		B6EBEF3B16A3906600C730E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */; };
 		B6EBEF3D16A3906600C730E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */; };
 		B6EBEF3F16A3906600C730E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3E16A3906600C730E9 /* OpenAL.framework */; };
@@ -144,6 +148,10 @@
 		9871E5E516A3A924003F2C39 /* Canyon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyon.png; sourceTree = "<group>"; };
 		9871E5EE16A3B70A003F2C39 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCNode+SFGestureRecognizers.h"; path = "libs/cocos2d/CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
 		9871E5EF16A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCNode+SFGestureRecognizers.m"; path = "libs/cocos2d/CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
+		9871E5F116A3C67F003F2C39 /* Monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monkey.png; sourceTree = "<group>"; };
+		9871E5F216A3C67F003F2C39 /* Pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pig.png; sourceTree = "<group>"; };
+		9871E5F516A3CA3A003F2C39 /* Canyon_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyon_light.png; sourceTree = "<group>"; };
+		9871E5FD16A3D797003F2C39 /* maze_demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maze_demo.png; sourceTree = "<group>"; };
 		B6EBEF3616A3906600C730E9 /* GestureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -485,9 +493,13 @@
 			isa = PBXGroup;
 			children = (
 				B6EBEF4E16A3906700C730E9 /* Default.png */,
+				9871E5F116A3C67F003F2C39 /* Monkey.png */,
+				9871E5F216A3C67F003F2C39 /* Pig.png */,
 				B6EBEF5016A3906700C730E9 /* Default-Landscape~ipad.png */,
 				B6EBEF5216A3906700C730E9 /* fps_images.png */,
 				B6EBEF5416A3906700C730E9 /* fps_images-hd.png */,
+				9871E5FD16A3D797003F2C39 /* maze_demo.png */,
+				9871E5F516A3CA3A003F2C39 /* Canyon_light.png */,
 				B6EBEF5616A3906700C730E9 /* fps_images-ipadhd.png */,
 				B6EBEF5816A3906700C730E9 /* Icon-72.png */,
 				B6EBF0D816A390EC00C730E9 /* MonkeyIcon.png */,
@@ -916,6 +928,10 @@
 				B6EBF0DA16A390EC00C730E9 /* MonkeyIcon.png in Resources */,
 				B6EBF0DB16A390EC00C730E9 /* PigIcon.png in Resources */,
 				9871E5E616A3A924003F2C39 /* Canyon.png in Resources */,
+				9871E5F316A3C67F003F2C39 /* Monkey.png in Resources */,
+				9871E5F416A3C67F003F2C39 /* Pig.png in Resources */,
+				9871E5F616A3CA3B003F2C39 /* Canyon_light.png in Resources */,
+				9871E5FE16A3D797003F2C39 /* maze_demo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

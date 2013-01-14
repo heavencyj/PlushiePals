@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GestureDemo/HelloWorldLayer.m"
-         timestampString = "379830493.955484"
+         timestampString = "379834748.493456"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "142"
+         endingLineNumber = "142"
          landmarkName = "-handleSwipeGestureRecognizer:"
          landmarkType = "5">
       </FileBreakpoint>

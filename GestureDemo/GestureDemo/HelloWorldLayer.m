@@ -48,18 +48,21 @@ CCSprite *bg;
 	if( (self=[super init]) ) {
 		
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    bg = [CCSprite spriteWithFile: @"Canyon.png"];
+    bg = [CCSprite spriteWithFile: @"Canyon_light.png"];
     bg.position = ccp(winSize.width/2, winSize.height/2);
+    bg.scale = 1.5;
     [self addChild:bg];
     
     // create and initialize our seeker sprite, and add it to this layer
-    pig = [CCSprite spriteWithFile: @"PigIcon.png"];
+    pig = [CCSprite spriteWithFile: @"Pig.png"];
     pig.position = ccp(50, 100 );
+    pig.scale = 0.6;
     [self addChild:pig];
     
     // do the same for our cocos2d guy, reusing the app icon as its image
-    monkey = [CCSprite spriteWithFile: @"MonkeyIcon.png"];
-    monkey.position = ccp( 100, 60 );
+    monkey = [CCSprite spriteWithFile: @"maze_demo.png"];
+    monkey.position = ccp(winSize.width/2, 35);
+    monkey.scale = 2;
     [self addChild:monkey];
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
