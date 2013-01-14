@@ -39,7 +39,7 @@
   [self.swipeRight addTarget:self action:@selector(turnTo:)];
   [self.swipeLeft addTarget:self action:@selector(turnTo:)];
   self.imageAngle = 0;
-  //hello
+  //hello I am lan and I am cool
 	// Do any additional setup after loading the view.
 }
 
