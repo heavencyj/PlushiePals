@@ -47,7 +47,7 @@ CCSprite *monkey;
 	if( (self=[super init]) ) {
 		
         // create and initialize our seeker sprite, and add it to this layer
-        pig = [CCSprite spriteWithFile: @"PigIcon.png"];
+        pig = [CCSprite spriteWithFile: @"Icon.png"];
         pig.position = ccp(50, 100 );
         [self addChild:pig];
         

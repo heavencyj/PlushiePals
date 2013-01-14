@@ -88,7 +88,7 @@
         <scene sceneID="Ogi-oz-vUf">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="aNG-I3-wj4" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ga5-AC-r9Z">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -110,6 +110,22 @@
         <image name="Jungle.jpg" width="834" height="436"/>
         <image name="Pig.png" width="370" height="350"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlushyPalsBallViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlushyPalsBallViewController.h"/>
+        </class>
+        <class className="PlushyPalsMazeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlushyPalsMazeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="swipeLeft" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeRight" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="turningImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
