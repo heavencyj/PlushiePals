@@ -17,6 +17,7 @@
 
 CCSprite *pig;
 CCSprite *monkey;
+CCSprite *bg;
 
 #pragma mark - HelloWorldLayer
 
@@ -34,6 +35,7 @@ CCSprite *monkey;
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
+  
 	
 	// return the scene
 	return scene;
@@ -46,21 +48,28 @@ CCSprite *monkey;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
 		
-        // create and initialize our seeker sprite, and add it to this layer
-        pig = [CCSprite spriteWithFile: @"Icon.png"];
-        pig.position = ccp(50, 100 );
-        [self addChild:pig];
-        
-        // do the same for our cocos2d guy, reusing the app icon as its image
-        monkey = [CCSprite spriteWithFile: @"MonkeyIcon.png"];
-        monkey.position = ccp( 50, 60 );
-        [self addChild:monkey];
-        
-        // schedule a repeating callback on every frame
-        [self schedule:@selector(nextFrame:)];
-        
-        self.isTouchEnabled = YES;
-    }
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    bg = [CCSprite spriteWithFile: @"Canyon.png"];
+    bg.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:bg];
+    
+    // create and initialize our seeker sprite, and add it to this layer
+    pig = [CCSprite spriteWithFile: @"PigIcon.png"];
+    pig.position = ccp(50, 100 );
+    [self addChild:pig];
+    
+    // do the same for our cocos2d guy, reusing the app icon as its image
+    monkey = [CCSprite spriteWithFile: @"MonkeyIcon.png"];
+    monkey.position = ccp( 50, 60 );
+    [self addChild:monkey];
+    
+    
+    
+    // schedule a repeating callback on every frame
+    [self schedule:@selector(nextFrame:)];
+    
+    self.isTouchEnabled = YES;
+  }
 	return self;
 }
 
@@ -70,21 +79,21 @@ CCSprite *monkey;
 }
 
 - (void) nextFrame:(ccTime)dt {
-    pig.position = ccp( pig.position.x + 100*dt, pig.position.y );
-    if (pig.position.x > 480+32) {
-        pig.position = ccp( -32, pig.position.y );
-    }
+  pig.position = ccp( pig.position.x + 100*dt, pig.position.y );
+  if (pig.position.x > 480+32) {
+    pig.position = ccp( -32, pig.position.y );
+  }
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 	//CGPoint location = [self convertTouchToNodeSpace: touch];
-	[monkey stopAllActions];
+	[pig stopAllActions];
 	//[monkey runAction: [CCMoveTo actionWithDuration:1 position:location]];
-    [monkey runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
+  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    return YES;
+  return YES;
 }
 
 // on "dealloc" you need to release all your retained objects

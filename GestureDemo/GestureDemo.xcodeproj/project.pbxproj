@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9871E5E616A3A924003F2C39 /* Canyon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5E516A3A924003F2C39 /* Canyon.png */; };
 		B6EBEF3B16A3906600C730E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */; };
 		B6EBEF3D16A3906600C730E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */; };
 		B6EBEF3F16A3906600C730E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3E16A3906600C730E9 /* OpenAL.framework */; };
@@ -135,10 +136,11 @@
 		B6EBF0CC16A3907100C730E9 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBF0CB16A3907100C730E9 /* IntroLayer.m */; };
 		B6EBF0D716A390BE00C730E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6EBF0D616A390BE00C730E9 /* Default-568h@2x.png */; };
 		B6EBF0DA16A390EC00C730E9 /* MonkeyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6EBF0D816A390EC00C730E9 /* MonkeyIcon.png */; };
-		B6EBF0DB16A390EC00C730E9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6EBF0D916A390EC00C730E9 /* Icon.png */; };
+		B6EBF0DB16A390EC00C730E9 /* PigIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6EBF0D916A390EC00C730E9 /* PigIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9871E5E516A3A924003F2C39 /* Canyon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyon.png; sourceTree = "<group>"; };
 		B6EBEF3616A3906600C730E9 /* GestureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -403,7 +405,7 @@
 		B6EBF0CB16A3907100C730E9 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		B6EBF0D616A390BE00C730E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B6EBF0D816A390EC00C730E9 /* MonkeyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MonkeyIcon.png; sourceTree = "<group>"; };
-		B6EBF0D916A390EC00C730E9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B6EBF0D916A390EC00C730E9 /* PigIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PigIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,8 +488,9 @@
 				B6EBEF5616A3906700C730E9 /* fps_images-ipadhd.png */,
 				B6EBEF5816A3906700C730E9 /* Icon-72.png */,
 				B6EBF0D816A390EC00C730E9 /* MonkeyIcon.png */,
-				B6EBF0D916A390EC00C730E9 /* Icon.png */,
+				B6EBF0D916A390EC00C730E9 /* PigIcon.png */,
 				B6EBEF5A16A3906700C730E9 /* Icon-Small-50.png */,
+				9871E5E516A3A924003F2C39 /* Canyon.png */,
 				B6EBEF5C16A3906700C730E9 /* Icon-Small.png */,
 				B6EBEF5E16A3906700C730E9 /* Icon-Small@2x.png */,
 				B6EBEF6016A3906700C730E9 /* Icon.png */,
@@ -906,7 +909,8 @@
 				B6EBF0A416A3907000C730E9 /* ChangeLog in Resources */,
 				B6EBF0D716A390BE00C730E9 /* Default-568h@2x.png in Resources */,
 				B6EBF0DA16A390EC00C730E9 /* MonkeyIcon.png in Resources */,
-				B6EBF0DB16A390EC00C730E9 /* Icon.png in Resources */,
+				B6EBF0DB16A390EC00C730E9 /* PigIcon.png in Resources */,
+				9871E5E616A3A924003F2C39 /* Canyon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1124,6 +1128,7 @@
 				B6EBF0D116A3907100C730E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
