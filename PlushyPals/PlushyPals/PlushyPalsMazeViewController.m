@@ -39,7 +39,7 @@
   [self.swipeRight addTarget:self action:@selector(turnTo:)];
   [self.swipeLeft addTarget:self action:@selector(turnTo:)];
   self.imageAngle = 0;
-  //hello
+  //hello test 2 branch!!
 	// Do any additional setup after loading the view.
 }
 
