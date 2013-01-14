@@ -85,6 +85,7 @@ CCSprite *bg;
     
     self.isTouchEnabled = YES;
   }
+
 	return self;
 }
 
