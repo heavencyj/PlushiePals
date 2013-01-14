@@ -112,6 +112,8 @@
 #import "CCRenderTexture.h"
 #import "CCMotionStreak.h"
 #import "CCConfiguration.h"
+#import "CCNode+SFGestureRecognizers.h"
+
 
 // Shaders
 #import "CCGLProgram.h"

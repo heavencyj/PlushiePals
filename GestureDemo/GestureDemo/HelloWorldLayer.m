@@ -9,10 +9,9 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
-
+#import "CCNode+SFGestureRecognizers.h"
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-
 #import "CCTouchDispatcher.h"
 
 CCSprite *pig;
@@ -60,10 +59,26 @@ CCSprite *bg;
     
     // do the same for our cocos2d guy, reusing the app icon as its image
     monkey = [CCSprite spriteWithFile: @"MonkeyIcon.png"];
-    monkey.position = ccp( 50, 60 );
+    monkey.position = ccp( 100, 60 );
     [self addChild:monkey];
     
+    UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeLeftGestureRecognizer];
+    swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeLeftGestureRecognizer.delegate = self;
+    [swipeLeftGestureRecognizer release];
     
+    UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeRightGestureRecognizer];
+    swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    swipeRightGestureRecognizer.delegate = self;
+    [swipeRightGestureRecognizer release];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
+    [self addGestureRecognizer:tapGestureRecognizer];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.delegate = self;
+    [tapGestureRecognizer release];
     
     // schedule a repeating callback on every frame
     [self schedule:@selector(nextFrame:)];
@@ -73,10 +88,10 @@ CCSprite *bg;
 	return self;
 }
 
--(void) registerWithTouchDispatcher
-{
-	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-}
+//-(void) registerWithTouchDispatcher
+//{
+//	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+//}
 
 - (void) nextFrame:(ccTime)dt {
   pig.position = ccp( pig.position.x + 100*dt, pig.position.y );
@@ -85,16 +100,14 @@ CCSprite *bg;
   }
 }
 
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-	//CGPoint location = [self convertTouchToNodeSpace: touch];
-	[pig stopAllActions];
-	//[monkey runAction: [CCMoveTo actionWithDuration:1 position:location]];
-  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
-}
-
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-  return YES;
-}
+//- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+//	[pig stopAllActions];
+//  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
+//}
+//
+//- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+//  return YES;
+//}
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -119,5 +132,17 @@ CCSprite *bg;
 {
 	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
 	[[app navController] dismissModalViewControllerAnimated:YES];
+}
+
+- (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+{
+  float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
+  [monkey runAction:[CCRotateBy actionWithDuration:0.2 angle:angle]];
+}
+
+- (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+{
+  [pig stopAllActions];
+  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 @end

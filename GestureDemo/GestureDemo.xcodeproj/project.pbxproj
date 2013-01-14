@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9871E5E616A3A924003F2C39 /* Canyon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9871E5E516A3A924003F2C39 /* Canyon.png */; };
+		9871E5F016A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9871E5EF16A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m */; };
 		B6EBEF3B16A3906600C730E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */; };
 		B6EBEF3D16A3906600C730E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */; };
 		B6EBEF3F16A3906600C730E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBEF3E16A3906600C730E9 /* OpenAL.framework */; };
@@ -141,6 +142,8 @@
 
 /* Begin PBXFileReference section */
 		9871E5E516A3A924003F2C39 /* Canyon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyon.png; sourceTree = "<group>"; };
+		9871E5EE16A3B70A003F2C39 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCNode+SFGestureRecognizers.h"; path = "libs/cocos2d/CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
+		9871E5EF16A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCNode+SFGestureRecognizers.m"; path = "libs/cocos2d/CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		B6EBEF3616A3906600C730E9 /* GestureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EBEF3A16A3906600C730E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6EBEF3C16A3906600C730E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -586,6 +589,8 @@
 				B6EBEFCB16A3906A00C730E9 /* CCNode+Debug.h */,
 				B6EBEFCC16A3906A00C730E9 /* CCNode+Debug.m */,
 				B6EBEFCE16A3906A00C730E9 /* CCNode.h */,
+				9871E5EE16A3B70A003F2C39 /* CCNode+SFGestureRecognizers.h */,
+				9871E5EF16A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m */,
 				B6EBEFCF16A3906A00C730E9 /* CCNode.m */,
 				B6EBEFD116A3906A00C730E9 /* CCParallaxNode.h */,
 				B6EBEFD216A3906A00C730E9 /* CCParallaxNode.m */,
@@ -1025,6 +1030,7 @@
 				B6EBF0C616A3907100C730E9 /* AppDelegate.m in Sources */,
 				B6EBF0C916A3907100C730E9 /* HelloWorldLayer.m in Sources */,
 				B6EBF0CC16A3907100C730E9 /* IntroLayer.m in Sources */,
+				9871E5F016A3B70B003F2C39 /* CCNode+SFGestureRecognizers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
