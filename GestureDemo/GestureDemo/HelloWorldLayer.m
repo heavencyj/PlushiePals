@@ -54,7 +54,7 @@ CCSprite *bg;
     [self addChild:bg];
     
     // create and initialize our seeker sprite, and add it to this layer
-    pig = [CCSprite spriteWithFile: @"Pig.png"];
+    pig = [CCSprite spriteWithFile: @"Monkey.png"];
     pig.position = ccp(50, 100 );
     pig.scale = 0.6;
     [self addChild:pig];
@@ -62,7 +62,7 @@ CCSprite *bg;
     // do the same for our cocos2d guy, reusing the app icon as its image
     monkey = [CCSprite spriteWithFile: @"maze_demo.png"];
     monkey.position = ccp(winSize.width/2, 35);
-    monkey.scale = 2;
+    monkey.scale = 1.5;
     [self addChild:monkey];
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
@@ -101,6 +101,7 @@ CCSprite *bg;
   pig.position = ccp( pig.position.x + 100*dt, pig.position.y );
   if (pig.position.x > 480+32) {
     pig.position = ccp( -32, pig.position.y );
+    monkey.rotation = 0;
   }
 }
 
@@ -141,7 +142,7 @@ CCSprite *bg;
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-  [monkey runAction:[CCRotateBy actionWithDuration:0.2 angle:angle]];
+  [monkey runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
 }
 
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
