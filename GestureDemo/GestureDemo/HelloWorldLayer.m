@@ -64,11 +64,10 @@ CCSprite *bg;
     [self addChild:pig z:1];
 
     
-//    // do the same for our cocos2d guy, reusing the app icon as its image
-//    monkey = [CCSprite spriteWithFile: @"maze_demo.png"];
-//    monkey.position = ccp(winSize.width/2, 35);
-//    monkey.scale = 1.5;
-//    [self addChild:monkey];
+    // do the same for our cocos2d guy, reusing the app icon as its image
+    monkey = [CCSprite spriteWithFile: @"empty.png"];
+    monkey.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:monkey z:1];
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
     [self addGestureRecognizer:swipeLeftGestureRecognizer];
@@ -106,19 +105,21 @@ CCSprite *bg;
     // 3) Determine relative movement speeds for space dust and background
     CGPoint cloudSpeed = ccp(0.1, 0.1);
     CGPoint bgSpeed = ccp(0.05, 0.05);
+    //CGPoint mazeSpeed = ccp(0.1,0.1);
     
     // 4) Add children to CCParallaxNode
     [_backgroundNode addChild:_canyons z:1 parallaxRatio:cloudSpeed positionOffset:ccp(_canyons.contentSize.width/2,_canyons.contentSize.height/2)];
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
     [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width,winSize.height/1.2)];
-    
+    //[_backgroundNode addChild:monkey z:1 parallaxRatio:mazeSpeed positionOffset:ccp(winSize.width*0.25,0)];
     
     // Add to bottom of init
     _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
     for(int i = 0; i < kNumMazes; ++i) {
       CCSprite *maze = [CCSprite spriteWithFile:@"maze_demo.png"];
       maze.visible = NO;
-      [self addChild:maze];
+      //[self addChild:maze];
+      [monkey addChild:maze];
       [_mazes addObject:maze];
     }
   }
@@ -126,27 +127,6 @@ CCSprite *bg;
 	return self;
 }
 
-//-(void) registerWithTouchDispatcher
-//{
-//	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-//}
-
-//- (void) nextFrame:(ccTime)dt {
-//  pig.position = ccp( pig.position.x + 100*dt, pig.position.y );
-//  if (pig.position.x > 480+32) {
-//    pig.position = ccp( -32, pig.position.y );
-//    monkey.rotation = 0;
-//  }
-//}
-
-//- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-//	[pig stopAllActions];
-//  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
-//}
-//
-//- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-//  return YES;
-//}
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -186,13 +166,17 @@ CCSprite *bg;
     }
   }
   
+  if ([_backgroundNode convertToWorldSpace:monkey.position].x < -monkey.contentSize.width) {
+    [_backgroundNode incrementOffset:ccp(1000,0) forChild:monkey];
+  }
+  
   // Add to bottom of update loop
   CGSize winSize = [CCDirector sharedDirector].winSize;
   double curTime = CACurrentMediaTime();
   if (curTime > _nextMazeSpawn) {
     
     //float randSecs = [self randomValueBetween:0.20 andValue:1.0];
-    _nextMazeSpawn = 1.5 + curTime;
+    _nextMazeSpawn = 1 + curTime;
     
     float randY = [self randomValueBetween:0.0 andValue:winSize.height];
     //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
@@ -234,6 +218,15 @@ CCSprite *bg;
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   [monkey runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
+  CGSize winSize = [CCDirector sharedDirector].winSize;
+  for (CCSprite *maze in _mazes) {
+    [maze stopAllActions];
+    [maze runAction:[CCSequence actions:
+                     [CCMoveBy actionWithDuration:7 position:ccp(0,winSize.width+maze.contentSize.width)],
+                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                     nil]];
+    
+  }
 }
 
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
