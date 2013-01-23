@@ -20,6 +20,7 @@
 CCSprite *pig;
 CCSprite *monkey;
 CCSprite *bg;
+int destpoint;
 
 #pragma mark - HelloWorldLayer
 
@@ -59,7 +60,7 @@ CCSprite *bg;
     // create and initialize our seeker sprite, and add it to this layer
     pig = [CCSprite spriteWithFile: @"Monkey.png"];
     //pig.position = ccp(50, 100 );
-    pig.position = ccp(winSize.width * 0.1, winSize.height * 0.5);
+    pig.position = ccp(winSize.width * 0.2, winSize.height * 0.5);
     pig.scale = 0.6;
     [self addChild:pig z:1];
 
@@ -68,6 +69,7 @@ CCSprite *bg;
     monkey = [CCSprite spriteWithFile: @"empty.png"];
     monkey.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:monkey z:1];
+    destpoint = 0;
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
     [self addGestureRecognizer:swipeLeftGestureRecognizer];
@@ -116,12 +118,17 @@ CCSprite *bg;
     // Add to bottom of init
     _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
     for(int i = 0; i < kNumMazes; ++i) {
-      CCSprite *maze = [CCSprite spriteWithFile:@"maze_demo.png"];
+      CCSprite *maze = [CCSprite spriteWithFile:@"unit_canyon3.png"];
       maze.visible = NO;
+      //maze.position = ccp(monkey.contentSize.height, monkey.contentSize.width);
       //[self addChild:maze];
       [monkey addChild:maze];
       [_mazes addObject:maze];
     }
+    
+//    monkey.anchorPoint = CGPointMake(pig.position.x/monkey.contentSize.width,
+//                                     pig.position.y/monkey.contentSize.height);
+    
   }
 
 	return self;
@@ -187,12 +194,46 @@ CCSprite *bg;
     if (_nextMaze >= _mazes.count) _nextMaze = 0;
     
     [maze stopAllActions];
-    maze.position = ccp(winSize.width+maze.contentSize.width/2, randY);
+    maze.position = ccp(winSize.width, winSize.height);
     maze.visible = YES;
-    [maze runAction:[CCSequence actions:
+    
+    switch (destpoint) {
+      case 0:
+        [maze runAction:[CCSequence actions:
                          [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
                          nil]];
+        
+        break;
+      
+      case 1:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+
+      case 2:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+
+      case 3:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      default:
+        break;
+    }
+//    [maze runAction:[CCSequence actions:
+//                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+//                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+//                         nil]];
     
   }
 }
@@ -218,14 +259,69 @@ CCSprite *bg;
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   [monkey runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
-  CGSize winSize = [CCDirector sharedDirector].winSize;
+  
+  //TODO do something to direction here!!!!
+  switch (destpoint) {
+    case 0:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 1:3;
+      break;
+    case 1:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 2:0;
+      break;
+    case 2:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 3:1;
+      break;
+    case 3:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 0:2;
+      break;
+      
+    default:
+      break;
+  }
+  
+  //Move to another function
+  CGSize winSize = [CCDirector sharedDirector].winSize;  
   for (CCSprite *maze in _mazes) {
     [maze stopAllActions];
-    [maze runAction:[CCSequence actions:
-                     [CCMoveBy actionWithDuration:7 position:ccp(0,winSize.width+maze.contentSize.width)],
-                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                     nil]];
-    
+//    [maze runAction:[CCSequence actions:
+//                     [CCMoveBy actionWithDuration:7 position:ccp(0,winSize.width+maze.contentSize.width)],
+//                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+//                     nil]];
+    float randDuration = 7;
+
+    switch (destpoint) {
+      case 0:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        
+        break;
+        
+      case 1:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 2:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 3:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      default:
+        break;
+    }
   }
 }
 
