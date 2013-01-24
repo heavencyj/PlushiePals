@@ -118,7 +118,8 @@ int destpoint;
     // Add to bottom of init
     _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
     for(int i = 0; i < kNumMazes; ++i) {
-      CCSprite *maze = [CCSprite spriteWithFile:@"unit_canyon3.png"];
+      int rand = [self getRandomNumberBetweenMin:1 andMax:5];
+      CCSprite *maze = [CCSprite spriteWithFile:[@"unit_canyon" stringByAppendingFormat:@"%d.png",rand]];
       maze.visible = NO;
       //maze.position = ccp(monkey.contentSize.height, monkey.contentSize.width);
       //[self addChild:maze];
@@ -149,6 +150,11 @@ int destpoint;
 // Add new method, above update loop
 - (float)randomValueBetween:(float)low andValue:(float)high {
   return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
+}
+
+-(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
+{
+	return ( (arc4random() % (max-min+1)) + min );
 }
 
 #pragma mark GameKit delegate
@@ -185,7 +191,7 @@ int destpoint;
     //float randSecs = [self randomValueBetween:0.20 andValue:1.0];
     _nextMazeSpawn = 1 + curTime;
     
-    float randY = [self randomValueBetween:0.0 andValue:winSize.height];
+    //float randY = [self randomValueBetween:0.0 andValue:winSize.height];
     //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
     float randDuration = 7;
     
@@ -194,11 +200,12 @@ int destpoint;
     if (_nextMaze >= _mazes.count) _nextMaze = 0;
     
     [maze stopAllActions];
-    maze.position = ccp(winSize.width, winSize.height);
+    //maze.position = ccp(winSize.width, winSize.height);
     maze.visible = YES;
     
     switch (destpoint) {
       case 0:
+        maze.position = ccp(winSize.width, winSize.height);
         [maze runAction:[CCSequence actions:
                          [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
@@ -207,6 +214,7 @@ int destpoint;
         break;
       
       case 1:
+        maze.position = ccp(winSize.height, winSize.width);
         [maze runAction:[CCSequence actions:
                          [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
@@ -214,6 +222,7 @@ int destpoint;
         break;
 
       case 2:
+        maze.position = ccp(monkey.contentSize.width-winSize.width, winSize.height);
         [maze runAction:[CCSequence actions:
                          [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
@@ -221,6 +230,7 @@ int destpoint;
         break;
 
       case 3:
+        maze.position = ccp(monkey.contentSize.height-winSize.height, monkey.contentSize.width-winSize.width);
         [maze runAction:[CCSequence actions:
                          [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
