@@ -181,6 +181,9 @@
 		9892146A16B04DA100AD5959 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9892146916B04DA100AD5959 /* GLES-Render.mm */; };
 		9892146D16B04DA100AD5959 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9892146C16B04DA100AD5959 /* PhysicsSprite.mm */; };
 		9892146F16B04DA100AD5959 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 9892146E16B04DA100AD5959 /* blocks.png */; };
+		9892148C16B0E6F000AD5959 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 9892148B16B0E6F000AD5959 /* CCParallaxNode-Extras.m */; };
+		9892149016B0E70000AD5959 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9892148F16B0E70000AD5959 /* MyContactListener.mm */; };
+		9892149616B0E87700AD5959 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9892149516B0E87700AD5959 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -545,6 +548,11 @@
 		9892146B16B04DA100AD5959 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		9892146C16B04DA100AD5959 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
 		9892146E16B04DA100AD5959 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		9892148A16B0E6F000AD5959 /* CCParallaxNode-Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCParallaxNode-Extras.h"; sourceTree = "<group>"; };
+		9892148B16B0E6F000AD5959 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
+		9892148E16B0E70000AD5959 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		9892148F16B0E70000AD5959 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
+		9892149516B0E87700AD5959 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -570,6 +578,7 @@
 		9892123316B04D9D00AD5959 = {
 			isa = PBXGroup;
 			children = (
+				9892149516B0E87700AD5959 /* Default-568h@2x.png */,
 				9892125416B04D9D00AD5959 /* GameDemo */,
 				9892124116B04D9D00AD5959 /* Frameworks */,
 				9892123F16B04D9D00AD5959 /* Products */,
@@ -603,6 +612,10 @@
 		9892125416B04D9D00AD5959 /* GameDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9892148A16B0E6F000AD5959 /* CCParallaxNode-Extras.h */,
+				9892148B16B0E6F000AD5959 /* CCParallaxNode-Extras.m */,
+				9892148E16B0E70000AD5959 /* MyContactListener.h */,
+				9892148F16B0E70000AD5959 /* MyContactListener.mm */,
 				9892145F16B04DA100AD5959 /* AppDelegate.h */,
 				9892146016B04DA100AD5959 /* AppDelegate.mm */,
 				9892146216B04DA100AD5959 /* HelloWorldLayer.h */,
@@ -1206,6 +1219,7 @@
 				9892126E16B04D9D00AD5959 /* iTunesArtwork in Resources */,
 				989213AC16B04DA000AD5959 /* ChangeLog in Resources */,
 				9892146F16B04DA100AD5959 /* blocks.png in Resources */,
+				9892149616B0E87700AD5959 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1381,8 @@
 				9892146716B04DA100AD5959 /* IntroLayer.mm in Sources */,
 				9892146A16B04DA100AD5959 /* GLES-Render.mm in Sources */,
 				9892146D16B04DA100AD5959 /* PhysicsSprite.mm in Sources */,
+				9892148C16B0E6F000AD5959 /* CCParallaxNode-Extras.m in Sources */,
+				9892149016B0E70000AD5959 /* MyContactListener.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,7 +1404,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1407,7 +1423,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1472,6 +1488,7 @@
 				9892147416B04DA100AD5959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
