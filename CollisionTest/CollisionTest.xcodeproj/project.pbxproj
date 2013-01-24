@@ -186,6 +186,7 @@
 		B6D2891816B0DAEE0050A460 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D2891516B0DAEE0050A460 /* sprites.png */; };
 		B6D2891916B0DAEE0050A460 /* collisionaudio.caf in Resources */ = {isa = PBXBuildFile; fileRef = B6D2891616B0DAEE0050A460 /* collisionaudio.caf */; };
 		B6D2892216B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892116B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m */; };
+		B6D2892516B0DE750050A460 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -557,6 +558,8 @@
 		B6D2891616B0DAEE0050A460 /* collisionaudio.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = collisionaudio.caf; sourceTree = "<group>"; };
 		B6D2892016B0DBFF0050A460 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
 		B6D2892116B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
+		B6D2892316B0DE750050A460 /* CCParallaxNode-Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCParallaxNode-Extras.h"; sourceTree = "<group>"; };
+		B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -615,6 +618,8 @@
 		B6D286F016B0DA750050A460 /* CollisionTest */ = {
 			isa = PBXGroup;
 			children = (
+				B6D2892316B0DE750050A460 /* CCParallaxNode-Extras.h */,
+				B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */,
 				B6D2891116B0DAC20050A460 /* MyContactListener.h */,
 				B6D2891216B0DAC20050A460 /* MyContactListener.mm */,
 				B6D288FB16B0DA7E0050A460 /* AppDelegate.h */,
@@ -1391,6 +1396,7 @@
 				B6D2890916B0DA7E0050A460 /* PhysicsSprite.mm in Sources */,
 				B6D2891316B0DAC20050A460 /* MyContactListener.mm in Sources */,
 				B6D2892216B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m in Sources */,
+				B6D2892516B0DE750050A460 /* CCParallaxNode-Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
