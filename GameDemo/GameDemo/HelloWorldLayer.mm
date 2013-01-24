@@ -11,8 +11,16 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-
 #import "PhysicsSprite.h"
+#import "CCNode+SFGestureRecognizers.h"
+#import "CCParallaxNode-Extras.h"
+
+#define kNumMazes   10
+
+CCSprite *monkey;
+CCSprite *bg;
+CCSprite *pig;
+int destpoint;
 
 enum {
 	kTagParentNode = 1,
@@ -22,9 +30,7 @@ enum {
 #pragma mark - HelloWorldLayer
 
 @interface HelloWorldLayer()
--(void) initPhysics;
--(void) addNewSpriteAtPosition:(CGPoint)p;
--(void) createMenu;
+
 @end
 
 @implementation HelloWorldLayer
@@ -48,41 +54,84 @@ enum {
 {
 	if( (self=[super init])) {
 		
-		// enable events
-		
-		self.isTouchEnabled = YES;
-		self.isAccelerometerEnabled = YES;
-		CGSize s = [CCDirector sharedDirector].winSize;
-		
-		// init physics
-		[self initPhysics];
-		
-		// create reset button
-		[self createMenu];
-		
-		//Set up sprite
-		
-#if 1
-		// Use batch node. Faster
-		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:100];
-		spriteTexture_ = [parent texture];
-#else
-		// doesn't use batch node. Slower
-		spriteTexture_ = [[CCTextureCache sharedTextureCache] addImage:@"blocks.png"];
-		CCNode *parent = [CCNode node];
-#endif
-		[self addChild:parent z:0 tag:kTagParentNode];
-		
-		
-		[self addNewSpriteAtPosition:ccp(s.width/2, s.height/2)];
-		
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
-		[self addChild:label z:0];
-		[label setColor:ccc3(0,0,255)];
-		label.position = ccp( s.width/2, s.height-50);
-		
-		[self scheduleUpdate];
-	}
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    bg = [CCSprite spriteWithFile: @"Canyon_background.png"];
+    bg.position = ccp(winSize.width/2, winSize.height/2);
+    bg.scale = 1.5;
+    [self addChild:bg];
+    
+    // create and initialize our seeker sprite, and add it to this layer
+    pig = [CCSprite spriteWithFile: @"Monkey.png"];
+    //pig.position = ccp(50, 100 );
+    pig.position = ccp(winSize.width * 0.2, winSize.height * 0.5);
+    pig.scale = 0.6;
+    [self addChild:pig z:1];
+    
+    
+    // do the same for our cocos2d guy, reusing the app icon as its image
+    monkey = [CCSprite spriteWithFile: @"empty.png"];
+    monkey.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:monkey z:1];
+    destpoint = 0;
+    
+    UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeLeftGestureRecognizer];
+    swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeLeftGestureRecognizer.delegate = self;
+    [swipeLeftGestureRecognizer release];
+    
+    UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeRightGestureRecognizer];
+    swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    swipeRightGestureRecognizer.delegate = self;
+    [swipeRightGestureRecognizer release];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
+    [self addGestureRecognizer:tapGestureRecognizer];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.delegate = self;
+    [tapGestureRecognizer release];
+    
+    self.isTouchEnabled = YES;
+    
+    // 1) Create the CCParallaxNode
+    _backgroundNode = [CCParallaxNode node];
+    [self addChild:_backgroundNode z:0];
+    
+    // 2) Create the sprites we'll add to the CCParallaxNode
+    _cloud1 = [CCSprite spriteWithFile:@"Canyon_cloud1.png"];
+    _cloud2 = [CCSprite spriteWithFile:@"Canyon_cloud2.png"];
+    _canyons = [CCSprite spriteWithFile:@"Canyons.png"];
+    
+    // 3) Determine relative movement speeds for space dust and background
+    CGPoint cloudSpeed = ccp(0.1, 0.1);
+    CGPoint bgSpeed = ccp(0.05, 0.05);
+    //CGPoint mazeSpeed = ccp(0.1,0.1);
+    
+    // 4) Add children to CCParallaxNode
+    [_backgroundNode addChild:_canyons z:1 parallaxRatio:cloudSpeed positionOffset:ccp(_canyons.contentSize.width/2,_canyons.contentSize.height/2)];
+    [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
+    [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width,winSize.height/1.2)];
+    //[_backgroundNode addChild:monkey z:1 parallaxRatio:mazeSpeed positionOffset:ccp(winSize.width*0.25,0)];
+    
+    // Add to bottom of init
+    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
+    for(int i = 0; i < kNumMazes; ++i) {
+      int rand = [self getRandomNumberBetweenMin:1 andMax:5];
+      CCSprite *maze = [CCSprite spriteWithFile:[@"unit_canyon" stringByAppendingFormat:@"%d.png",rand]];
+      maze.visible = NO;
+      //maze.position = ccp(monkey.contentSize.height, monkey.contentSize.width);
+      //[self addChild:maze];
+      [monkey addChild:maze];
+      [_mazes addObject:maze];
+    }
+    
+    // schedule a repeating callback on every frame
+    [self scheduleUpdate];
+    
+  }
+
 	return self;
 }
 
@@ -95,165 +144,6 @@ enum {
 	m_debugDraw = NULL;
 	
 	[super dealloc];
-}	
-
--(void) createMenu
-{
-	// Default font size will be 22 points.
-	[CCMenuItemFont setFontSize:22];
-	
-	// Reset Button
-	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
-	}];
-	
-	// Achievement Menu Item using blocks
-	CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-		
-		
-		GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-		achivementViewController.achievementDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:achivementViewController animated:YES];
-		
-		[achivementViewController release];
-	}];
-	
-	// Leaderboard Menu Item using blocks
-	CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-		
-		
-		GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-		leaderboardViewController.leaderboardDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:leaderboardViewController animated:YES];
-		
-		[leaderboardViewController release];
-	}];
-	
-	CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, reset, nil];
-	
-	[menu alignItemsVertically];
-	
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	[menu setPosition:ccp( size.width/2, size.height/2)];
-	
-	
-	[self addChild: menu z:-1];	
-}
-
--(void) initPhysics
-{
-	
-	CGSize s = [[CCDirector sharedDirector] winSize];
-	
-	b2Vec2 gravity;
-	gravity.Set(0.0f, -10.0f);
-	world = new b2World(gravity);
-	
-	
-	// Do we want to let bodies sleep?
-	world->SetAllowSleeping(true);
-	
-	world->SetContinuousPhysics(true);
-	
-	m_debugDraw = new GLESDebugDraw( PTM_RATIO );
-	world->SetDebugDraw(m_debugDraw);
-	
-	uint32 flags = 0;
-	flags += b2Draw::e_shapeBit;
-	//		flags += b2Draw::e_jointBit;
-	//		flags += b2Draw::e_aabbBit;
-	//		flags += b2Draw::e_pairBit;
-	//		flags += b2Draw::e_centerOfMassBit;
-	m_debugDraw->SetFlags(flags);		
-	
-	
-	// Define the ground body.
-	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(0, 0); // bottom-left corner
-	
-	// Call the body factory which allocates memory for the ground body
-	// from a pool and creates the ground box shape (also from a pool).
-	// The body is also added to the world.
-	b2Body* groundBody = world->CreateBody(&groundBodyDef);
-	
-	// Define the ground box shape.
-	b2EdgeShape groundBox;		
-	
-	// bottom
-	
-	groundBox.Set(b2Vec2(0,0), b2Vec2(s.width/PTM_RATIO,0));
-	groundBody->CreateFixture(&groundBox,0);
-	
-	// top
-	groundBox.Set(b2Vec2(0,s.height/PTM_RATIO), b2Vec2(s.width/PTM_RATIO,s.height/PTM_RATIO));
-	groundBody->CreateFixture(&groundBox,0);
-	
-	// left
-	groundBox.Set(b2Vec2(0,s.height/PTM_RATIO), b2Vec2(0,0));
-	groundBody->CreateFixture(&groundBox,0);
-	
-	// right
-	groundBox.Set(b2Vec2(s.width/PTM_RATIO,s.height/PTM_RATIO), b2Vec2(s.width/PTM_RATIO,0));
-	groundBody->CreateFixture(&groundBox,0);
-}
-
--(void) draw
-{
-	//
-	// IMPORTANT:
-	// This is only for debug purposes
-	// It is recommend to disable it
-	//
-	[super draw];
-	
-	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
-	
-	kmGLPushMatrix();
-	
-	world->DrawDebugData();	
-	
-	kmGLPopMatrix();
-}
-
--(void) addNewSpriteAtPosition:(CGPoint)p
-{
-	CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
-	CCNode *parent = [self getChildByTag:kTagParentNode];
-	
-	//We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
-	//just randomly picking one of the images
-	int idx = (CCRANDOM_0_1() > .5 ? 0:1);
-	int idy = (CCRANDOM_0_1() > .5 ? 0:1);
-	PhysicsSprite *sprite = [PhysicsSprite spriteWithTexture:spriteTexture_ rect:CGRectMake(32 * idx,32 * idy,32,32)];						
-	[parent addChild:sprite];
-	
-	sprite.position = ccp( p.x, p.y);
-	
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
-	b2Body *body = world->CreateBody(&bodyDef);
-	
-	// Define another box shape for our dynamic body.
-	b2PolygonShape dynamicBox;
-	dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
-	
-	// Define the dynamic body fixture.
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicBox;	
-	fixtureDef.density = 1.0f;
-	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);
-	
-	[sprite setPhysicsBody:body];
 }
 
 -(void) update: (ccTime) dt
@@ -263,24 +153,107 @@ enum {
 	//You need to make an informed choice, the following URL is useful
 	//http://gafferongames.com/game-physics/fix-your-timestep/
 	
-	int32 velocityIterations = 8;
-	int32 positionIterations = 1;
+//	int32 velocityIterations = 8;
+//	int32 positionIterations = 1;
 	
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
-	world->Step(dt, velocityIterations, positionIterations);	
+//	world->Step(dt, velocityIterations, positionIterations);
+	
+  CGPoint backgroundScrollVel = ccp(-1000, 0);
+  _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
+  
+  // Add at end of your update method
+  NSArray *clouds = [NSArray arrayWithObjects:_cloud1, _cloud2, nil];
+  for (CCSprite *cloud in clouds) {
+    if ([_backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
+      [_backgroundNode incrementOffset:ccp(2*cloud.contentSize.width,0) forChild:cloud];
+    }
+  }
+
+  NSArray *backgrounds = [NSArray arrayWithObjects:_canyons, nil];
+  for (CCSprite *background in backgrounds) {
+    if ([_backgroundNode convertToWorldSpace:background.position].x < -background.contentSize.width) {
+      [_backgroundNode incrementOffset:ccp(1000,0) forChild:background];
+    }
+  }
+  
+  if ([_backgroundNode convertToWorldSpace:monkey.position].x < -monkey.contentSize.width) {
+    [_backgroundNode incrementOffset:ccp(1000,0) forChild:monkey];
+  }
+  
+  // Add to bottom of update loop
+  CGSize winSize = [CCDirector sharedDirector].winSize;
+  double curTime = CACurrentMediaTime();
+  if (curTime > _nextMazeSpawn) {
+    
+    //float randSecs = [self randomValueBetween:0.20 andValue:1.0];
+    _nextMazeSpawn = 1 + curTime;
+    
+    //float randY = [self randomValueBetween:0.0 andValue:winSize.height];
+    //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
+    float randDuration = 7;
+    
+    CCSprite *maze = [_mazes objectAtIndex:_nextMaze];
+    _nextMaze++;
+    if (_nextMaze >= _mazes.count) _nextMaze = 0;
+    
+    [maze stopAllActions];
+    //maze.position = ccp(winSize.width, winSize.height);
+    maze.visible = YES;
+    
+    switch (destpoint) {
+      case 0:
+        maze.position = ccp(winSize.width, winSize.height);
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        
+        break;
+        
+      case 1:
+        maze.position = ccp(winSize.height, winSize.width);
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 2:
+        maze.position = ccp(monkey.contentSize.width-winSize.width, winSize.height);
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 3:
+        maze.position = ccp(monkey.contentSize.height-winSize.height, monkey.contentSize.width-winSize.width);
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      default:
+        break;
+    }
+    //    [maze runAction:[CCSequence actions:
+    //                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+    //                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+    //                         nil]];
+    
+  }
 }
 
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+-(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
 {
-	//Add a new body/atlas sprite at the touched location
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-		
-		[self addNewSpriteAtPosition: location];
-	}
+	return ( (arc4random() % (max-min+1)) + min );
+}
+
+- (void)setInvisible:(CCNode *)node {
+  node.visible = NO;
 }
 
 #pragma mark GameKit delegate
@@ -288,13 +261,89 @@ enum {
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
 {
 	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
+	[[app navController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
 {
 	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
+	[[app navController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+{
+  float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
+  [monkey runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
+  
+  //TODO do something to direction here!!!!
+  switch (destpoint) {
+    case 0:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 1:3;
+      break;
+    case 1:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 2:0;
+      break;
+    case 2:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 3:1;
+      break;
+    case 3:
+      destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 0:2;
+      break;
+      
+    default:
+      break;
+  }
+  
+  //Move to another function
+  CGSize winSize = [CCDirector sharedDirector].winSize;
+  for (CCSprite *maze in _mazes) {
+    [maze stopAllActions];
+    //    [maze runAction:[CCSequence actions:
+    //                     [CCMoveBy actionWithDuration:7 position:ccp(0,winSize.width+maze.contentSize.width)],
+    //                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+    //                     nil]];
+    float randDuration = 7;
+    
+    switch (destpoint) {
+      case 0:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        
+        break;
+        
+      case 1:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 2:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      case 3:
+        [maze runAction:[CCSequence actions:
+                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
+                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                         nil]];
+        break;
+        
+      default:
+        break;
+    }
+  }
+}
+
+- (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+{
+  [pig stopAllActions];
+  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 
 @end
