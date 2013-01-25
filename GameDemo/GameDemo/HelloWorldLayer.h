@@ -21,20 +21,11 @@
 #define PTM_RATIO 32
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate, UIGestureRecognizerDelegate>
+@interface HelloWorldLayer : CCLayer <UIGestureRecognizerDelegate>
 {
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
 	GLESDebugDraw *m_debugDraw;		// strong ref
-  CCSprite *_plushy;
-  CCParallaxNode *_backgroundNode;
-  CCSprite *_cloud1;
-  CCSprite *_cloud2;
-  CCSprite *_canyons;
-  
-  CCArray *_mazes;
-  int _nextMaze;
-  double _nextMazeSpawn;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

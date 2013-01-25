@@ -17,20 +17,24 @@
 
 #define kNumMazes   10
 
-CCSprite *monkey;
+// Globle variables for graphic elements
+CCSprite *mazeHolder;
 CCSprite *bg;
-CCSprite *pig;
+CCSprite *plushy;
+CCParallaxNode *backgroundNode;
+CCSprite *cloud1;
+CCSprite *cloud2;
+CCSprite *canyons;
+CCArray *mazes;
+
+// Number variables for tracking
 int destpoint;
-
-enum {
-	kTagParentNode = 1,
-};
-
+int nextMaze;
+double nextMazeSpawn;
 
 #pragma mark - HelloWorldLayer
 
 @interface HelloWorldLayer()
-
 @end
 
 @implementation HelloWorldLayer
@@ -56,25 +60,56 @@ enum {
 		
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
+    // Initialize background
     bg = [CCSprite spriteWithFile: @"Canyon_background.png"];
     bg.position = ccp(winSize.width/2, winSize.height/2);
-    bg.scale = 1.5;
     [self addChild:bg];
     
-    // create and initialize our seeker sprite, and add it to this layer
-    pig = [CCSprite spriteWithFile: @"Monkey.png"];
-    //pig.position = ccp(50, 100 );
-    pig.position = ccp(winSize.width * 0.2, winSize.height * 0.5);
-    pig.scale = 0.6;
-    [self addChild:pig z:1];
+    // Create and initialize plushy sprite, and add it to this layer
+    plushy = [CCSprite spriteWithFile: @"Monkey.png"];
+    plushy.position = ccp(winSize.width * 0.2, winSize.height * 0.6);
+    plushy.scale = 0.6;
+    [self addChild:plushy z:1];
     
     
-    // do the same for our cocos2d guy, reusing the app icon as its image
-    monkey = [CCSprite spriteWithFile: @"empty.png"];
-    monkey.position = ccp(winSize.width/2, winSize.height/2);
-    [self addChild:monkey z:1];
+    // Create the maze hodler for rotation later. add to this layer
+    mazeHolder = [CCSprite spriteWithFile: @"empty.png"];
+    mazeHolder.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:mazeHolder z:1];
     destpoint = 0;
     
+    // Background scrolling and moving
+    // 1) Create the CCParallaxNode
+    backgroundNode = [CCParallaxNode node];
+    [self addChild:backgroundNode z:0];
+    
+    // 2) Create the sprites we'll add to the CCParallaxNode
+    cloud1 = [CCSprite spriteWithFile:@"Canyon_cloud1.png"];
+    cloud2 = [CCSprite spriteWithFile:@"Canyon_cloud2.png"];
+    canyons = [CCSprite spriteWithFile:@"Canyons.png"];
+    
+    // 3) Determine relative movement speeds for space dust and background
+    CGPoint cloudSpeed = ccp(0.1, 0.1);
+    CGPoint bgSpeed = ccp(0.05, 0.05);
+    //CGPoint mazeSpeed = ccp(0.1,0.1);
+    
+    // 4) Add children to CCParallaxNode
+    [backgroundNode addChild:canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons.contentSize.width/2,canyons.contentSize.height/2)];
+    [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
+    [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width,winSize.height/1.2)];
+    
+    // Generate various of types of maze unit
+    mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
+    for(int i = 0; i < kNumMazes; ++i) {
+      int rand = [self getRandomNumberBetweenMin:1 andMax:5];
+      CCSprite *maze = [CCSprite spriteWithFile:[@"unit_canyon" stringByAppendingFormat:@"%d.png",rand]];
+      maze.visible = NO;
+      [mazeHolder addChild:maze];
+      [mazes addObject:maze];
+    }
+    
+    // Add guesture recognizer to this layer
+    self.isTouchEnabled = YES;
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
     [self addGestureRecognizer:swipeLeftGestureRecognizer];
     swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -93,45 +128,10 @@ enum {
     tapGestureRecognizer.delegate = self;
     [tapGestureRecognizer release];
     
-    self.isTouchEnabled = YES;
-    
-    // 1) Create the CCParallaxNode
-    _backgroundNode = [CCParallaxNode node];
-    [self addChild:_backgroundNode z:0];
-    
-    // 2) Create the sprites we'll add to the CCParallaxNode
-    _cloud1 = [CCSprite spriteWithFile:@"Canyon_cloud1.png"];
-    _cloud2 = [CCSprite spriteWithFile:@"Canyon_cloud2.png"];
-    _canyons = [CCSprite spriteWithFile:@"Canyons.png"];
-    
-    // 3) Determine relative movement speeds for space dust and background
-    CGPoint cloudSpeed = ccp(0.1, 0.1);
-    CGPoint bgSpeed = ccp(0.05, 0.05);
-    //CGPoint mazeSpeed = ccp(0.1,0.1);
-    
-    // 4) Add children to CCParallaxNode
-    [_backgroundNode addChild:_canyons z:1 parallaxRatio:cloudSpeed positionOffset:ccp(_canyons.contentSize.width/2,_canyons.contentSize.height/2)];
-    [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
-    [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width,winSize.height/1.2)];
-    //[_backgroundNode addChild:monkey z:1 parallaxRatio:mazeSpeed positionOffset:ccp(winSize.width*0.25,0)];
-    
-    // Add to bottom of init
-    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
-    for(int i = 0; i < kNumMazes; ++i) {
-      int rand = [self getRandomNumberBetweenMin:1 andMax:5];
-      CCSprite *maze = [CCSprite spriteWithFile:[@"unit_canyon" stringByAppendingFormat:@"%d.png",rand]];
-      maze.visible = NO;
-      //maze.position = ccp(monkey.contentSize.height, monkey.contentSize.width);
-      //[self addChild:maze];
-      [monkey addChild:maze];
-      [_mazes addObject:maze];
-    }
-    
     // schedule a repeating callback on every frame
     [self scheduleUpdate];
-    
   }
-
+  
 	return self;
 }
 
@@ -148,103 +148,88 @@ enum {
 
 -(void) update: (ccTime) dt
 {
-	//It is recommended that a fixed time step is used with Box2D for stability
-	//of the simulation, however, we are using a variable time step here.
-	//You need to make an informed choice, the following URL is useful
-	//http://gafferongames.com/game-physics/fix-your-timestep/
-	
-//	int32 velocityIterations = 8;
-//	int32 positionIterations = 1;
-	
-	// Instruct the world to perform a single step of simulation. It is
-	// generally best to keep the time step and iterations fixed.
-//	world->Step(dt, velocityIterations, positionIterations);
-	
+	// Set background scrolling velocity
   CGPoint backgroundScrollVel = ccp(-1000, 0);
-  _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
+  backgroundNode.position = ccpAdd(backgroundNode.position, ccpMult(backgroundScrollVel, dt));
   
-  // Add at end of your update method
-  NSArray *clouds = [NSArray arrayWithObjects:_cloud1, _cloud2, nil];
+  // Add repeatitive scrolling for background elements
+  NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
   for (CCSprite *cloud in clouds) {
-    if ([_backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
-      [_backgroundNode incrementOffset:ccp(2*cloud.contentSize.width,0) forChild:cloud];
+    if ([backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
+      [backgroundNode incrementOffset:ccp(5*cloud.contentSize.width,0) forChild:cloud];
     }
   }
-
-  NSArray *backgrounds = [NSArray arrayWithObjects:_canyons, nil];
+  NSArray *backgrounds = [NSArray arrayWithObjects:canyons, nil];
   for (CCSprite *background in backgrounds) {
-    if ([_backgroundNode convertToWorldSpace:background.position].x < -background.contentSize.width) {
-      [_backgroundNode incrementOffset:ccp(1000,0) forChild:background];
+    if ([backgroundNode convertToWorldSpace:background.position].x < -background.contentSize.width) {
+      [backgroundNode incrementOffset:ccp(1000,0) forChild:background];
     }
+  }  
+  if ([backgroundNode convertToWorldSpace:mazeHolder.position].x < -mazeHolder.contentSize.width) {
+    [backgroundNode incrementOffset:ccp(1000,0) forChild:mazeHolder];
   }
   
-  if ([_backgroundNode convertToWorldSpace:monkey.position].x < -monkey.contentSize.width) {
-    [_backgroundNode incrementOffset:ccp(1000,0) forChild:monkey];
-  }
-  
-  // Add to bottom of update loop
-  CGSize winSize = [CCDirector sharedDirector].winSize;
+  // Generate mazes
   double curTime = CACurrentMediaTime();
-  if (curTime > _nextMazeSpawn) {
-    
-    //float randSecs = [self randomValueBetween:0.20 andValue:1.0];
-    _nextMazeSpawn = 1 + curTime;
-    
+  if (curTime > nextMazeSpawn) {
+    nextMazeSpawn = 1 + curTime;
+    //TODO: ADD algorithm to decide how to add mazes in order with same speed
     //float randY = [self randomValueBetween:0.0 andValue:winSize.height];
-    //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
-    float randDuration = 7;
     
-    CCSprite *maze = [_mazes objectAtIndex:_nextMaze];
-    _nextMaze++;
-    if (_nextMaze >= _mazes.count) _nextMaze = 0;
+    CCSprite *maze = [mazes objectAtIndex:nextMaze];
+    nextMaze++;
+    if (nextMaze >= mazes.count) nextMaze = 0;
     
     [maze stopAllActions];
-    //maze.position = ccp(winSize.width, winSize.height);
     maze.visible = YES;
-    
-    switch (destpoint) {
-      case 0:
-        maze.position = ccp(winSize.width, winSize.height);
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        
-        break;
-        
-      case 1:
-        maze.position = ccp(winSize.height, winSize.width);
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      case 2:
-        maze.position = ccp(monkey.contentSize.width-winSize.width, winSize.height);
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      case 3:
-        maze.position = ccp(monkey.contentSize.height-winSize.height, monkey.contentSize.width-winSize.width);
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      default:
-        break;
-    }
-    //    [maze runAction:[CCSequence actions:
-    //                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
-    //                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-    //                         nil]];
-    
+    [self rotateDestPoint:maze];
   }
+  
+}
+
+-(void)rotateDestPoint:(CCSprite *)maze {
+  
+  CGSize winSize = [CCDirector sharedDirector].winSize;
+  float duration = 7;
+  
+  switch (destpoint) {
+    case 0:
+      maze.position = ccp(winSize.width, winSize.height);
+      [maze runAction:[CCSequence actions:
+                       [CCMoveBy actionWithDuration:duration position:ccp(-winSize.width-maze.contentSize.width, 0)],
+                       [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                       nil]];
+      
+      break;
+      
+    case 1:
+      maze.position = ccp(winSize.height, winSize.width);
+      [maze runAction:[CCSequence actions:
+                       [CCMoveBy actionWithDuration:duration position:ccp(0, -winSize.width-maze.contentSize.width)],
+                       [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                       nil]];
+      break;
+      
+    case 2:
+      maze.position = ccp(mazeHolder.contentSize.width-winSize.width, winSize.height);
+      [maze runAction:[CCSequence actions:
+                       [CCMoveBy actionWithDuration:duration position:ccp(winSize.width+maze.contentSize.width, 0)],
+                       [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                       nil]];
+      break;
+      
+    case 3:
+      maze.position = ccp(mazeHolder.contentSize.height-winSize.height, mazeHolder.contentSize.width-winSize.width);
+      [maze runAction:[CCSequence actions:
+                       [CCMoveBy actionWithDuration:duration position:ccp(0, winSize.width+maze.contentSize.width)],
+                       [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
+                       nil]];
+      break;
+      
+    default:
+      break;
+  }
+
 }
 
 -(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
@@ -256,26 +241,14 @@ enum {
   node.visible = NO;
 }
 
-#pragma mark GameKit delegate
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissViewControllerAnimated:YES completion:nil];
-}
-
+// Swipe guesture handler: rotate the mazes
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
+  // Turn the maze to the suggested direction
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-  [monkey runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
+  [mazeHolder runAction:[CCRotateBy actionWithDuration:0.8 angle:angle]];
   
-  //TODO do something to direction here!!!!
+  // Keep track of current direction to determine the dest point
   switch (destpoint) {
     case 0:
       destpoint = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 1:3;
@@ -294,56 +267,17 @@ enum {
       break;
   }
   
-  //Move to another function
-  CGSize winSize = [CCDirector sharedDirector].winSize;
-  for (CCSprite *maze in _mazes) {
+  for (CCSprite *maze in mazes) {
     [maze stopAllActions];
-    //    [maze runAction:[CCSequence actions:
-    //                     [CCMoveBy actionWithDuration:7 position:ccp(0,winSize.width+maze.contentSize.width)],
-    //                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-    //                     nil]];
-    float randDuration = 7;
-    
-    switch (destpoint) {
-      case 0:
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(-winSize.width-maze.contentSize.width, 0)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        
-        break;
-        
-      case 1:
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, -winSize.width-maze.contentSize.width)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      case 2:
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(winSize.width+maze.contentSize.width, 0)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      case 3:
-        [maze runAction:[CCSequence actions:
-                         [CCMoveBy actionWithDuration:randDuration position:ccp(0, winSize.width+maze.contentSize.width)],
-                         [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
-                         nil]];
-        break;
-        
-      default:
-        break;
-    }
+    [self rotateDestPoint:maze];
   }
 }
 
+// Tap guester handler: perform special move
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
-  [pig stopAllActions];
-  [pig runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
+  [plushy stopAllActions];
+  [plushy runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 
 @end
