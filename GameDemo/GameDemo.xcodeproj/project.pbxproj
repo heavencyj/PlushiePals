@@ -197,6 +197,8 @@
 		989214B516B0F0EE00AD5959 /* Pig.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214B316B0F0EE00AD5959 /* Pig.png */; };
 		989214B716B0F11500AD5959 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214B616B0F11500AD5959 /* empty.png */; };
 		989214B916B0F68400AD5959 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 989214B816B0F68300AD5959 /* CCParallaxNode-Extras.m */; };
+		989214BF16B3276C00AD5959 /* Canyons_looped.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214BE16B3276C00AD5959 /* Canyons_looped.png */; };
+		989214C216B3296800AD5959 /* Monkey_run_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214C116B3296800AD5959 /* Monkey_run_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -580,6 +582,8 @@
 		989214B316B0F0EE00AD5959 /* Pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pig.png; sourceTree = "<group>"; };
 		989214B616B0F11500AD5959 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		989214B816B0F68300AD5959 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
+		989214BE16B3276C00AD5959 /* Canyons_looped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyons_looped.png; sourceTree = "<group>"; };
+		989214C116B3296800AD5959 /* Monkey_run_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monkey_run_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -671,7 +675,9 @@
 				989214B316B0F0EE00AD5959 /* Pig.png */,
 				989214A016B0F0CE00AD5959 /* Canyon_cloud1.png */,
 				989214B616B0F11500AD5959 /* empty.png */,
+				989214BE16B3276C00AD5959 /* Canyons_looped.png */,
 				989214A116B0F0CE00AD5959 /* Canyon_cloud2.png */,
+				989214C116B3296800AD5959 /* Monkey_run_1.png */,
 				989214A216B0F0CE00AD5959 /* Canyons.png */,
 				989214A816B0F0E000AD5959 /* unit_canyon1.png */,
 				989214A916B0F0E000AD5959 /* unit_canyon2.png */,
@@ -1273,6 +1279,8 @@
 				989214B416B0F0EE00AD5959 /* Monkey.png in Resources */,
 				989214B516B0F0EE00AD5959 /* Pig.png in Resources */,
 				989214B716B0F11500AD5959 /* empty.png in Resources */,
+				989214BF16B3276C00AD5959 /* Canyons_looped.png in Resources */,
+				989214C216B3296800AD5959 /* Monkey_run_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,8 @@ CCSprite *plushy;
 CCParallaxNode *backgroundNode;
 CCSprite *cloud1;
 CCSprite *cloud2;
-CCSprite *canyons;
+CCSprite *canyons1;
+CCSprite *canyons2;
 CCArray *mazes;
 
 // Number variables for tracking
@@ -63,14 +64,7 @@ double nextMazeSpawn;
     // Initialize background
     bg = [CCSprite spriteWithFile: @"Canyon_background.png"];
     bg.position = ccp(winSize.width/2, winSize.height/2);
-    [self addChild:bg];
-    
-    // Create and initialize plushy sprite, and add it to this layer
-    plushy = [CCSprite spriteWithFile: @"Monkey.png"];
-    plushy.position = ccp(winSize.width * 0.2, winSize.height * 0.6);
-    plushy.scale = 0.6;
-    [self addChild:plushy z:1];
-    
+    [self addChild:bg];    
     
     // Create the maze hodler for rotation later. add to this layer
     mazeHolder = [CCSprite spriteWithFile: @"empty.png"];
@@ -86,17 +80,16 @@ double nextMazeSpawn;
     // 2) Create the sprites we'll add to the CCParallaxNode
     cloud1 = [CCSprite spriteWithFile:@"Canyon_cloud1.png"];
     cloud2 = [CCSprite spriteWithFile:@"Canyon_cloud2.png"];
-    canyons = [CCSprite spriteWithFile:@"Canyons.png"];
+    canyons1 = [CCSprite spriteWithFile:@"Canyons_looped.png"];
     
     // 3) Determine relative movement speeds for space dust and background
     CGPoint cloudSpeed = ccp(0.1, 0.1);
     CGPoint bgSpeed = ccp(0.05, 0.05);
-    //CGPoint mazeSpeed = ccp(0.1,0.1);
     
     // 4) Add children to CCParallaxNode
-    [backgroundNode addChild:canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons.contentSize.width/2,canyons.contentSize.height/2)];
-    [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
-    [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width,winSize.height/1.2)];
+    [backgroundNode addChild:canyons1 z:1 parallaxRatio:bgSpeed positionOffset:ccp(winSize.width/2,canyons1.contentSize.height/2)];
+    [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width/2,winSize.height/1.2)];
+    [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(2*cloud1.contentSize.width,winSize.height/1.2)];
     
     // Generate various of types of maze unit
     mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
@@ -107,6 +100,11 @@ double nextMazeSpawn;
       [mazeHolder addChild:maze];
       [mazes addObject:maze];
     }
+    
+    // Create and initialize plushy sprite, and add it to this layer
+    plushy = [CCSprite spriteWithFile: @"Monkey_run_1.png"];
+    plushy.position = ccp(winSize.width * 0.2, winSize.height * 0.6);
+    [self addChild:plushy z:1];
     
     // Add guesture recognizer to this layer
     self.isTouchEnabled = YES;
@@ -159,7 +157,7 @@ double nextMazeSpawn;
       [backgroundNode incrementOffset:ccp(5*cloud.contentSize.width,0) forChild:cloud];
     }
   }
-  NSArray *backgrounds = [NSArray arrayWithObjects:canyons, nil];
+  NSArray *backgrounds = [NSArray arrayWithObjects:canyons1, nil];
   for (CCSprite *background in backgrounds) {
     if ([backgroundNode convertToWorldSpace:background.position].x < -background.contentSize.width) {
       [backgroundNode incrementOffset:ccp(1000,0) forChild:background];
