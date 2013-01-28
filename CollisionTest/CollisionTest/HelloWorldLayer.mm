@@ -564,7 +564,6 @@ double nextMazeSpawn;
     [self addChild:maze z:50];
     [maze runAction:[CCSequence actions:
                      [CCMoveBy actionWithDuration:5 position:ccp(-2*winSize.width, 0)],
-                     [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)],
                      nil]];
     preM = newMaze;
     newMaze = [self getRandomNumberBetweenMin:1 andMax:4];
