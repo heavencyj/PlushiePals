@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		989214CF16B6EBDA00AD5959 /* Monkey_run_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214CE16B6EBDA00AD5959 /* Monkey_run_1.png */; };
+		989214D816B7082F00AD5959 /* unit_canyon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214D716B7082F00AD5959 /* unit_canyon3.png */; };
+		989214DB16B7083900AD5959 /* unit_canyon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214D916B7083900AD5959 /* unit_canyon1.png */; };
+		989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DA16B7083900AD5959 /* unit_canyon4.png */; };
+		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -215,6 +220,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		989214CE16B6EBDA00AD5959 /* Monkey_run_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monkey_run_1.png; sourceTree = "<group>"; };
+		989214D716B7082F00AD5959 /* unit_canyon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon3.png; sourceTree = "<group>"; };
+		989214D916B7083900AD5959 /* unit_canyon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon1.png; sourceTree = "<group>"; };
+		989214DA16B7083900AD5959 /* unit_canyon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon4.png; sourceTree = "<group>"; };
+		989214DD16B7150500AD5959 /* unit_canyon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon2.png; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -724,8 +734,13 @@
 				B6E7D0B716B49580009C732A /* jungle.plist */,
 				B6D2895816B306710050A460 /* Canyon background.png */,
 				B6D2894716B2ECA70050A460 /* Canyons looped.png */,
+				989214D716B7082F00AD5959 /* unit_canyon3.png */,
+				989214D916B7083900AD5959 /* unit_canyon1.png */,
+				989214DA16B7083900AD5959 /* unit_canyon4.png */,
+				989214DD16B7150500AD5959 /* unit_canyon2.png */,
 				B6D2894916B2ED2D0050A460 /* Canyon cloud 1.png */,
 				B6D2894A16B2ED2E0050A460 /* Canyon cloud 2.png */,
+				989214CE16B6EBDA00AD5959 /* Monkey_run_1.png */,
 				B6D2894416B2EBD90050A460 /* monkeyshapes.pes */,
 				B6D2891416B0DAEE0050A460 /* sprites.plist */,
 				B6D2891516B0DAEE0050A460 /* sprites.png */,
@@ -1357,6 +1372,11 @@
 				B6FA5A5F16B6212000127A30 /* chase-hd.plist in Resources */,
 				B6FA5A6016B6212000127A30 /* chase-hd.png in Resources */,
 				B6FA5A6216B622DC00127A30 /* unit canyon.png in Resources */,
+				989214CF16B6EBDA00AD5959 /* Monkey_run_1.png in Resources */,
+				989214D816B7082F00AD5959 /* unit_canyon3.png in Resources */,
+				989214DB16B7083900AD5959 /* unit_canyon1.png in Resources */,
+				989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */,
+				989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
