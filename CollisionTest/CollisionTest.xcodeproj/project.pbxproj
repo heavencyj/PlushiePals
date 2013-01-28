@@ -187,6 +187,31 @@
 		B6D2891916B0DAEE0050A460 /* collisionaudio.caf in Resources */ = {isa = PBXBuildFile; fileRef = B6D2891616B0DAEE0050A460 /* collisionaudio.caf */; };
 		B6D2892216B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892116B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m */; };
 		B6D2892516B0DE750050A460 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */; };
+		B6D2893B16B2455C0050A460 /* GB2Contact.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892D16B2455C0050A460 /* GB2Contact.mm */; };
+		B6D2893C16B2455C0050A460 /* GB2DebugDrawLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2892F16B2455C0050A460 /* GB2DebugDrawLayer.mm */; };
+		B6D2893D16B2455C0050A460 /* GB2Engine.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2893116B2455C0050A460 /* GB2Engine.mm */; };
+		B6D2893E16B2455C0050A460 /* GB2Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2893316B2455C0050A460 /* GB2Node.mm */; };
+		B6D2893F16B2455C0050A460 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2893516B2455C0050A460 /* GB2ShapeCache.mm */; };
+		B6D2894016B2455C0050A460 /* GB2Sprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2893716B2455C0050A460 /* GB2Sprite.mm */; };
+		B6D2894116B2455C0050A460 /* GB2WorldContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2893916B2455C0050A460 /* GB2WorldContactListener.mm */; };
+		B6D2894616B2EBD90050A460 /* monkeyshapes.pes in Resources */ = {isa = PBXBuildFile; fileRef = B6D2894416B2EBD90050A460 /* monkeyshapes.pes */; };
+		B6D2894816B2ECA80050A460 /* Canyons looped.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D2894716B2ECA70050A460 /* Canyons looped.png */; };
+		B6D2894B16B2ED2E0050A460 /* Canyon cloud 1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D2894916B2ED2D0050A460 /* Canyon cloud 1.png */; };
+		B6D2894C16B2ED2E0050A460 /* Canyon cloud 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D2894A16B2ED2E0050A460 /* Canyon cloud 2.png */; };
+		B6D2895316B2EE070050A460 /* Monkey.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6D2895216B2EE060050A460 /* Monkey.mm */; };
+		B6D2895916B306710050A460 /* Canyon background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D2895816B306710050A460 /* Canyon background.png */; };
+		B6E7D0AC16B32A53009C732A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7D0AB16B32A52009C732A /* RootViewController.m */; };
+		B6E7D0B616B4656F009C732A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0B516B4656E009C732A /* Default-568h@2x.png */; };
+		B6E7D0B816B49580009C732A /* jungle.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0B716B49580009C732A /* jungle.plist */; };
+		B6E7D0BA16B49595009C732A /* shapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0B916B49595009C732A /* shapes.plist */; };
+		B6E7D0BC16B495B4009C732A /* jungle.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0BB16B495B3009C732A /* jungle.pvr.ccz */; };
+		B6E7D0C216B5C5BE009C732A /* Canyons_looped2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0C116B5C5BE009C732A /* Canyons_looped2.png */; };
+		B6E7D0C516B5C659009C732A /* Canyons_looped3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0C416B5C659009C732A /* Canyons_looped3.png */; };
+		B6E7D0CC16B5D3A4009C732A /* Floor.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6E7D0CA16B5D3A3009C732A /* Floor.mm */; };
+		B6FA5A5416B61D8100127A30 /* monkeyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6FA5A5116B61D8100127A30 /* monkeyshapes.plist */; };
+		B6FA5A5F16B6212000127A30 /* chase-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6FA5A5D16B6212000127A30 /* chase-hd.plist */; };
+		B6FA5A6016B6212000127A30 /* chase-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FA5A5E16B6212000127A30 /* chase-hd.png */; };
+		B6FA5A6216B622DC00127A30 /* unit canyon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FA5A6116B622DC00127A30 /* unit canyon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -560,6 +585,44 @@
 		B6D2892116B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		B6D2892316B0DE750050A460 /* CCParallaxNode-Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCParallaxNode-Extras.h"; sourceTree = "<group>"; };
 		B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
+		B6D2892B16B2455C0050A460 /* GB2Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2Config.h; sourceTree = "<group>"; };
+		B6D2892C16B2455C0050A460 /* GB2Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2Contact.h; sourceTree = "<group>"; };
+		B6D2892D16B2455C0050A460 /* GB2Contact.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2Contact.mm; sourceTree = "<group>"; };
+		B6D2892E16B2455C0050A460 /* GB2DebugDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2DebugDrawLayer.h; sourceTree = "<group>"; };
+		B6D2892F16B2455C0050A460 /* GB2DebugDrawLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2DebugDrawLayer.mm; sourceTree = "<group>"; };
+		B6D2893016B2455C0050A460 /* GB2Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2Engine.h; sourceTree = "<group>"; };
+		B6D2893116B2455C0050A460 /* GB2Engine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2Engine.mm; sourceTree = "<group>"; };
+		B6D2893216B2455C0050A460 /* GB2Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2Node.h; sourceTree = "<group>"; };
+		B6D2893316B2455C0050A460 /* GB2Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2Node.mm; sourceTree = "<group>"; };
+		B6D2893416B2455C0050A460 /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
+		B6D2893516B2455C0050A460 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
+		B6D2893616B2455C0050A460 /* GB2Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2Sprite.h; sourceTree = "<group>"; };
+		B6D2893716B2455C0050A460 /* GB2Sprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2Sprite.mm; sourceTree = "<group>"; };
+		B6D2893816B2455C0050A460 /* GB2WorldContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2WorldContactListener.h; sourceTree = "<group>"; };
+		B6D2893916B2455C0050A460 /* GB2WorldContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2WorldContactListener.mm; sourceTree = "<group>"; };
+		B6D2893A16B2455C0050A460 /* GMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMath.h; sourceTree = "<group>"; };
+		B6D2894416B2EBD90050A460 /* monkeyshapes.pes */ = {isa = PBXFileReference; lastKnownFileType = file; path = monkeyshapes.pes; sourceTree = "<group>"; };
+		B6D2894716B2ECA70050A460 /* Canyons looped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyons looped.png"; sourceTree = "<group>"; };
+		B6D2894916B2ED2D0050A460 /* Canyon cloud 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon cloud 1.png"; sourceTree = "<group>"; };
+		B6D2894A16B2ED2E0050A460 /* Canyon cloud 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon cloud 2.png"; sourceTree = "<group>"; };
+		B6D2895116B2EE060050A460 /* Monkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monkey.h; sourceTree = "<group>"; };
+		B6D2895216B2EE060050A460 /* Monkey.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Monkey.mm; sourceTree = "<group>"; };
+		B6D2895816B306710050A460 /* Canyon background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon background.png"; sourceTree = "<group>"; };
+		B6E7D0A916B329F9009C732A /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		B6E7D0AA16B32A52009C732A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		B6E7D0AB16B32A52009C732A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		B6E7D0B516B4656E009C732A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B6E7D0B716B49580009C732A /* jungle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jungle.plist; sourceTree = "<group>"; };
+		B6E7D0B916B49595009C732A /* shapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shapes.plist; sourceTree = "<group>"; };
+		B6E7D0BB16B495B3009C732A /* jungle.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = jungle.pvr.ccz; sourceTree = "<group>"; };
+		B6E7D0C116B5C5BE009C732A /* Canyons_looped2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyons_looped2.png; sourceTree = "<group>"; };
+		B6E7D0C416B5C659009C732A /* Canyons_looped3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Canyons_looped3.png; sourceTree = "<group>"; };
+		B6E7D0CA16B5D3A3009C732A /* Floor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Floor.mm; sourceTree = "<group>"; };
+		B6E7D0CB16B5D3A3009C732A /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		B6FA5A5116B61D8100127A30 /* monkeyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeyshapes.plist; sourceTree = "<group>"; };
+		B6FA5A5D16B6212000127A30 /* chase-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "chase-hd.plist"; sourceTree = "<group>"; };
+		B6FA5A5E16B6212000127A30 /* chase-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chase-hd.png"; sourceTree = "<group>"; };
+		B6FA5A6116B622DC00127A30 /* unit canyon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unit canyon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -585,6 +648,7 @@
 		B6D286CF16B0DA750050A460 = {
 			isa = PBXGroup;
 			children = (
+				B6E7D0B516B4656E009C732A /* Default-568h@2x.png */,
 				B6D286F016B0DA750050A460 /* CollisionTest */,
 				B6D286DD16B0DA750050A460 /* Frameworks */,
 				B6D286DB16B0DA750050A460 /* Products */,
@@ -618,6 +682,9 @@
 		B6D286F016B0DA750050A460 /* CollisionTest */ = {
 			isa = PBXGroup;
 			children = (
+				B6E7D0A916B329F9009C732A /* GameConfig.h */,
+				B6E7D0AA16B32A52009C732A /* RootViewController.h */,
+				B6E7D0AB16B32A52009C732A /* RootViewController.m */,
 				B6D2892316B0DE750050A460 /* CCParallaxNode-Extras.h */,
 				B6D2892416B0DE750050A460 /* CCParallaxNode-Extras.m */,
 				B6D2891116B0DAC20050A460 /* MyContactListener.h */,
@@ -632,6 +699,10 @@
 				B6D2890516B0DA7E0050A460 /* GLES-Render.mm */,
 				B6D2890716B0DA7E0050A460 /* PhysicsSprite.h */,
 				B6D2890816B0DA7E0050A460 /* PhysicsSprite.mm */,
+				B6D2895116B2EE060050A460 /* Monkey.h */,
+				B6D2895216B2EE060050A460 /* Monkey.mm */,
+				B6E7D0CB16B5D3A3009C732A /* Floor.h */,
+				B6E7D0CA16B5D3A3009C732A /* Floor.mm */,
 				B6D286F116B0DA750050A460 /* Resources */,
 				B6D2870B16B0DA760050A460 /* libs */,
 				B6D288F716B0DA7D0050A460 /* Supporting Files */,
@@ -642,6 +713,20 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6FA5A6116B622DC00127A30 /* unit canyon.png */,
+				B6FA5A5D16B6212000127A30 /* chase-hd.plist */,
+				B6FA5A5E16B6212000127A30 /* chase-hd.png */,
+				B6FA5A5116B61D8100127A30 /* monkeyshapes.plist */,
+				B6E7D0C416B5C659009C732A /* Canyons_looped3.png */,
+				B6E7D0C116B5C5BE009C732A /* Canyons_looped2.png */,
+				B6E7D0BB16B495B3009C732A /* jungle.pvr.ccz */,
+				B6E7D0B916B49595009C732A /* shapes.plist */,
+				B6E7D0B716B49580009C732A /* jungle.plist */,
+				B6D2895816B306710050A460 /* Canyon background.png */,
+				B6D2894716B2ECA70050A460 /* Canyons looped.png */,
+				B6D2894916B2ED2D0050A460 /* Canyon cloud 1.png */,
+				B6D2894A16B2ED2E0050A460 /* Canyon cloud 2.png */,
+				B6D2894416B2EBD90050A460 /* monkeyshapes.pes */,
 				B6D2891416B0DAEE0050A460 /* sprites.plist */,
 				B6D2891516B0DAEE0050A460 /* sprites.png */,
 				B6D2891616B0DAEE0050A460 /* collisionaudio.caf */,
@@ -666,6 +751,7 @@
 		B6D2870B16B0DA760050A460 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				B6D2892A16B2455C0050A460 /* GBox2D */,
 				B6D2882216B0DA7A0050A460 /* LICENSE_cocos2d.txt */,
 				B6D2883116B0DA7B0050A460 /* LICENSE_CocosDenshion.txt */,
 				B6D2886316B0DA7B0050A460 /* LICENSE_Kazmath.txt */,
@@ -1166,6 +1252,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B6D2892A16B2455C0050A460 /* GBox2D */ = {
+			isa = PBXGroup;
+			children = (
+				B6D2892B16B2455C0050A460 /* GB2Config.h */,
+				B6D2892C16B2455C0050A460 /* GB2Contact.h */,
+				B6D2892D16B2455C0050A460 /* GB2Contact.mm */,
+				B6D2892E16B2455C0050A460 /* GB2DebugDrawLayer.h */,
+				B6D2892F16B2455C0050A460 /* GB2DebugDrawLayer.mm */,
+				B6D2893016B2455C0050A460 /* GB2Engine.h */,
+				B6D2893116B2455C0050A460 /* GB2Engine.mm */,
+				B6D2893216B2455C0050A460 /* GB2Node.h */,
+				B6D2893316B2455C0050A460 /* GB2Node.mm */,
+				B6D2893416B2455C0050A460 /* GB2ShapeCache.h */,
+				B6D2893516B2455C0050A460 /* GB2ShapeCache.mm */,
+				B6D2893616B2455C0050A460 /* GB2Sprite.h */,
+				B6D2893716B2455C0050A460 /* GB2Sprite.mm */,
+				B6D2893816B2455C0050A460 /* GB2WorldContactListener.h */,
+				B6D2893916B2455C0050A460 /* GB2WorldContactListener.mm */,
+				B6D2893A16B2455C0050A460 /* GMath.h */,
+			);
+			path = GBox2D;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1233,6 +1342,21 @@
 				B6D2891716B0DAEE0050A460 /* sprites.plist in Resources */,
 				B6D2891816B0DAEE0050A460 /* sprites.png in Resources */,
 				B6D2891916B0DAEE0050A460 /* collisionaudio.caf in Resources */,
+				B6D2894616B2EBD90050A460 /* monkeyshapes.pes in Resources */,
+				B6D2894816B2ECA80050A460 /* Canyons looped.png in Resources */,
+				B6D2894B16B2ED2E0050A460 /* Canyon cloud 1.png in Resources */,
+				B6D2894C16B2ED2E0050A460 /* Canyon cloud 2.png in Resources */,
+				B6D2895916B306710050A460 /* Canyon background.png in Resources */,
+				B6E7D0B616B4656F009C732A /* Default-568h@2x.png in Resources */,
+				B6E7D0B816B49580009C732A /* jungle.plist in Resources */,
+				B6E7D0BA16B49595009C732A /* shapes.plist in Resources */,
+				B6E7D0BC16B495B4009C732A /* jungle.pvr.ccz in Resources */,
+				B6E7D0C216B5C5BE009C732A /* Canyons_looped2.png in Resources */,
+				B6E7D0C516B5C659009C732A /* Canyons_looped3.png in Resources */,
+				B6FA5A5416B61D8100127A30 /* monkeyshapes.plist in Resources */,
+				B6FA5A5F16B6212000127A30 /* chase-hd.plist in Resources */,
+				B6FA5A6016B6212000127A30 /* chase-hd.png in Resources */,
+				B6FA5A6216B622DC00127A30 /* unit canyon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,6 +1521,16 @@
 				B6D2891316B0DAC20050A460 /* MyContactListener.mm in Sources */,
 				B6D2892216B0DBFF0050A460 /* CCNode+SFGestureRecognizers.m in Sources */,
 				B6D2892516B0DE750050A460 /* CCParallaxNode-Extras.m in Sources */,
+				B6D2893B16B2455C0050A460 /* GB2Contact.mm in Sources */,
+				B6D2893C16B2455C0050A460 /* GB2DebugDrawLayer.mm in Sources */,
+				B6D2893D16B2455C0050A460 /* GB2Engine.mm in Sources */,
+				B6D2893E16B2455C0050A460 /* GB2Node.mm in Sources */,
+				B6D2893F16B2455C0050A460 /* GB2ShapeCache.mm in Sources */,
+				B6D2894016B2455C0050A460 /* GB2Sprite.mm in Sources */,
+				B6D2894116B2455C0050A460 /* GB2WorldContactListener.mm in Sources */,
+				B6D2895316B2EE070050A460 /* Monkey.mm in Sources */,
+				B6E7D0AC16B32A53009C732A /* RootViewController.m in Sources */,
+				B6E7D0CC16B5D3A4009C732A /* Floor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1502,6 +1636,7 @@
 				B6D2891016B0DA7E0050A460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

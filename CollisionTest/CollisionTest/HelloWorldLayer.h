@@ -16,14 +16,25 @@
 #import "MyContactListener.h"
 #import "SimpleAudioEngine.h"
 
+@class Monkey;
+@class Floor;
+
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,UIGestureRecognizerDelegate>
 {
-    CCSprite *_plushy;
-    CCParallaxNode *_backgroundNode;
+    CCSprite *_background;
     CCSprite *_cloud1;
     CCSprite *_cloud2;
     CCSprite *_canyons;
+    CCSprite *_canyons2;
+    CCSpriteBatchNode* _objectLayer;
+    CCSprite *_canyonunit;
+    
+    CCParallaxNode *_backgroundNode;
+    CCParallaxNode *_obstacleNode;
+    
+    Monkey *_monkey;
+    Floor *_floor;
     
     CCArray *_mazes;
     int _nextMaze;
@@ -33,12 +44,10 @@
     b2World *_world;
     GLESDebugDraw *_debugDraw;
     MyContactListener *_contactListener;
-    CCSpriteBatchNode *_spriteSheet;
-    CCSprite *_monkey;
     CCAction *_walking;
 }
 
-@property (nonatomic, retain) CCSpriteBatchNode *spriteSheet;
+@property (nonatomic, retain) CCSpriteBatchNode *objectLayer;
 @property (nonatomic, retain) CCAction *walkAction;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

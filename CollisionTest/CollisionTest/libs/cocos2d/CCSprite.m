@@ -867,6 +867,8 @@
 	unflippedOffsetPositionFromCenter_ = frame.offset;
 
 	CCTexture2D *newTexture = [frame texture];
+    
+    NSAssert(newTexture!=nil, @"2d texture is nil");
 	// update texture before updating texture rect
 	if ( newTexture.name != texture_.name )
 		[self setTexture: newTexture];

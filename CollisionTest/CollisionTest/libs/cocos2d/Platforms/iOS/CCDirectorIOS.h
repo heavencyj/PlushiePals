@@ -34,6 +34,83 @@
 
 @class CCTouchDispatcher;
 
+/** @typedef ccDeviceOrientation
+ Possible device orientations
+ */
+typedef enum {
+	/// Device oriented vertically, home button on the bottom
+	kCCDeviceOrientationPortrait = UIDeviceOrientationPortrait,
+	/// Device oriented vertically, home button on the top
+    kCCDeviceOrientationPortraitUpsideDown = UIDeviceOrientationPortraitUpsideDown,
+	/// Device oriented horizontally, home button on the right
+    kCCDeviceOrientationLandscapeLeft = UIDeviceOrientationLandscapeLeft,
+	/// Device oriented horizontally, home button on the left
+    kCCDeviceOrientationLandscapeRight = UIDeviceOrientationLandscapeRight,
+	
+	// Backward compatibility stuff
+	CCDeviceOrientationPortrait = kCCDeviceOrientationPortrait,
+	CCDeviceOrientationPortraitUpsideDown = kCCDeviceOrientationPortraitUpsideDown,
+	CCDeviceOrientationLandscapeLeft = kCCDeviceOrientationLandscapeLeft,
+	CCDeviceOrientationLandscapeRight = kCCDeviceOrientationLandscapeRight,
+} ccDeviceOrientation;
+
+/** @typedef ccDirectorType
+ Possible Director Types.
+ @since v0.8.2
+ */
+typedef enum {
+	/** Will use a Director that triggers the main loop from an NSTimer object
+	 *
+	 * Features and Limitations:
+	 * - Integrates OK with UIKit objects
+	 * - It the slowest director
+	 * - The invertal update is customizable from 1 to 60
+	 */
+	kCCDirectorTypeNSTimer,
+	
+	/** will use a Director that triggers the main loop from a custom main loop.
+	 *
+	 * Features and Limitations:
+	 * - Faster than NSTimer Director
+	 * - It doesn't integrate well with UIKit objecgts
+	 * - The interval update can't be customizable
+	 */
+	kCCDirectorTypeMainLoop,
+	
+	/** Will use a Director that triggers the main loop from a thread, but the main loop will be executed on the main thread.
+	 *
+	 * Features and Limitations:
+	 * - Faster than NSTimer Director
+	 * - It doesn't integrate well with UIKit objecgts
+	 * - The interval update can't be customizable
+	 */
+	kCCDirectorTypeThreadMainLoop,
+	
+	/** Will use a Director that synchronizes timers with the refresh rate of the display.
+	 *
+	 * Features and Limitations:
+	 * - Faster than NSTimer Director
+	 * - Only available on 3.1+
+	 * - Scheduled timers & drawing are synchronizes with the refresh rate of the display
+	 * - Integrates OK with UIKit objects
+	 * - The interval update can be 1/60, 1/30, 1/15
+	 */
+	kCCDirectorTypeDisplayLink,
+	
+	/** Default director is the NSTimer directory */
+	kCCDirectorTypeDefault = kCCDirectorTypeNSTimer,
+	
+	// backward compatibility stuff
+	CCDirectorTypeNSTimer = kCCDirectorTypeNSTimer,
+	CCDirectorTypeMainLoop = kCCDirectorTypeMainLoop,
+	CCDirectorTypeThreadMainLoop = kCCDirectorTypeThreadMainLoop,
+	CCDirectorTypeDisplayLink = kCCDirectorTypeDisplayLink,
+	CCDirectorTypeDefault = kCCDirectorTypeDefault,
+	
+	
+} ccDirectorType;
+
+
 /** CCDirector extensions for iPhone
  */
 @interface CCDirector (iOSExtension)
