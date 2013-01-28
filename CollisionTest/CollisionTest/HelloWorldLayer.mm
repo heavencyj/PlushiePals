@@ -64,8 +64,7 @@
         
         // Loading physics shapes
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"monkeyshapes.plist"];
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeyrun.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"chase-hd.plist"];
         
         // 1) Create the CCParallaxNode
         _backgroundNode = [CCParallaxNode node];
@@ -92,33 +91,31 @@
         
         
         // Adding object layer
-        _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeyrun.png" capacity:150];
+        _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"chase-hd.png" capacity:150];
         [self addChild:_objectLayer z:20];
-        //CCSprite *unitcanyon= [CCSprite spriteWithSpriteFrameName:@"Monkey run 1.png"];
-        //[self addChild:unitcanyon];
         
         // Setup floor front layer, physics position is 0/0 by default
 //        _obstacleNode = [CCParallaxNode node];
-//        [self addChild:_obstacleNode z:20];
+//        [self addChild:_obstacleNode z:30];
         
 //        _canyonunit = [CCSprite spriteWithSpriteFrameName:@"unit canyon.png"];
+//        _canyonunit.position = ccp(240,10);
+//        [_objectLayer addChild:_canyonunit];
 //        [self addBoxBodyForSprite:_canyonunit];
 //        CGPoint canyonUnitSpeed = ccp(0.5, 0.5);
 //        [_obstacleNode addChild:_canyonunit z:30 parallaxRatio:canyonUnitSpeed positionOffset:ccp(200, 200)];
         
         //[_objectLayer addChild:[[Floor floorSprite] ccNode] z:50];
-        //_floor = [Floor floorSprite];
-        //[_obstacleNode addChild:[_floor2 ccNode] z:20 parallaxRatio:canyonUnitSpeed positionOffset:ccp(400, 100)];
-        //[_objectLayer addChild:[_floor ccNode] z:30];
-        //[_floor setPhysicsPosition:b2Vec2FromCC(240,100)];
+        _floor = [Floor floorSprite];
+        [_objectLayer addChild:[_floor ccNode] z:30];
+        [_floor setPhysicsPosition:b2Vec2FromCC(240,10)];
         
 //      Add monkey
         _monkey = [[[Monkey alloc] initWithGameLayer:self] autorelease];
         [_objectLayer addChild:[_monkey ccNode] z:10000];
-        [_monkey setPhysicsPosition:b2Vec2FromCC(240,50)];
+        [_monkey setPhysicsPosition:b2Vec2FromCC(10,20)];
         
         [self scheduleUpdate];
-        
         
         // Box2D
 //        b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
@@ -397,48 +394,47 @@
     //    }
 }
 
-//- (void)addBoxBodyForSprite:(CCSprite *)sprite {
-//    
-//    b2BodyDef spriteBodyDef;
-//    spriteBodyDef.type = b2_dynamicBody;
-//    spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
-//    spriteBodyDef.userData = sprite;
-//    b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
-//    
-//    b2PolygonShape spriteShape;
-//    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
-//     sprite.contentSize.height/PTM_RATIO/2);
-////    if (sprite.tag == 1) {
-////        int num = 6;
-////        b2Vec2 verts[] = {b2Vec2(4.5f / PTM_RATIO, -17.7f / PTM_RATIO),
-////            b2Vec2(20.5f / PTM_RATIO, 7.2f / PTM_RATIO),
-////            b2Vec2(22.8f / PTM_RATIO, 29.5f / PTM_RATIO),
-////            b2Vec2(-24.7f / PTM_RATIO, 31.0f / PTM_RATIO),
-////            b2Vec2(-20.2f / PTM_RATIO, 4.7f / PTM_RATIO),
-////            b2Vec2(-11.7f / PTM_RATIO, -17.5f / PTM_RATIO)};
-////        spriteShape.Set(verts, num);
-////    } else {
-////        // Do the same thing as the above, but use the car data this time
-////        int num = 7;
-////        b2Vec2 verts[] = {b2Vec2(-11.8f / PTM_RATIO, -24.5f / PTM_RATIO),
-////            b2Vec2(11.7f / PTM_RATIO, -24.0f / PTM_RATIO),
-////            b2Vec2(29.2f / PTM_RATIO, -14.0f / PTM_RATIO),
-////            b2Vec2(28.7f / PTM_RATIO, -0.7f / PTM_RATIO),
-////            b2Vec2(8.0f / PTM_RATIO, 18.2f / PTM_RATIO),
-////            b2Vec2(-29.0f / PTM_RATIO, 18.7f / PTM_RATIO),
-////            b2Vec2(-26.3f / PTM_RATIO, -12.2f / PTM_RATIO)};
-////        spriteShape.Set(verts, num);
-////    }
-//    
-//    b2FixtureDef spriteShapeDef;
-//    spriteShapeDef.shape = &spriteShape;
-//    spriteShapeDef.density = 10.0;
-//    spriteShapeDef.isSensor = true;
-//    
-//    spriteBody->CreateFixture(&spriteShapeDef);
-//    
-//}
-
+- (void)addBoxBodyForSprite:(CCSprite *)sprite {
+    
+    b2BodyDef spriteBodyDef;
+    spriteBodyDef.type = b2_dynamicBody;
+    spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
+    spriteBodyDef.userData = sprite;
+    b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
+    
+    b2PolygonShape spriteShape;
+    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
+     sprite.contentSize.height/PTM_RATIO/2);
+//    if (sprite.tag == 1) {
+//        int num = 6;
+//        b2Vec2 verts[] = {b2Vec2(4.5f / PTM_RATIO, -17.7f / PTM_RATIO),
+//            b2Vec2(20.5f / PTM_RATIO, 7.2f / PTM_RATIO),
+//            b2Vec2(22.8f / PTM_RATIO, 29.5f / PTM_RATIO),
+//            b2Vec2(-24.7f / PTM_RATIO, 31.0f / PTM_RATIO),
+//            b2Vec2(-20.2f / PTM_RATIO, 4.7f / PTM_RATIO),
+//            b2Vec2(-11.7f / PTM_RATIO, -17.5f / PTM_RATIO)};
+//        spriteShape.Set(verts, num);
+//    } else {
+//        // Do the same thing as the above, but use the car data this time
+//        int num = 7;
+//        b2Vec2 verts[] = {b2Vec2(-11.8f / PTM_RATIO, -24.5f / PTM_RATIO),
+//            b2Vec2(11.7f / PTM_RATIO, -24.0f / PTM_RATIO),
+//            b2Vec2(29.2f / PTM_RATIO, -14.0f / PTM_RATIO),
+//            b2Vec2(28.7f / PTM_RATIO, -0.7f / PTM_RATIO),
+//            b2Vec2(8.0f / PTM_RATIO, 18.2f / PTM_RATIO),
+//            b2Vec2(-29.0f / PTM_RATIO, 18.7f / PTM_RATIO),
+//            b2Vec2(-26.3f / PTM_RATIO, -12.2f / PTM_RATIO)};
+//        spriteShape.Set(verts, num);
+//    }
+    
+    b2FixtureDef spriteShapeDef;
+    spriteShapeDef.shape = &spriteShape;
+    spriteShapeDef.density = 10.0;
+    spriteShapeDef.isSensor = true;
+    
+    spriteBody->CreateFixture(&spriteShapeDef);
+    
+}
 
 // Add new method
 - (void)setInvisible:(CCNode *)node {
