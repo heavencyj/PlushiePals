@@ -563,10 +563,11 @@ double nextMazeSpawn;
     
     [self addChild:maze z:50];
     [maze runAction:[CCSequence actions:
-                     [CCMoveBy actionWithDuration:5 position:ccp(-2*winSize.width, 0)],
+                     [CCMoveBy actionWithDuration:5 position:ccp(-2*winSize.width, 0)], 
                      nil]];
     preM = newMaze;
-    newMaze = [self getRandomNumberBetweenMin:1 andMax:4];
+    if (i > 4) newMaze = [self getRandomNumberBetweenMin:3 andMax:4];
+    else newMaze = [self getRandomNumberBetweenMin:1 andMax:4];
     i++;
   }
   duration = i;

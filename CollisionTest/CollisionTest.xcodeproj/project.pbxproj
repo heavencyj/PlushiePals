@@ -12,6 +12,7 @@
 		989214DB16B7083900AD5959 /* unit_canyon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214D916B7083900AD5959 /* unit_canyon1.png */; };
 		989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DA16B7083900AD5959 /* unit_canyon4.png */; };
 		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
+		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -225,6 +226,7 @@
 		989214D916B7083900AD5959 /* unit_canyon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon1.png; sourceTree = "<group>"; };
 		989214DA16B7083900AD5959 /* unit_canyon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon4.png; sourceTree = "<group>"; };
 		989214DD16B7150500AD5959 /* unit_canyon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon2.png; sourceTree = "<group>"; };
+		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -726,6 +728,7 @@
 				B6FA5A6116B622DC00127A30 /* unit canyon.png */,
 				B6FA5A5D16B6212000127A30 /* chase-hd.plist */,
 				B6FA5A5E16B6212000127A30 /* chase-hd.png */,
+				989214DF16B71CE900AD5959 /* Plushy Pals.png */,
 				B6FA5A5116B61D8100127A30 /* monkeyshapes.plist */,
 				B6E7D0C416B5C659009C732A /* Canyons_looped3.png */,
 				B6E7D0C116B5C5BE009C732A /* Canyons_looped2.png */,
@@ -1377,6 +1380,7 @@
 				989214DB16B7083900AD5959 /* unit_canyon1.png in Resources */,
 				989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */,
 				989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */,
+				989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
