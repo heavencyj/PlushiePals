@@ -48,6 +48,9 @@
         bodyDef.angle = 0;
         body = world->CreateBody(&bodyDef);
         
+//        if ([@"unit canyon long" isEqualToString:shape]) {
+//            body->SetGravityScale(0); //Added so the object will not obey gravity
+//        }
         // set user data and retain self
         body->SetUserData([self retain]);
         

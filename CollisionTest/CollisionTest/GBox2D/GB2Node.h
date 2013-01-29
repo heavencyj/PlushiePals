@@ -32,13 +32,11 @@
 
 @interface GB2Node : NSObject
 {
-@protected
     b2Body* body;       //!< pointer to the box2d's body
     b2World *world;     //!< pointer to the world object
     int objectTag;      //!< tag might be used to query an object
     CCNode *ccNode;     //!< reference to the ccNode, retained
     bool deleteLater;   //!< flag to delete the object on update phase
-@protected
 }
 
 @property (nonatomic, retain) CCNode *ccNode;

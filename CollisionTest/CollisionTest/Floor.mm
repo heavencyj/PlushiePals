@@ -31,7 +31,9 @@
 
 +(Floor*) floorSprite
 {
-    return [[[self alloc] initWithDynamicBody:@" unit canyon long" spriteFrameName:@"unit canyon.png"] autorelease];
+    return [[[self alloc] initWithKinematicBody:@"unit canyon long" spriteFrameName:@"unit canyon.png"] autorelease];
 }
+
+
 
 @end

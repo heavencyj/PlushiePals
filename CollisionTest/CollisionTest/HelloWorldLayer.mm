@@ -52,7 +52,7 @@ double nextMazeSpawn;
 	return scene;
 }
 
-// on "init" you need to initialize your instance
+// On "init" you need to initialize your instance
 -(id) init
 {
 	// always call "super" init
@@ -466,48 +466,25 @@ double nextMazeSpawn;
   //    }
 }
 
-//- (void)addBoxBodyForSprite:(CCSprite *)sprite {
-//
-//    b2BodyDef spriteBodyDef;
-//    spriteBodyDef.type = b2_dynamicBody;
-//    spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
-//    spriteBodyDef.userData = sprite;
-//    b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
-//
-//    b2PolygonShape spriteShape;
-//    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
-//     sprite.contentSize.height/PTM_RATIO/2);
-////    if (sprite.tag == 1) {
-////        int num = 6;
-////        b2Vec2 verts[] = {b2Vec2(4.5f / PTM_RATIO, -17.7f / PTM_RATIO),
-////            b2Vec2(20.5f / PTM_RATIO, 7.2f / PTM_RATIO),
-////            b2Vec2(22.8f / PTM_RATIO, 29.5f / PTM_RATIO),
-////            b2Vec2(-24.7f / PTM_RATIO, 31.0f / PTM_RATIO),
-////            b2Vec2(-20.2f / PTM_RATIO, 4.7f / PTM_RATIO),
-////            b2Vec2(-11.7f / PTM_RATIO, -17.5f / PTM_RATIO)};
-////        spriteShape.Set(verts, num);
-////    } else {
-////        // Do the same thing as the above, but use the car data this time
-////        int num = 7;
-////        b2Vec2 verts[] = {b2Vec2(-11.8f / PTM_RATIO, -24.5f / PTM_RATIO),
-////            b2Vec2(11.7f / PTM_RATIO, -24.0f / PTM_RATIO),
-////            b2Vec2(29.2f / PTM_RATIO, -14.0f / PTM_RATIO),
-////            b2Vec2(28.7f / PTM_RATIO, -0.7f / PTM_RATIO),
-////            b2Vec2(8.0f / PTM_RATIO, 18.2f / PTM_RATIO),
-////            b2Vec2(-29.0f / PTM_RATIO, 18.7f / PTM_RATIO),
-////            b2Vec2(-26.3f / PTM_RATIO, -12.2f / PTM_RATIO)};
-////        spriteShape.Set(verts, num);
-////    }
-//
-//    b2FixtureDef spriteShapeDef;
-//    spriteShapeDef.shape = &spriteShape;
-//    spriteShapeDef.density = 10.0;
-//    spriteShapeDef.isSensor = true;
-//
-//    spriteBody->CreateFixture(&spriteShapeDef);
-//
-//}
-
+- (void)addBoxBodyForSprite:(CCSprite *)sprite {
+    
+    b2BodyDef spriteBodyDef;
+    spriteBodyDef.type = b2_staticBody;
+    spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
+    spriteBodyDef.userData = sprite;
+    b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
+    
+    b2PolygonShape spriteShape;
+    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
+     sprite.contentSize.height/PTM_RATIO/2);
+    
+    b2FixtureDef spriteShapeDef;
+    spriteShapeDef.shape = &spriteShape;
+    spriteShapeDef.density = 10.0;
+    spriteShapeDef.isSensor = true;
+    
+    spriteBody->CreateFixture(&spriteShapeDef);
+}
 
 // Add new method
 - (void)setInvisible:(CCNode *)node {
