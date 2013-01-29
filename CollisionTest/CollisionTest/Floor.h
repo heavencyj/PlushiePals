@@ -34,6 +34,6 @@
 {
 }
 
-+(Floor*) floorSprite;
++(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
 
 @end    

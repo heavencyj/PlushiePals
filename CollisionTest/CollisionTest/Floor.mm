@@ -29,9 +29,9 @@
 
 @implementation Floor
 
-+(Floor*) floorSprite
++(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName
 {
-    return [[[self alloc] initWithKinematicBody:@"unit canyon long" spriteFrameName:@"unit canyon.png"] autorelease];
+    return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
 

@@ -93,4 +93,5 @@
  */
 -(void) setDisplayFrameNamed:(NSString*)name;
 
+
 @end
