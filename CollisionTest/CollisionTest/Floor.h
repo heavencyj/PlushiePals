@@ -35,5 +35,5 @@
 }
 
 +(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
-
+-(void)turn:(float)atAngle;
 @end    

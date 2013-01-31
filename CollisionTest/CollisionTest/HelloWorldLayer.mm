@@ -398,8 +398,10 @@ double nextMazeSpawn;
 
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
-    [[plushy ccNode]  stopAllActions];
-    [[plushy ccNode] runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
+  [plushy jump];
+
+//    [[plushy ccNode]  stopAllActions];
+//    [[plushy ccNode] runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer

@@ -27,5 +27,6 @@
  * @param gl game layer
  */
 -(id) initWithGameLayer:(HelloWorldLayer*)gl;
+-(void) jump;
 
 @end

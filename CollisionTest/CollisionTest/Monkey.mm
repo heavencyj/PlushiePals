@@ -10,6 +10,7 @@
 #import "HelloWorldLayer.h"
 
 #define ANIM_SPEED 0.3f 
+#define JUMP_IMPULSE 6.0f
 
 @implementation Monkey
 
@@ -54,6 +55,13 @@
     // running
     frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
     [self setDisplayFrameNamed:frameName];
+}
+
+-(void) jump
+{
+  float impulseFactor = 1.0;  
+  [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
+                     point:[self worldCenter]];
 }
 
 

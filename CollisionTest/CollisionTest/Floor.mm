@@ -34,6 +34,14 @@
     return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
+-(void)turn:(float)atAngle
+{
+  float totalRotation = atAngle;
+  float desiredAngularVelocity = totalRotation * 60;
+  float impulse = body->GetInertia() * desiredAngularVelocity;// disregard time factor
+  body->ApplyAngularImpulse( impulse );
+}
+
 
 
 @end
