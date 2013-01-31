@@ -85,15 +85,15 @@
             <key>unit_canyon2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,2},{150,52}}</string>
+                <string>{{124,2},{52,150}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{150,52}}</string>
+                <string>{{0,0},{52,150}}</string>
                 <key>sourceSize</key>
-                <string>{150,52}</string>
+                <string>{52,150}</string>
             </dict>
             <key>unit_canyon3.png</key>
             <dict>
@@ -131,7 +131,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:98b6d26936c27406c1f73ac2a370c0f9$</string>
+            <string>$TexturePacker:SmartUpdate:5db1ef6b619df4ae308e70e447271d15$</string>
             <key>textureFileName</key>
             <string>plushypals.png</string>
         </dict>

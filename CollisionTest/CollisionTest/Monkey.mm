@@ -8,6 +8,7 @@
 
 #import "Monkey.h"
 #import "HelloWorldLayer.h"
+#import "GB2Contact.h"
 
 #define ANIM_SPEED 0.3f 
 #define JUMP_IMPULSE 6.0f
@@ -18,6 +19,8 @@
 {
     self = [super initWithDynamicBody:@"Monkey run 1"
                       spriteFrameName:@"Monkey run 1.png"];
+//    self = [super initWithKinematicBody:@"Monkey run 1"
+//                      spriteFrameName:@"Monkey run 1.png"];
     
     if(self)
     {
@@ -62,6 +65,16 @@
   float impulseFactor = 1.0;  
   [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
                      point:[self worldCenter]];
+}
+
+-(void) beginContactWithFloor:(GB2Contact *)contact
+{
+    //NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
+//    if([fixtureId isEqualToString:@"push_left"])
+//    {
+//        numPushLeftContacts++;
+//    }
 }
 
 
