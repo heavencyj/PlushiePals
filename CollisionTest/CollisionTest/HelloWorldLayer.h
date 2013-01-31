@@ -34,7 +34,7 @@
     CCParallaxNode *_obstacleNode;
     
     Monkey *_monkey;
-    Floor *_floor;
+    //Floor *_mazeObj;
     
     CCArray *_mazes;
     int _nextMaze;
