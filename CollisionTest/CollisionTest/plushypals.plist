@@ -4,20 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Monkey jump down.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{365,2},{120,174}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{120,174}}</string>
-                <key>sourceSize</key>
-                <string>{120,174}</string>
-            </dict>
-            <key>Monkey jump up.png</key>
+            <key>Monkey jump 1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{120,187}}</string>
@@ -29,6 +16,19 @@
                 <string>{{0,0},{120,187}}</string>
                 <key>sourceSize</key>
                 <string>{120,187}</string>
+            </dict>
+            <key>Monkey jump 2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{365,2},{120,174}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{120,174}}</string>
+                <key>sourceSize</key>
+                <string>{120,174}</string>
             </dict>
             <key>Monkey run 1.png</key>
             <dict>
@@ -131,7 +131,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5db1ef6b619df4ae308e70e447271d15$</string>
+            <string>$TexturePacker:SmartUpdate:65d4dc6c334e8466fcda49f6a9db99e4$</string>
             <key>textureFileName</key>
             <string>plushypals.png</string>
         </dict>
