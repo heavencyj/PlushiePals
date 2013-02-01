@@ -15,6 +15,7 @@
 #import "Floor.h"
 #import "Object.h"
 #import "GB2DebugDrawLayer.h"
+#import "GameOverScene.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -172,6 +173,15 @@ Floor *lastMaze;
   
   // Add objects to path
   [self nextObject:dt];
+  
+  if ([plushy ccNode].position.y < 0)
+  {
+    [[GB2Engine sharedInstance] deleteAllObjects];
+    GameOverScene *gameOverScene = [GameOverScene node];
+    [gameOverScene.layer.label setString:@"Gameover"];
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+  }
+    //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
 -(void)generatePath

@@ -13,6 +13,7 @@
 		989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DA16B7083900AD5959 /* unit_canyon4.png */; };
 		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
 		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
+		98DC444F16BC4CAD0069D3CD /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */; };
 		B608E4FE16BBA1D000994E91 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FC16BBA1D000994E91 /* plushypals.plist */; };
 		B608E4FF16BBA1D000994E91 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FD16BBA1D000994E91 /* plushypals.png */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
@@ -231,6 +232,8 @@
 		989214DA16B7083900AD5959 /* unit_canyon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon4.png; sourceTree = "<group>"; };
 		989214DD16B7150500AD5959 /* unit_canyon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon2.png; sourceTree = "<group>"; };
 		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
+		98DC444D16BC4CAD0069D3CD /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOverScene.mm; sourceTree = "<group>"; };
 		B608E4FC16BBA1D000994E91 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
 		B608E4FD16BBA1D000994E91 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
@@ -716,6 +719,8 @@
 				B6D288FC16B0DA7E0050A460 /* AppDelegate.mm */,
 				B6D288FE16B0DA7E0050A460 /* HelloWorldLayer.h */,
 				B6D288FF16B0DA7E0050A460 /* HelloWorldLayer.mm */,
+				98DC444D16BC4CAD0069D3CD /* GameOverScene.h */,
+				98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */,
 				B6D2890116B0DA7E0050A460 /* IntroLayer.h */,
 				B6D2890216B0DA7E0050A460 /* IntroLayer.mm */,
 				B6D2890416B0DA7E0050A460 /* GLES-Render.h */,
@@ -1575,6 +1580,7 @@
 				B6E7D0AC16B32A53009C732A /* RootViewController.m in Sources */,
 				B6E7D0CC16B5D3A4009C732A /* Floor.mm in Sources */,
 				B608E50216BBA32C00994E91 /* Object.mm in Sources */,
+				98DC444F16BC4CAD0069D3CD /* GameOverScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
