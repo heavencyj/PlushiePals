@@ -105,9 +105,9 @@ double nextMazeSpawn;
         
         // Add monkey
         plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
-        [_objectLayer addChild:[plushy ccNode] z:10000];
-        [plushy setPhysicsPosition:b2Vec2FromCC(240,90)];
-        //[plushy setLinearVelocity:b2Vec2(0.8,0)];
+        [_objectLayer addChild:[plushy ccNode] z:50];
+        [plushy setPhysicsPosition:b2Vec2FromCC(100, MAZE_LOW+40)];
+        [plushy setLinearVelocity:b2Vec2(1,0)];
         
         // Initializing variables
         nextMazeSpawn = 0;
@@ -199,7 +199,7 @@ double nextMazeSpawn;
             [_mazeObj setPhysicsPosition:b2Vec2FromCC([lastMazeObj ccNode].position.x+75, MAZE_LOW)];
         }
         
-        [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
+        [_mazeObj setLinearVelocity:b2Vec2(0,0)];
         [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
         [_mazes addObject:_mazeObj];
         lastMazeObj = _mazeObj;

@@ -98,7 +98,7 @@ bool running = false;
 
 -(void) beginContactWithFloor:(GB2Contact *)contact
 {
-    //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
+    NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
     
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     if([fixtureId isEqualToString:@"torso"])

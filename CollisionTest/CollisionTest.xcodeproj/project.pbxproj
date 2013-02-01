@@ -13,9 +13,9 @@
 		989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DA16B7083900AD5959 /* unit_canyon4.png */; };
 		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
 		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
-		B61AC7EB16BA320A00A18443 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7E816BA320A00A18443 /* plushyshapes.plist */; };
 		B61AC7EC16BA320A00A18443 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7E916BA320A00A18443 /* plushypals.plist */; };
 		B61AC7ED16BA320A00A18443 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7EA16BA320A00A18443 /* plushypals.png */; };
+		B61AC7F716BA44B400A18443 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7F616BA44B400A18443 /* plushyshapes.plist */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -230,10 +230,10 @@
 		989214DA16B7083900AD5959 /* unit_canyon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon4.png; sourceTree = "<group>"; };
 		989214DD16B7150500AD5959 /* unit_canyon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon2.png; sourceTree = "<group>"; };
 		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
-		B61AC7E816BA320A00A18443 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B61AC7E916BA320A00A18443 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
 		B61AC7EA16BA320A00A18443 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B61AC7F616BA44B400A18443 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -733,7 +733,7 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B61AC7E816BA320A00A18443 /* plushyshapes.plist */,
+				B61AC7F616BA44B400A18443 /* plushyshapes.plist */,
 				B61AC7E916BA320A00A18443 /* plushypals.plist */,
 				B61AC7EA16BA320A00A18443 /* plushypals.png */,
 				B6FA5A6116B622DC00127A30 /* unit canyon.png */,
@@ -1392,9 +1392,9 @@
 				989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */,
 				989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */,
 				989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */,
-				B61AC7EB16BA320A00A18443 /* plushyshapes.plist in Resources */,
 				B61AC7EC16BA320A00A18443 /* plushypals.plist in Resources */,
 				B61AC7ED16BA320A00A18443 /* plushypals.png in Resources */,
+				B61AC7F716BA44B400A18443 /* plushyshapes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
