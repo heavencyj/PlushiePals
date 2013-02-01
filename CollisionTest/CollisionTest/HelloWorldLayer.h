@@ -18,6 +18,7 @@
 
 @class Monkey;
 @class Floor;
+@class Object;
 
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,UIGestureRecognizerDelegate>
@@ -34,7 +35,10 @@
     CCParallaxNode *_obstacleNode;
     
     Monkey *_monkey;
-    //Floor *_mazeObj;
+
+    ccTime nextObject;
+    ccTime objDelay;
+    Object *obj;
     
     CCArray *_mazes;
     int _nextMaze;

@@ -13,9 +13,10 @@
 		989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DA16B7083900AD5959 /* unit_canyon4.png */; };
 		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
 		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
-		B61AC7EC16BA320A00A18443 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7E916BA320A00A18443 /* plushypals.plist */; };
-		B61AC7ED16BA320A00A18443 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7EA16BA320A00A18443 /* plushypals.png */; };
-		B61AC7F716BA44B400A18443 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7F616BA44B400A18443 /* plushyshapes.plist */; };
+		B608E4FE16BBA1D000994E91 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FC16BBA1D000994E91 /* plushypals.plist */; };
+		B608E4FF16BBA1D000994E91 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FD16BBA1D000994E91 /* plushypals.png */; };
+		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
+		B608E50816BBA6DF00994E91 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B608E50716BBA6DF00994E91 /* plushyshapes.plist */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -230,10 +231,12 @@
 		989214DA16B7083900AD5959 /* unit_canyon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon4.png; sourceTree = "<group>"; };
 		989214DD16B7150500AD5959 /* unit_canyon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unit_canyon2.png; sourceTree = "<group>"; };
 		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
-		B61AC7E916BA320A00A18443 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
-		B61AC7EA16BA320A00A18443 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
+		B608E4FC16BBA1D000994E91 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
+		B608E4FD16BBA1D000994E91 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
+		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
+		B608E50716BBA6DF00994E91 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B61AC7F616BA44B400A18443 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -723,6 +726,8 @@
 				B6D2895216B2EE060050A460 /* Monkey.mm */,
 				B6E7D0CB16B5D3A3009C732A /* Floor.h */,
 				B6E7D0CA16B5D3A3009C732A /* Floor.mm */,
+				B608E50016BBA32C00994E91 /* Object.h */,
+				B608E50116BBA32C00994E91 /* Object.mm */,
 				B6D286F116B0DA750050A460 /* Resources */,
 				B6D2870B16B0DA760050A460 /* libs */,
 				B6D288F716B0DA7D0050A460 /* Supporting Files */,
@@ -733,9 +738,9 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B61AC7F616BA44B400A18443 /* plushyshapes.plist */,
-				B61AC7E916BA320A00A18443 /* plushypals.plist */,
-				B61AC7EA16BA320A00A18443 /* plushypals.png */,
+				B608E50716BBA6DF00994E91 /* plushyshapes.plist */,
+				B608E4FC16BBA1D000994E91 /* plushypals.plist */,
+				B608E4FD16BBA1D000994E91 /* plushypals.png */,
 				B6FA5A6116B622DC00127A30 /* unit canyon.png */,
 				B6FA5A5D16B6212000127A30 /* chase-hd.plist */,
 				B6FA5A5E16B6212000127A30 /* chase-hd.png */,
@@ -1392,9 +1397,9 @@
 				989214DC16B7083900AD5959 /* unit_canyon4.png in Resources */,
 				989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */,
 				989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */,
-				B61AC7EC16BA320A00A18443 /* plushypals.plist in Resources */,
-				B61AC7ED16BA320A00A18443 /* plushypals.png in Resources */,
-				B61AC7F716BA44B400A18443 /* plushyshapes.plist in Resources */,
+				B608E4FE16BBA1D000994E91 /* plushypals.plist in Resources */,
+				B608E4FF16BBA1D000994E91 /* plushypals.png in Resources */,
+				B608E50816BBA6DF00994E91 /* plushyshapes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1569,6 +1574,7 @@
 				B6D2895316B2EE070050A460 /* Monkey.mm in Sources */,
 				B6E7D0AC16B32A53009C732A /* RootViewController.m in Sources */,
 				B6E7D0CC16B5D3A4009C732A /* Floor.mm in Sources */,
+				B608E50216BBA32C00994E91 /* Object.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

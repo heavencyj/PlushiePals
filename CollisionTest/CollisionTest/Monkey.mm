@@ -45,8 +45,11 @@ bool running = false;
 {
     [super updateCCFromPhysics];
     
-    // update animation phase
+    // Continuously reset the monkey back to the same physics position each time.
+    //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
+    [self setPhysicsPosition:b2Vec2FromCC(100, [self ccNode].position.y)];
     
+    // update animation phase
     if (running) {
         NSString *frameName;
         
@@ -69,7 +72,7 @@ bool running = false;
     if (jumping) {
         NSString *frameName;
         
-        animDelay -= 0.1f/60.0f;
+        animDelay -= 10.0f/60.0f;
         if(animDelay <= 2)
         {
             animDelay = ANIM_SPEED2;
@@ -98,8 +101,7 @@ bool running = false;
 
 -(void) beginContactWithFloor:(GB2Contact *)contact
 {
-    NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
-    
+    //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     if([fixtureId isEqualToString:@"torso"])
     {

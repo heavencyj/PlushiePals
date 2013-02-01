@@ -31,8 +31,8 @@
 
 +(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName
 {
-    //return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
-    return [[[self alloc] initWithStaticBody:shapeName spriteFrameName:spriteName] autorelease];
+    return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
+//    return [[[self alloc] initWithStaticBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
 -(void)turn:(float)atAngle
