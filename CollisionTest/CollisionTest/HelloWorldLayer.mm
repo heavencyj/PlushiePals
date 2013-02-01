@@ -178,7 +178,7 @@ Floor *lastMaze;
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
     GameOverScene *gameOverScene = [GameOverScene node];
-    [gameOverScene.layer.label setString:@"Gameover"];
+    //[gameOverScene.layer.label setString:@"Restart in 3 seconds"];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
   }
     //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];

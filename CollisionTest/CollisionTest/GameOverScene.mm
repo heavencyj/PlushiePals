@@ -38,9 +38,8 @@ CCSprite *_background;
   if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    _background = [CCSprite spriteWithFile: @"Canyon background.png"];
+    _background = [CCSprite spriteWithFile: @"Game Over screen.png"];
     _background.position = ccp(winSize.width/2, winSize.height/2);
-    _background.scale = 1.5;
     [self addChild:_background];
     
     self.label = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:32];

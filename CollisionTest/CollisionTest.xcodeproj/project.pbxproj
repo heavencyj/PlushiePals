@@ -14,6 +14,7 @@
 		989214DE16B7150500AD5959 /* unit_canyon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DD16B7150500AD5959 /* unit_canyon2.png */; };
 		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
 		98DC444F16BC4CAD0069D3CD /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */; };
+		98DC445216BC54BD0069D3CD /* Game Over screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC445116BC54BD0069D3CD /* Game Over screen.png */; };
 		B608E4FE16BBA1D000994E91 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FC16BBA1D000994E91 /* plushypals.plist */; };
 		B608E4FF16BBA1D000994E91 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = B608E4FD16BBA1D000994E91 /* plushypals.png */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
@@ -234,6 +235,7 @@
 		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
 		98DC444D16BC4CAD0069D3CD /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOverScene.mm; sourceTree = "<group>"; };
+		98DC445116BC54BD0069D3CD /* Game Over screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Over screen.png"; sourceTree = "<group>"; };
 		B608E4FC16BBA1D000994E91 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
 		B608E4FD16BBA1D000994E91 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 				B608E4FD16BBA1D000994E91 /* plushypals.png */,
 				B6FA5A6116B622DC00127A30 /* unit canyon.png */,
 				B6FA5A5D16B6212000127A30 /* chase-hd.plist */,
+				98DC445116BC54BD0069D3CD /* Game Over screen.png */,
 				B6FA5A5E16B6212000127A30 /* chase-hd.png */,
 				989214DF16B71CE900AD5959 /* Plushy Pals.png */,
 				B6FA5A5116B61D8100127A30 /* monkeyshapes.plist */,
@@ -1405,6 +1408,7 @@
 				B608E4FE16BBA1D000994E91 /* plushypals.plist in Resources */,
 				B608E4FF16BBA1D000994E91 /* plushypals.png in Resources */,
 				B608E50816BBA6DF00994E91 /* plushyshapes.plist in Resources */,
+				98DC445216BC54BD0069D3CD /* Game Over screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
