@@ -50,6 +50,11 @@
   body->SetTransform(pos, -1*CC_DEGREES_TO_RADIANS(atAngle));
 }
 
+-(void)remove
+{
+    [[self ccNode] removeFromParentAndCleanup:YES];
+    [self destroyBody];
+}
 
 
 @end

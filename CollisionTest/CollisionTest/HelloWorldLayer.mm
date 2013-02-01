@@ -289,7 +289,7 @@ Floor *lastMaze;
   Floor *oldmaze;
 
   for (oldmaze in _mazes) {
-    [[oldmaze ccNode] removeFromParentAndCleanup:YES];//[self setInvisible:[oldmaze ccNode]];
+    [oldmaze remove];
   }
   [_mazes removeAllObjects];
   
