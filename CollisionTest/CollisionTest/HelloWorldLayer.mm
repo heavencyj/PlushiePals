@@ -20,7 +20,7 @@
 #import "CCTouchDispatcher.h"
 #import "CCParallaxNode-Extras.h"
 
-#define kNumMazes 15
+#define kNumMazes 10
 #define PTM_RATIO 32
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
@@ -36,6 +36,9 @@ int newMaze;
 int duration;
 int verticalMazeObj;
 double nextMazeSpawn;
+int lastMazeNum;
+int lastMazeType;
+Floor *lastMaze;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -48,7 +51,7 @@ double nextMazeSpawn;
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
-    
+  
 	
 	// return the scene
 	return scene;
@@ -98,164 +101,150 @@ double nextMazeSpawn;
         // Adding object layer
         _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
         [self addChild:_objectLayer z:20];
-        
-        // First generate the maze then add the monkey
-        _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
-        [self addMazeObject];
-        
-        // Add monkey
-        plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
-        [_objectLayer addChild:[plushy ccNode] z:50];
-        [plushy setPhysicsPosition:b2Vec2FromCC(100, MAZE_LOW+40)];
-        [plushy setLinearVelocity:b2Vec2(1,0)];
-        
-        // Initializing variables
-        nextMazeSpawn = 0;
-        duration = 4;
-        verticalMazeObj = 0;
-        
-        UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-        [self addGestureRecognizer:swipeLeftGestureRecognizer];
-        swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-        swipeLeftGestureRecognizer.delegate = self;
-        [swipeLeftGestureRecognizer release];
-        
-        UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-        [self addGestureRecognizer:swipeRightGestureRecognizer];
-        swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-        swipeRightGestureRecognizer.delegate = self;
-        [swipeRightGestureRecognizer release];
-        
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
-        [self addGestureRecognizer:tapGestureRecognizer];
-        tapGestureRecognizer.numberOfTapsRequired = 1;
-        tapGestureRecognizer.delegate = self;
-        [tapGestureRecognizer release];
-        
-        self.isTouchEnabled = YES;        
-        [self scheduleUpdate];
-    }
-    return self;
+      
+
+    lastMazeNum = 0;
+    //[self addMazeObject];
+    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
+    [self generatePath];
+    
+    // Add monkey
+    plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
+    [_objectLayer addChild:[plushy ccNode] z:10000];
+    [plushy setPhysicsPosition:b2Vec2FromCC(240,90)];
+    [plushy setLinearVelocity:b2Vec2(1.0,0)];
+    
+    // Initializing variables
+    nextMazeSpawn = 0;
+    duration = 4;
+    verticalMazeObj = 0;
+    
+    UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeLeftGestureRecognizer];
+    swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeLeftGestureRecognizer.delegate = self;
+    [swipeLeftGestureRecognizer release];
+    
+    UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+    [self addGestureRecognizer:swipeRightGestureRecognizer];
+    swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    swipeRightGestureRecognizer.delegate = self;
+    [swipeRightGestureRecognizer release];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
+    [self addGestureRecognizer:tapGestureRecognizer];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.delegate = self;
+    [tapGestureRecognizer release];
+    
+    self.isTouchEnabled = YES;
+    [self scheduleUpdate];
+  }
+  return self;
 }
 
 #pragma mark GameKit delegate
 // Add new update method
 - (void)update:(ccTime)dt {
-    
-    //CGSize windowSize = [[CCDirector sharedDirector] winSize];
-    
-    // Incrementing the position of the background parallaxnode
-    CGPoint backgroundScrollVel = ccp(-100, 0);
-    _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
-    
-    // Add continuous scroll for clouds
-    NSArray *clouds = [NSArray arrayWithObjects:_cloud1, _cloud2, nil];
-    for (CCSprite *cloud in clouds) {
-        if ([_backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
-            [_backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[_backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
-        }
+  
+  //CGSize windowSize = [[CCDirector sharedDirector] winSize];
+  
+  // Incrementing the position of the background parallaxnode
+  CGPoint backgroundScrollVel = ccp(-100, 0);
+  _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
+  
+  // Add continuous scroll for clouds
+  NSArray *clouds = [NSArray arrayWithObjects:_cloud1, _cloud2, nil];
+  for (CCSprite *cloud in clouds) {
+    if ([_backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
+      [_backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[_backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
     }
-    
-    // Add continuous scroll for the canyon
-    NSArray *backgrounds = [NSArray arrayWithObjects: _canyons, _canyons2, nil];
-    for (CCSprite *background in backgrounds) {
-        //NSLog(@"%d position is: (%f, %f)", background.tag, [_backgroundNode convertToWorldSpace:background.position].x, [_backgroundNode convertToWorldSpace:background.position].y);
-        //NSLog(@"canyon.width, Windsize.width = (%f, %f)", background.contentSize.width, [[CCDirector sharedDirector] winSize].width);
-        if ([_backgroundNode convertToWorldSpace:background.position].x < -500) {
-            [_backgroundNode incrementOffset:ccp(100+background.contentSize.width-[_backgroundNode convertToWorldSpace:background.position].x,0) forChild:background];
-        }
+  }
+  
+  // Add continuous scroll for the canyon
+  NSArray *backgrounds = [NSArray arrayWithObjects: _canyons, _canyons2, nil];
+  for (CCSprite *background in backgrounds) {
+    if ([_backgroundNode convertToWorldSpace:background.position].x < -500) {
+      [_backgroundNode incrementOffset:ccp(100+background.contentSize.width-[_backgroundNode convertToWorldSpace:background.position].x,0) forChild:background];
     }
-    
-    // Add maze objects to screen
-    [self addMazeObject];
+  }
+  
+  // Add maze objects to screen
+  //[self addMazeObject];
+  //[self generatePath];
+  
+}
+
+-(void)generatePath
+{
+ 
+  int straight = [self getRandomNumberBetweenMin:1 andMax:8];
+  
+  for (int i = 0; i < straight; i++) {
+    Floor *_mazeObj = [Floor floorSprite:@"unit_canyon1" spriteName:@"unit_canyon1.png"];
+    if ([_mazes lastObject] == nil){
+      [_mazeObj setPhysicsPosition:b2Vec2FromCC(75, MAZE_LOW)];
+    }
+    else{
+      [_mazeObj setPhysicsPosition:b2Vec2FromCC([[_mazes lastObject] ccNode].position.x+75, MAZE_LOW)];
+    }
+    [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
+    [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
+    [_mazes addObject:_mazeObj];
+    //lastMaze = _mazeObj;
+  }
+  
+  int lastmaze =[self getRandomNumberBetweenMin:3 andMax:4];
+  NSString *endMaze = [NSString stringWithFormat:@"unit_canyon%d",lastmaze];
+  Floor *_mazeObj = [Floor floorSprite:endMaze spriteName:[endMaze stringByAppendingString:@".png"]];
+  [_mazeObj setPhysicsPosition:b2Vec2FromCC([[_mazes lastObject] ccNode].position.x+75, MAZE_LOW)];
+  [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
+  [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
+  [_mazes addObject:_mazeObj];
+
 }
 
 -(void)addMazeObject
 {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    
-    bool print = true;
-    if (print) {
-//        NSLog(@"Display size is: (%f, %f)", winSize.width, winSize.height);
-        print = false;
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
+  
+  // Generate as many maze objects as can fit into the screen.
+  Floor *lastMazeObj = [_mazes lastObject];
+  NSString *mazeObjImage = @"unit_canyon1";
+  //[[lastMazeObj ccNode] convertToWorldSpace:[lastMazeObj ccNode].position];
+  while([lastMazeObj ccNode].position.x < winSize.width || [_mazes count] < 1)
+  {
+    //        NSLog(@"Last maze physics position: (%f, %f)", [lastMazeObj ccNode].position.x, [lastMazeObj ccNode].position.y);
+    //        NSLog(@"Total %d mazes", [_mazes count]);
+    Floor *_mazeObj = [Floor floorSprite:mazeObjImage spriteName:[mazeObjImage stringByAppendingString:@".png"]];
+    if (lastMazeObj == nil) {
+      [_mazeObj setPhysicsPosition:b2Vec2FromCC(75, MAZE_LOW)];
+      //            NSLog(@"Added 1st maze at position: (%d, %d)", 75, MAZE_LOW);
     }
-
-    // Generate as many maze objects as can fit into the screen.    
-    Floor *lastMazeObj = [_mazes lastObject];
-    NSString *mazeObjImage = @"unit_canyon1";
-    //[[lastMazeObj ccNode] convertToWorldSpace:[lastMazeObj ccNode].position];
-    while([lastMazeObj ccNode].position.x < winSize.width || [_mazes count] < 1)
+    else
     {
-//        NSLog(@"Last maze physics position: (%f, %f)", [lastMazeObj ccNode].position.x, [lastMazeObj ccNode].position.y);
-//        NSLog(@"Total %d mazes", [_mazes count]);
-        Floor *_mazeObj = [Floor floorSprite:mazeObjImage spriteName:[mazeObjImage stringByAppendingString:@".png"]];
-        if (lastMazeObj == nil) {
-            [_mazeObj setPhysicsPosition:b2Vec2FromCC(75, MAZE_LOW)];
-//            NSLog(@"Added 1st maze at position: (%d, %d)", 75, MAZE_LOW);
-        }
-        else
-        {
-            // NSLog(@"Added new maze at position: (%f, %d)", [lastMazeObj ccNode].position.x+70, MAZE_LOW);
-            [_mazeObj setPhysicsPosition:b2Vec2FromCC([lastMazeObj ccNode].position.x+75, MAZE_LOW)];
-        }
-        
-        [_mazeObj setLinearVelocity:b2Vec2(0,0)];
-        [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
-        [_mazes addObject:_mazeObj];
-        lastMazeObj = _mazeObj;
-        
-        if (verticalMazeObj == 3) { //Crude code for testing collision detection.
-            verticalMazeObj = 0;
-            mazeObjImage = @"unit_canyon1";
-        }
-        verticalMazeObj++;
+      if([mazeObjImage isEqualToString:@"unit_canyon4"]) // Clean up this logic here
+      {
+        [_mazeObj setPhysicsPosition:b2Vec2FromCC([lastMazeObj ccNode].position.x+80, MAZE_LOW)];
+      }
+      else
+      {
+        [_mazeObj setPhysicsPosition:b2Vec2FromCC([lastMazeObj ccNode].position.x+75, MAZE_LOW)];
+        //            NSLog(@"Added new maze at position: (%f, %d)", [lastMazeObj ccNode].position.x+70, MAZE_LOW);
+      }
     }
-}
-
--(void)generateMaze:(CCNode*)node
-{
-    CGSize winSize = [CCDirector sharedDirector].winSize;
-    newMaze = 1;
-    //int preM = newMaze;
-    int i = 1;
-    while (i<2) {
-        //CCSprite *maze = [CCSprite spriteWithFile:[@"unit_canyon" stringByAppendingFormat:@"%d.png",newMaze]];
-        //NSString *mazeName = [@"unit_canyon" stringByAppendingFormat:@"%d.png",newMaze];
-        NSString *mazeName = @"unit_canyon1.png";
-        CCSprite *maze = [CCSprite spriteWithSpriteFrameName:mazeName];
-        Floor *mazeObj = [Floor floorSprite:@"unit_canyon1" spriteName:mazeName];
-        [_mazes addObject:maze];
-        switch (newMaze) {
-            case 4:
-                //maze.position = ccp(node.position.x+i*maze.contentSize.width, winSize.height/2-plushy.contentSize.height/2+maze.contentSize.height/3);
-                [mazeObj setPhysicsPosition:b2Vec2FromCC(node.position.x-50+i*maze.contentSize.width, winSize.height/2-125+maze.contentSize.height/3)]; //TODO:
-                break;
-                
-            case 3:
-                //maze.position = ccp(node.position.x+i*maze.contentSize.width, winSize.height/2-plushy.contentSize.height/2-maze.contentSize.height/3);
-                [mazeObj setPhysicsPosition:b2Vec2FromCC(node.position.x-50+i*maze.contentSize.width, winSize.height/2-125-maze.contentSize.height/3)];
-                break;
-                
-            default:
-                //maze.position = ccp(node.position.x+i*maze.contentSize.width, winSize.height/2-plushy.contentSize.height/2);
-                [mazeObj setPhysicsPosition:b2Vec2FromCC(node.position.x-50+i*maze.contentSize.width, winSize.height/2-125)];
-                break;
-        }
-        
-        [_objectLayer addChild:[mazeObj ccNode] z:50];
-        [mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
-        //        [maze runAction:[CCSequence actions:
-        //                         [CCMoveBy actionWithDuration:5 position:ccp(-2*winSize.width, 0)],
-        //                         nil]];
-        
-        //preM = newMaze;
-        //if (i > 4) newMaze = [self getRandomNumberBetweenMin:3 andMax:4];
-        //newMaze = [self getRandomNumberBetweenMin:1 andMax:4];
-        i++;
+    
+    [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
+    [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
+    [_mazes addObject:_mazeObj];
+    lastMazeObj = _mazeObj;
+    
+    if (verticalMazeObj == 3) { //Crude code for testing collision detection.
+      verticalMazeObj = 0;
+      mazeObjImage = @"unit_canyon4";
     }
-    duration = 6;
-    nextMazeSpawn += duration;
-    NSLog(@"Finish generating maze: currTime is:%f nextMazeSpawn: %f", CACurrentMediaTime(), nextMazeSpawn);
+    verticalMazeObj++;
+  }
 }
 
 -(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
@@ -276,63 +265,63 @@ double nextMazeSpawn;
 
 // Add new method, above update loop
 - (float)randomValueBetween:(float)low andValue:(float)high {
-    return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
+  return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
 }
 
 - (void)addBoxBodyForSprite:(CCSprite *)sprite {
-    
-    b2BodyDef spriteBodyDef;
-    spriteBodyDef.type = b2_staticBody;
-    spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
-    spriteBodyDef.userData = sprite;
-    b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
-    
-    b2PolygonShape spriteShape;
-    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
-                         sprite.contentSize.height/PTM_RATIO/2);
-    
-    b2FixtureDef spriteShapeDef;
-    spriteShapeDef.shape = &spriteShape;
-    spriteShapeDef.density = 10.0;
-    spriteShapeDef.isSensor = true;
-    
-    spriteBody->CreateFixture(&spriteShapeDef);
+  
+  b2BodyDef spriteBodyDef;
+  spriteBodyDef.type = b2_staticBody;
+  spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
+  spriteBodyDef.userData = sprite;
+  b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
+  
+  b2PolygonShape spriteShape;
+  spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
+                       sprite.contentSize.height/PTM_RATIO/2);
+  
+  b2FixtureDef spriteShapeDef;
+  spriteShapeDef.shape = &spriteShape;
+  spriteShapeDef.density = 10.0;
+  spriteShapeDef.isSensor = true;
+  
+  spriteBody->CreateFixture(&spriteShapeDef);
 }
 
 // Add new method
 - (void)setInvisible:(CCNode *)node {
-    node.visible = NO;
+  node.visible = NO;
 }
 
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
 {
-    //	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-    //	[[app navController] dismissModalViewControllerAnimated:YES];
+  //	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+  //	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 
 -(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
 {
-    //	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-    //	[[app navController] dismissModalViewControllerAnimated:YES];
+  //	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+  //	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   [plushy jump];
-
-//    [[plushy ccNode]  stopAllActions];
-//    [[plushy ccNode] runAction: [CCJumpBy actionWithDuration:1 position:ccp(0,0) height:80 jumps:1]];
 }
 
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
-    float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-    CCSprite *oldmaze;
-    for (oldmaze in _mazes) {
-        if (oldmaze != [_mazes lastObject])  [self setInvisible:oldmaze];
-    }
-    oldmaze = [_mazes lastObject];
-    [oldmaze runAction:[CCSequence actions: [CCRotateBy actionWithDuration:0.8 angle:angle], [CCCallFuncN actionWithTarget:self selector:@selector(generateMaze:)], nil]];
+  float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
+  Floor *oldmaze;
+  for (oldmaze in _mazes) {
+    if (oldmaze != [_mazes lastObject])  [self setInvisible:[oldmaze ccNode]];
+  }
+  oldmaze = [_mazes lastObject];
+  
+//  [oldmaze runAction:[CCSequence actions: [CCRotateBy actionWithDuration:0.8 angle:angle], [CCCallFuncN actionWithTarget:self selector:@selector(generatePath)], nil]];
+  [oldmaze turn:angle];
+  [self generatePath];
 }
 
 @end

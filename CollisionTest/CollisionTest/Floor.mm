@@ -37,10 +37,12 @@
 
 -(void)turn:(float)atAngle
 {
-  float totalRotation = atAngle;
-  float desiredAngularVelocity = totalRotation * 60;
-  float impulse = body->GetInertia() * desiredAngularVelocity;// disregard time factor
-  body->ApplyAngularImpulse( impulse );
+//  float totalRotation = atAngle;
+//  float desiredAngularVelocity = totalRotation * 60;
+//  float impulse = body->GetInertia() * desiredAngularVelocity;// disregard time factor
+//  body->ApplyAngularImpulse( 100 );
+  b2Vec2 pos = body->GetPosition();
+  body->SetTransform(pos, atAngle);
 }
 
 
