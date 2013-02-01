@@ -43,8 +43,11 @@
 //  float impulse = body->GetInertia() * desiredAngularVelocity;// disregard time factor
 //  body->ApplyAngularImpulse( 1500 );
   b2Vec2 pos = body->GetPosition();
-  float baseAngle = body->GetAngle();
-  body->SetTransform(pos, baseAngle - atAngle);
+//  if (atAngle > 0) {
+//    pos.y = pos.y - 132;
+//  }
+//  else pos.y = pos.y + 132;
+  body->SetTransform(pos, -1*CC_DEGREES_TO_RADIANS(atAngle));
 }
 
 
