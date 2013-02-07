@@ -493,18 +493,18 @@
                         <key>restitution</key> <real>0</real>
                         <key>filter_categoryBits</key> <integer>512</integer>
                         <key>filter_groupIndex</key> <integer>0</integer>
-                        <key>filter_maskBits</key> <integer>65023</integer>
+                        <key>filter_maskBits</key> <integer>65535</integer>
                         <key>isSensor</key> <false/>
-                        <key>id</key> <string>sqmaze</string>
+                        <key>id</key> <string></string>
                         <key>fixture_type</key> <string>POLYGON</string>
 
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ -4.000,121.000 }</string>	
-								<string>{ 4.000,16.000 }</string>	
-								<string>{ 1004.000,23.000 }</string>	
-								<string>{ 1003.000,118.000 }</string>
+								<string>{ -1.000,45.000 }</string>	
+								<string>{ 2.000,6.000 }</string>	
+								<string>{ 392.000,8.000 }</string>	
+								<string>{ 391.000,46.000 }</string>
 							</array>
 						</array>
                     </dict>
@@ -512,7 +512,7 @@
                         <key>density</key> <real>2</real>
                         <key>friction</key> <real>0</real>
                         <key>restitution</key> <real>0</real>
-                        <key>filter_categoryBits</key> <integer>1</integer>
+                        <key>filter_categoryBits</key> <integer>512</integer>
                         <key>filter_groupIndex</key> <integer>0</integer>
                         <key>filter_maskBits</key> <integer>65535</integer>
                         <key>isSensor</key> <false/>
@@ -522,10 +522,10 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 0.000,1023.000 }</string>	
-								<string>{ 1.000,122.000 }</string>	
-								<string>{ 95.000,118.000 }</string>	
-								<string>{ 98.000,1023.000 }</string>
+								<string>{ 38.000,399.000 }</string>	
+								<string>{ -1.000,399.000 }</string>	
+								<string>{ 2.000,45.000 }</string>	
+								<string>{ 33.000,46.000 }</string>
 							</array>
 						</array>
                     </dict>
@@ -533,7 +533,7 @@
                         <key>density</key> <real>2</real>
                         <key>friction</key> <real>0</real>
                         <key>restitution</key> <real>0</real>
-                        <key>filter_categoryBits</key> <integer>1</integer>
+                        <key>filter_categoryBits</key> <integer>512</integer>
                         <key>filter_groupIndex</key> <integer>0</integer>
                         <key>filter_maskBits</key> <integer>65535</integer>
                         <key>isSensor</key> <false/>
@@ -543,10 +543,10 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 97.000,1022.000 }</string>	
-								<string>{ 96.000,913.000 }</string>	
-								<string>{ 1007.000,918.000 }</string>	
-								<string>{ 992.000,1019.000 }</string>
+								<string>{ 37.000,356.000 }</string>	
+								<string>{ 392.000,358.000 }</string>	
+								<string>{ 393.000,398.000 }</string>	
+								<string>{ 36.000,399.000 }</string>
 							</array>
 						</array>
                     </dict>
@@ -554,7 +554,7 @@
                         <key>density</key> <real>2</real>
                         <key>friction</key> <real>0</real>
                         <key>restitution</key> <real>0</real>
-                        <key>filter_categoryBits</key> <integer>1</integer>
+                        <key>filter_categoryBits</key> <integer>512</integer>
                         <key>filter_groupIndex</key> <integer>0</integer>
                         <key>filter_maskBits</key> <integer>65535</integer>
                         <key>isSensor</key> <false/>
@@ -564,10 +564,10 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 999.000,919.000 }</string>	
-								<string>{ 896.000,912.000 }</string>	
-								<string>{ 917.000,117.000 }</string>	
-								<string>{ 1007.000,118.000 }</string>
+								<string>{ 392.000,358.000 }</string>	
+								<string>{ 355.000,357.000 }</string>	
+								<string>{ 355.000,45.000 }</string>	
+								<string>{ 389.000,45.000 }</string>
 							</array>
 						</array>
                     </dict>

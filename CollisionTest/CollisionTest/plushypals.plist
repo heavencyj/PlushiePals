@@ -210,17 +210,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{2, 2}, {1000, 1000}}</string>
+			<string>{{0, 0}, {394, 394}}</string>
 			<key>spriteOffset</key>
-			<string>{-10, 10}</string>
+			<string>{-3, 3}</string>
 			<key>spriteSize</key>
-			<string>{1000, 1000}</string>
+			<string>{394, 394}</string>
 			<key>spriteSourceSize</key>
-			<string>{1024, 1024}</string>
+			<string>{400, 400}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{456, 0}, {1000, 1000}}</string>
+			<string>{{452, 2}, {394, 394}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -321,7 +321,7 @@
 		<key>format</key>
 		<integer>3</integer>
 		<key>size</key>
-		<string>{2048, 2048}</string>
+		<string>{1024, 512}</string>
 		<key>name</key>
 		<string>plushypals</string>
 		<key>target</key>

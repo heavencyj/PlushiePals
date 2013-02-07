@@ -61,20 +61,28 @@
   
 }
 
--(b2Vec2)rotate:(float)withAngle around:(b2Vec2)origin
+-(b2Vec2)rotate:(float)theta around:(b2Vec2)origin
 {
   b2Vec2 pos = body->GetPosition();
-  float l = ABS(pos.x - origin.x);
+//  float l = ABS(pos.x - origin.x);
+//  
+//  float dx = l*cosf(withAngle);
+//  float dy = l*sinf(withAngle);
+//  
+//  float newx = origin.x + dx;
+//  float newy = origin.y - dy;
   
-  float dx = l*cosf(withAngle);
-  float dy = l*sinf(withAngle);
+  float newx = cosf(theta) * (pos.x-origin.x) - sinf(theta) * (pos.y-origin.y) + origin.x;
+  float newy = sinf(theta) * (pos.x-origin.x) + cosf(theta) * (pos.y-origin.y) + origin.y;
   
-  float newx = origin.x + dx;
-  float newy = origin.y - dy;
-  
-  body->SetTransform(b2Vec2(newx, newy), -1*CC_DEGREES_TO_RADIANS(withAngle));
+  body->SetTransform(b2Vec2(newx, newy), CC_DEGREES_TO_RADIANS(theta));
   return b2Vec2(newx, newy);
   
+}
+
+-(void)transform:(b2Vec2)pos withAngle:(float)theta
+{
+   body->SetTransform(pos, -CC_DEGREES_TO_RADIANS(theta));
 }
 
 -(b2Body*)getbody

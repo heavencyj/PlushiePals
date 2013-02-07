@@ -23,7 +23,7 @@
 #import "CCParallaxNode-Extras.h"
 
 #define kNumMazes 10
-#define PTM_RATIO 170
+#define PTM_RATIO 32
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
 #define ARC4RANDOM_MAX 0x100000000
@@ -70,8 +70,9 @@ Floor *maze;
     
     // Adding solid background color
     _background = [CCSprite spriteWithFile: @"Canyon background.png"];
-    _background.position = ccp(winSize.width/2, winSize.height/2);
-    _background.scale = 1.5;
+    _background.anchorPoint = ccp(0,0);
+    //_background.position = ccp(winSize.width/2, winSize.height/2);
+    _background.position = ccp(0,0);
     [self addChild:_background];
     
     // Loading physics shapes
@@ -100,6 +101,7 @@ Floor *maze;
     [_backgroundNode addChild:_canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_canyons2.contentSize.width+380, _canyons2.contentSize.height/2)];
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
     [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
+
     
     [self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
@@ -109,11 +111,9 @@ Floor *maze;
     //[self addChild:mazelayer z:30];
     [self addChild:_objectLayer z:20];
     
-    lastMazeNum = 0;
-    //[self addMazeObject];
-//    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
-//    [self generatePath];
     maze = [Floor floorSprite:@"squaremaze" spriteName:@"squaremaze.png"];
+    [maze ccNode].anchorPoint = ccp(0,0);
+    //[maze ccNode].position = ccp(80,70);
     [maze setPhysicsPosition:b2Vec2FromCC(80, 70)];
     [maze setLinearVelocity:b2Vec2(-0.8,0)];
     //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
@@ -122,9 +122,12 @@ Floor *maze;
 
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
+    
+//    [plushy ccNode].anchorPoint = ccp(0,0);
+//    [plushy ccNode].position = ccp(240,130);
+    [plushy setPhysicsPosition:b2Vec2FromCC(100,130)];
+    [plushy setLinearVelocity:b2Vec2(1.0,0)];
     [_objectLayer addChild:[plushy ccNode] z:10000];
-    [plushy setPhysicsPosition:b2Vec2FromCC(240,90)];
-    //[plushy setLinearVelocity:b2Vec2(1.0,0)];
     
     // Initializing variables
     nextMazeSpawn = 0;
@@ -195,35 +198,6 @@ Floor *maze;
     //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
--(void)generatePath
-{
-  int straight = [self getRandomNumberBetweenMin:3 andMax:3];
-  
-  for (int i = 0; i < straight; i++) {
-    Floor *_mazeObj = [Floor floorSprite:@"unit_canyon1" spriteName:@"unit_canyon1.png"];
-    if ([_mazes lastObject] == nil){
-      [_mazeObj setPhysicsPosition:b2Vec2FromCC(75, MAZE_LOW)];
-    }
-    else{      
-      [_mazeObj setPhysicsPosition:b2Vec2FromCC([[_mazes lastObject] ccNode].position.x+75, MAZE_LOW)];
-    }
-    [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
-    [_objectLayer addChild:[_mazeObj ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
-    [_mazes addObject:_mazeObj];
-    //lastMaze = _mazeObj;
-  }
-  
-  int lastmaze =[self getRandomNumberBetweenMin:3 andMax:4];
-  NSString *endMaze = [NSString stringWithFormat:@"unit_canyon%d",lastmaze];
-  Floor *_mazeObj = [Floor floorSprite:endMaze spriteName:[endMaze stringByAppendingString:@".png"]];
-  [_mazeObj setPhysicsPosition:b2Vec2FromCC([[_mazes lastObject] ccNode].position.x+75, MAZE_LOW)];
-  [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
-  [_objectLayer addChild:[_mazeObj ccNode] z:50]; //TODO: Do not keep adding maze objects into the objectLayer!!!!
-  //[_mazes addObject:_mazeObj];
-  lastMaze = _mazeObj;
-  lastMazeNum = straight;
-}
-
 -(void)nextObject:(ccTime)dt
 {
   nextObject -= dt;
@@ -257,31 +231,6 @@ Floor *maze;
 	[super dealloc];
 }
 
-// Add new method, above update loop
-- (float)randomValueBetween:(float)low andValue:(float)high {
-  return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
-}
-
-- (void)addBoxBodyForSprite:(CCSprite *)sprite {
-  
-  b2BodyDef spriteBodyDef;
-  spriteBodyDef.type = b2_staticBody;
-  spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO, sprite.position.y/PTM_RATIO);
-  spriteBodyDef.userData = sprite;
-  b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
-  
-  b2PolygonShape spriteShape;
-  spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
-                       sprite.contentSize.height/PTM_RATIO/2);
-  
-  b2FixtureDef spriteShapeDef;
-  spriteShapeDef.shape = &spriteShape;
-  spriteShapeDef.density = 10.0;
-  spriteShapeDef.isSensor = true;
-  
-  spriteBody->CreateFixture(&spriteShapeDef);
-}
-
 // Add new method
 - (void)setInvisible:(CCNode *)node {
   node.visible = NO;
@@ -307,48 +256,25 @@ Floor *maze;
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-  Floor *oldmaze;
+  CGPoint p = [plushy ccNode].position;
+  p.y = [maze ccNode].position.y;
+  
+  //b2Vec2 origin = b2Vec2FromCGPoint([plushy ccNode].position);
+  CGPoint oldp = [maze ccNode].position;
+  CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p];
+  
+  [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
 
-//  for (int i = 1; i < [_mazes count];i++ ) {
-//    //[oldmaze remove];
-//    [self addWeldJoint:[[_mazes objectAtIndex:i-1] getbody] with:[[_mazes objectAtIndex:i] getbody]];
-//    //[oldmaze turn:angle];
-//    
-//  }
-  //[_mazes removeAllObjects];
-  
-  //b2Vec2 origin = [[_mazes objectAtIndex:0] getbody]->GetPosition();
-  b2Vec2 origin = b2Vec2FromCGPoint([plushy ccNode].position);
-  
-  
-  for (oldmaze in _mazes) {
-    //[oldmaze remove];
-    [oldmaze rotate:angle/2 around:origin];
-    
-    //[oldmaze setPhysicsPosition:newpos];
-  }
-  //[_mazes removeAllObjects];
-  
-  //  [oldmaze runAction:[CCSequence actions: [CCRotateBy actionWithDuration:0.8 angle:angle], [CCCallFuncN actionWithTarget:self selector:@selector(generatePath)], nil]];
-  //[lastMaze turn:angle];
-  
-
-  
-  [_mazes addObject:lastMaze];
-  [self generatePath];
 }
 
--(b2WeldJoint*)addWeldJoint:(b2Body*)bodyA with:(b2Body*)bodyB
+-(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin
 {
-  bodyA->SetActive(true);
-  bodyB->SetActive(true);
+  float newx = cos(theta) * (pos.x-origin.x) - sin(theta) * (pos.y-origin.y) + origin.x;
+  float newy = sin(theta) * (pos.x-origin.x) + cos(theta) * (pos.y-origin.y) + origin.y;
   
-  b2WeldJointDef weldJointDef;
-  weldJointDef.Initialize(bodyA, bodyB, bodyA->GetWorldCenter());
-  weldJointDef.collideConnected = false;
+ // body->SetTransform(b2Vec2(newx, newy), -1*CC_DEGREES_TO_RADIANS(theta));
+  return CGPointMake(newx,newy);
   
-  b2WeldJoint* wjoint = (b2WeldJoint*)_world->CreateJoint(&weldJointDef);
-  return wjoint;
 }
 
 @end
