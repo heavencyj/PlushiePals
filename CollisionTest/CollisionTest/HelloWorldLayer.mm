@@ -23,7 +23,7 @@
 #import "CCParallaxNode-Extras.h"
 
 #define kNumMazes 10
-#define PTM_RATIO 32
+#define PTM_RATIO 170
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
 #define ARC4RANDOM_MAX 0x100000000
@@ -41,6 +41,7 @@ double nextMazeSpawn;
 int lastMazeNum;
 int lastMazeType;
 Floor *lastMaze;
+Floor *maze;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -74,9 +75,9 @@ Floor *lastMaze;
     [self addChild:_background];
     
     // Loading physics shapes
-    [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];
-    
+    [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];    
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"plushypals.plist"];
+    //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"squaremaze.plist"];
     
     // 1) Create the CCParallaxNode
     _backgroundNode = [CCParallaxNode node];
@@ -100,15 +101,25 @@ Floor *lastMaze;
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
     [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
     
+    [self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
+    
     // Adding object layer
     _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
+    //CCSpriteBatchNode *mazelayer = [CCSpriteBatchNode batchNodeWithFile:@"squaremaze.png" capacity:150];
+    //[self addChild:mazelayer z:30];
     [self addChild:_objectLayer z:20];
     
     lastMazeNum = 0;
     //[self addMazeObject];
-    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
-    [self generatePath];
-    
+//    _mazes = [[CCArray alloc] initWithCapacity:kNumMazes];
+//    [self generatePath];
+    maze = [Floor floorSprite:@"squaremaze" spriteName:@"squaremaze.png"];
+    [maze setPhysicsPosition:b2Vec2FromCC(80, 70)];
+    [maze setLinearVelocity:b2Vec2(-0.8,0)];
+    //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
+    [_objectLayer addChild:[maze ccNode] z:10];
+  
+
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
     [_objectLayer addChild:[plushy ccNode] z:10000];
@@ -186,14 +197,14 @@ Floor *lastMaze;
 
 -(void)generatePath
 {
-  int straight = [self getRandomNumberBetweenMin:1 andMax:8];
+  int straight = [self getRandomNumberBetweenMin:3 andMax:3];
   
   for (int i = 0; i < straight; i++) {
     Floor *_mazeObj = [Floor floorSprite:@"unit_canyon1" spriteName:@"unit_canyon1.png"];
     if ([_mazes lastObject] == nil){
       [_mazeObj setPhysicsPosition:b2Vec2FromCC(75, MAZE_LOW)];
     }
-    else{
+    else{      
       [_mazeObj setPhysicsPosition:b2Vec2FromCC([[_mazes lastObject] ccNode].position.x+75, MAZE_LOW)];
     }
     [_mazeObj setLinearVelocity:b2Vec2(-0.8,0)];
@@ -298,15 +309,46 @@ Floor *lastMaze;
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   Floor *oldmaze;
 
+//  for (int i = 1; i < [_mazes count];i++ ) {
+//    //[oldmaze remove];
+//    [self addWeldJoint:[[_mazes objectAtIndex:i-1] getbody] with:[[_mazes objectAtIndex:i] getbody]];
+//    //[oldmaze turn:angle];
+//    
+//  }
+  //[_mazes removeAllObjects];
+  
+  //b2Vec2 origin = [[_mazes objectAtIndex:0] getbody]->GetPosition();
+  b2Vec2 origin = b2Vec2FromCGPoint([plushy ccNode].position);
+  
+  
   for (oldmaze in _mazes) {
-    [oldmaze remove];
+    //[oldmaze remove];
+    [oldmaze rotate:angle/2 around:origin];
+    
+    //[oldmaze setPhysicsPosition:newpos];
   }
-  [_mazes removeAllObjects];
+  //[_mazes removeAllObjects];
   
   //  [oldmaze runAction:[CCSequence actions: [CCRotateBy actionWithDuration:0.8 angle:angle], [CCCallFuncN actionWithTarget:self selector:@selector(generatePath)], nil]];
-  [lastMaze turn:angle];
+  //[lastMaze turn:angle];
+  
+
+  
   [_mazes addObject:lastMaze];
   [self generatePath];
+}
+
+-(b2WeldJoint*)addWeldJoint:(b2Body*)bodyA with:(b2Body*)bodyB
+{
+  bodyA->SetActive(true);
+  bodyB->SetActive(true);
+  
+  b2WeldJointDef weldJointDef;
+  weldJointDef.Initialize(bodyA, bodyB, bodyA->GetWorldCenter());
+  weldJointDef.collideConnected = false;
+  
+  b2WeldJoint* wjoint = (b2WeldJoint*)_world->CreateJoint(&weldJointDef);
+  return wjoint;
 }
 
 @end

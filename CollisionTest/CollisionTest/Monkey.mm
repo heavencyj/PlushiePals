@@ -54,6 +54,7 @@ bool running = false;
         NSString *frameName;
         
         animDelay -= 5.f/60.0f;
+
         if(animDelay <= 0)
         {
             animDelay = ANIM_SPEED;

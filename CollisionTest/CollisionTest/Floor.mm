@@ -26,6 +26,8 @@
  */
 
 #import "Floor.h"
+#define DEGTORAD 0.0174532925199432957f
+#define RADTODEG 57.295779513082320876f
 
 @implementation Floor
 
@@ -38,16 +40,46 @@
 
 -(void)turn:(float)atAngle
 {
-//  float totalRotation = atAngle;
-//  float desiredAngularVelocity = totalRotation * 60;
-//  float impulse = body->GetInertia() * desiredAngularVelocity;// disregard time factor
-//  body->ApplyAngularImpulse( 1500 );
+
   b2Vec2 pos = body->GetPosition();
-//  if (atAngle > 0) {
-//    pos.y = pos.y - 132;
-//  }
-//  else pos.y = pos.y + 132;
   body->SetTransform(pos, -1*CC_DEGREES_TO_RADIANS(atAngle));
+  
+//  float bodyAngle = body->GetAngle();
+//  
+//  float desiredAngle = -1*CC_DEGREES_TO_RADIANS(atAngle);
+//  float nextAngle = bodyAngle + body->GetAngularVelocity() / 60.0;
+//  float totalRotation = desiredAngle - nextAngle;
+//  while ( totalRotation < -180 * DEGTORAD ) totalRotation += 360 * DEGTORAD;
+//  while ( totalRotation >  180 * DEGTORAD ) totalRotation -= 360 * DEGTORAD;
+//  float desiredAngularVelocity = totalRotation * 60;
+//  float change = 1 * DEGTORAD; //allow 1 degree rotation per time step
+//  desiredAngularVelocity = min( change, max(-change, desiredAngularVelocity));
+//  float impulse = body->GetInertia() * desiredAngularVelocity;
+//  body->ApplyAngularImpulse( impulse );
+  //body->SetAngularVelocity(-60*DEGTORAD);
+  
+  
+}
+
+-(b2Vec2)rotate:(float)withAngle around:(b2Vec2)origin
+{
+  b2Vec2 pos = body->GetPosition();
+  float l = ABS(pos.x - origin.x);
+  
+  float dx = l*cosf(withAngle);
+  float dy = l*sinf(withAngle);
+  
+  float newx = origin.x + dx;
+  float newy = origin.y - dy;
+  
+  body->SetTransform(b2Vec2(newx, newy), -1*CC_DEGREES_TO_RADIANS(withAngle));
+  return b2Vec2(newx, newy);
+  
+}
+
+-(b2Body*)getbody
+{
+  return body;
 }
 
 -(void)remove
