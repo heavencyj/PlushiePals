@@ -10,16 +10,13 @@
 #import "HelloWorldLayer.h"
 #import "GB2Contact.h"
 
-#define ANIM_SPEED 0.4f
-#define ANIM_SPEED2 5.0f
+#define ANIM_SPEED 2.0f
+#define ANIM_SPEED2 4.0f
+#define ANIM_SPEED3 3.0f
+#define ANIM_DELAY 0.25f
 #define JUMP_IMPULSE 10.0f
 
 @implementation Monkey
-
-bool jumping = false;
-bool running = false;
-bool collide = false;
-bool die = false;
 
 -(id) initWithGameLayer:(HelloWorldLayer*)gl
 {
@@ -69,13 +66,13 @@ bool die = false;
   
   // Continuously reset the monkey back to the same physics position each time.
   //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-  [self setPhysicsPosition:b2Vec2FromCC(100, [self ccNode].position.y)];
+  [self setPhysicsPosition:b2Vec2FromCC(200, [self ccNode].position.y)];
   
   // update animation phase
   if (running) {
     NSString *frameName;
     
-    animDelay -= 15.f/60.0f;
+    animDelay -= ANIM_DELAY;
     
     if(animDelay <= 0)
     {
@@ -95,8 +92,9 @@ bool die = false;
   if (jumping) {
     NSString *frameName;
     
-    animDelay -= 15.0f/60.0f;
-    if(animDelay <= 4)
+    animDelay -= ANIM_DELAY;
+    
+    if(animDelay <= 0)
     {
       animDelay = ANIM_SPEED;
       animPhase++;
@@ -114,8 +112,9 @@ bool die = false;
   if (collide) {
     NSString *frameName;
     
-    animDelay -= 20.0f/60.0f;
-    if(animDelay <= 3)
+    animDelay -= ANIM_DELAY;
+    
+    if(animDelay <= 0)
     {
       animDelay = ANIM_SPEED;
       animPhase++;
@@ -127,6 +126,11 @@ bool die = false;
       }
     }
     
+    if(animPhase > 3)
+    {
+      animPhase = 1;
+    }
+    
     // collide
     frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
     [self setDisplayFrameNamed:frameName];
@@ -135,14 +139,16 @@ bool die = false;
   if (die) {
     NSString *frameName;
     
-    animDelay -= 15.0f/60.0f;
-    if(animDelay <= 4)
+    animDelay -= ANIM_DELAY;
+    if(animDelay <= 0)
     {
       animDelay = ANIM_SPEED;
       animPhase++;
       if(animPhase > 4)
       {
         animPhase = 1;
+        dead = true;
+        die = false;
       }
     }
     
@@ -153,6 +159,11 @@ bool die = false;
   }
 }
 
+-(bool)isDead
+{
+  return dead;
+}
+
 -(void) jump
 {
   float impulseFactor = 1;
@@ -161,6 +172,22 @@ bool die = false;
   
   jumping = true;
   running = false;
+  animPhase = 1;
+}
+
+-(bool)isJumping
+{
+  return jumping;
+}
+
+-(void) reset
+{
+  jumping = false;
+  collide = false;
+  dead = false;
+  die = false;
+  running = true;
+  
 }
 
 -(void) beginContactWithFloor:(GB2Contact *)contact
@@ -171,15 +198,21 @@ bool die = false;
   {
     running = true;
     jumping = false;
+    
   }
   if([fixtureId isEqualToString:@"collision"])
   {
     running = false;
     jumping = false;
     collide = true;
+    animPhase = 1;
   }
 
 }
 
+-(void)moveTo:(b2Vec2)pos
+{
+  body->SetTransform(pos, body->GetAngle());
+}
 
 @end

@@ -14,10 +14,15 @@
 
 @interface Monkey : GB2Sprite
 {
-    //float direction;      //!< keeps monkey's direction (from accelerometer)
-    int animPhase;        //!< the current animation phase
-    ccTime animDelay;     //!< delay until the next animation phase is stated
-    HelloWorldLayer *gameLayer; //!< weak reference
+  //float direction;      //!< keeps monkey's direction (from accelerometer)
+  int animPhase;        //!< the current animation phase
+  ccTime animDelay;     //!< delay until the next animation phase is stated
+  HelloWorldLayer *gameLayer; //!< weak reference
+  bool jumping;
+  bool running;
+  bool collide;
+  bool dead;
+  bool die;
 }
 
 //@property (readonly) bool isDead;
@@ -28,5 +33,8 @@
  */
 -(id) initWithGameLayer:(HelloWorldLayer*)gl;
 -(void) jump;
-
+-(bool) isDead;
+-(void) reset;
+-(bool)isJumping;
+-(void)moveTo:(b2Vec2)pos;
 @end

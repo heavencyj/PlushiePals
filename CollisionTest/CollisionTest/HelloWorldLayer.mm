@@ -103,14 +103,14 @@ Floor *maze;
 
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
-    [plushy setPhysicsPosition:b2Vec2FromCC(200,200)];
+    [plushy setPhysicsPosition:b2Vec2FromCC(300,200)];
     [plushy setLinearVelocity:b2Vec2(2.0,0)];
     [_objectLayer addChild:[plushy ccNode] z:10000];
     
     // add maze
     maze = [Floor floorSprite:@"map test 2" spriteName:@"map test 2.png"];
     [maze setPhysicsPosition:b2Vec2FromCC(0,0)];
-    [maze setLinearVelocity:b2Vec2(-5.0,0)];
+    [maze setLinearVelocity:b2Vec2(-4.0,0)];
     //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
     [_objectLayer addChild:[maze ccNode] z:10];
     
@@ -169,11 +169,12 @@ Floor *maze;
   }
   
   // Add objects to path
-  [self nextObject:dt];
+  //[self nextObject:dt];
   
-  if ([plushy ccNode].position.y < 0)
+  if ([plushy ccNode].position.y < 0 || [plushy isDead])
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
+    [plushy reset];
     GameOverScene *gameOverScene = [GameOverScene node];
     //[gameOverScene.layer.label setString:@"Restart in 3 seconds"];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
@@ -241,7 +242,6 @@ Floor *maze;
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   CGPoint p = [plushy ccNode].position;
   
-  //b2Vec2 origin = b2Vec2FromCGPoint([plushy ccNode].position);
   CGPoint oldp = [maze ccNode].position;
   CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p];
   
@@ -253,8 +253,7 @@ Floor *maze;
 {
   float newx = cos(theta) * (pos.x-origin.x) - sin(theta) * (pos.y-origin.y) + origin.x;
   float newy = sin(theta) * (pos.x-origin.x) + cos(theta) * (pos.y-origin.y) + origin.y;
-  
- // body->SetTransform(b2Vec2(newx, newy), -1*CC_DEGREES_TO_RADIANS(theta));
+
   return CGPointMake(newx,newy);
   
 }
