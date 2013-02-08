@@ -38,56 +38,10 @@
 
 }
 
--(void)turn:(float)atAngle
-{
-
-  b2Vec2 pos = body->GetPosition();
-  body->SetTransform(pos, -1*CC_DEGREES_TO_RADIANS(atAngle));
-  
-//  float bodyAngle = body->GetAngle();
-//  
-//  float desiredAngle = -1*CC_DEGREES_TO_RADIANS(atAngle);
-//  float nextAngle = bodyAngle + body->GetAngularVelocity() / 60.0;
-//  float totalRotation = desiredAngle - nextAngle;
-//  while ( totalRotation < -180 * DEGTORAD ) totalRotation += 360 * DEGTORAD;
-//  while ( totalRotation >  180 * DEGTORAD ) totalRotation -= 360 * DEGTORAD;
-//  float desiredAngularVelocity = totalRotation * 60;
-//  float change = 1 * DEGTORAD; //allow 1 degree rotation per time step
-//  desiredAngularVelocity = min( change, max(-change, desiredAngularVelocity));
-//  float impulse = body->GetInertia() * desiredAngularVelocity;
-//  body->ApplyAngularImpulse( impulse );
-  //body->SetAngularVelocity(-60*DEGTORAD);
-  
-  
-}
-
--(b2Vec2)rotate:(float)theta around:(b2Vec2)origin
-{
-  b2Vec2 pos = body->GetPosition();
-//  float l = ABS(pos.x - origin.x);
-//  
-//  float dx = l*cosf(withAngle);
-//  float dy = l*sinf(withAngle);
-//  
-//  float newx = origin.x + dx;
-//  float newy = origin.y - dy;
-  
-  float newx = cosf(theta) * (pos.x-origin.x) - sinf(theta) * (pos.y-origin.y) + origin.x;
-  float newy = sinf(theta) * (pos.x-origin.x) + cosf(theta) * (pos.y-origin.y) + origin.y;
-  
-  body->SetTransform(b2Vec2(newx, newy), CC_DEGREES_TO_RADIANS(theta));
-  return b2Vec2(newx, newy);
-  
-}
-
 -(void)transform:(b2Vec2)pos withAngle:(float)theta
 {
-   body->SetTransform(pos, -CC_DEGREES_TO_RADIANS(theta));
-}
-
--(b2Body*)getbody
-{
-  return body;
+  float angle = body->GetAngle();
+  body->SetTransform(pos, -CC_DEGREES_TO_RADIANS(theta)+angle);
 }
 
 -(void)remove

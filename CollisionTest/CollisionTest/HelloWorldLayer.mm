@@ -22,7 +22,6 @@
 #import "CCTouchDispatcher.h"
 #import "CCParallaxNode-Extras.h"
 
-#define kNumMazes 10
 #define PTM_RATIO 32
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
@@ -35,12 +34,6 @@
 @synthesize objectLayer = _objectLayer;
 @synthesize walkAction = _walking;
 Monkey *plushy;
-int newMaze;
-int duration;
-double nextMazeSpawn;
-int lastMazeNum;
-int lastMazeType;
-Floor *lastMaze;
 Floor *maze;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -78,7 +71,6 @@ Floor *maze;
     // Loading physics shapes
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];    
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"plushypals.plist"];
-    //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"squaremaze.plist"];
     
     // 1) Create the CCParallaxNode
     _backgroundNode = [CCParallaxNode node];
@@ -102,36 +94,27 @@ Floor *maze;
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
     [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
 
-    
-    [self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
+    //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Adding object layer
     _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
-    //CCSpriteBatchNode *mazelayer = [CCSpriteBatchNode batchNodeWithFile:@"squaremaze.png" capacity:150];
-    //[self addChild:mazelayer z:30];
     [self addChild:_objectLayer z:20];
-    
-    maze = [Floor floorSprite:@"squaremaze" spriteName:@"squaremaze.png"];
-    [maze ccNode].anchorPoint = ccp(0,0);
-    //[maze ccNode].position = ccp(80,70);
-    [maze setPhysicsPosition:b2Vec2FromCC(80, 70)];
-    [maze setLinearVelocity:b2Vec2(-0.8,0)];
-    //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
-    [_objectLayer addChild:[maze ccNode] z:10];
   
 
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
-    
-//    [plushy ccNode].anchorPoint = ccp(0,0);
-//    [plushy ccNode].position = ccp(240,130);
-    [plushy setPhysicsPosition:b2Vec2FromCC(100,130)];
-    [plushy setLinearVelocity:b2Vec2(1.0,0)];
+    [plushy setPhysicsPosition:b2Vec2FromCC(200,200)];
+    [plushy setLinearVelocity:b2Vec2(2.0,0)];
     [_objectLayer addChild:[plushy ccNode] z:10000];
     
+    // add maze
+    maze = [Floor floorSprite:@"map test 2" spriteName:@"map test 2.png"];
+    [maze setPhysicsPosition:b2Vec2FromCC(0,0)];
+    [maze setLinearVelocity:b2Vec2(-5.0,0)];
+    //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
+    [_objectLayer addChild:[maze ccNode] z:10];
+    
     // Initializing variables
-    nextMazeSpawn = 0;
-    duration = 4;
     nextObject= 3.0f;  // first object to appear after 3s
     objDelay = 2.0f; // next object to appear after 1s
     
@@ -257,7 +240,6 @@ Floor *maze;
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   CGPoint p = [plushy ccNode].position;
-  p.y = [maze ccNode].position.y;
   
   //b2Vec2 origin = b2Vec2FromCGPoint([plushy ccNode].position);
   CGPoint oldp = [maze ccNode].position;

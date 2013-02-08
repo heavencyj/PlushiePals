@@ -37,10 +37,10 @@
             objName = @"banana bunch";
             break;
             
-        case 2: case 3: case 5:
-            objName = @"spider";
-            break;
-            
+//        case 2: case 3: case 5:
+//            objName = @"spider";
+//            break;
+        
         default:
             objName = @"banana single";
             break;
@@ -52,7 +52,7 @@
 {
     //b2Vec2 velocity = [self linearVelocity];
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    if([fixtureId isEqualToString:@"contact point"])
+    if([fixtureId isEqualToString:@"monkey"])
     {
         //NSLog(@"Something contacted object %@", (NSString *)contact.ownFixture->GetUserData());
         [[self ccNode] removeFromParentAndCleanup:YES];

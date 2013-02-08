@@ -35,9 +35,6 @@
 }
 
 +(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
--(void)turn:(float)atAngle;
 -(void)remove;
--(b2Body*)getbody;
--(b2Vec2)rotate:(float)theta around:(b2Vec2)origin;
 -(void)transform:(b2Vec2)pos withAngle:(float)theta;
 @end    

@@ -38,7 +38,8 @@
         world = [GB2Engine sharedInstance].world;
 
         // Enable debug draw
-        debugDraw = new GLESDebugDraw( PTM_RATIO * [[CCDirector sharedDirector] contentScaleFactor]);
+        //debugDraw = new GLESDebugDraw( PTM_RATIO * [[CCDirector sharedDirector] contentScaleFactor]);
+        debugDraw = new GLESDebugDraw( PTM_RATIO );
         world->SetDebugDraw(debugDraw);
         
         // Set the flags
