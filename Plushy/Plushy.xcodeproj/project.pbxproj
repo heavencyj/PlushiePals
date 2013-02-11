@@ -16,8 +16,6 @@
 		98ECED3516C8AA84005BB243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ECED3416C8AA84005BB243 /* Foundation.framework */; };
 		98ECED3716C8AA84005BB243 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ECED3616C8AA84005BB243 /* CoreGraphics.framework */; };
 		98ECED3916C8AA84005BB243 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ECED3816C8AA84005BB243 /* GameKit.framework */; };
-		98ECED3D16C8AA84005BB243 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECED3C16C8AA84005BB243 /* Default.png */; };
-		98ECED3F16C8AA84005BB243 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECED3E16C8AA84005BB243 /* Default-Landscape~ipad.png */; };
 		98ECED4116C8AA84005BB243 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECED4016C8AA84005BB243 /* fps_images.png */; };
 		98ECED4316C8AA84005BB243 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECED4216C8AA84005BB243 /* fps_images-hd.png */; };
 		98ECED4516C8AA84005BB243 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECED4416C8AA84005BB243 /* fps_images-ipadhd.png */; };
@@ -176,11 +174,21 @@
 		98ECEF3E16C8AA88005BB243 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF3D16C8AA88005BB243 /* b2Rope.cpp */; };
 		98ECEF4416C8AA88005BB243 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF4316C8AA88005BB243 /* main.m */; };
 		98ECEF4716C8AA88005BB243 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF4616C8AA88005BB243 /* AppDelegate.mm */; };
-		98ECEF4A16C8AA88005BB243 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF4916C8AA88005BB243 /* HelloWorldLayer.mm */; };
 		98ECEF4D16C8AA88005BB243 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF4C16C8AA88005BB243 /* IntroLayer.mm */; };
 		98ECEF5016C8AA88005BB243 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF4F16C8AA88005BB243 /* GLES-Render.mm */; };
 		98ECEF5316C8AA88005BB243 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF5216C8AA88005BB243 /* PhysicsSprite.mm */; };
-		98ECEF5516C8AA88005BB243 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF5416C8AA88005BB243 /* blocks.png */; };
+		98ECEF5D16C8ABF8005BB243 /* ActionLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF5C16C8ABF8005BB243 /* ActionLayer.mm */; };
+		98ECEF5F16C8ACAB005BB243 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF5E16C8ACAB005BB243 /* Default-568h@2x.png */; };
+		98ECEF6116C8ADB0005BB243 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6016C8ADB0005BB243 /* Plushy Pals.png */; };
+		98ECEF6316C8AF0C005BB243 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6216C8AF0C005BB243 /* Default.png */; };
+		98ECEF6516C8AF45005BB243 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6416C8AF45005BB243 /* Default@2x.png */; };
+		98ECEF6816C8C0CD005BB243 /* MainMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF6716C8C0CC005BB243 /* MainMenuScene.mm */; };
+		98ECEF6B16C8C3C0005BB243 /* button blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6916C8C3BE005BB243 /* button blue.png */; };
+		98ECEF6C16C8C3C0005BB243 /* button red.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6A16C8C3BF005BB243 /* button red.png */; };
+		98ECEF7016C985FA005BB243 /* Intro screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6D16C985F7005BB243 /* Intro screen.png */; };
+		98ECEF7116C985FA005BB243 /* Loading screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6E16C985F8005BB243 /* Loading screen.png */; };
+		98ECEF7216C985FA005BB243 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF6F16C985F9005BB243 /* Play.png */; };
+		98ECEF7416C989F2005BB243 /* Play selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEF7316C989F1005BB243 /* Play selected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,8 +202,6 @@
 		98ECED3416C8AA84005BB243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98ECED3616C8AA84005BB243 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		98ECED3816C8AA84005BB243 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		98ECED3C16C8AA84005BB243 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		98ECED3E16C8AA84005BB243 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		98ECED4016C8AA84005BB243 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		98ECED4216C8AA84005BB243 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-hd.png"; path = "Resources/fps_images-hd.png"; sourceTree = "<group>"; };
 		98ECED4416C8AA84005BB243 /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-ipadhd.png"; path = "Resources/fps_images-ipadhd.png"; sourceTree = "<group>"; };
@@ -536,15 +542,26 @@
 		98ECEF4316C8AA88005BB243 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98ECEF4516C8AA88005BB243 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		98ECEF4616C8AA88005BB243 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		98ECEF4816C8AA88005BB243 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		98ECEF4916C8AA88005BB243 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		98ECEF4B16C8AA88005BB243 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		98ECEF4C16C8AA88005BB243 /* IntroLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = IntroLayer.mm; sourceTree = "<group>"; };
 		98ECEF4E16C8AA88005BB243 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		98ECEF4F16C8AA88005BB243 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		98ECEF5116C8AA88005BB243 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		98ECEF5216C8AA88005BB243 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
-		98ECEF5416C8AA88005BB243 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		98ECEF5B16C8ABF8005BB243 /* ActionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionLayer.h; path = ../ActionLayer.h; sourceTree = "<group>"; };
+		98ECEF5C16C8ABF8005BB243 /* ActionLayer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ActionLayer.mm; path = ../ActionLayer.mm; sourceTree = "<group>"; };
+		98ECEF5E16C8ACAB005BB243 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		98ECEF6016C8ADB0005BB243 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
+		98ECEF6216C8AF0C005BB243 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		98ECEF6416C8AF45005BB243 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		98ECEF6616C8C0CB005BB243 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		98ECEF6716C8C0CC005BB243 /* MainMenuScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MainMenuScene.mm; sourceTree = "<group>"; };
+		98ECEF6916C8C3BE005BB243 /* button blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button blue.png"; sourceTree = "<group>"; };
+		98ECEF6A16C8C3BF005BB243 /* button red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button red.png"; sourceTree = "<group>"; };
+		98ECEF6D16C985F7005BB243 /* Intro screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Intro screen.png"; sourceTree = "<group>"; };
+		98ECEF6E16C985F8005BB243 /* Loading screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading screen.png"; sourceTree = "<group>"; };
+		98ECEF6F16C985F9005BB243 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		98ECEF7316C989F1005BB243 /* Play selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play selected.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,12 +620,14 @@
 		98ECED3A16C8AA84005BB243 /* Plushy */ = {
 			isa = PBXGroup;
 			children = (
+				98ECEF5B16C8ABF8005BB243 /* ActionLayer.h */,
+				98ECEF5C16C8ABF8005BB243 /* ActionLayer.mm */,
 				98ECEF4516C8AA88005BB243 /* AppDelegate.h */,
 				98ECEF4616C8AA88005BB243 /* AppDelegate.mm */,
-				98ECEF4816C8AA88005BB243 /* HelloWorldLayer.h */,
-				98ECEF4916C8AA88005BB243 /* HelloWorldLayer.mm */,
 				98ECEF4B16C8AA88005BB243 /* IntroLayer.h */,
 				98ECEF4C16C8AA88005BB243 /* IntroLayer.mm */,
+				98ECEF6616C8C0CB005BB243 /* MainMenuScene.h */,
+				98ECEF6716C8C0CC005BB243 /* MainMenuScene.mm */,
 				98ECEF4E16C8AA88005BB243 /* GLES-Render.h */,
 				98ECEF4F16C8AA88005BB243 /* GLES-Render.mm */,
 				98ECEF5116C8AA88005BB243 /* PhysicsSprite.h */,
@@ -623,11 +642,19 @@
 		98ECED3B16C8AA84005BB243 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98ECED3C16C8AA84005BB243 /* Default.png */,
-				98ECED3E16C8AA84005BB243 /* Default-Landscape~ipad.png */,
+				98ECEF6916C8C3BE005BB243 /* button blue.png */,
+				98ECEF6A16C8C3BF005BB243 /* button red.png */,
 				98ECED4016C8AA84005BB243 /* fps_images.png */,
 				98ECED4216C8AA84005BB243 /* fps_images-hd.png */,
 				98ECED4416C8AA84005BB243 /* fps_images-ipadhd.png */,
+				98ECEF6016C8ADB0005BB243 /* Plushy Pals.png */,
+				98ECEF6216C8AF0C005BB243 /* Default.png */,
+				98ECEF6416C8AF45005BB243 /* Default@2x.png */,
+				98ECEF5E16C8ACAB005BB243 /* Default-568h@2x.png */,
+				98ECEF7316C989F1005BB243 /* Play selected.png */,
+				98ECEF6D16C985F7005BB243 /* Intro screen.png */,
+				98ECEF6E16C985F8005BB243 /* Loading screen.png */,
+				98ECEF6F16C985F9005BB243 /* Play.png */,
 				98ECED4616C8AA84005BB243 /* Icon-72.png */,
 				98ECED4816C8AA84005BB243 /* Icon-Small-50.png */,
 				98ECED4A16C8AA84005BB243 /* Icon-Small.png */,
@@ -636,7 +663,6 @@
 				98ECED5016C8AA84005BB243 /* Icon@2x.png */,
 				98ECED5216C8AA84005BB243 /* Info.plist */,
 				98ECED5316C8AA84005BB243 /* iTunesArtwork */,
-				98ECEF5416C8AA88005BB243 /* blocks.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1192,8 +1218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98ECED3D16C8AA84005BB243 /* Default.png in Resources */,
-				98ECED3F16C8AA84005BB243 /* Default-Landscape~ipad.png in Resources */,
 				98ECED4116C8AA84005BB243 /* fps_images.png in Resources */,
 				98ECED4316C8AA84005BB243 /* fps_images-hd.png in Resources */,
 				98ECED4516C8AA84005BB243 /* fps_images-ipadhd.png in Resources */,
@@ -1205,7 +1229,16 @@
 				98ECED5116C8AA84005BB243 /* Icon@2x.png in Resources */,
 				98ECED5416C8AA84005BB243 /* iTunesArtwork in Resources */,
 				98ECEE9216C8AA87005BB243 /* ChangeLog in Resources */,
-				98ECEF5516C8AA88005BB243 /* blocks.png in Resources */,
+				98ECEF5F16C8ACAB005BB243 /* Default-568h@2x.png in Resources */,
+				98ECEF6116C8ADB0005BB243 /* Plushy Pals.png in Resources */,
+				98ECEF6316C8AF0C005BB243 /* Default.png in Resources */,
+				98ECEF6516C8AF45005BB243 /* Default@2x.png in Resources */,
+				98ECEF6B16C8C3C0005BB243 /* button blue.png in Resources */,
+				98ECEF6C16C8C3C0005BB243 /* button red.png in Resources */,
+				98ECEF7016C985FA005BB243 /* Intro screen.png in Resources */,
+				98ECEF7116C985FA005BB243 /* Loading screen.png in Resources */,
+				98ECEF7216C985FA005BB243 /* Play.png in Resources */,
+				98ECEF7416C989F2005BB243 /* Play selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1363,10 +1396,11 @@
 				98ECEF3E16C8AA88005BB243 /* b2Rope.cpp in Sources */,
 				98ECEF4416C8AA88005BB243 /* main.m in Sources */,
 				98ECEF4716C8AA88005BB243 /* AppDelegate.mm in Sources */,
-				98ECEF4A16C8AA88005BB243 /* HelloWorldLayer.mm in Sources */,
 				98ECEF4D16C8AA88005BB243 /* IntroLayer.mm in Sources */,
 				98ECEF5016C8AA88005BB243 /* GLES-Render.mm in Sources */,
 				98ECEF5316C8AA88005BB243 /* PhysicsSprite.mm in Sources */,
+				98ECEF5D16C8ABF8005BB243 /* ActionLayer.mm in Sources */,
+				98ECEF6816C8C0CD005BB243 /* MainMenuScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

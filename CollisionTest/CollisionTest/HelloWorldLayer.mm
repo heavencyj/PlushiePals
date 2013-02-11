@@ -94,7 +94,7 @@ Floor *maze;
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
     [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
 
-    //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
+    [self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Adding object layer
     _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
