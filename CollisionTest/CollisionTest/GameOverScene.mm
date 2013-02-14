@@ -8,6 +8,7 @@
 
 #import "GameOverScene.h"
 #import "HelloWorldLayer.h"
+#import "MainMenuScene.h"
 
 @implementation GameOverScene
 @synthesize layer = _layer;
@@ -46,19 +47,39 @@ CCSprite *_background;
     _label.color = ccc3(0,0,0);
     _label.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:_label];
+
+    CCLayer *menuLayer = [[CCLayer alloc] init];
+    [self addChild:menuLayer];
     
-    [self runAction:[CCSequence actions:
-                     [CCDelayTime actionWithDuration:3],
-                     [CCCallFunc actionWithTarget:self selector:@selector(gameOverDone)],
-                     nil]];
+    CCMenuItemImage *home = [CCMenuItemImage
+                                     itemWithNormalImage:@"Home button.png"
+                                     selectedImage:@"Home button.png"
+                                     target:self
+                                     selector:@selector(goHome)];
+    home.position = ccp(-winSize.width/5,-winSize.height/4);
     
+    CCMenuItemImage *restart = [CCMenuItemImage
+                                  itemWithNormalImage:@"Restart button.png"
+                                  selectedImage:@"Restart button.png"
+                                  target:self
+                                  selector:@selector(restart)];
+    restart.position = ccp(winSize.width/5,-winSize.height/4);
+    
+    CCMenu *menu = [CCMenu menuWithItems: home, restart, nil];
+    [menuLayer addChild: menu];
   }
   return self;
 }
 
-- (void)gameOverDone {
-  
+-(void)restart
+{
   [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+}
+
+
+- (void)goHome {
+  
+  [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
   
 }
 

@@ -10,7 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "HelloWorldLayer.h"
-
+#import "MainMenuScene.h"
 
 #pragma mark - IntroLayer
 
@@ -47,7 +47,7 @@
 		background = [CCSprite spriteWithFile:@"Plushy Pals.png"];
 		background.rotation = 90;
 	} else {
-		background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
+		//background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 	}
 	background.position = ccp(size.width/2, size.height/2);
 
@@ -60,6 +60,8 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0 scene:[HelloWorldLayer scene]]];
+	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0 scene:[HelloWorldLayer scene]]];
+  [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0 scene:[MainMenuScene scene]]];
+
 }
 @end

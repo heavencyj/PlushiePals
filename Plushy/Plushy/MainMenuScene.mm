@@ -8,6 +8,7 @@
 
 #import "MainMenuScene.h"
 #import "ActionLayer.h"
+#import "ModeMenuScene.h"
 
 @implementation MainMenuScene
 
@@ -40,13 +41,21 @@
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
     
-    CCMenuItemImage *startButton = [CCMenuItemImage
-                                    itemWithNormalImage:@"Play.png"
-                                    selectedImage:@"Play selected.png"
+    CCMenuItemImage *puzzleButton = [CCMenuItemImage
+                                    itemWithNormalImage:@"Plushy Puzzle button.png"
+                                    selectedImage:@"Plushy Puzzle button.png"
                                     target:self
-                                    selector:@selector(startGame:)];
+                                    selector:@selector(choosePuzzleMode:)];
+    puzzleButton.position = ccp(-winSize.width/5,-winSize.height/6);
     
-    CCMenu *menu = [CCMenu menuWithItems: startButton, nil];
+    CCMenuItemImage *runButton = [CCMenuItemImage
+                                    itemWithNormalImage:@"Plushy Run button.png"
+                                    selectedImage:@"Plushy Run button.png"
+                                    target:self
+                                    selector:@selector(chooseRunMode:)];
+    runButton.position = ccp(winSize.width/5,-winSize.height/6);
+    
+    CCMenu *menu = [CCMenu menuWithItems: puzzleButton, runButton, nil];
     [menuLayer addChild: menu];
     
     
@@ -54,9 +63,14 @@
   return self;
 }
 
-- (void) startGame: (id) sender
+- (void) chooseRunMode: (id) sender
 {
-  [[CCDirector sharedDirector] replaceScene:[ActionLayer scene]];
+  [[CCDirector sharedDirector] replaceScene:[ModeMenuScene scene]];
+}
+
+- (void) choosePuzzleMode: (id) sender
+{
+  [[CCDirector sharedDirector] replaceScene:[ModeMenuScene scene]];
 }
 
 - (void) dealloc

@@ -35,6 +35,7 @@
 @synthesize walkAction = _walking;
 Monkey *plushy;
 Floor *maze;
+int level;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -51,6 +52,14 @@ Floor *maze;
 	
 	// return the scene
 	return scene;
+}
+
++(CCScene *) scene:(int)withLevel
+{
+  level = withLevel;
+  NSLog(@"level is %d", level);
+  return [self scene];
+  
 }
 
 // On "init" you need to initialize your instance
@@ -92,9 +101,9 @@ Floor *maze;
     [_backgroundNode addChild:_canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(_canyons.contentSize.width/2, _canyons.contentSize.height/2)];
     [_backgroundNode addChild:_canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_canyons2.contentSize.width+380, _canyons2.contentSize.height/2)];
     [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
-    [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
+    [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
 
-    [self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
+    //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Adding object layer
     _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
@@ -108,11 +117,7 @@ Floor *maze;
     [_objectLayer addChild:[plushy ccNode] z:10000];
     
     // add maze
-    maze = [Floor floorSprite:@"map test 2" spriteName:@"map test 2.png"];
-    [maze setPhysicsPosition:b2Vec2FromCC(0,0)];
-    [maze setLinearVelocity:b2Vec2(-4.0,0)];
-    //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
-    [_objectLayer addChild:[maze ccNode] z:10];
+    [self loadMaze];
     
     // Initializing variables
     nextObject= 3.0f;  // first object to appear after 3s
@@ -179,7 +184,6 @@ Floor *maze;
     //[gameOverScene.layer.label setString:@"Restart in 3 seconds"];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
   }
-    //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
 -(void)nextObject:(ccTime)dt
@@ -232,6 +236,18 @@ Floor *maze;
   //	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 
+-(void) loadMaze
+{
+  
+  NSString *shape = [@"map level " stringByAppendingFormat:@"%d", level];
+  maze = [Floor floorSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
+  [maze setPhysicsPosition:b2Vec2FromCC(200,140)];
+  [maze setLinearVelocity:b2Vec2(-4.0,0)];
+  //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
+  [_objectLayer addChild:[maze ccNode] z:10];
+}
+
+
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   [plushy jump];
@@ -241,6 +257,7 @@ Floor *maze;
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   CGPoint p = [plushy ccNode].position;
+  p.y -= 100;
   
   CGPoint oldp = [maze ccNode].position;
   CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p];

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>animations</key>
+	<dict>
+		<key>monkey_run</key>
+		<dict>
+			<key>delay</key>
+			<real>0.40000000596046448</real>
+			<key>frames</key>
+			<array>
+				<string>Monkey run 1</string>
+				<string>Monkey run 2</string>
+				<string>Monkey run 3</string>
+				<string>Monkey run 4</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
