@@ -257,7 +257,8 @@ int level;
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
   CGPoint p = [plushy ccNode].position;
-  p.y -= 100;
+  
+  p.y = (angle > 0) ? p.y+10:p.y-80;
   
   CGPoint oldp = [maze ccNode].position;
   CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p];
