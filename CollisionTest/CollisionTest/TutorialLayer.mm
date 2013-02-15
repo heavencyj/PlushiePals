@@ -17,8 +17,9 @@ int pageIndex;
 CCMenuItemImage* button;
 CCMenu *menu;
 CCLayer *menuLayer;
+CCSprite *map;
 CCLayer *tryLayer;
-
+CCSprite *monkey;
 
 +(id) scene
 {
@@ -125,42 +126,44 @@ CCLayer *tryLayer;
 -(void)leftswipe
 {
   //pageIndex = 2;
-  [self removeChild:page cleanup:YES];
+  // load canyon and monkey
+  [self loadPlushy];
+  
+  // load map
+  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map.anchorPoint = ccp(0.95, 1);
+  map.position = ccp(300,130);
+  [tryLayer addChild:map z:1];
+
+  //[self loadTutorial];
+  
+  // add gesture
   UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGestureRecognizer:)];
   [self addGestureRecognizer:swipeLeftGestureRecognizer];
   swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
   swipeLeftGestureRecognizer.delegate = self;
   [swipeLeftGestureRecognizer release];
-  
-  // load canyon and monkey
-  [self loadPlushy];
-  
-  // load map
-  CCSprite *map = [CCSprite spriteWithFile:@"map level 3.png"];
-  map.anchorPoint = ccp(0.9, 1.1);
-  map.position = ccp(300,200);
-  [tryLayer addChild:map];
-
-  //[self loadTutorial];
 }
 
 -(void)rightswipe
 {
   //pageIndex = 3;
+  
+  // load plushy
+  [self loadPlushy];
+  
+  // load map
+  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map.anchorPoint = ccp(0.75, 0.4);
+  map.rotation = -180;
+  map.position = ccp(300,200);
+  [tryLayer addChild:map z:1];
+  
   UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGestureRecognizer:)];
   [self addGestureRecognizer:swipeRightGestureRecognizer];
   swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
   swipeRightGestureRecognizer.delegate = self;
   [swipeRightGestureRecognizer release];
- 
-  // load plushy
-  [self loadPlushy];
-  
-  // load map
-  CCSprite *map = [CCSprite spriteWithFile:@"map level 3.png"];
-  map.anchorPoint = ccp(0.9, 1.1);
-  map.position = ccp(300,200);
-  [tryLayer addChild:map];
   
   //[self loadTutorial];
 }
@@ -169,61 +172,81 @@ CCLayer *tryLayer;
 {
   //pageIndex = 4;
   
+  [self loadPlushy];
+  
+  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map.anchorPoint = ccp(0.3, 1.1);
+  map.position = ccp(300,200);
+  [tryLayer addChild:map z:1];
+  //[self loadTutorial];
+  
+  // add gesture
   UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
   [self addGestureRecognizer:tapGestureRecognizer];
   tapGestureRecognizer.numberOfTapsRequired = 1;
   tapGestureRecognizer.delegate = self;
   [tapGestureRecognizer release];
   // load canyon
-  
-  [self loadPlushy];
-  [self loadMap:@"map3.png"];
-  //[self loadTutorial];
-}
-
-- (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
-{
-  self.isTouchEnabled = NO;
-  [self removeChild:tryLayer cleanup:YES];
-  pageIndex = 2;
-  //roate left
-  [self loadTutorial];
-  
 }
 
 - (void)handleSwipeLeftGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
-  [self removeChild:tryLayer cleanup:YES];
   self.isTouchEnabled = NO;
-  pageIndex = 3;
-  //rotate right
-  [self loadTutorial];
+  [self removeGestureRecognizer:aGestureRecognizer];
+  pageIndex = 2;
+
+  //roate left
+  [map runAction:[CCSequence actions:[CCRotateBy actionWithDuration:0.8 angle:-90],
+                  [CCDelayTime actionWithDuration:2],
+                  [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
 }
 
 - (void)handleSwipeRightGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   self.isTouchEnabled = NO;
+  [self removeGestureRecognizer:aGestureRecognizer];
+  pageIndex = 3;
+
+  //rotate right
+  [map runAction:[CCSequence actions:[CCRotateBy actionWithDuration:0.8 angle:90],
+                  [CCDelayTime actionWithDuration:2],
+                  [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
+}
+
+
+- (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+{
+  
+  self.isTouchEnabled = NO;
+  [self removeGestureRecognizer:aGestureRecognizer];
   pageIndex = 4;
   //tap to jump
-  [self loadTutorial];
+  [monkey runAction:[CCSequence actions:[CCJumpBy actionWithDuration:1 position:ccp(150,0) height:50 jumps:1],
+                  [CCDelayTime actionWithDuration:2],
+                  [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
+  
 }
 
 - (void)loadPlushy
 {
+  // remove the tutorial page
+  [self removeChild:page cleanup:YES];
+  
   // create a new layer to hold plushy and the map
   tryLayer = [[[CCLayer alloc] init] autorelease];
   tryLayer.anchorPoint = ccp(0,0);
   tryLayer.position = ccp(0,0);
-  CCSprite *plushy = [CCSprite spriteWithFile:@"Monkey run 2.png"];
-  plushy.anchorPoint = ccp(0.5, 0.5);
-  plushy.position = ccp(300,200);
-  [tryLayer addChild:plushy];
+  monkey = [CCSprite spriteWithFile:@"Monkey run 2.png"];
+  monkey.anchorPoint = ccp(0.5, 0.5);
+  monkey.position = ccp(300,200);
+  [tryLayer addChild:monkey z:10];
   [self addChild:tryLayer];
 }
 
--(void)loadMap:(NSString*)map
+-(void)cleanAndLoad
 {
-  
+  [self removeChild:tryLayer cleanup:YES];
+  [self loadTutorial];
 }
 
 - (void) dealloc
