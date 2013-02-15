@@ -8,6 +8,7 @@
 #import "ModeMenuScene.h"
 #import "HelloWorldLayer.h"
 #import "MainMenuScene.h"
+#import "TutorialLayer.h"
 
 @implementation ModeMenuScene
 int gameMode;
@@ -110,7 +111,7 @@ int gameMode;
 
 -(void) loadTutorial
 {
-  
+  [[CCDirector sharedDirector] replaceScene:[TutorialLayer scene]];
 }
 
 - (void) dealloc

@@ -37,6 +37,21 @@
 		98ECEFDC16CCE6F7005BB243 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFDB16CCE6F7005BB243 /* Default.png */; };
 		98ECEFDE16CE12DE005BB243 /* Canyon background blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFDD16CE12DE005BB243 /* Canyon background blue.png */; };
 		98ECEFE016CE177D005BB243 /* Canyons looped blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFDF16CE177D005BB243 /* Canyons looped blue.png */; };
+		98ECEFE816CE253A005BB243 /* Tutorial level 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFE416CE253A005BB243 /* Tutorial level 1.png */; };
+		98ECEFE916CE253A005BB243 /* Tutorial level 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFE516CE253A005BB243 /* Tutorial level 2.png */; };
+		98ECEFEA16CE253A005BB243 /* Tutorial level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFE616CE253A005BB243 /* Tutorial level 3.png */; };
+		98ECEFEB16CE253A005BB243 /* Tutorial level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFE716CE253A005BB243 /* Tutorial level 4.png */; };
+		98ECEFEE16CE2554005BB243 /* Flip button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFEC16CE2554005BB243 /* Flip button.png */; };
+		98ECEFEF16CE2554005BB243 /* Next button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFED16CE2554005BB243 /* Next button.png */; };
+		98ECEFF216CE2635005BB243 /* TutorialLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEFF116CE2634005BB243 /* TutorialLayer.mm */; };
+		98ECEFF416CE35F0005BB243 /* Try button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFF316CE35F0005BB243 /* Try button.png */; };
+		98ECEFF916CE3E70005BB243 /* Tap button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFF516CE3E6F005BB243 /* Tap button selected.png */; };
+		98ECEFFA16CE3E70005BB243 /* Try button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFF616CE3E6F005BB243 /* Try button selected.png */; };
+		98ECEFFB16CE3E70005BB243 /* Flip button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFF716CE3E6F005BB243 /* Flip button selected.png */; };
+		98ECEFFC16CE3E70005BB243 /* Next button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFF816CE3E6F005BB243 /* Next button selected.png */; };
+		98ECEFFE16CE3E88005BB243 /* Tap button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFFD16CE3E88005BB243 /* Tap button.png */; };
+		98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFFF16CE4688005BB243 /* Monkey run 2.png */; };
+		98ECF00216CE46ED005BB243 /* map level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECF00116CE46ED005BB243 /* map level 3.png */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
@@ -263,6 +278,22 @@
 		98ECEFDB16CCE6F7005BB243 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		98ECEFDD16CE12DE005BB243 /* Canyon background blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon background blue.png"; sourceTree = "<group>"; };
 		98ECEFDF16CE177D005BB243 /* Canyons looped blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyons looped blue.png"; sourceTree = "<group>"; };
+		98ECEFE416CE253A005BB243 /* Tutorial level 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tutorial level 1.png"; sourceTree = "<group>"; };
+		98ECEFE516CE253A005BB243 /* Tutorial level 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tutorial level 2.png"; sourceTree = "<group>"; };
+		98ECEFE616CE253A005BB243 /* Tutorial level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tutorial level 3.png"; sourceTree = "<group>"; };
+		98ECEFE716CE253A005BB243 /* Tutorial level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tutorial level 4.png"; sourceTree = "<group>"; };
+		98ECEFEC16CE2554005BB243 /* Flip button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip button.png"; sourceTree = "<group>"; };
+		98ECEFED16CE2554005BB243 /* Next button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next button.png"; sourceTree = "<group>"; };
+		98ECEFF016CE2634005BB243 /* TutorialLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialLayer.h; sourceTree = "<group>"; };
+		98ECEFF116CE2634005BB243 /* TutorialLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TutorialLayer.mm; sourceTree = "<group>"; };
+		98ECEFF316CE35F0005BB243 /* Try button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Try button.png"; sourceTree = "<group>"; };
+		98ECEFF516CE3E6F005BB243 /* Tap button selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tap button selected.png"; sourceTree = "<group>"; };
+		98ECEFF616CE3E6F005BB243 /* Try button selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Try button selected.png"; sourceTree = "<group>"; };
+		98ECEFF716CE3E6F005BB243 /* Flip button selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip button selected.png"; sourceTree = "<group>"; };
+		98ECEFF816CE3E6F005BB243 /* Next button selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next button selected.png"; sourceTree = "<group>"; };
+		98ECEFFD16CE3E88005BB243 /* Tap button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tap button.png"; sourceTree = "<group>"; };
+		98ECEFFF16CE4688005BB243 /* Monkey run 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Monkey run 2.png"; sourceTree = "<group>"; };
+		98ECF00116CE46ED005BB243 /* map level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map level 3.png"; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
@@ -738,6 +769,27 @@
 			name = background;
 			sourceTree = "<group>";
 		};
+		98ECEFE316CE252E005BB243 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				98ECEFE416CE253A005BB243 /* Tutorial level 1.png */,
+				98ECEFE516CE253A005BB243 /* Tutorial level 2.png */,
+				98ECF00116CE46ED005BB243 /* map level 3.png */,
+				98ECEFEC16CE2554005BB243 /* Flip button.png */,
+				98ECEFF516CE3E6F005BB243 /* Tap button selected.png */,
+				98ECEFF616CE3E6F005BB243 /* Try button selected.png */,
+				98ECEFFF16CE4688005BB243 /* Monkey run 2.png */,
+				98ECEFF716CE3E6F005BB243 /* Flip button selected.png */,
+				98ECEFF816CE3E6F005BB243 /* Next button selected.png */,
+				98ECEFED16CE2554005BB243 /* Next button.png */,
+				98ECEFF316CE35F0005BB243 /* Try button.png */,
+				98ECEFFD16CE3E88005BB243 /* Tap button.png */,
+				98ECEFE616CE253A005BB243 /* Tutorial level 3.png */,
+				98ECEFE716CE253A005BB243 /* Tutorial level 4.png */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
 		B6D286CF16B0DA750050A460 = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +826,8 @@
 		B6D286F016B0DA750050A460 /* CollisionTest */ = {
 			isa = PBXGroup;
 			children = (
+				98ECEFF016CE2634005BB243 /* TutorialLayer.h */,
+				98ECEFF116CE2634005BB243 /* TutorialLayer.mm */,
 				B6E7D0A916B329F9009C732A /* GameConfig.h */,
 				B6E7D0AA16B32A52009C732A /* RootViewController.h */,
 				B6E7D0AB16B32A52009C732A /* RootViewController.m */,
@@ -813,6 +867,7 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				98ECEFE316CE252E005BB243 /* tutorial */,
 				98ECEFD416CCD583005BB243 /* plushypals.png */,
 				98ECEFD616CCD5C3005BB243 /* plushypals.plist */,
 				98ECEFD816CCD7A4005BB243 /* plushyshapes.plist */,
@@ -1449,6 +1504,20 @@
 				98ECEFDC16CCE6F7005BB243 /* Default.png in Resources */,
 				98ECEFDE16CE12DE005BB243 /* Canyon background blue.png in Resources */,
 				98ECEFE016CE177D005BB243 /* Canyons looped blue.png in Resources */,
+				98ECEFE816CE253A005BB243 /* Tutorial level 1.png in Resources */,
+				98ECEFE916CE253A005BB243 /* Tutorial level 2.png in Resources */,
+				98ECEFEA16CE253A005BB243 /* Tutorial level 3.png in Resources */,
+				98ECEFEB16CE253A005BB243 /* Tutorial level 4.png in Resources */,
+				98ECEFEE16CE2554005BB243 /* Flip button.png in Resources */,
+				98ECEFEF16CE2554005BB243 /* Next button.png in Resources */,
+				98ECEFF416CE35F0005BB243 /* Try button.png in Resources */,
+				98ECEFF916CE3E70005BB243 /* Tap button selected.png in Resources */,
+				98ECEFFA16CE3E70005BB243 /* Try button selected.png in Resources */,
+				98ECEFFB16CE3E70005BB243 /* Flip button selected.png in Resources */,
+				98ECEFFC16CE3E70005BB243 /* Next button selected.png in Resources */,
+				98ECEFFE16CE3E88005BB243 /* Tap button.png in Resources */,
+				98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */,
+				98ECF00216CE46ED005BB243 /* map level 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1627,6 +1696,7 @@
 				98ECED0D16C492FE005BB243 /* HelloWorldLayer.mm in Sources */,
 				98ECEF9816CC34B2005BB243 /* MainMenuScene.mm in Sources */,
 				98ECEF9916CC34B2005BB243 /* ModeMenuScene.mm in Sources */,
+				98ECEFF216CE2635005BB243 /* TutorialLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
