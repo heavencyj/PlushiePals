@@ -21,6 +21,7 @@
   bool jumping;
   bool running;
   bool collide;
+  bool pass;
   bool dead;
   bool die;
 }
@@ -37,4 +38,5 @@
 -(void) reset;
 -(bool)isJumping;
 -(void)moveTo:(b2Vec2)pos;
+-(bool)passLevel;
 @end

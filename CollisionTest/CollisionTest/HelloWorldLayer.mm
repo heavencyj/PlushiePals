@@ -36,6 +36,7 @@
 Monkey *plushy;
 Floor *maze;
 int level;
+bool pass;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -48,7 +49,7 @@ int level;
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
-  
+  pass = false;
 	
 	// return the scene
 	return scene;
@@ -58,6 +59,7 @@ int level;
 {
   level = withLevel;
   NSLog(@"level is %d", level);
+  pass = false;
   return [self scene];
   
 }
@@ -176,10 +178,17 @@ int level;
   // Add objects to path
   //[self nextObject:dt];
   
+//  if ([plushy passLevel]) {
+//    pass = true;
+//    // drop something on the screen to show that u passed the level
+//    //NSLog(@"passsss!");
+//  }
+  
   if ([plushy ccNode].position.y < 0 || [plushy isDead])
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
+    // if pass, show one screen. otherwise show the other, modify gameover scene
     GameOverScene *gameOverScene = [GameOverScene node];
     //[gameOverScene.layer.label setString:@"Restart in 3 seconds"];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];

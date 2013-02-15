@@ -839,6 +839,23 @@
 							</array>
 						</array>
                     </dict>
+					<dict>
+                        <key>density</key> <real>2</real>
+                        <key>friction</key> <real>0</real>
+                        <key>restitution</key> <real>0</real>
+                        <key>filter_categoryBits</key> <integer>64</integer>
+                        <key>filter_groupIndex</key> <integer>0</integer>
+                        <key>filter_maskBits</key> <integer>65535</integer>
+                        <key>isSensor</key> <true/>
+                        <key>id</key> <string>win</string>
+                        <key>fixture_type</key> <string>CIRCLE</string>
+
+                         <key>circle</key>
+                         <dict>
+                             <key>radius</key> <real>20.881</real>
+                             <key>position</key> <string>{ -46.455,-36.455 }</string>
+                         </dict>
+                    </dict>
 				</array>
 			</dict>
 			<key>map level 2</key>
@@ -1088,6 +1105,23 @@
 							</array>
 						</array>
                     </dict>
+					<dict>
+                        <key>density</key> <real>2</real>
+                        <key>friction</key> <real>0</real>
+                        <key>restitution</key> <real>0</real>
+                        <key>filter_categoryBits</key> <integer>64</integer>
+                        <key>filter_groupIndex</key> <integer>0</integer>
+                        <key>filter_maskBits</key> <integer>65535</integer>
+                        <key>isSensor</key> <true/>
+                        <key>id</key> <string>win</string>
+                        <key>fixture_type</key> <string>CIRCLE</string>
+
+                         <key>circle</key>
+                         <dict>
+                             <key>radius</key> <real>21.000</real>
+                             <key>position</key> <string>{ -19.580,-42.830 }</string>
+                         </dict>
+                    </dict>
 				</array>
 			</dict>
 			<key>map level 3</key>
@@ -1251,6 +1285,23 @@
 								<string>{ 1691.670,-359.670 }</string>
 							</array>
 						</array>
+                    </dict>
+					<dict>
+                        <key>density</key> <real>2</real>
+                        <key>friction</key> <real>0</real>
+                        <key>restitution</key> <real>0</real>
+                        <key>filter_categoryBits</key> <integer>64</integer>
+                        <key>filter_groupIndex</key> <integer>0</integer>
+                        <key>filter_maskBits</key> <integer>65535</integer>
+                        <key>isSensor</key> <true/>
+                        <key>id</key> <string>win</string>
+                        <key>fixture_type</key> <string>CIRCLE</string>
+
+                         <key>circle</key>
+                         <dict>
+                             <key>radius</key> <real>22.000</real>
+                             <key>position</key> <string>{ -23.747,-42.462 }</string>
+                         </dict>
                     </dict>
 				</array>
 			</dict>
@@ -1545,6 +1596,23 @@
 								<string>{ 1631.000,-496.670 }</string>
 							</array>
 						</array>
+                    </dict>
+					<dict>
+                        <key>density</key> <real>2</real>
+                        <key>friction</key> <real>0</real>
+                        <key>restitution</key> <real>0</real>
+                        <key>filter_categoryBits</key> <integer>64</integer>
+                        <key>filter_groupIndex</key> <integer>0</integer>
+                        <key>filter_maskBits</key> <integer>65535</integer>
+                        <key>isSensor</key> <true/>
+                        <key>id</key> <string>win</string>
+                        <key>fixture_type</key> <string>CIRCLE</string>
+
+                         <key>circle</key>
+                         <dict>
+                             <key>radius</key> <real>24.000</real>
+                             <key>position</key> <string>{ -22.000,-47.670 }</string>
+                         </dict>
                     </dict>
 				</array>
 			</dict>

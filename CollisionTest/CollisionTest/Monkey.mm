@@ -187,6 +187,7 @@
   dead = false;
   die = false;
   running = true;
+  pass = false;
   
 }
 
@@ -194,6 +195,7 @@
 {
   //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
   NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+  NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
   if([fixtureId isEqualToString:@"feet"])
   {
     running = true;
@@ -207,7 +209,15 @@
     collide = true;
     animPhase = 1;
   }
+  
+  if ([otherfixtureId isEqualToString:@"win"]) {
+    pass = true;
+  }
+}
 
+-(bool)passLevel
+{
+  return pass;
 }
 
 -(void)moveTo:(b2Vec2)pos
