@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		989214E016B71CE900AD5959 /* Plushy Pals.png in Resources */ = {isa = PBXBuildFile; fileRef = 989214DF16B71CE900AD5959 /* Plushy Pals.png */; };
+		98DC00F516CEBCD0009FF496 /* Congrats screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC00F316CEBCD0009FF496 /* Congrats screen.png */; };
+		98DC00F816CEC6D5009FF496 /* Oops screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC00F716CEC6D5009FF496 /* Oops screen.png */; };
+		98DC00FE16CECCCE009FF496 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC00FD16CECCCE009FF496 /* Star.png */; };
+		98DC010616CED0D7009FF496 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98DC010316CED0D6009FF496 /* plushypals.plist */; };
+		98DC010716CED0D7009FF496 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC010416CED0D6009FF496 /* plushypals.png */; };
+		98DC010816CED0D7009FF496 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98DC010516CED0D7009FF496 /* plushyshapes.plist */; };
 		98DC444F16BC4CAD0069D3CD /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */; };
 		98ECED0D16C492FE005BB243 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECED0C16C492FE005BB243 /* HelloWorldLayer.mm */; };
 		98ECEF9816CC34B2005BB243 /* MainMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF9516CC34B1005BB243 /* MainMenuScene.mm */; };
@@ -30,8 +36,6 @@
 		98ECEFCB16CCB4FF005BB243 /* Level 3 button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFC516CCB4FF005BB243 /* Level 3 button.png */; };
 		98ECEFCC16CCB4FF005BB243 /* Level 4 button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFC616CCB4FF005BB243 /* Level 4 button.png */; };
 		98ECEFCD16CCB4FF005BB243 /* Level Home button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFC716CCB4FF005BB243 /* Level Home button.png */; };
-		98ECEFD516CCD583005BB243 /* plushypals.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFD416CCD583005BB243 /* plushypals.png */; };
-		98ECEFD716CCD5C3005BB243 /* plushypals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFD616CCD5C3005BB243 /* plushypals.plist */; };
 		98ECEFDA16CCE6ED005BB243 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7EE16BA338700A18443 /* Default@2x.png */; };
 		98ECEFDC16CCE6F7005BB243 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFDB16CCE6F7005BB243 /* Default.png */; };
 		98ECEFDE16CE12DE005BB243 /* Canyon background blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFDD16CE12DE005BB243 /* Canyon background blue.png */; };
@@ -51,7 +55,6 @@
 		98ECEFFE16CE3E88005BB243 /* Tap button.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFFD16CE3E88005BB243 /* Tap button.png */; };
 		98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFFF16CE4688005BB243 /* Monkey run 2.png */; };
 		98ECF00216CE46ED005BB243 /* map level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECF00116CE46ED005BB243 /* map level 3.png */; };
-		98ECF00416CE69B4005BB243 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98ECF00316CE69B2005BB243 /* plushyshapes.plist */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
@@ -247,6 +250,12 @@
 
 /* Begin PBXFileReference section */
 		989214DF16B71CE900AD5959 /* Plushy Pals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals.png"; sourceTree = "<group>"; };
+		98DC00F316CEBCD0009FF496 /* Congrats screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Congrats screen.png"; sourceTree = "<group>"; };
+		98DC00F716CEC6D5009FF496 /* Oops screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oops screen.png"; sourceTree = "<group>"; };
+		98DC00FD16CECCCE009FF496 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		98DC010316CED0D6009FF496 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
+		98DC010416CED0D6009FF496 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
+		98DC010516CED0D7009FF496 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		98DC444D16BC4CAD0069D3CD /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOverScene.mm; sourceTree = "<group>"; };
 		98ECED0C16C492FE005BB243 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
@@ -272,8 +281,6 @@
 		98ECEFC516CCB4FF005BB243 /* Level 3 button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 3 button.png"; sourceTree = "<group>"; };
 		98ECEFC616CCB4FF005BB243 /* Level 4 button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 4 button.png"; sourceTree = "<group>"; };
 		98ECEFC716CCB4FF005BB243 /* Level Home button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level Home button.png"; sourceTree = "<group>"; };
-		98ECEFD416CCD583005BB243 /* plushypals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plushypals.png; sourceTree = "<group>"; };
-		98ECEFD616CCD5C3005BB243 /* plushypals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushypals.plist; sourceTree = "<group>"; };
 		98ECEFDB16CCE6F7005BB243 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		98ECEFDD16CE12DE005BB243 /* Canyon background blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon background blue.png"; sourceTree = "<group>"; };
 		98ECEFDF16CE177D005BB243 /* Canyons looped blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyons looped blue.png"; sourceTree = "<group>"; };
@@ -293,7 +300,6 @@
 		98ECEFFD16CE3E88005BB243 /* Tap button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tap button.png"; sourceTree = "<group>"; };
 		98ECEFFF16CE4688005BB243 /* Monkey run 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Monkey run 2.png"; sourceTree = "<group>"; };
 		98ECF00116CE46ED005BB243 /* map level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map level 3.png"; sourceTree = "<group>"; };
-		98ECF00316CE69B2005BB243 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
@@ -728,6 +734,8 @@
 				98ECEFA316CC35D2005BB243 /* Loading screen.png */,
 				98ECEF9A16CC3522005BB243 /* Play selected.png */,
 				98ECEFA216CC35D2005BB243 /* Intro screen.png */,
+				98DC00F316CEBCD0009FF496 /* Congrats screen.png */,
+				98DC00F716CEC6D5009FF496 /* Oops screen.png */,
 				98ECEF9B16CC3522005BB243 /* Play.png */,
 				98ECEF9C16CC3522005BB243 /* Plushy Puzzle button.png */,
 				98ECEF9D16CC3522005BB243 /* Plushy Run button.png */,
@@ -867,10 +875,11 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				98DC010316CED0D6009FF496 /* plushypals.plist */,
+				98DC010416CED0D6009FF496 /* plushypals.png */,
+				98DC010516CED0D7009FF496 /* plushyshapes.plist */,
 				98ECEFE316CE252E005BB243 /* tutorial */,
-				98ECEFD416CCD583005BB243 /* plushypals.png */,
-				98ECEFD616CCD5C3005BB243 /* plushypals.plist */,
-				98ECF00316CE69B2005BB243 /* plushyshapes.plist */,
+				98DC00FD16CECCCE009FF496 /* Star.png */,
 				98ECEFB016CCA1D4005BB243 /* background */,
 				98ECEFAF16CCA195005BB243 /* app */,
 				98ECEFAE16CCA16E005BB243 /* menu */,
@@ -1497,8 +1506,6 @@
 				98ECEFCB16CCB4FF005BB243 /* Level 3 button.png in Resources */,
 				98ECEFCC16CCB4FF005BB243 /* Level 4 button.png in Resources */,
 				98ECEFCD16CCB4FF005BB243 /* Level Home button.png in Resources */,
-				98ECEFD516CCD583005BB243 /* plushypals.png in Resources */,
-				98ECEFD716CCD5C3005BB243 /* plushypals.plist in Resources */,
 				98ECEFDA16CCE6ED005BB243 /* Default@2x.png in Resources */,
 				98ECEFDC16CCE6F7005BB243 /* Default.png in Resources */,
 				98ECEFDE16CE12DE005BB243 /* Canyon background blue.png in Resources */,
@@ -1517,7 +1524,12 @@
 				98ECEFFE16CE3E88005BB243 /* Tap button.png in Resources */,
 				98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */,
 				98ECF00216CE46ED005BB243 /* map level 3.png in Resources */,
-				98ECF00416CE69B4005BB243 /* plushyshapes.plist in Resources */,
+				98DC00F516CEBCD0009FF496 /* Congrats screen.png in Resources */,
+				98DC00F816CEC6D5009FF496 /* Oops screen.png in Resources */,
+				98DC00FE16CECCCE009FF496 /* Star.png in Resources */,
+				98DC010616CED0D7009FF496 /* plushypals.plist in Resources */,
+				98DC010716CED0D7009FF496 /* plushypals.png in Resources */,
+				98DC010816CED0D7009FF496 /* plushyshapes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

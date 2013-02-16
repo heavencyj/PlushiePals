@@ -58,7 +58,7 @@ bool pass;
 +(CCScene *) scene:(int)withLevel
 {
   level = withLevel;
-  NSLog(@"level is %d", level);
+  //NSLog(@"level is %d", level);
   pass = false;
   return [self scene];
   
@@ -153,7 +153,7 @@ bool pass;
 // Add new update method
 - (void)update:(ccTime)dt {
   
-  //CGSize windowSize = [[CCDirector sharedDirector] winSize];
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
   
   // Incrementing the position of the background parallaxnode
   CGPoint backgroundScrollVel = ccp(-100, 0);
@@ -178,20 +178,22 @@ bool pass;
   // Add objects to path
   //[self nextObject:dt];
   
-//  if ([plushy passLevel]) {
-//    pass = true;
-//    // drop something on the screen to show that u passed the level
-//    //NSLog(@"passsss!");
-//  }
+  if ([plushy passLevel] && pass == false) {
+    pass = true;
+    // drop something on the screen to show that u passed the level
+    //NSLog(@"passsss!");
+    CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
+    star.position = ccp(winSize.width*0.8, winSize.height*0.8);
+    [_background addChild:star];
+  }
   
   if ([plushy ccNode].position.y < 0 || [plushy isDead])
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
     // if pass, show one screen. otherwise show the other, modify gameover scene
-    GameOverScene *gameOverScene = [GameOverScene node];
-    //[gameOverScene.layer.label setString:@"Restart in 3 seconds"];
-    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+
+    [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level]];
   }
 }
 

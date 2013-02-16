@@ -8,14 +8,16 @@
 
 #import "cocos2d.h"
 
-@interface GameOverLayer : CCLayerColor {
-  CCLabelTTF *_label;
-}
-@property (nonatomic, retain) CCLabelTTF *label;
-@end
+//@interface GameOverLayer : CCLayerColor {
+//  CCLabelTTF *_label;
+//}
+//@property (nonatomic, retain) CCLabelTTF *label;
+//@end
 
-@interface GameOverScene : CCScene {
-  GameOverLayer *_layer;
+@interface GameOverScene : CCLayer {
+  
 }
-@property (nonatomic, retain) GameOverLayer *layer;
+
++(CCScene *) scene;
++(CCScene *) scene:(bool)didpass withLevel:(int)level;
 @end

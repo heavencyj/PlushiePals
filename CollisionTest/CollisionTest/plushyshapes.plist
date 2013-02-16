@@ -1332,15 +1332,29 @@
 								<string>{ 331.000,3.330 }</string>
 							</array>
 							<array>	
+								<string>{ 1.000,6.330 }</string>	
+								<string>{ 3.000,-246.670 }</string>	
+								<string>{ 597.000,-246.670 }</string>	
+								<string>{ 656.000,-199.670 }</string>	
+								<string>{ 331.000,3.330 }</string>	
+								<string>{ 283.000,6.330 }</string>
+							</array>
+							<array>	
+								<string>{ 655.000,-2.670 }</string>	
+								<string>{ 331.000,3.330 }</string>	
+								<string>{ 656.000,-199.670 }</string>
+							</array>
+							<array>	
 								<string>{ 697.000,-399.670 }</string>	
 								<string>{ 694.000,-250.670 }</string>	
 								<string>{ 656.000,-199.670 }</string>	
+								<string>{ 597.000,-246.670 }</string>	
 								<string>{ 650.000,-402.670 }</string>
 							</array>
 							<array>	
 								<string>{ 647.000,-571.670 }</string>	
 								<string>{ 650.000,-402.670 }</string>	
-								<string>{ 603.000,-44.670 }</string>	
+								<string>{ 597.000,-246.670 }</string>	
 								<string>{ 598.000,-569.670 }</string>
 							</array>
 							<array>	
@@ -1348,29 +1362,6 @@
 								<string>{ 993.000,-196.670 }</string>	
 								<string>{ 656.000,-199.670 }</string>	
 								<string>{ 694.000,-250.670 }</string>
-							</array>
-							<array>	
-								<string>{ 53.000,-393.670 }</string>	
-								<string>{ 53.000,-46.670 }</string>	
-								<string>{ 1.000,6.330 }</string>	
-								<string>{ 0.000,-393.670 }</string>
-							</array>
-							<array>	
-								<string>{ 1.000,6.330 }</string>	
-								<string>{ 53.000,-46.670 }</string>	
-								<string>{ 603.000,-44.670 }</string>	
-								<string>{ 331.000,3.330 }</string>	
-								<string>{ 283.000,6.330 }</string>
-							</array>
-							<array>	
-								<string>{ 650.000,-402.670 }</string>	
-								<string>{ 655.000,-2.670 }</string>	
-								<string>{ 603.000,-44.670 }</string>
-							</array>
-							<array>	
-								<string>{ 655.000,-2.670 }</string>	
-								<string>{ 331.000,3.330 }</string>	
-								<string>{ 603.000,-44.670 }</string>
 							</array>
 						</array>
                     </dict>

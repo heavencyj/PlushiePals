@@ -11,43 +11,48 @@
 #import "MainMenuScene.h"
 
 @implementation GameOverScene
-@synthesize layer = _layer;
-CCSprite *_background;
+CCSprite *gameoverbg;
+bool congrats;
+int curLevel;
 
-- (id)init {
++(CCScene *) scene
+{
+	// 'scene' is an autorelease object.
+	CCScene *scene = [CCScene node];
+	
+	// 'layer' is an autorelease object.
+	GameOverScene *layer = [GameOverScene node];
+	
+	// add layer as a child to scene
+	[scene addChild: layer];
+	
+	// return the scene
+	return scene;
+}
+
++(CCScene *) scene:(bool)didpass withLevel:(int)level
+{
+  congrats = didpass;
+  curLevel = level;
+  return [self scene];
   
-  if ((self = [super init])) {
-    self.layer = [GameOverLayer node];
-    [self addChild:_layer];
-  }
-  return self;
 }
 
-- (void)dealloc {
-  [_layer release];
-  _layer = nil;
-  [super dealloc];
-}
-
-@end
-
-@implementation GameOverLayer
-@synthesize label = _label;
 
 -(id) init
 {
-  if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
+  if( (self=[super init] )) {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    _background = [CCSprite spriteWithFile: @"Game Over screen.png"];
-    _background.position = ccp(winSize.width/2, winSize.height/2);
-    [self addChild:_background];
+    CCSprite *blueBG = [CCSprite spriteWithFile:@"Canyon background blue.png"];
+    blueBG.anchorPoint = ccp(0,0);
+    blueBG.position = ccp(0,0);
+    [self addChild:blueBG];
+    gameoverbg = congrats ? [CCSprite spriteWithFile: @"Congrats screen.png"] :
+                            [CCSprite spriteWithFile: @"Oops screen.png"];
+    gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:gameoverbg];
     
-    self.label = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:32];
-    _label.color = ccc3(0,0,0);
-    _label.position = ccp(winSize.width/2, winSize.height/2);
-    [self addChild:_label];
-
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
     
@@ -56,16 +61,25 @@ CCSprite *_background;
                                      selectedImage:@"Home button.png"
                                      target:self
                                      selector:@selector(goHome)];
-    home.position = ccp(-winSize.width/5,-winSize.height/4);
+    home.position = ccp(-winSize.width/5, 0);
     
     CCMenuItemImage *restart = [CCMenuItemImage
                                   itemWithNormalImage:@"Restart button.png"
                                   selectedImage:@"Restart button.png"
                                   target:self
                                   selector:@selector(restart)];
-    restart.position = ccp(winSize.width/5,-winSize.height/4);
+    restart.position = ccp(-winSize.width/5,-winSize.height/8);
     
-    CCMenu *menu = [CCMenu menuWithItems: home, restart, nil];
+    CCMenuItemImage *next = [CCMenuItemImage
+                                itemWithNormalImage:@"Next button.png"
+                                selectedImage:@"Next button.png"
+                                target:self
+                                selector:@selector(nextLevel)];
+    next.position = ccp(-winSize.width/5,-winSize.height/4);
+    
+    CCMenu *menu = (congrats && (curLevel != 4)) ? [CCMenu menuWithItems: home, restart, next, nil]
+                            : [CCMenu menuWithItems: home, restart, nil];
+
     [menuLayer addChild: menu];
   }
   return self;
@@ -76,6 +90,10 @@ CCSprite *_background;
   [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
+-(void)nextLevel
+{
+  [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene:curLevel+1]];
+}
 
 - (void)goHome {
   
@@ -84,8 +102,6 @@ CCSprite *_background;
 }
 
 - (void)dealloc {
-  [_label release];
-  _label = nil;
   [super dealloc];
 }
 
