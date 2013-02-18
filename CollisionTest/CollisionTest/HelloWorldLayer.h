@@ -51,9 +51,6 @@
     CCAction *_walking;
 }
 
-@property (nonatomic, retain) CCSpriteBatchNode *objectLayer;
-@property (nonatomic, retain) CCAction *walkAction;
-
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 +(CCScene *) scene:(int)withLevel;

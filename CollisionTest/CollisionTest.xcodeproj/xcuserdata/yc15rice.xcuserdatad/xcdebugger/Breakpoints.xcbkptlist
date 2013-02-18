@@ -7,19 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CollisionTest/Floor.mm"
-         timestampString = "381924907.740567"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
-         landmarkName = "+floorSprite:spriteName:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "CollisionTest/Monkey.mm"
          timestampString = "382627312.523147"
          startingColumnNumber = "9223372036854775807"
@@ -27,6 +14,19 @@
          startingLineNumber = "214"
          endingLineNumber = "214"
          landmarkName = "-beginContactWithFloor:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CollisionTest/Floor.mm"
+         timestampString = "382867595.610979"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
+         landmarkName = "+floorSprite:spriteName:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -31,8 +31,7 @@
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
-@synthesize objectLayer = _objectLayer;
-@synthesize walkAction = _walking;
+CCSpriteBatchNode *plushyLayer;
 Monkey *plushy;
 Floor *maze;
 int level;
@@ -81,7 +80,8 @@ bool pass;
     
     // Loading physics shapes
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];    
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"plushypals.plist"];
+    //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"plushypals.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys_default.plist"];
     
     // 1) Create the CCParallaxNode
     _backgroundNode = [CCParallaxNode node];
@@ -108,15 +108,20 @@ bool pass;
     //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Adding object layer
-    _objectLayer = [CCSpriteBatchNode batchNodeWithFile:@"plushypals.png" capacity:150];
-    [self addChild:_objectLayer z:20];
+    plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys_default.png" capacity:150];
+//    CCSprite *map = [CCSprite spriteWithSpriteFrameName:@"map level 1.png"];
+//    [map setTexture:[_objectLayer texture]];
+//    CCLOG(@"texure for map is %@", [map texture]);
+//    
+//    [_objectLayer addChild:map];
+    [self addChild:plushyLayer z:200];
   
 
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
     [plushy setPhysicsPosition:b2Vec2FromCC(300,200)];
     [plushy setLinearVelocity:b2Vec2(2.0,0)];
-    [_objectLayer addChild:[plushy ccNode] z:10000];
+    [plushyLayer addChild:[plushy ccNode] z:10];
     
     // add maze
     [self loadMaze];
@@ -204,7 +209,7 @@ bool pass;
   {
     obj = [Object randomObject];
     [obj setPhysicsPosition:b2Vec2FromCC(400, MAZE_LOW+40)];
-    [_objectLayer addChild:[obj ccNode]];
+    [plushyLayer addChild:[obj ccNode]];
     nextObject = objDelay;
   }
 }
@@ -249,13 +254,14 @@ bool pass;
 
 -(void) loadMaze
 {
-  
+  [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"map" stringByAppendingFormat:@"%d.plist",level]];
   NSString *shape = [@"map level " stringByAppendingFormat:@"%d", level];
   maze = [Floor floorSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
   [maze setPhysicsPosition:b2Vec2FromCC(200,140)];
   [maze setLinearVelocity:b2Vec2(-4.0,0)];
   //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
-  [_objectLayer addChild:[maze ccNode] z:10];
+  //[_objectLayer addChild:[maze ccNode] z:10];
+  [self addChild:[maze ccNode] z:100];
 }
 
 
