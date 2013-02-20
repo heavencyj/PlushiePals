@@ -197,7 +197,7 @@ CCSprite *monkey;
 
   //roate left
   [map runAction:[CCSequence actions:[CCRotateBy actionWithDuration:0.8 angle:-90],
-                  [CCDelayTime actionWithDuration:2],
+                  [CCDelayTime actionWithDuration:1],
                   [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
 }
 
@@ -209,7 +209,7 @@ CCSprite *monkey;
 
   //rotate right
   [map runAction:[CCSequence actions:[CCRotateBy actionWithDuration:0.8 angle:90],
-                  [CCDelayTime actionWithDuration:2],
+                  [CCDelayTime actionWithDuration:1],
                   [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
 }
 
@@ -222,7 +222,7 @@ CCSprite *monkey;
   pageIndex = 4;
   //tap to jump
   [monkey runAction:[CCSequence actions:[CCJumpBy actionWithDuration:1 position:ccp(150,0) height:50 jumps:1],
-                  [CCDelayTime actionWithDuration:2],
+                  [CCDelayTime actionWithDuration:1],
                   [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
   
 }

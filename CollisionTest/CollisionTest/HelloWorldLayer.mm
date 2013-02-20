@@ -36,6 +36,10 @@ Monkey *plushy;
 Floor *maze;
 int level;
 bool pass;
+int countDown;
+float pv;
+float mv;
+//float newAngle;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -80,7 +84,6 @@ bool pass;
     
     // Loading physics shapes
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];    
-    //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"plushypals.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys_default.plist"];
     
     // 1) Create the CCParallaxNode
@@ -109,22 +112,19 @@ bool pass;
     
     // Adding object layer
     plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys_default.png" capacity:150];
-//    CCSprite *map = [CCSprite spriteWithSpriteFrameName:@"map level 1.png"];
-//    [map setTexture:[_objectLayer texture]];
-//    CCLOG(@"texure for map is %@", [map texture]);
-//    
-//    [_objectLayer addChild:map];
     [self addChild:plushyLayer z:200];
   
 
     // Add monkey
     plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
     [plushy setPhysicsPosition:b2Vec2FromCC(300,200)];
-    [plushy setLinearVelocity:b2Vec2(2.0,0)];
+    pv = 2.0;
+    [plushy setLinearVelocity:b2Vec2(pv,0)];
     [plushyLayer addChild:[plushy ccNode] z:10];
     
     // add maze
     [self loadMaze];
+    countDown = 1000;
     
     // Initializing variables
     nextObject= 3.0f;  // first object to appear after 3s
@@ -182,6 +182,33 @@ bool pass;
   
   // Add objects to path
   //[self nextObject:dt];
+    //Animate rotation
+//  if (ABS([maze ccNode].rotation) > ABS(angle) ) {
+//    [maze setAngularVelocity:0];
+//    [plushy setBodyType:b2_dynamicBody];
+//  }
+  
+  //Moving camera
+  if (countDown > 0) {
+    countDown --;
+  }
+//
+//  if ([plushy isRunning] && countDown ==0 ) {
+//    float dy = [plushy ccNode].position.y - 150;
+//    [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
+//    CGPoint mp = [maze ccNode].position;
+//    mp.y = mp.y+dy;
+//    [maze setPhysicsPosition:b2Vec2FromCGPoint(mp)];
+//    countDown = -1;
+//  }
+
+  if (countDown == 0) {
+    pv += 1;
+    mv -= 3;
+    [plushy setLinearVelocity:b2Vec2(pv,0)];
+    [maze setLinearVelocity:b2Vec2(mv, 0)];
+    countDown = 1000;
+  }
   
   if ([plushy passLevel] && pass == false) {
     pass = true;
@@ -190,8 +217,10 @@ bool pass;
     CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
     star.position = ccp(winSize.width*0.8, winSize.height*0.8);
     [_background addChild:star];
+//    [plushy setLinearVelocity:b2Vec2(3.0,0)];
+//    [maze setLinearVelocity:b2Vec2(-6, 0)];
   }
-  
+
   if ([plushy ccNode].position.y < 0 || [plushy isDead])
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
@@ -208,7 +237,7 @@ bool pass;
   if(nextObject <=0)
   {
     obj = [Object randomObject];
-    [obj setPhysicsPosition:b2Vec2FromCC(400, MAZE_LOW+40)];
+    [obj setPhysicsPosition:b2Vec2FromCC(400, MAZE_LOW)];
     [plushyLayer addChild:[obj ccNode]];
     nextObject = objDelay;
   }
@@ -257,31 +286,46 @@ bool pass;
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"map" stringByAppendingFormat:@"%d.plist",level]];
   NSString *shape = [@"map level " stringByAppendingFormat:@"%d", level];
   maze = [Floor floorSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
-  [maze setPhysicsPosition:b2Vec2FromCC(200,140)];
-  [maze setLinearVelocity:b2Vec2(-4.0,0)];
-  //[_objectLayer addChild:[maze ccNode] z:50 tag:5]; //TODO: Do not keep adding maze objects into the
-  //[_objectLayer addChild:[maze ccNode] z:10];
+  [maze setPhysicsPosition:b2Vec2FromCC(200,120)];
+  mv = -4;
+  [maze setLinearVelocity:b2Vec2(mv,0)];
   [self addChild:[maze ccNode] z:100];
 }
 
 
 - (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
-  [plushy jump];
+  if (![plushy isJumping]) {
+    [plushy jump];
+  }
 }
 
 - (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 {
   float angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-  CGPoint p = [plushy ccNode].position;
+  //newAngle = [maze ccNode].rotation + angle;
+  CGPoint p1 = [plushy ccNode].position;
+  p1.y = (angle > 0) ? p1.y+10:p1.y-80;
+  //countDown = 5;
   
-  p.y = (angle > 0) ? p.y+10:p.y-80;
-  
+  // To to animate
+//  CGPoint p2 = [maze ccNode].position;
+//  p2.x = p1.x - p2.x;
+//  float dy = (angle > 0) ? 10:-10;
+//  p2.y += dy;
+//  //CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
+//  [[maze ccNode] setAnchorPoint:ccp(p2.x/[maze ccNode].contentSize.width, dy/[maze ccNode].contentSize.height + 1)];
+//  //[[maze ccNode] setPosition:ccp(p1.x, p2.y)];
+//  [maze setPhysicsPosition:b2Vec2FromCC(200,140)];
+//  //[[maze ccNode] setAnchorPoint:ccp(1,1)];
+//  CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
+//  CCLOG(@"maze anchor is at %f and %f", [maze ccNode].anchorPoint.x, [maze ccNode].anchorPoint.y);
+//  [maze setAngularVelocity:(angle > 0) ? -1:1];
+//  [plushy setBodyType:b2_kinematicBody];
+ 
   CGPoint oldp = [maze ccNode].position;
-  CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p];
-  
+  CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
   [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-
 }
 
 -(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin

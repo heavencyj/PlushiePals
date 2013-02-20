@@ -37,6 +37,7 @@
 -(bool) isDead;
 -(void) reset;
 -(bool)isJumping;
+-(bool)isRunning;
 -(void)moveTo:(b2Vec2)pos;
 -(bool)passLevel;
 @end

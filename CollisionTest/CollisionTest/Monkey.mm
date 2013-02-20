@@ -70,6 +70,12 @@
   
   // update animation phase
   if (running && !collide && !die) {
+    
+//    [self setPhysicsPosition:b2Vec2FromCC(200, 140)];
+//
+//    float dy = [self ccNode].position.y -140;
+    
+    
     NSString *frameName;
     
     animDelay -= ANIM_DELAY;
@@ -218,6 +224,10 @@
 -(bool)passLevel
 {
   return pass;
+}
+
+-(bool)isRunning {
+  return running && !collide && !die;
 }
 
 -(void)moveTo:(b2Vec2)pos
