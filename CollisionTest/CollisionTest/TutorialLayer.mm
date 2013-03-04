@@ -102,6 +102,15 @@ CCSprite *monkey;
       
     case 4:
       button = [CCMenuItemImage
+                itemWithNormalImage:@"Next button.png"
+                selectedImage:@"Next button selected.png"
+                target:self
+                selector:@selector(starPage)];
+       break;
+
+    
+    case 5:
+      button = [CCMenuItemImage
                 itemWithNormalImage:@"Play.png"
                 selectedImage:@"Play selected.png"
                 target:self
@@ -225,6 +234,12 @@ CCSprite *monkey;
                   [CCDelayTime actionWithDuration:1],
                   [CCCallFunc actionWithTarget:self selector:@selector(cleanAndLoad)], nil]];
   
+}
+
+-(void)starPage
+{
+  pageIndex = 5;
+  [self loadTutorial];
 }
 
 - (void)loadPlushy

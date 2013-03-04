@@ -16,6 +16,7 @@
 #import "Object.h"
 #import "GB2DebugDrawLayer.h"
 #import "GameOverScene.h"
+#import "SimpleAudioEngine.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -39,7 +40,11 @@ bool pass;
 int countDown;
 float pv;
 float mv;
+CCLayer *pauseLayer;
 //float newAngle;
+CGRect pauseButtonRect;
+CGRect resumeButtonRect;
+CCSprite *pauseButton;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -110,6 +115,17 @@ float mv;
 
     //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
+    // Pause button
+//    CCSprite* pause = [CCSprite spriteWithFile:@"Replay icon.png"];
+//    CCSprite* pauseSel = [CCSprite spriteWithFile:@"Replay icon.png"];
+//    pauseButton = [CCMenuItemImage itemWithNormalImage:@"Pause icon.png" selectedImage:@"Pause icon.png" target:self selector:@selector(pauseGame)];
+    pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
+    pauseButton.position = ccp(450,250);
+    pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
+    [self addChild:pauseButton z:50];
+    
+    
+    
     // Adding object layer
     plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys_default.png" capacity:150];
     [self addChild:plushyLayer z:200];
@@ -149,6 +165,10 @@ float mv;
     [tapGestureRecognizer release];
     
     self.isTouchEnabled = YES;
+    
+    //[[CDAudioManager sharedManager] setMode:kAMM_MediaPlayback];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
+    
     [self scheduleUpdate];
   }
   return self;
@@ -182,6 +202,7 @@ float mv;
   
   // Add objects to path
   //[self nextObject:dt];
+  
     //Animate rotation
 //  if (ABS([maze ccNode].rotation) > ABS(angle) ) {
 //    [maze setAngularVelocity:0];
@@ -215,10 +236,8 @@ float mv;
     // drop something on the screen to show that u passed the level
     //NSLog(@"passsss!");
     CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
-    star.position = ccp(winSize.width*0.8, winSize.height*0.8);
+    star.position = ccp(winSize.width*0.9, winSize.height*0.8);
     [_background addChild:star];
-//    [plushy setLinearVelocity:b2Vec2(3.0,0)];
-//    [maze setLinearVelocity:b2Vec2(-6, 0)];
   }
 
   if ([plushy ccNode].position.y < 0 || [plushy isDead])
@@ -237,7 +256,7 @@ float mv;
   if(nextObject <=0)
   {
     obj = [Object randomObject];
-    [obj setPhysicsPosition:b2Vec2FromCC(400, MAZE_LOW)];
+    [obj setPhysicsPosition:b2Vec2FromCC(400, 200)];
     [plushyLayer addChild:[obj ccNode]];
     nextObject = objDelay;
   }
@@ -293,9 +312,18 @@ float mv;
 }
 
 
-- (void)handleTapGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
+- (void)handleTapGestureRecognizer:(UITapGestureRecognizer*)aGestureRecognizer
 {
-  if (![plushy isJumping]) {
+  CGPoint locationt=[aGestureRecognizer locationInView:[aGestureRecognizer view]];
+  locationt.y = [[CCDirector sharedDirector] winSize].height - locationt.y;
+  if (CGRectContainsPoint(pauseButtonRect, locationt)){
+    [self pauseGame];
+  }
+  else if (CGRectContainsPoint(resumeButtonRect, locationt)){
+    [self resumeGame];
+  }
+  
+  else if (![plushy isJumping]) {
     [plushy jump];
   }
 }
@@ -335,6 +363,40 @@ float mv;
 
   return CGPointMake(newx,newy);
   
+}
+
+-(void)pauseGame
+{
+  [self pauseSchedulerAndActions];
+  [[CCDirector sharedDirector] pause];
+  pauseButton.visible = NO;
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
+  pauseLayer = [CCLayerColor layerWithColor:ccc4(0, 0, 225, 125) width:300 height:150];
+  //pauseLayer.anchorPoint = ccp(0.5,0.5);
+  pauseLayer.position = ccp(winSize.width/2-pauseLayer.contentSize.width/2,
+                            winSize.height/2 - pauseLayer.contentSize.height/2);
+
+  
+//  CCSprite *resume = [CCSprite spriteWithFile:@"Replay icon.png"]; 
+//  CCSprite* resumeSel = [CCSprite spriteWithFile:@"Replay icon.png"];
+  // Three options: restart, resume, home
+  CCMenuItemImage *resumeButton = [CCMenuItemImage itemWithNormalImage:@"Replay icon.png" selectedImage:@"Replay icon.png" target:self selector:@selector(resumeGame)];
+  resumeButton.position = ccp(pauseLayer.contentSize.width/2,pauseLayer.contentSize.height/2);
+  resumeButtonRect = CGRectMake((winSize.width/2-resumeButton.contentSize.width/2),
+                                  (winSize.height/2 - resumeButton.contentSize.height/2),
+                                  (resumeButton.contentSize.width),
+                                  (resumeButton.contentSize.height));
+  [pauseLayer addChild:resumeButton];
+  [self addChild:pauseLayer z:500];
+}
+
+
+-(void)resumeGame
+{
+  [self removeChild:pauseLayer cleanup:YES];
+  [self resumeSchedulerAndActions];
+  pauseButton.visible = YES;
+  [[CCDirector sharedDirector] resume];
 }
 
 @end

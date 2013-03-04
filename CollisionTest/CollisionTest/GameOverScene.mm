@@ -52,30 +52,35 @@ int curLevel;
                             [CCSprite spriteWithFile: @"Oops screen.png"];
     gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:gameoverbg];
+//    
+//    CCLabelTTF* label = [CCLabelTTF labelWithString:@"Hello World"
+//                                           fontName:@"GROBOLD"
+//                                           fontSize:16];
+//    [self addChild:label];
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
     
     CCMenuItemImage *home = [CCMenuItemImage
-                                     itemWithNormalImage:@"Home button.png"
-                                     selectedImage:@"Home button.png"
+                                     itemWithNormalImage:@"Home icon.png"
+                                     selectedImage:@"Home icon selected.png"
                                      target:self
                                      selector:@selector(goHome)];
-    home.position = ccp(-winSize.width/5, 0);
+    home.position = ccp(-winSize.width*7/24, -winSize.height/7);
     
     CCMenuItemImage *restart = [CCMenuItemImage
-                                  itemWithNormalImage:@"Restart button.png"
-                                  selectedImage:@"Restart button.png"
+                                  itemWithNormalImage:@"Replay icon.png"
+                                  selectedImage:@"Replay icon selected.png"
                                   target:self
                                   selector:@selector(restart)];
-    restart.position = ccp(-winSize.width/5,-winSize.height/8);
+    restart.position = ccp(-winSize.width*4/24,-winSize.height/7);
     
     CCMenuItemImage *next = [CCMenuItemImage
-                                itemWithNormalImage:@"Next button.png"
-                                selectedImage:@"Next button.png"
+                                itemWithNormalImage:@"Next icon.png"
+                                selectedImage:@"Next icon selected.png"
                                 target:self
                                 selector:@selector(nextLevel)];
-    next.position = ccp(-winSize.width/5,-winSize.height/4);
+    next.position = ccp(-winSize.width*1/24,-winSize.height/7);
     
     CCMenu *menu = (congrats && (curLevel != 4)) ? [CCMenu menuWithItems: home, restart, next, nil]
                             : [CCMenu menuWithItems: home, restart, nil];

@@ -29,10 +29,10 @@
     NSString *objName;
     switch(rand() % 18)
     {
-        case 0:
-            objName = @"banana bomb";
-            break;
-            
+//        case 0:
+//            objName = @"banana bomb";
+//            break;
+        
         case 1:
             objName = @"banana bunch";
             break;
