@@ -1,0 +1,3119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Bogdan Vladu</string>
+	<key>CreatedWith</key>
+	<string>SpriteHelper</string>
+	<key>SHEETS_INFO</key>
+	<array>
+		<dict>
+			<key>2HDSuffix</key>
+			<string>-ipadhd</string>
+			<key>AllowRotation</key>
+			<true/>
+			<key>Crop</key>
+			<false/>
+			<key>DropSprites</key>
+			<false/>
+			<key>HDSuffix</key>
+			<string>-hd</string>
+			<key>IsRendable</key>
+			<true/>
+			<key>MaxSheetSize</key>
+			<integer>4096</integer>
+			<key>NpotSize</key>
+			<string>{1324, 2044}</string>
+			<key>Padding</key>
+			<integer>8</integer>
+			<key>PixelFormat</key>
+			<integer>0</integer>
+			<key>SheetImage</key>
+			<string>Animations_Animation.png</string>
+			<key>SheetImage-HD</key>
+			<string>Animations_Animation-ipadhd.png</string>
+			<key>SheetName</key>
+			<string>Animation</string>
+			<key>SheetSceneImageName</key>
+			<string></string>
+			<key>Sheet_Sprites_Info</key>
+			<dict>
+				<key>Monkey die 1</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAxLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAAMmEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAABmZGY3MDdkZGNkMDM1MTk2
+					MTBiMjIxMjAxYjNlZGEyMDZmMzk2ZDY0OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgwYzsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAxLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey die 1</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 133}, {115.75, 80.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 532}, {463, 321}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey die 1</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20die%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {463, 321}}</string>
+						<key>OriginalSize</key>
+						<string>{463, 321}</string>
+						<key>Position</key>
+						<string>{0, 532}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{115.75, 80.25}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0.25}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey die 2</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAyLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAAomEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA5ZjhiYjkxZGUyYmQ1MDkw
+					NzY0ZDUzYjE5ZDA5Mjg1ZGQ2ZjQyZGQ2OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgyODsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAyLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey die 2</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{117, 133}, {115.75, 79.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{468, 532}, {463, 318}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey die 2</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 2.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20die%202.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {463, 318}}</string>
+						<key>OriginalSize</key>
+						<string>{463, 318}</string>
+						<key>Position</key>
+						<string>{468, 532}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{115.75, 79.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey die 3</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAzLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAA+mEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAAyNzM4ZTgwYzM5NDUxNjNm
+					M2RhMjRjYzg1Y2JhZmFkOTdhOGIzNDkzOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgzZTsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAzLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey die 3</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{117, 214}, {115.75, 74.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{468, 856}, {463, 297}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey die 3</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 3.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20die%203.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {463, 297}}</string>
+						<key>OriginalSize</key>
+						<string>{463, 297}</string>
+						<key>Position</key>
+						<string>{468, 856}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{115.75, 74.25}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0.25}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey die 4</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSA0LnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABUmEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAABmNjliMWVkNzFmOTdmZTFl
+					ZGYzMmVhMzY3ZmJmNDI4Y2ZjZjlhODhkOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTg1NDsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSA0LnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey die 4</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 214}, {115.75, 74.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 856}, {463, 297}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey die 4</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 4.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20die%204.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {463, 297}}</string>
+						<key>OriginalSize</key>
+						<string>{463, 297}</string>
+						<key>Position</key>
+						<string>{0, 856}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{115.75, 74.25}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0.25}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey jump 1</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMS5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASERDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMWZkZjRhY2IzNDQy
+					OWUwZjZmYWYwNTZjMTQ3YjMzNDlkMmJiNGUw
+					ZDswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NDg7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDEucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey jump 1</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{223, 401}, {72, 108.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{892, 1604}, {288, 434}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey jump 1</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20jump%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{22, 22}, {288, 434}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{892, 1604}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{2.5, -1.875}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey jump 2</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMi5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASURDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAZWI1NjQxNDc3ZGVj
+					N2E2MGU4YTljNWM1NDIwZDU5ZjQ5MjdmZTZl
+					MDswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NDk7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDIucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey jump 2</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{75, 401}, {72, 110}}</string>
+						<key>Frame-HD</key>
+						<string>{{300, 1604}, {288, 440}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey jump 2</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 2.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20jump%202.png/</string>
+						<key>OriginalRect</key>
+						<string>{{22, 22}, {288, 440}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{300, 1604}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{2.5, -2.625}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey jump 3</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMy5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASkRDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAZWViNWM3YzA2YWZj
+					Nzc0ZDFlY2ZiNDE0OGQxZGMwMmZhNjEwN2M0
+					MzswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NGE7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDMucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey jump 3</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{150, 401}, {72.5, 108.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{600, 1604}, {290, 435}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey jump 3</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 3.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20jump%203.png/</string>
+						<key>OriginalRect</key>
+						<string>{{20, 21}, {290, 435}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{600, 1604}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{2.25, -1.75}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey jump 4</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgNC5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAS0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMzAwYTg1ZjU3ZWM4
+					OGQxMmMwYjNlMjdlMDFjNjk3ZTk3MjI0ZDY1
+					YTswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NGI7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDQucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey jump 4</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{225, 290}, {72.5, 108.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{900, 1160}, {290, 435}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey jump 4</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 4.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20jump%204.png/</string>
+						<key>OriginalRect</key>
+						<string>{{20, 21}, {290, 435}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{900, 1160}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{2.25, -1.75}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey run 1</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAxLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABMREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA2NWUzZjVhOWJmYTQxYTc5
+					YjBmNjBlNWU5ODViNGFmMDU4NjY3Yzc2OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0YzsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAxLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<true/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{34.75, 4.125}</string>
+										<string>{15.25, 56.875}</string>
+										<string>{15.25, 56.625}</string>
+										<string>{18.5, -5.875}</string>
+									</array>
+									<array>
+										<string>{-16.25, -30.125}</string>
+										<string>{-38.75, -29.375}</string>
+										<string>{12, -54.625}</string>
+									</array>
+									<array>
+										<string>{-21.75, 36.875}</string>
+										<string>{-16.25, -30.125}</string>
+										<string>{12, -54.625}</string>
+										<string>{18.5, -5.875}</string>
+										<string>{15.25, 56.625}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>0.0</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<false/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>0.0</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-38.75, -56.875}</string>
+								<key>LHWidth</key>
+								<real>0.0</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>Monkey body</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{216, 1}</string>
+									<string>{68, 80}</string>
+									<string>{90, 348}</string>
+									<string>{0, 345}</string>
+									<string>{203, 446}</string>
+									<string>{229, 251}</string>
+									<string>{294, 211}</string>
+									<string>{216, 0}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>0.0</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>2</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey run 1</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 290}, {73.75, 113.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 1160}, {295, 455}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey run 1</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20run%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{1, 4}, {295, 455}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{0, 1160}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-1.875, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey run 2</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAyLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABNREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAAzMzZmOTQ0M2UyNTUyNWRh
+					YmUzM2ZiZDYyZDM2YzhkMGM4ZWNjZmU4OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZDsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAyLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey run 2</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{150, 290}, {73.75, 110.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{600, 1160}, {295, 441}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey run 2</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 2.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20run%202.png/</string>
+						<key>OriginalRect</key>
+						<string>{{1, 4}, {295, 441}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{600, 1160}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-1.875, 1.5}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey run 3</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAzLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABOREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA1MGE3YTZhMjhlNjVmYjdl
+					Y2YxY2I0NjcxNTY5NDZlZTlmMDU1NzNhOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZTsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAzLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey run 3</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{257, 0}, {73.75, 113.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{1028, 0}, {295, 455}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey run 3</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 3.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20run%203.png/</string>
+						<key>OriginalRect</key>
+						<string>{{1, 4}, {295, 455}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{1028, 0}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-1.875, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Monkey run 4</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biA0LnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABPREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA4ZDUyN2E5MWU1MzBlNmYz
+					YTZhNTc3ZjgyMjdjYTMyODg0NmFjMTFkOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZjsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biA0LnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>Monkey run 4</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{75, 290}, {73.75, 110.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{300, 1160}, {295, 443}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Monkey run 4</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 4.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey%20run%204.png/</string>
+						<key>OriginalRect</key>
+						<string>{{1, 4}, {295, 443}}</string>
+						<key>OriginalSize</key>
+						<string>{312, 463}</string>
+						<key>Position</key>
+						<string>{300, 1160}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{78, 115.75}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-1.875, 1.5}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>unit canyon 2</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAAdW5pdCBjYW55b24gMi5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAIERDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMGQwMWMyYTcwMDY3
+					NzhiOGYwMmJlNTJjMmY3MzZiMDBjY2FkMjNk
+					ZjswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MjA7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL3VuaXQgY2FueW9uIDIucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>2</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-49.25, 62.25}</string>
+										<string>{-55, 62.25}</string>
+										<string>{-61, 23}</string>
+										<string>{19.75, 16.25}</string>
+										<string>{61.75, 59}</string>
+									</array>
+									<array>
+										<string>{61.5, -56.25}</string>
+										<string>{61.75, 59}</string>
+										<string>{19.75, 16.25}</string>
+										<string>{19.5, -50.25}</string>
+										<string>{26.75, -62.25}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>0.0</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<false/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>0.0</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-62, -62.5}</string>
+								<key>LHWidth</key>
+								<real>0.0</real>
+								<key>Mask</key>
+								<integer>1</integer>
+								<key>Name</key>
+								<string>unit canyon</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{28, 1}</string>
+									<string>{4, 158}</string>
+									<string>{327, 185}</string>
+									<string>{326, 451}</string>
+									<string>{355, 499}</string>
+									<string>{494, 475}</string>
+									<string>{495, 14}</string>
+									<string>{51, 1}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>0.0</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>1</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>unit canyon 2</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{132, 0}, {124, 125}}</string>
+						<key>Frame-HD</key>
+						<string>{{528, 0}, {496, 500}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>unit canyon 2</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 2.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit%20canyon%202.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {496, 500}}</string>
+						<key>OriginalSize</key>
+						<string>{496, 500}</string>
+						<key>Position</key>
+						<string>{528, 0}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{124, 125}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>unit canyon 2_selected</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va7QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAvAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABoAAAABAQAAdW5pdCBjYW55b24gMl9zZWxl
+					Y3RlZC5wbmcAABQAAAABBgAABAAAABQAAAAs
+					AAAAPAAAAFgAAAAIAAAABAMAAPOSAAAAAAAA
+					CAAAAAQDAACQSwgAAAAAAAgAAAAEAwAAm0sI
+					AAAAAAAIAAAABAMAAK3oQQkAAAAACAAAAAQD
+					AACgd0QJAAAAABQAAAABBgAAmAAAAKgAAAC4
+					AAAAyAAAANgAAAAYAAAAAQIAAAEAAAAAAAAA
+					DwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAAAwAA
+					AAAAAAAEAAAAAwMAAPUBAAAMAAAAAQEAAE1h
+					Y2ludG9zaCBIRAgAAAAEAwAAAAB0BToAAAAI
+					AAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAyQzRC
+					MUQ3Qi0wNTlDLTNBNkEtOERDOC05MTFCRkE0
+					MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8AAAEA
+					CAAAAAAAAAAAAAEAAAABAQAALwAAAAAAAAAB
+					BQAABAAAAAMDAAAAAQAA0wAAAAECAAA5ZDQy
+					YTU0MDAyMGU0ZjEwNGY2NDk0OTNhNTA0NzNl
+					OGZkYzZhOTZkOzAwMDAwMDAwOzAwMDAwMDAw
+					MDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1zYW5k
+					Ym94LnJlYWQtd3JpdGU7MDAwMDAwMDE7MGUw
+					MDAwMDI7MDAwMDAwMDAwOTQ0NzdhMDsvdXNl
+					cnMvbGxzYXBoaXJlMTAyOS9kZXNrdG9wL3Bs
+					dXNoeXB1enpsZXNwcml0ZXMvdW5pdCBjYW55
+					b24gMl9zZWxlY3RlZC5wbmcAAMAAAAD+////
+					AQAAAAAAAAAPAAAABBAAAHwAAAAAAAAABRAA
+					AOgAAAAAAAAAEBAAAAQBAAAAAAAAAiAAAMAB
+					AAAAAAAAECAAAEABAAAAAAAAESAAAHQBAAAA
+					AAAAEiAAAFQBAAAAAAAAEyAAAGQBAAAAAAAA
+					ICAAAKABAAAAAAAAMCAAAMwBAAAAAAAAAcAA
+					ACQBAAAAAAAAEcAAABQAAAAAAAAAEsAAADQB
+					AAAAAAAAENAAANQBAAAAAAAAgPAAAOABAAAA
+					AAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>Animation</string>
+					<key>SHSpriteName</key>
+					<string>unit canyon 2_selected</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImage-HD</key>
+					<string>Animations_Animation-ipadhd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 0}, {131, 131.75}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 0}, {524, 527}}</string>
+						<key>Image</key>
+						<string>Animations_Animation.png</string>
+						<key>Image-HD</key>
+						<string>Animations_Animation-ipadhd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>unit canyon 2_selected</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 2_selected.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit%20canyon%202_selected.png/</string>
+						<key>OriginalRect</key>
+						<string>{{1, 0}, {524, 527}}</string>
+						<key>OriginalSize</key>
+						<string>{525, 528}</string>
+						<key>Position</key>
+						<string>{0, 0}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{131.25, 132}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0.125, 0.125}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+			</dict>
+			<key>Size</key>
+			<string>{2048, 2048}</string>
+			<key>Trim</key>
+			<true/>
+			<key>ZOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>SH_ANIMATIONS_LIST</key>
+	<array>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAAdW5pdCBjYW55b24gMi5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAIERDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMGQwMWMyYTcwMDY3
+					NzhiOGYwMmJlNTJjMmY3MzZiMDBjY2FkMjNk
+					ZjswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MjA7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL3VuaXQgY2FueW9uIDIucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>Frame</key>
+					<string>{{132, 0}, {124, 125}}</string>
+					<key>Frame-HD</key>
+					<string>{{528, 0}, {496, 500}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 2.png</string>
+					<key>SpriteSize</key>
+					<string>{124, 125}</string>
+					<key>TextureOffset</key>
+					<string>{0, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>unit canyon 2</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va7QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAvAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABoAAAABAQAAdW5pdCBjYW55b24gMl9zZWxl
+					Y3RlZC5wbmcAABQAAAABBgAABAAAABQAAAAs
+					AAAAPAAAAFgAAAAIAAAABAMAAPOSAAAAAAAA
+					CAAAAAQDAACQSwgAAAAAAAgAAAAEAwAAm0sI
+					AAAAAAAIAAAABAMAAK3oQQkAAAAACAAAAAQD
+					AACgd0QJAAAAABQAAAABBgAAmAAAAKgAAAC4
+					AAAAyAAAANgAAAAYAAAAAQIAAAEAAAAAAAAA
+					DwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAAAwAA
+					AAAAAAAEAAAAAwMAAPUBAAAMAAAAAQEAAE1h
+					Y2ludG9zaCBIRAgAAAAEAwAAAAB0BToAAAAI
+					AAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAyQzRC
+					MUQ3Qi0wNTlDLTNBNkEtOERDOC05MTFCRkE0
+					MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8AAAEA
+					CAAAAAAAAAAAAAEAAAABAQAALwAAAAAAAAAB
+					BQAABAAAAAMDAAAAAQAA0wAAAAECAAA5ZDQy
+					YTU0MDAyMGU0ZjEwNGY2NDk0OTNhNTA0NzNl
+					OGZkYzZhOTZkOzAwMDAwMDAwOzAwMDAwMDAw
+					MDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1zYW5k
+					Ym94LnJlYWQtd3JpdGU7MDAwMDAwMDE7MGUw
+					MDAwMDI7MDAwMDAwMDAwOTQ0NzdhMDsvdXNl
+					cnMvbGxzYXBoaXJlMTAyOS9kZXNrdG9wL3Bs
+					dXNoeXB1enpsZXNwcml0ZXMvdW5pdCBjYW55
+					b24gMl9zZWxlY3RlZC5wbmcAAMAAAAD+////
+					AQAAAAAAAAAPAAAABBAAAHwAAAAAAAAABRAA
+					AOgAAAAAAAAAEBAAAAQBAAAAAAAAAiAAAMAB
+					AAAAAAAAECAAAEABAAAAAAAAESAAAHQBAAAA
+					AAAAEiAAAFQBAAAAAAAAEyAAAGQBAAAAAAAA
+					ICAAAKABAAAAAAAAMCAAAMwBAAAAAAAAAcAA
+					ACQBAAAAAAAAEcAAABQAAAAAAAAAEsAAADQB
+					AAAAAAAAENAAANQBAAAAAAAAgPAAAOABAAAA
+					AAAA
+					</data>
+					<key>Frame</key>
+					<string>{{0, 0}, {131, 131.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{0, 0}, {524, 527}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 2_selected.png</string>
+					<key>SpriteSize</key>
+					<string>{131.75, 132}</string>
+					<key>TextureOffset</key>
+					<string>{-0.125, 0.125}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>unit canyon 2_selected</string>
+				</dict>
+			</array>
+			<key>Loop</key>
+			<false/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>SheetImage</key>
+			<string>Animations_Animation.png</string>
+			<key>SheetName</key>
+			<string>Animation</string>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>unit_canyon_select</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.20000000298023224</real>
+			<key>Frames</key>
+			<array>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAxLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABMREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA2NWUzZjVhOWJmYTQxYTc5
+					YjBmNjBlNWU5ODViNGFmMDU4NjY3Yzc2OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0YzsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAxLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{0, 290}, {73.75, 113.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{0, 1160}, {295, 455}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 1.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{-1.875, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey run 1</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAyLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABNREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAAzMzZmOTQ0M2UyNTUyNWRh
+					YmUzM2ZiZDYyZDM2YzhkMGM4ZWNjZmU4OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZDsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAyLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{150, 290}, {73.75, 110.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{600, 1160}, {295, 441}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 2.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{-1.875, 1.5}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey run 2</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biAzLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABOREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA1MGE3YTZhMjhlNjVmYjdl
+					Y2YxY2I0NjcxNTY5NDZlZTlmMDU1NzNhOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZTsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biAzLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{257, 0}, {73.75, 113.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{1028, 0}, {295, 455}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 3.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{-1.875, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey run 3</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IHJ1biA0LnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABPREMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA4ZDUyN2E5MWU1MzBlNmYz
+					YTZhNTc3ZjgyMjdjYTMyODg0NmFjMTFkOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzNDQ0ZjsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IHJ1biA0LnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{75, 290}, {73.75, 110.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{300, 1160}, {295, 443}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey run 4.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{-1.875, 1.5}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey run 4</string>
+				</dict>
+			</array>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>SheetImage</key>
+			<string>Animations_Animation.png</string>
+			<key>SheetName</key>
+			<string>Animation</string>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_running</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.20000000298023224</real>
+			<key>Frames</key>
+			<array>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMS5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASERDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMWZkZjRhY2IzNDQy
+					OWUwZjZmYWYwNTZjMTQ3YjMzNDlkMmJiNGUw
+					ZDswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NDg7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDEucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>Frame</key>
+					<string>{{223, 401}, {72, 108.5}}</string>
+					<key>Frame-HD</key>
+					<string>{{892, 1604}, {288, 434}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 1.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{2.5, -1.875}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey jump 1</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMi5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASURDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAZWI1NjQxNDc3ZGVj
+					N2E2MGU4YTljNWM1NDIwZDU5ZjQ5MjdmZTZl
+					MDswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NDk7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDIucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>Frame</key>
+					<string>{{75, 401}, {72, 110}}</string>
+					<key>Frame-HD</key>
+					<string>{{300, 1604}, {288, 440}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 2.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{2.5, -2.625}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey jump 2</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgMy5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAASkRDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAZWViNWM3YzA2YWZj
+					Nzc0ZDFlY2ZiNDE0OGQxZGMwMmZhNjEwN2M0
+					MzswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NGE7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDMucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>Frame</key>
+					<string>{{150, 401}, {72.5, 108.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{600, 1604}, {290, 435}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 3.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{2.25, -1.75}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey jump 3</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAATW9ua2V5IGp1bXAgNC5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAS0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAMzAwYTg1ZjU3ZWM4
+					OGQxMmMwYjNlMjdlMDFjNjk3ZTk3MjI0ZDY1
+					YTswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0NGI7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL21vbmtleSBqdW1wIDQucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>Frame</key>
+					<string>{{225, 290}, {72.5, 108.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{900, 1160}, {290, 435}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey jump 4.png</string>
+					<key>SpriteSize</key>
+					<string>{78, 115.75}</string>
+					<key>TextureOffset</key>
+					<string>{2.25, -1.75}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey jump 4</string>
+				</dict>
+			</array>
+			<key>Loop</key>
+			<false/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>SheetImage</key>
+			<string>Animations_Animation.png</string>
+			<key>SheetName</key>
+			<string>Animation</string>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_jumping</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAxLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAAMmEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAABmZGY3MDdkZGNkMDM1MTk2
+					MTBiMjIxMjAxYjNlZGEyMDZmMzk2ZDY0OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgwYzsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAxLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{0, 133}, {115.75, 80.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{0, 532}, {463, 321}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 1.png</string>
+					<key>SpriteSize</key>
+					<string>{115.75, 80.75}</string>
+					<key>TextureOffset</key>
+					<string>{0, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey die 1</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAyLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAAomEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAA5ZjhiYjkxZGUyYmQ1MDkw
+					NzY0ZDUzYjE5ZDA5Mjg1ZGQ2ZjQyZGQ2OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgyODsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAyLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{117, 133}, {115.75, 79.5}}</string>
+					<key>Frame-HD</key>
+					<string>{{468, 532}, {463, 318}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 2.png</string>
+					<key>SpriteSize</key>
+					<string>{115.75, 79.5}</string>
+					<key>TextureOffset</key>
+					<string>{0, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey die 2</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSA0LnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAABUmEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAABmNjliMWVkNzFmOTdmZTFl
+					ZGYzMmVhMzY3ZmJmNDI4Y2ZjZjlhODhkOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTg1NDsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSA0LnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{0, 214}, {115.75, 74.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{0, 856}, {463, 297}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 4.png</string>
+					<key>SpriteSize</key>
+					<string>{115.75, 74.75}</string>
+					<key>TextureOffset</key>
+					<string>{0, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey die 4</string>
+				</dict>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAqAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABAAAAABAQAATW9ua2V5IGRpZSAzLnBuZxQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAA+mEMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyQAAAAECAAAyNzM4ZTgwYzM5NDUxNjNm
+					M2RhMjRjYzg1Y2JhZmFkOTdhOGIzNDkzOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzOTgzZTsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvbW9ua2V5IGRpZSAzLnBuZwAAAADA
+					AAAA/v///wEAAAAAAAAADwAAAAQQAABwAAAA
+					AAAAAAUQAADcAAAAAAAAABAQAAD4AAAAAAAA
+					AAIgAAC0AQAAAAAAABAgAAA0AQAAAAAAABEg
+					AABoAQAAAAAAABIgAABIAQAAAAAAABMgAABY
+					AQAAAAAAACAgAACUAQAAAAAAADAgAADAAQAA
+					AAAAAAHAAAAYAQAAAAAAABHAAAAUAAAAAAAA
+					ABLAAAAoAQAAAAAAABDQAADIAQAAAAAAAIDw
+					AADUAQAAAAAAAA==
+					</data>
+					<key>Frame</key>
+					<string>{{117, 214}, {115.75, 74.75}}</string>
+					<key>Frame-HD</key>
+					<string>{{468, 856}, {463, 297}}</string>
+					<key>IsRotated</key>
+					<false/>
+					<key>OriginalImage</key>
+					<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Monkey die 3.png</string>
+					<key>SpriteSize</key>
+					<string>{115.75, 74.75}</string>
+					<key>TextureOffset</key>
+					<string>{0, -0}</string>
+					<key>delayPerUnit</key>
+					<real>1</real>
+					<key>notifications</key>
+					<dict/>
+					<key>offset</key>
+					<string>{0, 0}</string>
+					<key>spriteframe</key>
+					<string>Monkey die 3</string>
+				</dict>
+			</array>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>SheetImage</key>
+			<string>Animations_Animation.png</string>
+			<key>SheetName</key>
+			<string>Animation</string>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_dying</string>
+		</dict>
+	</array>
+	<key>SaveSettings</key>
+	<dict>
+		<key>Dither</key>
+		<false/>
+		<key>DocumentName</key>
+		<string>Animations</string>
+		<key>HD2XSuffix</key>
+		<string>-ipadhd</string>
+		<key>HDSuffix</key>
+		<string>-hd</string>
+		<key>ImageFormatId</key>
+		<integer>0</integer>
+		<key>Npot</key>
+		<true/>
+		<key>PvrBpp</key>
+		<integer>1</integer>
+		<key>PvrRemoveParent</key>
+		<true/>
+		<key>ResamplingAlgorithm</key>
+		<integer>0</integer>
+		<key>ResizingOptions</key>
+		<integer>2</integer>
+		<key>SaveStyle</key>
+		<integer>0</integer>
+	</dict>
+	<key>SceneFolderSandboxBookmark</key>
+	<data>
+	Ym9va9wDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAMA
+	AAkAAAABAQAARGV2ZWxvcGVyAAAADwAAAAEBAABBcHBsZSBXb3Jrc3BhY2UACAAAAAEB
+	AABQcm9qZWN0cwsAAAABAQAAUGx1c2hpZVBhbHMADAAAAAEBAABQbHVzaHlQdXp6bGUJ
+	AAAAAQEAAFJlc291cmNlcwAAAAYAAAABAQAASW1hZ2VzAAAgAAAAAQYAAAQAAAAYAAAA
+	MAAAAEAAAABUAAAAVAAAAGgAAAB8AAAACAAAAAQDAACQdZEAAAAAAAgAAAAEAwAAOcGb
+	AAAAAAAIAAAABAMAADzBmwAAAAAACAAAAAQDAACNrzEJAAAAAAgAAAAEAwAA8x9DCQAA
+	AAAIAAAABAMAAPYfQwkAAAAACAAAAAQDAAD3H0MJAAAAAAgAAAAEAwAArjJDCQAAAAAg
+	AAAAAQYAALQAAADEAAAA1AAAAOQAAAD0AAAABAEAABQBAAAkAQAAGAAAAAECAAACAAAA
+	AAAAAA8AAAAAAAAAAAAAAAAAAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAAB0
+	BToAAAAIAAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNBNkEtOERD
+	OC05MTFCRkE0MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEAAAAB
+	AQAALwAAAAAAAAABBQAABAAAAAMDAAAAAQAA4gAAAAECAAAzMDg0ZTVjZDU4OWRhYWEy
+	MjI2MWNhNDk0OTkzZmJmYTQwZmRkZmJjOzAwMDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7
+	Y29tLmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3JpdGU7MDAwMDAwMDE7MGUwMDAwMDI7
+	MDAwMDAwMDAwOTQzMzJhZTsvZGV2ZWxvcGVyL2FwcGxlIHdvcmtzcGFjZS9wcm9qZWN0
+	cy9wbHVzaGllcGFscy9wbHVzaHlwdXp6bGUvcGx1c2h5cHV6emxlL3Jlc291cmNlcy9p
+	bWFnZXMAAACcAAAA/v///wEAAAAAAAAADAAAAAQQAACMAAAAAAAAAAUQAAA0AQAAAAAA
+	ABAQAABcAQAAAAAAAAIgAAD8AQAAAAAAABAgAAB8AQAAAAAAABEgAACwAQAAAAAAABIg
+	AACQAQAAAAAAABMgAACgAQAAAAAAACAgAADcAQAAAAAAADAgAAAIAgAAAAAAABDQAAAQ
+	AgAAAAAAAIDwAAAcAgAAAAAAAA==
+	</data>
+	<key>Version</key>
+	<string>1.8.222</string>
+</dict>
+</plist>

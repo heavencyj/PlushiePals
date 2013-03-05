@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Bogdan Vladu</string>
+	<key>CreatedWith</key>
+	<string>LevelHelper</string>
+	<key>Gravity</key>
+	<string>{0, 0}</string>
+	<key>JOINTS_INFO</key>
+	<array/>
+	<key>LHVersion</key>
+	<string>1.4.982</string>
+	<key>NODES_INFO</key>
+	<array>
+		<dict>
+			<key>Children</key>
+			<array>
+				<dict>
+					<key>Children</key>
+					<array>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict/>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>plushies</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>PlushyPuzzleAssets.pshs</string>
+							<key>SHSheetName</key>
+							<string>plushies</string>
+							<key>SHSpriteName</key>
+							<string>bg</string>
+							<key>SheetImage</key>
+							<string>PlushyPuzzleAssets_plushies.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{0, 796}, {160, 320}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<true/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{127.75, 122.25}</string>
+								<key>Scale</key>
+								<string>{3.875, 6.2500002968590707e-06}</string>
+								<key>SpriteSize</key>
+								<string>{160, 320}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>TagName</key>
+								<string>DEFAULT</string>
+								<key>TextureOffset</key>
+								<string>{0, -0}</string>
+								<key>UniqueName</key>
+								<string>bg</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>bg</string>
+						</dict>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict/>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>plushies</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>PlushyPuzzleAssets.pshs</string>
+							<key>SHSheetName</key>
+							<string>plushies</string>
+							<key>SHSpriteName</key>
+							<string>Canyon background</string>
+							<key>SheetImage</key>
+							<string>PlushyPuzzleAssets_plushies.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{0, 570}, {382, 223.5}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<false/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{275.98782539367676, 161.04455038905144}</string>
+								<key>Scale</key>
+								<string>{1.6543865203857422, 1.4411145448684692}</string>
+								<key>SpriteSize</key>
+								<string>{382, 223.5}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>TagName</key>
+								<string>DEFAULT</string>
+								<key>TextureOffset</key>
+								<string>{0, -0}</string>
+								<key>UniqueName</key>
+								<string>Canyon background</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>Canyon background</string>
+						</dict>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict/>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>plushies</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>PlushyPuzzleAssets.pshs</string>
+							<key>SHSheetName</key>
+							<string>plushies</string>
+							<key>SHSpriteName</key>
+							<string>Canyon background</string>
+							<key>SheetImage</key>
+							<string>PlushyPuzzleAssets_plushies.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{0, 570}, {382, 223.5}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<false/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{797.89034497737885, 161.04455038905144}</string>
+								<key>Scale</key>
+								<string>{1.4549232721328735, 1.4411145448684692}</string>
+								<key>SpriteSize</key>
+								<string>{382, 223.5}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>TagName</key>
+								<string>DEFAULT</string>
+								<key>TextureOffset</key>
+								<string>{0, -0}</string>
+								<key>UniqueName</key>
+								<string>Canyon background_1</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>Canyon background_1</string>
+						</dict>
+					</array>
+					<key>CustomClassInfo</key>
+					<dict>
+						<key>ClassName</key>
+						<string>No Class</string>
+					</dict>
+					<key>NodeType</key>
+					<string>LHBatch</string>
+					<key>ParentClass</key>
+					<string>LHLayer</string>
+					<key>ParentName</key>
+					<string>MAIN_LAYER</string>
+					<key>SHScene</key>
+					<string>PlushyPuzzleAssets.pshs</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImageRelative</key>
+					<string>/PlushyPuzzle/Resources/Images/PlushyPuzzleAssets_plushies.png</string>
+					<key>Tag</key>
+					<integer>0</integer>
+					<key>TagName</key>
+					<string>DEFAULT</string>
+					<key>UniqueName</key>
+					<string>plushies</string>
+					<key>ZOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Children</key>
+					<array>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict>
+								<key>AnimAtStart</key>
+								<true/>
+								<key>AnimLoop</key>
+								<false/>
+								<key>AnimName</key>
+								<string>unit_canyon_select</string>
+								<key>AnimRepetitions</key>
+								<integer>1</integer>
+								<key>AnimRestoreOriginalFrame</key>
+								<false/>
+								<key>AnimSpeed</key>
+								<real>0.40000000596046448</real>
+								<key>OtherAnimations</key>
+								<array/>
+								<key>SHScene</key>
+								<string>Animations.pshs</string>
+							</dict>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>Animation</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>Animations.pshs</string>
+							<key>SHSheetName</key>
+							<string>Animation</string>
+							<key>SHSpriteName</key>
+							<string>unit canyon 2</string>
+							<key>SheetImage</key>
+							<string>Animations_Animation.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{0, 133}, {124, 125}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<false/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{343.83551669120789, 193.80999666452408}</string>
+								<key>Scale</key>
+								<string>{1.9489599466323853, 1.9489599466323853}</string>
+								<key>SpriteSize</key>
+								<string>{124, 125}</string>
+								<key>Tag</key>
+								<integer>1</integer>
+								<key>TagName</key>
+								<string>PUZZLE</string>
+								<key>TextureOffset</key>
+								<string>{0, -0}</string>
+								<key>UniqueName</key>
+								<string>Unit canyon</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>Unit canyon</string>
+						</dict>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict>
+								<key>AnimAtStart</key>
+								<true/>
+								<key>AnimLoop</key>
+								<true/>
+								<key>AnimName</key>
+								<string>Monkey_running</string>
+								<key>AnimRepetitions</key>
+								<integer>1</integer>
+								<key>AnimRestoreOriginalFrame</key>
+								<false/>
+								<key>AnimSpeed</key>
+								<real>0.40000000596046448</real>
+								<key>OtherAnimations</key>
+								<array/>
+								<key>SHScene</key>
+								<string>Animations.pshs</string>
+							</dict>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>Animation</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>Animations.pshs</string>
+							<key>SHSheetName</key>
+							<string>Animation</string>
+							<key>SHSpriteName</key>
+							<string>Monkey run 1</string>
+							<key>SheetImage</key>
+							<string>Animations_Animation.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{137, 130}, {73.75, 113.75}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<false/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{71, 257.875}</string>
+								<key>Scale</key>
+								<string>{1, 1}</string>
+								<key>SpriteSize</key>
+								<string>{78, 115.75}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>TagName</key>
+								<string>DEFAULT</string>
+								<key>TextureOffset</key>
+								<string>{-1.875, -0}</string>
+								<key>UniqueName</key>
+								<string>Monkey</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>Monkey</string>
+						</dict>
+						<dict>
+							<key>AnimationsProperties</key>
+							<dict>
+								<key>AnimAtStart</key>
+								<true/>
+								<key>AnimLoop</key>
+								<false/>
+								<key>AnimName</key>
+								<string>unit_canyon_select</string>
+								<key>AnimRepetitions</key>
+								<integer>1</integer>
+								<key>AnimRestoreOriginalFrame</key>
+								<false/>
+								<key>AnimSpeed</key>
+								<real>0.40000000596046448</real>
+								<key>OtherAnimations</key>
+								<array/>
+								<key>SHScene</key>
+								<string>Animations.pshs</string>
+							</dict>
+							<key>Children</key>
+							<array/>
+							<key>CustomClassInfo</key>
+							<dict>
+								<key>ClassDefaults</key>
+								<dict/>
+								<key>ClassName</key>
+								<string>No Class</string>
+							</dict>
+							<key>NodeType</key>
+							<string>LHSprite</string>
+							<key>ParentClass</key>
+							<string>LHBatch</string>
+							<key>ParentName</key>
+							<string>Animation</string>
+							<key>PathProperties</key>
+							<dict/>
+							<key>PhysicProperties</key>
+							<dict>
+								<key>HandledBySH</key>
+								<true/>
+							</dict>
+							<key>SHSceneName</key>
+							<string>Animations.pshs</string>
+							<key>SHSheetName</key>
+							<string>Animation</string>
+							<key>SHSpriteName</key>
+							<string>unit canyon 2</string>
+							<key>SheetImage</key>
+							<string>Animations_Animation.png</string>
+							<key>TextureProperties</key>
+							<dict>
+								<key>Angle</key>
+								<integer>269</integer>
+								<key>Color</key>
+								<string>{{1, 1}, {1, 1}}</string>
+								<key>FlipX</key>
+								<false/>
+								<key>FlipY</key>
+								<false/>
+								<key>Frame</key>
+								<string>{{0, 133}, {124, 125}}</string>
+								<key>IsDrawable</key>
+								<true/>
+								<key>IsExpanded</key>
+								<false/>
+								<key>IsRotated</key>
+								<false/>
+								<key>Locked</key>
+								<false/>
+								<key>Opacity</key>
+								<real>1</real>
+								<key>Position</key>
+								<string>{943.68257386267805, 197.05700957335074}</string>
+								<key>Scale</key>
+								<string>{1.9489599466323853, 1.9489599466323853}</string>
+								<key>SpriteSize</key>
+								<string>{124, 125}</string>
+								<key>Tag</key>
+								<integer>1</integer>
+								<key>TagName</key>
+								<string>PUZZLE</string>
+								<key>TextureOffset</key>
+								<string>{0, -0}</string>
+								<key>UniqueName</key>
+								<string>unit canyon 2_1</string>
+								<key>ZOrder</key>
+								<integer>0</integer>
+							</dict>
+							<key>UniqueName</key>
+							<string>unit canyon 2_1</string>
+						</dict>
+					</array>
+					<key>CustomClassInfo</key>
+					<dict>
+						<key>ClassName</key>
+						<string>No Class</string>
+					</dict>
+					<key>NodeType</key>
+					<string>LHBatch</string>
+					<key>ParentClass</key>
+					<string>LHLayer</string>
+					<key>ParentName</key>
+					<string>MAIN_LAYER</string>
+					<key>SHScene</key>
+					<string>Animations.pshs</string>
+					<key>SheetImage</key>
+					<string>Animations_Animation.png</string>
+					<key>SheetImageRelative</key>
+					<string>/PlushyPuzzle/Resources/Images/Animations_Animation.png</string>
+					<key>Tag</key>
+					<integer>0</integer>
+					<key>TagName</key>
+					<string>DEFAULT</string>
+					<key>UniqueName</key>
+					<string>Animation</string>
+					<key>ZOrder</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>CustomClassInfo</key>
+			<dict>
+				<key>ClassName</key>
+				<string>No Class</string>
+			</dict>
+			<key>NodeType</key>
+			<string>LHLayer</string>
+			<key>ParentClass</key>
+			<string></string>
+			<key>ParentName</key>
+			<string></string>
+			<key>Tag</key>
+			<integer>0</integer>
+			<key>TagName</key>
+			<string>DEFAULT</string>
+			<key>UniqueName</key>
+			<string>MAIN_LAYER</string>
+			<key>ZOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>PARALLAX_INFO</key>
+	<array>
+		<dict>
+			<key>ContinuousScrolling</key>
+			<true/>
+			<key>Direction</key>
+			<integer>1</integer>
+			<key>Speed</key>
+			<real>50</real>
+			<key>Sprites</key>
+			<array>
+				<dict>
+					<key>RatioX</key>
+					<real>1</real>
+					<key>RatioY</key>
+					<real>0.0</real>
+					<key>SpriteName</key>
+					<string>Unit canyon</string>
+				</dict>
+				<dict>
+					<key>RatioX</key>
+					<real>1</real>
+					<key>RatioY</key>
+					<real>0.0</real>
+					<key>SpriteName</key>
+					<string>Canyon background</string>
+				</dict>
+				<dict>
+					<key>RatioX</key>
+					<real>1</real>
+					<key>RatioY</key>
+					<real>0.0</real>
+					<key>SpriteName</key>
+					<string>Canyon background_1</string>
+				</dict>
+				<dict>
+					<key>RatioX</key>
+					<real>1</real>
+					<key>RatioY</key>
+					<real>0.0</real>
+					<key>SpriteName</key>
+					<string>unit canyon 2_1</string>
+				</dict>
+			</array>
+			<key>UniqueName</key>
+			<string>Parallax_background</string>
+			<key>ZOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>ScenePreference</key>
+	<dict>
+		<key>2HDSuffix</key>
+		<string>-ipadhd</string>
+		<key>BackgroundColor</key>
+		<string>{{0, 0}, {0, 0}}</string>
+		<key>BundleIdentifier</key>
+		<string></string>
+		<key>CustomClasses</key>
+		<array/>
+		<key>Device</key>
+		<integer>2</integer>
+		<key>GameWorld</key>
+		<string>{{0, 0}, {480, 320}}</string>
+		<key>HDSuffix</key>
+		<string>-hd</string>
+		<key>Orientation</key>
+		<integer>1</integer>
+		<key>PanValue</key>
+		<string>{0, 0}</string>
+		<key>ProjectName</key>
+		<string></string>
+		<key>ProjectPath</key>
+		<string></string>
+		<key>SafeFrame</key>
+		<string>{0, 0}</string>
+		<key>Tags</key>
+		<array>
+			<string>DEFAULT</string>
+			<string>PUZZLE</string>
+			<string>MONKEY</string>
+		</array>
+		<key>ZoomValue</key>
+		<real>0.0</real>
+	</dict>
+	<key>WBInfo</key>
+	<dict>
+		<key>AngularDamping</key>
+		<real>0.0</real>
+		<key>AngularVelocity</key>
+		<real>0.0</real>
+		<key>CanSleep</key>
+		<true/>
+		<key>Category</key>
+		<integer>1</integer>
+		<key>Density</key>
+		<real>0.20000000298023224</real>
+		<key>FixedRot</key>
+		<false/>
+		<key>Fixture</key>
+		<array/>
+		<key>Friction</key>
+		<real>0.20000000298023224</real>
+		<key>GravityScale</key>
+		<real>1</real>
+		<key>Group</key>
+		<integer>0</integer>
+		<key>HandledBySH</key>
+		<false/>
+		<key>IsBullet</key>
+		<false/>
+		<key>IsCircle</key>
+		<false/>
+		<key>IsSensor</key>
+		<false/>
+		<key>LHHeight</key>
+		<real>0.0</real>
+		<key>LHShapePositionOffset</key>
+		<string>{0, 0}</string>
+		<key>LHWidth</key>
+		<real>0.0</real>
+		<key>LinearDamping</key>
+		<real>0.0</real>
+		<key>LinearVelocity</key>
+		<string>{0, 0}</string>
+		<key>Mask</key>
+		<integer>65535</integer>
+		<key>Name</key>
+		<string>LH_Generic_Fixture</string>
+		<key>Restitution</key>
+		<real>0.20000000298023224</real>
+		<key>Tag</key>
+		<integer>0</integer>
+		<key>TagBottom</key>
+		<integer>0</integer>
+		<key>TagBottomName</key>
+		<string>DEFAULT</string>
+		<key>TagLeft</key>
+		<integer>0</integer>
+		<key>TagLeftName</key>
+		<string>DEFAULT</string>
+		<key>TagRight</key>
+		<integer>0</integer>
+		<key>TagRightName</key>
+		<string>DEFAULT</string>
+		<key>TagTop</key>
+		<integer>0</integer>
+		<key>TagTopName</key>
+		<string>DEFAULT</string>
+		<key>Type</key>
+		<integer>0</integer>
+		<key>WBRect</key>
+		<string>{{0, 0}, {483, 320}}</string>
+	</dict>
+</dict>
+</plist>

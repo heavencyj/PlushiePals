@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Bogdan Vladu</string>
+	<key>CreatedWith</key>
+	<string>SpriteHelper</string>
+	<key>SHEETS_INFO</key>
+	<array>
+		<dict>
+			<key>2HDSuffix</key>
+			<string>-ipadhd</string>
+			<key>AllowRotation</key>
+			<true/>
+			<key>Crop</key>
+			<false/>
+			<key>DropSprites</key>
+			<false/>
+			<key>HDSuffix</key>
+			<string>-hd</string>
+			<key>IsRendable</key>
+			<true/>
+			<key>MaxSheetSize</key>
+			<integer>4096</integer>
+			<key>NpotSize</key>
+			<string>{1364, 2040}</string>
+			<key>Padding</key>
+			<integer>8</integer>
+			<key>PixelFormat</key>
+			<integer>0</integer>
+			<key>SheetImage</key>
+			<string>PlushyPuzzleAssets_plushies.png</string>
+			<key>SheetImage-HD</key>
+			<string>PlushyPuzzleAssets_plushies-hd.png</string>
+			<key>SheetName</key>
+			<string>plushies</string>
+			<key>SheetSceneImageName</key>
+			<string></string>
+			<key>Sheet_Sprites_Info</key>
+			<dict>
+				<key>Canyon background</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6wDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAtAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABUAAAABAQAAQ2FueW9uIGJhY2tncm91bmQu
+					cG5nAAAAFAAAAAEGAAAEAAAAFAAAACwAAAA8
+					AAAAWAAAAAgAAAAEAwAA85IAAAAAAAAIAAAA
+					BAMAAJBLCAAAAAAACAAAAAQDAACbSwgAAAAA
+					AAgAAAAEAwAArehBCQAAAAAIAAAABAMAABRE
+					QwkAAAAAFAAAAAEGAACUAAAApAAAALQAAADE
+					AAAA1AAAABgAAAABAgAAAQAAAAAAAAAPAAAA
+					AAAAAAAAAAAAAAAACAAAAAQDAAADAAAAAAAA
+					AAQAAAADAwAA9QEAAAwAAAABAQAATWFjaW50
+					b3NoIEhECAAAAAQDAAAAAHQFOgAAAAgAAAAA
+					BAAAQbFfHtEAAAAkAAAAAQEAADJDNEIxRDdC
+					LTA1OUMtM0E2QS04REM4LTkxMUJGQTQzN0FF
+					RRgAAAABAgAAgQAAAAEACADvPwAAAQAIAAAA
+					AAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAAAE
+					AAAAAwMAAAABAADOAAAAAQIAADllMmFhM2Nm
+					NzdmODYzYTQ1YjViZDQ1MGYxZTJmMTg2MjQ2
+					NzU0YzM7MDAwMDAwMDA7MDAwMDAwMDAwMDAw
+					MDAyMDtjb20uYXBwbGUuYXBwLXNhbmRib3gu
+					cmVhZC13cml0ZTswMDAwMDAwMTswZTAwMDAw
+					MjswMDAwMDAwMDA5NDM0NDE0Oy91c2Vycy9s
+					bHNhcGhpcmUxMDI5L2Rlc2t0b3AvcGx1c2h5
+					cHV6emxlc3ByaXRlcy9jYW55b24gYmFja2dy
+					b3VuZC5wbmcAAADAAAAA/v///wEAAAAAAAAA
+					DwAAAAQQAAB4AAAAAAAAAAUQAADkAAAAAAAA
+					ABAQAAAAAQAAAAAAAAIgAAC8AQAAAAAAABAg
+					AAA8AQAAAAAAABEgAABwAQAAAAAAABIgAABQ
+					AQAAAAAAABMgAABgAQAAAAAAACAgAACcAQAA
+					AAAAADAgAADIAQAAAAAAAAHAAAAgAQAAAAAA
+					ABHAAAAUAAAAAAAAABLAAAAwAQAAAAAAABDQ
+					AADQAQAAAAAAAIDwAADcAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Canyon background</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 570}, {382, 223.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 1140}, {764, 447}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Canyon background</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon background.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon%20background.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {764, 447}}</string>
+						<key>OriginalSize</key>
+						<string>{764, 447}</string>
+						<key>Position</key>
+						<string>{0, 1140}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{382, 223.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Canyon background blue</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va7QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAvAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABoAAAABAQAAQ2FueW9uIGJhY2tncm91bmQg
+					Ymx1ZS5wbmcAABQAAAABBgAABAAAABQAAAAs
+					AAAAPAAAAFgAAAAIAAAABAMAAPOSAAAAAAAA
+					CAAAAAQDAACQSwgAAAAAAAgAAAAEAwAAm0sI
+					AAAAAAAIAAAABAMAAK3oQQkAAAAACAAAAAQD
+					AABfE1MJAAAAABQAAAABBgAAmAAAAKgAAAC4
+					AAAAyAAAANgAAAAYAAAAAQIAAAEAAAAAAAAA
+					DwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAAAwAA
+					AAAAAAAEAAAAAwMAAPUBAAAMAAAAAQEAAE1h
+					Y2ludG9zaCBIRAgAAAAEAwAAAAB0BToAAAAI
+					AAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAyQzRC
+					MUQ3Qi0wNTlDLTNBNkEtOERDOC05MTFCRkE0
+					MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8AAAEA
+					CAAAAAAAAAAAAAEAAAABAQAALwAAAAAAAAAB
+					BQAABAAAAAMDAAAAAQAA0wAAAAECAAAxZGFm
+					MTcxZDU1YzkyMTlkYWY2ZTNhOTM2MjMxM2Ix
+					MmU1NzQwNjM4OzAwMDAwMDAwOzAwMDAwMDAw
+					MDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1zYW5k
+					Ym94LnJlYWQtd3JpdGU7MDAwMDAwMDE7MGUw
+					MDAwMDI7MDAwMDAwMDAwOTUzMTM1ZjsvdXNl
+					cnMvbGxzYXBoaXJlMTAyOS9kZXNrdG9wL3Bs
+					dXNoeXB1enpsZXNwcml0ZXMvY2FueW9uIGJh
+					Y2tncm91bmQgYmx1ZS5wbmcAAMAAAAD+////
+					AQAAAAAAAAAPAAAABBAAAHwAAAAAAAAABRAA
+					AOgAAAAAAAAAEBAAAAQBAAAAAAAAAiAAAMAB
+					AAAAAAAAECAAAEABAAAAAAAAESAAAHQBAAAA
+					AAAAEiAAAFQBAAAAAAAAEyAAAGQBAAAAAAAA
+					ICAAAKABAAAAAAAAMCAAAMwBAAAAAAAAAcAA
+					ACQBAAAAAAAAEcAAABQAAAAAAAAAEsAAADQB
+					AAAAAAAAENAAANQBAAAAAAAAgPAAAOABAAAA
+					AAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Canyon background blue</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 796}, {382, 223.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 1592}, {764, 447}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Canyon background blue</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon background blue.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon%20background%20blue.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {764, 447}}</string>
+						<key>OriginalSize</key>
+						<string>{764, 447}</string>
+						<key>Position</key>
+						<string>{0, 1592}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{382, 223.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Canyon cloud 1</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABIAAAABAQAAQ2FueW9uIGNsb3VkIDEucG5n
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAFURDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMsAAAABAgAAYTYyYzk4ZDQwYzY0
+					NDkwMDk1ZjA1N2VlMDBlYjhmYmE5NjBkNjBi
+					ODswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MTU7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL2NhbnlvbiBjbG91ZCAxLnBu
+					ZwAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Canyon cloud 1</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{194, 532}, {197, 24}}</string>
+						<key>Frame-HD</key>
+						<string>{{388, 1064}, {394, 48}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Canyon cloud 1</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon cloud 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon%20cloud%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{2, 0}, {394, 48}}</string>
+						<key>OriginalSize</key>
+						<string>{397, 48}</string>
+						<key>Position</key>
+						<string>{388, 1064}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{198.5, 24}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0.25, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Canyon cloud 2</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABIAAAABAQAAQ2FueW9uIGNsb3VkIDIucG5n
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAFkRDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMsAAAABAgAANDZiNWQ4YjY0ZTAz
+					YjEzNWM0N2Q2NGU5MzI0NDM5ZjQ3ZDAxYTMw
+					MDswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MTY7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL2NhbnlvbiBjbG91ZCAyLnBu
+					ZwAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Canyon cloud 2</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{194, 500}, {218, 30.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{388, 1000}, {436, 61}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Canyon cloud 2</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon cloud 2.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyon%20cloud%202.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {436, 61}}</string>
+						<key>OriginalSize</key>
+						<string>{436, 61}</string>
+						<key>Position</key>
+						<string>{388, 1000}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{218, 30.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Canyons_looped</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABIAAAABAQAAQ2FueW9uc19sb29wZWQucG5n
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAF0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMsAAAABAgAANTBmYzM4MTVmOGM4
+					N2NjNzQyNTg2OWE0YTdhNDVjM2QzZWZmNGFi
+					ZTswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MTc7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL2NhbnlvbnNfbG9vcGVkLnBu
+					ZwAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Canyons_looped</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{0, 0}, {568, 190.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{0, 0}, {1136, 381}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<true/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Canyons_looped</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyons_looped.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Canyons_looped.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {1136, 381}}</string>
+						<key>OriginalSize</key>
+						<string>{1136, 381}</string>
+						<key>Position</key>
+						<string>{0, 0}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{568, 190.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>Star</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va5ADAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAmAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					AAgAAAABAQAAU3Rhci5wbmcUAAAAAQYAAAQA
+					AAAUAAAALAAAADwAAABYAAAACAAAAAQDAADz
+					kgAAAAAAAAgAAAAEAwAAkEsIAAAAAAAIAAAA
+					BAMAAJtLCAAAAAAACAAAAAQDAACt6EEJAAAA
+					AAgAAAAEAwAAtA5TCQAAAAAUAAAAAQYAAIQA
+					AACUAAAApAAAALQAAADEAAAAGAAAAAECAAAB
+					AAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAA
+					BAMAAAMAAAAAAAAABAAAAAMDAAD1AQAADAAA
+					AAEBAABNYWNpbnRvc2ggSEQIAAAABAMAAAAA
+					dAU6AAAACAAAAAAEAABBsV8e0QAAACQAAAAB
+					AQAAMkM0QjFEN0ItMDU5Qy0zQTZBLThEQzgt
+					OTExQkZBNDM3QUVFGAAAAAECAACBAAAAAQAI
+					AO8/AAABAAgAAAAAAAAAAAABAAAAAQEAAC8A
+					AAAAAAAAAQUAAAQAAAADAwAAAAEAAMEAAAAB
+					AgAANGUyOWE5ZTViZTNmMmRkZTFiNTlhODg5
+					MGFlNjU0OGExNmVjMWEwMzswMDAwMDAwMDsw
+					MDAwMDAwMDAwMDAwMDIwO2NvbS5hcHBsZS5h
+					cHAtc2FuZGJveC5yZWFkLXdyaXRlOzAwMDAw
+					MDAxOzBlMDAwMDAyOzAwMDAwMDAwMDk1MzBl
+					YjQ7L3VzZXJzL2xsc2FwaGlyZTEwMjkvZGVz
+					a3RvcC9wbHVzaHlwdXp6bGVzcHJpdGVzL3N0
+					YXIucG5nAAAAAMAAAAD+////AQAAAAAAAAAP
+					AAAABBAAAGgAAAAAAAAABRAAANQAAAAAAAAA
+					EBAAAPAAAAAAAAAAAiAAAKwBAAAAAAAAECAA
+					ACwBAAAAAAAAESAAAGABAAAAAAAAEiAAAEAB
+					AAAAAAAAEyAAAFABAAAAAAAAICAAAIwBAAAA
+					AAAAMCAAALgBAAAAAAAAAcAAABABAAAAAAAA
+					EcAAABQAAAAAAAAAEsAAACABAAAAAAAAENAA
+					AMABAAAAAAAAgPAAAMwBAAAAAAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>Star</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{356, 252}, {50, 47.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{712, 504}, {100, 95}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>Star</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Star.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/Star.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 2}, {100, 95}}</string>
+						<key>OriginalSize</key>
+						<string>{100, 100}</string>
+						<key>Position</key>
+						<string>{712, 504}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{50, 50}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, 0.25}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>banana bomb</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va4QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAjAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					BwAAAAEBAABzcHJpdGVzAA8AAAABAQAAYmFu
+					YW5hIGJvbWIucG5nABQAAAABBgAABAAAABQA
+					AAAsAAAAPAAAAEwAAAAIAAAABAMAAPOSAAAA
+					AAAACAAAAAQDAACQSwgAAAAAAAgAAAAEAwAA
+					m0sIAAAAAAAIAAAABAMAANElPQkAAAAACAAA
+					AAQDAACtEz8JAAAAABQAAAABBgAAgAAAAJAA
+					AACgAAAAsAAAAMAAAAAYAAAAAQIAAAEAAAAA
+					AAAADwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAA
+					AwAAAAAAAAAEAAAAAwMAAPUBAAAMAAAAAQEA
+					AE1hY2ludG9zaCBIRAgAAAAEAwAAAAB0BToA
+					AAAIAAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAy
+					QzRCMUQ3Qi0wNTlDLTNBNkEtOERDOC05MTFC
+					RkE0MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8A
+					AAEACAAAAAAAAAAAAAEAAAABAQAALwAAAAAA
+					AAABBQAABAAAAAMDAAAAAQAAvAAAAAECAABk
+					MjA2M2IzMzJhY2JkOGJiM2VhZjNjNDJiNDI0
+					YTAxYTY0ZDZmYTBkOzAwMDAwMDAwOzAwMDAw
+					MDAwMDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1z
+					YW5kYm94LnJlYWQtd3JpdGU7MDAwMDAwMDE7
+					MGUwMDAwMDI7MDAwMDAwMDAwOTNmMTNhZDsv
+					dXNlcnMvbGxzYXBoaXJlMTAyOS9kZXNrdG9w
+					L3Nwcml0ZXMvYmFuYW5hIGJvbWIucG5nAMAA
+					AAD+////AQAAAAAAAAAPAAAABBAAAGQAAAAA
+					AAAABRAAANAAAAAAAAAAEBAAAOwAAAAAAAAA
+					AiAAAKgBAAAAAAAAECAAACgBAAAAAAAAESAA
+					AFwBAAAAAAAAEiAAADwBAAAAAAAAEyAAAEwB
+					AAAAAAAAICAAAIgBAAAAAAAAMCAAALQBAAAA
+					AAAAAcAAAAwBAAAAAAAAEcAAABQAAAAAAAAA
+					EsAAABwBAAAAAAAAENAAALwBAAAAAAAAgPAA
+					AMgBAAAAAAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>banana bomb</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{444, 130}, {40, 34}}</string>
+						<key>Frame-HD</key>
+						<string>{{888, 260}, {80, 68}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>banana bomb</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/sprites/banana bomb.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/sprites/banana%20bomb.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {80, 68}}</string>
+						<key>OriginalSize</key>
+						<string>{80, 68}</string>
+						<key>Position</key>
+						<string>{888, 260}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{40, 34}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>banana bunch</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va4gDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAkAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					BwAAAAEBAABzcHJpdGVzABAAAAABAQAAYmFu
+					YW5hIGJ1bmNoLnBuZxQAAAABBgAABAAAABQA
+					AAAsAAAAPAAAAEwAAAAIAAAABAMAAPOSAAAA
+					AAAACAAAAAQDAACQSwgAAAAAAAgAAAAEAwAA
+					m0sIAAAAAAAIAAAABAMAANElPQkAAAAACAAA
+					AAQDAAC/Ez8JAAAAABQAAAABBgAAgAAAAJAA
+					AACgAAAAsAAAAMAAAAAYAAAAAQIAAAEAAAAA
+					AAAADwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAA
+					AwAAAAAAAAAEAAAAAwMAAPUBAAAMAAAAAQEA
+					AE1hY2ludG9zaCBIRAgAAAAEAwAAAAB0BToA
+					AAAIAAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAy
+					QzRCMUQ3Qi0wNTlDLTNBNkEtOERDOC05MTFC
+					RkE0MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8A
+					AAEACAAAAAAAAAAAAAEAAAABAQAALwAAAAAA
+					AAABBQAABAAAAAMDAAAAAQAAvQAAAAECAABl
+					ZDQ5NjIzZmVmZGQyY2Y0OTBmODM1NzM3YzI1
+					Y2UzNGFiNzU5NmUxOzAwMDAwMDAwOzAwMDAw
+					MDAwMDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1z
+					YW5kYm94LnJlYWQtd3JpdGU7MDAwMDAwMDE7
+					MGUwMDAwMDI7MDAwMDAwMDAwOTNmMTNiZjsv
+					dXNlcnMvbGxzYXBoaXJlMTAyOS9kZXNrdG9w
+					L3Nwcml0ZXMvYmFuYW5hIGJ1bmNoLnBuZwAA
+					AADAAAAA/v///wEAAAAAAAAADwAAAAQQAABk
+					AAAAAAAAAAUQAADQAAAAAAAAABAQAADsAAAA
+					AAAAAAIgAACoAQAAAAAAABAgAAAoAQAAAAAA
+					ABEgAABcAQAAAAAAABIgAAA8AQAAAAAAABMg
+					AABMAQAAAAAAACAgAACIAQAAAAAAADAgAAC0
+					AQAAAAAAAAHAAAAMAQAAAAAAABHAAAAUAAAA
+					AAAAABLAAAAcAQAAAAAAABDQAAC8AQAAAAAA
+					AIDwAADIAQAAAAAAAA==
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-19.5, 13.25}</string>
+										<string>{-13, -10.75}</string>
+										<string>{9, -13.25}</string>
+										<string>{16.5, 13.75}</string>
+										<string>{-18.5, 13.75}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>0.0</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<false/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>0.0</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-20, -13.75}</string>
+								<key>LHWidth</key>
+								<real>0.0</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>banana</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{0.99999999999999989, 1}</string>
+									<string>{14, 49}</string>
+									<string>{58, 54}</string>
+									<string>{73, 0}</string>
+									<string>{3, 0}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>0.0</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>2</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>banana bunch</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{486, 130}, {40, 27.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{972, 260}, {80, 55}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>banana bunch</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/sprites/banana bunch.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/sprites/banana%20bunch.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {80, 55}}</string>
+						<key>OriginalSize</key>
+						<string>{80, 55}</string>
+						<key>Position</key>
+						<string>{972, 260}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{40, 27.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>banana single</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va4wDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAAlAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					BwAAAAEBAABzcHJpdGVzABEAAAABAQAAYmFu
+					YW5hIHNpbmdsZS5wbmcAAAAUAAAAAQYAAAQA
+					AAAUAAAALAAAADwAAABMAAAACAAAAAQDAADz
+					kgAAAAAAAAgAAAAEAwAAkEsIAAAAAAAIAAAA
+					BAMAAJtLCAAAAAAACAAAAAQDAADRJT0JAAAA
+					AAgAAAAEAwAAkhM/CQAAAAAUAAAAAQYAAIQA
+					AACUAAAApAAAALQAAADEAAAAGAAAAAECAAAB
+					AAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAA
+					BAMAAAMAAAAAAAAABAAAAAMDAAD1AQAADAAA
+					AAEBAABNYWNpbnRvc2ggSEQIAAAABAMAAAAA
+					dAU6AAAACAAAAAAEAABBsV8e0QAAACQAAAAB
+					AQAAMkM0QjFEN0ItMDU5Qy0zQTZBLThEQzgt
+					OTExQkZBNDM3QUVFGAAAAAECAACBAAAAAQAI
+					AO8/AAABAAgAAAAAAAAAAAABAAAAAQEAAC8A
+					AAAAAAAAAQUAAAQAAAADAwAAAAEAAL4AAAAB
+					AgAAODFhMzI1ODY4MDNhY2I2NjE5NmIyZDY5
+					ODBkNDAzZDE3M2UyZWZmZjswMDAwMDAwMDsw
+					MDAwMDAwMDAwMDAwMDIwO2NvbS5hcHBsZS5h
+					cHAtc2FuZGJveC5yZWFkLXdyaXRlOzAwMDAw
+					MDAxOzBlMDAwMDAyOzAwMDAwMDAwMDkzZjEz
+					OTI7L3VzZXJzL2xsc2FwaGlyZTEwMjkvZGVz
+					a3RvcC9zcHJpdGVzL2JhbmFuYSBzaW5nbGUu
+					cG5nAAAAwAAAAP7///8BAAAAAAAAAA8AAAAE
+					EAAAaAAAAAAAAAAFEAAA1AAAAAAAAAAQEAAA
+					8AAAAAAAAAACIAAArAEAAAAAAAAQIAAALAEA
+					AAAAAAARIAAAYAEAAAAAAAASIAAAQAEAAAAA
+					AAATIAAAUAEAAAAAAAAgIAAAjAEAAAAAAAAw
+					IAAAuAEAAAAAAAABwAAAEAEAAAAAAAARwAAA
+					FAAAAAAAAAASwAAAIAEAAAAAAAAQ0AAAwAEA
+					AAAAAACA8AAAzAEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array/>
+						<key>Type</key>
+						<integer>3</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>banana single</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{444, 166}, {40, 25}}</string>
+						<key>Frame-HD</key>
+						<string>{{888, 332}, {80, 50}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>banana single</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/sprites/banana single.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/sprites/banana%20single.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {80, 50}}</string>
+						<key>OriginalSize</key>
+						<string>{80, 50}</string>
+						<key>Position</key>
+						<string>{888, 332}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{40, 25}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>button blue</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va5wDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAApAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					AA8AAAABAQAAYnV0dG9uIGJsdWUucG5nABQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAC0rkMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyAAAAAECAABjODExZTQzYzY2M2QzMWM4
+					ZWJhZDZjNTg4MmQ2OWZhYTM4MjFlMDZkOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzYWViNDsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvYnV0dG9uIGJsdWUucG5nAMAAAAD+
+					////AQAAAAAAAAAPAAAABBAAAHAAAAAAAAAA
+					BRAAANwAAAAAAAAAEBAAAPgAAAAAAAAAAiAA
+					ALQBAAAAAAAAECAAADQBAAAAAAAAESAAAGgB
+					AAAAAAAAEiAAAEgBAAAAAAAAEyAAAFgBAAAA
+					AAAAICAAAJQBAAAAAAAAMCAAAMABAAAAAAAA
+					AcAAABgBAAAAAAAAEcAAABQAAAAAAAAAEsAA
+					ACgBAAAAAAAAENAAAMgBAAAAAAAAgPAAANQB
+					AAAAAAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array/>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>272</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<true/>
+								<key>IsRectangle</key>
+								<false/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>136</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-0.25, 0}</string>
+								<key>LHWidth</key>
+								<real>127.5</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>UntitledFixture</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array/>
+								<key>ShapePositionOffset</key>
+								<string>{127.5, 136}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>255</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>button blue</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{384, 570}, {127.5, 136}}</string>
+						<key>Frame-HD</key>
+						<string>{{768, 1140}, {255, 272}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>button blue</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button blue.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button%20blue.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {255, 272}}</string>
+						<key>OriginalSize</key>
+						<string>{256, 272}</string>
+						<key>Position</key>
+						<string>{768, 1140}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{128, 136}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-0.25, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>button gray</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va5wDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAApAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					AA8AAAABAQAAYnV0dG9uIGdyYXkucG5nABQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAC1rkMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAyAAAAAECAAA0MjIxODlhZDZhNDIwZGNl
+					MjdmNDExZmM2MWY2OTIxNTU0ODEzOGY3OzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzYWViNTsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvYnV0dG9uIGdyYXkucG5nAMAAAAD+
+					////AQAAAAAAAAAPAAAABBAAAHAAAAAAAAAA
+					BRAAANwAAAAAAAAAEBAAAPgAAAAAAAAAAiAA
+					ALQBAAAAAAAAECAAADQBAAAAAAAAESAAAGgB
+					AAAAAAAAEiAAAEgBAAAAAAAAEyAAAFgBAAAA
+					AAAAICAAAJQBAAAAAAAAMCAAAMABAAAAAAAA
+					AcAAABgBAAAAAAAAEcAAABQAAAAAAAAAEsAA
+					ACgBAAAAAAAAENAAAMgBAAAAAAAAgPAAANQB
+					AAAAAAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-59.5, -63.5}</string>
+										<string>{59, -63.5}</string>
+										<string>{59, 63.5}</string>
+										<string>{-59.5, 63.5}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>254</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<true/>
+								<key>IsSensor</key>
+								<true/>
+								<key>LHHeight</key>
+								<real>127</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-59.5, -63.5}</string>
+								<key>LHWidth</key>
+								<real>118.5</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>button</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{0, 0}</string>
+									<string>{237, 0}</string>
+									<string>{237, 254}</string>
+									<string>{0, 254}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>237</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>1</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>button gray</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{444, 0}, {118.5, 127}}</string>
+						<key>Frame-HD</key>
+						<string>{{888, 0}, {237, 254}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>button gray</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button gray.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button%20gray.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {237, 254}}</string>
+						<key>OriginalSize</key>
+						<string>{238, 254}</string>
+						<key>Position</key>
+						<string>{888, 0}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{119, 127}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-0.25, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>button red</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va5wDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAApAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					AA4AAAABAQAAYnV0dG9uIHJlZC5wbmcAABQA
+					AAABBgAABAAAABQAAAAsAAAAPAAAAFgAAAAI
+					AAAABAMAAPOSAAAAAAAACAAAAAQDAACQSwgA
+					AAAAAAgAAAAEAwAAm0sIAAAAAAAIAAAABAMA
+					AK3oQQkAAAAACAAAAAQDAAC2rkMJAAAAABQA
+					AAABBgAAjAAAAJwAAACsAAAAvAAAAMwAAAAY
+					AAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAA
+					AAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+					APUBAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgA
+					AAAEAwAAAAB0BToAAAAIAAAAAAQAAEGxXx7R
+					AAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNB
+					NkEtOERDOC05MTFCRkE0MzdBRUUYAAAAAQIA
+					AIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEA
+					AAABAQAALwAAAAAAAAABBQAABAAAAAMDAAAA
+					AQAAxwAAAAECAAA2NzE0MGNlMjQ4ZmIwZWE2
+					YWZiZDZkNjU3NDBlMTc3N2I0Njg1Y2ZmOzAw
+					MDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7Y29t
+					LmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3Jp
+					dGU7MDAwMDAwMDE7MGUwMDAwMDI7MDAwMDAw
+					MDAwOTQzYWViNjsvdXNlcnMvbGxzYXBoaXJl
+					MTAyOS9kZXNrdG9wL3BsdXNoeXB1enpsZXNw
+					cml0ZXMvYnV0dG9uIHJlZC5wbmcAAMAAAAD+
+					////AQAAAAAAAAAPAAAABBAAAHAAAAAAAAAA
+					BRAAANwAAAAAAAAAEBAAAPgAAAAAAAAAAiAA
+					ALQBAAAAAAAAECAAADQBAAAAAAAAESAAAGgB
+					AAAAAAAAEiAAAEgBAAAAAAAAEyAAAFgBAAAA
+					AAAAICAAAJQBAAAAAAAAMCAAAMABAAAAAAAA
+					AcAAABgBAAAAAAAAEcAAABQAAAAAAAAAEsAA
+					ACgBAAAAAAAAENAAAMgBAAAAAAAAgPAAANQB
+					AAAAAAAA
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array/>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>272</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<true/>
+								<key>IsRectangle</key>
+								<false/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>136</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-0.25, 0}</string>
+								<key>LHWidth</key>
+								<real>127.5</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>UntitledFixture</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array/>
+								<key>ShapePositionOffset</key>
+								<string>{127.5, 136}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>255</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>button red</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{384, 796}, {127.5, 136}}</string>
+						<key>Frame-HD</key>
+						<string>{{768, 1592}, {255, 272}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>button red</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button red.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/button%20red.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {255, 272}}</string>
+						<key>OriginalSize</key>
+						<string>{256, 272}</string>
+						<key>Position</key>
+						<string>{768, 1592}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{128, 136}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{-0.25, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>unit canyon move</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAAdW5pdCBjYW55b24gMS5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAH0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAYjY3YjQ1ZmQwZDYw
+					NzI4YTFlZGI2OGQ4YjYxMzk1ZGFmYTFlZGJj
+					YjswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MWY7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL3VuaXQgY2FueW9uIDEucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.10000000149011612</real>
+						<key>AngularVelocity</key>
+						<real>3.5</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>1</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-125, -43.25}</string>
+										<string>{125, -43.25}</string>
+										<string>{125, 43.25}</string>
+										<string>{-125, 43.25}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>173</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<true/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>86.5</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-125, -43.25}</string>
+								<key>LHWidth</key>
+								<real>250</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>UntitledFixture</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{0, 0}</string>
+									<string>{500, 0}</string>
+									<string>{500, 173}</string>
+									<string>{0, 173}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>500</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>2</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>unit canyon move</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{432, 208}, {250, 86.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{864, 416}, {500, 173}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>unit canyon move</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit%20canyon%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {500, 173}}</string>
+						<key>OriginalSize</key>
+						<string>{500, 173}</string>
+						<key>Position</key>
+						<string>{864, 416}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{250, 86.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>unit canyon static</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAAdW5pdCBjYW55b24gMS5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAH0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAYjY3YjQ1ZmQwZDYw
+					NzI4YTFlZGI2OGQ4YjYxMzk1ZGFmYTFlZGJj
+					YjswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MWY7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL3VuaXQgY2FueW9uIDEucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<false/>
+						<key>GravityScale</key>
+						<real>0.0</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-125, -43.25}</string>
+										<string>{125, -43.25}</string>
+										<string>{125, 43.25}</string>
+										<string>{-125, 43.25}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>173</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<true/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>86.5</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-125, -43.25}</string>
+								<key>LHWidth</key>
+								<real>250</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>UntitledFixture</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{0, 0}</string>
+									<string>{500, 0}</string>
+									<string>{500, 173}</string>
+									<string>{0, 173}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>500</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>0</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>unit canyon static</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{194, 412}, {250, 86.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{388, 824}, {500, 173}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>unit canyon static</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit%20canyon%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {500, 173}}</string>
+						<key>OriginalSize</key>
+						<string>{500, 173}</string>
+						<key>Position</key>
+						<string>{388, 824}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{250, 86.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<key>unit canyon turn</key>
+				<dict>
+					<key>DocumentSecurityImageBookmark</key>
+					<data>
+					Ym9va6QDAAAAAAQQMAAAAAAAAAAAAAAAAAAA
+					AAAAAAAAAAAAAAAAAAAAAAAAAAAArAIAAAUA
+					AAABAQAAVXNlcnMAAAANAAAAAQEAAGxsc2Fw
+					aGlyZTEwMjkAAAAHAAAAAQEAAERlc2t0b3AA
+					EwAAAAEBAABQbHVzaHlQdXp6bGVTcHJpdGVz
+					ABEAAAABAQAAdW5pdCBjYW55b24gMS5wbmcA
+					AAAUAAAAAQYAAAQAAAAUAAAALAAAADwAAABY
+					AAAACAAAAAQDAADzkgAAAAAAAAgAAAAEAwAA
+					kEsIAAAAAAAIAAAABAMAAJtLCAAAAAAACAAA
+					AAQDAACt6EEJAAAAAAgAAAAEAwAAH0RDCQAA
+					AAAUAAAAAQYAAJAAAACgAAAAsAAAAMAAAADQ
+					AAAAGAAAAAECAAABAAAAAAAAAA8AAAAAAAAA
+					AAAAAAAAAAAIAAAABAMAAAMAAAAAAAAABAAA
+					AAMDAAD1AQAADAAAAAEBAABNYWNpbnRvc2gg
+					SEQIAAAABAMAAAAAdAU6AAAACAAAAAAEAABB
+					sV8e0QAAACQAAAABAQAAMkM0QjFEN0ItMDU5
+					Qy0zQTZBLThEQzgtOTExQkZBNDM3QUVFGAAA
+					AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAA
+					AAABAAAAAQEAAC8AAAAAAAAAAQUAAAQAAAAD
+					AwAAAAEAAMoAAAABAgAAYjY3YjQ1ZmQwZDYw
+					NzI4YTFlZGI2OGQ4YjYxMzk1ZGFmYTFlZGJj
+					YjswMDAwMDAwMDswMDAwMDAwMDAwMDAwMDIw
+					O2NvbS5hcHBsZS5hcHAtc2FuZGJveC5yZWFk
+					LXdyaXRlOzAwMDAwMDAxOzBlMDAwMDAyOzAw
+					MDAwMDAwMDk0MzQ0MWY7L3VzZXJzL2xsc2Fw
+					aGlyZTEwMjkvZGVza3RvcC9wbHVzaHlwdXp6
+					bGVzcHJpdGVzL3VuaXQgY2FueW9uIDEucG5n
+					AAAAwAAAAP7///8BAAAAAAAAAA8AAAAEEAAA
+					dAAAAAAAAAAFEAAA4AAAAAAAAAAQEAAA/AAA
+					AAAAAAACIAAAuAEAAAAAAAAQIAAAOAEAAAAA
+					AAARIAAAbAEAAAAAAAASIAAATAEAAAAAAAAT
+					IAAAXAEAAAAAAAAgIAAAmAEAAAAAAAAwIAAA
+					xAEAAAAAAAABwAAAHAEAAAAAAAARwAAAFAAA
+					AAAAAAASwAAALAEAAAAAAAAQ0AAAzAEAAAAA
+					AACA8AAA2AEAAAAAAAA=
+					</data>
+					<key>IsSHSprite</key>
+					<true/>
+					<key>PhysicProperties</key>
+					<dict>
+						<key>AngularDamping</key>
+						<real>0.0</real>
+						<key>AngularVelocity</key>
+						<real>0.0</real>
+						<key>CanSleep</key>
+						<true/>
+						<key>FixedRot</key>
+						<true/>
+						<key>GravityScale</key>
+						<real>0.0</real>
+						<key>HandledBySH</key>
+						<true/>
+						<key>IsBullet</key>
+						<false/>
+						<key>LinearDamping</key>
+						<real>0.0</real>
+						<key>LinearVelocity</key>
+						<string>{0, 0}</string>
+						<key>SH_ComplexShapes</key>
+						<array>
+							<dict>
+								<key>Angle</key>
+								<integer>0</integer>
+								<key>Category</key>
+								<integer>1</integer>
+								<key>Density</key>
+								<real>0.20000000298023224</real>
+								<key>Fixture</key>
+								<array>
+									<array>
+										<string>{-125, -43.25}</string>
+										<string>{125, -43.25}</string>
+										<string>{125, 43.25}</string>
+										<string>{-125, 43.25}</string>
+									</array>
+								</array>
+								<key>Friction</key>
+								<real>0.20000000298023224</real>
+								<key>Group</key>
+								<integer>0</integer>
+								<key>Height</key>
+								<real>173</real>
+								<key>HolesPoints</key>
+								<array/>
+								<key>IsCircle</key>
+								<false/>
+								<key>IsRectangle</key>
+								<true/>
+								<key>IsSensor</key>
+								<false/>
+								<key>LHHeight</key>
+								<real>86.5</real>
+								<key>LHShapePositionOffset</key>
+								<string>{-125, -43.25}</string>
+								<key>LHWidth</key>
+								<real>250</real>
+								<key>Mask</key>
+								<integer>65535</integer>
+								<key>Name</key>
+								<string>UntitledFixture</string>
+								<key>Restitution</key>
+								<real>0.20000000298023224</real>
+								<key>ShapePoints</key>
+								<array>
+									<string>{0, 0}</string>
+									<string>{500, 0}</string>
+									<string>{500, 173}</string>
+									<string>{0, 173}</string>
+								</array>
+								<key>ShapePositionOffset</key>
+								<string>{0, 0}</string>
+								<key>Tag</key>
+								<integer>0</integer>
+								<key>Width</key>
+								<real>500</real>
+							</dict>
+						</array>
+						<key>Type</key>
+						<integer>2</integer>
+					</dict>
+					<key>SHSheetName</key>
+					<string>plushies</string>
+					<key>SHSpriteName</key>
+					<string>unit canyon turn</string>
+					<key>SheetImage</key>
+					<string>PlushyPuzzleAssets_plushies.png</string>
+					<key>SheetImage-HD</key>
+					<string>PlushyPuzzleAssets_plushies-hd.png</string>
+					<key>TextureProperties</key>
+					<dict>
+						<key>Angle</key>
+						<integer>0</integer>
+						<key>Border</key>
+						<integer>0</integer>
+						<key>CanBeTrimmed</key>
+						<true/>
+						<key>Color</key>
+						<string>{{1, 1}, {1, 1}}</string>
+						<key>ConvertedFromOldFormat</key>
+						<false/>
+						<key>CustomClassName</key>
+						<string></string>
+						<key>FlipX</key>
+						<false/>
+						<key>FlipY</key>
+						<false/>
+						<key>Frame</key>
+						<string>{{194, 322}, {250, 86.5}}</string>
+						<key>Frame-HD</key>
+						<string>{{388, 644}, {500, 173}}</string>
+						<key>Image</key>
+						<string>PlushyPuzzleAssets_plushies.png</string>
+						<key>Image-HD</key>
+						<string>PlushyPuzzleAssets_plushies-hd.png</string>
+						<key>IsCropped</key>
+						<false/>
+						<key>IsDrawable</key>
+						<true/>
+						<key>IsRotated</key>
+						<false/>
+						<key>IsTrimmed</key>
+						<true/>
+						<key>Name</key>
+						<string>unit canyon turn</string>
+						<key>Opacity</key>
+						<real>1</real>
+						<key>OriginalImage</key>
+						<string>/Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit canyon 1.png</string>
+						<key>OriginalImage_RelativePath</key>
+						<string>../../../../../../../../Users/llsaphire1029/Desktop/PlushyPuzzleSprites/unit%20canyon%201.png/</string>
+						<key>OriginalRect</key>
+						<string>{{0, 0}, {500, 173}}</string>
+						<key>OriginalSize</key>
+						<string>{500, 173}</string>
+						<key>Position</key>
+						<string>{388, 644}</string>
+						<key>Scale</key>
+						<string>{1, 1}</string>
+						<key>SpriteSize</key>
+						<string>{250, 86.5}</string>
+						<key>SpriteWasBreaked</key>
+						<false/>
+						<key>Tag</key>
+						<integer>0</integer>
+						<key>TextureOffset</key>
+						<string>{0, -0}</string>
+						<key>UsesBatchRendering</key>
+						<true/>
+						<key>ZOrder</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+			</dict>
+			<key>Size</key>
+			<string>{2048, 2048}</string>
+			<key>Trim</key>
+			<true/>
+			<key>ZOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>SH_ANIMATIONS_LIST</key>
+	<array>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array/>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_run</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array/>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_jump</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array/>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_collide</string>
+		</dict>
+		<dict>
+			<key>DelayPerUnit</key>
+			<real>0.40000000596046448</real>
+			<key>Frames</key>
+			<array/>
+			<key>Loop</key>
+			<true/>
+			<key>Repetitions</key>
+			<integer>1</integer>
+			<key>RestoreOriginalFrame</key>
+			<false/>
+			<key>StartAtLaunch</key>
+			<true/>
+			<key>UniqueName</key>
+			<string>Monkey_die</string>
+		</dict>
+	</array>
+	<key>SaveSettings</key>
+	<dict>
+		<key>Dither</key>
+		<false/>
+		<key>DocumentName</key>
+		<string>PlushyPuzzleAssets</string>
+		<key>HD2XSuffix</key>
+		<string>-ipadhd</string>
+		<key>HDSuffix</key>
+		<string>-hd</string>
+		<key>ImageFormatId</key>
+		<integer>0</integer>
+		<key>Npot</key>
+		<true/>
+		<key>PvrBpp</key>
+		<integer>1</integer>
+		<key>PvrRemoveParent</key>
+		<true/>
+		<key>ResamplingAlgorithm</key>
+		<integer>0</integer>
+		<key>ResizingOptions</key>
+		<integer>1</integer>
+		<key>SaveStyle</key>
+		<integer>0</integer>
+	</dict>
+	<key>SceneFolderSandboxBookmark</key>
+	<data>
+	Ym9va9wDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAMA
+	AAkAAAABAQAARGV2ZWxvcGVyAAAADwAAAAEBAABBcHBsZSBXb3Jrc3BhY2UACAAAAAEB
+	AABQcm9qZWN0cwsAAAABAQAAUGx1c2hpZVBhbHMADAAAAAEBAABQbHVzaHlQdXp6bGUJ
+	AAAAAQEAAFJlc291cmNlcwAAAAYAAAABAQAASW1hZ2VzAAAgAAAAAQYAAAQAAAAYAAAA
+	MAAAAEAAAABUAAAAVAAAAGgAAAB8AAAACAAAAAQDAACQdZEAAAAAAAgAAAAEAwAAOcGb
+	AAAAAAAIAAAABAMAADzBmwAAAAAACAAAAAQDAACNrzEJAAAAAAgAAAAEAwAA8x9DCQAA
+	AAAIAAAABAMAAPYfQwkAAAAACAAAAAQDAAD3H0MJAAAAAAgAAAAEAwAArjJDCQAAAAAg
+	AAAAAQYAALQAAADEAAAA1AAAAOQAAAD0AAAABAEAABQBAAAkAQAAGAAAAAECAAACAAAA
+	AAAAAA8AAAAAAAAAAAAAAAAAAAAMAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAAB0
+	BToAAAAIAAAAAAQAAEGxXx7RAAAAJAAAAAEBAAAyQzRCMUQ3Qi0wNTlDLTNBNkEtOERD
+	OC05MTFCRkE0MzdBRUUYAAAAAQIAAIEAAAABAAgA7z8AAAEACAAAAAAAAAAAAAEAAAAB
+	AQAALwAAAAAAAAABBQAABAAAAAMDAAAAAQAA4gAAAAECAAAzMDg0ZTVjZDU4OWRhYWEy
+	MjI2MWNhNDk0OTkzZmJmYTQwZmRkZmJjOzAwMDAwMDAwOzAwMDAwMDAwMDAwMDAwMjA7
+	Y29tLmFwcGxlLmFwcC1zYW5kYm94LnJlYWQtd3JpdGU7MDAwMDAwMDE7MGUwMDAwMDI7
+	MDAwMDAwMDAwOTQzMzJhZTsvZGV2ZWxvcGVyL2FwcGxlIHdvcmtzcGFjZS9wcm9qZWN0
+	cy9wbHVzaGllcGFscy9wbHVzaHlwdXp6bGUvcGx1c2h5cHV6emxlL3Jlc291cmNlcy9p
+	bWFnZXMAAACcAAAA/v///wEAAAAAAAAADAAAAAQQAACMAAAAAAAAAAUQAAA0AQAAAAAA
+	ABAQAABcAQAAAAAAAAIgAAD8AQAAAAAAABAgAAB8AQAAAAAAABEgAACwAQAAAAAAABIg
+	AACQAQAAAAAAABMgAACgAQAAAAAAACAgAADcAQAAAAAAADAgAAAIAgAAAAAAABDQAAAQ
+	AgAAAAAAAIDwAAAcAgAAAAAAAA==
+	</data>
+	<key>Version</key>
+	<string>1.8.222</string>
+</dict>
+</plist>
