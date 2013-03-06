@@ -38,6 +38,7 @@ Floor *maze;
 int level;
 bool pass;
 int countDown;
+int scoreCD;
 float pv;
 float mv;
 CCLayer *pauseLayer;
@@ -45,6 +46,9 @@ CCLayer *pauseLayer;
 CGRect pauseButtonRect;
 CGRect resumeButtonRect;
 CCSprite *pauseButton;
+int score;
+CCLabelTTF* scoreLabel;
+int cameraCD;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -116,16 +120,12 @@ CCSprite *pauseButton;
     //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Pause button
-//    CCSprite* pause = [CCSprite spriteWithFile:@"Replay icon.png"];
-//    CCSprite* pauseSel = [CCSprite spriteWithFile:@"Replay icon.png"];
-//    pauseButton = [CCMenuItemImage itemWithNormalImage:@"Pause icon.png" selectedImage:@"Pause icon.png" target:self selector:@selector(pauseGame)];
     pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
     pauseButton.position = ccp(450,250);
     pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
     [self addChild:pauseButton z:50];
     
-    
-    
+
     // Adding object layer
     plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys_default.png" capacity:150];
     [self addChild:plushyLayer z:200];
@@ -142,9 +142,22 @@ CCSprite *pauseButton;
     [self loadMaze];
     countDown = 1000;
     
+    // add score
+    scoreCD = 10;
+    score = 0;
+    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score]
+                                    fontName:@"GROBOLD"
+                                    fontSize:60];
+    scoreLabel.position = ccp(350,250);
+    [self addChild:scoreLabel];
+    
+    
     // Initializing variables
     nextObject= 3.0f;  // first object to appear after 3s
     objDelay = 2.0f; // next object to appear after 1s
+    
+    // camera
+    cameraCD = -1;
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
     [self addGestureRecognizer:swipeLeftGestureRecognizer];
@@ -213,16 +226,30 @@ CCSprite *pauseButton;
   if (countDown > 0) {
     countDown --;
   }
-//
-//  if ([plushy isRunning] && countDown ==0 ) {
-//    float dy = [plushy ccNode].position.y - 150;
-//    [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
-//    CGPoint mp = [maze ccNode].position;
-//    mp.y = mp.y+dy;
-//    [maze setPhysicsPosition:b2Vec2FromCGPoint(mp)];
-//    countDown = -1;
-//  }
+  if (scoreCD > 0) {
+    scoreCD--;
+  }
+  if (cameraCD > 0) {
+    cameraCD --;
+  }
+  
 
+  if ([plushy isRunning] && cameraCD ==0 ) {
+    float dy = - [plushy ccNode].position.y + 150;
+    [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
+    CGPoint mp = [maze ccNode].position;
+    mp.y = mp.y+dy;
+    [maze setPhysicsPosition:b2Vec2FromCGPoint(mp)];
+    cameraCD = -1;
+  }
+
+  // update score
+  if (scoreCD ==0) {
+    score ++ ;
+    [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
+    scoreCD = 10;
+  }
+  
   if (countDown == 0) {
     pv += 1;
     mv -= 3;
@@ -334,7 +361,8 @@ CCSprite *pauseButton;
   //newAngle = [maze ccNode].rotation + angle;
   CGPoint p1 = [plushy ccNode].position;
   p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-  //countDown = 5;
+  cameraCD = 10;
+  [plushy setFalling:true];
   
   // To to animate
 //  CGPoint p2 = [maze ccNode].position;

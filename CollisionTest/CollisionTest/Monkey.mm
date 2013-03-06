@@ -194,6 +194,7 @@
   die = false;
   running = true;
   pass = false;
+  falling = false;
   
 }
 
@@ -206,6 +207,7 @@
   {
     running = true;
     jumping = false;
+    falling = false;
     
   }
   if([fixtureId isEqualToString:@"collision"])
@@ -227,12 +229,16 @@
 }
 
 -(bool)isRunning {
-  return running && !collide && !die;
+  return running && !collide && !die && !falling;
 }
 
 -(void)moveTo:(b2Vec2)pos
 {
   body->SetTransform(pos, body->GetAngle());
+}
+
+-(void)setFalling:(bool)fall{
+  falling = fall;
 }
 
 @end

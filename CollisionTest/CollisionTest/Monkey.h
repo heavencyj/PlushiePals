@@ -24,6 +24,7 @@
   bool pass;
   bool dead;
   bool die;
+  bool falling;
 }
 
 //@property (readonly) bool isDead;
@@ -40,4 +41,5 @@
 -(bool)isRunning;
 -(void)moveTo:(b2Vec2)pos;
 -(bool)passLevel;
+-(void)setFalling:(bool)fall;
 @end
