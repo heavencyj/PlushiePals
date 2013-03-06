@@ -9,6 +9,7 @@
 #import "Plushy.h"
 #import "GameScene.h"
 #import "GB2Contact.h"
+#import "GMath.h"
 
 #define ANIM_SPEED 2.0f
 #define ANIM_SPEED2 4.0f
@@ -20,170 +21,170 @@
 
 -(id) initWithGameLayer:(GameScene*)gl
 {
-  self = [super initWithDynamicBody:@"Monkey"
-                    spriteFrameName:@"Monkey run 1.png"];
-  //    self = [super initWithKinematicBody:@"Monkey run 1"
-  //                      spriteFrameName:@"Monkey run 1.png"];
-  
-  if(self)
-  {
-    // do not let the monkey rotate
-    [self setFixedRotation:true];
+    self = [super initWithDynamicBody:@"Monkey"
+                      spriteFrameName:@"Monkey run 1.png"];
+    //    self = [super initWithKinematicBody:@"Monkey run 1"
+    //                      spriteFrameName:@"Monkey run 1.png"];
     
-    // monkey uses continuous collision detection
-    // to avoid sticking him into fast falling objects
-    [self setBullet:YES];
-    
-    // store the game layer
-    gameLayer = gl;
-  }
-  return self;
+    if(self)
+    {
+        // do not let the monkey rotate
+        [self setFixedRotation:true];
+        
+        // monkey uses continuous collision detection
+        // to avoid sticking him into fast falling objects
+        [self setBullet:YES];
+        
+        // store the game layer
+        gameLayer = gl;
+    }
+    return self;
 }
 
 -(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
 {
-  self = [super initWithDynamicBody:shape
-                    spriteFrameName:sprite];
-  
-  if(self)
-  {
-    // do not let the monkey rotate
-    [self setFixedRotation:true];
+    self = [super initWithDynamicBody:shape
+                      spriteFrameName:sprite];
     
-    // monkey uses continuous collision detection
-    // to avoid sticking him into fast falling objects
-    [self setBullet:YES];
-    
-    // store the game layer
-    gameLayer = gl;
-  }
-  return self;
+    if(self)
+    {
+        // do not let the monkey rotate
+        [self setFixedRotation:true];
+        
+        // monkey uses continuous collision detection
+        // to avoid sticking him into fast falling objects
+        [self setBullet:YES];
+        
+        // store the game layer
+        gameLayer = gl;
+    }
+    return self;
 }
 
 -(void) updateCCFromPhysics
 {
-  [super updateCCFromPhysics];
-  
-  // Continuously reset the monkey back to the same physics position each time.
-  //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-  [self setPhysicsPosition:b2Vec2FromCC(200, [self ccNode].position.y)];
-  
-  // update animation phase
-  if (running && !collide && !die) {
+    [super updateCCFromPhysics];
     
-//    [self setPhysicsPosition:b2Vec2FromCC(200, 140)];
-//
-//    float dy = [self ccNode].position.y -140;
+    // Continuously reset the monkey back to the same physics position each time.
+    //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
+    [self setPhysicsPosition:b2Vec2FromCC(200, [self ccNode].position.y)];
     
-    
-    NSString *frameName;
-    
-    animDelay -= ANIM_DELAY;
-    
-    if(animDelay <= 0)
-    {
-      animDelay = ANIM_SPEED;
-      animPhase++;
-      if(animPhase > 4)
-      {
-        animPhase = 1;
-      }
+    // update animation phase
+    if (running && !collide && !die) {
+        
+        //    [self setPhysicsPosition:b2Vec2FromCC(200, 140)];
+        //
+        //    float dy = [self ccNode].position.y -140;
+        
+        
+        NSString *frameName;
+        
+        animDelay -= ANIM_DELAY;
+        
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 4)
+            {
+                animPhase = 1;
+            }
+        }
+        
+        // running
+        frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
     }
     
-    // running
-    frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
-    [self setDisplayFrameNamed:frameName];
-  }
-  
-  if (jumping) {
-    NSString *frameName;
-    
-    animDelay -= ANIM_DELAY;
-    
-    if(animDelay <= 0)
-    {
-      animDelay = ANIM_SPEED;
-      animPhase++;
-      if(animPhase > 4)
-      {
-        animPhase = 1;
-      }
+    if (jumping) {
+        NSString *frameName;
+        
+        animDelay -= ANIM_DELAY;
+        
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 4)
+            {
+                animPhase = 1;
+            }
+        }
+        
+        // jumping
+        frameName = [NSString stringWithFormat:@"Monkey jump %d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
     }
     
-    // jumping
-    frameName = [NSString stringWithFormat:@"Monkey jump %d.png", animPhase];
-    [self setDisplayFrameNamed:frameName];
-  }
-  
-  if (collide) {
-    NSString *frameName;
-    
-    animDelay -= ANIM_DELAY;
-    
-    if(animDelay <= 0)
-    {
-      animDelay = ANIM_SPEED;
-      animPhase++;
-      if(animPhase > 3)
-      {
-        animPhase = 1;
-        die = true;
-        collide = false;
-      }
+    if (collide) {
+        NSString *frameName;
+        
+        animDelay -= ANIM_DELAY;
+        
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 3)
+            {
+                animPhase = 1;
+                die = true;
+                collide = false;
+            }
+        }
+        
+        if(animPhase > 3)
+        {
+            animPhase = 1;
+        }
+        
+        // collide
+        frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
     }
     
-    if(animPhase > 3)
-    {
-      animPhase = 1;
+    if (die) {
+        NSString *frameName;
+        
+        animDelay -= ANIM_DELAY;
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 4)
+            {
+                animPhase = 1;
+                dead = true;
+                die = false;
+            }
+        }
+        
+        // die
+        [self setBodyShape:@"Monkey die"];
+        frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
     }
-    
-    // collide
-    frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
-    [self setDisplayFrameNamed:frameName];
-  }
-  
-  if (die) {
-    NSString *frameName;
-    
-    animDelay -= ANIM_DELAY;
-    if(animDelay <= 0)
-    {
-      animDelay = ANIM_SPEED;
-      animPhase++;
-      if(animPhase > 4)
-      {
-        animPhase = 1;
-        dead = true;
-        die = false;
-      }
-    }
-    
-    // die
-    [self setBodyShape:@"Monkey die"];
-    frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
-    [self setDisplayFrameNamed:frameName];
-  }
 }
 
 -(bool)isDead
 {
-  return dead;
+    return dead;
 }
 
 -(void) jump
 {
-  float impulseFactor = 1;
-  [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
-                     point:[self worldCenter]];
-  
-  jumping = true;
-  running = false;
-  animPhase = 1;
+    float impulseFactor = 1;
+    [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
+                       point:[self worldCenter]];
+
+    jumping = true;
+    running = false;
+    animPhase = 1;
 }
 
 -(bool)isJumping
 {
-  return jumping;
+    return jumping;
 }
 
 -(void) reset
@@ -195,7 +196,6 @@
   running = true;
   pass = false;
   falling = false;
-  
 }
 
 -(void) beginContactWithMaze:(GB2Contact *)contact
@@ -209,23 +209,15 @@
     jumping = false;
     falling = false;
     
-  }
-  if([fixtureId isEqualToString:@"collision"])
-  {
-    running = false;
-    jumping = false;
-    collide = true;
-    animPhase = 1;
-  }
-  
-  if ([otherfixtureId isEqualToString:@"win"]) {
-    pass = true;
+    if ([otherfixtureId isEqualToString:@"win"]) {
+        pass = true;
+    }
   }
 }
 
 -(bool)passLevel
 {
-  return pass;
+    return pass;
 }
 
 -(bool)isRunning {
@@ -234,7 +226,7 @@
 
 -(void)moveTo:(b2Vec2)pos
 {
-  body->SetTransform(pos, body->GetAngle());
+    body->SetTransform(pos, body->GetAngle());
 }
 
 -(void)setFalling:(bool)fall{
