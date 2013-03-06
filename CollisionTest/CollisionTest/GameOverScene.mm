@@ -7,7 +7,7 @@
 //
 
 #import "GameOverScene.h"
-#import "HelloWorldLayer.h"
+#import "GameScene.h"
 #import "MainMenuScene.h"
 
 @implementation GameOverScene
@@ -92,12 +92,12 @@ int curLevel;
 
 -(void)restart
 {
-  [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+  [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
 }
 
 -(void)nextLevel
 {
-  [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene:curLevel+1]];
+  [[CCDirector sharedDirector] replaceScene:[GameScene scene:curLevel+1]];
 }
 
 - (void)goHome {

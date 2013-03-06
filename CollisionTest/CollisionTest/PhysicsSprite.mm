@@ -10,7 +10,7 @@
 #import "PhysicsSprite.h"
 
 // Needed PTM_RATIO
-#import "HelloWorldLayer.h"
+#import "GameScene.h"
 
 #define PTM_RATIO 32
 

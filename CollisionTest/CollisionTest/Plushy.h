@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GB2Sprite.h"
+#import "GameScene.h"
 
-@class HelloWorldLayer;
+@class GameScene;
 
-@interface Monkey : GB2Sprite
+@interface Plushy : GB2Sprite
 {
   //float direction;      //!< keeps monkey's direction (from accelerometer)
   int animPhase;        //!< the current animation phase
   ccTime animDelay;     //!< delay until the next animation phase is stated
-  HelloWorldLayer *gameLayer; //!< weak reference
+  GameScene *gameLayer; //!< weak reference
   bool jumping;
   bool running;
   bool collide;
@@ -33,7 +34,7 @@
  * Inits the monkey with the given game layer
  * @param gl game layer
  */
--(id) initWithGameLayer:(HelloWorldLayer*)gl;
+-(id) initWithGameLayer:(GameScene*)gl;
 -(void) jump;
 -(bool) isDead;
 -(void) reset;

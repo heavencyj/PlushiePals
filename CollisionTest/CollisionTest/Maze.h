@@ -25,28 +25,16 @@
  THE SOFTWARE.
  */
 
-#import "Floor.h"
-#define DEGTORAD 0.0174532925199432957f
-#define RADTODEG 57.295779513082320876f
+#pragma once
 
-@implementation Floor
+#import "cocos2d.h"
+#import "GB2Sprite.h"
 
-+(Floor*) floorSprite:(NSString *)shapeName spriteName:(NSString *)spriteName
+@interface Maze : GB2Sprite
 {
-    return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
--(void)transform:(b2Vec2)pos withAngle:(float)theta
-{
-  float angle = body->GetAngle();
-  body->SetTransform(pos, -CC_DEGREES_TO_RADIANS(theta)+angle);
-}
-
--(void)remove
-{
-    [[self ccNode] removeFromParentAndCleanup:YES];
-    [self destroyBody];
-}
-
-
-@end
++(Maze*) mazeSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
+-(void)remove;
+-(void)transform:(b2Vec2)pos withAngle:(float)theta;
+@end    

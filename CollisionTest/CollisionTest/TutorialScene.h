@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface TutorialLayer : CCLayer<UIGestureRecognizerDelegate>
+@interface TutorialScene : CCLayer<UIGestureRecognizerDelegate>
 {
   
 }

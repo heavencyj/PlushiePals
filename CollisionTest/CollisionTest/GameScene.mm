@@ -7,48 +7,67 @@
 //
 
 
-// Import the interfaces
-#import "HelloWorldLayer.h"
+// Interfaces for box2d and audio engine
+#import "GameScene.h"
 #import "CCNode+SFGestureRecognizers.h"
 #import "GB2Sprite.h"
-#import "Monkey.h"
-#import "Floor.h"
-#import "Object.h"
 #import "GB2DebugDrawLayer.h"
-#import "GameOverScene.h"
 #import "SimpleAudioEngine.h"
-
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "CCTouchDispatcher.h"
 #import "CCParallaxNode-Extras.h"
+// Interface for difference scenes
+#import "GameOverScene.h"
+//#import "PauseLayer.h"
+// Interface for different objects
+#import "Maze.h"
+#import "Plushy.h"
+#import "Object.h"
 
+// Macros for constants
 #define PTM_RATIO 32
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
 #define ARC4RANDOM_MAX 0x100000000
 
-#pragma mark - HelloWorldLayer
+#pragma mark - GameScene
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
+@implementation GameScene
+
+// Background variables
+CCSprite *background;
+CCSprite *cloud1;
+CCSprite *cloud2;
+CCSprite *canyons;
+CCSprite *canyons2;
+CCParallaxNode *backgroundNode;
+CCLabelTTF* scoreLabel;
+// Plushy variables
+Plushy *plushy;
 CCSpriteBatchNode *plushyLayer;
-Monkey *plushy;
-Floor *maze;
+// Maze variables
+Maze *maze;
+// Level related variables
 int level;
 bool pass;
-int countDown;
-int scoreCD;
-float pv;
-float mv;
-CCLayer *pauseLayer;
-//float newAngle;
-CGRect pauseButtonRect;
-CGRect resumeButtonRect;
-CCSprite *pauseButton;
 int score;
-CCLabelTTF* scoreLabel;
-int cameraCD;
+float plushySpeed;
+float mazeSpeed;
+// Delay variables to delay certain actions
+int speedDelay;
+int scoreDelay;
+int cameraDelay;
+// Pause layer variables
+// TODO create a new class
+CCLayer *pauseLayer;
+CGRect pauseButtonRect;
+CCSprite *pauseButton;
+// Variables for dropping objects on the screen
+ccTime nextObject;
+ccTime objDelay;
+Object *obj;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -57,7 +76,7 @@ int cameraCD;
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	GameScene *layer = [GameScene node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -85,43 +104,42 @@ int cameraCD;
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     
     // Adding solid background color
-    _background = [CCSprite spriteWithFile: @"Canyon background.png"];
-    _background.anchorPoint = ccp(0,0);
-    //_background.position = ccp(winSize.width/2, winSize.height/2);
-    _background.position = ccp(0,0);
-    [self addChild:_background];
+    background = [CCLayerColor layerWithColor:ccc4(253,250,180,255) width:winSize.width height:winSize.height];
+    background.anchorPoint = ccp(0,0);
+    background.position = ccp(0,0);
+    [self addChild:background];
     
     // Loading physics shapes
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];    
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys_default.plist"];
     
     // 1) Create the CCParallaxNode
-    _backgroundNode = [CCParallaxNode node];
-    [self addChild:_backgroundNode z:10];
+    backgroundNode = [CCParallaxNode node];
+    [self addChild:backgroundNode z:10];
     
     // Create the continuous scrolling background
-    _cloud1 = [CCSprite spriteWithFile:@"Canyon cloud 1.png"];
-    _cloud2 = [CCSprite spriteWithFile:@"Canyon cloud 2.png"];
-    _canyons = [CCSprite spriteWithFile:@"Canyons looped.png"];
-    _canyons.tag = 1;
-    _canyons2 = [CCSprite spriteWithFile:@"Canyons looped.png"];
-    _canyons2.tag = 2;
+    cloud1 = [CCSprite spriteWithFile:@"Canyon cloud 1.png"];
+    cloud2 = [CCSprite spriteWithFile:@"Canyon cloud 2.png"];
+    canyons = [CCSprite spriteWithFile:@"Canyons looped.png"];
+    canyons.tag = 1;
+    canyons2 = [CCSprite spriteWithFile:@"Canyons looped.png"];
+    canyons2.tag = 2;
     
     // Speeds ratio for the objects in the parallax layer
     CGPoint cloudSpeed = ccp(0.5, 0);
     CGPoint bgSpeed = ccp(1.0, 1.0);
     
     // Add children to CCParallaxNode
-    [_backgroundNode addChild:_canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(_canyons.contentSize.width/2, _canyons.contentSize.height/2)];
-    [_backgroundNode addChild:_canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(_canyons2.contentSize.width+380, _canyons2.contentSize.height/2)];
-    [_backgroundNode addChild:_cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
-    [_backgroundNode addChild:_cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(_cloud1.contentSize.width+200,winSize.height/1.2)];
+    [backgroundNode addChild:canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons.contentSize.width/2, canyons.contentSize.height/2)];
+    [backgroundNode addChild:canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons2.contentSize.width+380, canyons2.contentSize.height/2)];
+    [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
+    [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width+100,winSize.height/1.2)];
 
     //[self addChild:[[GB2DebugDrawLayer alloc] init] z:30];
     
     // Pause button
     pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
-    pauseButton.position = ccp(450,250);
+    pauseButton.position = ccp(50,250);
     pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
     [self addChild:pauseButton z:50];
     
@@ -132,54 +150,54 @@ int cameraCD;
   
 
     // Add monkey
-    plushy = [[[Monkey alloc] initWithGameLayer:self] autorelease];
+    plushy = [[[Plushy alloc] initWithGameLayer:self] autorelease];
     [plushy setPhysicsPosition:b2Vec2FromCC(300,200)];
-    pv = 2.0;
-    [plushy setLinearVelocity:b2Vec2(pv,0)];
+    plushySpeed = 2.0;
+    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
     [plushyLayer addChild:[plushy ccNode] z:10];
     
     // add maze
     [self loadMaze];
-    countDown = 1000;
+    speedDelay = 1000;
     
     // add score
-    scoreCD = 10;
+    scoreDelay = 10;
     score = 0;
     scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score]
                                     fontName:@"GROBOLD"
                                     fontSize:60];
-    scoreLabel.position = ccp(350,250);
-    [self addChild:scoreLabel];
+    scoreLabel.color = ccc3(245, 148, 36);
+    scoreLabel.position = ccp(100,250);
+    [self addChild:scoreLabel z:50];
     
+    // add pause layer
+    [self addPauseLayer];    
     
     // Initializing variables
     nextObject= 3.0f;  // first object to appear after 3s
     objDelay = 2.0f; // next object to appear after 1s
     
-    // camera
-    cameraCD = -1;
+    // Set camera delay variable
+    cameraDelay = -1;
     
     UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-    [self addGestureRecognizer:swipeLeftGestureRecognizer];
     swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     swipeLeftGestureRecognizer.delegate = self;
+    [self addGestureRecognizer:swipeLeftGestureRecognizer];
     [swipeLeftGestureRecognizer release];
     
     UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-    [self addGestureRecognizer:swipeRightGestureRecognizer];
     swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     swipeRightGestureRecognizer.delegate = self;
+    [self addGestureRecognizer:swipeRightGestureRecognizer];
     [swipeRightGestureRecognizer release];
     
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
-    [self addGestureRecognizer:tapGestureRecognizer];
-    tapGestureRecognizer.numberOfTapsRequired = 1;
-    tapGestureRecognizer.delegate = self;
-    [tapGestureRecognizer release];
+    [self addTapRecognizer];
     
     self.isTouchEnabled = YES;
     
     //[[CDAudioManager sharedManager] setMode:kAMM_MediaPlayback];
+    // Adding sound and music
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
     
     [self scheduleUpdate];
@@ -195,21 +213,21 @@ int cameraCD;
   
   // Incrementing the position of the background parallaxnode
   CGPoint backgroundScrollVel = ccp(-100, 0);
-  _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
+  backgroundNode.position = ccpAdd(backgroundNode.position, ccpMult(backgroundScrollVel, dt));
   
   // Add continuous scroll for clouds
-  NSArray *clouds = [NSArray arrayWithObjects:_cloud1, _cloud2, nil];
+  NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
   for (CCSprite *cloud in clouds) {
-    if ([_backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
-      [_backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[_backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
+    if ([backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
+      [backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
     }
   }
   
   // Add continuous scroll for the canyon
-  NSArray *backgrounds = [NSArray arrayWithObjects: _canyons, _canyons2, nil];
+  NSArray *backgrounds = [NSArray arrayWithObjects: canyons, canyons2, nil];
   for (CCSprite *background in backgrounds) {
-    if ([_backgroundNode convertToWorldSpace:background.position].x < -500) {
-      [_backgroundNode incrementOffset:ccp(100+background.contentSize.width-[_backgroundNode convertToWorldSpace:background.position].x,0) forChild:background];
+    if ([backgroundNode convertToWorldSpace:background.position].x < -500) {
+      [backgroundNode incrementOffset:ccp(100+background.contentSize.width-[backgroundNode convertToWorldSpace:background.position].x,0) forChild:background];
     }
   }
   
@@ -222,52 +240,56 @@ int cameraCD;
 //    [plushy setBodyType:b2_dynamicBody];
 //  }
   
-  //Moving camera
-  if (countDown > 0) {
-    countDown --;
+  //Delay variables decrementing
+  if (speedDelay > 0) {
+    speedDelay --;
   }
-  if (scoreCD > 0) {
-    scoreCD--;
+  if (scoreDelay > 0) {
+    scoreDelay--;
   }
-  if (cameraCD > 0) {
-    cameraCD --;
+  if (cameraDelay > 0) {
+    cameraDelay --;
   }
   
-
-  if ([plushy isRunning] && cameraCD ==0 ) {
+  // Moving camera when plushy is out of the center
+  if ([plushy isRunning] && cameraDelay ==0 ) {
     float dy = - [plushy ccNode].position.y + 150;
     [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
     CGPoint mp = [maze ccNode].position;
     mp.y = mp.y+dy;
     [maze setPhysicsPosition:b2Vec2FromCGPoint(mp)];
-    cameraCD = -1;
+    cameraDelay = -1;
   }
 
-  // update score
-  if (scoreCD ==0) {
+  // Update score with a little bit delay for performance concern
+  if (scoreDelay ==0) {
     score ++ ;
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
-    scoreCD = 10;
+    scoreDelay = 10;
   }
   
-  if (countDown == 0) {
-    pv += 1;
-    mv -= 3;
-    [plushy setLinearVelocity:b2Vec2(pv,0)];
-    [maze setLinearVelocity:b2Vec2(mv, 0)];
-    countDown = 1000;
+  // Speed up after a while
+  if (speedDelay == 0) {
+    plushySpeed += 1;
+    mazeSpeed -= 3;
+    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
+    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
+    speedDelay = 1000;
   }
   
+  // Show the star when the level is passed
+  // TODO: add some animations here
   if ([plushy passLevel] && pass == false) {
     pass = true;
     // drop something on the screen to show that u passed the level
     //NSLog(@"passsss!");
     CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
     star.position = ccp(winSize.width*0.9, winSize.height*0.8);
-    [_background addChild:star];
+    [background addChild:star z:50];
   }
 
-  if ([plushy ccNode].position.y < 0 || [plushy isDead])
+  // Plushy dies if it falls out of the screen or hit the wall
+  if ([plushy ccNode].position.y < -50 || [plushy isDead])
   {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
@@ -331,25 +353,26 @@ int cameraCD;
 {
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"map" stringByAppendingFormat:@"%d.plist",level]];
   NSString *shape = [@"map level " stringByAppendingFormat:@"%d", level];
-  maze = [Floor floorSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
+  maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
   [maze setPhysicsPosition:b2Vec2FromCC(200,120)];
-  mv = -4;
-  [maze setLinearVelocity:b2Vec2(mv,0)];
+  mazeSpeed = -4;
+  [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
   [self addChild:[maze ccNode] z:100];
 }
 
 
 - (void)handleTapGestureRecognizer:(UITapGestureRecognizer*)aGestureRecognizer
 {
+  // Calculate where is tapped
   CGPoint locationt=[aGestureRecognizer locationInView:[aGestureRecognizer view]];
   locationt.y = [[CCDirector sharedDirector] winSize].height - locationt.y;
+  // If pause button is tapped
   if (CGRectContainsPoint(pauseButtonRect, locationt)){
     [self pauseGame];
+    pauseLayer.visible = YES;
+    [self removeGestureRecognizer:aGestureRecognizer];
   }
-  else if (CGRectContainsPoint(resumeButtonRect, locationt)){
-    [self resumeGame];
-  }
-  
+  // Otherwise its' for jumping and we prevent double jumping
   else if (![plushy isJumping]) {
     [plushy jump];
   }
@@ -361,7 +384,7 @@ int cameraCD;
   //newAngle = [maze ccNode].rotation + angle;
   CGPoint p1 = [plushy ccNode].position;
   p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-  cameraCD = 10;
+  cameraDelay = 60;
   [plushy setFalling:true];
   
   // To to animate
@@ -379,6 +402,7 @@ int cameraCD;
 //  [maze setAngularVelocity:(angle > 0) ? -1:1];
 //  [plushy setBodyType:b2_kinematicBody];
  
+  // Rotate the map without animation
   CGPoint oldp = [maze ccNode].position;
   CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
   [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
@@ -398,33 +422,45 @@ int cameraCD;
   [self pauseSchedulerAndActions];
   [[CCDirector sharedDirector] pause];
   pauseButton.visible = NO;
+
+}
+
+-(void)addPauseLayer
+{
   CGSize winSize = [[CCDirector sharedDirector] winSize];
-  pauseLayer = [CCLayerColor layerWithColor:ccc4(0, 0, 225, 125) width:300 height:150];
+  pauseLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 192) width:400 height:250];
   //pauseLayer.anchorPoint = ccp(0.5,0.5);
   pauseLayer.position = ccp(winSize.width/2-pauseLayer.contentSize.width/2,
                             winSize.height/2 - pauseLayer.contentSize.height/2);
-
   
-//  CCSprite *resume = [CCSprite spriteWithFile:@"Replay icon.png"]; 
-//  CCSprite* resumeSel = [CCSprite spriteWithFile:@"Replay icon.png"];
+  
+  //  CCSprite *resume = [CCSprite spriteWithFile:@"Replay icon.png"];
+  //  CCSprite* resumeSel = [CCSprite spriteWithFile:@"Replay icon.png"];
   // Three options: restart, resume, home
   CCMenuItemImage *resumeButton = [CCMenuItemImage itemWithNormalImage:@"Replay icon.png" selectedImage:@"Replay icon.png" target:self selector:@selector(resumeGame)];
-  resumeButton.position = ccp(pauseLayer.contentSize.width/2,pauseLayer.contentSize.height/2);
-  resumeButtonRect = CGRectMake((winSize.width/2-resumeButton.contentSize.width/2),
-                                  (winSize.height/2 - resumeButton.contentSize.height/2),
-                                  (resumeButton.contentSize.width),
-                                  (resumeButton.contentSize.height));
-  [pauseLayer addChild:resumeButton];
-  [self addChild:pauseLayer z:500];
+  resumeButton.position = ccp(0,0);
+  CCMenu *menu =  [CCMenu menuWithItems: resumeButton, nil];  
+  [pauseLayer addChild:menu];
+  [self addChild:pauseLayer z:1000];
+  pauseLayer.visible = NO;
 }
-
 
 -(void)resumeGame
 {
-  [self removeChild:pauseLayer cleanup:YES];
-  [self resumeSchedulerAndActions];
+  [self addTapRecognizer];
+  pauseLayer.visible = NO;
   pauseButton.visible = YES;
+  [self resumeSchedulerAndActions];
   [[CCDirector sharedDirector] resume];
+}
+
+-(void)addTapRecognizer
+{
+  UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
+  tapGestureRecognizer.numberOfTapsRequired = 1;
+  tapGestureRecognizer.delegate = self;
+  [self addGestureRecognizer:tapGestureRecognizer];
+  [tapGestureRecognizer release];
 }
 
 @end

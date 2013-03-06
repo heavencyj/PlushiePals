@@ -16,33 +16,9 @@
 #import "MyContactListener.h"
 #import "SimpleAudioEngine.h"
 
-@class Monkey;
-@class Floor;
-@class Object;
-
-// HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,UIGestureRecognizerDelegate>
+// Game Scene
+@interface GameScene : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate,UIGestureRecognizerDelegate>
 {
-    CCSprite *_background;
-    CCSprite *_cloud1;
-    CCSprite *_cloud2;
-    CCSprite *_canyons;
-    CCSprite *_canyons2;
-    CCSpriteBatchNode* _objectLayer;
-    CCSprite *_canyonunit;
-    
-    CCParallaxNode *_backgroundNode;
-    CCParallaxNode *_obstacleNode;
-    
-    Monkey *_monkey;
-
-    ccTime nextObject;
-    ccTime objDelay;
-    Object *obj;
-    
-    CCArray *_mazes;
-    int _nextMaze;
-    double _nextMazeSpawn;
     
     //Box2D
     b2World *_world;
@@ -53,6 +29,6 @@
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+// returns the scene with a specific level
 +(CCScene *) scene:(int)withLevel;
-
 @end

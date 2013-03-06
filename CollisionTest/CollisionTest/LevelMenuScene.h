@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface ModeMenuScene : CCLayer
+@interface LevelMenuScene : CCLayer
 {
 
 }

@@ -6,8 +6,8 @@
 //  Copyright 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import "Monkey.h"
-#import "HelloWorldLayer.h"
+#import "Plushy.h"
+#import "GameScene.h"
 #import "GB2Contact.h"
 
 #define ANIM_SPEED 2.0f
@@ -16,9 +16,9 @@
 #define ANIM_DELAY 0.25f
 #define JUMP_IMPULSE 10.0f
 
-@implementation Monkey
+@implementation Plushy
 
--(id) initWithGameLayer:(HelloWorldLayer*)gl
+-(id) initWithGameLayer:(GameScene*)gl
 {
   self = [super initWithDynamicBody:@"Monkey"
                     spriteFrameName:@"Monkey run 1.png"];
@@ -40,7 +40,7 @@
   return self;
 }
 
--(id) initWithGameLayer:(HelloWorldLayer*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
+-(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
 {
   self = [super initWithDynamicBody:shape
                     spriteFrameName:sprite];
@@ -198,7 +198,7 @@
   
 }
 
--(void) beginContactWithFloor:(GB2Contact *)contact
+-(void) beginContactWithMaze:(GB2Contact *)contact
 {
   //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
   NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();

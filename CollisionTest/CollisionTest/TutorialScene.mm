@@ -6,12 +6,12 @@
 //
 //
 
-#import "TutorialLayer.h"
-#import "HelloWorldLayer.h"
+#import "TutorialScene.h"
+#import "GameScene.h"
 #import "CCSprite.h"
 #import "CCNode+SFGestureRecognizers.h"
 
-@implementation TutorialLayer
+@implementation TutorialScene
 CCSprite *page;
 int pageIndex;
 CCMenuItemImage* button;
@@ -25,7 +25,7 @@ CCSprite *monkey;
 {
   CCScene *scene = [CCScene node];
   
-  TutorialLayer *layer = [TutorialLayer node];
+  TutorialScene *layer = [TutorialScene node];
   
   [scene addChild: layer];
   
@@ -54,7 +54,7 @@ CCSprite *monkey;
 - (void) startGame: (id) sender
 {
   CCMenuItemImage *button = (CCMenuItemImage *)sender;
-  [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene:button.tag]];
+  [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
 }
 
 -(void) loadTutorial

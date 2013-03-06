@@ -5,19 +5,19 @@
 //  Created by Heaven Chen on 2/13/13.
 //
 
-#import "ModeMenuScene.h"
-#import "HelloWorldLayer.h"
+#import "LevelMenuScene.h"
+#import "GameScene.h"
 #import "MainMenuScene.h"
-#import "TutorialLayer.h"
+#import "TutorialScene.h"
 
-@implementation ModeMenuScene
+@implementation LevelMenuScene
 int gameMode;
 
 +(id) scene
 {
   CCScene *scene = [CCScene node];
   
-  ModeMenuScene *layer = [ModeMenuScene node];
+  LevelMenuScene *layer = [LevelMenuScene node];
   
   [scene addChild: layer];
   
@@ -100,7 +100,7 @@ int gameMode;
 - (void) startGame: (id) sender
 { 
   CCMenuItemImage *button = (CCMenuItemImage *)sender;
-  [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene:button.tag]];
+  [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
 }
 
 - (void)goHome {
@@ -111,7 +111,7 @@ int gameMode;
 
 -(void) loadTutorial
 {
-  [[CCDirector sharedDirector] replaceScene:[TutorialLayer scene]];
+  [[CCDirector sharedDirector] replaceScene:[TutorialScene scene]];
 }
 
 - (void) dealloc

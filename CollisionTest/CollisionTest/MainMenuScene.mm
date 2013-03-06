@@ -7,7 +7,9 @@
 //
 
 #import "MainMenuScene.h"
-#import "ModeMenuScene.h"
+#import "GameScene.h"
+#import "MainMenuScene.h"
+#import "TutorialScene.h"
 
 @implementation MainMenuScene
 
@@ -27,10 +29,6 @@
   
   if( (self=[super init] )) {
     
-//    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Courier" fontSize:64];
-//    title.position =  ccp(240, 240);
-//    [self addChild: title];
-    
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     CCSprite *background = [CCSprite spriteWithFile:@"Intro screen.png"];
     background.position = ccp(winSize.width/2, winSize.height/2);
@@ -40,36 +38,76 @@
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
     
-    CCMenuItemImage *puzzleButton = [CCMenuItemImage
-                                    itemWithNormalImage:@"Plushy Puzzle button.png"
-                                    selectedImage:@"Plushy Puzzle button.png"
-                                    target:self
-                                    selector:@selector(chooseMode:)];
-    puzzleButton.position = ccp(-winSize.width/5,-winSize.height/10);
-    puzzleButton.tag = 1;
+    CCMenuItemImage *home = [CCMenuItemImage
+                             itemWithNormalImage:@"Level Home button.png"
+                             selectedImage:@"Level Home button.png"
+                             target:self
+                             selector:@selector(goHome)];
+    home.position = ccp(-winSize.width/7,0);
     
-    CCMenuItemImage *runButton = [CCMenuItemImage
-                                    itemWithNormalImage:@"Plushy Run button.png"
-                                    selectedImage:@"Plushy Run button.png"
-                                    target:self
-                                    selector:@selector(chooseMode:)];
-    runButton.position = ccp(winSize.width/5,-winSize.height/10);
-    runButton.tag = 2;
+    CCMenuItemImage *level0 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 0 button.png"
+                               selectedImage:@"Level 0 button.png"
+                               target:self
+                               selector:@selector(loadTutorial)];
+    level0.position = ccp(winSize.width/7,0);
     
-    CCMenu *menu = [CCMenu menuWithItems: puzzleButton, runButton, nil];
+    CCMenuItemImage *level1 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 1 button.png"
+                               selectedImage:@"Level 1 button.png"
+                               target:self
+                               selector:@selector(startGame:)];
+    level1.position = ccp(-winSize.width/3,-winSize.height/3);
+    level1.tag = 1;
+    
+    CCMenuItemImage *level2 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 2 button.png"
+                               selectedImage:@"Level 2 button.png"
+                               target:self
+                               selector:@selector(startGame:)];
+    level2.position = ccp(-winSize.width/9,-winSize.height/3);
+    level2.tag = 2;
+    
+    CCMenuItemImage *level3 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 3 button.png"
+                               selectedImage:@"Level 3 button.png"
+                               target:self
+                               selector:@selector(startGame:)];
+    level3.position = ccp(winSize.width/9,-winSize.height/3);
+    level3.tag = 3;
+    
+    CCMenuItemImage *level4 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 4 button.png"
+                               selectedImage:@"Level 4 button.png"
+                               target:self
+                               selector:@selector(startGame:)];
+    level4.position = ccp(winSize.width/3,-winSize.height/3);
+    level4.tag = 4;
+    
+    
+    CCMenu *menu = [CCMenu menuWithItems: home, level0, level1, level2, level3, level4, nil];
     [menuLayer addChild: menu];
-    
-    
   }
   return self;
 }
 
-- (void) chooseMode: (id) sender
+- (void) startGame: (id) sender
 {
-  //CCMenuItemImage *button = (CCMenuItemImage *)sender;
-  //NSLog(@"%d", button.tag);
-  [[CCDirector sharedDirector] replaceScene:[ModeMenuScene scene]];
+  CCMenuItemImage *button = (CCMenuItemImage *)sender;
+  [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
 }
+
+- (void)goHome {
+  
+  [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+  
+}
+
+-(void) loadTutorial
+{
+  [[CCDirector sharedDirector] replaceScene:[TutorialScene scene]];
+}
+
 
 - (void) dealloc
 {
