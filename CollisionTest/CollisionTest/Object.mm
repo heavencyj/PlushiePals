@@ -50,14 +50,14 @@
 
 -(void) beginContactWithMonkey:(GB2Contact*)contact
 {
-    //b2Vec2 velocity = [self linearVelocity];
-    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    if([fixtureId isEqualToString:@"monkey"] || [fixtureId isEqualToString:@"feet"])
-    {
-        //NSLog(@"Something contacted object %@", (NSString *)contact.ownFixture->GetUserData());
-        [[self ccNode] removeFromParentAndCleanup:YES];
-    }
-    //fjlfkjaldfaf
+//    //b2Vec2 velocity = [self linearVelocity];
+//    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+//    if([fixtureId isEqualToString:@"monkey"] || [fixtureId isEqualToString:@"feet"])
+//    {
+//        //NSLog(@"Something contacted object %@", (NSString *)contact.ownFixture->GetUserData());
+//        [[self ccNode] removeFromParentAndCleanup:YES];
+//    }
+    [[self ccNode] removeFromParentAndCleanup:YES];
 }
 
 @end
