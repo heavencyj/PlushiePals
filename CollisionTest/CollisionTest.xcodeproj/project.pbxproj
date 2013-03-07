@@ -318,8 +318,6 @@
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		B621FADB16E7073000ABAD1B /* hurt.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hurt.caf; sourceTree = "<group>"; };
-		B621FADC16E7073000ABAD1B /* jump.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jump.caf; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -942,16 +940,10 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				B621FADB16E7073000ABAD1B /* hurt.caf */,
-				B621FADC16E7073000ABAD1B /* jump.caf */,
-				987EE27B16D80F2B003B4F59 /* Luscious Swirl 60.mp3 */,
-=======
 				98176E0D16E7A80B009BA7AB /* screens */,
 				98176E0C16E74762009BA7AB /* buttons */,
 				98176E0B16E7472B009BA7AB /* sprite_shape_sheets */,
 				98176E0A16E746EE009BA7AB /* sound */,
->>>>>>> update icons and all the ui stuff
 				987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */,
 				987EE23E16D18F50003B4F59 /* mazes */,
 				98ECEFE316CE252E005BB243 /* tutorial */,
