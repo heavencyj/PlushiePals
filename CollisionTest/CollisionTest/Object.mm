@@ -57,6 +57,7 @@
         //NSLog(@"Something contacted object %@", (NSString *)contact.ownFixture->GetUserData());
         [[self ccNode] removeFromParentAndCleanup:YES];
     }
+    //fjlfkjaldfaf
 }
 
 @end
