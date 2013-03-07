@@ -39,7 +39,7 @@ CCSprite *monkey;
   if( (self=[super init] )) {
     
     // Adding solid background color
-    CCNode *_background = [CCSprite spriteWithFile: @"Canyon background blue.png"];
+    CCNode *_background = [CCSprite spriteWithFile: @"Menu screen.png"];
     _background.anchorPoint = ccp(0,0);
     //_background.position = ccp(winSize.width/2, winSize.height/2);
     _background.position = ccp(0,0);
@@ -75,8 +75,8 @@ CCSprite *monkey;
   switch (pageIndex) {
     case 1:
       button = [CCMenuItemImage
-                itemWithNormalImage:@"Try button.png"
-                selectedImage:@"Try button selected.png"
+                itemWithNormalImage:@"Play icon.png"
+                selectedImage:nil
                 target:self
                 selector:@selector(leftswipe)];
       
@@ -84,8 +84,8 @@ CCSprite *monkey;
       
     case 2:
       button = [CCMenuItemImage
-                itemWithNormalImage:@"Flip button.png"
-                selectedImage:@"Flip button selected.png"
+                itemWithNormalImage:@"Play icon.png"
+                selectedImage:nil
                 target:self
                 selector:@selector(rightswipe)];
       
@@ -93,33 +93,33 @@ CCSprite *monkey;
       
     case 3:
       button = [CCMenuItemImage
-                itemWithNormalImage:@"Tap button.png"
-                selectedImage:@"Tap button selected.png"
+                itemWithNormalImage:@"Play icon.png"
+                selectedImage:nil
                 target:self
                 selector:@selector(tap)];
       
       break;
-      
-    case 4:
-      button = [CCMenuItemImage
-                itemWithNormalImage:@"Next button.png"
-                selectedImage:@"Next button selected.png"
-                target:self
-                selector:@selector(starPage)];
-       break;
+//      
+//    case 4:
+//      button = [CCMenuItemImage
+//                itemWithNormalImage:@"Play icon.png"
+//                selectedImage:nil
+//                target:self
+//                selector:@selector(starPage)];
+//       break;
 
     
-    case 5:
+    case 4:
       button = [CCMenuItemImage
-                itemWithNormalImage:@"Play.png"
-                selectedImage:@"Play selected.png"
+                itemWithNormalImage:@"Play icon.png"
+                selectedImage:nil
                 target:self
                 selector:@selector(startGame:)];
       // Start with level 1;
       button.tag = 1;
       
       break;
-      
+  
     default:
       break;
   }

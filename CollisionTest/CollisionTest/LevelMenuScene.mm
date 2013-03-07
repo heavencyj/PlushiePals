@@ -10,6 +10,8 @@
 #import "MainMenuScene.h"
 #import "TutorialScene.h"
 
+#define ButtonOffset 20
+
 @implementation LevelMenuScene
 int gameMode;
 
@@ -36,7 +38,7 @@ int gameMode;
   if( (self=[super init] )) {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    CCSprite *background = [CCSprite spriteWithFile:@"Intro screen.png"];
+    CCSprite *background = [CCSprite spriteWithFile:@"Menu screen.png"];
     background.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:background];
     
@@ -45,53 +47,121 @@ int gameMode;
     [self addChild:menuLayer];
     
     CCMenuItemImage *home = [CCMenuItemImage
-                               itemWithNormalImage:@"Level Home button.png"
-                               selectedImage:@"Level Home button.png"
+                               itemWithNormalImage:@"Home icon.png"
+                               selectedImage:nil
                                target:self
                                selector:@selector(goHome)];
-    home.position = ccp(-winSize.width/7,0);
+    home.position = ccp(-winSize.width/7,-winSize.height/3);
     
-    CCMenuItemImage *level0 = [CCMenuItemImage
-                                     itemWithNormalImage:@"Level 0 button.png"
-                                     selectedImage:@"Level 0 button.png"
-                                     target:self
-                                     selector:@selector(loadTutorial)];
-    level0.position = ccp(winSize.width/7,0);
+    //quick tutorial tip
+    CCMenuItemImage *tip = [CCMenuItemImage
+                             itemWithNormalImage:@"Question icon.png"
+                             selectedImage:nil
+                             target:self
+                             selector:@selector(loadTutorial)];
+    tip.position = ccp(winSize.width/7,-winSize.height/3);
     
     CCMenuItemImage *level1 = [CCMenuItemImage
-                                    itemWithNormalImage:@"Level 1 button.png"
-                                    selectedImage:@"Level 1 button.png"
+                                    itemWithNormalImage:@"Level 1.png"
+                                    selectedImage:nil
                                     target:self
                                     selector:@selector(startGame:)];
-    level1.position = ccp(-winSize.width/3,-winSize.height/3);
+    level1.position = ccp(-winSize.width/3,winSize.height/4.5+ButtonOffset);
     level1.tag = 1;
     
     CCMenuItemImage *level2 = [CCMenuItemImage
-                                    itemWithNormalImage:@"Level 2 button.png"
-                                    selectedImage:@"Level 2 button.png"
+                                    itemWithNormalImage:@"Level 2.png"
+                                    selectedImage:nil
                                     target:self
                                     selector:@selector(startGame:)];
-    level2.position = ccp(-winSize.width/9,-winSize.height/3);
+    level2.position = ccp(-winSize.width/9,winSize.height/4.5+ButtonOffset);
     level2.tag = 2;
     
     CCMenuItemImage *level3 = [CCMenuItemImage
-                                    itemWithNormalImage:@"Level 3 button.png"
-                                    selectedImage:@"Level 3 button.png"
+                                    itemWithNormalImage:@"Level 3.png"
+                                    selectedImage:nil
                                     target:self
                                     selector:@selector(startGame:)];
-    level3.position = ccp(winSize.width/9,-winSize.height/3);
+    level3.position = ccp(winSize.width/9,winSize.height/4.5+ButtonOffset);
     level3.tag = 3;
     
     CCMenuItemImage *level4 = [CCMenuItemImage
-                                    itemWithNormalImage:@"Level 4 button.png"
-                                    selectedImage:@"Level 4 button.png"
+                                    itemWithNormalImage:@"Level 4.png"
+                                    selectedImage:nil
                                     target:self
                                     selector:@selector(startGame:)];
-    level4.position = ccp(winSize.width/3,-winSize.height/3);
+    level4.position = ccp(winSize.width/3,winSize.height/4.5+ButtonOffset);
     level4.tag = 4;
     
+    CCMenuItemImage *level5 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 5.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level5.position = ccp(-winSize.width/3,ButtonOffset);
+    level5.tag = 5;
     
-    CCMenu *menu = [CCMenu menuWithItems: home, level0, level1, level2, level3, level4, nil];
+    CCMenuItemImage *level6 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 6.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level6.position = ccp(-winSize.width/9,ButtonOffset);
+    level6.tag = 6;
+    
+    CCMenuItemImage *level7 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 7.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level7.position = ccp(winSize.width/9,ButtonOffset);
+    level7.tag = 7;
+    
+    CCMenuItemImage *level8 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level 8.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level8.position = ccp(winSize.width/3,ButtonOffset);
+    level8.tag = 8;
+    
+    CCMenuItemImage *level9 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level lock.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level9.position = ccp(-winSize.width/3,-winSize.height/4.5+ButtonOffset);
+    level9.tag = 9;
+    
+    CCMenuItemImage *level10 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level lock.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level10.position = ccp(-winSize.width/9,-winSize.height/4.5+ButtonOffset);
+    level10.tag = 10;
+    
+    CCMenuItemImage *level11 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level lock.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level11.position = ccp(winSize.width/9,-winSize.height/4.5+ButtonOffset);
+    level11.tag = 11;
+    
+    CCMenuItemImage *level12 = [CCMenuItemImage
+                               itemWithNormalImage:@"Level lock.png"
+                               selectedImage:nil
+                               target:self
+                               selector:nil];
+    level12.position = ccp(winSize.width/3,-winSize.height/4.5+ButtonOffset);
+    level12.tag = 12;
+    
+    
+    CCMenu *menu = [CCMenu menuWithItems: home, tip,
+                    level1, level2, level3, level4,
+                    level5, level6, level7, level8,
+                    level9, level10, level11, level12,nil];
     [menuLayer addChild: menu];    
   }
   return self;

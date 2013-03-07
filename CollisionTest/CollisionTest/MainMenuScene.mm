@@ -8,10 +8,19 @@
 
 #import "MainMenuScene.h"
 #import "GameScene.h"
-#import "MainMenuScene.h"
+#import "LevelMenuScene.h"
 #import "TutorialScene.h"
 
+#define DIST 25
+
 @implementation MainMenuScene
+bool mute;
+bool tipsOn;
+bool showTools;
+CCMenuItemImage *sound;
+CCMenuItemImage *tips;
+CCMenuItemImage *tool;
+CCLayer *settingLayer;
 
 +(id) scene
 {
@@ -30,84 +39,104 @@
   if( (self=[super init] )) {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    CCSprite *background = [CCSprite spriteWithFile:@"Intro screen.png"];
+    CCSprite *background = [CCSprite spriteWithFile:@"Plushy Run.png"];
     background.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:background];
     
+    //    CCSprite *centerImage = [CCSprite spriteWithFile:@"Plushy Run.png"];
+    //    centerImage.position = ccp(winSize.width/2, winSize.height/2);
+    //    [background addChild:centerImage];
+    mute=NO;
+    tipsOn=YES;
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
     
-    CCMenuItemImage *home = [CCMenuItemImage
-                             itemWithNormalImage:@"Level Home button.png"
-                             selectedImage:@"Level Home button.png"
+    CCMenuItemImage *play = [CCMenuItemImage
+                             itemWithNormalImage:@"Play word icon.png"
+                             selectedImage:nil
                              target:self
-                             selector:@selector(goHome)];
-    home.position = ccp(-winSize.width/7,0);
-    
-    CCMenuItemImage *level0 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level 0 button.png"
-                               selectedImage:@"Level 0 button.png"
-                               target:self
-                               selector:@selector(loadTutorial)];
-    level0.position = ccp(winSize.width/7,0);
-    
-    CCMenuItemImage *level1 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level 1 button.png"
-                               selectedImage:@"Level 1 button.png"
-                               target:self
-                               selector:@selector(startGame:)];
-    level1.position = ccp(-winSize.width/3,-winSize.height/3);
-    level1.tag = 1;
-    
-    CCMenuItemImage *level2 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level 2 button.png"
-                               selectedImage:@"Level 2 button.png"
-                               target:self
-                               selector:@selector(startGame:)];
-    level2.position = ccp(-winSize.width/9,-winSize.height/3);
-    level2.tag = 2;
-    
-    CCMenuItemImage *level3 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level 3 button.png"
-                               selectedImage:@"Level 3 button.png"
-                               target:self
-                               selector:@selector(startGame:)];
-    level3.position = ccp(winSize.width/9,-winSize.height/3);
-    level3.tag = 3;
-    
-    CCMenuItemImage *level4 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level 4 button.png"
-                               selectedImage:@"Level 4 button.png"
-                               target:self
-                               selector:@selector(startGame:)];
-    level4.position = ccp(winSize.width/3,-winSize.height/3);
-    level4.tag = 4;
+                             selector:@selector(goToLevel)];
+    play.position = ccp(0,-winSize.width/5);
     
     
-    CCMenu *menu = [CCMenu menuWithItems: home, level0, level1, level2, level3, level4, nil];
+    sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
+    [self turnMute];
+    sound.position = ccp(-winSize.width/2.5,-winSize.width/5+2*DIST+sound.contentSize.height);
+    sound.visible = NO;
+    
+    tips = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTips)];
+    [self turnTips];
+    tips.position = ccp(-winSize.width/2.5,-winSize.width/5+DIST + sound.contentSize.height/2);
+    tips.visible = NO;
+    
+    tool = [CCMenuItemImage
+            itemWithNormalImage:@"Tool icon.png"
+            selectedImage:nil
+            target:self
+            selector:@selector(showSetting)];
+    tool.position = ccp(-winSize.width/2.5,-winSize.width/5);
+    tool.tag = 1;
+    
+    settingLayer = [CCLayerColor layerWithColor:ccc4(245, 148, 36, 100)
+                                          width:tool.contentSize.width
+                                         height:tool.contentSize.height+2*DIST];
+    settingLayer.position = ccp(winSize.width/2-winSize.width/2.5-tool.contentSize.width/2,
+                                winSize.height/2-winSize.width/5);
+    settingLayer.visible = NO;
+    
+    CCMenu *menu = [CCMenu menuWithItems: play, sound, tips, tool, nil];
+    [menuLayer addChild:settingLayer];
     [menuLayer addChild: menu];
   }
   return self;
 }
 
-- (void) startGame: (id) sender
-{
-  CCMenuItemImage *button = (CCMenuItemImage *)sender;
-  [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
-}
-
-- (void)goHome {
+- (void)goToLevel {
   
-  [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+  [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
   
 }
 
--(void) loadTutorial
+-(void)showSetting
 {
-  [[CCDirector sharedDirector] replaceScene:[TutorialScene scene]];
+  if (tool.tag > 0) {
+    sound.visible = YES;
+    tips.visible = YES;
+    settingLayer.visible = YES;
+    tool.tag = -1;
+  }
+  else {
+    sound.visible = NO;
+    tips.visible = NO;
+    settingLayer.visible = NO;
+    tool.tag = 1;
+  }
 }
 
+-(void)turnMute
+{
+  if (mute) {
+    [sound setNormalImage:[CCSprite spriteWithFile:@"Mute icon.png"]];
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+  }
+  else {
+    [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
+  }
+  mute = !mute;
+}
+
+-(void)turnTips
+{
+  if (tipsOn) {
+    [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
+  }
+  else {
+    [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
+  }
+  tipsOn = !tipsOn;
+}
 
 - (void) dealloc
 {

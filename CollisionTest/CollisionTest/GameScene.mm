@@ -19,6 +19,7 @@
 #import "CCParallaxNode-Extras.h"
 // Interface for difference scenes
 #import "GameOverScene.h"
+#import "MainMenuScene.h"
 //#import "PauseLayer.h"
 // Interface for different objects
 #import "Maze.h"
@@ -30,6 +31,7 @@
 #define WALKING_FRAMES 3
 #define MAZE_LOW 30
 #define ARC4RANDOM_MAX 0x100000000
+#define ICON_DIST 60
 
 #pragma mark - GameScene
 
@@ -427,22 +429,46 @@ Object *obj;
 
 -(void)addPauseLayer
 {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    pauseLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 192) width:400 height:250];
-    //pauseLayer.anchorPoint = ccp(0.5,0.5);
-    pauseLayer.position = ccp(winSize.width/2-pauseLayer.contentSize.width/2,
-                              winSize.height/2 - pauseLayer.contentSize.height/2);
-    
-    
-    //  CCSprite *resume = [CCSprite spriteWithFile:@"Replay icon.png"];
-    //  CCSprite* resumeSel = [CCSprite spriteWithFile:@"Replay icon.png"];
-    // Three options: restart, resume, home
-    CCMenuItemImage *resumeButton = [CCMenuItemImage itemWithNormalImage:@"Replay icon.png" selectedImage:@"Replay icon.png" target:self selector:@selector(resumeGame)];
-    resumeButton.position = ccp(0,0);
-    CCMenu *menu =  [CCMenu menuWithItems: resumeButton, nil];  
-    [pauseLayer addChild:menu];
-    [self addChild:pauseLayer z:1000];
-    pauseLayer.visible = NO;
+
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
+  pauseLayer = [[[CCLayer alloc] init] autorelease];
+  [self addChild:pauseLayer z:1000];
+  
+  CCLayer *colorLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 210) width:400 height:200];
+  colorLayer.position = ccp(winSize.width/2-colorLayer.contentSize.width/2,
+                            winSize.height/2-colorLayer.contentSize.height/2);
+  
+  
+  //  CCSprite *resume = [CCSprite spriteWithFile:@"Replay icon.png"];
+  //  CCSprite* resumeSel = [CCSprite spriteWithFile:@"Replay icon.png"];
+  // Three options: restart, resume, home
+  CCMenuItemImage *resume = [CCMenuItemImage
+                                   itemWithNormalImage:@"Play icon.png"
+                                   selectedImage:nil
+                                   target:self
+                                   selector:@selector(resumeGame)];
+  resume.position = ccp(-winSize.width/5,0);
+  
+  CCMenuItemImage *restart = [CCMenuItemImage
+                                   itemWithNormalImage:@"Return icon.png"
+                                   selectedImage:nil
+                                   target:self
+                                   selector:@selector(resumeGame)];
+  restart.position = ccp(0,0);
+  
+  CCMenuItemImage *home = [CCMenuItemImage
+                                   itemWithNormalImage:@"Home icon.png"
+                                   selectedImage:nil
+                                   target:self
+                                   selector:@selector(goHome)];
+  home.position = ccp(winSize.width/5,0);
+  
+  
+  CCMenu *menu =  [CCMenu menuWithItems: resume, restart, home, nil];
+  [pauseLayer addChild:colorLayer];
+  [pauseLayer addChild:menu];  
+  pauseLayer.visible = NO;
+
 }
 
 -(void)resumeGame
@@ -461,6 +487,12 @@ Object *obj;
     tapGestureRecognizer.delegate = self;
     [self addGestureRecognizer:tapGestureRecognizer];
     [tapGestureRecognizer release];
+}
+
+- (void)goHome {
+  
+  [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+  
 }
 
 @end
