@@ -141,7 +141,7 @@ Object *obj;
         
         // Pause button
         pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
-        pauseButton.position = ccp(50,250);
+        pauseButton.position = ccp(440,290);
         pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
         [self addChild:pauseButton z:50];
         
@@ -163,20 +163,30 @@ Object *obj;
         speedDelay = 1000;
         
         // add score
+        CCSprite *bananaPoints = [CCSprite spriteWithFile:@"banana single.png"];
+        CCSprite *mult = [CCLabelTTF labelWithString:@"X"
+                                            fontName:@"GROBOLD"
+                                            fontSize:40];
+        bananaPoints.position = ccp(15, 290);
+        mult.position = ccp(55, 290);
+        mult.color=ccc3(245, 148, 36);
+        [self addChild:bananaPoints z:50];
+        [self addChild:mult z:50];
+        
         scoreDelay = 10;
         score = 0;
-        scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score]
+        scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",plushy.bananaScore]
                                         fontName:@"GROBOLD"
-                                        fontSize:60];
+                                        fontSize:40];
         scoreLabel.color = ccc3(245, 148, 36);
-        scoreLabel.position = ccp(100,250);
+        scoreLabel.position = ccp(95,290);
         [self addChild:scoreLabel z:50];
         
         // add pause layer
         [self addPauseLayer];
         
         // Initializing variables
-        nextObject= 3.0f;  // first object to appear after 3s
+        nextObject= 5.0f;  // first object to appear after 3s
         objDelay = 2.0f; // next object to appear after 1s
         
         // Set camera delay variable
@@ -234,7 +244,9 @@ Object *obj;
     }
     
     // Add objects to path
-    //[self nextObject:dt];
+    //TODO: dropping randomly added objects to the road.
+    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:1];
+    [self nextObject:dt pattern:objectPattern];
     
     //Animate rotation
     //  if (ABS([maze ccNode].rotation) > ABS(angle) ) {
@@ -265,8 +277,8 @@ Object *obj;
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
-        score ++ ;
-        [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
+        //score ++ ;
+        [scoreLabel setString:[NSString stringWithFormat:@"%d",plushy.bananaScore]];
         scoreDelay = 10;
     }
     
@@ -301,15 +313,63 @@ Object *obj;
     }
 }
 
--(void)nextObject:(ccTime)dt
+-(void)nextObject:(ccTime)dt pattern:(int)p
 {
+    //TODO: randomnized the drop location of object
     nextObject -= dt;
     if(nextObject <=0)
     {
-        obj = [Object randomObject];
-        [obj setPhysicsPosition:b2Vec2FromCC(400, 200)];
-        [plushyLayer addChild:[obj ccNode]];
-        nextObject = objDelay;
+        //        obj = [Object randomObject];
+        //        int bananaDrop = [self getRandomNumberBetweenMin:[[CCDirector sharedDirector] winSize].width andMax:2*[[CCDirector sharedDirector] winSize].width];
+        //        int bananaHeight = [self getRandomNumberBetweenMin:[plushy ccNode].position.y+50  andMax: 2*[[plushy ccNode] contentSize].height];
+        //        // dropping the banana from the top of the screen.
+        //        //[obj setPhysicsPosition:b2Vec2FromCC(bananaDrop, bananaHeight)];
+        //        [obj setKinematicBody:[obj objName] position:b2Vec2FromCC(bananaDrop, bananaHeight)];
+        //        [obj setLinearVelocity:b2Vec2(-5,0)];
+        //        [self addChild:[obj ccNode] z:100];
+        //        nextObject = objDelay;
+        if (p == 0) {
+            //arc pattern TODO:hard coded for now
+            int initalX = [[CCDirector sharedDirector] winSize].width;
+            int initialY = [plushy ccNode].position.y+50;
+            Object *obj1 = [Object randomObject];
+            [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
+            [obj1 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj1 ccNode] z:100];
+            Object *obj2 = [Object randomObject];
+            [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+30, initialY+30)];
+            [obj2 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj2 ccNode] z:100];
+            Object *obj3 = [Object randomObject];
+            [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY+30)];
+            [obj3 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj3 ccNode] z:100];
+            Object *obj4 = [Object randomObject];
+            [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+110, initialY)];
+            [obj4 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj4 ccNode] z:100];
+        }
+        if (p == 1) {
+            int initalX = [[CCDirector sharedDirector] winSize].width;
+            int initialY = [plushy ccNode].position.y+80;
+            Object *obj1 = [Object randomObject];
+            [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
+            [obj1 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj1 ccNode] z:100];
+            Object *obj2 = [Object randomObject];
+            [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+40, initialY)];
+            [obj2 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj2 ccNode] z:100];
+            Object *obj3 = [Object randomObject];
+            [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY)];
+            [obj3 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj3 ccNode] z:100];
+            Object *obj4 = [Object randomObject];
+            [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+120, initialY)];
+            [obj4 setLinearVelocity:b2Vec2(-5, 0)];
+            [self addChild:[obj4 ccNode] z:100];
+        }
+        nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
     }
 }
 

@@ -19,6 +19,8 @@
 
 @implementation Plushy
 
+@synthesize bananaScore;
+
 -(id) initWithGameLayer:(GameScene*)gl
 {
     self = [super initWithDynamicBody:@"Monkey"
@@ -37,6 +39,9 @@
         
         // store the game layer
         gameLayer = gl;
+        
+        // store number of bananas collected
+        bananaScore = 0;
     }
     return self;
 }

@@ -183,7 +183,7 @@ CCSprite *monkey;
   
   [self loadPlushy];
   
-  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map = [CCSprite spriteWithFile:@"map1.png"];
   map.anchorPoint = ccp(0.3, 1.1);
   map.position = ccp(300,200);
   [tryLayer addChild:map z:1];

@@ -8,6 +8,7 @@
 
 #import "Object.h"
 #import "GB2Contact.h"
+#import "Plushy.h"
 
 @implementation Object
 
@@ -15,7 +16,7 @@
 
 -(id) initWithObject:(NSString*)theObjName 
 {
-    self = [super initWithDynamicBody:theObjName
+    self = [super initWithKinematicBody:theObjName
                       spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
     if(self)
     {
@@ -33,9 +34,9 @@
 //            objName = @"banana bomb";
 //            break;
         
-        case 1:
-            objName = @"banana bunch";
-            break;
+//        case 1:
+//            objName = @"banana bunch";
+//            break;
             
 //        case 2: case 3: case 5:
 //            objName = @"spider";
@@ -48,15 +49,17 @@
     return [[[self alloc] initWithObject:objName] autorelease];
 }
 
--(void) beginContactWithMonkey:(GB2Contact*)contact
+-(void) beginContactWithPlushy:(GB2Contact*)contact
 {
-//    //b2Vec2 velocity = [self linearVelocity];
-//    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-//    if([fixtureId isEqualToString:@"monkey"] || [fixtureId isEqualToString:@"feet"])
-//    {
-//        //NSLog(@"Something contacted object %@", (NSString *)contact.ownFixture->GetUserData());
-//        [[self ccNode] removeFromParentAndCleanup:YES];
-//    }
+    if (!collideWPlushy) {
+        ((Plushy*)[contact otherObject]).bananaScore += 1;
+        [[self ccNode] removeFromParentAndCleanup:YES];
+        collideWPlushy = TRUE;
+    }
+}
+
+-(void) beginContactWithMaze:(GB2Contact*)contact
+{
     [[self ccNode] removeFromParentAndCleanup:YES];
 }
 

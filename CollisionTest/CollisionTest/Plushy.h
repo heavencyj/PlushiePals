@@ -15,20 +15,22 @@
 
 @interface Plushy : GB2Sprite
 {
-  //float direction;      //!< keeps monkey's direction (from accelerometer)
-  int animPhase;        //!< the current animation phase
-  ccTime animDelay;     //!< delay until the next animation phase is stated
-  GameScene *gameLayer; //!< weak reference
-  bool jumping;
-  bool running;
-  bool collide;
-  bool pass;
-  bool dead;
-  bool die;
-  bool falling;
+    //float direction;      //!< keeps monkey's direction (from accelerometer)
+    int animPhase;        //!< the current animation phase
+    ccTime animDelay;     //!< delay until the next animation phase is stated
+    GameScene *gameLayer; //!< weak reference
+    bool jumping;
+    bool running;
+    bool collide;
+    bool pass;
+    bool dead;
+    bool die;
+    bool falling;
+    int bananaScore;
 }
 
 //@property (readonly) bool isDead;
+@property (readwrite) int bananaScore;
 
 /**
  * Inits the monkey with the given game layer

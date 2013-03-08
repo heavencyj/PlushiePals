@@ -13,6 +13,7 @@
 @interface Object : GB2Sprite {
     
     NSString *objName; //!< type of the object
+    BOOL collideWPlushy;
 }
 
 @property (retain, nonatomic) NSString *objName;
