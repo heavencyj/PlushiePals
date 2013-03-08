@@ -109,7 +109,7 @@ CCSprite *monkey;
 //       break;
 
     
-    case 4:
+    case 5:
       button = [CCMenuItemImage
                 itemWithNormalImage:@"Play icon.png"
                 selectedImage:nil
@@ -228,7 +228,7 @@ CCSprite *monkey;
   
   self.isTouchEnabled = NO;
   [self removeGestureRecognizer:aGestureRecognizer];
-  pageIndex = 4;
+  pageIndex = 5;
   //tap to jump
   [monkey runAction:[CCSequence actions:[CCJumpBy actionWithDuration:1 position:ccp(150,0) height:50 jumps:1],
                   [CCDelayTime actionWithDuration:1],
