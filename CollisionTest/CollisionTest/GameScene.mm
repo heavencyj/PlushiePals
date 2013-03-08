@@ -328,6 +328,9 @@ Object *obj;
 
 -(void)nextObject:(ccTime)dt pattern:(int)p
 {
+    if (pass) {
+        return;
+    }
     //TODO: randomnized the drop location of object
     nextObject -= dt;
     if(nextObject <=0)

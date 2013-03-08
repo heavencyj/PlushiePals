@@ -84,15 +84,14 @@ int levelScore;
                                 selector:@selector(nextLevel)];
     next.position = ccp(-winSize.width*1/24,-winSize.height/7);
       
-    CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",levelScore]
-                                      fontName:@"GROBOLD"
-                                      fontSize:35];
-    scoreLabel.color = ccc3(245, 148, 36);
-    scoreLabel.position = ccp(-winSize.width*1/34,-winSize.height/30);
-    CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
-    
-    CCMenu *menu = (congrats && (curLevel != 4)) ? [CCMenu menuWithItems: home, restart, next, score, nil]
-                            : [CCMenu menuWithItems: home, restart, score, nil];
+      CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d",levelScore]
+                                                  fontName:@"GROBOLD"
+                                                  fontSize:35];
+      scoreLabel.color = ccc3(245, 148, 36);
+      scoreLabel.position = ccp(-winSize.width*4/24,-winSize.height/50);
+      CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
+      CCMenu *menu = (congrats && (curLevel != 5)) ? [CCMenu menuWithItems: home, restart, next, score, nil]
+      : [CCMenu menuWithItems: home, restart, nil];
 
     [menuLayer addChild: menu];
   }
