@@ -48,18 +48,11 @@
 		98176E6016EA367A009BA7AB /* canyon level 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5616EA367A009BA7AB /* canyon level 5.plist */; };
 		98176E6116EA367A009BA7AB /* canyon level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5716EA367A009BA7AB /* canyon level 5.png */; };
 		98176E6716EA3E01009BA7AB /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E6616EA3E01009BA7AB /* canyon_levels.plist */; };
-		987EE25116D228E3003B4F59 /* map1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24916D228E3003B4F59 /* map1.plist */; };
-		987EE25216D228E3003B4F59 /* map1.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24A16D228E3003B4F59 /* map1.png */; };
-		987EE25316D228E3003B4F59 /* map2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24B16D228E3003B4F59 /* map2.plist */; };
-		987EE25416D228E3003B4F59 /* map2.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24C16D228E3003B4F59 /* map2.png */; };
-		987EE25716D228E3003B4F59 /* map4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24F16D228E3003B4F59 /* map4.plist */; };
-		987EE25816D228E3003B4F59 /* map4.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25016D228E3003B4F59 /* map4.png */; };
 		987EE25B16D566DE003B4F59 /* monkeys_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25916D566DE003B4F59 /* monkeys_default.plist */; };
 		987EE25C16D566DE003B4F59 /* monkeys_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25A16D566DE003B4F59 /* monkeys_default.png */; };
 		987EE25F16D60E7C003B4F59 /* map3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25D16D60E7C003B4F59 /* map3.plist */; };
 		987EE26016D60E7C003B4F59 /* map3.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25E16D60E7C003B4F59 /* map3.png */; };
 		987EE26216D60E96003B4F59 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26116D60E96003B4F59 /* plushyshapes.plist */; };
-		987EE26A16D616DA003B4F59 /* Tutorial level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26916D616DA003B4F59 /* Tutorial level 4.png */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -299,18 +292,11 @@
 		98176E5616EA367A009BA7AB /* canyon level 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 5.plist"; sourceTree = "<group>"; };
 		98176E5716EA367A009BA7AB /* canyon level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 5.png"; sourceTree = "<group>"; };
 		98176E6616EA3E01009BA7AB /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
-		987EE24916D228E3003B4F59 /* map1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map1.plist; sourceTree = "<group>"; };
-		987EE24A16D228E3003B4F59 /* map1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1.png; sourceTree = "<group>"; };
-		987EE24B16D228E3003B4F59 /* map2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map2.plist; sourceTree = "<group>"; };
-		987EE24C16D228E3003B4F59 /* map2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map2.png; sourceTree = "<group>"; };
-		987EE24F16D228E3003B4F59 /* map4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map4.plist; sourceTree = "<group>"; };
-		987EE25016D228E3003B4F59 /* map4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map4.png; sourceTree = "<group>"; };
 		987EE25916D566DE003B4F59 /* monkeys_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys_default.plist; sourceTree = "<group>"; };
 		987EE25A16D566DE003B4F59 /* monkeys_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys_default.png; sourceTree = "<group>"; };
 		987EE25D16D60E7C003B4F59 /* map3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map3.plist; sourceTree = "<group>"; };
 		987EE25E16D60E7C003B4F59 /* map3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map3.png; sourceTree = "<group>"; };
 		987EE26116D60E96003B4F59 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
-		987EE26916D616DA003B4F59 /* Tutorial level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tutorial level 4.png"; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -850,12 +836,6 @@
 				98176E5516EA367A009BA7AB /* canyon level 4.png */,
 				98176E5616EA367A009BA7AB /* canyon level 5.plist */,
 				98176E5716EA367A009BA7AB /* canyon level 5.png */,
-				987EE24916D228E3003B4F59 /* map1.plist */,
-				987EE24A16D228E3003B4F59 /* map1.png */,
-				987EE24B16D228E3003B4F59 /* map2.plist */,
-				987EE24C16D228E3003B4F59 /* map2.png */,
-				987EE24F16D228E3003B4F59 /* map4.plist */,
-				987EE25016D228E3003B4F59 /* map4.png */,
 				987EE25D16D60E7C003B4F59 /* map3.plist */,
 				987EE25E16D60E7C003B4F59 /* map3.png */,
 			);
@@ -888,7 +868,6 @@
 		98ECEFE316CE252E005BB243 /* tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				987EE26916D616DA003B4F59 /* Tutorial level 4.png */,
 				98ECEFE416CE253A005BB243 /* Tutorial level 1.png */,
 				98ECEFE516CE253A005BB243 /* Tutorial level 2.png */,
 				98ECEFFF16CE4688005BB243 /* Monkey run 2.png */,
@@ -1566,18 +1545,11 @@
 				98ECEFEB16CE253A005BB243 /* Tutorial level 5.png in Resources */,
 				98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */,
 				98DC00FE16CECCCE009FF496 /* Star.png in Resources */,
-				987EE25116D228E3003B4F59 /* map1.plist in Resources */,
-				987EE25216D228E3003B4F59 /* map1.png in Resources */,
-				987EE25316D228E3003B4F59 /* map2.plist in Resources */,
-				987EE25416D228E3003B4F59 /* map2.png in Resources */,
-				987EE25716D228E3003B4F59 /* map4.plist in Resources */,
-				987EE25816D228E3003B4F59 /* map4.png in Resources */,
 				987EE25B16D566DE003B4F59 /* monkeys_default.plist in Resources */,
 				987EE25C16D566DE003B4F59 /* monkeys_default.png in Resources */,
 				987EE25F16D60E7C003B4F59 /* map3.plist in Resources */,
 				987EE26016D60E7C003B4F59 /* map3.png in Resources */,
 				987EE26216D60E96003B4F59 /* plushyshapes.plist in Resources */,
-				987EE26A16D616DA003B4F59 /* Tutorial level 4.png in Resources */,
 				987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */,
 				987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */,
 				987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */,

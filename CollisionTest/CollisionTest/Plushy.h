@@ -45,4 +45,5 @@
 -(void)moveTo:(b2Vec2)pos;
 -(bool)passLevel;
 -(void)setFalling:(bool)fall;
+-(bool)isFalling;
 @end

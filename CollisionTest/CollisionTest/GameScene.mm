@@ -155,7 +155,7 @@ Object *obj;
     // Add monkey
     plushy = [[[Plushy alloc] initWithGameLayer:self] autorelease];
     [plushy setPhysicsPosition:b2Vec2FromCC(300,200)];
-    plushySpeed = 2.0;
+    plushySpeed = 3.0;
     [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
     [plushyLayer addChild:[plushy ccNode] z:10];
     
@@ -267,9 +267,13 @@ Object *obj;
     cameraDelay --;
   }
   
+  if ([plushy isFalling] && cameraDelay <=0) {
+    cameraDelay = 10;
+  }
+  
   // Moving camera when plushy is out of the center
-  if ([plushy isRunning]) {
-  // if ([plushy isRunning] && cameraDelay ==0 ) {
+  //if ([plushy isRunning]) {
+  if ([plushy isRunning] && cameraDelay ==0 ) {
     float dy = - [plushy ccNode].position.y + 150;
     [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
     CGPoint mp = [maze ccNode].position;
@@ -425,7 +429,7 @@ Object *obj;
   NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
   maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
   [maze setPhysicsPosition:b2Vec2FromCC(200,120)];
-  mazeSpeed = -4;
+  mazeSpeed = -5;
   [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
   [self addChild:[maze ccNode] z:40];
 }
@@ -454,7 +458,7 @@ Object *obj;
   //newAngle = [maze ccNode].rotation + angle;
   CGPoint p1 = [plushy ccNode].position;
   p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-  cameraDelay = 60;
+  //cameraDelay = 10;
   [plushy setFalling:true];
   
   // To to animate

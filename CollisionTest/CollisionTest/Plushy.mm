@@ -183,6 +183,7 @@
 
     jumping = true;
     running = false;
+    falling = true;
     animPhase = 1;
     
     // play the monkey jump sound
@@ -215,9 +216,9 @@
   {
     running = true;
     jumping = false;
-    falling = false;
-    
+    falling = false;    
   }
+  
   if([fixtureId isEqualToString:@"collision"])
   {
     running = false;
@@ -247,6 +248,11 @@
 
 -(void)setFalling:(bool)fall{
   falling = fall;
+}
+
+-(bool)isFalling
+{
+  return falling;
 }
 
 @end

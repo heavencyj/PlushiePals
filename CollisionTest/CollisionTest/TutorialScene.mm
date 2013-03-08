@@ -141,7 +141,7 @@ CCSprite *monkey;
   // load map
   map = [CCSprite spriteWithFile:@"map3.png"];
   map.anchorPoint = ccp(0.95, 1);
-  map.position = ccp(300,130);
+  map.position = ccp(250,130);
   [tryLayer addChild:map z:1];
 
   //[self loadTutorial];
@@ -163,9 +163,9 @@ CCSprite *monkey;
   
   // load map
   map = [CCSprite spriteWithFile:@"map3.png"];
-  map.anchorPoint = ccp(0.75, 0.4);
+  map.anchorPoint = ccp(0.76, 0.63);
   map.rotation = -180;
-  map.position = ccp(300,200);
+  map.position = ccp(250,200);
   [tryLayer addChild:map z:1];
   
   UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGestureRecognizer:)];
@@ -184,8 +184,8 @@ CCSprite *monkey;
   [self loadPlushy];
   
   map = [CCSprite spriteWithFile:@"map3.png"];
-  map.anchorPoint = ccp(0.3, 1.1);
-  map.position = ccp(300,200);
+  map.anchorPoint = ccp(0.31, 1.06);
+  map.position = ccp(250,200);
   [tryLayer addChild:map z:1];
   //[self loadTutorial];
   
@@ -253,7 +253,7 @@ CCSprite *monkey;
   tryLayer.position = ccp(0,0);
   monkey = [CCSprite spriteWithFile:@"Monkey run 2.png"];
   monkey.anchorPoint = ccp(0.5, 0.5);
-  monkey.position = ccp(300,200);
+  monkey.position = ccp(250,200);
   [tryLayer addChild:monkey z:10];
   [self addChild:tryLayer];
 }
