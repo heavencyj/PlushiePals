@@ -301,7 +301,7 @@ Object *obj;
     if (pass) {
         [[GB2Engine sharedInstance] deleteAllObjects];
         [plushy reset];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level]];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
     }
     // Show the star when the level is passed
     // TODO: add some animations here
@@ -321,7 +321,8 @@ Object *obj;
         [[GB2Engine sharedInstance] deleteAllObjects];
         [plushy reset];
         // if pass, show one screen. otherwise show the other, modify gameover scene
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level]];
+
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
     }
 }
 
