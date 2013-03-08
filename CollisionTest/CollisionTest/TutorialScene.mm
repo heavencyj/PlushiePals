@@ -139,7 +139,7 @@ CCSprite *monkey;
   [self loadPlushy];
   
   // load map
-  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map = [CCSprite spriteWithFile:@"map3.png"];
   map.anchorPoint = ccp(0.95, 1);
   map.position = ccp(300,130);
   [tryLayer addChild:map z:1];
@@ -162,7 +162,7 @@ CCSprite *monkey;
   [self loadPlushy];
   
   // load map
-  map = [CCSprite spriteWithFile:@"map level 3.png"];
+  map = [CCSprite spriteWithFile:@"map3.png"];
   map.anchorPoint = ccp(0.75, 0.4);
   map.rotation = -180;
   map.position = ccp(300,200);
@@ -183,7 +183,7 @@ CCSprite *monkey;
   
   [self loadPlushy];
   
-  map = [CCSprite spriteWithFile:@"map1.png"];
+  map = [CCSprite spriteWithFile:@"map3.png"];
   map.anchorPoint = ccp(0.3, 1.1);
   map.position = ccp(300,200);
   [tryLayer addChild:map z:1];

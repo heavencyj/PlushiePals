@@ -37,6 +37,17 @@
 		98176E4816E9E916009BA7AB /* Level fail screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E4616E9E916009BA7AB /* Level fail screen.png */; };
 		98176E4916E9E916009BA7AB /* Level pass screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E4716E9E916009BA7AB /* Level pass screen.png */; };
 		98176E4B16E9ED28009BA7AB /* Canyon background.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E4A16E9ED28009BA7AB /* Canyon background.png */; };
+		98176E5816EA367A009BA7AB /* canyon level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E4E16EA367A009BA7AB /* canyon level 1.plist */; };
+		98176E5916EA367A009BA7AB /* canyon level 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E4F16EA367A009BA7AB /* canyon level 1.png */; };
+		98176E5A16EA367A009BA7AB /* canyon level 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5016EA367A009BA7AB /* canyon level 2.plist */; };
+		98176E5B16EA367A009BA7AB /* canyon level 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5116EA367A009BA7AB /* canyon level 2.png */; };
+		98176E5C16EA367A009BA7AB /* canyon level 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5216EA367A009BA7AB /* canyon level 3.plist */; };
+		98176E5D16EA367A009BA7AB /* canyon level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5316EA367A009BA7AB /* canyon level 3.png */; };
+		98176E5E16EA367A009BA7AB /* canyon level 4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5416EA367A009BA7AB /* canyon level 4.plist */; };
+		98176E5F16EA367A009BA7AB /* canyon level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5516EA367A009BA7AB /* canyon level 4.png */; };
+		98176E6016EA367A009BA7AB /* canyon level 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5616EA367A009BA7AB /* canyon level 5.plist */; };
+		98176E6116EA367A009BA7AB /* canyon level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E5716EA367A009BA7AB /* canyon level 5.png */; };
+		98176E6716EA3E01009BA7AB /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98176E6616EA3E01009BA7AB /* canyon_levels.plist */; };
 		987EE25116D228E3003B4F59 /* map1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24916D228E3003B4F59 /* map1.plist */; };
 		987EE25216D228E3003B4F59 /* map1.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24A16D228E3003B4F59 /* map1.png */; };
 		987EE25316D228E3003B4F59 /* map2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE24B16D228E3003B4F59 /* map2.plist */; };
@@ -277,6 +288,17 @@
 		98176E4616E9E916009BA7AB /* Level fail screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level fail screen.png"; sourceTree = "<group>"; };
 		98176E4716E9E916009BA7AB /* Level pass screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level pass screen.png"; sourceTree = "<group>"; };
 		98176E4A16E9ED28009BA7AB /* Canyon background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Canyon background.png"; sourceTree = "<group>"; };
+		98176E4E16EA367A009BA7AB /* canyon level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 1.plist"; sourceTree = "<group>"; };
+		98176E4F16EA367A009BA7AB /* canyon level 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 1.png"; sourceTree = "<group>"; };
+		98176E5016EA367A009BA7AB /* canyon level 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 2.plist"; sourceTree = "<group>"; };
+		98176E5116EA367A009BA7AB /* canyon level 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 2.png"; sourceTree = "<group>"; };
+		98176E5216EA367A009BA7AB /* canyon level 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 3.plist"; sourceTree = "<group>"; };
+		98176E5316EA367A009BA7AB /* canyon level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 3.png"; sourceTree = "<group>"; };
+		98176E5416EA367A009BA7AB /* canyon level 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 4.plist"; sourceTree = "<group>"; };
+		98176E5516EA367A009BA7AB /* canyon level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 4.png"; sourceTree = "<group>"; };
+		98176E5616EA367A009BA7AB /* canyon level 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 5.plist"; sourceTree = "<group>"; };
+		98176E5716EA367A009BA7AB /* canyon level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 5.png"; sourceTree = "<group>"; };
+		98176E6616EA3E01009BA7AB /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		987EE24916D228E3003B4F59 /* map1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map1.plist; sourceTree = "<group>"; };
 		987EE24A16D228E3003B4F59 /* map1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1.png; sourceTree = "<group>"; };
 		987EE24B16D228E3003B4F59 /* map2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map2.plist; sourceTree = "<group>"; };
@@ -764,6 +786,7 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
+				98176E6616EA3E01009BA7AB /* canyon_levels.plist */,
 				987EE25916D566DE003B4F59 /* monkeys_default.plist */,
 				987EE25A16D566DE003B4F59 /* monkeys_default.png */,
 				987EE26116D60E96003B4F59 /* plushyshapes.plist */,
@@ -817,6 +840,16 @@
 		987EE23E16D18F50003B4F59 /* mazes */ = {
 			isa = PBXGroup;
 			children = (
+				98176E4E16EA367A009BA7AB /* canyon level 1.plist */,
+				98176E4F16EA367A009BA7AB /* canyon level 1.png */,
+				98176E5016EA367A009BA7AB /* canyon level 2.plist */,
+				98176E5116EA367A009BA7AB /* canyon level 2.png */,
+				98176E5216EA367A009BA7AB /* canyon level 3.plist */,
+				98176E5316EA367A009BA7AB /* canyon level 3.png */,
+				98176E5416EA367A009BA7AB /* canyon level 4.plist */,
+				98176E5516EA367A009BA7AB /* canyon level 4.png */,
+				98176E5616EA367A009BA7AB /* canyon level 5.plist */,
+				98176E5716EA367A009BA7AB /* canyon level 5.png */,
 				987EE24916D228E3003B4F59 /* map1.plist */,
 				987EE24A16D228E3003B4F59 /* map1.png */,
 				987EE24B16D228E3003B4F59 /* map2.plist */,
@@ -1582,6 +1615,17 @@
 				98176E4816E9E916009BA7AB /* Level fail screen.png in Resources */,
 				98176E4916E9E916009BA7AB /* Level pass screen.png in Resources */,
 				98176E4B16E9ED28009BA7AB /* Canyon background.png in Resources */,
+				98176E5816EA367A009BA7AB /* canyon level 1.plist in Resources */,
+				98176E5916EA367A009BA7AB /* canyon level 1.png in Resources */,
+				98176E5A16EA367A009BA7AB /* canyon level 2.plist in Resources */,
+				98176E5B16EA367A009BA7AB /* canyon level 2.png in Resources */,
+				98176E5C16EA367A009BA7AB /* canyon level 3.plist in Resources */,
+				98176E5D16EA367A009BA7AB /* canyon level 3.png in Resources */,
+				98176E5E16EA367A009BA7AB /* canyon level 4.plist in Resources */,
+				98176E5F16EA367A009BA7AB /* canyon level 4.png in Resources */,
+				98176E6016EA367A009BA7AB /* canyon level 5.plist in Resources */,
+				98176E6116EA367A009BA7AB /* canyon level 5.png in Resources */,
+				98176E6716EA3E01009BA7AB /* canyon_levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

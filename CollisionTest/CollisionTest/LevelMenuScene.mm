@@ -97,7 +97,7 @@ int gameMode;
                                itemWithNormalImage:@"Level 5.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level5.position = ccp(-winSize.width/3,ButtonOffset);
     level5.tag = 5;
     

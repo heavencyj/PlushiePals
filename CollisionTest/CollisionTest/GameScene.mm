@@ -113,6 +113,7 @@ Object *obj;
     
     // Loading physics shapes
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];
+    [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"canyon_levels.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys_default.plist"];
     
     // 1) Create the CCParallaxNode
@@ -267,7 +268,8 @@ Object *obj;
   }
   
   // Moving camera when plushy is out of the center
-  if ([plushy isRunning] && cameraDelay ==0 ) {
+  if ([plushy isRunning]) {
+  // if ([plushy isRunning] && cameraDelay ==0 ) {
     float dy = - [plushy ccNode].position.y + 150;
     [plushy setPhysicsPosition:b2Vec2FromCC(200, 150)];
     CGPoint mp = [maze ccNode].position;
@@ -284,14 +286,14 @@ Object *obj;
   }
   
   // Speed up after a while
-  if (speedDelay == 0) {
-    plushySpeed += 1;
-    mazeSpeed -= 3;
-    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
-    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-    speedDelay = 1000;
-  }
-  
+//  if (speedDelay == 0) {
+//    plushySpeed += 1;
+//    mazeSpeed -= 3;
+//    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
+//    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
+//    speedDelay = 1000;
+//  }
+//  
   if (pass) {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
@@ -419,8 +421,8 @@ Object *obj;
 
 -(void) loadMaze
 {
-  [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"map" stringByAppendingFormat:@"%d.plist",level]];
-  NSString *shape = [@"map level " stringByAppendingFormat:@"%d", level];
+  [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist",level]];
+  NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
   maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
   [maze setPhysicsPosition:b2Vec2FromCC(200,120)];
   mazeSpeed = -4;
