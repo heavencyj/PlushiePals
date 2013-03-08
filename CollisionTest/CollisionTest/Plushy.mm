@@ -185,6 +185,9 @@
     jumping = true;
     running = false;
     animPhase = 1;
+    
+    // play the monkey jump sound
+    [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.caf"];
 }
 
 -(bool)isJumping

@@ -210,8 +210,9 @@ Object *obj;
         
         //[[CDAudioManager sharedManager] setMode:kAMM_MediaPlayback];
         // Adding sound and music
+        //TODO: add volume control 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
-        
+        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5];
         [self scheduleUpdate];
     }
     return self;

@@ -70,6 +70,7 @@
 		98ECF00016CE4688005BB243 /* Monkey run 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98ECEFFF16CE4688005BB243 /* Monkey run 2.png */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
 		B621FAF016E965CF00ABAD1B /* banana single.png in Resources */ = {isa = PBXBuildFile; fileRef = B621FAEF16E965CF00ABAD1B /* banana single.png */; };
+		B621FAF216E9C46B00ABAD1B /* jumping.caf in Resources */ = {isa = PBXBuildFile; fileRef = B621FAF116E9C46B00ABAD1B /* jumping.caf */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -320,6 +321,7 @@
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		B621FAEF16E965CF00ABAD1B /* banana single.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banana single.png"; sourceTree = "<group>"; };
+		B621FAF116E9C46B00ABAD1B /* jumping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jumping.caf; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* CollisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -761,6 +763,7 @@
 		98176E0A16E746EE009BA7AB /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				B621FAF116E9C46B00ABAD1B /* jumping.caf */,
 				987EE27B16D80F2B003B4F59 /* Luscious Swirl 60.mp3 */,
 			);
 			name = sound;
@@ -1602,6 +1605,7 @@
 				98176E4316E853B2009BA7AB /* Level lock.png in Resources */,
 				98176E4516E85595009BA7AB /* Play icon.png in Resources */,
 				B621FAF016E965CF00ABAD1B /* banana single.png in Resources */,
+				B621FAF216E9C46B00ABAD1B /* jumping.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
