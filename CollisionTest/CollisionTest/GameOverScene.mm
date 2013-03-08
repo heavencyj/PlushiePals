@@ -44,12 +44,12 @@ int curLevel;
   if( (self=[super init] )) {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    CCSprite *blueBG = [CCSprite spriteWithFile:@"Canyon background blue.png"];
+    CCSprite *blueBG = [CCSprite spriteWithFile:@"Canyon background.png"];
     blueBG.anchorPoint = ccp(0,0);
     blueBG.position = ccp(0,0);
     [self addChild:blueBG];
-    gameoverbg = congrats ? [CCSprite spriteWithFile: @"Congrats screen.png"] :
-                            [CCSprite spriteWithFile: @"Oops screen.png"];
+    gameoverbg = congrats ? [CCSprite spriteWithFile: @"Level pass screen.png"] :
+                            [CCSprite spriteWithFile: @"Level fail screen.png"];
     gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:gameoverbg];
 //    
@@ -63,21 +63,21 @@ int curLevel;
     
     CCMenuItemImage *home = [CCMenuItemImage
                                      itemWithNormalImage:@"Home icon.png"
-                                     selectedImage:@"Home icon selected.png"
+                                     selectedImage:nil
                                      target:self
                                      selector:@selector(goHome)];
     home.position = ccp(-winSize.width*7/24, -winSize.height/7);
     
     CCMenuItemImage *restart = [CCMenuItemImage
-                                  itemWithNormalImage:@"Replay icon.png"
-                                  selectedImage:@"Replay icon selected.png"
+                                  itemWithNormalImage:@"Return icon.png"
+                                  selectedImage:nil
                                   target:self
                                   selector:@selector(restart)];
     restart.position = ccp(-winSize.width*4/24,-winSize.height/7);
     
     CCMenuItemImage *next = [CCMenuItemImage
-                                itemWithNormalImage:@"Next icon.png"
-                                selectedImage:@"Next icon selected.png"
+                                itemWithNormalImage:@"Play icon.png"
+                                selectedImage:@"Play icon.png"
                                 target:self
                                 selector:@selector(nextLevel)];
     next.position = ccp(-winSize.width*1/24,-winSize.height/7);
