@@ -290,14 +290,14 @@ Object *obj;
   }
   
   // Speed up after a while
-//  if (speedDelay == 0) {
-//    plushySpeed += 1;
-//    mazeSpeed -= 3;
-//    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
-//    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-//    speedDelay = 1000;
-//  }
-//  
+  if (speedDelay == 0) {
+    plushySpeed += 1;
+    mazeSpeed -= 3;
+    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
+    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
+    speedDelay = 1000;
+  }
+  
   if (pass) {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
@@ -314,7 +314,9 @@ Object *obj;
     [background addChild:star z:50];
     
   }
-  
+  else if ([plushy isColliding]) {
+    [maze setLinearVelocity:b2Vec2(0, 0)];
+  }
   // Plushy dies if it falls out of the screen or hit the wall
   else if ([plushy ccNode].position.y < -50 || [plushy isDead])
   {

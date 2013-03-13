@@ -255,4 +255,9 @@
   return falling;
 }
 
+-(bool)isColliding
+{
+  return collide;
+}
+
 @end

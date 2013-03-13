@@ -46,4 +46,5 @@
 -(bool)passLevel;
 -(void)setFalling:(bool)fall;
 -(bool)isFalling;
+-(bool)isColliding;
 @end
