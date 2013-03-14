@@ -102,10 +102,10 @@ int gameMode;
     level5.tag = 5;
     
     CCMenuItemImage *level6 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level lock.png"
+                               itemWithNormalImage:@"Level 6.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level6.position = ccp(-winSize.width/9,ButtonOffset);
     level6.tag = 6;
     

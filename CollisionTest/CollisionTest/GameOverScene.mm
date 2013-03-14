@@ -82,7 +82,7 @@ int curLevel;
                                 selector:@selector(nextLevel)];
     next.position = ccp(-winSize.width*1/24,-winSize.height/7);
     
-    CCMenu *menu = (congrats && (curLevel != 5)) ? [CCMenu menuWithItems: home, restart, next, nil]
+    CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next, nil]
                             : [CCMenu menuWithItems: home, restart, nil];
 
     [menuLayer addChild: menu];

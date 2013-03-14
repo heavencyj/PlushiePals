@@ -41,6 +41,7 @@
     
     // store number of bananas collected
     bananaScore = 0;
+    tip = -1;
   }
   return self;
 }
@@ -204,7 +205,7 @@
   running = true;
   pass = false;
   falling = false;
-  
+  tip = -1;
 }
 
 -(void) beginContactWithMaze:(GB2Contact *)contact
@@ -221,15 +222,22 @@
   
   if([fixtureId isEqualToString:@"collision"])
   {
-    running = false;
-    jumping = false;
-    collide = true;
-    animPhase = 1;
+    if ([otherfixtureId hasPrefix:@"tip"]) {
+      tip = [[otherfixtureId substringFromIndex:3] intValue];
+      CCLOG(@"tip is %d", tip);
+    }
+    else {
+      running = false;
+      jumping = false;
+      collide = true;
+      animPhase = 1;
+    }
   }
   
   if ([otherfixtureId isEqualToString:@"win"]) {
     pass = true;
   }
+  
 }
 
 -(bool)passLevel
@@ -260,4 +268,12 @@
   return collide;
 }
 
+-(int)showTip
+{
+  return tip;
+}
+
+-(void)setTip{
+  tip = -1;
+}
 @end

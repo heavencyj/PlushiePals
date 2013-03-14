@@ -70,6 +70,8 @@ CCSprite *pauseButton;
 ccTime nextObject;
 ccTime objDelay;
 Object *obj;
+CCSprite *tutorial;
+int showingTip;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -298,6 +300,24 @@ Object *obj;
     speedDelay = 1000;
   }
   
+  if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+    showingTip = [plushy showTip];
+    switch (showingTip) {
+      case 0: case 2:
+        [self pauseGame];
+        tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Tutorial %d.png", showingTip]];
+        tutorial.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:tutorial z:500];
+        [plushy setTip];
+        break;
+        
+      default:
+        break;
+    }
+    // show the tool tips and imgs
+    // when swife, resume
+  }
+  
   if (pass) {
     [[GB2Engine sharedInstance] deleteAllObjects];
     [plushy reset];
@@ -460,6 +480,11 @@ Object *obj;
   //newAngle = [maze ccNode].rotation + angle;
   CGPoint p1 = [plushy ccNode].position;
   p1.y = (angle > 0) ? p1.y+10:p1.y-80;
+  if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
+    [self resumeGame];
+    [self removeChild:tutorial cleanup:YES];
+    showingTip = -1;
+  }
   //cameraDelay = 10;
   [plushy setFalling:true];
   
@@ -543,7 +568,9 @@ Object *obj;
 
 -(void)resumeGame
 {
-  [self addTapRecognizer];
+  if (!((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips])) {
+    [self addTapRecognizer];
+  }
   pauseLayer.visible = NO;
   pauseButton.visible = YES;
   [self resumeSchedulerAndActions];

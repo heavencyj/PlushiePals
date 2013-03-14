@@ -27,6 +27,7 @@
     bool die;
     bool falling;
     int bananaScore;
+    int tip;
 }
 
 //@property (readonly) bool isDead;
@@ -47,4 +48,6 @@
 -(void)setFalling:(bool)fall;
 -(bool)isFalling;
 -(bool)isColliding;
+-(int)showTip;
+-(void)setTip;
 @end

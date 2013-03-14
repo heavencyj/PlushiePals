@@ -47,7 +47,7 @@ CCLayer *settingLayer;
     //    centerImage.position = ccp(winSize.width/2, winSize.height/2);
     //    [background addChild:centerImage];
     mute=NO;
-    tipsOn=YES;
+    tipsOn=NO;
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
@@ -130,12 +130,16 @@ CCLayer *settingLayer;
 -(void)turnTips
 {
   if (tipsOn) {
-    [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
-  }
-  else {
     [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
   }
+  else {
+    [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
+  }
   tipsOn = !tipsOn;
+}
+
++(bool)showTips{
+  return tipsOn;
 }
 
 - (void) dealloc
