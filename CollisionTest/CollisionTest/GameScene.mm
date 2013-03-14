@@ -142,7 +142,7 @@ Object *obj;
         
         // Pause button
         pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
-        pauseButton.position = ccp(440,290);
+        pauseButton.position = ccp(winSize.width-30,290);
         pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
         [self addChild:pauseButton z:50];
         
