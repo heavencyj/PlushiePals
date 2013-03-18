@@ -46,8 +46,8 @@ CCLayer *settingLayer;
     //    CCSprite *centerImage = [CCSprite spriteWithFile:@"Plushy Run.png"];
     //    centerImage.position = ccp(winSize.width/2, winSize.height/2);
     //    [background addChild:centerImage];
-    mute=NO;
-    tipsOn=NO;
+    mute=YES;
+    tipsOn=YES;
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [self addChild:menuLayer];
