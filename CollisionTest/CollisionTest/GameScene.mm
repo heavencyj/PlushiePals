@@ -43,6 +43,8 @@
 int level;
 bool pass;
 float angle;
+int showingTip;
+CCSprite *tutorial;
 
 @synthesize maze;
 @synthesize hud;
@@ -425,9 +427,10 @@ float angle;
 -(void)animateRotation:(int)angle
 {
   if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
-    [self resumeGame];
-    [self removeChild:tutorial cleanup:YES];
-    showingTip = -1;
+//    [self resumeGame];
+      [hud resumeGame];
+      [self removeChild:tutorial cleanup:YES];
+      showingTip = -1;
   }
   //cameraDelay = 10;
   [plushy setFalling:true];
@@ -437,7 +440,7 @@ float angle;
   CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
   CCLOG(@"dummymaze is at %f and %f", dummyMaze.position.x, dummyMaze.position.y);
   
-  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;  
+//  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;  
   CGPoint p1 = [plushy ccNode].position;
   CGPoint p2 = [maze ccNode].position;
   float dy = (angle > 0) ? 15:-15;

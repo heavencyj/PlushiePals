@@ -47,24 +47,14 @@
         
         // initalize 3 lives for the monkey
         lives = 3;
+        
+        tip = -1;
         [self loadLives];
         
         // setting initial plushy position
         initialPosition = b2Vec2FromCC(200, 180);
         [self setPhysicsPosition:initialPosition];
     }
-    return self;
-    // monkey uses continuous collision detection
-    // to avoid sticking him into fast falling objects
-    [self setBullet:YES];
-    
-    // store the game layer
-    gameLayer = gl;
-    
-    // store number of bananas collected
-    bananaScore = 0;
-    tip = -1;
-  }
   return self;
 }
 
@@ -206,7 +196,7 @@
     int x_pos = 20;
     hearts = [[NSMutableArray alloc] initWithCapacity:3];
     for (int i=0; i<3; i++) {
-        CCSprite *aHeart = [CCSprite spriteWithFile:@"button red small.png"]; //TODO: for now using the button
+        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"]; //TODO: for now using the button
         aHeart.position = ccp(winSize.width-x_pos, 290);
         x_pos += 30;
         [hearts addObject:aHeart];

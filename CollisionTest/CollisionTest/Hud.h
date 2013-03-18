@@ -27,4 +27,5 @@
 -(id) init;
 -(void)updateBananaScore:(int)score;
 -(void)pauseLayerVisible:(BOOL)visibility;
+-(void)resumeGame;
 @end
