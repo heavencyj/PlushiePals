@@ -40,5 +40,6 @@ class GLESDebugDraw;
     b2World *world;                 //!< weak reference to the world
     GLESDebugDraw *debugDraw;       //!< weak reference to a GLESDebugDraw
 }
+
 @end
 

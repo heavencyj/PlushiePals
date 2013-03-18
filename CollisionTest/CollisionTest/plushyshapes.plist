@@ -1895,7 +1895,7 @@
 					<key>filter_maskBits</key>
 					<integer>65535</integer>
 					<key>isSensor</key>
-					<false/>
+					<true/>
 					<key>id</key>
 					<string>bomb</string>
 					<key>fixture_type</key>

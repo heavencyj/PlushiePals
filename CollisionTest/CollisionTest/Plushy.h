@@ -27,11 +27,16 @@
     bool die;
     bool falling;
     int bananaScore;
+    int lives;
+    
+    NSMutableArray *hearts;
+    b2Vec2 initialPosition;
 }
 
 //@property (readonly) bool isDead;
 @property (readwrite) int bananaScore;
-
+@property (readwrite) int lives;
+@property (readonly) GameScene *gameLayer;
 /**
  * Inits the monkey with the given game layer
  * @param gl game layer
@@ -46,4 +51,6 @@
 -(bool)passLevel;
 -(void)setFalling:(bool)fall;
 -(bool)isFalling;
+-(void)destroyLive;
+-(void)resetPlushyPosition;
 @end

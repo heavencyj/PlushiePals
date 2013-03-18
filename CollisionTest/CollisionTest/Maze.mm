@@ -48,5 +48,15 @@
     [self destroyBody];
 }
 
+-(void)moveTo:(b2Vec2)pos
+{
+    body->SetTransform(pos, body->GetAngle());
+}
+
+-(void)setSensor:(BOOL)sensor
+{
+    b2Fixture *fixture = body->GetFixtureList();
+    fixture->SetSensor(sensor);
+}
 
 @end

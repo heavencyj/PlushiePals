@@ -10,10 +10,13 @@
 #import "cocos2d.h"
 #import "GB2Sprite.h"
 
+#define BANANA_BOMB 0
+#define BANANA_BUNCH 1
+#define SPIDER 2
+
 @interface Object : GB2Sprite {
     
     NSString *objName; //!< type of the object
-    BOOL collideWPlushy;
 }
 
 @property (retain, nonatomic) NSString *objName;
@@ -31,6 +34,8 @@
 /**
  * Factory method will create a random object
  */
-+(Object*) randomObject;
++(Object*) randomObject:(int)type;
+
+-(void)changeType:(b2BodyType)type;
 
 @end

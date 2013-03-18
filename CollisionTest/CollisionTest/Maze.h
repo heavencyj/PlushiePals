@@ -37,4 +37,6 @@
 +(Maze*) mazeSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
 -(void)remove;
 -(void)transform:(b2Vec2)pos withAngle:(float)theta;
+-(void)moveTo:(b2Vec2)pos;
+-(void)setSensor:(BOOL)sensor;
 @end    

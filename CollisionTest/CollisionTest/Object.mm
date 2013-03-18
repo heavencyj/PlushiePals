@@ -9,6 +9,7 @@
 #import "Object.h"
 #import "GB2Contact.h"
 #import "Plushy.h"
+#import "Maze.h"
 
 @implementation Object
 
@@ -25,23 +26,22 @@
     return self;
 }
 
-+(Object*) randomObject
++(Object*) randomObject:(int)type
 {
     NSString *objName;
-    switch(rand() % 18)
+    switch(type)
     {
-//        case 0:
-//            objName = @"banana bomb";
-//            break;
+        case BANANA_BOMB:
+            objName = @"banana bomb";
+            break;
         
-//        case 1:
-//            objName = @"banana bunch";
-//            break;
-            
-//        case 2: case 3: case 5:
-//            objName = @"spider";
-//            break;
-        
+        case BANANA_BUNCH:
+            objName = @"banana bunch";
+            break;
+
+        case SPIDER:
+            objName = @"spider";
+            break;
         default:
             objName = @"banana single";
             break;
@@ -49,13 +49,24 @@
     return [[[self alloc] initWithObject:objName] autorelease];
 }
 
+-(void)changeType:(b2BodyType)type
+{
+    body->SetType(type);
+}
+
 -(void) beginContactWithPlushy:(GB2Contact*)contact
 {
-    if (!collideWPlushy) {
-        ((Plushy*)[contact otherObject]).bananaScore += 1;
-        [[self ccNode] removeFromParentAndCleanup:YES];
-        collideWPlushy = TRUE;
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData(); 
+    if ([fixtureId isEqualToString:@"bomb"]) {
+        // speed up the maze
+        Maze *maze = ((Plushy*)[contact otherObject]).gameLayer.maze;
+        [maze setLinearVelocity:b2Vec2(maze.linearVelocity.x-0.5, maze.linearVelocity.y)];
     }
+    else
+    {
+        ((Plushy*)[contact otherObject]).bananaScore += 1;
+    }
+    [[self ccNode] removeFromParentAndCleanup:YES];
 }
 
 -(void) beginContactWithMaze:(GB2Contact*)contact
