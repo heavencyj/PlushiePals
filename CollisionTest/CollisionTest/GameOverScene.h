@@ -19,5 +19,5 @@
 }
 
 +(CCScene *) scene;
-+(CCScene *) scene:(bool)didpass withLevel:(int)level;
++(CCScene *) scene:(bool)didpass withLevel:(int)level withScore:(int)score;
 @end
