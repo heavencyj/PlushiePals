@@ -57,7 +57,7 @@ CCLayer *settingLayer;
                              selectedImage:nil
                              target:self
                              selector:@selector(goToLevel)];
-    play.position = ccp(0,-winSize.width/4);
+    play.position = ccp(0,-winSize.height/2.8);
     
     
     sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
