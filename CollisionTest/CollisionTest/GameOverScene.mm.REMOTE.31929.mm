@@ -89,9 +89,10 @@ int levelScore;
                                                   fontSize:35];
       scoreLabel.color = ccc3(245, 148, 36);
       scoreLabel.position = ccp(-winSize.width*4/24,-winSize.height/50);
-      CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel]; 
-    CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
-    : [CCMenu menuWithItems: home, restart, nil];
+      CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
+      CCMenu *menu = (congrats && (curLevel != 5)) ? [CCMenu menuWithItems: home, restart, next, score, nil]
+      : [CCMenu menuWithItems: home, restart, nil];
+
     [menuLayer addChild: menu];
   }
   return self;

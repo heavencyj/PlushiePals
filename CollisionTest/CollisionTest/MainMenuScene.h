@@ -14,5 +14,6 @@
 }
 
 +(id) scene;
++(bool)showTips;
 
 @end

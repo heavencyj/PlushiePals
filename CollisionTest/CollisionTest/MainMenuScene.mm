@@ -46,7 +46,7 @@ CCLayer *settingLayer;
     //    CCSprite *centerImage = [CCSprite spriteWithFile:@"Plushy Run.png"];
     //    centerImage.position = ccp(winSize.width/2, winSize.height/2);
     //    [background addChild:centerImage];
-    mute=NO;
+    mute=YES;
     tipsOn=YES;
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
@@ -57,7 +57,7 @@ CCLayer *settingLayer;
                              selectedImage:nil
                              target:self
                              selector:@selector(goToLevel)];
-    play.position = ccp(0,-winSize.width/4);
+    play.position = ccp(0,-winSize.height/2.8);
     
     
     sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
@@ -130,12 +130,16 @@ CCLayer *settingLayer;
 -(void)turnTips
 {
   if (tipsOn) {
-    [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
-  }
-  else {
     [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
   }
+  else {
+    [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
+  }
   tipsOn = !tipsOn;
+}
+
++(bool)showTips{
+  return tipsOn;
 }
 
 - (void) dealloc

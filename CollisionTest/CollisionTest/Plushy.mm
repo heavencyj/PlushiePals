@@ -54,6 +54,18 @@
         [self setPhysicsPosition:initialPosition];
     }
     return self;
+    // monkey uses continuous collision detection
+    // to avoid sticking him into fast falling objects
+    [self setBullet:YES];
+    
+    // store the game layer
+    gameLayer = gl;
+    
+    // store number of bananas collected
+    bananaScore = 0;
+    tip = -1;
+  }
+  return self;
 }
 
 -(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
@@ -239,43 +251,46 @@
 
 -(void) reset
 {
-    jumping = false;
-    collide = false;
-    dead = false;
-    die = false;
-    running = true;
-    pass = false;
-    falling = false;
-    
+  jumping = false;
+  collide = false;
+  dead = false;
+  die = false;
+  running = true;
+  pass = false;
+  falling = false;
+  tip = -1;
 }
 
 -(void) beginContactWithMaze:(GB2Contact *)contact
 {
-    //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
-    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
-    if([fixtureId isEqualToString:@"feet"])
-    {
-        running = true;
-        jumping = false;
-        falling = false;
+  //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
+  NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+  NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+  if([fixtureId isEqualToString:@"feet"])
+  {
+    running = true;
+    jumping = false;
+    falling = false;    
+  }
+  
+  if([fixtureId isEqualToString:@"collision"])
+  {
+    if ([otherfixtureId hasPrefix:@"tip"]) {
+      tip = [[otherfixtureId substringFromIndex:3] intValue];
+      CCLOG(@"tip is %d", tip);
     }
-    
-    if([fixtureId isEqualToString:@"collision"])
-    {
-        running = false;
-        jumping = false;
-        collide = true;
-        animPhase = 1;
-        
-        // stop the canyon from moving forward further
-        Maze *maze = (Maze*)[contact otherObject];
-        [maze setLinearVelocity:b2Vec2(0, 0)];
+    else {
+      running = false;
+      jumping = false;
+      collide = true;
+      animPhase = 1;
     }
-    
-    if ([otherfixtureId isEqualToString:@"win"]) {
-        pass = true;
-    }
+  }
+  
+  if ([otherfixtureId isEqualToString:@"win"]) {
+    pass = true;
+  }
+  
 }
 
 -(bool)passLevel
@@ -301,4 +316,17 @@
     return falling;
 }
 
+-(bool)isColliding
+{
+  return collide;
+}
+
+-(int)showTip
+{
+  return tip;
+}
+
+-(void)setTip{
+  tip = -1;
+}
 @end

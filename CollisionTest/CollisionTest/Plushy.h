@@ -31,6 +31,7 @@
     
     NSMutableArray *hearts;
     b2Vec2 initialPosition;
+    int tip;
 }
 
 //@property (readonly) bool isDead;
@@ -53,4 +54,7 @@
 -(bool)isFalling;
 -(void)destroyLive;
 -(void)resetPlushyPosition;
+-(bool)isColliding;
+-(int)showTip;
+-(void)setTip;
 @end

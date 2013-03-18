@@ -77,6 +77,8 @@
 	8AAAEAIAAAAAAAA=
 	</data>
 	<key>Tags</key>
-	<array/>
+	<array>
+		<string>DEFAULT</string>
+	</array>
 </dict>
 </plist>
