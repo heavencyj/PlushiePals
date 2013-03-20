@@ -179,7 +179,25 @@ CCSprite *tutorial;
         [hud updateBananaScore:plushy.bananaScore];
         scoreDelay = 10;
     }
-    
+  
+  if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+    showingTip = [plushy showTip];
+    switch (showingTip) {
+      case 0: case 2:
+        [self pauseGame];
+        tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+        tutorial.position = ccp(winSize.width/3, winSize.height/2);
+        [self addChild:tutorial z:500];
+        [plushy setTip];
+        break;
+        
+      default:
+        break;
+    }
+    // show the tool tips and imgs
+    // when swife, resume
+  }
+  
 //    float swipeLength = ccpDistance([maze ccNode].position, [plushy ccNode].position);
     //NSLog(@"Maze to plushy distance is: %f", swipeLength);
 //    NSLog(@"Maze pos: (%f, %f)", [maze ccNode].position.x, [maze ccNode].position.y);
@@ -393,6 +411,11 @@ CCSprite *tutorial;
     }
     else
     {
+      if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
+        [self resumeGame];
+        [self removeChild:tutorial cleanup:YES];
+        showingTip = -1;
+      }
         //Check if the swipe is a left swipe and long enough
         if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
         {
@@ -546,6 +569,14 @@ CCSprite *tutorial;
     [[CCDirector sharedDirector] pause];
 //    pauseButton.visible = NO;
     hud.pauseButton.visible = NO;
+}
+
+
+-(void)resumeGame
+{
+  [self resumeSchedulerAndActions];
+  [[CCDirector sharedDirector] resume];
+  hud.pauseButton.visible = YES;
 }
 
 //-(void)addTapRecognizer

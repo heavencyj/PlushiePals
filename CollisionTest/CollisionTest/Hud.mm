@@ -11,6 +11,7 @@
 #import "GB2Sprite.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
+#import "LevelMenuScene.h"
 
 @implementation Hud
 
@@ -21,29 +22,30 @@
     if( (self=[super init]))
     {
         // Pause button
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
         pauseButton = [CCSprite spriteWithFile:@"Pause icon.png"];
-        pauseButton.position = ccp(30,30);
+        pauseButton.position = ccp(winSize.width - 30,winSize.height-30);
         pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
         [self addChild:pauseButton z:5000];
         [self addPauseLayer];
         
         // points
         CCSprite *bananaPoints = [CCSprite spriteWithFile:@"banana single.png"];
-        CCSprite *mult = [CCLabelTTF labelWithString:@"X"
-                                            fontName:@"GROBOLD"
-                                            fontSize:30];
-        bananaPoints.position = ccp(20, 290);
-        mult.position = ccp(55, 290);
-        mult.color=ccc3(245, 148, 36);
+//        CCSprite *mult = [CCLabelTTF labelWithString:@"X"
+//                                            fontName:@"GROBOLD"
+//                                            fontSize:30];
+        bananaPoints.position = ccp(230, 290);
+//        mult.position = ccp(55, 290);
+//        mult.color=ccc3(245, 148, 36);
         [self addChild:bananaPoints z:50];
-        [self addChild:mult z:50];
+//        [self addChild:mult z:50];
         
         scoreDelay = 10;
         scoreLabel = [CCLabelTTF labelWithString:@"0"
                                         fontName:@"GROBOLD"
-                                        fontSize:40];
+                                        fontSize:30];
         scoreLabel.color = ccc3(245, 148, 36);
-        scoreLabel.position = ccp(95,290);
+        scoreLabel.position = ccp(280,290);
         [self addChild:scoreLabel z:50];
     }
     
@@ -62,28 +64,35 @@
                               winSize.height/2-colorLayer.contentSize.height/2);
     
     CCMenuItemImage *resume = [CCMenuItemImage
-                               itemWithNormalImage:@"Play icon.png"
+                               itemWithNormalImage:@"Play icon large.png"
                                selectedImage:nil
                                target:self
                                selector:@selector(resumeGame)];
-    resume.position = ccp(-winSize.width/5,0);
+    resume.position = ccp(0, winSize.height/10);
     
     CCMenuItemImage *restart = [CCMenuItemImage
                                 itemWithNormalImage:@"Return icon.png"
                                 selectedImage:nil
                                 target:self
                                 selector:@selector(restartGame)];
-    restart.position = ccp(0,0);
+    restart.position = ccp(-winSize.width/5,-winSize.height/7);
     
     CCMenuItemImage *home = [CCMenuItemImage
                              itemWithNormalImage:@"Home icon.png"
                              selectedImage:nil
                              target:self
                              selector:@selector(goHome)];
-    home.position = ccp(winSize.width/5,0);
-    
-    
-    CCMenu *menu =  [CCMenu menuWithItems: resume, restart, home, nil];
+    home.position = ccp(0,-winSize.height/7);
+  
+  CCMenuItemImage *level = [CCMenuItemImage
+                              itemWithNormalImage:@"Levels icon.png"
+                              selectedImage:nil
+                              target:self
+                              selector:@selector(goLevels)];
+  level.position = ccp(winSize.width/5,-winSize.height/7);
+  
+  
+    CCMenu *menu =  [CCMenu menuWithItems: resume, restart, home, level, nil];
     [pauseLayer addChild:colorLayer];
     [pauseLayer addChild:menu];
     pauseLayer.visible = NO;
@@ -130,6 +139,13 @@
     [[CCDirector sharedDirector] resume];
     [[GB2Engine sharedInstance] deleteAllObjects];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+}
+
+-(void)goLevels
+{
+  [[CCDirector sharedDirector] resume];
+  [[GB2Engine sharedInstance] deleteAllObjects];
+  [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
 }
 
 @end

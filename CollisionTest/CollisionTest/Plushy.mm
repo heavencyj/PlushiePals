@@ -192,12 +192,12 @@
 
 -(void) loadLives
 {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    //CGSize winSize = [[CCDirector sharedDirector] winSize];
     int x_pos = 20;
     hearts = [[NSMutableArray alloc] initWithCapacity:3];
     for (int i=0; i<3; i++) {
         CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"]; //TODO: for now using the button
-        aHeart.position = ccp(winSize.width-x_pos, 290);
+        aHeart.position = ccp(x_pos, 290);
         x_pos += 30;
         [hearts addObject:aHeart];
         [gameLayer.hud addChild:aHeart z:100];

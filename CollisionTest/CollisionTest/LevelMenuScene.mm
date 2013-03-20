@@ -51,15 +51,15 @@ int gameMode;
                                selectedImage:nil
                                target:self
                                selector:@selector(goHome)];
-    home.position = ccp(-winSize.width/7,-winSize.height/3);
+    home.position = ccp(0,-winSize.height/3);
     
-    //quick tutorial tip
-    CCMenuItemImage *tip = [CCMenuItemImage
-                             itemWithNormalImage:@"Question icon.png"
-                             selectedImage:nil
-                             target:self
-                             selector:@selector(loadTutorial)];
-    tip.position = ccp(winSize.width/7,-winSize.height/3);
+//    //quick tutorial tip
+//    CCMenuItemImage *tip = [CCMenuItemImage
+//                             itemWithNormalImage:@"Question icon.png"
+//                             selectedImage:nil
+//                             target:self
+//                             selector:@selector(loadTutorial)];
+//    tip.position = ccp(winSize.width/7,-winSize.height/3);
     
     CCMenuItemImage *level1 = [CCMenuItemImage
                                     itemWithNormalImage:@"Level 1.png"
@@ -158,7 +158,7 @@ int gameMode;
     level12.tag = 12;
     
     
-    CCMenu *menu = [CCMenu menuWithItems: home, tip,
+    CCMenu *menu = [CCMenu menuWithItems: home,
                     level1, level2, level3, level4,
                     level5, level6, level7, level8,
                     level9, level10, level11, level12,nil];
@@ -181,7 +181,7 @@ int gameMode;
 
 -(void) loadTutorial
 {
-  [[CCDirector sharedDirector] replaceScene:[TutorialScene scene]];
+  //[[CCDirector sharedDirector] replaceScene:[TutorialScene scene]];
 }
 
 - (void) dealloc
