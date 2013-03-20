@@ -60,6 +60,7 @@
 		98176EB116FA1D33009BA7AB /* tutorial 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EAD16FA1D33009BA7AB /* tutorial 4.png */; };
 		98176EB316FA2116009BA7AB /* Levels icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB216FA2116009BA7AB /* Levels icon.png */; };
 		98176EB516FA21A9009BA7AB /* Play icon large.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB416FA21A9009BA7AB /* Play icon large.png */; };
+		98176EB916FA3C64009BA7AB /* tutorial 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB816FA3C64009BA7AB /* tutorial 0.png */; };
 		987EE25B16D566DE003B4F59 /* monkeys_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25916D566DE003B4F59 /* monkeys_default.plist */; };
 		987EE25C16D566DE003B4F59 /* monkeys_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25A16D566DE003B4F59 /* monkeys_default.png */; };
 		987EE25F16D60E7C003B4F59 /* map3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987EE25D16D60E7C003B4F59 /* map3.plist */; };
@@ -316,6 +317,7 @@
 		98176EAD16FA1D33009BA7AB /* tutorial 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 4.png"; sourceTree = "<group>"; };
 		98176EB216FA2116009BA7AB /* Levels icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Levels icon.png"; sourceTree = "<group>"; };
 		98176EB416FA21A9009BA7AB /* Play icon large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play icon large.png"; sourceTree = "<group>"; };
+		98176EB816FA3C64009BA7AB /* tutorial 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 0.png"; sourceTree = "<group>"; };
 		987EE25916D566DE003B4F59 /* monkeys_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys_default.plist; sourceTree = "<group>"; };
 		987EE25A16D566DE003B4F59 /* monkeys_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys_default.png; sourceTree = "<group>"; };
 		987EE25D16D60E7C003B4F59 /* map3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map3.plist; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 		98ECEFE316CE252E005BB243 /* tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				98176EB816FA3C64009BA7AB /* tutorial 0.png */,
 				98176EAB16FA1D33009BA7AB /* tutorial 2.png */,
 				98176EAC16FA1D33009BA7AB /* tutorial 3.png */,
 				98176EAD16FA1D33009BA7AB /* tutorial 4.png */,
@@ -1646,6 +1649,7 @@
 				98176EB116FA1D33009BA7AB /* tutorial 4.png in Resources */,
 				98176EB316FA2116009BA7AB /* Levels icon.png in Resources */,
 				98176EB516FA21A9009BA7AB /* Play icon large.png in Resources */,
+				98176EB916FA3C64009BA7AB /* tutorial 0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
