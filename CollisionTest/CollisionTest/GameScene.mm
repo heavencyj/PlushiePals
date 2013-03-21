@@ -33,6 +33,7 @@
 #define MAZE_LOW 30
 #define ARC4RANDOM_MAX 0x100000000
 #define ICON_DIST 60
+#define round(x) ((x) < LONG_MIN-0.5 || (x) > LONG_MAX+0.5)
 
 #pragma mark - GameScene
 
@@ -44,6 +45,7 @@ int level;
 bool pass;
 float angle;
 int showingTip;
+int rotating;
 CCSprite *tutorial;
 
 @synthesize maze;
@@ -65,6 +67,7 @@ CCSprite *tutorial;
 	[scene addChild:game z:10];
     [scene addChild:hud z:20];
     pass = false;
+    rotating = 0;
 	
 	// return the scene
 	return scene;
@@ -106,31 +109,31 @@ CCSprite *tutorial;
         // Set camera delay variable
         cameraDelay = -1;
         
-//        UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-//        swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-//        swipeLeftGestureRecognizer.delegate = self;
-//        [self addGestureRecognizer:swipeLeftGestureRecognizer];
-//        [swipeLeftGestureRecognizer release];
-//        
-//        UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-//        swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-//        swipeRightGestureRecognizer.delegate = self;
-//        [self addGestureRecognizer:swipeRightGestureRecognizer];
-//        [swipeRightGestureRecognizer release];
+        //        UISwipeGestureRecognizer *swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+        //        swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+        //        swipeLeftGestureRecognizer.delegate = self;
+        //        [self addGestureRecognizer:swipeLeftGestureRecognizer];
+        //        [swipeLeftGestureRecognizer release];
+        //
+        //        UISwipeGestureRecognizer *swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+        //        swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+        //        swipeRightGestureRecognizer.delegate = self;
+        //        [self addGestureRecognizer:swipeRightGestureRecognizer];
+        //        [swipeRightGestureRecognizer release];
         
-//        [self addTapRecognizer];
+        //        [self addTapRecognizer];
         
         self.isTouchEnabled = YES;
         
         // following the movements of the plushy
-//        CGRect rect = CGRectMake(-525, -559, 4000, 4548);
+        //        CGRect rect = CGRectMake(-525, -559, 4000, 4548);
         //[self runAction:[CCFollow actionWithTarget:[plushy ccNode] worldBoundary:rect]];
         [self runAction:[CCFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
         
-//        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
-
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        
         [self scheduleUpdate];
     }
     return self;
@@ -147,15 +150,16 @@ CCSprite *tutorial;
     [self nextObject:dt pattern:objectPattern];
     
     //Animate rotation
-//    if (ABS(dummyMaze.rotation - maze.ccNode.rotation) == ABS(angle) ) {
-//        CGPoint p1 = [plushy ccNode].position;
-//        p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-//        CGPoint oldp = [maze ccNode].position;
-//        CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
-//        [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-//        [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
-//        maze.ccNode.visible = YES;
-//    }
+    if (rotating < 0) {
+        CGPoint p1 = [plushy ccNode].position;
+        p1.y = (angle > 0) ? p1.y+10:p1.y-80;
+        CGPoint oldp = [maze ccNode].position;
+        CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
+        [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
+        [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
+        maze.ccNode.visible = YES;
+        rotating = 0;
+    }
     
     //Delay variables decrementing
     if (speedDelay > 0) {
@@ -175,32 +179,32 @@ CCSprite *tutorial;
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
         //score ++ ;
-//        [scoreLabel setString:[NSString stringWithFormat:@"%d",plushy.bananaScore]];
+        //        [scoreLabel setString:[NSString stringWithFormat:@"%d",plushy.bananaScore]];
         [hud updateBananaScore:plushy.bananaScore];
         scoreDelay = 10;
     }
-  
-  if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
-    showingTip = [plushy showTip];
-    switch (showingTip) {
-      case 0: case 2:
-        [self pauseGame];
-        tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-        tutorial.position = ccp(winSize.width/3, winSize.height/2);
-        [self addChild:tutorial z:500];
-        [plushy setTip];
-        break;
-        
-      default:
-        break;
+    
+    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+        showingTip = [plushy showTip];
+        switch (showingTip) {
+            case 0: case 2:
+                [self pauseGame];
+                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+                tutorial.position = ccp(winSize.width/3, winSize.height/2);
+                [self addChild:tutorial z:500];
+                [plushy setTip];
+                break;
+                
+            default:
+                break;
+        }
+        // show the tool tips and imgs
+        // when swife, resume
     }
-    // show the tool tips and imgs
-    // when swife, resume
-  }
-  
-//    float swipeLength = ccpDistance([maze ccNode].position, [plushy ccNode].position);
+    
+    //    float swipeLength = ccpDistance([maze ccNode].position, [plushy ccNode].position);
     //NSLog(@"Maze to plushy distance is: %f", swipeLength);
-//    NSLog(@"Maze pos: (%f, %f)", [maze ccNode].position.x, [maze ccNode].position.y);
+    //    NSLog(@"Maze pos: (%f, %f)", [maze ccNode].position.x, [maze ccNode].position.y);
     
     // Speed up after a while
     //  if (speedDelay == 0) {
@@ -224,12 +228,12 @@ CCSprite *tutorial;
         //NSLog(@"passsss!");
         CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
         star.position = ccp(winSize.width*0.9, winSize.height*0.8);
-//        [background addChild:star z:50];
+        //        [background addChild:star z:50];
         [self addChild:star z:50];
     }
     
     // Plushy dies if it falls out of the screen or hit the wall
-//    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
+    //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
     else if ([plushy isDead])
     {
         if (!plushy.lives) {
@@ -309,16 +313,16 @@ CCSprite *tutorial;
             }
             nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
         }
-//        if (p == 2) {
-//            // drop a banana peel for speed up
-//            Object *obj = [Object randomObject:BANANA_BOMB];
-////            [obj changeType:b2_dynamicBody];
-////            [obj setPhysicsPosition:b2Vec2FromCC([plushy ccNode].position.x+30, [[CCDirector sharedDirector] winSize].width)];
-//            [obj setPhysicsPosition:b2Vec2FromCC([plushy ccNode].position.x+100, [plushy ccNode].position.y-15)];
-//            [obj setLinearVelocity:b2Vec2(-5, 0)];
-//            [self addChild:[obj ccNode] z:100];
-//            nextObject = [self getRandomNumberBetweenMin:8 andMax:15];
-//        }
+        //        if (p == 2) {
+        //            // drop a banana peel for speed up
+        //            Object *obj = [Object randomObject:BANANA_BOMB];
+        ////            [obj changeType:b2_dynamicBody];
+        ////            [obj setPhysicsPosition:b2Vec2FromCC([plushy ccNode].position.x+30, [[CCDirector sharedDirector] winSize].width)];
+        //            [obj setPhysicsPosition:b2Vec2FromCC([plushy ccNode].position.x+100, [plushy ccNode].position.y-15)];
+        //            [obj setLinearVelocity:b2Vec2(-5, 0)];
+        //            [self addChild:[obj ccNode] z:100];
+        //            nextObject = [self getRandomNumberBetweenMin:8 andMax:15];
+        //        }
     }
 }
 
@@ -341,9 +345,11 @@ CCSprite *tutorial;
 // Add new method
 - (void)setInvisible:(CCNode *)node {
     node.visible = NO;
+    rotating = -1;
 }
 - (void)setNodeVisible:(CCNode *)node {
     node.visible = YES;
+    rotating = 1;
 }
 
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
@@ -395,7 +401,7 @@ CCSprite *tutorial;
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);
-//    NSLog(@"SwipeLength is: %f", swipeLength);
+    //    NSLog(@"SwipeLength is: %f", swipeLength);
     // tap gesture
     if (swipeLength < 10)
     {
@@ -411,11 +417,11 @@ CCSprite *tutorial;
     }
     else
     {
-      if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
-        [self resumeGame];
-        [self removeChild:tutorial cleanup:YES];
-        showingTip = -1;
-      }
+        if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
+            [self resumeGame];
+            [self removeChild:tutorial cleanup:YES];
+            showingTip = -1;
+        }
         //Check if the swipe is a left swipe and long enough
         if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
         {
@@ -426,10 +432,10 @@ CCSprite *tutorial;
             [plushy setFalling:true];
             
             // Rotate the map without animation
-            CGPoint oldp = [maze ccNode].position;
-            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(-90) of:oldp around:p1];
-            [maze transform:b2Vec2FromCGPoint(newp) withAngle:-90];
-//            [self animateRotation:angle];
+            //            CGPoint oldp = [maze ccNode].position;
+            //            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(-90) of:oldp around:p1];
+            //            [maze transform:b2Vec2FromCGPoint(newp) withAngle:-90];
+            [self animateRotation:angle];
         }
         else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
         {
@@ -439,67 +445,67 @@ CCSprite *tutorial;
             p1.y = p1.y+10;
             [plushy setFalling:true];
             // Rotate the map without animation
-            CGPoint oldp = [maze ccNode].position;
-            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(90) of:oldp around:p1];
-            [maze transform:b2Vec2FromCGPoint(newp) withAngle:90];
-//            [self animateRotation:angle];
+            //            CGPoint oldp = [maze ccNode].position;
+            //            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(90) of:oldp around:p1];
+            //            [maze transform:b2Vec2FromCGPoint(newp) withAngle:90];
+            [self animateRotation:angle];
         }
     }
 }
 
 -(void)animateRotation:(int)angle
 {
-  if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
-//    [self resumeGame];
-      [hud resumeGame];
-      [self removeChild:tutorial cleanup:YES];
-      showingTip = -1;
-  }
-  //cameraDelay = 10;
-  [plushy setFalling:true];
-  
-  
-//  // To to animate
-  CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
-  CCLOG(@"dummymaze is at %f and %f", dummyMaze.position.x, dummyMaze.position.y);
-  
-//  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;  
-  CGPoint p1 = [plushy ccNode].position;
-  CGPoint p2 = [maze ccNode].position;
-  float dy = (angle > 0) ? 15:-15;
-  CGPoint tempAnchorPoint;
-  int a = (int)dummyMaze.rotation/90 % 2;
-  switch (ABS(a)) {
-    case 0:
-      tempAnchorPoint = ccp(ABS(p1.x-p2.x)/dummyMaze.contentSize.width, 1-ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.height);
-      break;
-      
-    case 1:
-      tempAnchorPoint = ccp(ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.width, 1-ABS(p1.x-p2.x)/dummyMaze.contentSize.height);
-      break;
-      
-    default:
-      break;
-  }
-  dummyMaze.anchorPoint = tempAnchorPoint;
-  dummyMaze.position = ccp(160, 120);
-  CCLOG(@"dummymaze anchor is at %f and %f",dummyMaze.anchorPoint.x, dummyMaze.anchorPoint.y);
-  CCLOG(@"dummymaze pos is at %f and %f",dummyMaze.position.x, dummyMaze.position.y);
-  [maze ccNode].visible = NO;
-  [dummyMaze runAction:[CCSequence actions:
-                        [CCCallFuncN actionWithTarget:self selector:@selector(setNodeVisible:)],
-                        [CCRotateBy actionWithDuration:0.5 angle:angle],
-                        [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)], nil]];
-  [maze setLinearVelocity:b2Vec2(0,0)];
-  
-   // Rotate the map without animation
-//  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;  
-//  CGPoint p1 = [plushy ccNode].position;
-//  p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-//  CGPoint oldp = [maze ccNode].position;
-//  CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
-//  [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-  
+    if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
+        //    [self resumeGame];
+        [hud resumeGame];
+        [self removeChild:tutorial cleanup:YES];
+        showingTip = -1;
+    }
+    //cameraDelay = 10;
+    [plushy setFalling:true];
+    
+    
+    //  // To to animate
+    CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
+    CCLOG(@"dummymaze is at %f and %f", dummyMaze.position.x, dummyMaze.position.y);
+    
+    //  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
+    CGPoint p1 = [plushy ccNode].position;
+    CGPoint p2 = [maze ccNode].position;
+    float dy = (angle > 0) ? 15:-15;
+    CGPoint tempAnchorPoint;
+    int a = (int)dummyMaze.rotation/90 % 2;
+    switch (ABS(a)) {
+        case 0:
+            tempAnchorPoint = ccp(ABS(p1.x-p2.x)/dummyMaze.contentSize.width, 1-ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.height);
+            break;
+            
+        case 1:
+            tempAnchorPoint = ccp(ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.width, 1-ABS(p1.x-p2.x)/dummyMaze.contentSize.height);
+            break;
+            
+        default:
+            break;
+    }
+    dummyMaze.anchorPoint = tempAnchorPoint;
+    dummyMaze.position = ccp(160, 120);
+    CCLOG(@"dummymaze anchor is at %f and %f",dummyMaze.anchorPoint.x, dummyMaze.anchorPoint.y);
+    CCLOG(@"dummymaze pos is at %f and %f",dummyMaze.position.x, dummyMaze.position.y);
+    [maze ccNode].visible = NO;
+    [dummyMaze runAction:[CCSequence actions:
+                          [CCCallFuncN actionWithTarget:self selector:@selector(setNodeVisible:)],
+                          [CCRotateBy actionWithDuration:0.5 angle:angle],
+                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)], nil]];
+    [maze setLinearVelocity:b2Vec2(0,0)];
+    
+    // Rotate the map without animation
+    //  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
+    //  CGPoint p1 = [plushy ccNode].position;
+    //  p1.y = (angle > 0) ? p1.y+10:p1.y-80;
+    //  CGPoint oldp = [maze ccNode].position;
+    //  CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
+    //  [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
+    
 }
 
 //- (void)handleTapGestureRecognizer:(UITapGestureRecognizer*)aGestureRecognizer
@@ -521,7 +527,7 @@ CCSprite *tutorial;
 
 //- (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)aGestureRecognizer
 //{
-//    //TODO: testing only. 
+//    //TODO: testing only.
 ////    for (int i=0; i<10; i++) {
 ////        id action=[CCRotateBy actionWithDuration:1.5 angle:10];
 ////        [maze runAction:action];
@@ -532,7 +538,7 @@ CCSprite *tutorial;
 //    p1.y = (angle > 0) ? p1.y+10:p1.y-80;
 //    //cameraDelay = 10;
 //    [plushy setFalling:true];
-//    
+//
 //    // To to animate
 //    //  CGPoint p2 = [maze ccNode].position;
 //    //  p2.x = p1.x - p2.x;
@@ -547,7 +553,7 @@ CCSprite *tutorial;
 //    //  CCLOG(@"maze anchor is at %f and %f", [maze ccNode].anchorPoint.x, [maze ccNode].anchorPoint.y);
 //    //  [maze setAngularVelocity:(angle > 0) ? -1:1];
 //    //  [plushy setBodyType:b2_kinematicBody];
-//    
+//
 //    // Rotate the map without animation
 //    CGPoint oldp = [maze ccNode].position;
 //    CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
@@ -567,16 +573,16 @@ CCSprite *tutorial;
 {
     [self pauseSchedulerAndActions];
     [[CCDirector sharedDirector] pause];
-//    pauseButton.visible = NO;
+    //    pauseButton.visible = NO;
     hud.pauseButton.visible = NO;
 }
 
 
 -(void)resumeGame
 {
-  [self resumeSchedulerAndActions];
-  [[CCDirector sharedDirector] resume];
-  hud.pauseButton.visible = YES;
+    [self resumeSchedulerAndActions];
+    [[CCDirector sharedDirector] resume];
+    hud.pauseButton.visible = YES;
 }
 
 //-(void)addTapRecognizer
