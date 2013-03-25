@@ -110,34 +110,34 @@ int gameMode;
     level6.tag = 6;
     
     CCMenuItemImage *level7 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level lock.png"
+                               itemWithNormalImage:@"Level 7.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level7.position = ccp(winSize.width/9,ButtonOffset);
     level7.tag = 7;
     
     CCMenuItemImage *level8 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level lock.png"
+                               itemWithNormalImage:@"Level 8.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level8.position = ccp(winSize.width/3,ButtonOffset);
     level8.tag = 8;
     
     CCMenuItemImage *level9 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level lock.png"
+                               itemWithNormalImage:@"Level 9.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level9.position = ccp(-winSize.width/3,-winSize.height/4.5+ButtonOffset);
     level9.tag = 9;
     
     CCMenuItemImage *level10 = [CCMenuItemImage
-                               itemWithNormalImage:@"Level lock.png"
+                               itemWithNormalImage:@"Level 10.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level10.position = ccp(-winSize.width/9,-winSize.height/4.5+ButtonOffset);
     level10.tag = 10;
     
@@ -145,7 +145,7 @@ int gameMode;
                                itemWithNormalImage:@"Level lock.png"
                                selectedImage:nil
                                target:self
-                               selector:nil];
+                               selector:@selector(startGame:)];
     level11.position = ccp(winSize.width/9,-winSize.height/4.5+ButtonOffset);
     level11.tag = 11;
     

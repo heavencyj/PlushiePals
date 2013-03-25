@@ -269,6 +269,10 @@
       tip = [[otherfixtureId substringFromIndex:3] intValue];
       CCLOG(@"tip is %d", tip);
     }
+    else if ([otherfixtureId hasPrefix:@"start"]) {
+        CCLOG(@"hit start point");
+        // hide bridge
+    }
     else {
       running = false;
       jumping = false;
@@ -279,6 +283,7 @@
   
   if ([otherfixtureId isEqualToString:@"win"]) {
     pass = true;
+    //show bridge
   }
   
 }
