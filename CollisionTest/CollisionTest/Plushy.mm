@@ -15,6 +15,8 @@
 #define ANIM_SPEED3 3.0f
 #define ANIM_DELAY 0.25f
 #define JUMP_IMPULSE 10.0f
+const float kMaxDistanceFromCenter = 120.0f;
+const float kMinDistanceFromCenter = 100.0f;
 
 @implementation Plushy
 
@@ -52,10 +54,10 @@
         [self loadLives];
         
         // setting initial plushy position
-        initialPosition = b2Vec2FromCC(200, 180);
+        initialPosition = b2Vec2FromCC(150, 180);
         [self setPhysicsPosition:initialPosition];
     }
-  return self;
+    return self;
 }
 
 -(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
@@ -84,7 +86,7 @@
     
     // Continuously reset the monkey back to the same physics position each time.
     //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-    [self setPhysicsPosition:b2Vec2FromCC(200, [self ccNode].position.y)];
+    [self setPhysicsPosition:b2Vec2FromCC(150, [self ccNode].position.y)];
     
     // update animation phase
     if (running && !collide && !die) {
@@ -241,51 +243,46 @@
 
 -(void) reset
 {
-  jumping = false;
-  collide = false;
-  dead = false;
-  die = false;
-  running = true;
-  pass = false;
-  falling = false;
-  tip = -1;
+    jumping = false;
+    collide = false;
+    dead = false;
+    die = false;
+    running = true;
+    pass = false;
+    falling = false;
+    tip = -1;
 }
 
 -(void) beginContactWithMaze:(GB2Contact *)contact
 {
-  //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
-  NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-  NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
-  if([fixtureId isEqualToString:@"feet"])
-  {
-    running = true;
-    jumping = false;
-    falling = false;    
-  }
-  
-  if([fixtureId isEqualToString:@"collision"])
-  {
-    if ([otherfixtureId hasPrefix:@"tip"]) {
-      tip = [[otherfixtureId substringFromIndex:3] intValue];
-      CCLOG(@"tip is %d", tip);
+    //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+    if([fixtureId isEqualToString:@"feet"])
+    {
+        running = true;
+        jumping = false;
+        falling = false;
     }
-    else if ([otherfixtureId hasPrefix:@"start"]) {
-        CCLOG(@"hit start point");
-        // hide bridge
+    
+    if([fixtureId isEqualToString:@"collision"])
+    {
+        if ([otherfixtureId hasPrefix:@"tip"]) {
+            tip = [[otherfixtureId substringFromIndex:3] intValue];
+            CCLOG(@"tip is %d", tip);
+        }
+        else {
+            running = false;
+            jumping = false;
+            collide = true;
+            animPhase = 1;
+        }
     }
-    else {
-      running = false;
-      jumping = false;
-      collide = true;
-      animPhase = 1;
+    
+    if ([otherfixtureId isEqualToString:@"win"]) {
+        pass = true;
     }
-  }
-  
-  if ([otherfixtureId isEqualToString:@"win"]) {
-    pass = true;
-    //show bridge
-  }
-  
+    
 }
 
 -(bool)passLevel
@@ -306,6 +303,11 @@
     falling = fall;
 }
 
+-(void) setIsDead:(bool)d
+{
+    dead = d;
+}
+
 -(bool)isFalling
 {
     return falling;
@@ -313,15 +315,15 @@
 
 -(bool)isColliding
 {
-  return collide;
+    return collide;
 }
 
 -(int)showTip
 {
-  return tip;
+    return tip;
 }
 
 -(void)setTip{
-  tip = -1;
+    tip = -1;
 }
 @end

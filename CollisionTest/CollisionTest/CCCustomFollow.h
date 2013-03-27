@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Plushy.h"
 
-@interface CCCustomFollow : CCCustomFollow {
+@interface CCCustomFollow : CCFollow {
     
 }
 

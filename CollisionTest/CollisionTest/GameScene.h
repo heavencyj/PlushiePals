@@ -60,6 +60,7 @@
 
 @property (readonly) Maze *maze;
 @property (readonly) Hud *hud;
+@property (assign, readwrite) Plushy* plushy;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
