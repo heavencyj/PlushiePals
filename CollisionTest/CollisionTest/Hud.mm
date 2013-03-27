@@ -134,16 +134,14 @@
     [[CCDirector sharedDirector] resume];
 }
 
-- (void)goHome {
-    
-    [[CCDirector sharedDirector] resume];
+- (void)goHome
+{    
     [[GB2Engine sharedInstance] deleteAllObjects];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 
 -(void)goLevels
 {
-  [[CCDirector sharedDirector] resume];
   [[GB2Engine sharedInstance] deleteAllObjects];
   [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
 }

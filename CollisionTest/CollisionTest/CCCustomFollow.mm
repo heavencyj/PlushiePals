@@ -51,8 +51,6 @@
         }
         
         previousTargetPos = targetPos;
-        ////
-        //[target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
     }
 }
 

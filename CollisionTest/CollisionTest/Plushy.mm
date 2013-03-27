@@ -86,7 +86,7 @@ const float kMinDistanceFromCenter = 100.0f;
     
     // Continuously reset the monkey back to the same physics position each time.
     //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-    [self setPhysicsPosition:b2Vec2FromCC(150, [self ccNode].position.y)];
+    [self setPhysicsPosition:b2Vec2FromCC(130, [self ccNode].position.y)];
     
     // update animation phase
     if (running && !collide && !die) {
