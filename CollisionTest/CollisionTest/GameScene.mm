@@ -23,6 +23,7 @@
 #import "MainMenuScene.h"
 #import "Hud.h"
 #import "BackgroundScene.h"
+#import "PauseLayer.h"
 //#import "PauseLayer.h"
 // Interface for different objects
 #import "Plushy.h"
@@ -51,7 +52,6 @@ CCSprite *tutorial;
 
 @synthesize maze;
 @synthesize hud;
-@synthesize plushy;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -81,7 +81,6 @@ CCSprite *tutorial;
     //NSLog(@"level is %d", level);
     pass = false;
     return [self scene];
-    
 }
 
 // On "init" you need to initialize your instance
@@ -90,6 +89,10 @@ CCSprite *tutorial;
     hud = hudRef;
 	// always call "super" init
 	if( (self=[super init]) ) {
+        // Add pause layer
+        pauseLayer = [[PauseLayer alloc] initWithHud:self];
+        [self addChild:pauseLayer z:300];
+        
         // Adding object layer
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys_default.png" capacity:150];
         [self addChild:plushyLayer z:200];
@@ -114,8 +117,8 @@ CCSprite *tutorial;
         self.isTouchEnabled = YES;
         
         // following the movements of the plushy
-        //[self runAction:[CCFollow actionWithTarget:[plushy ccNode]]];
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
+        
         // drawing the world boundary for debugging
         //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
@@ -160,23 +163,23 @@ CCSprite *tutorial;
         scoreDelay = 10;
     }
     
-    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
-        showingTip = [plushy showTip];
-        switch (showingTip) {
-            case 0: case 2:
-                [hud pauseGame];
-                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-                tutorial.position = ccp(winSize.width/3, winSize.height/2);
-                [self addChild:tutorial z:500];
-                [plushy setTip];
-                break;
-                
-            default:
-                break;
-        }
-        // show the tool tips and imgs
-        // when swipe, resume
-    }
+//    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+//        showingTip = [plushy showTip];
+//        switch (showingTip) {
+//            case 0: case 2:
+//                [hud pauseGame];
+//                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+//                tutorial.position = ccp(winSize.width/3, winSize.height/2);
+//                [self addChild:tutorial z:500];
+//                [plushy setTip];
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//        // show the tool tips and imgs
+//        // when swipe, resume
+//    }
     
     //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
     
@@ -185,7 +188,7 @@ CCSprite *tutorial;
         [plushy reset];
         [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
     }
-    // Show the star when the level is passed
+    
     // TODO: add some animations here
     
     else if ([plushy passLevel]) {
@@ -204,14 +207,11 @@ CCSprite *tutorial;
     {
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
-            [plushy reset];
-            
             // if pass, show one screen. otherwise show the other, modify gameover scene
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
         }
         else
         {
-            // TOOD: Better handle with collisions
             // destroy 1 life, move maze back and reset plushy
             [plushy destroyLive];
             [maze setSensor:TRUE];
@@ -364,8 +364,8 @@ CCSprite *tutorial;
     {
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
-            [hud pauseGame];
-            [hud pauseLayerVisible:YES];
+            [pauseLayer pauseGame];
+            [pauseLayer pauseLayerVisible:YES];
         }
         // Otherwise its' for jumping and we prevent double jumping
         else if (![plushy isJumping]) {
@@ -375,7 +375,7 @@ CCSprite *tutorial;
     else
     {
         if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
-            [hud resumeGame];
+            [pauseLayer resumeGame];
             [self removeChild:tutorial cleanup:YES];
             showingTip = -1;
         }
@@ -410,11 +410,16 @@ CCSprite *tutorial;
     }
 }
 
+-(void)setPlushyIsDead:(BOOL)d
+{
+    [plushy setIsDead:d];
+}
+
 -(void)animateRotation:(int)angle
 {
     if ((showingTip == 0 || showingTip == 2) && [MainMenuScene showTips]) {
         //    [self resumeGame];
-        [hud resumeGame];
+        [pauseLayer resumeGame];
         [self removeChild:tutorial cleanup:YES];
         showingTip = -1;
     }
@@ -471,7 +476,6 @@ CCSprite *tutorial;
     float newy = sin(theta) * (pos.x-origin.x) + cos(theta) * (pos.y-origin.y) + origin.y;
     
     return CGPointMake(newx,newy);
-    
 }
 
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController

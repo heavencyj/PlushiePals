@@ -82,6 +82,7 @@
 		B64710721702C82300561E2C /* Plushy Paradise.png in Resources */ = {isa = PBXBuildFile; fileRef = B64710711702C82200561E2C /* Plushy Paradise.png */; };
 		B64710731702C8E500561E2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E7D0B516B4656E009C732A /* Default-568h@2x.png */; };
 		B647107B1702CD9F00561E2C /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = B647107A1702CD9F00561E2C /* canyon_levels.plist */; };
+		B647107E17037C6F00561E2C /* PauseLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B647107D17037C6D00561E2C /* PauseLayer.mm */; };
 		B6BDF6AC16F79302002496CB /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = B6BDF6AB16F79302002496CB /* heart.png */; };
 		B6BFD8F616F393A500D93FAB /* BackgroundScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */; };
 		B6BFD8F916F3979000D93FAB /* Hud.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F816F3979000D93FAB /* Hud.mm */; };
@@ -357,6 +358,8 @@
 		B647105B1702C73700561E2C /* canyon level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 1.plist"; sourceTree = "<group>"; };
 		B64710711702C82200561E2C /* Plushy Paradise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Paradise.png"; sourceTree = "<group>"; };
 		B647107A1702CD9F00561E2C /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
+		B647107C17037C6C00561E2C /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
+		B647107D17037C6D00561E2C /* PauseLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PauseLayer.mm; sourceTree = "<group>"; };
 		B6BDF6AB16F79302002496CB /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		B6BFD8F416F393A500D93FAB /* BackgroundScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundScene.h; sourceTree = "<group>"; };
 		B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundScene.mm; sourceTree = "<group>"; };
@@ -788,6 +791,8 @@
 				B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */,
 				B6BFD8F716F3979000D93FAB /* Hud.h */,
 				B6BFD8F816F3979000D93FAB /* Hud.mm */,
+				B647107C17037C6C00561E2C /* PauseLayer.h */,
+				B647107D17037C6D00561E2C /* PauseLayer.mm */,
 			);
 			name = ScenesAndLayers;
 			sourceTree = "<group>";
@@ -1851,6 +1856,7 @@
 				B6BFD8F916F3979000D93FAB /* Hud.mm in Sources */,
 				98176EFC17002266009BA7AB /* PlushyMenuScene.mm in Sources */,
 				B647103E1702C12600561E2C /* CCCustomFollow.mm in Sources */,
+				B647107E17037C6F00561E2C /* PauseLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

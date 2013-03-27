@@ -47,7 +47,7 @@
         }
         else if (distanceFromCenter > kMaxDistanceFromCenter)
         {
-            [((GameScene*)target_).plushy setIsDead:TRUE];
+            [((GameScene*)target_) setPlushyIsDead:TRUE];
         }
         
         previousTargetPos = targetPos;
