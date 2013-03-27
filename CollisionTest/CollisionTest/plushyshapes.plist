@@ -341,36 +341,6 @@
                     </dict>
 				</array>
 			</dict>
-			<key>bridge</key>
-			<dict>
-				<key>anchorpoint</key>
-                <string>{ 0.0000,0.0000 }</string>
-				<key>fixtures</key>
-				<array>
-
-					<dict>
-                        <key>density</key> <real>2</real>
-                        <key>friction</key> <real>0</real>
-                        <key>restitution</key> <real>0</real>
-                        <key>filter_categoryBits</key> <integer>512</integer>
-                        <key>filter_groupIndex</key> <integer>0</integer>
-                        <key>filter_maskBits</key> <integer>65535</integer>
-                        <key>isSensor</key> <false/>
-                        <key>id</key> <string>bridge</string>
-                        <key>fixture_type</key> <string>POLYGON</string>
-
-						<key>polygons</key>
-						<array>
-							<array>	
-								<string>{ -4.000,35.000 }</string>	
-								<string>{ 0.000,0.000 }</string>	
-								<string>{ 2008.000,1.000 }</string>	
-								<string>{ 2010.000,32.000 }</string>
-							</array>
-						</array>
-                    </dict>
-				</array>
-			</dict>
 		</dict>
 	</dict>
 </plist>
