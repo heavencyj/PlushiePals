@@ -165,20 +165,31 @@ TransitionObject *bridge;
         scoreDelay = 10;
     }
     
+<<<<<<< HEAD
+    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+        showingTip = [plushy showTip];
+        switch (showingTip) {
+            case 0: case 2:
+                [pauseLayer pauseGame];
+                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+=======
     if (plushy.tip != -1 && [MainMenuScene showTips]) {
         showingTip = plushy.tip;
         switch (showingTip) {
             case 1: case 2: case 3: case 4: case 5: case 6:
-                [pauseLayer pauseGame];
+                [self pauseGame];
                 tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
                 //tutorial = [CCSprite spriteWithFile:@"tutorial 1.png"];
+>>>>>>> b758a918cbaa3ea39e19cb97a7dc4f6a90d117c2
                 tutorial.position = ccp(winSize.width/3, winSize.height/2);
                 [self addChild:tutorial z:500];
                 [plushy setTip];
                 break;
                 
+<<<<<<< HEAD
+=======
             case 10: case 11:
-                [pauseLayer pauseGame];
+                [self pauseGame];
                 tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
                 tutorial.scale = 0.5;
                 tutorial.position = ccp(winSize.width/2, winSize.height/3);
@@ -186,11 +197,16 @@ TransitionObject *bridge;
                 [plushy setTip];
                 break;
                 
+>>>>>>> b758a918cbaa3ea39e19cb97a7dc4f6a90d117c2
             default:
                 break;
         }
         // show the tool tips and imgs
+<<<<<<< HEAD
+        // when swipe, resume
+=======
         // when swife, resume
+>>>>>>> b758a918cbaa3ea39e19cb97a7dc4f6a90d117c2
     }
     
     //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
@@ -245,6 +261,8 @@ TransitionObject *bridge;
     {
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
+            [plushy reset];
+            
             // if pass, show one screen. otherwise show the other, modify gameover scene
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
         }
@@ -414,7 +432,7 @@ TransitionObject *bridge;
         }
         if ((showingTip == 4 || showingTip == 5 || showingTip == 6)
             && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
+            [self resumeGame];
             [self removeChild:tutorial cleanup:YES];
             showingTip = -1;
         }
@@ -422,7 +440,7 @@ TransitionObject *bridge;
         else if (!plushy.jumping) {
             if ((showingTip == 3)
                 && [MainMenuScene showTips]) {
-                [pauseLayer resumeGame];
+                [self resumeGame];
                 [self removeChild:tutorial cleanup:YES];
                 showingTip = -1;
             }
@@ -433,7 +451,7 @@ TransitionObject *bridge;
     {
         if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
             && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
+            [self resumeGame];
             [self removeChild:tutorial cleanup:YES];
             showingTip = -1;
         }
@@ -477,7 +495,7 @@ TransitionObject *bridge;
 {
     if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
         && [MainMenuScene showTips]) {
-        [pauseLayer resumeGame];
+        [self resumeGame];
         [self removeChild:tutorial cleanup:YES];
         showingTip = -1;
     }
@@ -534,6 +552,22 @@ TransitionObject *bridge;
     float newy = sin(theta) * (pos.x-origin.x) + cos(theta) * (pos.y-origin.y) + origin.y;
     
     return CGPointMake(newx,newy);
+}
+
+-(void)pauseGame
+{
+    [self pauseSchedulerAndActions];
+    [[CCDirector sharedDirector] pause];
+    //    pauseButton.visible = NO;
+    hud.pauseButton.visible = NO;
+}
+
+
+-(void)resumeGame
+{
+    [self resumeSchedulerAndActions];
+    [[CCDirector sharedDirector] resume];
+    hud.pauseButton.visible = YES;
 }
 
 ///////////////////////// loading game objects

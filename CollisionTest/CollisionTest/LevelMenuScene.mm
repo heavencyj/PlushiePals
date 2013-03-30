@@ -172,7 +172,7 @@ int gameMode;
 { 
   CCMenuItemImage *button = (CCMenuItemImage *)sender;
   [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
-  //[[CCDirector sharedDirector] resume];
+  [[CCDirector sharedDirector] resume];
 }
 
 - (void)goHome {

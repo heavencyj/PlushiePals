@@ -108,13 +108,14 @@ TransitionObject *bridge;
         
         // add maze
         [self loadMaze];
-        
-        // load in game objects
-        [self loadBombFile];
+        speedDelay = 1000;
         
         // Initializing variables
         nextObject= 5.0f;  // first object to appear after 3s
         objDelay = 2.0f; // next object to appear after 1s
+        
+        // Set camera delay variable
+        cameraDelay = -1;
         
         self.isTouchEnabled = YES;
         
@@ -148,8 +149,8 @@ TransitionObject *bridge;
     //    }
     
     // Add objects to path
-//    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:0];
-//    [self nextObject:dt pattern:objectPattern];
+    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:2];
+    [self nextObject:dt pattern:objectPattern];
     
     //Delay variables decrementing
     if (speedDelay > 0) {
@@ -169,7 +170,7 @@ TransitionObject *bridge;
         showingTip = plushy.tip;
         switch (showingTip) {
             case 1: case 2: case 3: case 4: case 5: case 6:
-                [pauseLayer pauseGame];
+                [self pauseGame];
                 tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
                 //tutorial = [CCSprite spriteWithFile:@"tutorial 1.png"];
                 tutorial.position = ccp(winSize.width/3, winSize.height/2);
@@ -178,7 +179,7 @@ TransitionObject *bridge;
                 break;
                 
             case 10: case 11:
-                [pauseLayer pauseGame];
+                [self pauseGame];
                 tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
                 tutorial.scale = 0.5;
                 tutorial.position = ccp(winSize.width/2, winSize.height/3);
@@ -245,6 +246,8 @@ TransitionObject *bridge;
     {
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
+            [plushy reset];
+            
             // if pass, show one screen. otherwise show the other, modify gameover scene
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
         }
@@ -345,15 +348,15 @@ TransitionObject *bridge;
         }
         if (p == 0) {
             // drop a banana peel for speed up
-//            Object *obj1 = [Object randomObject:CACTUS_BOMB];
-//            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
-//            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
-//            [obj1 setLinearVelocity:b2Vec2(0, -40)];
-//            [obj1 ccNode].visible = NO;
-//            //[obj1 setSensor:YES];
-//            //TODO: make the body sensor body temporarily
-//            [self addChild:[obj1 ccNode] z:30];
-//            nextObject = [self getRandomNumberBetweenMin:5 andMax:8];
+            Object *obj1 = [Object randomObject:CACTUS_BOMB];
+            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
+            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
+            [obj1 setLinearVelocity:b2Vec2(0, -40)];
+            [obj1 ccNode].visible = NO;
+            [obj1 setSensor:YES];
+            //TODO: make the body sensor body temporarily
+            [self addChild:[obj1 ccNode] z:30];
+            nextObject = [self getRandomNumberBetweenMin:8 andMax:15];
         }
     }
 }
@@ -414,7 +417,7 @@ TransitionObject *bridge;
         }
         if ((showingTip == 4 || showingTip == 5 || showingTip == 6)
             && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
+            [self resumeGame];
             [self removeChild:tutorial cleanup:YES];
             showingTip = -1;
         }
@@ -422,7 +425,7 @@ TransitionObject *bridge;
         else if (!plushy.jumping) {
             if ((showingTip == 3)
                 && [MainMenuScene showTips]) {
-                [pauseLayer resumeGame];
+                [self resumeGame];
                 [self removeChild:tutorial cleanup:YES];
                 showingTip = -1;
             }
@@ -433,7 +436,7 @@ TransitionObject *bridge;
     {
         if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
             && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
+            [self resumeGame];
             [self removeChild:tutorial cleanup:YES];
             showingTip = -1;
         }
@@ -477,7 +480,7 @@ TransitionObject *bridge;
 {
     if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
         && [MainMenuScene showTips]) {
-        [pauseLayer resumeGame];
+        [self resumeGame];
         [self removeChild:tutorial cleanup:YES];
         showingTip = -1;
     }
@@ -536,39 +539,20 @@ TransitionObject *bridge;
     return CGPointMake(newx,newy);
 }
 
-///////////////////////// loading game objects
--(void)loadBombFile
+-(void)pauseGame
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"GameObjects" ofType:@"plist" inDirectory:@""];
-	
-	NSAssert(nil!=path, @"Invalid GameObjects file.");
-	
-	NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
-	
-	[self processLevelFileFromDictionary:dictionary];
+    [self pauseSchedulerAndActions];
+    [[CCDirector sharedDirector] pause];
+    //    pauseButton.visible = NO;
+    hud.pauseButton.visible = NO;
 }
 
--(void) processLevelFileFromDictionary:(NSDictionary*)dictionary
+
+-(void)resumeGame
 {
-    if (nil==dictionary) {
-        return;
-    }
-    
-    NSDictionary* gameObjs = [dictionary objectForKey:@"cactus bomb 1"];
-    NSNumber* pos_x = [gameObjs objectForKey:@"x"];
-    NSNumber* pos_y = [gameObjs objectForKey:@"y"];
-    CGPoint position = ccp([pos_x intValue],[pos_y intValue]);
-    
-    Object *cactus = [Object randomObject:CACTUS_BOMB];
-    [self addChild:[cactus ccNode] z:30];
-    [cactus setPhysicsPosition:b2Vec2FromCC(position.x, position.y)];
-    //[cactus getBody]->SetGravityScale(0);
-    
-    //Create a distance joint between the body and the maze
-//    b2DistanceJointDef distanceJointDef;
-//    distanceJointDef.Initialize([maze getBody], [cactus getBody], [maze getBody]->GetWorldCenter(), [cactus getBody]->GetWorldCenter());
-//    
-//    [GB2Engine sharedInstance].world->CreateJoint(&distanceJointDef);
+    [self resumeSchedulerAndActions];
+    [[CCDirector sharedDirector] resume];
+    hud.pauseButton.visible = YES;
 }
 
 @end
