@@ -141,6 +141,7 @@ int gameMode;
     level10.position = ccp(-winSize.width/9,-winSize.height/4.5+ButtonOffset);
     level10.tag = 10;
     
+    // Hidden secret level
     CCMenuItemImage *level11 = [CCMenuItemImage
                                itemWithNormalImage:@"Level lock.png"
                                selectedImage:nil

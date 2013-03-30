@@ -26,6 +26,7 @@
 // Interface for different objects
 #import "Plushy.h"
 #import "Object.h"
+#import "TransitionObject.h"
 
 // Macros for constants
 #define PTM_RATIO 32
@@ -46,7 +47,9 @@ bool pass;
 float angle;
 int showingTip;
 int rotating;
+bool showBridge;
 CCSprite *tutorial;
+TransitionObject *bridge;
 
 @synthesize maze;
 @synthesize hud;
@@ -160,7 +163,7 @@ CCSprite *tutorial;
         cameraDelay --;
     }
     
-    if ([plushy isFalling] && cameraDelay <=0) {
+    if (plushy.falling && cameraDelay <=0) {
         cameraDelay = 10;
     }
     
@@ -172,8 +175,8 @@ CCSprite *tutorial;
         scoreDelay = 10;
     }
     
-    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
-        showingTip = [plushy showTip];
+    if (plushy.tip != -1 && [MainMenuScene showTips]) {
+        showingTip = plushy.tip;
         switch (showingTip) {
             case 1: case 2: case 3: case 4: case 5: case 6:
                 [self pauseGame];
@@ -213,26 +216,44 @@ CCSprite *tutorial;
     //    speedDelay = 1000;
     //  }
     //
+    
+    if (plushy.showmap) {
+        [self loadMaze:2];
+        plushy.showmap = NO;
+    }
+    
     if (pass) {
-        [[GB2Engine sharedInstance] deleteAllObjects];
-        [plushy reset];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
+        if (level == 11) {
+            //[self loadMaze];
+            bridge = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
+            bridge.ccNode.position = plushy.ccNode.position;
+            [bridge setLinearVelocity:[maze linearVelocity]];
+            [self addChild:bridge.ccNode];
+            pass = false;
+            [plushy reset];
+            
+        }
+        else {
+            [[GB2Engine sharedInstance] deleteAllObjects];
+            [plushy reset];
+            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
+        }
     }
     // Show the star when the level is passed
     // TODO: add some animations here
-    else if ([plushy passLevel]) {
+    else if (plushy.pass) {
         pass = true;
         // drop something on the screen to show that you passed the level
         //NSLog(@"passsss!");
-        CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
-        star.position = ccp(winSize.width*0.9, winSize.height*0.8);
-        //        [background addChild:star z:50];
-        [self addChild:star z:50];
+//        CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
+//        star.position = ccp(winSize.width*0.9, winSize.height*0.8);
+//        //        [background addChild:star z:50];
+//        [self addChild:star z:50];
     }
     
     // Plushy dies if it falls out of the screen or hit the wall
     //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
-    else if ([plushy isDead])
+    else if (plushy.dead)
     {
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
@@ -364,15 +385,22 @@ CCSprite *tutorial;
 
 -(void) loadMaze
 {
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist",level]];
-    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
+    [self loadMaze:level];
+}
+
+-(void) loadMaze:(int)ofLevel {
+    if (ofLevel == 11) {
+        ofLevel = 1;
+    }
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", ofLevel]];
+    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     [maze setPhysicsPosition:b2Vec2FromCC(200,120)];
     mazeSpeed = -5;
     [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
-//    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
-//    dummyMaze.visible = NO;
-//    [self addChild:dummyMaze z:40];
+    //    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
+    //    dummyMaze.visible = NO;
+    //    [self addChild:dummyMaze z:40];
     [self addChild:[maze ccNode] z:40];
 }
 
@@ -415,7 +443,7 @@ CCSprite *tutorial;
             showingTip = -1;
         }
         // Otherwise its' for jumping and we prevent double jumping
-        else if (![plushy isJumping]) {
+        else if (!plushy.jumping) {
             if ((showingTip == 3)
                 && [MainMenuScene showTips]) {
                 [self resumeGame];

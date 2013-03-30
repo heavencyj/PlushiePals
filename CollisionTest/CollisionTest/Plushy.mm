@@ -21,6 +21,16 @@
 @synthesize bananaScore;
 @synthesize lives;
 @synthesize gameLayer;
+@synthesize jumping;
+@synthesize running;
+@synthesize collide;
+@synthesize pass;
+@synthesize dead;
+@synthesize die;
+@synthesize falling;
+@synthesize showbridge;
+@synthesize tip;
+@synthesize showmap;
 
 //TODO: which initialization is being used here?
 -(id) initWithGameLayer:(GameScene*)gl
@@ -55,7 +65,7 @@
         initialPosition = b2Vec2FromCC(200, 180);
         [self setPhysicsPosition:initialPosition];
     }
-  return self;
+    return self;
 }
 
 -(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
@@ -214,11 +224,6 @@
     }
 }
 
--(bool)isDead
-{
-    return dead;
-}
-
 -(void) jump
 {
     float impulseFactor = 1;
@@ -234,64 +239,77 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.caf"];
 }
 
--(bool)isJumping
-{
-    return jumping;
-}
-
 -(void) reset
 {
-  jumping = false;
-  collide = false;
-  dead = false;
-  die = false;
-  running = true;
-  pass = false;
-  falling = false;
-  tip = -1;
+    jumping = false;
+    collide = false;
+    dead = false;
+    die = false;
+    running = true;
+    pass = false;
+    falling = false;
+    tip = -1;
 }
 
 -(void) beginContactWithMaze:(GB2Contact *)contact
 {
-  //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
-  NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-  NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
-  if([fixtureId isEqualToString:@"feet"])
-  {
-    running = true;
-    jumping = false;
-    falling = false;    
-  }
-  
-  if([fixtureId isEqualToString:@"collision"])
-  {
-    if ([otherfixtureId hasPrefix:@"tip"]) {
-      tip = [[otherfixtureId substringFromIndex:3] intValue];
-      CCLOG(@"tip is %d", tip);
+    //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+    if([fixtureId isEqualToString:@"feet"])
+    {
+        running = true;
+        jumping = false;
+        falling = false;
     }
-    else if ([otherfixtureId hasPrefix:@"start"]) {
-        CCLOG(@"hit start point");
-        // hide bridge
+    
+    if([fixtureId isEqualToString:@"collision"])
+    {
+        if ([otherfixtureId hasPrefix:@"tip"]) {
+            tip = [[otherfixtureId substringFromIndex:3] intValue];
+            CCLOG(@"tip is %d", tip);
+        }
+        else if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+            
+            CCLOG(@"show new map");
+            showmap = true;
+        }
+        
+        else if ([otherfixtureId isEqualToString:@"start"]) {
+            CCLOG(@"hit start point");
+            // hide bridge
+            //showbridge = true;
+        }
+        else if ([otherfixtureId isEqualToString:@"win"] && !showbridge) {
+            pass = true;
+            //show bridge
+            showbridge = true;
+        }
+        else {
+            running = false;
+            jumping = false;
+            collide = true;
+            animPhase = 1;
+        }
     }
-    else {
-      running = false;
-      jumping = false;
-      collide = true;
-      animPhase = 1;
-    }
-  }
-  
-  if ([otherfixtureId isEqualToString:@"win"]) {
-    pass = true;
-    //show bridge
-  }
-  
+    
 }
 
--(bool)passLevel
-{
-    return pass;
+-(void) beginContactWithTransitionObject:(GB2Contact *)contact {
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+    
+    if([fixtureId isEqualToString:@"collision"])
+    {
+        if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+            
+            CCLOG(@"show new map");
+            showmap = true;
+        }
+    }
+
 }
+
 
 -(bool)isRunning {
     return running && !collide && !die && !falling;
@@ -302,26 +320,9 @@
     body->SetTransform(pos, body->GetAngle());
 }
 
--(void)setFalling:(bool)fall{
-    falling = fall;
-}
-
--(bool)isFalling
-{
-    return falling;
-}
-
--(bool)isColliding
-{
-  return collide;
-}
-
--(int)showTip
-{
-  return tip;
-}
-
 -(void)setTip{
-  tip = -1;
+    tip = -1;
 }
+
+
 @end
