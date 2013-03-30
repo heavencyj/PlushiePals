@@ -105,14 +105,13 @@ CCSprite *tutorial;
         
         // add maze
         [self loadMaze];
-        speedDelay = 1000;
+        
+        // load in game objects
+        [self loadBombFile];
         
         // Initializing variables
         nextObject= 5.0f;  // first object to appear after 3s
         objDelay = 2.0f; // next object to appear after 1s
-        
-        // Set camera delay variable
-        cameraDelay = -1;
         
         self.isTouchEnabled = YES;
         
@@ -120,7 +119,7 @@ CCSprite *tutorial;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         [self scheduleUpdate];
     }
@@ -146,8 +145,8 @@ CCSprite *tutorial;
     //    }
     
     // Add objects to path
-    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:2];
-    [self nextObject:dt pattern:objectPattern];
+//    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:0];
+//    [self nextObject:dt pattern:objectPattern];
     
     //Delay variables decrementing
     if (speedDelay > 0) {
@@ -163,23 +162,23 @@ CCSprite *tutorial;
         scoreDelay = 10;
     }
     
-//    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
-//        showingTip = [plushy showTip];
-//        switch (showingTip) {
-//            case 0: case 2:
-//                [hud pauseGame];
-//                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-//                tutorial.position = ccp(winSize.width/3, winSize.height/2);
-//                [self addChild:tutorial z:500];
-//                [plushy setTip];
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//        // show the tool tips and imgs
-//        // when swipe, resume
-//    }
+    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
+        showingTip = [plushy showTip];
+        switch (showingTip) {
+            case 0: case 2:
+                [pauseLayer pauseGame];
+                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+                tutorial.position = ccp(winSize.width/3, winSize.height/2);
+                [self addChild:tutorial z:500];
+                [plushy setTip];
+                break;
+                
+            default:
+                break;
+        }
+        // show the tool tips and imgs
+        // when swipe, resume
+    }
     
     //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
     
@@ -307,15 +306,15 @@ CCSprite *tutorial;
         }
         if (p == 0) {
             // drop a banana peel for speed up
-            Object *obj1 = [Object randomObject:CACTUS_BOMB];
-            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
-            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
-            [obj1 setLinearVelocity:b2Vec2(0, -40)];
-            [obj1 ccNode].visible = NO;
-            [obj1 setSensor:YES];
-            //TODO: make the body sensor body temporarily
-            [self addChild:[obj1 ccNode] z:30];
-            nextObject = [self getRandomNumberBetweenMin:8 andMax:15];
+//            Object *obj1 = [Object randomObject:CACTUS_BOMB];
+//            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
+//            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
+//            [obj1 setLinearVelocity:b2Vec2(0, -40)];
+//            [obj1 ccNode].visible = NO;
+//            //[obj1 setSensor:YES];
+//            //TODO: make the body sensor body temporarily
+//            [self addChild:[obj1 ccNode] z:30];
+//            nextObject = [self getRandomNumberBetweenMin:5 andMax:8];
         }
     }
 }
@@ -488,6 +487,41 @@ CCSprite *tutorial;
 {
     //	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
     //	[[app navController] dismissModalViewControllerAnimated:YES];
+}
+
+///////////////////////// loading game objects
+-(void)loadBombFile
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"GameObjects" ofType:@"plist" inDirectory:@""];
+	
+	NSAssert(nil!=path, @"Invalid GameObjects file.");
+	
+	NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+	
+	[self processLevelFileFromDictionary:dictionary];
+}
+
+-(void) processLevelFileFromDictionary:(NSDictionary*)dictionary
+{
+    if (nil==dictionary) {
+        return;
+    }
+    
+    NSDictionary* gameObjs = [dictionary objectForKey:@"cactus bomb 1"];
+    NSNumber* pos_x = [gameObjs objectForKey:@"x"];
+    NSNumber* pos_y = [gameObjs objectForKey:@"y"];
+    CGPoint position = ccp([pos_x intValue],[pos_y intValue]);
+    
+    Object *cactus = [Object randomObject:CACTUS_BOMB];
+    [self addChild:[cactus ccNode] z:30];
+    [cactus setPhysicsPosition:b2Vec2FromCC(position.x, position.y)];
+    //[cactus getBody]->SetGravityScale(0);
+    
+    //Create a distance joint between the body and the maze
+//    b2DistanceJointDef distanceJointDef;
+//    distanceJointDef.Initialize([maze getBody], [cactus getBody], [maze getBody]->GetWorldCenter(), [cactus getBody]->GetWorldCenter());
+//    
+//    [GB2Engine sharedInstance].world->CreateJoint(&distanceJointDef);
 }
 
 @end

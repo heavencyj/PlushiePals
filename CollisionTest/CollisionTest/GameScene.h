@@ -27,7 +27,6 @@
 {
     
     //Box2D
-    b2World *_world;
     GLESDebugDraw *_debugDraw;
     MyContactListener *_contactListener;
     CCAction *_walking;

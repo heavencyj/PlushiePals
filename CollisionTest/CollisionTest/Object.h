@@ -45,5 +45,5 @@
 
 -(void)changeType:(b2BodyType)type;
 -(void)setSensor:(BOOL)isSensor;
-
+-(b2Body*)getBody;
 @end

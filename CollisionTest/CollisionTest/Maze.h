@@ -39,4 +39,5 @@
 -(void)transform:(b2Vec2)pos withAngle:(float)theta;
 -(void)moveTo:(b2Vec2)pos;
 -(void)setSensor:(BOOL)sensor;
+-(b2Body*)getBody;
 @end    

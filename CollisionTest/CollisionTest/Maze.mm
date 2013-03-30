@@ -67,4 +67,8 @@
     fixture->SetSensor(sensor);
 }
 
+-(b2Body*)getBody
+{
+    return body;
+}
 @end

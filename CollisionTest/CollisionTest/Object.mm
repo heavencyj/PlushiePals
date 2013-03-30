@@ -76,12 +76,12 @@
 {
     [super updateCCFromPhysics];
     
-    if (bodyTypeChange) {
-        body->SetType(b2_kinematicBody);
-        //[self setBodyType:b2_kinematicBody];
-        [self setLinearVelocity:b2Vec2(-5, 0)];
-        bodyTypeChange = FALSE;
-    }
+//    if (bodyTypeChange) {
+//        body->SetType(b2_kinematicBody);
+//        //[self setBodyType:b2_kinematicBody];
+//        [self setLinearVelocity:b2Vec2(-5, 0)];
+//        bodyTypeChange = FALSE;
+//    }
     
     // update animation phase
     if (animateBomb) {
@@ -139,10 +139,15 @@
     //[[self ccNode] removeFromParentAndCleanup:YES];
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     if ([fixtureId isEqualToString:@"cactus bomb"]) {
-        self.ccNode.visible = YES;
-        bodyTypeChange = TRUE;
+//        self.ccNode.visible = YES;
+//        bodyTypeChange = TRUE;
         //[self setSensor:NO];
     }
+}
+
+-(b2Body*)getBody
+{
+    return body;
 }
 
 @end
