@@ -23,6 +23,16 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize bananaScore;
 @synthesize lives;
 @synthesize gameLayer;
+@synthesize jumping;
+@synthesize running;
+@synthesize collide;
+@synthesize pass;
+@synthesize dead;
+@synthesize die;
+@synthesize falling;
+@synthesize showbridge;
+@synthesize tip;
+@synthesize showmap;
 
 //TODO: which initialization is being used here?
 -(id) initWithGameLayer:(GameScene*)gl
@@ -216,11 +226,6 @@ const float kMinDistanceFromCenter = 100.0f;
     }
 }
 
--(bool)isDead
-{
-    return dead;
-}
-
 -(void) jump
 {
     float impulseFactor = 1;
@@ -234,11 +239,6 @@ const float kMinDistanceFromCenter = 100.0f;
     
     // play the monkey jump sound
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.caf"];
-}
-
--(bool)isJumping
-{
-    return jumping;
 }
 
 -(void) reset
@@ -271,6 +271,22 @@ const float kMinDistanceFromCenter = 100.0f;
             tip = [[otherfixtureId substringFromIndex:3] intValue];
             CCLOG(@"tip is %d", tip);
         }
+        else if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+            
+            CCLOG(@"show new map");
+            showmap = true;
+        }
+        
+        else if ([otherfixtureId isEqualToString:@"start"]) {
+            CCLOG(@"hit start point");
+            // hide bridge
+            //showbridge = true;
+        }
+        else if ([otherfixtureId isEqualToString:@"win"] && !showbridge) {
+            pass = true;
+            //show bridge
+            showbridge = true;
+        }
         else {
             running = false;
             jumping = false;
@@ -279,16 +295,23 @@ const float kMinDistanceFromCenter = 100.0f;
         }
     }
     
-    if ([otherfixtureId isEqualToString:@"win"]) {
-        pass = true;
-    }
-    
 }
 
--(bool)passLevel
-{
-    return pass;
+-(void) beginContactWithTransitionObject:(GB2Contact *)contact {
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+    
+    if([fixtureId isEqualToString:@"collision"])
+    {
+        if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+            
+            CCLOG(@"show new map");
+            showmap = true;
+        }
+    }
+
 }
+
 
 -(bool)isRunning {
     return running && !collide && !die && !falling;
@@ -299,31 +322,9 @@ const float kMinDistanceFromCenter = 100.0f;
     body->SetTransform(pos, body->GetAngle());
 }
 
--(void)setFalling:(bool)fall{
-    falling = fall;
-}
-
--(void) setIsDead:(bool)d
-{
-    dead = d;
-}
-
--(bool)isFalling
-{
-    return falling;
-}
-
--(bool)isColliding
-{
-    return collide;
-}
-
--(int)showTip
-{
-    return tip;
-}
-
 -(void)setTip{
     tip = -1;
 }
+
+
 @end

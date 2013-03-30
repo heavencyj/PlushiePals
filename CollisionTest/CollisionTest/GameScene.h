@@ -23,7 +23,7 @@
 @class PauseLayer;
 
 // Game Scene
-@interface GameScene : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface GameScene : CCLayer 
 {
     
     //Box2D
