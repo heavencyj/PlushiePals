@@ -174,6 +174,11 @@ enum {
 	float rightBoundary;
 	float topBoundary;
 	float bottomBoundary;
+    
+    //TODO: Lan 
+    CGPoint currentPos;
+    CGPoint previousTargetPos;
+    BOOL isCurrentPosValid;
 }
 
 /** alter behavior - turn on/off boundary */

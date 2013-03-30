@@ -20,6 +20,7 @@
 @class Hud;
 @class Plushy;
 @class Object;
+@class PauseLayer;
 
 // Game Scene
 @interface GameScene : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
@@ -33,6 +34,7 @@
     
     Maze *maze;
     Hud *hud;
+    PauseLayer *pauseLayer;
     
     // Plushy variables
     Plushy *plushy;
@@ -65,4 +67,5 @@
 +(CCScene *) scene;
 // returns the scene with a specific level
 +(CCScene *) scene:(int)withLevel;
+-(void)setPlushyIsDead:(BOOL)d;
 @end

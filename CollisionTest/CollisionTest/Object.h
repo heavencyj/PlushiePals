@@ -13,10 +13,17 @@
 #define BANANA_BOMB 0
 #define BANANA_BUNCH 1
 #define SPIDER 2
+#define CACTUS_BOMB 3
 
 @interface Object : GB2Sprite {
     
     NSString *objName; //!< type of the object
+    
+    BOOL bodyTypeChange;
+    BOOL contacted;
+    BOOL animateBomb;
+    int animPhase;        //!< the current animation phase
+    ccTime animDelay;     //!< delay until the next animation phase is
 }
 
 @property (retain, nonatomic) NSString *objName;
@@ -37,5 +44,6 @@
 +(Object*) randomObject:(int)type;
 
 -(void)changeType:(b2BodyType)type;
+-(void)setSensor:(BOOL)isSensor;
 
 @end

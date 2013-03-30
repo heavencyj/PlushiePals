@@ -14,7 +14,6 @@
 @interface Hud : CCLayer {
     CCLabelTTF* scoreLabel;
     
-    CCLayer *pauseLayer;
     CGRect pauseButtonRect;
     CCSprite *pauseButton;
     
@@ -26,6 +25,4 @@
 @property (readonly) CGRect pauseButtonRect;
 -(id) init;
 -(void)updateBananaScore:(int)score;
--(void)pauseLayerVisible:(BOOL)visibility;
--(void)resumeGame;
 @end

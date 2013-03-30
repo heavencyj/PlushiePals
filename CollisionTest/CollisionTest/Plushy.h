@@ -46,7 +46,8 @@
  */
 -(id) initWithGameLayer:(GameScene*)gl;
 -(void) jump;
-//-(bool) isDead;
+-(bool) isDead;
+-(void) setIsDead:(bool)d;
 -(void) reset;
 //-(bool)isJumping;
 -(bool)isRunning;

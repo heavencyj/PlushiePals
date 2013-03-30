@@ -36,6 +36,14 @@
     return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
+-(void) storeFixturePoints
+{
+    for (b2Fixture* f=body->GetFixtureList(); f; f=f->GetNext()) {
+        
+    }
+
+}
+
 -(void)transform:(b2Vec2)pos withAngle:(float)theta
 {
   float angle = body->GetAngle();

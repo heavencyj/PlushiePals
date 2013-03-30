@@ -33,7 +33,7 @@ CCParallaxNode *backgroundNode;
         // Loading physics shapes
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"canyon_levels.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys_default.plist"];
         
         // 1) Create the CCParallaxNode
         backgroundNode = [CCParallaxNode node];
@@ -79,8 +79,8 @@ CCParallaxNode *backgroundNode;
     // Add continuous scroll for the canyon
     NSArray *backgrounds = [NSArray arrayWithObjects: canyons, canyons2, nil];
     for (CCSprite *bg in backgrounds) {
-        if ([backgroundNode convertToWorldSpace:bg.position].x < -500) {
-            [backgroundNode incrementOffset:ccp(100+bg.contentSize.width-[backgroundNode convertToWorldSpace:background.position].x,0) forChild:background];
+        if ([backgroundNode convertToWorldSpace:bg.position].x < -450) {
+            [backgroundNode incrementOffset:ccp(200+bg.contentSize.width-[backgroundNode convertToWorldSpace:bg.position].x,0) forChild:bg];
         }
     }
 }

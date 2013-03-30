@@ -326,12 +326,12 @@
 		// whole map fits inside a single screen, no need to modify the position - unless map boundaries are increased
 		if(boundaryFullyCovered)
 			return;
-
+        
 		CGPoint tempPos = ccpSub( halfScreenSize, followedNode_.position);
 		[target_ setPosition:ccp(clampf(tempPos.x,leftBoundary,rightBoundary), clampf(tempPos.y,bottomBoundary,topBoundary))];
 	}
 	else
-		[target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
+        [target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
 }
 
 

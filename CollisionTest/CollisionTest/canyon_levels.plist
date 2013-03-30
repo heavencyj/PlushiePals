@@ -88,11 +88,9 @@
 
 						<key>polygons</key>
 						<array>
-							<array>	
-								<string>{ 1321.000,-847.850 }</string>	
-								<string>{ 1322.000,-789.850 }</string>	
-								<string>{ 1321.000,-712.850 }</string>
-							</array>
+							<string>{ -1.670,-718.800 }</string>
+							<string>{ 456.330,-716.800 }</string>
+							<string>{ -0.670,0.200 }</string>
 						</array>
                     </dict>
 					<dict>

@@ -11,14 +11,24 @@
 #import "Plushy.h"
 #import "Maze.h"
 
+#define ANIM_DELAY 0.25f
+#define ANIM_SPEED 2.0f
+
 @implementation Object
 
 @synthesize objName;
 
--(id) initWithObject:(NSString*)theObjName 
+-(id) initWithObject:(NSString*)theObjName
 {
-    self = [super initWithKinematicBody:theObjName
-                      spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
+    if ([theObjName isEqualToString:@"cactus bomb"]) {
+        self = [super initWithDynamicBody:theObjName
+                          spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
+    }
+    else{
+        self = [super initWithKinematicBody:theObjName
+                            spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
+    }
+    
     if(self)
     {
         self.objName = theObjName;
@@ -34,11 +44,13 @@
         case BANANA_BOMB:
             objName = @"banana bomb";
             break;
-        
+            
         case BANANA_BUNCH:
             objName = @"banana bunch";
             break;
-
+        case CACTUS_BOMB:
+            objName = @"cactus bomb";
+            break;
         case SPIDER:
             objName = @"spider";
             break;
@@ -54,24 +66,83 @@
     body->SetType(type);
 }
 
+-(void)setSensor:(BOOL)isSensor
+{
+    b2Fixture* f = body->GetFixtureList();
+    f->SetSensor(isSensor);
+}
+
+-(void) updateCCFromPhysics
+{
+    [super updateCCFromPhysics];
+    
+    if (bodyTypeChange) {
+        body->SetType(b2_kinematicBody);
+        //[self setBodyType:b2_kinematicBody];
+        [self setLinearVelocity:b2Vec2(-5, 0)];
+        bodyTypeChange = FALSE;
+    }
+    
+    // update animation phase
+    if (animateBomb) {
+        
+        //    [self setPhysicsPosition:b2Vec2FromCC(200, 140)];
+        //
+        //    float dy = [self ccNode].position.y -140;
+        
+        NSString *frameName;
+        
+        animDelay -= ANIM_DELAY;
+        
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 4)
+            {
+                animPhase = 1;
+                animateBomb = FALSE;
+                [[self ccNode] removeFromParentAndCleanup:YES];
+            }
+        }
+        
+        // running
+        frameName = [NSString stringWithFormat:@"cactus bomb %d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
+    }
+    
+}
+
 -(void) beginContactWithPlushy:(GB2Contact*)contact
 {
-    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData(); 
-    if ([fixtureId isEqualToString:@"bomb"]) {
-        // speed up the maze
-        Maze *maze = ((Plushy*)[contact otherObject]).gameLayer.maze;
-        [maze setLinearVelocity:b2Vec2(maze.linearVelocity.x-0.5, maze.linearVelocity.y)];
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    if ([fixtureId isEqualToString:@"cactus bomb"]) {
+        if (!contacted) {
+            animateBomb = TRUE;
+            [((Plushy*)contact.otherObject) setIsDead:TRUE];
+            [self setSensor:TRUE];
+            contacted = TRUE;
+        }
     }
     else
     {
-        ((Plushy*)[contact otherObject]).bananaScore += 1;
+        if (!contacted) {
+            ((Plushy*)[contact otherObject]).bananaScore += 1;
+            [[self ccNode] removeFromParentAndCleanup:YES];
+            contacted = TRUE;
+        }
     }
-    [[self ccNode] removeFromParentAndCleanup:YES];
 }
 
 -(void) beginContactWithMaze:(GB2Contact*)contact
 {
-    [[self ccNode] removeFromParentAndCleanup:YES];
+    //[[self ccNode] removeFromParentAndCleanup:YES];
+    NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
+    if ([fixtureId isEqualToString:@"cactus bomb"]) {
+        self.ccNode.visible = YES;
+        bodyTypeChange = TRUE;
+        //[self setSensor:NO];
+    }
 }
 
 @end

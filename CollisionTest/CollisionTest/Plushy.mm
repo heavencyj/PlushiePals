@@ -15,6 +15,8 @@
 #define ANIM_SPEED3 3.0f
 #define ANIM_DELAY 0.25f
 #define JUMP_IMPULSE 10.0f
+const float kMaxDistanceFromCenter = 120.0f;
+const float kMinDistanceFromCenter = 100.0f;
 
 @implementation Plushy
 
@@ -62,7 +64,7 @@
         [self loadLives];
         
         // setting initial plushy position
-        initialPosition = b2Vec2FromCC(200, 180);
+        initialPosition = b2Vec2FromCC(150, 180);
         [self setPhysicsPosition:initialPosition];
     }
     return self;
@@ -94,7 +96,7 @@
     
     // Continuously reset the monkey back to the same physics position each time.
     //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-    [self setPhysicsPosition:b2Vec2FromCC(200, [self ccNode].position.y)];
+    [self setPhysicsPosition:b2Vec2FromCC(130, [self ccNode].position.y)];
     
     // update animation phase
     if (running && !collide && !die) {
