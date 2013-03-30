@@ -473,14 +473,14 @@ TransitionObject *bridge;
 
 -(void)setPlushyIsDead:(BOOL)d
 {
-    [plushy setIsDead:d];
+    plushy.dead = d;
 }
 
 -(void)animateRotation:(int)angle
 {
     if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
         && [MainMenuScene showTips]) {
-        [hud resumeGame];
+        [self resumeGame];
         [self removeChild:tutorial cleanup:YES];
         showingTip = -1;
     }

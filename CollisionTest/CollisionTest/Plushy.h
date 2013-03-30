@@ -33,9 +33,9 @@
 @property (readonly) bool running;
 @property (readonly) bool collide;
 @property (readonly) bool pass;
-@property (readonly) bool dead;
 @property (readonly) bool die;
 @property (readonly) int tip;
+@property (readwrite) bool dead;
 @property (readwrite) bool falling;
 @property (readwrite) bool showbridge;
 @property (readwrite) bool showmap;
@@ -46,8 +46,6 @@
  */
 -(id) initWithGameLayer:(GameScene*)gl;
 -(void) jump;
--(bool) isDead;
--(void) setIsDead:(bool)d;
 -(void) reset;
 //-(bool)isJumping;
 -(bool)isRunning;
