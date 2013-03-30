@@ -28,7 +28,6 @@
 // Interface for different objects
 #import "Plushy.h"
 #import "Object.h"
-#import "TransitionObject.h"
 
 // Macros for constants
 #define PTM_RATIO 32
@@ -49,9 +48,7 @@ bool pass;
 float angle;
 int showingTip;
 int rotating;
-bool showBridge;
 CCSprite *tutorial;
-TransitionObject *bridge;
 
 @synthesize maze;
 @synthesize hud;
@@ -159,16 +156,6 @@ TransitionObject *bridge;
     if (scoreDelay > 0) {
         scoreDelay--;
     }
-<<<<<<< HEAD
-    if (cameraDelay > 0) {
-        cameraDelay --;
-    }
-    
-    if (plushy.falling && cameraDelay <=0) {
-        cameraDelay = 10;
-    }
-=======
->>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
@@ -176,35 +163,6 @@ TransitionObject *bridge;
         scoreDelay = 10;
     }
     
-<<<<<<< HEAD
-    if (plushy.tip != -1 && [MainMenuScene showTips]) {
-        showingTip = plushy.tip;
-        switch (showingTip) {
-            case 1: case 2: case 3: case 4: case 5: case 6:
-                [self pauseGame];
-                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-                //tutorial = [CCSprite spriteWithFile:@"tutorial 1.png"];
-                tutorial.position = ccp(winSize.width/3, winSize.height/2);
-                [self addChild:tutorial z:500];
-                [plushy setTip];
-                break;
-                
-            case 10: case 11:
-                [self pauseGame];
-                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-                tutorial.scale = 0.5;
-                tutorial.position = ccp(winSize.width/2, winSize.height/3);
-                [self addChild:tutorial z:500];
-                [plushy setTip];
-                break;
-                
-            default:
-                break;
-        }
-        // show the tool tips and imgs
-        // when swife, resume
-    }
-=======
 //    if ([plushy showTip] != -1 && [MainMenuScene showTips]) {
 //        showingTip = [plushy showTip];
 //        switch (showingTip) {
@@ -222,65 +180,30 @@ TransitionObject *bridge;
 //        // show the tool tips and imgs
 //        // when swipe, resume
 //    }
->>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
     
     //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
     
-<<<<<<< HEAD
-    // Speed up after a while
-    //  if (speedDelay == 0) {
-    //    plushySpeed += 1;
-    //    mazeSpeed -= 3;
-    //    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
-    //    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-    //    speedDelay = 1000;
-    //  }
-    //
-    
-    if (plushy.showmap) {
-        [self loadMaze:2];
-        plushy.showmap = NO;
-    }
-    
-=======
->>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
     if (pass) {
-        if (level == 11) {
-            //[self loadMaze];
-            bridge = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
-            bridge.ccNode.position = plushy.ccNode.position;
-            [bridge setLinearVelocity:[maze linearVelocity]];
-            [self addChild:bridge.ccNode];
-            pass = false;
-            [plushy reset];
-            
-        }
-        else {
-            [[GB2Engine sharedInstance] deleteAllObjects];
-            [plushy reset];
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
-        }
+        [[GB2Engine sharedInstance] deleteAllObjects];
+        [plushy reset];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
     }
     
     // TODO: add some animations here
-<<<<<<< HEAD
-    else if (plushy.pass) {
-=======
     
     else if ([plushy passLevel]) {
->>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
         pass = true;
         // drop something on the screen to show that you passed the level
         //NSLog(@"passsss!");
-//        CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
-//        star.position = ccp(winSize.width*0.9, winSize.height*0.8);
-//        //        [background addChild:star z:50];
-//        [self addChild:star z:50];
+        CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
+        star.position = ccp(winSize.width*0.9, winSize.height*0.8);
+        //        [background addChild:star z:50];
+        [self addChild:star z:50];
     }
     
     // Plushy dies if it falls out of the screen or hit the wall
     //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
-    else if (plushy.dead)
+    else if ([plushy isDead])
     {
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
@@ -400,15 +323,8 @@ TransitionObject *bridge;
 
 -(void) loadMaze
 {
-    [self loadMaze:level];
-}
-
--(void) loadMaze:(int)ofLevel {
-    if (ofLevel == 11) {
-        ofLevel = 1;
-    }
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", ofLevel]];
-    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist",level]];
+    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     [maze setPhysicsPosition:b2Vec2FromCC(100,120)];
     mazeSpeed = -5;
@@ -452,17 +368,7 @@ TransitionObject *bridge;
             [pauseLayer pauseLayerVisible:YES];
         }
         // Otherwise its' for jumping and we prevent double jumping
-<<<<<<< HEAD
-        else if (!plushy.jumping) {
-            if ((showingTip == 3)
-                && [MainMenuScene showTips]) {
-                [self resumeGame];
-                [self removeChild:tutorial cleanup:YES];
-                showingTip = -1;
-            }
-=======
         else if (![plushy isJumping]) {
->>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
             [plushy jump];
         }
     }

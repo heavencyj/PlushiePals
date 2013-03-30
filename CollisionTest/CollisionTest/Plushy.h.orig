@@ -19,48 +19,50 @@
     int animPhase;        //!< the current animation phase
     ccTime animDelay;     //!< delay until the next animation phase is stated
     GameScene *gameLayer; //!< weak reference
-    bool jumping;
-    bool running;
-    bool collide;
-    bool pass;
-    bool dead;
-    bool die;
-    bool falling;
-    int bananaScore;
-<<<<<<< HEAD
-    int lives;
     
     NSMutableArray *hearts;
     b2Vec2 initialPosition;
-=======
-    int tip;
->>>>>>> cb0c89ae43002b988405ca9e62c077442f193f7c
+   
 }
 
 //@property (readonly) bool isDead;
 @property (readwrite) int bananaScore;
 @property (readwrite) int lives;
 @property (readonly) GameScene *gameLayer;
+@property (readonly) bool jumping;
+@property (readonly) bool running;
+@property (readonly) bool collide;
+@property (readonly) bool pass;
+@property (readonly) bool dead;
+@property (readonly) bool die;
+@property (readonly) int tip;
+@property (readwrite) bool falling;
+@property (readwrite) bool showbridge;
+@property (readwrite) bool showmap;
+
 /**
  * Inits the monkey with the given game layer
  * @param gl game layer
  */
 -(id) initWithGameLayer:(GameScene*)gl;
 -(void) jump;
+<<<<<<< HEAD
+//-(bool) isDead;
+=======
 -(bool) isDead;
+-(void) setIsDead:(bool)d;
+>>>>>>> ec2475c059c9b20c2b2c8364d21cc836ed2690b6
 -(void) reset;
--(bool)isJumping;
+//-(bool)isJumping;
 -(bool)isRunning;
 -(void)moveTo:(b2Vec2)pos;
--(bool)passLevel;
--(void)setFalling:(bool)fall;
--(bool)isFalling;
-<<<<<<< HEAD
+//-(bool)passLevel;
+//-(void)setFalling:(bool)fall;
+//-(bool)isFalling;
 -(void)destroyLive;
 -(void)resetPlushyPosition;
-=======
--(bool)isColliding;
--(int)showTip;
+//-(bool)isColliding;
+//-(int)showTip;
 -(void)setTip;
->>>>>>> cb0c89ae43002b988405ca9e62c077442f193f7c
+//-(bool)showBridge;
 @end
