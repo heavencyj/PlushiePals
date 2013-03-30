@@ -119,7 +119,7 @@
     if ([fixtureId isEqualToString:@"cactus bomb"]) {
         if (!contacted) {
             animateBomb = TRUE;
-            [((Plushy*)contact.otherObject) setIsDead:TRUE];
+            ((Plushy*)contact.otherObject).dead = TRUE;
             [self setSensor:TRUE];
             contacted = TRUE;
         }
