@@ -123,7 +123,7 @@ TransitionObject *bridge;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         [self scheduleUpdate];
     }

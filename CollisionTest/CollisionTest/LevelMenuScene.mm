@@ -168,11 +168,11 @@ int gameMode;
   return self;
 }
 
-- (void) startGame: (id) sender
+- (void)startGame:(id)sender
 { 
   CCMenuItemImage *button = (CCMenuItemImage *)sender;
   [[CCDirector sharedDirector] replaceScene:[GameScene scene:button.tag]];
-  [[CCDirector sharedDirector] resume];
+  //[[CCDirector sharedDirector] resume];
 }
 
 - (void)goHome {
