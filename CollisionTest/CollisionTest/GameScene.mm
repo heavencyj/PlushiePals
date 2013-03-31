@@ -223,7 +223,7 @@ TransitionObject *bridge;
         }
         else {
             [[GB2Engine sharedInstance] deleteAllObjects];
-            [plushy reset];
+            //[plushy reset];
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
         }
     }
