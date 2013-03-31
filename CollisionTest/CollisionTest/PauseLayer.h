@@ -18,4 +18,5 @@
 -(void)pauseLayerVisible:(BOOL)visibility;
 -(void)resumeGame; //TODO: is this even needed
 -(void)pauseGame;
+-(void)setLayerPosition:(CGPoint)pos;
 @end

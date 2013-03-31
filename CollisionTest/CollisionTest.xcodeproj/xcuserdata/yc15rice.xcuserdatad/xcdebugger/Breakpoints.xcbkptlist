@@ -82,16 +82,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CollisionTest/Plushy.mm"
-         timestampString = "386447757.050622"
+         filePath = "CollisionTest/PauseLayer.mm"
+         timestampString = "386450389.321832"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "306"
-         endingLineNumber = "306"
-         landmarkName = "-beginContactWithTransitionObject:"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-pauseGame"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -110,7 +110,7 @@ TransitionObject *bridge;
         [self loadMaze];
         
         // load in game objects
-        [self loadBombFile];
+        //[self loadBombFile];
         
         // Initializing variables
         nextObject= 5.0f;  // first object to appear after 3s
@@ -193,7 +193,7 @@ TransitionObject *bridge;
         // when swife, resume
     }
     
-    //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
+       // NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
     
     // Speed up after a while
     //  if (speedDelay == 0) {
@@ -410,6 +410,9 @@ TransitionObject *bridge;
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
+            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
+            [pauseLayer setLayerPosition:plushy.ccPosition];
+            CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
         if ((showingTip == 4 || showingTip == 5 || showingTip == 6)
