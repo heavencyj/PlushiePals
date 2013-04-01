@@ -108,7 +108,7 @@ TransitionObject *bridge;
         
         // add maze
         [self loadMaze];
-        
+    
         // load in game objects
         //[self loadBombFile];
         
@@ -209,14 +209,18 @@ TransitionObject *bridge;
         [self loadMaze:2];
         plushy.showmap = NO;
     }
-    
-    if (pass) {
+       if (pass) {
         if (level == 11) {
             //[self loadMaze];
             bridge = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
-            bridge.ccNode.position = plushy.ccNode.position;
-            [bridge setLinearVelocity:[maze linearVelocity]];
             [self addChild:bridge.ccNode];
+            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
+            //bridge.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
+            [bridge.ccNode setPosition:ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20)];
+            CCLOG(@"bridge position is at (%f, %f)", bridge.ccNode.position.x, bridge.ccNode.position.y);
+            //bridge.ccNode.position = ccp(130, 100);
+            [bridge setLinearVelocity:[maze linearVelocity]];
+            //bridge.ccNode.visible = YES;
             pass = false;
             [plushy reset];
             
