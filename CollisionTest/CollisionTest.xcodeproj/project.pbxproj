@@ -54,9 +54,12 @@
 		98EDB1E517069312009076E6 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1E317069312009076E6 /* monkeys.plist */; };
 		98EDB1E617069312009076E6 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1E417069312009076E6 /* monkeys.png */; };
 		98EDB1E717069455009076E6 /* TransitionObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98EDB1B7170295E2009076E6 /* TransitionObject.mm */; };
-		98EDB1F51706C081009076E6 /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1F41706C081009076E6 /* canyon_levels.plist */; };
 		98EDB1F717079062009076E6 /* GameObjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1F617079062009076E6 /* GameObjects.plist */; };
 		98EDB1F91708BA0D009076E6 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1F81708BA0D009076E6 /* plushyshapes.plist */; };
+		98EDB1FC17094FAE009076E6 /* RunningGameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98EDB1FB17094FAD009076E6 /* RunningGameScene.mm */; };
+		98EDB1FF170AB0FE009076E6 /* Beta cancel icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1FD170AB0FE009076E6 /* Beta cancel icon.png */; };
+		98EDB200170AB0FE009076E6 /* Beta icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB1FE170AB0FE009076E6 /* Beta icon.png */; };
+		98EDB202170AB7DE009076E6 /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EDB201170AB7DE009076E6 /* canyon_levels.plist */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
 		B621FAF016E965CF00ABAD1B /* banana single.png in Resources */ = {isa = PBXBuildFile; fileRef = B621FAEF16E965CF00ABAD1B /* banana single.png */; };
 		B621FAF216E9C46B00ABAD1B /* jumping.caf in Resources */ = {isa = PBXBuildFile; fileRef = B621FAF116E9C46B00ABAD1B /* jumping.caf */; };
@@ -331,9 +334,13 @@
 		98EDB1B7170295E2009076E6 /* TransitionObject.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = TransitionObject.mm; sourceTree = "<group>"; };
 		98EDB1E317069312009076E6 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
 		98EDB1E417069312009076E6 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
-		98EDB1F41706C081009076E6 /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		98EDB1F617079062009076E6 /* GameObjects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameObjects.plist; sourceTree = "<group>"; };
 		98EDB1F81708BA0D009076E6 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+		98EDB1FA17094FAC009076E6 /* RunningGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningGameScene.h; sourceTree = "<group>"; };
+		98EDB1FB17094FAD009076E6 /* RunningGameScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RunningGameScene.mm; sourceTree = "<group>"; };
+		98EDB1FD170AB0FE009076E6 /* Beta cancel icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Beta cancel icon.png"; sourceTree = "<group>"; };
+		98EDB1FE170AB0FE009076E6 /* Beta icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Beta icon.png"; sourceTree = "<group>"; };
+		98EDB201170AB7DE009076E6 /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
@@ -788,6 +795,8 @@
 				98ECEF9716CC34B1005BB243 /* LevelMenuScene.mm */,
 				B6D288FE16B0DA7E0050A460 /* GameScene.h */,
 				98ECED0C16C492FE005BB243 /* GameScene.mm */,
+				98EDB1FA17094FAC009076E6 /* RunningGameScene.h */,
+				98EDB1FB17094FAD009076E6 /* RunningGameScene.mm */,
 				98DC444D16BC4CAD0069D3CD /* GameOverScene.h */,
 				98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */,
 				98ECEFF016CE2634005BB243 /* TutorialScene.h */,
@@ -831,7 +840,7 @@
 			children = (
 				98EDB1F617079062009076E6 /* GameObjects.plist */,
 				98EDB1F81708BA0D009076E6 /* plushyshapes.plist */,
-				98EDB1F41706C081009076E6 /* canyon_levels.plist */,
+				98EDB201170AB7DE009076E6 /* canyon_levels.plist */,
 				98EDB1E317069312009076E6 /* monkeys.plist */,
 				98EDB1E417069312009076E6 /* monkeys.png */,
 			);
@@ -845,6 +854,8 @@
 				98176EB416FA21A9009BA7AB /* Play icon large.png */,
 				98176EB216FA2116009BA7AB /* Levels icon.png */,
 				98176E4216E853B2009BA7AB /* Level lock.png */,
+				98EDB1FD170AB0FE009076E6 /* Beta cancel icon.png */,
+				98EDB1FE170AB0FE009076E6 /* Beta icon.png */,
 				98176E3E16E84AFA009BA7AB /* Question cancel icon.png */,
 				98176E4016E84F4D009BA7AB /* Level button.png */,
 				98176E1C16E7D7A2009BA7AB /* Level 1.png */,
@@ -1679,9 +1690,11 @@
 				B64710731702C8E500561E2C /* Default-568h@2x.png in Resources */,
 				98EDB1E517069312009076E6 /* monkeys.plist in Resources */,
 				98EDB1E617069312009076E6 /* monkeys.png in Resources */,
-				98EDB1F51706C081009076E6 /* canyon_levels.plist in Resources */,
 				98EDB1F717079062009076E6 /* GameObjects.plist in Resources */,
 				98EDB1F91708BA0D009076E6 /* plushyshapes.plist in Resources */,
+				98EDB1FF170AB0FE009076E6 /* Beta cancel icon.png in Resources */,
+				98EDB200170AB0FE009076E6 /* Beta icon.png in Resources */,
+				98EDB202170AB7DE009076E6 /* canyon_levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1867,6 +1880,7 @@
 				B647103E1702C12600561E2C /* CCCustomFollow.mm in Sources */,
 				B647107E17037C6F00561E2C /* PauseLayer.mm in Sources */,
 				98EDB1E717069455009076E6 /* TransitionObject.mm in Sources */,
+				98EDB1FC17094FAE009076E6 /* RunningGameScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

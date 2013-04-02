@@ -7,7 +7,7 @@
 //
 
 #import "GameOverScene.h"
-#import "GameScene.h"
+#import "RunningGameScene.h"
 #import "MainMenuScene.h"
 
 @implementation GameOverScene
@@ -97,14 +97,14 @@ int levelScore;
   return self;
 }
 
--(void)restart
-{
-  [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+-(void)restart{
+
+  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
 }
 
 -(void)nextLevel
 {
-  [[CCDirector sharedDirector] replaceScene:[GameScene scene:curLevel+1]];
+  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene:curLevel+1]];
 }
 
 - (void)goHome {

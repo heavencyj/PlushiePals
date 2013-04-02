@@ -264,23 +264,21 @@ const float kMinDistanceFromCenter = 100.0f;
         jumping = false;
         falling = false;
     }
-    
     if([fixtureId isEqualToString:@"collision"])
     {
         if ([otherfixtureId hasPrefix:@"tip"]) {
             tip = [[otherfixtureId substringFromIndex:3] intValue];
             //CCLOG(@"tip is %d", tip);
         }
-        else if ([otherfixtureId isEqualToString:@"bridgeend"]) {
-            
-            CCLOG(@"show new map");
-            showmap = true;
-        }
-        
+//        else if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+//            
+//            CCLOG(@"show new map");
+//            showmap = true;
+//        }        
         else if ([otherfixtureId isEqualToString:@"start"]) {
             CCLOG(@"hit start point");
             // hide bridge
-            //showbridge = true;
+            showbridge = false;
         }
         else if ([otherfixtureId isEqualToString:@"win"] && !showbridge) {
             pass = true;
@@ -293,8 +291,7 @@ const float kMinDistanceFromCenter = 100.0f;
             collide = true;
             animPhase = 1;
         }
-    }
-    
+    }    
 }
 
 -(void) beginContactWithTransitionObject:(GB2Contact *)contact {
@@ -304,7 +301,6 @@ const float kMinDistanceFromCenter = 100.0f;
     if([fixtureId isEqualToString:@"collision"])
     {
         if ([otherfixtureId isEqualToString:@"bridgeend"]) {
-            
             CCLOG(@"show new map");
             showmap = true;
         }

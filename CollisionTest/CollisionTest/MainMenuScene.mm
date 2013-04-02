@@ -11,16 +11,19 @@
 #import "LevelMenuScene.h"
 #import "TutorialScene.h"
 #import "PlushyMenuScene.h"
+#import "RunningGameScene.h"
 
 #define DIST 25
 
 @implementation MainMenuScene
 bool mute;
 bool tipsOn;
+bool testMode;
 bool showTools;
 CCMenuItemImage *sound;
 CCMenuItemImage *tips;
 CCMenuItemImage *tool;
+CCMenuItemImage *test;
 CCMenuItemImage *plushies;
 CCLayer *settingLayer;
 
@@ -50,6 +53,7 @@ CCLayer *settingLayer;
         //    [background addChild:centerImage];
         mute=YES;
         tipsOn=YES;
+        testMode = YES;
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
@@ -58,9 +62,13 @@ CCLayer *settingLayer;
                                  itemWithNormalImage:@"Play word icon.png"
                                  selectedImage:nil
                                  target:self
-                                 selector:@selector(goToLevel)];
+                                 selector:@selector(hitPlay)];
         play.position = ccp(0,-winSize.height/2.8);
         
+        test = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTest)];
+        [self turnTest];
+        test.position = ccp(-winSize.width/2.5,-winSize.width/5+3*DIST + test.contentSize.height*1.5);
+        test.visible = NO;
         
         sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
         [self turnMute];
@@ -90,21 +98,28 @@ CCLayer *settingLayer;
         
         settingLayer = [CCLayerColor layerWithColor:ccc4(245, 148, 36, 100)
                                               width:tool.contentSize.width
-                                             height:tool.contentSize.height+2*DIST];
+                                             height:tool.contentSize.height*1.5+3*DIST];
         settingLayer.position = ccp(winSize.width/2-winSize.width/2.5-tool.contentSize.width/2,
                                     winSize.height/2-winSize.width/5);
         settingLayer.visible = NO;
         
-        CCMenu *menu = [CCMenu menuWithItems: play, sound, tips, tool, plushies, nil];
+        CCMenu *menu = [CCMenu menuWithItems: play, test, sound, tips, tool, plushies, nil];
         [menuLayer addChild:settingLayer];
         [menuLayer addChild: menu];
     }
     return self;
 }
 
-- (void)goToLevel {
+- (void)hitPlay {
     
-    [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
+    if (testMode) {
+        [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
+    }
+    else {
+        // start the infinite running game
+        [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+        [[CCDirector sharedDirector] resume];
+    }
     
 }
 
@@ -113,12 +128,14 @@ CCLayer *settingLayer;
     if (tool.tag > 0) {
         sound.visible = YES;
         tips.visible = YES;
+        test.visible = YES;
         settingLayer.visible = YES;
         tool.tag = -1;
     }
     else {
         sound.visible = NO;
         tips.visible = NO;
+        test.visible = NO;
         settingLayer.visible = NO;
         tool.tag = 1;
     }
@@ -152,6 +169,18 @@ CCLayer *settingLayer;
     }
     tipsOn = !tipsOn;
 }
+
+-(void)turnTest
+{
+    if (testMode) {
+        [test setNormalImage:[CCSprite spriteWithFile:@"Beta cancel icon.png"]];
+    }
+    else {
+        [test setNormalImage:[CCSprite spriteWithFile:@"Beta icon.png"]];
+    }
+    testMode = !testMode;
+}
+
 
 +(bool)showTips{
     return tipsOn;
