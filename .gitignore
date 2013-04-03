@@ -34,3 +34,8 @@ CollisionTest/build/CollisionTest.build/CollisionTest.pbxindex/symbols0.pbxsymbo
 *.mode1v3
 
 CollisionTest/CollisionTest.xcodeproj/xcuserdata/llsaphire1029.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+
+CollisionTest/CollisionTest/canyon_levels.plist
+CollisionTest/CollisionTest/GameObjects.plist
+CollisionTest/CollisionTest/plushyshapes.plist
+CollisionTest/CollisionTest/monkeys.plist
