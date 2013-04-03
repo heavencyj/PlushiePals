@@ -33,88 +33,92 @@ int levelScore;
 
 +(CCScene *) scene:(bool)didpass withLevel:(int)level withScore:(int)score
 {
-  congrats = didpass;
-  curLevel = level;
+    congrats = didpass;
+    curLevel = level;
     levelScore = score;
-  return [self scene];
-  
+    return [self scene];
+    
 }
 
 
 -(id) init
 {
-  if( (self=[super init] )) {
-    
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    CCSprite *blueBG = [CCSprite spriteWithFile:@"Canyon background.png"];
-    blueBG.anchorPoint = ccp(0,0);
-    blueBG.position = ccp(0,0);
-    [self addChild:blueBG];
-    gameoverbg = congrats ? [CCSprite spriteWithFile: @"Level pass screen.png"] :
-                            [CCSprite spriteWithFile: @"Level fail screen.png"];
-    gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
-    [self addChild:gameoverbg];
-//    
-//    CCLabelTTF* label = [CCLabelTTF labelWithString:@"Hello World"
-//                                           fontName:@"GROBOLD"
-//                                           fontSize:16];
-//    [self addChild:label];
-    
-    CCLayer *menuLayer = [[CCLayer alloc] init];
-    [self addChild:menuLayer];
-    
-    CCMenuItemImage *home = [CCMenuItemImage
-                                     itemWithNormalImage:@"Home icon.png"
-                                     selectedImage:nil
-                                     target:self
-                                     selector:@selector(goHome)];
-    home.position = ccp(-winSize.width*7/24, -winSize.height/7);
-    
-    CCMenuItemImage *restart = [CCMenuItemImage
-                                  itemWithNormalImage:@"Return icon.png"
-                                  selectedImage:nil
-                                  target:self
-                                  selector:@selector(restart)];
-    restart.position = ccp(-winSize.width*4/24,-winSize.height/7);
-    
-    CCMenuItemImage *next = [CCMenuItemImage
-                                itemWithNormalImage:@"Play icon.png"
-                                selectedImage:@"Play icon.png"
-                                target:self
-                                selector:@selector(nextLevel)];
-    next.position = ccp(-winSize.width*1/24,-winSize.height/7);
-      
-      CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"SCORE: %d",levelScore]
-                                                  fontName:@"GROBOLD"
-                                                  fontSize:23];
-      scoreLabel.color = ccc3(245, 148, 36);
-      scoreLabel.position = ccp(-winSize.width*4/24,0);
-      CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel]; 
-    CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
-    : [CCMenu menuWithItems: home, restart, nil];
-    [menuLayer addChild: menu];
-  }
-  return self;
+    if( (self=[super init] )) {
+        
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        CCSprite *blueBG = [CCSprite spriteWithFile:@"Canyon background.png"];
+        blueBG.anchorPoint = ccp(0,0);
+        blueBG.position = ccp(0,0);
+        [self addChild:blueBG];
+        gameoverbg = congrats ? [CCSprite spriteWithFile: @"Level pass screen.png"] :
+        [CCSprite spriteWithFile: @"Level fail screen.png"];
+        gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:gameoverbg];
+        //
+        //    CCLabelTTF* label = [CCLabelTTF labelWithString:@"Hello World"
+        //                                           fontName:@"GROBOLD"
+        //                                           fontSize:16];
+        //    [self addChild:label];
+        
+        CCLayer *menuLayer = [[CCLayer alloc] init];
+        [self addChild:menuLayer];
+        
+        CCMenuItemImage *home = [CCMenuItemImage
+                                 itemWithNormalImage:@"Home icon.png"
+                                 selectedImage:nil
+                                 target:self
+                                 selector:@selector(goHome)];
+        home.position = ccp(-winSize.width*7/24, -winSize.height/7);
+        
+        CCMenuItemImage *restart = [CCMenuItemImage
+                                    itemWithNormalImage:@"Return icon.png"
+                                    selectedImage:nil
+                                    target:self
+                                    selector:@selector(restart)];
+        restart.position = ccp(-winSize.width*4/24,-winSize.height/7);
+        
+        CCMenuItemImage *next = [CCMenuItemImage
+                                 itemWithNormalImage:@"Play icon.png"
+                                 selectedImage:@"Play icon.png"
+                                 target:self
+                                 selector:@selector(nextLevel)];
+        next.position = ccp(-winSize.width*1/24,-winSize.height/7);
+        
+        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"SCORE: %d",levelScore]
+                                                    fontName:@"GROBOLD"
+                                                    fontSize:23];
+        scoreLabel.color = ccc3(245, 148, 36);
+        scoreLabel.position = ccp(-winSize.width*4/24,0);
+        CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
+        CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
+        : [CCMenu menuWithItems: home, restart, nil];
+        [menuLayer addChild: menu];
+    }
+    return self;
 }
 
 -(void)restart{
-
-  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+    
+    if ([MainMenuScene isTestMode]) {
+        [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    }
+    else [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
 }
 
 -(void)nextLevel
 {
-  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene:curLevel+1]];
+    
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene:curLevel+1]];
 }
 
 - (void)goHome {
-  
-  [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
-  
+    
+    [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+    
 }
 
 - (void)dealloc {
-  [super dealloc];
+    [super dealloc];
 }
 
 @end

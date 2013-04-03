@@ -18,14 +18,15 @@
 @implementation MainMenuScene
 bool mute;
 bool tipsOn;
-bool testMode;
 bool showTools;
+bool testMode;
 CCMenuItemImage *sound;
 CCMenuItemImage *tips;
 CCMenuItemImage *tool;
 CCMenuItemImage *test;
 CCMenuItemImage *plushies;
 CCLayer *settingLayer;
+
 
 +(id) scene
 {
@@ -184,6 +185,11 @@ CCLayer *settingLayer;
 
 +(bool)showTips{
     return tipsOn;
+}
+
++(bool)isTestMode
+{
+    return testMode;
 }
 
 - (void) dealloc

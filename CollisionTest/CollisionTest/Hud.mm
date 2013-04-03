@@ -9,7 +9,6 @@
 #import "Hud.h"
 #import "CCNode+SFGestureRecognizers.h"
 #import "GB2Sprite.h"
-#import "GameScene.h"
 #import "MainMenuScene.h"
 #import "LevelMenuScene.h"
 

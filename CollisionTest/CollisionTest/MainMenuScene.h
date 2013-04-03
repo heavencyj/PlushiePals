@@ -13,7 +13,9 @@
 
 }
 
+
+
 +(id) scene;
 +(bool)showTips;
-
++(bool)isTestMode;
 @end

@@ -10,6 +10,7 @@
 #import "GB2Sprite.h"
 #import "Hud.h"
 #import "GameScene.h"
+#import "RunningGameScene.h"
 #import "MainMenuScene.h"
 #import "LevelMenuScene.h"
 
@@ -95,7 +96,10 @@
 -(void)restartGame
 {
     [[GB2Engine sharedInstance] deleteAllObjects];
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    if ([MainMenuScene isTestMode]) {
+        [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    }
+    else  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
     [[CCDirector sharedDirector] resume];
 }
 
