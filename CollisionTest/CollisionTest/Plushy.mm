@@ -63,7 +63,8 @@ const float kMinDistanceFromCenter = 100.0f;
         [self loadLives];
         
         // setting initial plushy position
-        initialPosition = b2Vec2FromCC(150, 180);
+        //initialPosition = b2Vec2FromCC(150, 180);
+        initialPosition = b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2, 180);
         [self setPhysicsPosition:initialPosition];
     }
     return self;
@@ -105,7 +106,7 @@ const float kMinDistanceFromCenter = 100.0f;
     
     // Continuously reset the monkey back to the same physics position each time.
     //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-    [self setPhysicsPosition:b2Vec2FromCC(130, [self ccNode].position.y)];
+    [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2, [self ccNode].position.y)];
     
     // update animation phase
     if (running && !collide && !die) {

@@ -392,6 +392,41 @@
 				</array>
 			</dict>
 		</dict>
+		<key>cactus bomb</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.5080,0.4064 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>density</key>
+					<real>2</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>restitution</key>
+					<real>0</real>
+					<key>filter_categoryBits</key>
+					<integer>1</integer>
+					<key>filter_groupIndex</key>
+					<integer>0</integer>
+					<key>filter_maskBits</key>
+					<integer>65535</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>id</key>
+					<string>cactus bomb</string>
+					<key>fixture_type</key>
+					<string>CIRCLE</string>
+					<key>circle</key>
+					<dict>
+						<key>radius</key>
+						<real>37.054</real>
+						<key>position</key>
+						<string>{ -1.000,2.000 }</string>
+					</dict>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 </plist>
 

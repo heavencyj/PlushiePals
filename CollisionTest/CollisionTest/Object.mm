@@ -24,10 +24,18 @@
         self = [super initWithDynamicBody:theObjName
                           spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
     }
+    else if ([theObjName isEqualToString:@"bridge"]) {
+        self = [super initWithDynamicBody:theObjName
+                          spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
+    }
     else{
         self = [super initWithKinematicBody:theObjName
                             spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
     }
+//    else{
+//        self = [super initWithDynamicBody:theObjName
+//                            spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
+//    }
     
     if(self)
     {
@@ -54,8 +62,12 @@
         case SPIDER:
             objName = @"spider";
             break;
-        default:
+        case BANANA_SINGLE:
             objName = @"banana single";
+            break;
+        case BRIDGE:
+            objName = @"bridge";
+        default:
             break;
     }
     return [[[self alloc] initWithObject:objName] autorelease];

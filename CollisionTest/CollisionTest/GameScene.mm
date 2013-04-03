@@ -94,7 +94,7 @@ TransitionObject *bridge;
 	if( (self=[super init]) ) {
         // Add pause layer
         pauseLayer = [[PauseLayer alloc] initWithHud:self];
-        [self addChild:pauseLayer z:300];
+        [hud addChild:pauseLayer z:300];
         
         // Adding object layer
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png" capacity:150];
@@ -108,9 +108,6 @@ TransitionObject *bridge;
         
         // add maze
         [self loadMaze];
-    
-        // load in game objects
-        //[self loadBombFile];
         
         // Initializing variables
         nextObject= 5.0f;  // first object to appear after 3s
@@ -148,7 +145,7 @@ TransitionObject *bridge;
     //    }
     
     // Add objects to path
-//    int objectPattern = [self getRandomNumberBetweenMin:0 andMax:0];
+//    int objectPattern = [self getRandomNumberBetweenMin:1 andMax:2];
 //    [self nextObject:dt pattern:objectPattern];
     
     //Delay variables decrementing
@@ -305,22 +302,22 @@ TransitionObject *bridge;
             int initalX = [[CCDirector sharedDirector] winSize].width;
             int initialY = [plushy ccNode].position.y+50;
             if (initialY+30 < 280) { //TODO: ensure that the bananas don't go over the scoring HUD.
-                Object *obj1 = [Object randomObject:-1];
+                Object *obj1 = [Object randomObject:BANANA_SINGLE];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
                 [obj1 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj1 ccNode] z:100];
-                Object *obj2 = [Object randomObject:-1];
+                [self addChild:[obj1 ccNode] z:38];
+                Object *obj2 = [Object randomObject:BANANA_SINGLE];
                 [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+30, initialY+30)];
                 [obj2 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj2 ccNode] z:100];
-                Object *obj3 = [Object randomObject:-1];
+                [self addChild:[obj2 ccNode] z:38];
+                Object *obj3 = [Object randomObject:BANANA_SINGLE];
                 [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY+30)];
                 [obj3 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj3 ccNode] z:100];
-                Object *obj4 = [Object randomObject:-1];
+                [self addChild:[obj3 ccNode] z:38];
+                Object *obj4 = [Object randomObject:BANANA_SINGLE];
                 [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+110, initialY)];
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj4 ccNode] z:100];
+                [self addChild:[obj4 ccNode] z:38];
             }
             nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
         }
@@ -328,22 +325,22 @@ TransitionObject *bridge;
             int initalX = [[CCDirector sharedDirector] winSize].width;
             int initialY = [plushy ccNode].position.y+80;
             if (initialY < 280) {
-                Object *obj1 = [Object randomObject:-1];
+                Object *obj1 = [Object randomObject:BANANA_SINGLE];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
                 [obj1 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj1 ccNode] z:100];
-                Object *obj2 = [Object randomObject:-1];
+                [self addChild:[obj1 ccNode] z:38];
+                Object *obj2 = [Object randomObject:BANANA_SINGLE];
                 [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+40, initialY)];
                 [obj2 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj2 ccNode] z:100];
-                Object *obj3 = [Object randomObject:-1];
+                [self addChild:[obj2 ccNode] z:38];
+                Object *obj3 = [Object randomObject:BANANA_SINGLE];
                 [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY)];
                 [obj3 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj3 ccNode] z:100];
-                Object *obj4 = [Object randomObject:-1];
+                [self addChild:[obj3 ccNode] z:38];
+                Object *obj4 = [Object randomObject:BANANA_SINGLE];
                 [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+120, initialY)];
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
-                [self addChild:[obj4 ccNode] z:100];
+                [self addChild:[obj4 ccNode] z:38];
             }
             nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
         }
@@ -375,12 +372,16 @@ TransitionObject *bridge;
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", ofLevel]];
     NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
-    [maze setPhysicsPosition:b2Vec2FromCC(100,120)];
+    [maze setPhysicsPosition:b2Vec2FromCC(70,120)];
+    
+    // load in game objects
+    [self loadBombFile];
+
     mazeSpeed = -5;
     [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
-    //    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
-    //    dummyMaze.visible = NO;
-    //    [self addChild:dummyMaze z:40];
+//    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
+//    dummyMaze.visible = NO;
+//    [self addChild:dummyMaze z:40];
     [self addChild:[maze ccNode] z:40];
 }
 
@@ -551,31 +552,41 @@ TransitionObject *bridge;
 	NSAssert(nil!=path, @"Invalid GameObjects file.");
 	
 	NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
-	
-	[self processLevelFileFromDictionary:dictionary];
+    
+	NSDictionary* bridge = [dictionary objectForKey:@"bridge"];
+	[self processLevelFileFromDictionary:bridge withObjectType:BRIDGE];
+    
+//	NSDictionary* cactus = [dictionary objectForKey:@"cactus bombs"];
+//	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
+    
+//    NSDictionary* banana = [dictionary objectForKey:@"bananas"];
+//	[self processLevelFileFromDictionary:banana withObjectType:BANANA_SINGLE];
+
 }
 
--(void) processLevelFileFromDictionary:(NSDictionary*)dictionary
+-(void) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object
 {
     if (nil==dictionary) {
         return;
     }
     
-    NSDictionary* gameObjs = [dictionary objectForKey:@"cactus bomb 1"];
-    NSNumber* pos_x = [gameObjs objectForKey:@"x"];
-    NSNumber* pos_y = [gameObjs objectForKey:@"y"];
-    CGPoint position = ccp([pos_x intValue],[pos_y intValue]);
-    
-    Object *cactus = [Object randomObject:CACTUS_BOMB];
-    [self addChild:[cactus ccNode] z:30];
-    [cactus setPhysicsPosition:b2Vec2FromCC(position.x, position.y)];
-    //[cactus getBody]->SetGravityScale(0);
-    
-    //Create a distance joint between the body and the maze
-//    b2DistanceJointDef distanceJointDef;
-//    distanceJointDef.Initialize([maze getBody], [cactus getBody], [maze getBody]->GetWorldCenter(), [cactus getBody]->GetWorldCenter());
-//    
-//    [GB2Engine sharedInstance].world->CreateJoint(&distanceJointDef);
+    for (id key in dictionary) {
+        NSDictionary* gameObj = [dictionary objectForKey:key];
+        NSNumber* pos_x = [gameObj objectForKey:@"x"];
+        NSNumber* pos_y = [gameObj objectForKey:@"y"];
+        CGPoint position = ccp([pos_x intValue],[pos_y intValue]);
+        NSNumber* rot = [gameObj objectForKey:@"r"];
+        
+        // create cactus bomb
+        Object *item = [Object randomObject:object];
+        [self addChild:[item ccNode] z:30];
+        [item getBody]->SetTransform(b2Vec2FromCC(position.x, position.y), CC_DEGREES_TO_RADIANS([rot intValue]));
+        
+        // create weld joint
+        b2WeldJointDef weldJointDef;
+        weldJointDef.Initialize([maze getBody], [item getBody], [item getBody]->GetWorldCenter());
+        [GB2Engine sharedInstance].world->CreateJoint(&weldJointDef);
+    }
 }
 
 @end

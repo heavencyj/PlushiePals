@@ -36,8 +36,8 @@
         }
         
         float distanceFromCenter = ccpLength(ccpSub(targetPos, currentPos));
-        //NSLog(@"[CCCustomFollow: Distance from center: %f", distanceFromCenter);
-        //NSLog(@"Follow node position: (%f, %f)", followedNode_.position.x, followedNode_.position.y);
+//        NSLog(@"[CCCustomFollow: Distance from center: %f", distanceFromCenter);
+//        NSLog(@"Follow node position: (%f, %f)", followedNode_.position.x, followedNode_.position.y);
         if (distanceFromCenter < kMaxDistanceFromCenter && distanceFromCenter > kMinDistanceFromCenter) {
             [target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
             CGPoint deltaPos = ccpSub(targetPos, previousTargetPos);
@@ -53,6 +53,5 @@
         previousTargetPos = targetPos;
     }
 }
-
 
 @end
