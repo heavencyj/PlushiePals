@@ -190,7 +190,7 @@ TransitionObject *bridge;
         // when swife, resume
     }
     
-    //    NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
+       // NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
     
     // Speed up after a while
     //  if (speedDelay == 0) {
@@ -206,21 +206,25 @@ TransitionObject *bridge;
         [self loadMaze:2];
         plushy.showmap = NO;
     }
-    
-    if (pass) {
+       if (pass) {
         if (level == 11) {
             //[self loadMaze];
             bridge = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
-            bridge.ccNode.position = plushy.ccNode.position;
-            [bridge setLinearVelocity:[maze linearVelocity]];
             [self addChild:bridge.ccNode];
+            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
+            //bridge.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
+            [bridge.ccNode setPosition:ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20)];
+            CCLOG(@"bridge position is at (%f, %f)", bridge.ccNode.position.x, bridge.ccNode.position.y);
+            //bridge.ccNode.position = ccp(130, 100);
+            [bridge setLinearVelocity:[maze linearVelocity]];
+            //bridge.ccNode.visible = YES;
             pass = false;
             [plushy reset];
             
         }
         else {
             [[GB2Engine sharedInstance] deleteAllObjects];
-            [plushy reset];
+            //[plushy reset];
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
         }
     }
@@ -411,6 +415,9 @@ TransitionObject *bridge;
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
+            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
+            [pauseLayer setLayerPosition:plushy.ccPosition];
+            CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
         if ((showingTip == 4 || showingTip == 5 || showingTip == 6)

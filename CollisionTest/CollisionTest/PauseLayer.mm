@@ -13,6 +13,9 @@
 #import "MainMenuScene.h"
 #import "LevelMenuScene.h"
 
+#define WIDTH 400
+#define HEIGHT 200
+
 @implementation PauseLayer
 
 -(id) initWithHud:(GameScene*)game
@@ -23,7 +26,7 @@
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
-        CCLayer *colorLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 210) width:400 height:200];
+        CCLayer *colorLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 210) width:WIDTH height:HEIGHT];
         colorLayer.position = ccp(winSize.width/2-colorLayer.contentSize.width/2,
                                   winSize.height/2-colorLayer.contentSize.height/2);
         
@@ -62,6 +65,11 @@
         self.visible = NO;
     }
     return self;
+}
+
+-(void)setLayerPosition:(CGPoint)pos
+{
+    self.position = ccp(pos.x-WIDTH/1.5, pos.y-HEIGHT/1.5);
 }
 
 -(void)pauseLayerVisible:(BOOL)visibility

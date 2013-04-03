@@ -270,7 +270,7 @@ const float kMinDistanceFromCenter = 100.0f;
     {
         if ([otherfixtureId hasPrefix:@"tip"]) {
             tip = [[otherfixtureId substringFromIndex:3] intValue];
-            CCLOG(@"tip is %d", tip);
+            //CCLOG(@"tip is %d", tip);
         }
         else if ([otherfixtureId isEqualToString:@"bridgeend"]) {
             

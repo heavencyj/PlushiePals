@@ -69,7 +69,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/GBox2D/GB2ShapeCache.mm"
@@ -79,6 +79,19 @@
          startingLineNumber = "136"
          endingLineNumber = "136"
          landmarkName = "-addFixturesToBody:forShapeName:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CollisionTest/PauseLayer.mm"
+         timestampString = "386450389.321832"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-pauseGame"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
