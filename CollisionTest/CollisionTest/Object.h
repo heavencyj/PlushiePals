@@ -14,6 +14,8 @@
 #define BANANA_BUNCH 1
 #define SPIDER 2
 #define CACTUS_BOMB 3
+#define BANANA_SINGLE 4
+#define BRIDGE 5
 
 @interface Object : GB2Sprite {
     
