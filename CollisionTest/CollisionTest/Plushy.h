@@ -36,7 +36,7 @@
 @property (readonly) bool die;
 @property (readonly) int tip;
 @property (readwrite) bool dead;
-@property (readwrite) bool falling;
+//@property (readwrite) bool falling;
 @property (readwrite) bool showbridge;
 @property (readwrite) bool showmap;
 

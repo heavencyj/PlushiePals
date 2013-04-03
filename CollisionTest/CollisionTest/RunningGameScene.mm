@@ -174,6 +174,7 @@ NSInteger hardMaps[3];
         scoreDelay = 10;
     }
     
+    // Showing tips
     if (plushy.tip != -1 && [MainMenuScene showTips]) {
         showingTip1 = plushy.tip;
         switch (showingTip1) {
@@ -226,8 +227,7 @@ NSInteger hardMaps[3];
         bridge1 = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
         [self addChild:bridge1.ccNode];
         CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-        //bridge.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
-        [bridge1.ccNode setPosition:ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20)];
+        bridge1.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
         CCLOG(@"bridge position is at (%f, %f)", bridge1.ccNode.position.x, bridge1.ccNode.position.y);
         //bridge.ccNode.position = ccp(130, 100);
         [bridge1 setLinearVelocity:[maze linearVelocity]];
@@ -237,7 +237,7 @@ NSInteger hardMaps[3];
     }
     
     // TODO: add some animations here
-    else if (plushy.pass) {
+    else if (plushy.showbridge) {
         pass1 = true;
         // drop something on the screen to show that you passed the level
         //NSLog(@"passsss!");
@@ -260,11 +260,14 @@ NSInteger hardMaps[3];
         {
             // destroy 1 life, move maze back and reset plushy
             [plushy destroyLive];
-            [maze setSensor:TRUE];
-            [maze moveTo:b2Vec2FromCC([maze ccNode].position.x+250, [maze ccNode].position.y)];
-            [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
+            [maze destroyBody];
+//            [maze setSensor:TRUE];
+//            [maze moveTo:b2Vec2FromCC([maze ccNode].position.x+250, [maze ccNode].position.y)];
+//            [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
+//            [plushy resetPlushyPosition];
+//            [maze setSensor:FALSE];
             [plushy resetPlushyPosition];
-            [maze setSensor:FALSE];
+            [self loadMaze:currentLevel];
         }
     }
 }
@@ -355,7 +358,7 @@ NSInteger hardMaps[3];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
-        if ((showingTip1 == 4 || showingTip1 == 5 || showingTip1 == 6)
+        else if ((showingTip1 == 4 || showingTip1 == 5 || showingTip1 == 6)
             && [MainMenuScene showTips]) {
             [pauseLayer resumeGame];
             [self removeChild:tutorial1 cleanup:YES];
@@ -387,7 +390,7 @@ NSInteger hardMaps[3];
             CGPoint p1 = [plushy ccNode].position;
             //        p1.y = p1.y+10;
             p1.y = p1.y-80;
-            [plushy setFalling:true];
+            //[plushy setFalling:true];
             
             // Rotate the map without animation
             CGPoint oldp = [maze ccNode].position;
@@ -401,7 +404,7 @@ NSInteger hardMaps[3];
             CGPoint p1 = [plushy ccNode].position;
             //        p1.y = p1.y-80;
             p1.y = p1.y+10;
-            [plushy setFalling:true];
+            //[plushy setFalling:true];
             // Rotate the map without animation
             CGPoint oldp = [maze ccNode].position;
             CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(90) of:oldp around:p1];
@@ -420,7 +423,7 @@ NSInteger hardMaps[3];
         showingTip1 = -1;
     }
     //cameraDelay = 10;
-    [plushy setFalling:true];
+    //[plushy setFalling:true];
     
     
     //  // To to animate

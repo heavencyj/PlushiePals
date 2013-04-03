@@ -26,8 +26,8 @@
     {
         //////
         CGPoint targetPos = ccpSub(halfScreenSize, followedNode_.position);
-        const float kMinDistanceFromCenter = 100.0f;
-        const float kMaxDistanceFromCenter = 120.0f;
+        const float kMinDistanceFromCenter = 60.0f;
+        const float kMaxDistanceFromCenter = 80.0f;
         
         if(isCurrentPosValid == NO)
         {

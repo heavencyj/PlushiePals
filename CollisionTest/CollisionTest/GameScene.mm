@@ -451,7 +451,7 @@ TransitionObject *bridge;
             CGPoint p1 = [plushy ccNode].position;
             //        p1.y = p1.y+10;
             p1.y = p1.y-80;
-            [plushy setFalling:true];
+            //[plushy setFalling:true];
             
             // Rotate the map without animation
             CGPoint oldp = [maze ccNode].position;
@@ -465,7 +465,7 @@ TransitionObject *bridge;
             CGPoint p1 = [plushy ccNode].position;
             //        p1.y = p1.y-80;
             p1.y = p1.y+10;
-            [plushy setFalling:true];
+            //[plushy setFalling:true];
             // Rotate the map without animation
             CGPoint oldp = [maze ccNode].position;
             CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(90) of:oldp around:p1];
@@ -489,7 +489,7 @@ TransitionObject *bridge;
         showingTip = -1;
     }
     //cameraDelay = 10;
-    [plushy setFalling:true];
+    //[plushy setFalling:true];
     
     
     //  // To to animate
