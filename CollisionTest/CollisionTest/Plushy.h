@@ -59,4 +59,6 @@
 //-(int)showTip;
 -(void)setTip;
 //-(bool)showBridge;
+-(void) loadLives;
+-(void) destroyAllLives;
 @end

@@ -57,6 +57,8 @@
     CGPoint lastTouch;
     
     CCSprite *dummyMaze;
+    
+    Object *transitionBridge;
 }
 
 @property (readonly) Maze *maze;

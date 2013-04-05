@@ -48,10 +48,10 @@ bool pass1;
 float angle1;
 int showingTip1;
 int rotating1;
-bool showBridge;
+//bool showBridge;
 CCSprite *tutorial1;
 TransitionObject *bridge1;
-NSInteger easyMaps[3];
+NSInteger easyMaps[4];
 NSInteger midMaps[3];
 NSInteger hardMaps[3];
 
@@ -93,7 +93,7 @@ NSInteger hardMaps[3];
 	if( (self=[super init]) ) {
         // Add pause layer
         pauseLayer = [[PauseLayer alloc] initWithHud:self];
-        [self addChild:pauseLayer z:300];
+        [hud addChild:pauseLayer z:300];
         
         // Adding object layer
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png" capacity:150];
@@ -131,7 +131,7 @@ NSInteger hardMaps[3];
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         [self scheduleUpdate];
     }
@@ -216,21 +216,28 @@ NSInteger hardMaps[3];
     //
     
     if (plushy.showmap) {
+        [plushy resetPlushyPosition];
+        [[maze ccNode] removeFromParentAndCleanup:YES];
+//        [transitionBridge setSensor:TRUE];
+        [[transitionBridge ccNode] removeFromParentAndCleanup:YES];
         currentLevel = [self levelChooser];
         mapCount ++;
         [self loadMaze:currentLevel];
+        plushy.lives = 3;
+        [plushy destroyAllLives];
+        [plushy loadLives];
         plushy.showmap = NO;
     }
     
     if (pass1) {
         //[self loadMaze];
-        bridge1 = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
-        [self addChild:bridge1.ccNode];
-        CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-        bridge1.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
-        CCLOG(@"bridge position is at (%f, %f)", bridge1.ccNode.position.x, bridge1.ccNode.position.y);
-        //bridge.ccNode.position = ccp(130, 100);
-        [bridge1 setLinearVelocity:[maze linearVelocity]];
+//        bridge1 = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
+//        [self addChild:bridge1.ccNode];
+//        CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
+//        bridge1.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
+//        CCLOG(@"bridge position is at (%f, %f)", bridge1.ccNode.position.x, bridge1.ccNode.position.y);
+//        //bridge.ccNode.position = ccp(130, 100);
+//        [bridge1 setLinearVelocity:[maze linearVelocity]];
         //bridge.ccNode.visible = YES;
         pass1 = false;
         [plushy reset];
@@ -258,16 +265,12 @@ NSInteger hardMaps[3];
         }
         else
         {
-            // destroy 1 life, move maze back and reset plushy
+            // stop following the plushy, reset the plushy, then begin following plushy once more
+            [self stopAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
             [plushy destroyLive];
-            [maze destroyBody];
-//            [maze setSensor:TRUE];
-//            [maze moveTo:b2Vec2FromCC([maze ccNode].position.x+250, [maze ccNode].position.y)];
-//            [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-//            [plushy resetPlushyPosition];
-//            [maze setSensor:FALSE];
             [plushy resetPlushyPosition];
-            [self loadMaze:currentLevel];
+            //[maze setPhysicsPosition:b2Vec2FromCC(100,120)];
+            [maze setTransform:b2Vec2FromCC(100,120) angle:CC_DEGREES_TO_RADIANS(0)];
         }
     }
 }
@@ -281,9 +284,10 @@ NSInteger hardMaps[3];
 // Initialize the map levels 
 +(void)initMapLevels
 {
-    easyMaps[0] = 2;
-    easyMaps[1] = 6;
-    easyMaps[2] = 9;
+    easyMaps[0] = 1;
+    easyMaps[1] = 2;
+    easyMaps[2] = 6;
+    easyMaps[3] = 9;
     midMaps[0] = 4;
     midMaps[1] = 5;
     midMaps[2] = 7;
@@ -294,18 +298,19 @@ NSInteger hardMaps[3];
 
 -(int)levelChooser
 {
-    if (mapCount < 5) {
-        if ([self getRandomDouble] < diffFactor) {
-            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-        }
-        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-    }
-    else {
-        if ([self getRandomDouble] < diffFactor) {
-            return hardMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-        }
-        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-    }
+    return easyMaps[[self getRandomNumberBetweenMin:0 andMax:0]];
+//    if (mapCount < 5) {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+//    else {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return hardMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//    }
 }
 
 -(void) loadMaze:(int)ofLevel {
@@ -316,6 +321,10 @@ NSInteger hardMaps[3];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     [maze setPhysicsPosition:b2Vec2FromCC(100,120)];
     mazeSpeed = -5;
+    
+    // load in game objects
+    [self loadBombFile];
+    
     [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
     //    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
     //    dummyMaze.visible = NO;
@@ -354,7 +363,7 @@ NSInteger hardMaps[3];
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
             CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            [pauseLayer setLayerPosition:plushy.ccPosition];
+//            [pauseLayer setLayerPosition:plushy.ccPosition];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
@@ -466,7 +475,6 @@ NSInteger hardMaps[3];
     CGPoint oldp = [maze ccNode].position;
     CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
     [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-    
 }
 
 @end

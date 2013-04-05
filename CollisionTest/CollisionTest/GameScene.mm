@@ -375,7 +375,7 @@ TransitionObject *bridge;
     [maze setPhysicsPosition:b2Vec2FromCC(70,120)];
     
     // load in game objects
-    [self loadBombFile];
+    //[self loadBombFile];
 
     mazeSpeed = -5;
     [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
@@ -416,7 +416,7 @@ TransitionObject *bridge;
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
             CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            [pauseLayer setLayerPosition:plushy.ccPosition];
+            //[pauseLayer setLayerPosition:plushy.ccPosition];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
@@ -554,7 +554,7 @@ TransitionObject *bridge;
 	NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
     
 	NSDictionary* bridge = [dictionary objectForKey:@"bridge"];
-	[self processLevelFileFromDictionary:bridge withObjectType:BRIDGE];
+	transitionBridge = (Object*)[[self processLevelFileFromDictionary:bridge withObjectType:BRIDGE] lastObject];
     
 //	NSDictionary* cactus = [dictionary objectForKey:@"cactus bombs"];
 //	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
@@ -564,11 +564,13 @@ TransitionObject *bridge;
 
 }
 
--(void) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object
+-(NSMutableArray*) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object
 {
     if (nil==dictionary) {
-        return;
+        return nil;
     }
+    
+    NSMutableArray* gameObjects = [[NSMutableArray alloc] init];
     
     for (id key in dictionary) {
         NSDictionary* gameObj = [dictionary objectForKey:key];
@@ -579,6 +581,7 @@ TransitionObject *bridge;
         
         // create cactus bomb
         Object *item = [Object randomObject:object];
+        [gameObjects addObject:item];
         [self addChild:[item ccNode] z:30];
         [item getBody]->SetTransform(b2Vec2FromCC(position.x, position.y), CC_DEGREES_TO_RADIANS([rot intValue]));
         
@@ -587,6 +590,8 @@ TransitionObject *bridge;
         weldJointDef.Initialize([maze getBody], [item getBody], [item getBody]->GetWorldCenter());
         [GB2Engine sharedInstance].world->CreateJoint(&weldJointDef);
     }
+    
+    return gameObjects;
 }
 
 @end

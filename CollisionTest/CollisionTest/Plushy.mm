@@ -9,6 +9,7 @@
 #import "Plushy.h"
 #import "GameScene.h"
 #import "GB2Contact.h"
+#import "CCCustomFollow.h"
 
 #define ANIM_SPEED 2.0f
 #define ANIM_SPEED2 4.0f
@@ -196,6 +197,7 @@ const float kMinDistanceFromCenter = 100.0f;
     [self reset];
     [self setBodyShape:@"Monkey"];
     [self setPhysicsPosition:initialPosition];
+    [gameLayer runAction:[CCCustomFollow actionWithTarget:[self ccNode]]];
 }
 
 -(void) loadLives
@@ -219,6 +221,13 @@ const float kMinDistanceFromCenter = 100.0f;
         CCSprite *aHeart = [hearts objectAtIndex:lives];
         [aHeart removeFromParentAndCleanup:TRUE];
         [hearts removeObjectAtIndex:lives];
+    }
+}
+
+-(void) destroyAllLives
+{
+    for (CCSprite* aHeart in hearts) {
+        [aHeart removeFromParentAndCleanup:TRUE];
     }
 }
 
@@ -316,6 +325,5 @@ const float kMinDistanceFromCenter = 100.0f;
 -(void)setTip{
     tip = -1;
 }
-
 
 @end

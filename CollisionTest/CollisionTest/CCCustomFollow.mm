@@ -26,8 +26,8 @@
     {
         //////
         CGPoint targetPos = ccpSub(halfScreenSize, followedNode_.position);
-        const float kMinDistanceFromCenter = 60.0f;
-        const float kMaxDistanceFromCenter = 80.0f;
+        const float kMinDistanceFromCenter = 0.0f;
+        const float kMaxDistanceFromCenter = 20.0f;
         
         if(isCurrentPosValid == NO)
         {
@@ -43,11 +43,11 @@
             CGPoint deltaPos = ccpSub(targetPos, previousTargetPos);
             currentPos = ccpAdd(currentPos, deltaPos);
             [target_ setPosition:currentPos];
-            //NSLog(@"Current position: (%f, %f)", ((CCNode*)target_).position.x, ((CCNode*)target_).position.y);
         }
         else if (distanceFromCenter > kMaxDistanceFromCenter)
         {
             [((GameScene*)target_) setPlushyIsDead:TRUE];
+            isCurrentPosValid = NO;
         }
         
         previousTargetPos = targetPos;

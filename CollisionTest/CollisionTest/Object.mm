@@ -136,6 +136,15 @@
             contacted = TRUE;
         }
     }
+    else if ([fixtureId isEqualToString:@"bridge"]) {
+        //TODO
+    }
+    else if([fixtureId isEqualToString:@"bridgeend"]){
+        if (!contacted) {
+            ((Plushy*)contact.otherObject).showmap = YES;
+            contacted = TRUE;
+        }
+    }
     else
     {
         if (!contacted) {

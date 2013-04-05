@@ -121,7 +121,6 @@ CCLayer *settingLayer;
         [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
         [[CCDirector sharedDirector] resume];
     }
-    
 }
 
 -(void)showSetting

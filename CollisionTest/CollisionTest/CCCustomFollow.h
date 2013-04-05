@@ -11,7 +11,7 @@
 #import "Plushy.h"
 
 @interface CCCustomFollow : CCFollow {
-    
+//    BOOL plushyDead;
 }
 
 @end
