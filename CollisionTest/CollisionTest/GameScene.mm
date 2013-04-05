@@ -158,7 +158,7 @@ TransitionObject *bridge;
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
-        [hud updateBananaScore:plushy.bananaScore];
+        [hud updateScore:plushy.bananaScore];
         scoreDelay = 10;
     }
     
@@ -359,6 +359,10 @@ TransitionObject *bridge;
     }
 }
 
+-(void)setPlushyIsDead:(BOOL)d {
+    plushy.dead = d;
+}
+
 
 -(void) loadMaze
 {
@@ -476,11 +480,6 @@ TransitionObject *bridge;
     }
 }
 
--(void)setPlushyIsDead:(BOOL)d
-{
-    plushy.dead = d;
-}
-
 -(void)animateRotation:(int)angle
 {
     if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
@@ -593,5 +592,6 @@ TransitionObject *bridge;
     
     return gameObjects;
 }
+
 
 @end

@@ -36,7 +36,9 @@
 @property (readonly) bool die;
 @property (readonly) int tip;
 @property (readwrite) bool dead;
+@property (readwrite) bool sliding;
 //@property (readwrite) bool falling;
+@property (readonly) bool swipeRange;
 @property (readwrite) bool showbridge;
 @property (readwrite) bool showmap;
 
@@ -54,6 +56,7 @@
 //-(void)setFalling:(bool)fall;
 //-(bool)isFalling;
 -(void)destroyLive;
+-(void) regainLive;
 -(void)resetPlushyPosition;
 //-(bool)isColliding;
 //-(int)showTip;

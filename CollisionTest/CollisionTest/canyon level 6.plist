@@ -12,17 +12,17 @@
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{0, 0}, {2000, 1524}}</string>
+			<string>{{0, 0}, {2000, 1943}}</string>
 			<key>spriteOffset</key>
 			<string>{0, -0}</string>
 			<key>spriteSize</key>
-			<string>{2000, 1524}</string>
+			<string>{2000, 1943}</string>
 			<key>spriteSourceSize</key>
-			<string>{2000, 1524}</string>
+			<string>{2000, 1943}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 0}, {2000, 1524}}</string>
+			<string>{{0, 0}, {2000, 1943}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>

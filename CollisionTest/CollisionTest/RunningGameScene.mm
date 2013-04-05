@@ -34,6 +34,7 @@
 #define ARC4RANDOM_MAX 0x100000000
 #define ICON_DIST 60
 #define round(x) ((x) < LONG_MIN-0.5 || (x) > LONG_MAX+0.5)
+#define SCORE_DELAY 20
 
 #pragma mark - GameScene
 
@@ -48,7 +49,9 @@ bool pass1;
 float angle1;
 int showingTip1;
 int rotating1;
-//bool showBridge;
+int score;
+bool showBridge;
+int seconds;
 CCSprite *tutorial1;
 TransitionObject *bridge1;
 NSInteger easyMaps[4];
@@ -98,6 +101,10 @@ NSInteger hardMaps[3];
         // Adding object layer
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png" capacity:150];
         [self addChild:plushyLayer z:200];
+        
+        // add score
+        scoreDelay = SCORE_DELAY;
+        score = 0;
         
         // Add monkey
         plushy = [[[Plushy alloc] initWithGameLayer:self] autorelease];
@@ -170,8 +177,13 @@ NSInteger hardMaps[3];
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
-        [hud updateBananaScore:plushy.bananaScore];
-        scoreDelay = 10;
+        score ++ ;
+        [hud updateScore:score];
+        // regain one life for every 300 points plushy gains
+        if (score % 300 == 0) {
+            [plushy regainLive];
+        }
+        scoreDelay = SCORE_DELAY;
     }
     
     // Showing tips
@@ -253,7 +265,9 @@ NSInteger hardMaps[3];
         //        //        [background addChild:star z:50];
         //        [self addChild:star z:50];
     }
-    
+    else if (plushy.collide) {
+        [maze setLinearVelocity:b2Vec2(0, 0)];
+    }
     // Plushy dies if it falls out of the screen or hit the wall
     //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
     else if (plushy.dead)
@@ -332,12 +346,26 @@ NSInteger hardMaps[3];
     [self addChild:[maze ccNode] z:40];
 }
 
+-(float) timer: (ccTime) dt
+{
+    if (seconds >= 5) {
+        plushy.sliding = true;
+    }
+    //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs
+    seconds ++;
+    return dt;
+    
+}
+
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSSet *allTouches = [event allTouches];
     UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
     CGPoint location = [touch locationInView: [touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    seconds = 0;
+    [self schedule:@selector(timer:) interval:0.08];
     
     //Swipe Detection Part 1
     firstTouch = location;
@@ -352,18 +380,22 @@ NSInteger hardMaps[3];
     
     //Swipe Detection Part 2
     lastTouch = location;
+    [self unschedule:@selector(timer:)];
+    if (plushy.sliding) {
+        plushy.sliding = false;
+    }
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);
     //    NSLog(@"SwipeLength is: %f", swipeLength);
     // tap gesture
-    if (swipeLength < 20) //TODO: Make sure the taps are being registered correctly.
+    if (swipeLength < 20 && seconds < 5) //TODO: Make sure the taps are being registered correctly.
     {
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
             CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-//            [pauseLayer setLayerPosition:plushy.ccPosition];
+            //[pauseLayer setLayerPosition:plushy.ccPosition];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
@@ -384,7 +416,7 @@ NSInteger hardMaps[3];
             [plushy jump];
         }
     }
-    else
+    else 
     {
         if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
             && [MainMenuScene showTips]) {
@@ -393,7 +425,7 @@ NSInteger hardMaps[3];
             showingTip1 = -1;
         }
         //Check if the swipe is a left swipe and long enough
-        if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
         {
             angle1 = -90;
             CGPoint p1 = [plushy ccNode].position;
@@ -407,7 +439,7 @@ NSInteger hardMaps[3];
             [maze transform:b2Vec2FromCGPoint(newp) withAngle:-90];
             //            [self animateRotation:angle];
         }
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
         {
             angle1 = 90;
             CGPoint p1 = [plushy ccNode].position;
@@ -475,6 +507,10 @@ NSInteger hardMaps[3];
     CGPoint oldp = [maze ccNode].position;
     CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
     [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
+}
+
++(void)addScore:(int)points {
+    score += points;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "Object.h"
 #import "GB2Contact.h"
 #import "Plushy.h"
+#import "RunningGameScene.h"
 #import "Maze.h"
 
 #define ANIM_DELAY 0.25f
@@ -149,6 +150,7 @@
     {
         if (!contacted) {
             ((Plushy*)[contact otherObject]).bananaScore += 1;
+            [RunningGameScene addScore:10];
             [[self ccNode] removeFromParentAndCleanup:YES];
             contacted = TRUE;
         }

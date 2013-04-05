@@ -28,12 +28,11 @@
         pauseButtonRect = CGRectMake((pauseButton.position.x-(pauseButton.contentSize.width)/2), (pauseButton.position.y-(pauseButton.contentSize.height)/2), (pauseButton.contentSize.width), (pauseButton.contentSize.height));
         [self addChild:pauseButton z:5000];
         
-        // points
-        CCSprite *bananaPoints = [CCSprite spriteWithFile:@"banana single.png"];
-        bananaPoints.position = ccp(230, 290);
-        [self addChild:bananaPoints z:50];
+//        // points
+//        CCSprite *bananaPoints = [CCSprite spriteWithFile:@"banana single.png"];
+//        bananaPoints.position = ccp(230, 290);
+//        [self addChild:bananaPoints z:50];
         
-        scoreDelay = 10;
         scoreLabel = [CCLabelTTF labelWithString:@"0"
                                         fontName:@"GROBOLD"
                                         fontSize:30];
@@ -46,7 +45,7 @@
 }
 
 
--(void)updateBananaScore:(int)score
+-(void)updateScore:(int)score
 {
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
 }

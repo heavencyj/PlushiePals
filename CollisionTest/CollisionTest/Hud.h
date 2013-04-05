@@ -16,13 +16,10 @@
     
     CGRect pauseButtonRect;
     CCSprite *pauseButton;
-    
-    int speedDelay;
-    int scoreDelay;
 }
 
 @property (readonly) CCSprite *pauseButton;
 @property (readonly) CGRect pauseButtonRect;
 -(id) init;
--(void)updateBananaScore:(int)score;
+-(void)updateScore:(int)score;
 @end
