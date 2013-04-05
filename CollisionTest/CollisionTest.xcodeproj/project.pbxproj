@@ -76,10 +76,10 @@
 		98F013E6170EA3AE0064960C /* canyon level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F013DC170EA3AE0064960C /* canyon level 4.png */; };
 		98F013E7170EA3AE0064960C /* canyon level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F013DD170EA3AE0064960C /* canyon level 3.png */; };
 		98F013E8170EA3AE0064960C /* canyon level 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F013DE170EA3AE0064960C /* canyon level 2.png */; };
-		98F013EC170EA8C60064960C /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98F013EB170EA8C60064960C /* canyon_levels.plist */; };
 		98F013F0170EBD2F0064960C /* canyon level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98F013ED170EBD2F0064960C /* canyon level 1.plist */; };
 		98F013F1170EBD2F0064960C /* canyon level 10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98F013EE170EBD2F0064960C /* canyon level 10.plist */; };
 		98F013F4170EBD4E0064960C /* canyon level 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F013F3170EBD4E0064960C /* canyon level 1.png */; };
+		98F013F6170EC1190064960C /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98F013F5170EC1190064960C /* canyon_levels.plist */; };
 		B608E50216BBA32C00994E91 /* Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = B608E50116BBA32C00994E91 /* Object.mm */; };
 		B621FAF016E965CF00ABAD1B /* banana single.png in Resources */ = {isa = PBXBuildFile; fileRef = B621FAEF16E965CF00ABAD1B /* banana single.png */; };
 		B621FAF216E9C46B00ABAD1B /* jumping.caf in Resources */ = {isa = PBXBuildFile; fileRef = B621FAF116E9C46B00ABAD1B /* jumping.caf */; };
@@ -357,10 +357,10 @@
 		98F013DC170EA3AE0064960C /* canyon level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 4.png"; sourceTree = "<group>"; };
 		98F013DD170EA3AE0064960C /* canyon level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 3.png"; sourceTree = "<group>"; };
 		98F013DE170EA3AE0064960C /* canyon level 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 2.png"; sourceTree = "<group>"; };
-		98F013EB170EA8C60064960C /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		98F013ED170EBD2F0064960C /* canyon level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 1.plist"; sourceTree = "<group>"; };
 		98F013EE170EBD2F0064960C /* canyon level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 10.plist"; sourceTree = "<group>"; };
 		98F013F3170EBD4E0064960C /* canyon level 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 1.png"; sourceTree = "<group>"; };
+		98F013F5170EC1190064960C /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		B608E50016BBA32C00994E91 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B608E50116BBA32C00994E91 /* Object.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Object.mm; sourceTree = "<group>"; };
 		B61AC7EE16BA338700A18443 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
@@ -838,10 +838,10 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
+				98F013F5170EC1190064960C /* canyon_levels.plist */,
 				98EDB1F617079062009076E6 /* GameObjects.plist */,
 				98EDB1F81708BA0D009076E6 /* plushyshapes.plist */,
 				98EDB1E317069312009076E6 /* monkeys.plist */,
-				98F013EB170EA8C60064960C /* canyon_levels.plist */,
 				98EDB1E417069312009076E6 /* monkeys.png */,
 			);
 			name = sprite_shape_sheets;
@@ -1691,10 +1691,10 @@
 				98F013E6170EA3AE0064960C /* canyon level 4.png in Resources */,
 				98F013E7170EA3AE0064960C /* canyon level 3.png in Resources */,
 				98F013E8170EA3AE0064960C /* canyon level 2.png in Resources */,
-				98F013EC170EA8C60064960C /* canyon_levels.plist in Resources */,
 				98F013F0170EBD2F0064960C /* canyon level 1.plist in Resources */,
 				98F013F1170EBD2F0064960C /* canyon level 10.plist in Resources */,
 				98F013F4170EBD4E0064960C /* canyon level 1.png in Resources */,
+				98F013F6170EC1190064960C /* canyon_levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

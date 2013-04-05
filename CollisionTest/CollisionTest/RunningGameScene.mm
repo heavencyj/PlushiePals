@@ -34,6 +34,7 @@
 #define ARC4RANDOM_MAX 0x100000000
 #define ICON_DIST 60
 #define round(x) ((x) < LONG_MIN-0.5 || (x) > LONG_MAX+0.5)
+#define SCORE_DELAY 20
 
 #pragma mark - GameScene
 
@@ -50,6 +51,7 @@ int showingTip1;
 int rotating1;
 int score;
 bool showBridge;
+int seconds;
 CCSprite *tutorial1;
 TransitionObject *bridge1;
 NSInteger easyMaps[3];
@@ -101,7 +103,7 @@ NSInteger hardMaps[3];
         [self addChild:plushyLayer z:200];
         
         // add score
-        scoreDelay = 10;
+        scoreDelay = SCORE_DELAY;
         score = 0;
         
         // Add monkey
@@ -181,7 +183,7 @@ NSInteger hardMaps[3];
         if (score % 300 == 0) {
             [plushy regainLive];
         }
-        scoreDelay = 10;
+        scoreDelay = SCORE_DELAY;
     }
     
     // Showing tips
@@ -319,7 +321,7 @@ NSInteger hardMaps[3];
 //        }
 //        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
 //    }
-    return 4;
+    return 2;
 }
 
 -(void) loadMaze:(int)ofLevel {
@@ -337,12 +339,26 @@ NSInteger hardMaps[3];
     [self addChild:[maze ccNode] z:40];
 }
 
+-(float) timer: (ccTime) dt
+{
+    if (seconds >= 5) {
+        plushy.sliding = true;
+    }
+    //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs
+    seconds ++;
+    return dt;
+    
+}
+
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSSet *allTouches = [event allTouches];
     UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
     CGPoint location = [touch locationInView: [touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    seconds = 0;
+    [self schedule:@selector(timer:) interval:0.08];
     
     //Swipe Detection Part 1
     firstTouch = location;
@@ -357,12 +373,16 @@ NSInteger hardMaps[3];
     
     //Swipe Detection Part 2
     lastTouch = location;
+    [self unschedule:@selector(timer:)];
+    if (plushy.sliding) {
+        plushy.sliding = false;
+    }
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);
     //    NSLog(@"SwipeLength is: %f", swipeLength);
     // tap gesture
-    if (swipeLength < 20) //TODO: Make sure the taps are being registered correctly.
+    if (swipeLength < 20 && seconds < 5) //TODO: Make sure the taps are being registered correctly.
     {
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
@@ -389,7 +409,7 @@ NSInteger hardMaps[3];
             [plushy jump];
         }
     }
-    else
+    else 
     {
         if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
             && [MainMenuScene showTips]) {
@@ -398,7 +418,7 @@ NSInteger hardMaps[3];
             showingTip1 = -1;
         }
         //Check if the swipe is a left swipe and long enough
-        if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
         {
             angle1 = -90;
             CGPoint p1 = [plushy ccNode].position;
@@ -412,7 +432,7 @@ NSInteger hardMaps[3];
             [maze transform:b2Vec2FromCGPoint(newp) withAngle:-90];
             //            [self animateRotation:angle];
         }
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
         {
             angle1 = 90;
             CGPoint p1 = [plushy ccNode].position;

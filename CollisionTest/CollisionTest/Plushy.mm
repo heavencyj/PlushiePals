@@ -29,7 +29,8 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize dead;
 @synthesize die;
 //@synthesize falling;
-
+@synthesize sliding;
+@synthesize swipeRange;
 @synthesize showbridge;
 @synthesize showmap;
 @synthesize tip;
@@ -109,7 +110,24 @@ const float kMinDistanceFromCenter = 100.0f;
     [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2, [self ccNode].position.y)];
     
     // update animation phase
-    if (running && !collide && !die) {
+    if (sliding) {
+        NSString *frameName;
+        animDelay -= ANIM_DELAY;
+        if(animDelay <= 0)
+        {
+            animDelay = ANIM_SPEED;
+            animPhase++;
+            if(animPhase > 4)
+            {
+                animPhase = 1;
+            }
+        }
+        // sliding
+        frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
+        [self setDisplayFrameNamed:frameName];
+    }
+    
+    else if (running && !collide && !die) {
         
         NSString *frameName;        
         animDelay -= ANIM_DELAY;        
@@ -258,6 +276,7 @@ const float kMinDistanceFromCenter = 100.0f;
     running = true;
     pass = false;
     showbridge = false;
+    swipeRange = false;
     tip = -1;
 }
 
@@ -277,7 +296,13 @@ const float kMinDistanceFromCenter = 100.0f;
         if ([otherfixtureId hasPrefix:@"tip"]) {
             tip = [[otherfixtureId substringFromIndex:3] intValue];
             //CCLOG(@"tip is %d", tip);
-        }       
+        }
+        else if ([otherfixtureId isEqualToString:@"turn"]) {
+            swipeRange = true;
+        }
+        else if ([otherfixtureId isEqualToString:@"noturn"]) {
+            swipeRange = false;
+        }
         else if ([otherfixtureId isEqualToString:@"start"]) {
             CCLOG(@"hit start point");
             // hide bridge
