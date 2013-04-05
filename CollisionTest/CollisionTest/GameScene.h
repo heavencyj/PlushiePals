@@ -68,11 +68,11 @@
 +(CCScene *) scene:(int)withLevel;
 -(void)setPlushyIsDead:(BOOL)d;
 -(void)nextObject:(ccTime)dt pattern:(int)p;
--(void)loadBombFile;
--(void) processLevelFileFromDictionary:(NSDictionary*)dictionary;
--(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin;// Add new method
 - (void)setInvisible:(CCNode *)node;
 - (void)setNodeVisible:(CCNode *)node;
+-(void)loadBombFile;
+-(void) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object;
+-(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin;// Add new method
 - (double) getRandomDouble;
 -(int) getRandomNumberBetweenMin:(int)min andMax:(int)max;
 

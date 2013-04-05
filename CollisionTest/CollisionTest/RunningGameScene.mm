@@ -48,6 +48,7 @@ bool pass1;
 float angle1;
 int showingTip1;
 int rotating1;
+int score;
 bool showBridge;
 CCSprite *tutorial1;
 TransitionObject *bridge1;
@@ -93,11 +94,15 @@ NSInteger hardMaps[3];
 	if( (self=[super init]) ) {
         // Add pause layer
         pauseLayer = [[PauseLayer alloc] initWithHud:self];
-        [self addChild:pauseLayer z:300];
+        [hud addChild:pauseLayer z:300];
         
         // Adding object layer
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png" capacity:150];
         [self addChild:plushyLayer z:200];
+        
+        // add score
+        scoreDelay = 10;
+        score = 0;
         
         // Add monkey
         plushy = [[[Plushy alloc] initWithGameLayer:self] autorelease];
@@ -170,7 +175,12 @@ NSInteger hardMaps[3];
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
-        [hud updateBananaScore:plushy.bananaScore];
+        score ++ ;
+        [hud updateScore:score];
+        // regain one life for every 300 points plushy gains
+        if (score % 300 == 0) {
+            [plushy regainLive];
+        }
         scoreDelay = 10;
     }
     
@@ -246,7 +256,9 @@ NSInteger hardMaps[3];
         //        //        [background addChild:star z:50];
         //        [self addChild:star z:50];
     }
-    
+    else if (plushy.collide) {
+        [maze setLinearVelocity:b2Vec2(0, 0)];
+    }
     // Plushy dies if it falls out of the screen or hit the wall
     //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
     else if (plushy.dead)
@@ -261,6 +273,7 @@ NSInteger hardMaps[3];
             // destroy 1 life, move maze back and reset plushy
             [plushy destroyLive];
             [maze destroyBody];
+            [maze.ccNode removeFromParentAndCleanup:YES];
 //            [maze setSensor:TRUE];
 //            [maze moveTo:b2Vec2FromCC([maze ccNode].position.x+250, [maze ccNode].position.y)];
 //            [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
@@ -294,18 +307,19 @@ NSInteger hardMaps[3];
 
 -(int)levelChooser
 {
-    if (mapCount < 5) {
-        if ([self getRandomDouble] < diffFactor) {
-            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-        }
-        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-    }
-    else {
-        if ([self getRandomDouble] < diffFactor) {
-            return hardMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-        }
-        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
-    }
+//    if (mapCount < 5) {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+//    else {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return hardMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+    return 4;
 }
 
 -(void) loadMaze:(int)ofLevel {
@@ -354,7 +368,7 @@ NSInteger hardMaps[3];
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
             CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            [pauseLayer setLayerPosition:plushy.ccPosition];
+            //[pauseLayer setLayerPosition:plushy.ccPosition];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
@@ -467,6 +481,10 @@ NSInteger hardMaps[3];
     CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
     [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
     
+}
+
++(void)addScore:(int)points {
+    score += points;
 }
 
 @end

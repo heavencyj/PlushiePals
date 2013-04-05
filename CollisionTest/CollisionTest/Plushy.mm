@@ -222,6 +222,19 @@ const float kMinDistanceFromCenter = 100.0f;
     }
 }
 
+-(void) regainLive
+{
+    if (lives < 3) {
+        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"];
+        int x_pos = 20 + 30*lives;
+        aHeart.position = ccp(x_pos, 290);
+        lives++;
+        [hearts addObject:aHeart];
+        [gameLayer.hud addChild:aHeart z:100];
+    }
+}
+
+
 -(void) jump
 {
     float impulseFactor = 1;

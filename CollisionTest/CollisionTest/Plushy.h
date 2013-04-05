@@ -54,6 +54,7 @@
 //-(void)setFalling:(bool)fall;
 //-(bool)isFalling;
 -(void)destroyLive;
+-(void) regainLive;
 -(void)resetPlushyPosition;
 //-(bool)isColliding;
 //-(int)showTip;
