@@ -103,11 +103,11 @@ NSInteger hardMaps[3];
 
 -(void)loadGameObjects:(int)level
 {
-	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
-	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
+//	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
+//	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
     
-    //    NSDictionary* banana = [dictionary objectForKey:@"bananas"];
-    //	[self processLevelFileFromDictionary:banana withObjectType:BANANA_SINGLE];
+//    NSDictionary* banana = [dictionary objectForKey:@"bananas"];
+//	[self processLevelFileFromDictionary:banana withObjectType:BANANA_SINGLE];
 }
 
 -(NSMutableArray*) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object
