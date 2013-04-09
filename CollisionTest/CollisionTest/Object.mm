@@ -25,18 +25,10 @@
         self = [super initWithDynamicBody:theObjName
                           spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
     }
-    else if ([theObjName isEqualToString:@"bridge"]) {
-        self = [super initWithDynamicBody:theObjName
-                          spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
-    }
     else{
         self = [super initWithKinematicBody:theObjName
                             spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
     }
-//    else{
-//        self = [super initWithDynamicBody:theObjName
-//                            spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
-//    }
     
     if(self)
     {
@@ -66,8 +58,6 @@
         case BANANA_SINGLE:
             objName = @"banana single";
             break;
-        case BRIDGE:
-            objName = @"bridge";
         default:
             break;
     }
@@ -89,20 +79,8 @@
 {
     [super updateCCFromPhysics];
     
-//    if (bodyTypeChange) {
-//        body->SetType(b2_kinematicBody);
-//        //[self setBodyType:b2_kinematicBody];
-//        [self setLinearVelocity:b2Vec2(-5, 0)];
-//        bodyTypeChange = FALSE;
-//    }
-    
     // update animation phase
     if (animateBomb) {
-        
-        //    [self setPhysicsPosition:b2Vec2FromCC(200, 140)];
-        //
-        //    float dy = [self ccNode].position.y -140;
-        
         NSString *frameName;
         
         animDelay -= ANIM_DELAY;
@@ -134,15 +112,6 @@
             animateBomb = TRUE;
             ((Plushy*)contact.otherObject).dead = TRUE;
             [self setSensor:TRUE];
-            contacted = TRUE;
-        }
-    }
-    else if ([fixtureId isEqualToString:@"bridge"]) {
-        //TODO
-    }
-    else if([fixtureId isEqualToString:@"bridgeend"]){
-        if (!contacted) {
-            ((Plushy*)contact.otherObject).showmap = YES;
             contacted = TRUE;
         }
     }

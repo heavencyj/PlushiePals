@@ -11,9 +11,13 @@
 
 @interface TransitionObject : GB2Sprite
 {
+    BOOL contacted_end;
+    BOOL contacted_start;
 }
 
-+(TransitionObject*) objectSprite:(NSString *)shapeName spriteName:(NSString *)spriteName;
++(TransitionObject*) transitionObjectSprite;
 -(void)remove;
-
+-(void)setBodyType:(b2BodyType)bodyType;
+-(void)setBridgeBodySensor:(BOOL)sensor;
+-(b2Body*)getBody;
 @end

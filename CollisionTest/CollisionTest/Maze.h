@@ -30,6 +30,8 @@
 #import "cocos2d.h"
 #import "GB2Sprite.h"
 
+#define MAZESPEED -5
+
 @interface Maze : GB2Sprite
 {
 }
@@ -38,6 +40,6 @@
 -(void)remove;
 -(void)transform:(b2Vec2)pos withAngle:(float)theta;
 -(void)moveTo:(b2Vec2)pos;
--(void)setSensor:(BOOL)sensor;
+-(void)setMazeBodySensor:(BOOL)sensor;
 -(b2Body*)getBody;
 @end    

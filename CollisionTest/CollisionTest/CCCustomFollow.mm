@@ -24,7 +24,6 @@
 	}
 	else
     {
-        //////
         CGPoint targetPos = ccpSub(halfScreenSize, followedNode_.position);
         const float kMinDistanceFromCenter = 0.0f;
         const float kMaxDistanceFromCenter = 20.0f;
@@ -37,19 +36,19 @@
         
         float distanceFromCenter = ccpLength(ccpSub(targetPos, currentPos));
 //        NSLog(@"[CCCustomFollow: Distance from center: %f", distanceFromCenter);
-//        NSLog(@"Follow node position: (%f, %f)", followedNode_.position.x, followedNode_.position.y);
+//        CCLOG(@"Follow node position: (%f, %f)", followedNode_.position.x, followedNode_.position.y);
         if (distanceFromCenter < kMaxDistanceFromCenter && distanceFromCenter > kMinDistanceFromCenter) {
             [target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
             CGPoint deltaPos = ccpSub(targetPos, previousTargetPos);
             currentPos = ccpAdd(currentPos, deltaPos);
             [target_ setPosition:currentPos];
+//            CCLOG(@"Current position of map:%f, %f ", currentPos.x, currentPos.y);
         }
         else if (distanceFromCenter > kMaxDistanceFromCenter)
         {
             [((GameScene*)target_) setPlushyIsDead:TRUE];
             isCurrentPosValid = NO;
         }
-        
         previousTargetPos = targetPos;
     }
 }

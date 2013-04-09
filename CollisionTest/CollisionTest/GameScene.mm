@@ -1,32 +1,37 @@
 //
-//  HelloWorldLayer.m
+//  GameScene.mm
 //  Cocos2d Test
 //
 //  Created by Lan Li & Heaven Chen on 1/13/13.
 //  Copyright 2013. All rights reserved.
 //
 
-
-// Interfaces for box2d and audio engine
 #import "GameScene.h"
-//#import "CCNode+SFGestureRecognizers.h"
-#import "GB2Sprite.h"
-#import "GB2DebugDrawLayer.h"
+#import "Plushy.h"
+#import <GameKit/GameKit.h>
+#import "cocos2d.h"
+#import "Box2D.h"
+#import "GLES-Render.h"
 #import "SimpleAudioEngine.h"
+
+#import "GB2Sprite.h"
+#import "SimpleAudioEngine.h"
+
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "CCTouchDispatcher.h"
 #import "CCParallaxNode-Extras.h"
 #import "CCCustomFollow.h"
+
 // Interface for difference scenes
 #import "GameOverScene.h"
 #import "MainMenuScene.h"
-#import "Hud.h"
 #import "BackgroundScene.h"
 #import "PauseLayer.h"
-//#import "PauseLayer.h"
+#import "MazeLayer.h"
+#import "Hud.h"
+
 // Interface for different objects
-#import "Plushy.h"
 #import "Object.h"
 #import "TransitionObject.h"
 
@@ -40,7 +45,6 @@
 
 #pragma mark - GameScene
 
-// HelloWorldLayer implementation
 @implementation GameScene
 
 // Level related variables
@@ -53,8 +57,8 @@ bool showBridge;
 CCSprite *tutorial;
 TransitionObject *bridge;
 
-@synthesize maze;
 @synthesize hud;
+@synthesize currMazeLayer;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -81,7 +85,6 @@ TransitionObject *bridge;
 +(CCScene *)scene:(int)withLevel
 {
     level = withLevel;
-    //NSLog(@"level is %d", level);
     pass = false;
     return [self scene];
 }
@@ -106,12 +109,9 @@ TransitionObject *bridge;
         [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
         [plushyLayer addChild:[plushy ccNode] z:10];
         
-        // add maze
-        [self loadMaze];
-        
-        // Initializing variables
-        nextObject= 5.0f;  // first object to appear after 3s
-        objDelay = 2.0f; // next object to appear after 1s
+        // Add maze layer
+//        mazeLayer = [[MazeLayer alloc] init];
+//        [self addChild:mazeLayer z:10];
         
         self.isTouchEnabled = YES;
         
@@ -119,7 +119,7 @@ TransitionObject *bridge;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+//        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         [self scheduleUpdate];
     }
@@ -131,22 +131,6 @@ TransitionObject *bridge;
 - (void)update:(ccTime)dt {
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    
-    //Animate rotation
-    //    if (rotating < 0) {
-    //        CGPoint p1 = [plushy ccNode].position;
-    //        p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-    //        CGPoint oldp = [maze ccNode].position;
-    //        CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
-    //        [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-    //        [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
-    //        maze.ccNode.visible = YES;
-    //        rotating = 0;
-    //    }
-    
-    // Add objects to path
-//    int objectPattern = [self getRandomNumberBetweenMin:1 andMax:2];
-//    [self nextObject:dt pattern:objectPattern];
     
     //Delay variables decrementing
     if (speedDelay > 0) {
@@ -186,58 +170,16 @@ TransitionObject *bridge;
             default:
                 break;
         }
-        // show the tool tips and imgs
-        // when swife, resume
     }
     
-       // NSLog(@"Plushy y location: %f", [[plushy ccNode] convertToWorldSpace:[plushy ccNode].position].y);
-    
-    // Speed up after a while
-    //  if (speedDelay == 0) {
-    //    plushySpeed += 1;
-    //    mazeSpeed -= 3;
-    //    [plushy setLinearVelocity:b2Vec2(plushySpeed,0)];
-    //    [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-    //    speedDelay = 1000;
-    //  }
-    //
-    
-    if (plushy.showmap) {
-        [self loadMaze:2];
-        plushy.showmap = NO;
-    }
-       if (pass) {
-        if (level == 11) {
-            //[self loadMaze];
-            bridge = [TransitionObject objectSprite:@"bridge" spriteName:@"bridge.png"];
-            [self addChild:bridge.ccNode];
-            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            //bridge.ccNode.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20);
-            [bridge.ccNode setPosition:ccp(plushy.ccPosition.x, plushy.ccPosition.y - 20)];
-            CCLOG(@"bridge position is at (%f, %f)", bridge.ccNode.position.x, bridge.ccNode.position.y);
-            //bridge.ccNode.position = ccp(130, 100);
-            [bridge setLinearVelocity:[maze linearVelocity]];
-            //bridge.ccNode.visible = YES;
-            pass = false;
-            [plushy reset];
-            
-        }
-        else {
-            [[GB2Engine sharedInstance] deleteAllObjects];
-            //[plushy reset];
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
-        }
+    if (pass) {
+        [[GB2Engine sharedInstance] deleteAllObjects];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
     }
     
     // TODO: add some animations here
     else if (plushy.pass) {
         pass = true;
-        // drop something on the screen to show that you passed the level
-        //NSLog(@"passsss!");
-//        CCSprite* star = [CCSprite spriteWithFile:@"Star.png"];
-//        star.position = ccp(winSize.width*0.9, winSize.height*0.8);
-//        //        [background addChild:star z:50];
-//        [self addChild:star z:50];
     }
     
     // Plushy dies if it falls out of the screen or hit the wall
@@ -253,39 +195,9 @@ TransitionObject *bridge;
         {
             // destroy 1 life, move maze back and reset plushy
             [plushy destroyLive];
-            [maze setSensor:TRUE];
-            [maze moveTo:b2Vec2FromCC([maze ccNode].position.x+250, [maze ccNode].position.y)];
-            [maze setLinearVelocity:b2Vec2(mazeSpeed, 0)];
-            [plushy resetPlushyPosition];
-            [maze setSensor:FALSE];
+//            [mazeLayer reset];
         }
     }
-}
-
-- (double) getRandomDouble
-{
-    return ((double)arc4random() / ARC4RANDOM_MAX);
-}
-
--(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
-{
-	return ( (arc4random() % (max-min+1)) + min );
-}
-
-// on "dealloc" you need to release all your retained objects
-- (void) dealloc
-{
-	[super dealloc];
-}
-
-// Add new method
-- (void)setInvisible:(CCNode *)node {
-    node.visible = NO;
-    rotating = -1;
-}
-- (void)setNodeVisible:(CCNode *)node {
-    node.visible = YES;
-    rotating = 1;
 }
 
 -(void)nextObject:(ccTime)dt pattern:(int)p
@@ -319,7 +231,7 @@ TransitionObject *bridge;
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj4 ccNode] z:38];
             }
-            nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
+            nextObject = [GameScene getRandomNumberBetweenMin:5 andMax:10];
         }
         if (p == 1) {
             int initalX = [[CCDirector sharedDirector] winSize].width;
@@ -342,51 +254,51 @@ TransitionObject *bridge;
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj4 ccNode] z:38];
             }
-            nextObject = [self getRandomNumberBetweenMin:5 andMax:10];
+            nextObject = [GameScene getRandomNumberBetweenMin:5 andMax:10];
         }
         if (p == 0) {
             // drop a banana peel for speed up
-//            Object *obj1 = [Object randomObject:CACTUS_BOMB];
-//            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
-//            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
-//            [obj1 setLinearVelocity:b2Vec2(0, -40)];
-//            [obj1 ccNode].visible = NO;
-//            //[obj1 setSensor:YES];
-//            //TODO: make the body sensor body temporarily
-//            [self addChild:[obj1 ccNode] z:30];
-//            nextObject = [self getRandomNumberBetweenMin:5 andMax:8];
+            //            Object *obj1 = [Object randomObject:CACTUS_BOMB];
+            //            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
+            //            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
+            //            [obj1 setLinearVelocity:b2Vec2(0, -40)];
+            //            [obj1 ccNode].visible = NO;
+            //            //[obj1 setSensor:YES];
+            //            //TODO: make the body sensor body temporarily
+            //            [self addChild:[obj1 ccNode] z:30];
+            //            nextObject = [self getRandomNumberBetweenMin:5 andMax:8];
         }
     }
+}
+
++ (double) getRandomDouble
+{
+    return ((double)arc4random() / ARC4RANDOM_MAX);
+}
+
++(int) getRandomNumberBetweenMin:(int)min andMax:(int)max
+{
+	return ( (arc4random() % (max-min+1)) + min );
+}
+
+// on "dealloc" you need to release all your retained objects
+- (void) dealloc
+{
+	[super dealloc];
+}
+
+// Add new method
+- (void)setInvisible:(CCNode *)node {
+    node.visible = NO;
+    rotating = -1;
+}
+- (void)setNodeVisible:(CCNode *)node {
+    node.visible = YES;
+    rotating = 1;
 }
 
 -(void)setPlushyIsDead:(BOOL)d {
     plushy.dead = d;
-}
-
-
--(void) loadMaze
-{
-    [self loadMaze:level];
-}
-
--(void) loadMaze:(int)ofLevel {
-    if (ofLevel == 11) {
-        ofLevel = 1;
-    }
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", ofLevel]];
-    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
-    maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
-    [maze setPhysicsPosition:b2Vec2FromCC(70,120)];
-    
-    // load in game objects
-    //[self loadBombFile];
-
-    mazeSpeed = -5;
-    [maze setLinearVelocity:b2Vec2(mazeSpeed,0)];
-//    dummyMaze = [CCSprite spriteWithFile:[@"canyon " stringByAppendingFormat:@"%d.png", level]]; //TODO:
-//    dummyMaze.visible = NO;
-//    [self addChild:dummyMaze z:40];
-    [self addChild:[maze ccNode] z:40];
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -395,6 +307,9 @@ TransitionObject *bridge;
     UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
     CGPoint location = [touch locationInView: [touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    seconds = 0;
+    [self schedule:@selector(timer:) interval:0.08];
     
     //Swipe Detection Part 1
     firstTouch = location;
@@ -409,189 +324,63 @@ TransitionObject *bridge;
     
     //Swipe Detection Part 2
     lastTouch = location;
+    [self unschedule:@selector(timer:)];
+    if (plushy.sliding) {
+        plushy.sliding = false;
+    }
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);
     //    NSLog(@"SwipeLength is: %f", swipeLength);
     // tap gesture
-    if (swipeLength < 20) //TODO: Make sure the taps are being registered correctly.
+    if (swipeLength < 20 && seconds < 5)
     {
         // If pause button is tapped
         if (CGRectContainsPoint(hud.pauseButtonRect, location)){
             [pauseLayer pauseGame];
             CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            //[pauseLayer setLayerPosition:plushy.ccPosition];
             CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
             [pauseLayer pauseLayerVisible:YES];
         }
-        if ((showingTip == 4 || showingTip == 5 || showingTip == 6)
-            && [MainMenuScene showTips]) {
+        else if ((showingTip1 == 4 || showingTip1 == 5 || showingTip1 == 6)
+                 && [MainMenuScene showTips]) {
             [pauseLayer resumeGame];
-            [self removeChild:tutorial cleanup:YES];
-            showingTip = -1;
+            [self removeChild:tutorial1 cleanup:YES];
+            showingTip1 = -1;
         }
         // Otherwise its' for jumping and we prevent double jumping
         else if (!plushy.jumping) {
-            if ((showingTip == 3)
+            if ((showingTip1 == 3)
                 && [MainMenuScene showTips]) {
                 [pauseLayer resumeGame];
-                [self removeChild:tutorial cleanup:YES];
-                showingTip = -1;
+                [self removeChild:tutorial1 cleanup:YES];
+                showingTip1 = -1;
             }
             [plushy jump];
         }
     }
     else
     {
-        if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
+        if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
             && [MainMenuScene showTips]) {
             [pauseLayer resumeGame];
-            [self removeChild:tutorial cleanup:YES];
-            showingTip = -1;
+            [self removeChild:tutorial1 cleanup:YES];
+            showingTip1 = -1;
         }
         //Check if the swipe is a left swipe and long enough
-        if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
         {
-            angle = -90;
             CGPoint p1 = [plushy ccNode].position;
-            //        p1.y = p1.y+10;
             p1.y = p1.y-80;
-            //[plushy setFalling:true];
-            
-            // Rotate the map without animation
-            CGPoint oldp = [maze ccNode].position;
-            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(-90) of:oldp around:p1];
-            [maze transform:b2Vec2FromCGPoint(newp) withAngle:-90];
-            //            [self animateRotation:angle];
+            [currMazeLayer transformAround:p1 WithAngle:-90];
         }
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
         {
-            angle = 90;
             CGPoint p1 = [plushy ccNode].position;
-            //        p1.y = p1.y-80;
             p1.y = p1.y+10;
-            //[plushy setFalling:true];
-            // Rotate the map without animation
-            CGPoint oldp = [maze ccNode].position;
-            CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(90) of:oldp around:p1];
-            [maze transform:b2Vec2FromCGPoint(newp) withAngle:90];
-            //            [self animateRotation:angle];
+            [currMazeLayer transformAround:p1 WithAngle:90];
         }
     }
 }
-
--(void)animateRotation:(int)angle
-{
-    if ((showingTip == 1 || showingTip == 2 || showingTip == 10 || showingTip == 11)
-        && [MainMenuScene showTips]) {
-        [pauseLayer resumeGame];
-        [self removeChild:tutorial cleanup:YES];
-        showingTip = -1;
-    }
-    //cameraDelay = 10;
-    //[plushy setFalling:true];
-    
-    
-    //  // To to animate
-//    CCLOG(@"maze is at %f and %f", [maze ccNode].position.x, [maze ccNode].position.y);
-//    CCLOG(@"dummymaze is at %f and %f", dummyMaze.position.x, dummyMaze.position.y);
-//    
-//    //  angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-//    CGPoint p1 = [plushy ccNode].position;
-//    CGPoint p2 = [maze ccNode].position;
-//    float dy = (angle > 0) ? 15:-40;
-//    CGPoint tempAnchorPoint;
-//    int a = (int)dummyMaze.rotation/90 % 2;
-//    switch (ABS(a)) {
-//        case 0:
-//            tempAnchorPoint = ccp(ABS(p1.x-p2.x)/dummyMaze.contentSize.width, 1-ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.height);
-//            break;
-//            
-//        case 1:
-//            tempAnchorPoint = ccp(ABS(p1.y-p2.y+dy)/dummyMaze.contentSize.width, 1-ABS(p1.x-p2.x)/dummyMaze.contentSize.height);
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    dummyMaze.anchorPoint = tempAnchorPoint;
-//    dummyMaze.position = ccp(180, 120);
-//    CCLOG(@"dummymaze anchor is at %f and %f",dummyMaze.anchorPoint.x, dummyMaze.anchorPoint.y);
-//    CCLOG(@"dummymaze pos is at %f and %f",dummyMaze.position.x, dummyMaze.position.y);
-//    [maze ccNode].visible = NO;
-//    [dummyMaze runAction:[CCSequence actions:
-//                          [CCCallFuncN actionWithTarget:self selector:@selector(setNodeVisible:)],
-//                          [CCRotateBy actionWithDuration:0.5 angle:angle],
-//                          [CCCallFuncN actionWithTarget:self selector:@selector(setInvisible:)], nil]];
-//    [maze setLinearVelocity:b2Vec2(0,0)];
-    
-    // Rotate the map without animation
-      //angle = (aGestureRecognizer.direction ==  UISwipeGestureRecognizerDirectionRight) ? 90:-90;
-      CGPoint p1 = [plushy ccNode].position;
-      p1.y = (angle > 0) ? p1.y+10:p1.y-80;
-      CGPoint oldp = [maze ccNode].position;
-      CGPoint newp = [self rotate:-1*CC_DEGREES_TO_RADIANS(angle) of:oldp around:p1];
-      [maze transform:b2Vec2FromCGPoint(newp) withAngle:angle];
-    
-}
-
--(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin
-{
-    float newx = cos(theta) * (pos.x-origin.x) - sin(theta) * (pos.y-origin.y) + origin.x;
-    float newy = sin(theta) * (pos.x-origin.x) + cos(theta) * (pos.y-origin.y) + origin.y;
-    
-    return CGPointMake(newx,newy);
-}
-
-///////////////////////// loading game objects
--(void)loadBombFile
-{
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"GameObjects" ofType:@"plist" inDirectory:@""];
-	
-	NSAssert(nil!=path, @"Invalid GameObjects file.");
-	
-	NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-	NSDictionary* bridge = [dictionary objectForKey:@"bridge"];
-	transitionBridge = (Object*)[[self processLevelFileFromDictionary:bridge withObjectType:BRIDGE] lastObject];
-    
-//	NSDictionary* cactus = [dictionary objectForKey:@"cactus bombs"];
-//	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
-    
-//    NSDictionary* banana = [dictionary objectForKey:@"bananas"];
-//	[self processLevelFileFromDictionary:banana withObjectType:BANANA_SINGLE];
-
-}
-
--(NSMutableArray*) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object
-{
-    if (nil==dictionary) {
-        return nil;
-    }
-    
-    NSMutableArray* gameObjects = [[NSMutableArray alloc] init];
-    
-    for (id key in dictionary) {
-        NSDictionary* gameObj = [dictionary objectForKey:key];
-        NSNumber* pos_x = [gameObj objectForKey:@"x"];
-        NSNumber* pos_y = [gameObj objectForKey:@"y"];
-        CGPoint position = ccp([pos_x intValue],[pos_y intValue]);
-        NSNumber* rot = [gameObj objectForKey:@"r"];
-        
-        // create cactus bomb
-        Object *item = [Object randomObject:object];
-        [gameObjects addObject:item];
-        [self addChild:[item ccNode] z:30];
-        [item getBody]->SetTransform(b2Vec2FromCC(position.x, position.y), CC_DEGREES_TO_RADIANS([rot intValue]));
-        
-        // create weld joint
-        b2WeldJointDef weldJointDef;
-        weldJointDef.Initialize([maze getBody], [item getBody], [item getBody]->GetWorldCenter());
-        [GB2Engine sharedInstance].world->CreateJoint(&weldJointDef);
-    }
-    
-    return gameObjects;
-}
-
 
 @end

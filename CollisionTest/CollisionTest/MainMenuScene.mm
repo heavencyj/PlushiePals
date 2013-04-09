@@ -154,7 +154,8 @@ CCLayer *settingLayer;
     }
     else {
         [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
+        //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.m4a" loop:true];
     }
     mute = !mute;
 }

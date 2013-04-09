@@ -10,10 +10,31 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "GLES-Render.h"
-#import "MyContactListener.h"
 #import "SimpleAudioEngine.h"
 #import "Maze.h"
 #import "GameScene.h"
+#import "GB2Sprite.h"
+#import "GB2DebugDrawLayer.h"
+
+// Needed to obtain the Navigation Controller
+#import "AppDelegate.h"
+#import "CCTouchDispatcher.h"
+#import "CCParallaxNode-Extras.h"
+#import "CCCustomFollow.h"
+
+// Interface for difference scenes
+#import "GameOverScene.h"
+#import "MainMenuScene.h"
+#import "Hud.h"
+#import "BackgroundScene.h"
+#import "MazeLayer.h"
+#import "PauseLayer.h"
+
+//#import "PauseLayer.h"
+// Interface for different objects
+#import "Plushy.h"
+#import "Object.h"
+#import "TransitionObject.h"
 
 @class Hud;
 @class Plushy;
@@ -23,44 +44,12 @@
 // Game Scene
 @interface RunningGameScene : GameScene
 {
-    
-//    //Box2D
-//    GLESDebugDraw *_debugDraw;
-//    MyContactListener *_contactListener;
-//    CCAction *_walking;
-//    
-//    Maze *maze;
-//    Hud *hud;
-//    PauseLayer *pauseLayer;
-//    
-//    // Plushy variables
-//    Plushy *plushy;
-//    CCSpriteBatchNode *plushyLayer;
-//    
-//    //int score;
-//    float plushySpeed;
-//    float mazeSpeed;
-//    // Delay variables to delay certain actions
-//    int speedDelay;
-//    int scoreDelay;
-//    int cameraDelay;
-//    
-//    // Variables for dropping objects on the screen
-//    ccTime nextObject;
-//    ccTime objDelay;
-//    Object *obj;
-//    
-//    // touch input
-//    CGPoint firstTouch;
-//    CGPoint lastTouch;
-//    
-//    CCSprite *dummyMaze;
+    TransitionObject *initialBridge;
 }
-//
-//@property (readonly) Maze *maze;
-//@property (readonly) Hud *hud;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 +(void)addScore:(int)points;
+-(void)revealMazeLayer;
+-(void)loadMazeLayer;
 @end

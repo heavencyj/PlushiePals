@@ -12,23 +12,23 @@
 #import "GameScene.h"
 
 @class GameScene;
+@class RunningGameScene;
 
 @interface Plushy : GB2Sprite
 {
     //float direction;      //!< keeps monkey's direction (from accelerometer)
     int animPhase;        //!< the current animation phase
     ccTime animDelay;     //!< delay until the next animation phase is stated
-    GameScene *gameLayer; //!< weak reference
+    RunningGameScene *gameLayer; //!< weak reference
     
     NSMutableArray *hearts;
     b2Vec2 initialPosition;
    
 }
 
-//@property (readonly) bool isDead;
 @property (readwrite) int bananaScore;
 @property (readwrite) int lives;
-@property (readonly) GameScene *gameLayer;
+@property (readonly) RunningGameScene *gameLayer;
 @property (readonly) bool jumping;
 @property (readonly) bool running;
 @property (readonly) bool collide;
@@ -37,10 +37,9 @@
 @property (readonly) int tip;
 @property (readwrite) bool dead;
 @property (readwrite) bool sliding;
-//@property (readwrite) bool falling;
 @property (readonly) bool swipeRange;
-@property (readwrite) bool showbridge;
 @property (readwrite) bool showmap;
+@property (readwrite) bool loadmap;
 
 /**
  * Inits the monkey with the given game layer
@@ -49,19 +48,12 @@
 -(id) initWithGameLayer:(GameScene*)gl;
 -(void) jump;
 -(void) reset;
-//-(bool)isJumping;
 -(bool)isRunning;
 -(void)moveTo:(b2Vec2)pos;
-//-(bool)passLevel;
-//-(void)setFalling:(bool)fall;
-//-(bool)isFalling;
 -(void)destroyLive;
 -(void) regainLive;
 -(void)resetPlushyPosition;
-//-(bool)isColliding;
-//-(int)showTip;
 -(void)setTip;
-//-(bool)showBridge;
 -(void) loadLives;
 -(void) destroyAllLives;
 @end

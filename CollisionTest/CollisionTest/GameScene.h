@@ -1,24 +1,14 @@
 //
 //  HelloWorldLayer.h
-//  GestureDemo
 //
 //  Created by Lan Li on 1/13/13.
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
+#import "GB2DebugDrawLayer.h"
 
-
-#import <GameKit/GameKit.h>
-
-// When you import this file, you import all the cocos2d classes
-#import "cocos2d.h"
-#import "Box2D.h"
-#import "GLES-Render.h"
-#import "MyContactListener.h"
-#import "SimpleAudioEngine.h"
-#import "Maze.h"
-
-@class Hud;
 @class Plushy;
+@class Hud;
+@class MazeLayer;
 @class Object;
 @class PauseLayer;
 
@@ -28,25 +18,22 @@
     
     //Box2D
     GLESDebugDraw *_debugDraw;
-    MyContactListener *_contactListener;
     CCAction *_walking;
     
-    Maze *maze;
+    Plushy *plushy;
     Hud *hud;
     PauseLayer *pauseLayer;
-    
-    // Plushy variables
-    Plushy *plushy;
     CCSpriteBatchNode *plushyLayer;
+    CCSprite *tutorial1;
     
     //int score;
+    int showingTip1;
     float plushySpeed;
-    float mazeSpeed;
-    // Delay variables to delay certain actions
     int speedDelay;
     int scoreDelay;
     int cameraDelay;
-    
+    int seconds;
+
     // Variables for dropping objects on the screen
     ccTime nextObject;
     ccTime objDelay;
@@ -57,25 +44,21 @@
     CGPoint lastTouch;
     
     CCSprite *dummyMaze;
-    
-    Object *transitionBridge;
+    MazeLayer *currMazeLayer;
 }
 
-@property (readonly) Maze *maze;
 @property (readonly) Hud *hud;
+@property (readonly) MazeLayer *currMazeLayer;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 // returns the scene with a specific level
 +(CCScene *) scene:(int)withLevel;
++(int) getRandomNumberBetweenMin:(int)min andMax:(int)max;
++ (double) getRandomDouble;
+
 -(void)setPlushyIsDead:(BOOL)d;
--(void)nextObject:(ccTime)dt pattern:(int)p;
 - (void)setInvisible:(CCNode *)node;
 - (void)setNodeVisible:(CCNode *)node;
--(void)loadBombFile;
--(void) processLevelFileFromDictionary:(NSDictionary*)dictionary withObjectType:(int)object;
--(CGPoint)rotate:(float)theta of:(CGPoint)pos around:(CGPoint)origin;// Add new method
-- (double) getRandomDouble;
--(int) getRandomNumberBetweenMin:(int)min andMax:(int)max;
-
+-(void)nextObject:(ccTime)dt pattern:(int)p;
 @end

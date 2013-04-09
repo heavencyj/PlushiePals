@@ -40,7 +40,6 @@ int levelScore;
     
 }
 
-
 -(id) init
 {
     if( (self=[super init] )) {

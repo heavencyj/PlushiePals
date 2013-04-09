@@ -36,14 +36,6 @@
     return [[[self alloc] initWithKinematicBody:shapeName spriteFrameName:spriteName] autorelease];
 }
 
--(void) storeFixturePoints
-{
-    for (b2Fixture* f=body->GetFixtureList(); f; f=f->GetNext()) {
-        
-    }
-
-}
-
 -(void)transform:(b2Vec2)pos withAngle:(float)theta
 {
   float angle = body->GetAngle();
@@ -61,10 +53,15 @@
     body->SetTransform(pos, body->GetAngle());
 }
 
--(void)setSensor:(BOOL)sensor
+-(void)setMazeBodySensor:(BOOL)sensor
 {
-    b2Fixture *fixture = body->GetFixtureList();
-    fixture->SetSensor(sensor);
+    for (b2Fixture *f=body->GetFixtureList(); f->GetNext() != nil; f=f->GetNext()) {
+        NSString *fixtureId = (NSString*)f->GetUserData();
+        if ([fixtureId isEqualToString:@"mazebody"]) {
+            f->SetSensor(sensor);
+            break;
+        }
+    }
 }
 
 -(b2Body*)getBody

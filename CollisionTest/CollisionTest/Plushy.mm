@@ -7,9 +7,10 @@
 //
 
 #import "Plushy.h"
-#import "GameScene.h"
+#import "RunningGameScene.h"
 #import "GB2Contact.h"
 #import "CCCustomFollow.h"
+#import "SimpleAudioEngine.h"
 
 #define ANIM_SPEED 2.0f
 #define ANIM_SPEED2 4.0f
@@ -32,19 +33,17 @@ const float kMinDistanceFromCenter = 100.0f;
 //@synthesize falling;
 @synthesize sliding;
 @synthesize swipeRange;
-@synthesize showbridge;
 @synthesize showmap;
+@synthesize loadmap;
 @synthesize tip;
 @synthesize bananaScore;
 @synthesize lives;
 
 //TODO: which initialization is being used here?
--(id) initWithGameLayer:(GameScene*)gl
+-(id) initWithGameLayer:(RunningGameScene*)gl
 {
     self = [super initWithDynamicBody:@"Monkey"
                       spriteFrameName:@"Monkey run 1.png"];
-    //    self = [super initWithKinematicBody:@"Monkey run 1"
-    //                      spriteFrameName:@"Monkey run 1.png"];
     
     if(self)
     {
@@ -64,15 +63,17 @@ const float kMinDistanceFromCenter = 100.0f;
         tip = -1;
         [self loadLives];
         
+        swipeRange = true;
+        
         // setting initial plushy position
-        //initialPosition = b2Vec2FromCC(150, 180);
-        initialPosition = b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2, 180);
+        //initialPosition = b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2-50, 180);
+        initialPosition = b2Vec2FromCC(0, 180);
         [self setPhysicsPosition:initialPosition];
     }
     return self;
 }
 
--(id) initWithGameLayer:(GameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
+-(id) initWithGameLayer:(RunningGameScene*)gl withShape:(NSString*)shape withSprite:(NSString*)sprite
 {
     self = [super initWithDynamicBody:shape
                       spriteFrameName:sprite];
@@ -107,8 +108,7 @@ const float kMinDistanceFromCenter = 100.0f;
     [super updateCCFromPhysics];
     
     // Continuously reset the monkey back to the same physics position each time.
-    //[self setPhysicsPosition:b2Vec2FromCC(100, 90)];
-    [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2, [self ccNode].position.y)];
+    [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2-50, [self ccNode].position.y)];
     
     // update animation phase
     if (sliding) {
@@ -284,7 +284,8 @@ const float kMinDistanceFromCenter = 100.0f;
     die = false;
     running = true;
     pass = false;
-    showbridge = false;
+    showmap = false;
+    loadmap = false;
     swipeRange = false;
     tip = -1;
 }
@@ -298,9 +299,10 @@ const float kMinDistanceFromCenter = 100.0f;
     {
         running = true;
         jumping = false;
-        //falling = false;
+//        die = false;
+//        collide = false;
     }
-    if([fixtureId isEqualToString:@"collision"])
+    else if([fixtureId isEqualToString:@"collision"])
     {
         if ([otherfixtureId hasPrefix:@"tip"]) {
             tip = [[otherfixtureId substringFromIndex:3] intValue];
@@ -318,9 +320,12 @@ const float kMinDistanceFromCenter = 100.0f;
             [self reset];
         }
         else if ([otherfixtureId isEqualToString:@"win"]) {
-            pass = true;
+//            pass = true;
             //show bridge
-            showbridge = true;
+//            showmap = true;
+        }
+        else if([otherfixtureId isEqualToString:@"showbridge"]) {
+            [self.gameLayer.currMazeLayer showBridge];
         }
         else {
             running = false;
@@ -333,7 +338,7 @@ const float kMinDistanceFromCenter = 100.0f;
 
 -(void) beginContactWithTransitionObject:(GB2Contact *)contact {
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+//    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
     if([fixtureId isEqualToString:@"feet"])
     {
         running = true;
@@ -342,12 +347,11 @@ const float kMinDistanceFromCenter = 100.0f;
     }
     if([fixtureId isEqualToString:@"collision"])
     {
-        if ([otherfixtureId isEqualToString:@"bridgeend"]) {
-            CCLOG(@"show new map");
-            showmap = true;
-        }
+//        if ([otherfixtureId isEqualToString:@"bridgeend"]) {
+//            CCLOG(@"show new map");
+//            loadmap = true;
+//        }
     }
-
 }
 
 
