@@ -38,6 +38,9 @@
 		98176EB316FA2116009BA7AB /* Levels icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB216FA2116009BA7AB /* Levels icon.png */; };
 		98176EB516FA21A9009BA7AB /* Play icon large.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB416FA21A9009BA7AB /* Play icon large.png */; };
 		98176EFC17002266009BA7AB /* PlushyMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98176EFB17002264009BA7AB /* PlushyMenuScene.mm */; };
+		986244001715094000312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986243FF1715094000312BE0 /* plushyshapes.plist */; };
+		9862440317150E5100312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862440117150E5100312BE0 /* monkeys.plist */; };
+		9862440417150E5100312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862440217150E5100312BE0 /* monkeys.png */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -296,6 +299,9 @@
 		98176EFA17002263009BA7AB /* PlushyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlushyMenuScene.h; sourceTree = "<group>"; };
 		98176EFB17002264009BA7AB /* PlushyMenuScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PlushyMenuScene.mm; sourceTree = "<group>"; };
 		98176EFF17002469009BA7AB /* Character screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Character screen.png"; sourceTree = "<group>"; };
+		986243FF1715094000312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+		9862440117150E5100312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
+		9862440217150E5100312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -822,9 +828,12 @@
 				B6B55DB317151151002B48FA /* monkeys.plist */,
 				B6B55DB417151151002B48FA /* monkeys.png */,
 				B6B55DA91713E3DF002B48FA /* canyon_levels.plist */,
+				986243FF1715094000312BE0 /* plushyshapes.plist */,
 				B6E25A3017127791008F1737 /* canyon level 1.plist */,
 				B6E25A2C1712719C008F1737 /* canyon level 1.png */,
 				98EDB1F617079062009076E6 /* GameObjects.plist */,
+				9862440117150E5100312BE0 /* monkeys.plist */,
+				9862440217150E5100312BE0 /* monkeys.png */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -1645,9 +1654,9 @@
 				B6B55DAD1713E4A3002B48FA /* tutorial 11.png in Resources */,
 				B6B55DAE1713E4A3002B48FA /* tutorial 10.png in Resources */,
 				B6B55DB01713E6AF002B48FA /* PlushyParadiseTheme.m4a in Resources */,
-				B6B55DB517151151002B48FA /* monkeys.plist in Resources */,
-				B6B55DB617151151002B48FA /* monkeys.png in Resources */,
-				B6B55DB8171513EB002B48FA /* plushyshapes.plist in Resources */,
+				986244001715094000312BE0 /* plushyshapes.plist in Resources */,
+				9862440317150E5100312BE0 /* monkeys.plist in Resources */,
+				9862440417150E5100312BE0 /* monkeys.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
