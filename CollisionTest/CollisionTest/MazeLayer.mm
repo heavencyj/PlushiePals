@@ -69,7 +69,7 @@ NSInteger hardMaps[3];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     
     [maze setMazeBodySensor:YES];
-    [maze setPhysicsPosition:b2Vec2FromCC(0,440)];
+    [maze setPhysicsPosition:b2Vec2FromCC(-1000,320)]; //Fix location.
     
     // load in game objects
     [self loadTransitionBridge:ofLevel];
