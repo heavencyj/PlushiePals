@@ -52,7 +52,7 @@ CCLayer *settingLayer;
         //    CCSprite *centerImage = [CCSprite spriteWithFile:@"main menu image.png"];
         //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
         //    [background addChild:centerImage];
-        mute=YES;
+        mute=NO;
         tipsOn=YES;
         testMode = YES;
         
@@ -155,7 +155,7 @@ CCLayer *settingLayer;
     else {
         [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
         //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.m4a" loop:true];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
     }
     mute = !mute;
 }

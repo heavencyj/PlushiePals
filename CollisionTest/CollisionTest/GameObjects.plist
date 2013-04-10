@@ -4,21 +4,68 @@
 <dict>
 	<key>bridge</key>
 	<dict>
+		<key>5</key>
+		<dict>
+			<key>loadx</key>
+			<integer>321</integer>
+			<key>loady</key>
+			<integer>697</integer>
+			<key>x</key>
+			<integer>321</integer>
+			<key>y</key>
+			<integer>465</integer>
+			<key>r</key>
+			<integer>180</integer>
+		</dict>
+		<key>4</key>
+		<dict>
+			<key>loadx</key>
+			<integer>158</integer>
+			<key>loady</key>
+			<integer>817</integer>
+			<key>x</key>
+			<integer>168</integer>
+			<key>y</key>
+			<integer>302</integer>
+			<key>r</key>
+			<integer>180</integer>
+		</dict>
+		<key>3</key>
+		<dict>
+			<key>loadx</key>
+			<integer>297</integer>
+			<key>loady</key>
+			<integer>650</integer>
+			<key>x</key>
+			<integer>302</integer>
+			<key>y</key>
+			<integer>-30</integer>
+			<key>r</key>
+			<integer>180</integer>
+		</dict>
 		<key>2</key>
 		<dict>
+			<key>loadx</key>
+			<string>100</string>
+			<key>loady</key>
+			<string>745</string>
 			<key>x</key>
-			<integer>8</integer>
+			<integer>110</integer>
 			<key>y</key>
-			<integer>15</integer>
+			<integer>329</integer>
 			<key>r</key>
 			<integer>180</integer>
 		</dict>
 		<key>1</key>
 		<dict>
+			<key>loadx</key>
+			<integer>100</integer>
+			<key>loady</key>
+			<integer>440</integer>
 			<key>x</key>
-			<integer>-985</integer>
+			<integer>108</integer>
 			<key>y</key>
-			<integer>121</integer>
+			<integer>230</integer>
 			<key>r</key>
 			<integer>180</integer>
 		</dict>

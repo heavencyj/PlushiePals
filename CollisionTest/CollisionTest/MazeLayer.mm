@@ -32,10 +32,15 @@ NSInteger hardMaps[3];
 // Initialize the map levels
 +(void)initMapLevels
 {
+    //Maze 4's swipe does not work well
     easyMaps[0] = 1;
     easyMaps[1] = 2;
-    easyMaps[2] = 6;
-    easyMaps[3] = 9;
+    easyMaps[2] = 3;
+//    easyMaps[3] = 5;
+//    easyMaps[0] = 1;
+//    easyMaps[1] = 2;
+//    easyMaps[2] = 6;
+//    easyMaps[3] = 9;
     midMaps[0] = 4;
     midMaps[1] = 5;
     midMaps[2] = 7;
@@ -47,7 +52,7 @@ NSInteger hardMaps[3];
 -(int)levelChooser
 {
     //TODO: the first map has to be canyon level 1
-    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
 //    if (mapCount < 5) {
 //        if ([self getRandomDouble] < diffFactor) {
 //            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
@@ -69,7 +74,11 @@ NSInteger hardMaps[3];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     
     [maze setMazeBodySensor:YES];
-    [maze setPhysicsPosition:b2Vec2FromCC(-1000,320)]; //Fix location.
+    
+    NSDictionary* transitionBridge = [[dictionary objectForKey:@"bridge"] objectForKey:[NSString stringWithFormat:@"%d", ofLevel]];
+    NSNumber* load_x = [transitionBridge objectForKey:@"loadx"];
+    NSNumber* load_y = [transitionBridge objectForKey:@"loady"];
+    [maze setPhysicsPosition:b2Vec2FromCC([load_x intValue], [load_y intValue])]; //Fix location.
     
     // load in game objects
     [self loadTransitionBridge:ofLevel];

@@ -30,7 +30,7 @@
 #import "cocos2d.h"
 #import "GB2Sprite.h"
 
-#define MAZESPEED -5
+#define MAZESPEED -7
 
 @interface Maze : GB2Sprite
 {
