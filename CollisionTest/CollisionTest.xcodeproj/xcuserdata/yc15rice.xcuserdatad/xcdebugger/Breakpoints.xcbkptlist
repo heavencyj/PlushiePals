@@ -64,9 +64,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "276"
-         endingLineNumber = "276"
-         landmarkName = "-update:"
-         landmarkType = "5">
+         endingLineNumber = "276">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -77,9 +75,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "262"
-         endingLineNumber = "262"
-         landmarkName = "-update:"
-         landmarkType = "5">
+         endingLineNumber = "262">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -104,7 +100,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "288"
          endingLineNumber = "288"
-         landmarkName = "-beginContactWithMaze:"
+         landmarkName = "-reset"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -117,7 +113,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "274"
          endingLineNumber = "274"
-         landmarkName = "-reset"
+         landmarkName = "-jump"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -129,9 +125,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "253"
-         endingLineNumber = "253"
-         landmarkName = "-update:"
-         landmarkType = "5">
+         endingLineNumber = "253">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -143,7 +137,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "239"
          endingLineNumber = "239"
-         landmarkName = "-update:"
+         landmarkName = "-timer:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -156,7 +150,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "237"
          endingLineNumber = "237"
-         landmarkName = "-update:"
+         landmarkName = "-timer:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -169,7 +163,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "230"
          endingLineNumber = "230"
-         landmarkName = "-update:"
+         landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -194,9 +188,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "345"
-         endingLineNumber = "345"
-         landmarkName = "-timer:"
-         landmarkType = "5">
+         endingLineNumber = "345">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -207,9 +199,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "344"
-         endingLineNumber = "344"
-         landmarkName = "-timer:"
-         landmarkType = "5">
+         endingLineNumber = "344">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

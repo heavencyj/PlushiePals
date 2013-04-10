@@ -124,7 +124,7 @@ const float kMinDistanceFromCenter = 100.0f;
             }
         }
         // sliding
-        frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
+        frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
     
