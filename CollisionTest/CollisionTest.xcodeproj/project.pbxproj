@@ -39,8 +39,9 @@
 		98176EB516FA21A9009BA7AB /* Play icon large.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB416FA21A9009BA7AB /* Play icon large.png */; };
 		98176EFC17002266009BA7AB /* PlushyMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98176EFB17002264009BA7AB /* PlushyMenuScene.mm */; };
 		986244001715094000312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986243FF1715094000312BE0 /* plushyshapes.plist */; };
-		9862440317150E5100312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862440117150E5100312BE0 /* monkeys.plist */; };
-		9862440417150E5100312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862440217150E5100312BE0 /* monkeys.png */; };
+		9862440B1715193D00312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244091715193D00312BE0 /* monkeys.plist */; };
+		9862440C1715193D00312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862440A1715193D00312BE0 /* monkeys.png */; };
+		9862440E1715195D00312BE0 /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862440D1715195C00312BE0 /* canyon_levels.plist */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -85,7 +86,11 @@
 		B6B55DA81713E1FF002B48FA /* tutorial 3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DA61713E1FF002B48FA /* tutorial 3.png */; };
 		B6B55DAD1713E4A3002B48FA /* tutorial 11.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DAB1713E4A3002B48FA /* tutorial 11.png */; };
 		B6B55DAE1713E4A3002B48FA /* tutorial 10.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DAC1713E4A3002B48FA /* tutorial 10.png */; };
+<<<<<<< HEAD
 		B6B55DBA17152905002B48FA /* PlushyParadiseTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DB917152905002B48FA /* PlushyParadiseTheme.mp3 */; };
+=======
+		B6B55DB01713E6AF002B48FA /* PlushyParadiseTheme.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DAF1713E6AF002B48FA /* PlushyParadiseTheme.m4a */; };
+>>>>>>> update animation
 		B6BDF6AC16F79302002496CB /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = B6BDF6AB16F79302002496CB /* heart.png */; };
 		B6BFD8F616F393A500D93FAB /* BackgroundScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */; };
 		B6BFD8F916F3979000D93FAB /* Hud.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F816F3979000D93FAB /* Hud.mm */; };
@@ -306,8 +311,9 @@
 		98176EFB17002264009BA7AB /* PlushyMenuScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PlushyMenuScene.mm; sourceTree = "<group>"; };
 		98176EFF17002469009BA7AB /* Character screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Character screen.png"; sourceTree = "<group>"; };
 		986243FF1715094000312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
-		9862440117150E5100312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
-		9862440217150E5100312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		986244091715193D00312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
+		9862440A1715193D00312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		9862440D1715195C00312BE0 /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -362,9 +368,14 @@
 		B6B55DA61713E1FF002B48FA /* tutorial 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 3.png"; sourceTree = "<group>"; };
 		B6B55DAB1713E4A3002B48FA /* tutorial 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 11.png"; sourceTree = "<group>"; };
 		B6B55DAC1713E4A3002B48FA /* tutorial 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 10.png"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		B6B55DB317151151002B48FA /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
 		B6B55DB417151151002B48FA /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
 		B6B55DB917152905002B48FA /* PlushyParadiseTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlushyParadiseTheme.mp3; sourceTree = "<group>"; };
+=======
+		B6B55DAF1713E6AF002B48FA /* PlushyParadiseTheme.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlushyParadiseTheme.m4a; sourceTree = "<group>"; };
+		B6B55DB7171513EA002B48FA /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+>>>>>>> update animation
 		B6BDF6AB16F79302002496CB /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		B6BFD8F416F393A500D93FAB /* BackgroundScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundScene.h; sourceTree = "<group>"; };
 		B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundScene.mm; sourceTree = "<group>"; };
@@ -838,14 +849,19 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B6742FF2171569E4002F9E56 /* canyon_levels.plist */,
 				B6742FE0171558AE002F9E56 /* plushyshapes.plist */,
 				B6B55DB317151151002B48FA /* monkeys.plist */,
 				B6B55DB417151151002B48FA /* monkeys.png */,
+=======
+				B6B55DB7171513EA002B48FA /* plushyshapes.plist */,
+				9862440D1715195C00312BE0 /* canyon_levels.plist */,
+				986244091715193D00312BE0 /* monkeys.plist */,
+				9862440A1715193D00312BE0 /* monkeys.png */,
+>>>>>>> update animation
 				986243FF1715094000312BE0 /* plushyshapes.plist */,
 				98EDB1F617079062009076E6 /* GameObjects.plist */,
-				9862440117150E5100312BE0 /* monkeys.plist */,
-				9862440217150E5100312BE0 /* monkeys.png */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -1675,6 +1691,7 @@
 				B6B55DAD1713E4A3002B48FA /* tutorial 11.png in Resources */,
 				B6B55DAE1713E4A3002B48FA /* tutorial 10.png in Resources */,
 				986244001715094000312BE0 /* plushyshapes.plist in Resources */,
+<<<<<<< HEAD
 				9862440317150E5100312BE0 /* monkeys.plist in Resources */,
 				9862440417150E5100312BE0 /* monkeys.png in Resources */,
 				B6B55DBA17152905002B48FA /* PlushyParadiseTheme.mp3 in Resources */,
@@ -1688,6 +1705,11 @@
 				B6742FF3171569E4002F9E56 /* canyon_levels.plist in Resources */,
 				B6742FF617156B66002F9E56 /* canyon level 5.plist in Resources */,
 				B6742FF717156B66002F9E56 /* canyon level 5.png in Resources */,
+=======
+				9862440B1715193D00312BE0 /* monkeys.plist in Resources */,
+				9862440C1715193D00312BE0 /* monkeys.png in Resources */,
+				9862440E1715195D00312BE0 /* canyon_levels.plist in Resources */,
+>>>>>>> update animation
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
