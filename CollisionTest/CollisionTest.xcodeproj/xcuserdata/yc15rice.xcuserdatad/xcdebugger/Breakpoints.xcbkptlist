@@ -82,11 +82,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "386852896.101818"
+         timestampString = "387314564.7279"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "294"
-         endingLineNumber = "294"
+         startingLineNumber = "295"
+         endingLineNumber = "295"
          landmarkName = "-beginContactWithMaze:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -171,11 +171,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "386852896.101818"
+         timestampString = "387314564.7279"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "296"
-         endingLineNumber = "296"
+         startingLineNumber = "297"
+         endingLineNumber = "297"
          landmarkName = "-beginContactWithMaze:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -200,6 +200,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "344"
          endingLineNumber = "344">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CollisionTest/MazeLayer.mm"
+         timestampString = "387315040.512741"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "-levelChooser"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

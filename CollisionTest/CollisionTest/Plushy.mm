@@ -286,7 +286,8 @@ const float kMinDistanceFromCenter = 100.0f;
     pass = false;
     showmap = false;
     loadmap = false;
-    swipeRange = false;
+    //swipeRange = false;
+    swipeRange = true;
     tip = -1;
 }
 
@@ -312,7 +313,7 @@ const float kMinDistanceFromCenter = 100.0f;
             swipeRange = true;
         }
         else if ([otherfixtureId isEqualToString:@"noturn"]) {
-            swipeRange = false;
+            //swipeRange = false;
         }
         else if ([otherfixtureId isEqualToString:@"start"]) {
             CCLOG(@"hit start point");

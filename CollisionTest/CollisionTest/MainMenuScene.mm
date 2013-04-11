@@ -20,6 +20,7 @@ bool mute;
 bool tipsOn;
 bool showTools;
 bool testMode;
+bool first;
 CCMenuItemImage *sound;
 CCMenuItemImage *tips;
 CCMenuItemImage *tool;
@@ -53,8 +54,9 @@ CCLayer *settingLayer;
         //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
         //    [background addChild:centerImage];
         mute=NO;
-        tipsOn=YES;
+        tipsOn=NO;
         testMode = YES;
+        first = YES;
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
@@ -192,6 +194,16 @@ CCLayer *settingLayer;
     return testMode;
 }
 
++(bool)showFirst {
+    return first;
+}
++(void)setFirst:(bool)on {
+    first  = on;
+}
+
++(void)setTips:(bool)on {
+    tipsOn = on;
+}
 - (void) dealloc
 {
     
