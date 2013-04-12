@@ -38,6 +38,9 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize tip;
 @synthesize bananaScore;
 @synthesize lives;
+@synthesize onBridge;
+
+bool shapechange;
 
 //TODO: which initialization is being used here?
 -(id) initWithGameLayer:(RunningGameScene*)gl
@@ -118,12 +121,14 @@ const float kMinDistanceFromCenter = 100.0f;
         {
             animDelay = ANIM_SPEED;
             animPhase++;
-            if(animPhase > 4)
+            if(animPhase > 3)
             {
                 animPhase = 1;
             }
         }
         // sliding
+        [self setBodyShape:@"Monkey slide"];
+        shapechange = true;
         frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         [self playSound:SLIDING];
@@ -143,11 +148,39 @@ const float kMinDistanceFromCenter = 100.0f;
             }
         }        
         // running
+        if (shapechange){
+            [self setBodyShape:@"Monkey"];
+            shapechange = false;
+        }
         frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         //[self playSound:RUNNING];
     }
-    
+    else if (onBridge) {
+        if (!pass) {
+            running = true;
+        }
+        else {
+            NSString *frameName;
+            animDelay -= ANIM_DELAY;
+            if(animDelay <= 0)
+            {
+                animDelay = ANIM_SPEED;
+                animPhase++;
+                if(animPhase > 4)
+                {
+                    animPhase = 1;
+                }
+            }
+            // running and cheering
+            if (shapechange){
+                [self setBodyShape:@"Monkey"];
+                shapechange = false;
+            }
+            frameName = [NSString stringWithFormat:@"Monkey win %d.png", animPhase];
+            [self setDisplayFrameNamed:frameName];
+        }
+    }
     else if (jumping) {
         NSString *frameName;
         
@@ -210,6 +243,7 @@ const float kMinDistanceFromCenter = 100.0f;
         }
         // die
         [self setBodyShape:@"Monkey die"];
+        shapechange = true;
         frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
@@ -275,6 +309,7 @@ const float kMinDistanceFromCenter = 100.0f;
     
     jumping = true;
     running = false;
+    onBridge = false;
     animPhase = 1;
     
     //[Plushy playSound:JUMPING];
@@ -291,7 +326,9 @@ const float kMinDistanceFromCenter = 100.0f;
     pass = false;
     showmap = false;
     loadmap = false;
-    swipeRange = false;
+    //swipeRange = false;
+    swipeRange = true;
+    onBridge = false;
     tip = -1;
 }
 
@@ -300,6 +337,7 @@ const float kMinDistanceFromCenter = 100.0f;
     //NSLog(@"Something contacted monkey's %@", (NSString *)contact.ownFixture->GetUserData());
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+    onBridge = false;
     if([fixtureId isEqualToString:@"feet"])
     {
         running = true;
@@ -317,7 +355,7 @@ const float kMinDistanceFromCenter = 100.0f;
             swipeRange = true;
         }
         else if ([otherfixtureId isEqualToString:@"noturn"]) {
-            swipeRange = false;
+            //swipeRange = false;
         }
         else if ([otherfixtureId isEqualToString:@"start"]) {
             CCLOG(@"hit start point");
@@ -325,7 +363,7 @@ const float kMinDistanceFromCenter = 100.0f;
             [self reset];
         }
         else if ([otherfixtureId isEqualToString:@"win"]) {
-//            pass = true;
+            pass = true;
             //show bridge
 //            showmap = true;
         }
@@ -346,8 +384,9 @@ const float kMinDistanceFromCenter = 100.0f;
 //    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
     if([fixtureId isEqualToString:@"feet"])
     {
-        running = true;
+        running = false;
         jumping = false;
+        onBridge = true;
         //falling = false;
     }
     if([fixtureId isEqualToString:@"collision"])

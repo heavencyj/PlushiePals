@@ -9,6 +9,7 @@
 #import "GameOverScene.h"
 #import "RunningGameScene.h"
 #import "MainMenuScene.h"
+#import "PlushyMenuScene.h"
 
 @implementation GameOverScene
 CCSprite *gameoverbg;
@@ -40,6 +41,13 @@ int levelScore;
     
 }
 
++(CCScene *) scene:(int)withScore
+{
+    levelScore = withScore;
+    return [self scene];
+    
+}
+
 -(id) init
 {
     if( (self=[super init] )) {
@@ -49,9 +57,8 @@ int levelScore;
         blueBG.anchorPoint = ccp(0,0);
         blueBG.position = ccp(0,0);
         [self addChild:blueBG];
-        gameoverbg = congrats ? [CCSprite spriteWithFile: @"Level pass screen.png"] :
-        [CCSprite spriteWithFile: @"Level fail screen.png"];
-        gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
+        gameoverbg = [CCSprite spriteWithFile: @"End screen.png"];
+        gameoverbg.position = ccp(winSize.width/2, winSize.height/2+10);
         [self addChild:gameoverbg];
         //
         //    CCLabelTTF* label = [CCLabelTTF labelWithString:@"Hello World"
@@ -67,30 +74,56 @@ int levelScore;
                                  selectedImage:nil
                                  target:self
                                  selector:@selector(goHome)];
-        home.position = ccp(-winSize.width*7/24, -winSize.height/7);
+        home.position = ccp(-winSize.width*7/24, -winSize.height/4);
         
         CCMenuItemImage *restart = [CCMenuItemImage
                                     itemWithNormalImage:@"Return icon.png"
                                     selectedImage:nil
                                     target:self
                                     selector:@selector(restart)];
-        restart.position = ccp(-winSize.width*4/24,-winSize.height/7);
+        restart.position = ccp(-winSize.width*4/24,-winSize.height/4);
         
-        CCMenuItemImage *next = [CCMenuItemImage
-                                 itemWithNormalImage:@"Play icon.png"
-                                 selectedImage:@"Play icon.png"
+        CCMenuItemImage *plushy = [CCMenuItemImage
+                                 itemWithNormalImage:@"Plushy icon.png"
+                                 selectedImage:nil
                                  target:self
-                                 selector:@selector(nextLevel)];
-        next.position = ccp(-winSize.width*1/24,-winSize.height/7);
+                                 selector:@selector(showPlushy)];
+        plushy.position = ccp(-winSize.width*1/24,-winSize.height/4);
         
-        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"SCORE: %d",levelScore]
+//        CCLabelTTF *momoLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"MOMO"]
+//                                                    fontName:@"GROBOLD"
+//                                                    fontSize:20];
+        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",levelScore]
                                                     fontName:@"GROBOLD"
-                                                    fontSize:23];
+                                                    fontSize:50];
+        
+        CCLabelTTF *highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIGH SCORE"]
+                                              fontName:@"GROBOLD"
+                                              fontSize:15];
+        
+        CCLabelTTF *scoreLabel2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",356]
+                                                    fontName:@"GROBOLD"
+                                                    fontSize:20];
+        
         scoreLabel.color = ccc3(245, 148, 36);
-        scoreLabel.position = ccp(-winSize.width*4/24,0);
+        scoreLabel.position = ccp(-winSize.width*4/24, -winSize.height/15);
+        
+        //momoLabel.color = ccc3(245, 148, 36);
+        //momoLabel.position = ccp(-winSize.width*4/24, -winSize.height/12+25);
+        
+        scoreLabel2.color = ccc3(245, 148, 36);
+        scoreLabel2.position = ccp(-winSize.width*4/24,winSize.height/8);
+        
+        highscoreLabel.color = ccc3(245, 148, 36);
+        highscoreLabel.position = ccp(-winSize.width*4/24,winSize.height/8+25);
+        
         CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
-        CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
-        : [CCMenu menuWithItems: home, restart, nil];
+        CCMenuItemLabel *score2 = [CCMenuItemLabel itemWithLabel:scoreLabel2];
+        //CCMenuItemLabel *momo= [CCMenuItemLabel itemWithLabel:momoLabel];
+        CCMenuItemLabel *highscore = [CCMenuItemLabel itemWithLabel:highscoreLabel];
+//        CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
+//        : [CCMenu menuWithItems: home, restart, nil];
+        CCMenu *menu = [CCMenu menuWithItems: home, restart, plushy, score, score2,highscore, nil];
         [menuLayer addChild: menu];
     }
     return self;
@@ -98,20 +131,19 @@ int levelScore;
 
 -(void)restart{
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    if ([MainMenuScene isTestMode]) {
-        [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
-    }
-    else [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+    
+    [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
 }
 
--(void)nextLevel
+-(void)showPlushy
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene:curLevel+1]];
+    [[CCDirector sharedDirector] replaceScene:[PlushyMenuScene scene]];
 }
 
 - (void)goHome {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
+    
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
     
 }

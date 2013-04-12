@@ -20,6 +20,7 @@ bool mute;
 bool tipsOn;
 bool showTools;
 bool testMode;
+bool first;
 CCMenuItemImage *sound;
 CCMenuItemImage *tips;
 CCMenuItemImage *tool;
@@ -52,13 +53,10 @@ CCLayer *settingLayer;
         //    CCSprite *centerImage = [CCSprite spriteWithFile:@"main menu image.png"];
         //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
         //    [background addChild:centerImage];
-//        mute=NO;
-//        tipsOn=YES;
-//        testMode = YES;
-
         mute=YES;
         tipsOn=NO;
-        testMode = NO;
+        //testMode = YES;
+        first = YES;
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
@@ -70,10 +68,10 @@ CCLayer *settingLayer;
                                  selector:@selector(hitPlay)];
         play.position = ccp(0,-winSize.height/2.8);
         
-        test = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTest)];
-        [test setNormalImage:[CCSprite spriteWithFile:@"Beta cancel icon.png"]];
-        test.position = ccp(-winSize.width/2.5,-winSize.width/5+3*DIST + test.contentSize.height*1.5);
-        test.visible = NO;
+//        test = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTest)];
+//        [self turnTest];
+//        test.position = ccp(-winSize.width/2.5,-winSize.width/5+3*DIST + test.contentSize.height*1.5);
+//        test.visible = NO;
         
         sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
         [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
@@ -93,7 +91,7 @@ CCLayer *settingLayer;
                 target:self
                 selector:@selector(showSetting)];
         tool.position = ccp(-winSize.width/2.5,-winSize.width/5);
-        tool.tag = 1;
+        tool.tag = 1;        
         
         plushies = [CCMenuItemImage
                 itemWithNormalImage:@"Plushy icon.png"
@@ -104,12 +102,12 @@ CCLayer *settingLayer;
         
         settingLayer = [CCLayerColor layerWithColor:ccc4(245, 148, 36, 100)
                                               width:tool.contentSize.width
-                                             height:tool.contentSize.height*1.5+3*DIST];
+                                             height:tool.contentSize.height+2*DIST];
         settingLayer.position = ccp(winSize.width/2-winSize.width/2.5-tool.contentSize.width/2,
                                     winSize.height/2-winSize.width/5);
         settingLayer.visible = NO;
         
-        CCMenu *menu = [CCMenu menuWithItems: play, test, sound, tips, tool, plushies, nil];
+        CCMenu *menu = [CCMenu menuWithItems: play, sound, tips, tool, plushies, nil];
         [menuLayer addChild:settingLayer];
         [menuLayer addChild: menu];
     }
@@ -203,6 +201,16 @@ CCLayer *settingLayer;
     return testMode;
 }
 
++(bool)showFirst {
+    return first;
+}
++(void)setFirst:(bool)on {
+    first  = on;
+}
+
++(void)setTips:(bool)on {
+    tipsOn = on;
+}
 - (void) dealloc
 {
     

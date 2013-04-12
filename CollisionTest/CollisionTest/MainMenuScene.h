@@ -18,4 +18,7 @@
 +(id) scene;
 +(bool)showTips;
 +(bool)isTestMode;
++(bool)showFirst;
++(void)setFirst:(bool)on;
++(void)setTips:(bool)on;
 @end
