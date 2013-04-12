@@ -6,8 +6,12 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
-@interface StatScene : NSObject
+@interface StatScene : CCLayer
+{
+    
+}
 
++(id) scene;
 @end

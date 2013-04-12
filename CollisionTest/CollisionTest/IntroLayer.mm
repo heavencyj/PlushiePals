@@ -12,6 +12,8 @@
 #import "GameScene.h"
 #import "MainMenuScene.h"
 
+#define ANIM_DELAY 0.25f
+
 #pragma mark - IntroLayer
 
 // HelloWorldLayer implementation
@@ -39,23 +41,43 @@
 	[super onEnter];
 
 	// ask director for the window size
-	CGSize size = [[CCDirector sharedDirector] winSize];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys.plist"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png"];
+    [self addChild:spriteSheet z:50];
 
 	CCSprite *background;
 	
 	if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
 		background = [CCSprite spriteWithFile:@"Loading screen.png"];
-		//background.rotation = 90;
+        background.position = ccp(winSize.width/2, winSize.height/2);
+        // add the label as a child to this Layer
+        [self addChild: background z:10];
+        
+        NSMutableArray *runAnimFrames = [NSMutableArray array];
+        for (int i=1; i<=4; i++) {
+            [runAnimFrames addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+              [NSString stringWithFormat:@"Monkey run %d.png",i]]];
+        }
+        CCAnimation *runAnim = [CCAnimation
+                                 animationWithSpriteFrames:runAnimFrames delay:0.2f];
+        
+
+        CCSprite *monkey = [CCSprite spriteWithSpriteFrameName:@"Monkey run 1.png"];
+        monkey.position = ccp(winSize.width/2, winSize.height*0.6);
+        CCAction *runAction = [CCRepeatForever actionWithAction:
+                           [CCAnimate actionWithAnimation:runAnim]];
+        [monkey runAction:runAction];
+        [spriteSheet addChild:monkey];
+        
 	} else {
 		//background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 	}
-	background.position = ccp(size.width/2, size.height/2);
 
-	// add the label as a child to this Layer
-	[self addChild: background];
 	
 	// In one second transition to the new scene
-	[self scheduleOnce:@selector(makeTransition:) delay:1];
+	[self scheduleOnce:@selector(makeTransition:) delay:2];
 }
 
 -(void) makeTransition:(ccTime)dt

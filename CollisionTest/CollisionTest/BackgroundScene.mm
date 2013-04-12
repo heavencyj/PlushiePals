@@ -33,7 +33,7 @@ CCParallaxNode *backgroundNode;
         // Loading physics shapes
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"canyon_levels.plist"];
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"plushyshapes.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys.plist"];
+        //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"monkeys.plist"];
         
         // 1) Create the CCParallaxNode
         backgroundNode = [CCParallaxNode node];

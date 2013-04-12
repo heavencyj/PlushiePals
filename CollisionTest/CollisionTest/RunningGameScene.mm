@@ -181,7 +181,7 @@ int score;
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
             //[[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:plushy.bananaScore]];
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:score]];
+            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
         }
         else
         {

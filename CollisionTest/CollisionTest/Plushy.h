@@ -40,6 +40,7 @@
 @property (readonly) bool swipeRange;
 @property (readwrite) bool showmap;
 @property (readwrite) bool loadmap;
+@property (readonly) bool onBridge;
 
 /**
  * Inits the monkey with the given game layer
