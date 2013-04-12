@@ -97,7 +97,7 @@ int levelScore;
 }
 
 -(void)restart{
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if ([MainMenuScene isTestMode]) {
         [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
     }
@@ -106,12 +106,12 @@ int levelScore;
 
 -(void)nextLevel
 {
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[CCDirector sharedDirector] replaceScene:[GameScene scene:curLevel+1]];
 }
 
 - (void)goHome {
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
     
 }

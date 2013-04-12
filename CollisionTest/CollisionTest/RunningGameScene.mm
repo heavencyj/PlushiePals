@@ -182,6 +182,7 @@ int score;
             [[GB2Engine sharedInstance] deleteAllObjects];
             //[[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:plushy.bananaScore]];
             [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:score]];
+            //[Plushy playSound:DYING];
         }
         else
         {
@@ -235,6 +236,7 @@ int score;
 {
     if (seconds >= 5) {
         plushy.sliding = true;
+        //[Plushy playSound:SLIDING];
     }
     //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs
     seconds ++;

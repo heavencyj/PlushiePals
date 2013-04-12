@@ -33,9 +33,10 @@ NSInteger hardMaps[3];
 +(void)initMapLevels
 {
     //Maze 4's swipe does not work well
-    easyMaps[0] = 1;
+    easyMaps[0] = 4;
     easyMaps[1] = 2;
     easyMaps[2] = 3;
+    easyMaps[3] = 1;
 //    easyMaps[3] = 5;
 //    easyMaps[0] = 1;
 //    easyMaps[1] = 2;
@@ -52,7 +53,7 @@ NSInteger hardMaps[3];
 -(int)levelChooser
 {
     //TODO: the first map has to be canyon level 1
-    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+    return easyMaps[[GameScene getRandomNumberBetweenMin:3 andMax:3]];
 //    if (mapCount < 5) {
 //        if ([self getRandomDouble] < diffFactor) {
 //            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
@@ -112,11 +113,8 @@ NSInteger hardMaps[3];
 
 -(void)loadGameObjects:(int)level
 {
-//	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
-//	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
-    
-//    NSDictionary* banana = [dictionary objectForKey:@"bananas"];
-//	[self processLevelFileFromDictionary:banana withObjectType:BANANA_SINGLE];
+	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
+	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
 }
 
 -(NSMutableArray*) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object

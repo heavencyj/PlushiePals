@@ -52,9 +52,13 @@ CCLayer *settingLayer;
         //    CCSprite *centerImage = [CCSprite spriteWithFile:@"main menu image.png"];
         //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
         //    [background addChild:centerImage];
-        mute=NO;
-        tipsOn=YES;
-        testMode = YES;
+//        mute=NO;
+//        tipsOn=YES;
+//        testMode = YES;
+
+        mute=YES;
+        tipsOn=NO;
+        testMode = NO;
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
@@ -67,17 +71,19 @@ CCLayer *settingLayer;
         play.position = ccp(0,-winSize.height/2.8);
         
         test = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTest)];
-        [self turnTest];
+        [test setNormalImage:[CCSprite spriteWithFile:@"Beta cancel icon.png"]];
         test.position = ccp(-winSize.width/2.5,-winSize.width/5+3*DIST + test.contentSize.height*1.5);
         test.visible = NO;
         
         sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
-        [self turnMute];
+        [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
+        [[SimpleAudioEngine sharedEngine] setEffectsVolume:1.5];
         sound.position = ccp(-winSize.width/2.5,-winSize.width/5+2*DIST+sound.contentSize.height);
         sound.visible = NO;
         
         tips = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTips)];
-        [self turnTips];
+        [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
         tips.position = ccp(-winSize.width/2.5,-winSize.width/5+DIST + sound.contentSize.height/2);
         tips.visible = NO;
         
@@ -88,7 +94,6 @@ CCLayer *settingLayer;
                 selector:@selector(showSetting)];
         tool.position = ccp(-winSize.width/2.5,-winSize.width/5);
         tool.tag = 1;
-        
         
         plushies = [CCMenuItemImage
                 itemWithNormalImage:@"Plushy icon.png"
@@ -112,7 +117,7 @@ CCLayer *settingLayer;
 }
 
 - (void)hitPlay {
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if (testMode) {
         [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
     }
@@ -125,6 +130,7 @@ CCLayer *settingLayer;
 
 -(void)showSetting
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if (tool.tag > 0) {
         sound.visible = YES;
         tips.visible = YES;
@@ -143,18 +149,21 @@ CCLayer *settingLayer;
 
 -(void)showPlushy
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[CCDirector sharedDirector] replaceScene:[PlushyMenuScene scene]];
 }
 
 -(void)turnMute
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if (mute) {
         [sound setNormalImage:[CCSprite spriteWithFile:@"Mute icon.png"]];
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        [[SimpleAudioEngine sharedEngine] setEffectsVolume:0.0]; //TODO: also can call StopEffect. Keep all effects in an array
     }
     else {
         [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
-        //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Luscious Swirl 60.mp3" loop:true];
+        [[SimpleAudioEngine sharedEngine] setEffectsVolume:1.0];
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
     }
     mute = !mute;
@@ -162,6 +171,7 @@ CCLayer *settingLayer;
 
 -(void)turnTips
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if (tipsOn) {
         [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
     }
@@ -173,6 +183,7 @@ CCLayer *settingLayer;
 
 -(void)turnTest
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     if (testMode) {
         [test setNormalImage:[CCSprite spriteWithFile:@"Beta cancel icon.png"]];
     }

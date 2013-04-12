@@ -9,11 +9,11 @@
 			<key>loadx</key>
 			<integer>321</integer>
 			<key>loady</key>
-			<integer>697</integer>
+			<integer>-185</integer>
 			<key>x</key>
-			<integer>321</integer>
+			<integer>325</integer>
 			<key>y</key>
-			<integer>465</integer>
+			<integer>-422</integer>
 			<key>r</key>
 			<integer>180</integer>
 		</dict>
@@ -72,21 +72,42 @@
 	</dict>
 	<key>cactus bombs</key>
 	<dict>
+		<key>3</key>
+		<dict>
+			<key>b1</key>
+			<dict>
+				<key>x</key>
+				<integer>1150</integer>
+				<key>y</key>
+				<integer>645</integer>
+				<key>r</key>
+				<integer>0</integer>
+			</dict>
+			<key>b2</key>
+			<dict>
+				<key>x</key>
+				<integer>570</integer>
+				<key>y</key>
+				<integer>-30</integer>
+				<key>r</key>
+				<integer>180</integer>
+			</dict>
+		</dict>
 		<key>1</key>
 		<dict>
 			<key>b1</key>
 			<dict>
 				<key>x</key>
-				<integer>995</integer>
+				<integer>1095</integer>
 				<key>y</key>
-				<integer>255</integer>
+				<integer>240</integer>
 				<key>r</key>
 				<integer>270</integer>
 			</dict>
 			<key>b0</key>
 			<dict>
 				<key>x</key>
-				<integer>220</integer>
+				<integer>330</integer>
 				<key>y</key>
 				<integer>-50</integer>
 				<key>r</key>

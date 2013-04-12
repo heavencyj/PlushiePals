@@ -109,6 +109,7 @@
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     if ([fixtureId isEqualToString:@"cactus bomb"]) {
         if (!contacted) {
+            [self playSound:BOMB_EXPLOSION];
             animateBomb = TRUE;
             ((Plushy*)contact.otherObject).dead = TRUE;
             [self setSensor:TRUE];
@@ -118,6 +119,7 @@
     else
     {
         if (!contacted) {
+            [self playSound:BANANA_POINTS];
             ((Plushy*)[contact otherObject]).bananaScore += 1;
             [RunningGameScene addScore:10];
             [[self ccNode] removeFromParentAndCleanup:YES];
@@ -140,6 +142,32 @@
 -(b2Body*)getBody
 {
     return body;
+}
+
+#define BOMB_EXPLOSION 0
+#define BANANA_POINTS 1
+#define SPECIAL_FRUIT 2
+
+-(void)playSound:(int)type
+{
+    NSString *soundEffect;
+    switch(type)
+    {
+        case BOMB_EXPLOSION:
+            soundEffect = @"Cactus Bomb.caf";
+            break;
+        case BANANA_POINTS:
+            soundEffect = @"Bananas.caf";
+            break;
+        case SPECIAL_FRUIT:
+            soundEffect = @"Special Object.caf";
+            break;
+        default:
+            break;
+    }
+    if (soundEffect != nil) {
+        [[SimpleAudioEngine sharedEngine] playEffect:soundEffect];
+    }
 }
 
 @end

@@ -80,6 +80,7 @@
 
 -(void)resumeGame
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     self.visible = NO;
     gameScene.hud.pauseButton.visible = YES;
     [gameScene resumeSchedulerAndActions];
@@ -88,6 +89,7 @@
 
 -(void)pauseGame
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [gameScene pauseSchedulerAndActions];
     [[CCDirector sharedDirector] pause];
     gameScene.hud.pauseButton.visible = NO;
@@ -95,6 +97,7 @@
 
 -(void)restartGame
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
     if ([MainMenuScene isTestMode]) {
         [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
@@ -105,12 +108,14 @@
 
 - (void)goHome
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 
 -(void)goLevels
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
     [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
 }

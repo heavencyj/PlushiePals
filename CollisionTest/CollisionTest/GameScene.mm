@@ -368,13 +368,15 @@ TransitionObject *bridge;
             showingTip1 = -1;
         }
         //Check if the swipe is a left swipe and long enough
-        if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
+        //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
         {
             CGPoint p1 = [plushy ccNode].position;
             p1.y = p1.y-80;
             [currMazeLayer transformAround:p1 WithAngle:-90];
         }
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
+        //else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
         {
             CGPoint p1 = [plushy ccNode].position;
             p1.y = p1.y+10;

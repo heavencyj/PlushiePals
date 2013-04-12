@@ -11,6 +11,12 @@
 #import "GB2Sprite.h"
 #import "GameScene.h"
 
+#define RUNNING 0
+#define JUMPING 1
+#define SLIDING 2
+#define COLLIDING 3
+#define DYING 4
+
 @class GameScene;
 @class RunningGameScene;
 
@@ -56,4 +62,5 @@
 -(void)setTip;
 -(void) loadLives;
 -(void) destroyAllLives;
++(void) playSound:(int)type;
 @end

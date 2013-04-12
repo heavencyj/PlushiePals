@@ -17,6 +17,10 @@
 #define BANANA_SINGLE 4
 #define BRIDGE 5
 
+#define BOMB_EXPLOSION 0
+#define BANANA_POINTS 1
+#define SPECIAL_FRUIT 2
+
 @interface Object : GB2Sprite {
     
     NSString *objName; //!< type of the object

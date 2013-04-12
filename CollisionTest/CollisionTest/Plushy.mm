@@ -126,6 +126,7 @@ const float kMinDistanceFromCenter = 100.0f;
         // sliding
         frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
+        [self playSound:SLIDING];
     }
     
     else if (running && !collide && !die) {
@@ -144,6 +145,7 @@ const float kMinDistanceFromCenter = 100.0f;
         // running
         frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
+        //[self playSound:RUNNING];
     }
     
     else if (jumping) {
@@ -187,6 +189,9 @@ const float kMinDistanceFromCenter = 100.0f;
         // collide
         frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
+        if (animPhase == 1) {
+            [Plushy playSound:COLLIDING];
+        }
     }    
     if (die) {
         NSString *frameName;
@@ -272,8 +277,8 @@ const float kMinDistanceFromCenter = 100.0f;
     running = false;
     animPhase = 1;
     
-    // play the monkey jump sound
-    [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.caf"];
+    //[Plushy playSound:JUMPING];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"jump.caf"];
 }
 
 -(void) reset
@@ -366,6 +371,42 @@ const float kMinDistanceFromCenter = 100.0f;
 
 -(void)setTip{
     tip = -1;
+}
+
++(void) playSound:(int)type
+{
+    NSString *soundEffect = @"";
+    switch(type)
+    {
+        case RUNNING:
+//            if (animPhase == 2) {
+//                soundEffect = @"Footstep.caf";
+//            }
+            break;
+        case JUMPING:
+            soundEffect = @"jump.caf";
+            break;
+        case SLIDING:
+            soundEffect = @"Slide.caf";
+            break;
+        case COLLIDING:
+            soundEffect = @"Collision.caf";
+            break;
+        case DYING:
+            soundEffect = @"GameOver.caf";
+            break;
+        default:
+            break;
+    }
+    
+    /*
+     pitch - [0.5 to 2.0] think of it as the "note" of the sound. Giving a higher pitch number makes the sound play at a "higher note".
+     pan - [-1.0 to 1.0] stereo affect. Below zero plays your sound more on the left side. Above 0 plays to the right. 0.0 is dead-center.
+     gain - [0.0 and up] volume. 1.0 is the volume of the original file
+     */
+    if (soundEffect.length != 0) {
+        [[SimpleAudioEngine sharedEngine] playEffect:soundEffect];
+    }
 }
 
 @end
