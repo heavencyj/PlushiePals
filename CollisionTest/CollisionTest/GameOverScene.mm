@@ -10,6 +10,7 @@
 #import "RunningGameScene.h"
 #import "MainMenuScene.h"
 #import "PlushyMenuScene.h"
+#import "GameData.h"
 
 @implementation GameOverScene
 CCSprite *gameoverbg;
@@ -96,12 +97,42 @@ int levelScore;
         CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",levelScore]
                                                     fontName:@"GROBOLD"
                                                     fontSize:50];
+        CCLOG(@"you ranked NO.%@", [GameData sharedGameData].highscore);
+       // why can't access after the for loop?? probably memory problem
+        int highestscore = [[[GameData sharedGameData].highscore objectAtIndex:0] integerValue];
+        int rank=0;
+        for (int i=0; i<5; i++) {
+            if (levelScore > [[[GameData sharedGameData].highscore objectAtIndex:i] integerValue]) {
+                NSMutableArray *highscorecopy = [[GameData sharedGameData].highscore mutableCopy];
+                //[GameData sharedGameData].highscore[i] = [NSNumber numberWithInt:levelScore];
+                [highscorecopy insertObject:[NSNumber numberWithInt:levelScore] atIndex:i];
+                //[[GameData sharedGameData].highscore removeLastObject];
+                [GameData sharedGameData].highscore = [NSArray arrayWithArray:highscorecopy];
+                //[GameData sharedGameData].highscore[5] = [NSNumber numberWithInt:levelScore];
+//                // Sort the array again
+//                [GameData sharedGameData].highscore = [[[GameData sharedGameData].highscore sortedArrayUsingComparator: ^(id obj1, id obj2) {
+//                    
+//                    if ([obj1 integerValue] > [obj2 integerValue]) {
+//                        return (NSComparisonResult)NSOrderedAscending;
+//                    }
+//                    
+//                    if ([obj1 integerValue] < [obj2 integerValue]) {
+//                        return (NSComparisonResult)NSOrderedDescending;
+//                    }
+//                    return (NSComparisonResult)NSOrderedSame;
+//                }] mutableCopy];
+                rank = i+1;
+                break;
+            }            
+        }
+        CCLOG(@"you ranked NO.%d", rank);
         
         CCLabelTTF *highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIGH SCORE"]
                                               fontName:@"GROBOLD"
                                               fontSize:15];
         
-        CCLabelTTF *scoreLabel2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",356]
+        CCLabelTTF *scoreLabel2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",
+                                                               highestscore]
                                                     fontName:@"GROBOLD"
                                                     fontSize:20];
         

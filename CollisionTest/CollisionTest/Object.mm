@@ -11,6 +11,7 @@
 #import "Plushy.h"
 #import "RunningGameScene.h"
 #import "Maze.h"
+#import "GameData.h"
 
 #define ANIM_DELAY 0.25f
 #define ANIM_SPEED 2.0f
@@ -120,7 +121,8 @@
     {
         if (!contacted) {
             [self playSound:BANANA_POINTS];
-            ((Plushy*)[contact otherObject]).bananaScore += 1;
+            //((Plushy*)[contact otherObject]).bananaScore += 1;
+            [GameData sharedGameData].bananaCount += 1;
             [RunningGameScene addScore:10];
             [[self ccNode] removeFromParentAndCleanup:YES];
             contacted = TRUE;

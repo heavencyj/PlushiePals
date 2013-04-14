@@ -32,7 +32,7 @@
    
 }
 
-@property (readwrite) int bananaScore;
+//@property (readwrite) int bananaScore;
 @property (readwrite) int lives;
 @property (readonly) RunningGameScene *gameLayer;
 @property (readonly) bool jumping;

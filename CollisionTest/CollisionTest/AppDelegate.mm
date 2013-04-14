@@ -7,9 +7,10 @@
 //
 
 #import "cocos2d.h"
-
 #import "AppDelegate.h"
 #import "IntroLayer.h"
+#import <Foundation/Foundation.h>
+#import "GameData.h"
 
 @implementation AppController
 
@@ -78,6 +79,33 @@
 	[director_ pushScene: [IntroLayer scene]];
 	
 	
+    // Restore the game states
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *gameStatePath = [documentDirectory stringByAppendingPathComponent:@"gameState.dat"];
+    // Set up the decoder and storage for game state data
+    NSMutableData *gameData;
+    gameData = [NSData dataWithContentsOfFile:gameStatePath];
+    NSKeyedUnarchiver *decoder;
+    
+    if (gameData) {
+        decoder = [[NSKeyedUnarchiver alloc] initForReadingWithData:gameData];
+        
+        // Set teh local instance of game data
+        [[GameData sharedGameData] setMute:[decoder decodeBoolForKey:@"mute"]];
+        [[GameData sharedGameData] setTips:[decoder decodeBoolForKey:@"tips"]];
+//        [[GameData sharedGameData] setCurrentScore:[decoder decodeIntForKey:@"currentScore"]];
+//        [[GameData sharedGameData] setCurrentHeart:[decoder decodeIntForKey:@"currentHeart"]];
+        [[GameData sharedGameData] setBananaCount:[decoder decodeIntForKey:@"bananaCount"]];
+        [decoder decodeArrayOfObjCType:@encode(int) count:5 at:[[GameData sharedGameData] highscore]];
+        
+        [decoder release];
+    }
+    else {
+        [GameData defaultValues];
+    }
+    
+    
 	// Create a Navigation Controller with the Director
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
@@ -128,6 +156,28 @@
 // application will be killed
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *gameStatePath = [documentDirectory stringByAppendingPathComponent:@"gameState.dat"];
+    
+    // Set up the encoder and storage for game state data
+    NSMutableData *gameData;
+    NSKeyedArchiver *encoder;
+    gameData = [NSMutableData data];
+    encoder = [[NSKeyedArchiver alloc] initForWritingWithMutableData:gameData];
+    
+    // Archive our object
+    [encoder encodeBool:[[GameData sharedGameData] mute] forKey:@"mute"];
+    [encoder encodeBool:[[GameData sharedGameData] tips] forKey:@"tips"];
+    //    [encoder encodeInt:[[GameData sharedGameData] currentHeart] forKey:@"currentHeart"];
+    //    [encoder encodeInt:[[GameData sharedGameData] currentScore] forKey:@"currentScore"];
+    [encoder encodeInt:[[GameData sharedGameData] bananaCount] forKey:@"bananaCount"];
+    [encoder encodeArrayOfObjCType:@encode(int) count:5 at:[[GameData sharedGameData] highscore]];
+    
+    // Finish encoding and write to the gameState.dat file
+    [encoder finishEncoding];
+    [gameData writeToFile:gameStatePath atomically:YES];
+    [encoder release];
 	CC_DIRECTOR_END();
 }
 

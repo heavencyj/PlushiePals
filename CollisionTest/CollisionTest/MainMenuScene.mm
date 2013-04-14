@@ -12,6 +12,7 @@
 #import "TutorialScene.h"
 #import "PlushyMenuScene.h"
 #import "RunningGameScene.h"
+#import "GameData.h"
 
 #define DIST 25
 
@@ -53,9 +54,10 @@ CCLayer *settingLayer;
         //    CCSprite *centerImage = [CCSprite spriteWithFile:@"main menu image.png"];
         //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
         //    [background addChild:centerImage];
-        mute=YES;
-        tipsOn=NO;
-        //testMode = YES;
+//        mute=YES;
+//        tipsOn=NO;
+        mute = [[GameData sharedGameData] mute];
+        tipsOn = [[GameData sharedGameData] tips];
         first = YES;
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
@@ -165,6 +167,7 @@ CCLayer *settingLayer;
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
     }
     mute = !mute;
+    [[GameData sharedGameData] setMute:mute];
 }
 
 -(void)turnTips
@@ -177,6 +180,7 @@ CCLayer *settingLayer;
         [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
     }
     tipsOn = !tipsOn;
+    [[GameData sharedGameData] setMute:tipsOn];
 }
 
 -(void)turnTest

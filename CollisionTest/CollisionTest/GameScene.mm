@@ -142,7 +142,7 @@ TransitionObject *bridge;
     
     // Update score with a little bit delay for performance concern
     if (scoreDelay ==0) {
-        [hud updateScore:plushy.bananaScore];
+        //[hud updateScore:plushy.bananaScore];
         scoreDelay = 10;
     }
     
@@ -174,7 +174,7 @@ TransitionObject *bridge;
     
     if (pass) {
         [[GB2Engine sharedInstance] deleteAllObjects];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
     }
     
     // TODO: add some animations here
@@ -189,7 +189,7 @@ TransitionObject *bridge;
         if (!plushy.lives) {
             [[GB2Engine sharedInstance] deleteAllObjects];
             // if pass, show one screen. otherwise show the other, modify gameover scene
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:plushy.bananaScore]];
+            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
         }
         else
         {
@@ -367,6 +367,7 @@ TransitionObject *bridge;
             [self removeChild:tutorial1 cleanup:YES];
             showingTip1 = -1;
         }
+        
         //Check if the swipe is a left swipe and long enough
         //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
         if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
