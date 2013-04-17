@@ -20,12 +20,10 @@
 bool mute;
 bool tipsOn;
 bool showTools;
-bool testMode;
 bool first;
 CCMenuItemImage *sound;
 CCMenuItemImage *tips;
 CCMenuItemImage *tool;
-CCMenuItemImage *test;
 CCMenuItemImage *plushies;
 CCLayer *settingLayer;
 
@@ -51,11 +49,6 @@ CCLayer *settingLayer;
         background.position = ccp(winSize.width/2, winSize.height/2);
         [self addChild:background];
         
-        //    CCSprite *centerImage = [CCSprite spriteWithFile:@"main menu image.png"];
-        //    centerImage.position = ccp(winSize.width/2, winSize.height/1.7);
-        //    [background addChild:centerImage];
-//        mute=YES;
-//        tipsOn=NO;
         mute = [[GameData sharedGameData] mute];
         tipsOn = [[GameData sharedGameData] tips];
         first = YES;
@@ -70,20 +63,13 @@ CCLayer *settingLayer;
                                  selector:@selector(hitPlay)];
         play.position = ccp(0,-winSize.height/2.8);
         
-//        test = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTest)];
-//        [self turnTest];
-//        test.position = ccp(-winSize.width/2.5,-winSize.width/5+3*DIST + test.contentSize.height*1.5);
-//        test.visible = NO;
-        
         sound = [CCMenuItemImage itemWithTarget:self selector:@selector(turnMute)];
-        [sound setNormalImage:[CCSprite spriteWithFile:@"Sound icon.png"]];
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
-        [[SimpleAudioEngine sharedEngine] setEffectsVolume:1.5];
+        [self checkMute];
         sound.position = ccp(-winSize.width/2.5,-winSize.width/5+2*DIST+sound.contentSize.height);
         sound.visible = NO;
         
         tips = [CCMenuItemImage itemWithTarget:self selector:@selector(turnTips)];
-        [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
+        [self checkTips];
         tips.position = ccp(-winSize.width/2.5,-winSize.width/5+DIST + sound.contentSize.height/2);
         tips.visible = NO;
         
@@ -118,14 +104,10 @@ CCLayer *settingLayer;
 
 - (void)hitPlay {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    if (testMode) {
-        [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
-    }
-    else {
-        // start the infinite running game
-        [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
-        [[CCDirector sharedDirector] resume];
-    }
+    // start the infinite running game
+    [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+    [[CCDirector sharedDirector] resume];
+
 }
 
 -(void)showSetting
@@ -134,14 +116,12 @@ CCLayer *settingLayer;
     if (tool.tag > 0) {
         sound.visible = YES;
         tips.visible = YES;
-        test.visible = YES;
         settingLayer.visible = YES;
         tool.tag = -1;
     }
     else {
         sound.visible = NO;
         tips.visible = NO;
-        test.visible = NO;
         settingLayer.visible = NO;
         tool.tag = 1;
     }
@@ -153,9 +133,7 @@ CCLayer *settingLayer;
     [[CCDirector sharedDirector] replaceScene:[PlushyMenuScene scene]];
 }
 
--(void)turnMute
-{
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
+-(void)checkMute{
     if (mute) {
         [sound setNormalImage:[CCSprite spriteWithFile:@"Mute icon.png"]];
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
@@ -166,33 +144,33 @@ CCLayer *settingLayer;
         [[SimpleAudioEngine sharedEngine] setEffectsVolume:1.0];
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"PlushyParadiseTheme.mp3" loop:true];
     }
+}
+
+-(void)turnMute
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     mute = !mute;
     [[GameData sharedGameData] setMute:mute];
+    [self checkMute];
+}
+
+-(void)checkTips
+{
+    
+    if (tipsOn) {
+        [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
+    }
+    else {
+        [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
+    }
 }
 
 -(void)turnTips
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    if (tipsOn) {
-        [tips setNormalImage:[CCSprite spriteWithFile:@"Question cancel icon.png"]];
-    }
-    else {
-        [tips setNormalImage:[CCSprite spriteWithFile:@"Question icon.png"]];
-    }
     tipsOn = !tipsOn;
-    [[GameData sharedGameData] setMute:tipsOn];
-}
-
--(void)turnTest
-{
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    if (testMode) {
-        [test setNormalImage:[CCSprite spriteWithFile:@"Beta cancel icon.png"]];
-    }
-    else {
-        [test setNormalImage:[CCSprite spriteWithFile:@"Beta icon.png"]];
-    }
-    testMode = !testMode;
+    [[GameData sharedGameData] setTips:tipsOn];
+    [self checkTips];
 }
 
 
@@ -200,10 +178,6 @@ CCLayer *settingLayer;
     return tipsOn;
 }
 
-+(bool)isTestMode
-{
-    return testMode;
-}
 
 +(bool)showFirst {
     return first;

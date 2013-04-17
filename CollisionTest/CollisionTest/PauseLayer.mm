@@ -99,10 +99,7 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
-    if ([MainMenuScene isTestMode]) {
-        [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
-    }
-    else  [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
     [[CCDirector sharedDirector] resume];
 }
 

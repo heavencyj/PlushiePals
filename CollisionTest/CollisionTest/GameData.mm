@@ -25,6 +25,7 @@ static GameData *gamedata = nil;
     
     if (gamedata == nil) {
         gamedata = [[GameData alloc] init];
+        [self defaultValues];
     }
 
     return gamedata;
@@ -36,7 +37,14 @@ static GameData *gamedata = nil;
     gamedata.bananaCount = 0;
     gamedata.mangosteenCount = 0;
     gamedata.pineappleCount = 0;
-    gamedata.highscore = [NSArray arrayWithObjects:0,0,0,0,0, nil];
+    gamedata.highscore = [NSMutableArray arrayWithObjects:
+                          [NSNumber numberWithInt:0],
+                          [NSNumber numberWithInt:0],
+                          [NSNumber numberWithInt:0],
+                          [NSNumber numberWithInt:0],
+                          [NSNumber numberWithInt:0], nil];
+
+
 }
 
 @end

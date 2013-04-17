@@ -58,6 +58,13 @@
 		986244411717D23900312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244401717D23900312BE0 /* Scoreboard.png */; };
 		986244431717D9F200312BE0 /* End screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244421717D9F200312BE0 /* End screen.png */; };
 		986244461718640F00312BE0 /* GameData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 986244451718640F00312BE0 /* GameData.mm */; };
+		9862444A171E5E7500312BE0 /* End Screen background.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624447171E5E7300312BE0 /* End Screen background.png */; };
+		9862444B171E5E7500312BE0 /* End Screen clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624448171E5E7400312BE0 /* End Screen clouds.png */; };
+		9862444C171E5E7500312BE0 /* monkey bananas.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624449171E5E7400312BE0 /* monkey bananas.png */; };
+		9862444E171E642B00312BE0 /* Score icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862444D171E642B00312BE0 /* Score icon.png */; };
+		98624450171E66C300312BE0 /* Banana icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862444F171E66C300312BE0 /* Banana icon.png */; };
+		98624453171E7E7700312BE0 /* hand only.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624451171E7E7600312BE0 /* hand only.png */; };
+		98624454171E7E7700312BE0 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624452171E7E7600312BE0 /* hand.png */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -340,6 +347,13 @@
 		986244421717D9F200312BE0 /* End screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "End screen.png"; sourceTree = "<group>"; };
 		986244441718640D00312BE0 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		986244451718640F00312BE0 /* GameData.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameData.mm; sourceTree = "<group>"; };
+		98624447171E5E7300312BE0 /* End Screen background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "End Screen background.png"; sourceTree = "<group>"; };
+		98624448171E5E7400312BE0 /* End Screen clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "End Screen clouds.png"; sourceTree = "<group>"; };
+		98624449171E5E7400312BE0 /* monkey bananas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey bananas.png"; sourceTree = "<group>"; };
+		9862444D171E642B00312BE0 /* Score icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Score icon.png"; sourceTree = "<group>"; };
+		9862444F171E66C300312BE0 /* Banana icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Banana icon.png"; sourceTree = "<group>"; };
+		98624451171E7E7600312BE0 /* hand only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hand only.png"; sourceTree = "<group>"; };
+		98624452171E7E7600312BE0 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -889,12 +903,14 @@
 			isa = PBXGroup;
 			children = (
 				98176EB416FA21A9009BA7AB /* Play icon large.png */,
+				9862444F171E66C300312BE0 /* Banana icon.png */,
 				986244251717C73200312BE0 /* Plushy icon.png */,
 				98176EB216FA2116009BA7AB /* Levels icon.png */,
 				98176E4216E853B2009BA7AB /* Level lock.png */,
 				98EDB1FD170AB0FE009076E6 /* Beta cancel icon.png */,
 				98EDB1FE170AB0FE009076E6 /* Beta icon.png */,
 				98176E3E16E84AFA009BA7AB /* Question cancel icon.png */,
+				9862444D171E642B00312BE0 /* Score icon.png */,
 				98176E4016E84F4D009BA7AB /* Level button.png */,
 				98176E1C16E7D7A2009BA7AB /* Level 1.png */,
 				98176E1D16E7D7A2009BA7AB /* Level 2.png */,
@@ -924,6 +940,9 @@
 		98176E0D16E7A80B009BA7AB /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				98624447171E5E7300312BE0 /* End Screen background.png */,
+				98624448171E5E7400312BE0 /* End Screen clouds.png */,
+				98624449171E5E7400312BE0 /* monkey bananas.png */,
 				986244401717D23900312BE0 /* Scoreboard.png */,
 				986244271717C82500312BE0 /* Cora icon.png */,
 				986244281717C82500312BE0 /* Hazel icon.png */,
@@ -981,6 +1000,8 @@
 		98ECEFE316CE252E005BB243 /* tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				98624451171E7E7600312BE0 /* hand only.png */,
+				98624452171E7E7600312BE0 /* hand.png */,
 				B6B55DAB1713E4A3002B48FA /* tutorial 11.png */,
 				B6B55DAC1713E4A3002B48FA /* tutorial 10.png */,
 				B6B55DA51713E1FF002B48FA /* tutorial 4.png */,
@@ -1730,6 +1751,13 @@
 				9862443C1717CCC800312BE0 /* canyon level 5.png in Resources */,
 				986244411717D23900312BE0 /* Scoreboard.png in Resources */,
 				986244431717D9F200312BE0 /* End screen.png in Resources */,
+				9862444A171E5E7500312BE0 /* End Screen background.png in Resources */,
+				9862444B171E5E7500312BE0 /* End Screen clouds.png in Resources */,
+				9862444C171E5E7500312BE0 /* monkey bananas.png in Resources */,
+				9862444E171E642B00312BE0 /* Score icon.png in Resources */,
+				98624450171E66C300312BE0 /* Banana icon.png in Resources */,
+				98624453171E7E7700312BE0 /* hand only.png in Resources */,
+				98624454171E7E7700312BE0 /* hand.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

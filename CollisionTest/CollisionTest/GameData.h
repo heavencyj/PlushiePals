@@ -15,7 +15,7 @@
 
 @property (nonatomic, readwrite) bool mute;
 @property (nonatomic, readwrite) bool tips;
-@property (nonatomic, readwrite, assign) NSArray *highscore;
+@property (nonatomic, readwrite, retain) NSMutableArray *highscore;
 //@property (nonatomic, readwrite) unsigned int currentScore;
 //@property (nonatomic, readwrite) unsigned int currentHeart;
 @property (nonatomic, readwrite) unsigned int bananaCount;

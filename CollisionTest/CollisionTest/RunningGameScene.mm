@@ -25,6 +25,8 @@ bool pass1;
 float angle1;
 int rotating1;
 int score;
+CCSprite *hand;
+CCSprite *handOnly;
 
 #pragma mark - GameScene
 
@@ -151,9 +153,41 @@ int score;
         switch (showingTip1) {
             case 1: case 2: case 3: case 4: case 5: case 6:
                 [pauseLayer pauseGame];
+                hand = [CCSprite spriteWithFile:@"hand.png"];
+                handOnly = [CCSprite spriteWithFile:@"handOnly.png"];
                 tutorial1 = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip1]];
                 tutorial1.position = ccp([[CCDirector sharedDirector] winSize].width/3, [[CCDirector sharedDirector] winSize].height/2);
                 [self addChild:tutorial1 z:500];
+                    // animation for tutorial
+//                if (showingTip1 == 1) {
+//                    hand.position = tutorial1.position;
+//                    [self addChild:hand z:500];
+//                    id moveHandLeft = [CCMoveBy actionWithDuration:1 position:ccp(-20, 0)];
+//                    id seq = [CCSequence actions:moveHandLeft,
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(setInvisible:)],
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(resetHandLeft:)],
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(setVisible:)], nil];
+//                    [hand runAction:[CCRepeatForever actionWithAction:seq]];
+//                    [hand resumeSchedulerAndActions];
+//                }
+//                else if (showingTip1 == 2) {
+//                    hand.position = tutorial1.position;
+//                    [self addChild:hand z:500];
+//                    id moveHandLeft = [CCMoveBy actionWithDuration:1 position:ccp(20, 0)];
+//                    id seq = [CCSequence actions:moveHandLeft,
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(setInvisible:)],
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(resetHandRight:)],
+//                              [CCCallFunc actionWithTarget:hand selector:@selector(setVisible:)], nil];
+//                    [hand runAction:[CCRepeatForever actionWithAction:seq]];
+//                    [hand resumeSchedulerAndActions];
+//                }
+//                else if (showingTip1 == 3) {
+//                    id moveHandLeft = [CCMoveBy actionWithDuration:1 position:ccp(-20, 0)];
+//                    //                        id moveMonkeyUp = [CCMoveBy actionWithDuration:1 position:ccp(0, 30)];
+//                    id seq = [CCSequence actions: moveHandLeft, nil];
+//                    //[CCCallFunc actionWithTarget:self selector:@selector(resetMonkeyPosition)]
+//                    [hand runAction:[CCRepeatForever actionWithAction:seq]];
+//                }
                 [plushy setTip];
                 break;
                 
@@ -178,19 +212,23 @@ int score;
     }
     if (plushy.dead)
     {
-        if (!plushy.lives) {
-            [[GB2Engine sharedInstance] deleteAllObjects];
-            //[[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:plushy.bananaScore]];
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
-        }
-        else
-        {
-            // stop following the plushy, reset the plushy, then begin following plushy once more
-            [self stopAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
-            [plushy destroyLive];
-            [plushy resetPlushyPosition];
-            [currMazeLayer reset];
-        }
+        [[GB2Engine sharedInstance] deleteAllObjects];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
+
+
+//        if (!plushy.lives) {
+//            [[GB2Engine sharedInstance] deleteAllObjects];
+//            //[[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:plushy.bananaScore]];
+//            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
+//        }
+//        else
+//        {
+//            // stop following the plushy, reset the plushy, then begin following plushy once more
+//            [self stopAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
+//            [plushy destroyLive];
+//            [plushy resetPlushyPosition];
+//            [currMazeLayer reset];
+//        }
     }
 }
 
@@ -230,6 +268,15 @@ int score;
 	[super dealloc];
 }
 
+-(void)resetHandLeft:(CCNode*)node
+{
+    node.position = ccp(node.position.x+20, node.position.y);
+}
+
+-(void)resetHandRight:(CCNode*)node
+{
+    node.position = ccp(node.position.x-20, node.position.y);
+}
 
 -(float) timer: (ccTime) dt
 {
