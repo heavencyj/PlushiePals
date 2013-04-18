@@ -1,4 +1,4 @@
-//
+ //
 //  Monkey.m
 //  CollisionTest
 //
@@ -131,7 +131,7 @@ bool shapechange;
         shapechange = true;
         frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
-        [self playSound:SLIDING];
+        //[Plushy playSound:SLIDING];
     }
     
     else if (running && !collide && !die) {

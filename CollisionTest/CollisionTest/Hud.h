@@ -16,6 +16,7 @@
     
     CGRect pauseButtonRect;
     CCSprite *pauseButton;
+    CCSprite *scoreCloud;
 }
 
 @property (readonly) CCSprite *pauseButton;
