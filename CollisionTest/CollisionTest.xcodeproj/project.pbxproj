@@ -52,7 +52,6 @@
 		9862443B1717CCC800312BE0 /* canyon level 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244331717CCC800312BE0 /* canyon level 5.plist */; };
 		9862443C1717CCC800312BE0 /* canyon level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244341717CCC800312BE0 /* canyon level 5.png */; };
 		9862443F1717D08200312BE0 /* StatScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9862443E1717D08200312BE0 /* StatScene.mm */; };
-		986244411717D23900312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244401717D23900312BE0 /* Scoreboard.png */; };
 		986244431717D9F200312BE0 /* End screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244421717D9F200312BE0 /* End screen.png */; };
 		986244461718640F00312BE0 /* GameData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 986244451718640F00312BE0 /* GameData.mm */; };
 		9862444A171E5E7500312BE0 /* End Screen background.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624447171E5E7300312BE0 /* End Screen background.png */; };
@@ -72,6 +71,7 @@
 		98624476171FC41000312BE0 /* tutorial 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624470171FC41000312BE0 /* tutorial 6.png */; };
 		9862447C171FD49A00312BE0 /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862447B171FD49900312BE0 /* canyon_levels.plist */; };
 		9862447E171FD70000312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862447D171FD70000312BE0 /* plushyshapes.plist */; };
+		986244801720A4CC00312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862447F1720A4CC00312BE0 /* Scoreboard.png */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -330,7 +330,6 @@
 		986244341717CCC800312BE0 /* canyon level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 5.png"; sourceTree = "<group>"; };
 		9862443D1717D08100312BE0 /* StatScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatScene.h; sourceTree = "<group>"; };
 		9862443E1717D08200312BE0 /* StatScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = StatScene.mm; sourceTree = "<group>"; };
-		986244401717D23900312BE0 /* Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scoreboard.png; sourceTree = "<group>"; };
 		986244421717D9F200312BE0 /* End screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "End screen.png"; sourceTree = "<group>"; };
 		986244441718640D00312BE0 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		986244451718640F00312BE0 /* GameData.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameData.mm; sourceTree = "<group>"; };
@@ -351,6 +350,7 @@
 		98624470171FC41000312BE0 /* tutorial 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 6.png"; sourceTree = "<group>"; };
 		9862447B171FD49900312BE0 /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		9862447D171FD70000312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+		9862447F1720A4CC00312BE0 /* Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scoreboard.png; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -932,10 +932,10 @@
 		98176E0D16E7A80B009BA7AB /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				9862447F1720A4CC00312BE0 /* Scoreboard.png */,
 				98624447171E5E7300312BE0 /* End Screen background.png */,
 				98624448171E5E7400312BE0 /* End Screen clouds.png */,
 				98624449171E5E7400312BE0 /* monkey bananas.png */,
-				986244401717D23900312BE0 /* Scoreboard.png */,
 				986244271717C82500312BE0 /* Cora icon.png */,
 				986244281717C82500312BE0 /* Hazel icon.png */,
 				986244291717C82500312BE0 /* Momo icon.png */,
@@ -1731,7 +1731,6 @@
 				9862443A1717CCC800312BE0 /* canyon level 4.png in Resources */,
 				9862443B1717CCC800312BE0 /* canyon level 5.plist in Resources */,
 				9862443C1717CCC800312BE0 /* canyon level 5.png in Resources */,
-				986244411717D23900312BE0 /* Scoreboard.png in Resources */,
 				986244431717D9F200312BE0 /* End screen.png in Resources */,
 				9862444A171E5E7500312BE0 /* End Screen background.png in Resources */,
 				9862444B171E5E7500312BE0 /* End Screen clouds.png in Resources */,
@@ -1750,6 +1749,7 @@
 				98624476171FC41000312BE0 /* tutorial 6.png in Resources */,
 				9862447C171FD49A00312BE0 /* canyon_levels.plist in Resources */,
 				9862447E171FD70000312BE0 /* plushyshapes.plist in Resources */,
+				986244801720A4CC00312BE0 /* Scoreboard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
