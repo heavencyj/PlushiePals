@@ -25,11 +25,14 @@ bool pass1;
 float angle1;
 int rotating1;
 int score;
+CCSprite *hand;
+CCSprite *handOnly;
 
 #pragma mark - GameScene
 
 // HelloWorldLayer implementation
 @implementation RunningGameScene
+@synthesize isSwipable;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -106,10 +109,10 @@ int score;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         self.isTouchEnabled = YES;
-        
+        self.isSwipable = YES;
         [self scheduleUpdate];
     }
     return self;
@@ -148,27 +151,71 @@ int score;
     // Showing tips
     if (plushy.tip != -1 && [MainMenuScene showTips]) {
         showingTip1 = plushy.tip;
+        tutorial1 = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip1]];
         switch (showingTip1) {
-            case 1: case 2: case 3: case 4: case 5: case 6:
-                [pauseLayer pauseGame];
-                tutorial1 = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip1]];
-                tutorial1.position = ccp([[CCDirector sharedDirector] winSize].width/3, [[CCDirector sharedDirector] winSize].height/2);
-                [self addChild:tutorial1 z:500];
-                [plushy setTip];
+            case 1: {
+                // swipe left
+                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
+                hand = [CCSprite spriteWithFile:@"hand.png"];
+                hand.position = tutorial1.position;
+                [self addChild:hand z:500 tag:10];
+                id moveHandLeft = [CCMoveBy actionWithDuration:0.5 position:ccp(-20, 0)];
+                [hand runAction:moveHandLeft];
+                self.isSwipable = YES;
+                break;
+            }
+            
+            case 2: {
+                // swipe right
+                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
+                hand = [CCSprite spriteWithFile:@"hand.png"];
+                hand.position = tutorial1.position;
+                [self addChild:hand z:500 tag:10];
+                id moveHandRight = [CCMoveBy actionWithDuration:0.5 position:ccp(20, 0)];
+                [hand runAction:moveHandRight];
+                self.isSwipable = YES;
+                break;
+            }
+            
+            case 3: {
+                // jump
+                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
+                hand = [CCSprite spriteWithFile:@"hand.png"];
+                handOnly = [CCSprite spriteWithFile:@"handOnly.png"];
+                // animation seq
                 break;
                 
-            case 10: case 11:
-                [pauseLayer pauseGame];
-                tutorial1 = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip1]];
-                tutorial1.scale = 0.5;
-                tutorial1.position = ccp([[CCDirector sharedDirector] winSize].width/2, [[CCDirector sharedDirector] winSize].height/3);
-                [self addChild:tutorial1 z:500];
-                [plushy setTip];
+            }
+            
+            case 4: {
+                // sliding
+                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
+                hand = [CCSprite spriteWithFile:@"hand.png"];
+                handOnly = [CCSprite spriteWithFile:@"handOnly.png"];
+                // animation seq
                 break;
+                
+            }
+            case 5: case 6: {
+                // cactus and bananas
+                [pauseLayer pauseGame];
+                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
+                break;
+            }
+                
+            case 10: case 11:{
+                // arrows
+                tutorial1.scale = 0.5;
+                tutorial1.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y+70);
+                self.isSwipable = YES;
+                break;
+            }
                 
             default:
                 break;
         }
+        [self addChild:tutorial1 z:450];
+        [plushy setTip];
         // show the tool tips and imgs
         // when swife, resume
     }
@@ -178,19 +225,8 @@ int score;
     }
     if (plushy.dead)
     {
-        if (!plushy.lives) {
-            [[GB2Engine sharedInstance] deleteAllObjects];
-            //[[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass1 withLevel:currentLevel withScore:plushy.bananaScore]];
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
-        }
-        else
-        {
-            // stop following the plushy, reset the plushy, then begin following plushy once more
-            [self stopAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
-            [plushy destroyLive];
-            [plushy resetPlushyPosition];
-            [currMazeLayer reset];
-        }
+        [[GB2Engine sharedInstance] deleteAllObjects];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
     }
 }
 
@@ -230,6 +266,15 @@ int score;
 	[super dealloc];
 }
 
+-(void)resetHandLeft:(CCNode*)node
+{
+    node.position = ccp(node.position.x+20, node.position.y);
+}
+
+-(void)resetHandRight:(CCNode*)node
+{
+    node.position = ccp(node.position.x-20, node.position.y);
+}
 
 -(float) timer: (ccTime) dt
 {
@@ -241,6 +286,101 @@ int score;
     return dt;
     
 }
+
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSSet *allTouches = [event allTouches];
+    UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
+    CGPoint location = [touch locationInView: [touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    seconds = 0;
+    [self schedule:@selector(timer:) interval:0.08];
+    
+    //Swipe Detection Part 1
+    firstTouch = location;
+}
+
+-(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSSet *allTouches = [event allTouches];
+    UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
+    CGPoint location = [touch locationInView: [touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    //Swipe Detection Part 2
+    lastTouch = location;
+    [self unschedule:@selector(timer:)];
+    if (plushy.sliding) {
+        if ((showingTip1 == 4)
+            && [MainMenuScene showTips]) {
+            [self removeChildByTag:10 cleanup:YES];
+            [self removeChild:tutorial1 cleanup:YES];
+            showingTip1 = -1;
+            self.isSwipable = NO;
+        }
+        plushy.sliding = false;
+    }
+    
+    //Minimum length of the swipe
+    float swipeLength = ccpDistance(firstTouch, lastTouch);
+    //    NSLog(@"SwipeLength is: %f", swipeLength);
+    // tap gesture
+    if (swipeLength < 20 && seconds < 5)
+    {
+        // If pause button is tapped
+        if (CGRectContainsPoint(hud.pauseButtonRect, location)){
+            [pauseLayer pauseGame];
+            [pauseLayer pauseLayerVisible:YES];
+        }
+        // Otherwise its' for jumping and we prevent double jumping
+        else if (!plushy.jumping) {
+            if ((showingTip1 == 3)
+                && [MainMenuScene showTips]) {
+                [self removeChildByTag:10 cleanup:YES];
+                [self removeChild:tutorial1 cleanup:YES];
+                showingTip1 = -1;
+                self.isSwipable = NO;
+            }
+            else if ((showingTip1 == 5 || showingTip1 == 6)
+                     && [MainMenuScene showTips]) {
+                [pauseLayer resumeGame];
+                [self removeChild:tutorial1 cleanup:YES];
+                showingTip1 = -1;
+                self.isSwipable = NO;
+            }
+            
+            [plushy jump];
+        }
+    }
+    else
+    {
+        //Check if the swipe is a left swipe and long enough
+        //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && self.isSwipable) //left swipe (90)
+        {
+            
+            CGPoint p1 = [plushy ccNode].position;
+            p1.y = p1.y-80;
+            [currMazeLayer transformAround:p1 WithAngle:-90];
+        }
+        //else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && self.isSwipable) // right swipe (-90)
+        {
+            CGPoint p1 = [plushy ccNode].position;
+            p1.y = p1.y+10;
+            [currMazeLayer transformAround:p1 WithAngle:90];
+        }
+        if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
+            && [MainMenuScene showTips]) {
+            self.isSwipable = NO;
+            [self removeChildByTag:10 cleanup:YES];
+            [self removeChild:tutorial1 cleanup:YES];
+        }
+        
+    }
+}
+
 
 +(void)addScore:(int)points {
     score += points;

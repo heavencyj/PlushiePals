@@ -7,9 +7,10 @@
 //
 
 #import "cocos2d.h"
-
 #import "AppDelegate.h"
 #import "IntroLayer.h"
+#import <Foundation/Foundation.h>
+#import "GameData.h"
 
 @implementation AppController
 
@@ -77,7 +78,14 @@
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 	[director_ pushScene: [IntroLayer scene]];
 	
-	
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"bananaCount"] != nil) {
+        [GameData sharedGameData].bananaCount = [[defaults objectForKey:@"bananaCount"] integerValue];
+        [GameData sharedGameData].tips = [[defaults objectForKey:@"tips"] boolValue];
+        [GameData sharedGameData].mute = [[defaults objectForKey:@"mute"] boolValue];
+        [GameData sharedGameData].highscore = [defaults objectForKey:@"highscore"];
+    }    
+    
 	// Create a Navigation Controller with the Director
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
@@ -117,6 +125,18 @@
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ stopAnimation];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setInteger:[GameData sharedGameData].bananaCount
+                 forKey:@"bananaCount"];
+    [defaults setBool: [GameData sharedGameData].mute
+                 forKey:@"mute"];
+    [defaults setBool: [GameData sharedGameData].tips
+               forKey:@"tips"];
+    [defaults setObject:[GameData sharedGameData].highscore forKey:@"highscore"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application

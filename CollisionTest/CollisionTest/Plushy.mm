@@ -11,6 +11,7 @@
 #import "GB2Contact.h"
 #import "CCCustomFollow.h"
 #import "SimpleAudioEngine.h"
+#import "GameData.h"
 
 #define ANIM_SPEED 2.0f
 #define ANIM_SPEED2 4.0f
@@ -36,7 +37,7 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize showmap;
 @synthesize loadmap;
 @synthesize tip;
-@synthesize bananaScore;
+//@synthesize bananaScore;
 @synthesize lives;
 @synthesize onBridge;
 
@@ -60,7 +61,7 @@ bool shapechange;
         // store the game layer
         gameLayer = gl;
         // store number of bananas collected
-        bananaScore = 0;
+        //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
         lives = 3;
         tip = -1;
@@ -93,7 +94,7 @@ bool shapechange;
         // store the game layer
         gameLayer = gl;
         // store number of bananas collected
-        bananaScore = 0;
+        //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
         lives = 3;
         tip = -1;
@@ -131,7 +132,7 @@ bool shapechange;
         shapechange = true;
         frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
-        //[Plushy playSound:SLIDING];
+        [Plushy playSound:SLIDING];
     }
     
     else if (running && !collide && !die) {
@@ -303,6 +304,9 @@ bool shapechange;
 
 -(void) jump
 {
+    if (onBridge) {
+        return;
+    }
     float impulseFactor = 1;
     [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
                        point:[self worldCenter]];
