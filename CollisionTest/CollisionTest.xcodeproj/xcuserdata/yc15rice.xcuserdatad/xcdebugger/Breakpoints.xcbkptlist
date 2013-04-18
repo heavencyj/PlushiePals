@@ -60,46 +60,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387876448.851447"
+         timestampString = "387962210.348196"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "325"
-         endingLineNumber = "325">
+         startingLineNumber = "418"
+         endingLineNumber = "418">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387876448.851447"
+         timestampString = "387962210.348196"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "311"
-         endingLineNumber = "311">
+         startingLineNumber = "404"
+         endingLineNumber = "404">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387485059.900695"
+         timestampString = "387962471.547589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "332"
-         endingLineNumber = "332"
-         landmarkName = "-beginContactWithMaze:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387485059.900695"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "324"
-         endingLineNumber = "324"
+         startingLineNumber = "335"
+         endingLineNumber = "335"
          landmarkName = "-reset"
          landmarkType = "5">
       </FileBreakpoint>
@@ -108,11 +95,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387485059.900695"
+         timestampString = "387962471.547589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "310"
-         endingLineNumber = "310"
+         startingLineNumber = "327"
+         endingLineNumber = "327"
+         landmarkName = "-reset"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CollisionTest/Plushy.mm"
+         timestampString = "387962471.547589"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "313"
+         endingLineNumber = "313"
          landmarkName = "-jump"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,23 +121,23 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387876448.851447"
+         timestampString = "387962210.348196"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "302"
-         endingLineNumber = "302">
+         startingLineNumber = "395"
+         endingLineNumber = "395">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387485059.900695"
+         timestampString = "387962471.547589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "334"
-         endingLineNumber = "334"
-         landmarkName = "-beginContactWithMaze:"
+         startingLineNumber = "337"
+         endingLineNumber = "337"
+         landmarkName = "-reset"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -145,22 +145,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387876448.851447"
+         timestampString = "387962210.348196"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "394"
-         endingLineNumber = "394">
+         startingLineNumber = "487"
+         endingLineNumber = "487">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387876448.851447"
+         timestampString = "387962210.348196"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "393"
-         endingLineNumber = "393">
+         startingLineNumber = "486"
+         endingLineNumber = "486">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -185,7 +185,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "295"
          endingLineNumber = "295"
-         landmarkName = "-destroyAllLives"
+         landmarkName = "-regainLive"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -206,12 +206,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387485059.900695"
+         timestampString = "387962471.547589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "317"
-         endingLineNumber = "317"
-         landmarkName = "-reset"
+         startingLineNumber = "320"
+         endingLineNumber = "320"
+         landmarkName = "-jump"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -232,11 +232,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/MainMenuScene.mm"
-         timestampString = "387784819.334876"
+         timestampString = "387919020.52938"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -254,29 +254,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CollisionTest/Plushy.mm"
-         timestampString = "387877533.453577"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "370"
-         endingLineNumber = "370"
-         landmarkName = "-beginContactWithMaze:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "387877597.572671"
+         filePath = "CollisionTest/Plushy.mm"
+         timestampString = "387962471.547589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "217"
-         endingLineNumber = "217"
-         landmarkName = "-update:"
+         startingLineNumber = "373"
+         endingLineNumber = "373"
+         landmarkName = "-beginContactWithMaze:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

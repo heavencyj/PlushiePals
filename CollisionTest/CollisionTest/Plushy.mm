@@ -132,7 +132,7 @@ bool shapechange;
         shapechange = true;
         frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
-        [self playSound:SLIDING];
+        [Plushy playSound:SLIDING];
     }
     
     else if (running && !collide && !die) {
@@ -304,6 +304,9 @@ bool shapechange;
 
 -(void) jump
 {
+    if (onBridge) {
+        return;
+    }
     float impulseFactor = 1;
     [self applyLinearImpulse:b2Vec2(0,[self mass]*JUMP_IMPULSE*impulseFactor)
                        point:[self worldCenter]];

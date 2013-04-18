@@ -60,6 +60,7 @@ TransitionObject *bridge;
 @synthesize hud;
 @synthesize currMazeLayer;
 
+
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -301,89 +302,5 @@ TransitionObject *bridge;
     plushy.dead = d;
 }
 
--(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSSet *allTouches = [event allTouches];
-    UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
-    CGPoint location = [touch locationInView: [touch view]];
-    location = [[CCDirector sharedDirector] convertToGL:location];
-    
-    seconds = 0;
-    [self schedule:@selector(timer:) interval:0.08];
-    
-    //Swipe Detection Part 1
-    firstTouch = location;
-}
-
--(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSSet *allTouches = [event allTouches];
-    UITouch * touch = [[allTouches allObjects] objectAtIndex:0];
-    CGPoint location = [touch locationInView: [touch view]];
-    location = [[CCDirector sharedDirector] convertToGL:location];
-    
-    //Swipe Detection Part 2
-    lastTouch = location;
-    [self unschedule:@selector(timer:)];
-    if (plushy.sliding) {
-        plushy.sliding = false;
-    }
-    
-    //Minimum length of the swipe
-    float swipeLength = ccpDistance(firstTouch, lastTouch);
-    //    NSLog(@"SwipeLength is: %f", swipeLength);
-    // tap gesture
-    if (swipeLength < 20 && seconds < 5)
-    {
-        // If pause button is tapped
-        if (CGRectContainsPoint(hud.pauseButtonRect, location)){
-            [pauseLayer pauseGame];
-            CCLOG(@"plushy position is at (%f, %f)", plushy.ccPosition.x, plushy.ccPosition.y);
-            CCLOG(@"pause layer position is at (%f, %f)", pauseLayer.position.x, pauseLayer.position.y);
-            [pauseLayer pauseLayerVisible:YES];
-        }
-        else if ((showingTip1 == 4 || showingTip1 == 5 || showingTip1 == 6)
-                 && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
-            [self removeChild:tutorial1 cleanup:YES];
-            showingTip1 = -1;
-        }
-        // Otherwise its' for jumping and we prevent double jumping
-        else if (!plushy.jumping) {
-            if ((showingTip1 == 3)
-                && [MainMenuScene showTips]) {
-                [pauseLayer resumeGame];
-                [self removeChild:tutorial1 cleanup:YES];
-                showingTip1 = -1;
-            }
-            [plushy jump];
-        }
-    }
-    else
-    {
-        if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
-            && [MainMenuScene showTips]) {
-            [pauseLayer resumeGame];
-            [self removeChild:tutorial1 cleanup:YES];
-            showingTip1 = -1;
-        }
-        
-        //Check if the swipe is a left swipe and long enough
-        //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
-        if (firstTouch.x > lastTouch.x && swipeLength > 60) //left swipe (90)
-        {
-            CGPoint p1 = [plushy ccNode].position;
-            p1.y = p1.y-80;
-            [currMazeLayer transformAround:p1 WithAngle:-90];
-        }
-        //else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60) // right swipe (-90)
-        {
-            CGPoint p1 = [plushy ccNode].position;
-            p1.y = p1.y+10;
-            [currMazeLayer transformAround:p1 WithAngle:90];
-        }
-    }
-}
 
 @end
