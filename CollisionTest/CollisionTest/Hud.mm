@@ -32,13 +32,17 @@
 //        CCSprite *bananaPoints = [CCSprite spriteWithFile:@"banana single.png"];
 //        bananaPoints.position = ccp(230, 290);
 //        [self addChild:bananaPoints z:50];
+    
+        scoreCloud = [CCSprite spriteWithFile:@"cloud.png"];
+        scoreCloud.position = ccp(280,294);
+        [self addChild:scoreCloud z:5000];
         
         scoreLabel = [CCLabelTTF labelWithString:@"0"
                                         fontName:@"GROBOLD"
                                         fontSize:30];
         scoreLabel.color = ccc3(245, 148, 36);
         scoreLabel.position = ccp(280,290);
-        [self addChild:scoreLabel z:50];
+        [self addChild:scoreLabel z:5001];
     }
     
     return self;

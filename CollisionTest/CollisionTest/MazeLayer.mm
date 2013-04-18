@@ -10,7 +10,7 @@
 #import "GameScene.h"
 #import "MainMenuScene.h"
 
-NSInteger easyMaps[4];
+NSInteger easyMaps[8];
 NSInteger midMaps[3];
 NSInteger hardMaps[3];
 
@@ -37,7 +37,12 @@ NSInteger hardMaps[3];
     easyMaps[0] = 1;
     easyMaps[1] = 2;
     easyMaps[2] = 3;
-    easyMaps[3] = 5;
+    easyMaps[3] = 4;
+    easyMaps[4] = 5;
+    easyMaps[5] = 6;
+    easyMaps[6] = 7;
+    easyMaps[7] = 8;
+//    easyMaps[4] = 5
 //    easyMaps[0] = 1;
 //    easyMaps[1] = 2;
 //    easyMaps[2] = 6;
@@ -52,16 +57,18 @@ NSInteger hardMaps[3];
 
 -(int)levelChooser
 {
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
     //TODO: the first map has to be canyon level 1
-    if ([MainMenuScene showFirst]) {
-        [MainMenuScene setFirst:false];
-        return  1;
-    }
-    else {
-        [MainMenuScene setTips:false];
-        return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:3]];
-    }
-        
+    
+//    if ([MainMenuScene showFirst]) {
+//        [MainMenuScene setFirst:false];
+//        return  1;
+//    }
+//    else {
+//        [MainMenuScene setTips:false];
+//        return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:4]];
+//    }
+    
 //    if (mapCount < 5) {
 //        if ([self getRandomDouble] < diffFactor) {
 //            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];

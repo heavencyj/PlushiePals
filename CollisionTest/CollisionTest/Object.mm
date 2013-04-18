@@ -112,7 +112,8 @@
         if (!contacted) {
             [self playSound:BOMB_EXPLOSION];
             animateBomb = TRUE;
-            ((Plushy*)contact.otherObject).dead = TRUE;
+//            ((Plushy*)contact.otherObject).dead = TRUE;
+            ((Plushy*)contact.otherObject).collide = TRUE;
             [self setSensor:TRUE];
             contacted = TRUE;
         }
