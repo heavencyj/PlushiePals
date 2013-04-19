@@ -9,8 +9,11 @@
 #import "PlushyMenuScene.h"
 #import "MainMenuScene.h"
 #import "StatScene.h"
+#import "GameData.h"
 
 @implementation PlushyMenuScene
+
+CCLayer* missionLayer;
 
 +(id) scene
 {
@@ -32,40 +35,64 @@
         background.position = ccp(winSize.width/2, winSize.height/2);
         [self addChild:background];
         
-        CCMenuItemImage *momo = [CCMenuItemImage
-                                 itemWithNormalImage:@"Momo icon.png"
-                                 selectedImage:nil
-                                 target:self
-                                 selector:@selector(showStat)];
-        momo.position = ccp(-winSize.width/3 , 0);
+        CCSprite *scoreboard = [CCSprite spriteWithFile:@"Scoreboard.png"];
+        scoreboard.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:scoreboard];
+
         
-        CCMenuItemImage *cora = [CCMenuItemImage
-                                 itemWithNormalImage:@"Cora icon.png"
-                                 selectedImage:nil
-                                 target:self
-                                 selector:@selector(locked)];
-        cora.position = ccp(0,0);
+        CCSprite *monkeyOnCloud = [CCSprite spriteWithFile:@"monkey bananas.png"];
+        monkeyOnCloud.position = ccp(winSize.width/5, winSize.height/2);
+        [self addChild:monkeyOnCloud];
+
+        id moveMonkeyDown = [CCMoveBy actionWithDuration:1 position:ccp(0, -30)];
+        id moveMonkeyUp = [CCMoveBy actionWithDuration:1 position:ccp(0, 30)];
+        id seq = [CCSequence actions:moveMonkeyDown,moveMonkeyUp , nil];
+        [monkeyOnCloud runAction:[CCRepeatForever actionWithAction:seq]];
         
-        CCMenuItemImage *hazel = [CCMenuItemImage
-                                 itemWithNormalImage:@"Hazel icon.png"
-                                 selectedImage:nil
-                                 target:self
-                                 selector:@selector(locked)];
-        hazel.position = ccp(winSize.width/3, 0);
+        for (int i=0; i < 5; i++) {
+            CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:
+                                      [NSString stringWithFormat:@"%d",[[GameData sharedGameData].highscore[i] integerValue]]
+                                                        fontName:@"GROBOLD"
+                                                        fontSize:30];
+            scoreLabel.color = ccc3(245, 148, 36);
+            scoreLabel.position = ccp(300,250-i*50);
+            [scoreboard addChild:scoreLabel z:10];
+        }
         
+        NSArray *fruits = [NSArray arrayWithObjects:[NSNumber numberWithInt:[GameData sharedGameData].bananaCount],
+                           [NSNumber numberWithInt:0], [NSNumber numberWithInt:0], nil];
         
-        CCLayer *menuLayer = [[CCLayer alloc] init];
-        [self addChild:menuLayer];
+        for (int i=0; i < 3; i++) {
+            CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:
+                                      [NSString stringWithFormat:@"%d",[fruits[i] integerValue]]
+                                                        fontName:@"GROBOLD"
+                                                        fontSize:30];
+            scoreLabel.color = ccc3(245, 148, 36);
+            scoreLabel.position = ccp(490, 230-i*80);
+            [scoreboard addChild:scoreLabel z:10];
+        }
         
         CCMenuItemImage *home = [CCMenuItemImage
                                  itemWithNormalImage:@"Home icon.png"
                                  selectedImage:nil
                                  target:self
                                  selector:@selector(goHome)];
-        home.position = ccp(0,-winSize.height/3);
+        home.position = ccp(-220, -120);
         
-        CCMenu *menu = [CCMenu menuWithItems: momo, cora, hazel, home,nil];
+        CCMenuItemImage *next = [CCMenuItemImage
+                                 itemWithNormalImage:@"Next icon.png"
+                                 selectedImage:nil
+                                 target:self
+                                 selector:@selector(goNext)];
+        next.position = ccp(-140, -120);
+        
+        CCLayer *menuLayer = [[CCLayer alloc] init];
+        [self addChild:menuLayer];
+        CCMenu *menu = [CCMenu menuWithItems: home,next, nil];
         [menuLayer addChild: menu];
+        
+        
+        [self initMission];
     }
     return self;
 }
@@ -76,12 +103,57 @@
     
 }
 
--(void)showStat {
-    [[CCDirector sharedDirector] replaceScene:[StatScene scene]];
+-(void)goNext
+{
+    missionLayer.visible = YES;
 }
 
--(void)locked {
+-(void)goBack
+{
+    missionLayer.visible = NO;
+}
+
+
+-(void)initMission {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    missionLayer = [CCSprite spriteWithFile:@"Menu screen.png"];
+    missionLayer.anchorPoint = ccp(0,0);
+    missionLayer.position = ccp(0,0);
+    //missionLayer.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:missionLayer z:100];
     
+    CCSprite *missions = [CCSprite spriteWithFile:@"Missions Screen.png"];
+    missions.position = ccp(winSize.width/2, winSize.height/2);
+    [missionLayer addChild:missions];
+    
+    CCSprite *monkeyOnCloud = [CCSprite spriteWithFile:@"monkey bananas.png"];
+    monkeyOnCloud.position = ccp(winSize.width/5, winSize.height/2);
+    [missionLayer addChild:monkeyOnCloud];
+    id moveMonkeyDown = [CCMoveBy actionWithDuration:1 position:ccp(0, -30)];
+    id moveMonkeyUp = [CCMoveBy actionWithDuration:1 position:ccp(0, 30)];
+    id seq = [CCSequence actions:moveMonkeyDown,moveMonkeyUp , nil];
+    [monkeyOnCloud runAction:[CCRepeatForever actionWithAction:seq]];
+    
+    CCMenuItemImage *home = [CCMenuItemImage
+                             itemWithNormalImage:@"Home icon.png"
+                             selectedImage:nil
+                             target:self
+                             selector:@selector(goHome)];
+    home.position = ccp(-220, -120);
+    
+    CCMenuItemImage *back = [CCMenuItemImage
+                             itemWithNormalImage:@"Back icon.png"
+                             selectedImage:nil
+                             target:self
+                             selector:@selector(goBack)];
+    back.position = ccp(-140, -120);
+    
+    CCLayer *menuLayer = [[CCLayer alloc] init];
+    [missionLayer addChild:menuLayer];
+    CCMenu *menu = [CCMenu menuWithItems: home,back, nil];
+    [missionLayer addChild: menu];
+    
+    missionLayer.visible = NO;
 }
 
 - (void) dealloc

@@ -82,10 +82,10 @@ CCLayer *settingLayer;
         tool.tag = 1;        
         
         plushies = [CCMenuItemImage
-                itemWithNormalImage:@"Plushy icon.png"
+                itemWithNormalImage:@"Score icon.png"
                 selectedImage:nil
                 target:self
-                selector:@selector(showPlushy)];
+                selector:@selector(showScore)];
         plushies.position = ccp(winSize.width/2.5,-winSize.width/5);
         
         settingLayer = [CCLayerColor layerWithColor:ccc4(245, 148, 36, 100)
@@ -127,7 +127,7 @@ CCLayer *settingLayer;
     }
 }
 
--(void)showPlushy
+-(void)showScore
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[CCDirector sharedDirector] replaceScene:[PlushyMenuScene scene]];

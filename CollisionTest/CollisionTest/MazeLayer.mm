@@ -9,6 +9,7 @@
 #import "MazeLayer.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
+#import "RunningGameScene.h"
 
 NSInteger easyMaps[8];
 NSInteger midMaps[3];
@@ -36,7 +37,7 @@ NSInteger hardMaps[3];
     //Maze 4's swipe does not work well
     easyMaps[0] = 1;
     easyMaps[1] = 2;
-    easyMaps[2] = 3;
+    easyMaps[2] = 5;
     easyMaps[3] = 4;
     easyMaps[4] = 5;
     easyMaps[5] = 6;
@@ -57,7 +58,8 @@ NSInteger hardMaps[3];
 
 -(int)levelChooser
 {
-    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
+    
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:3]];
     //TODO: the first map has to be canyon level 1
     
 //    if ([MainMenuScene showFirst]) {

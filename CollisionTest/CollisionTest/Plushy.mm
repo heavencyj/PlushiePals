@@ -368,6 +368,7 @@ bool shapechange;
         }
         else if ([otherfixtureId isEqualToString:@"win"]) {
             pass = true;
+            [RunningGameScene resetSwipe];
             //show bridge
 //            showmap = true;
         }
