@@ -109,7 +109,7 @@ CCSprite *handOnly;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         self.isTouchEnabled = YES;
         self.isSwipable = YES;
@@ -145,8 +145,10 @@ CCSprite *handOnly;
     [self checkMapStatus];
     
     // Add objects to path
-    int objectPattern = [GameScene getRandomNumberBetweenMin:1 andMax:2];
-    [self nextObject:dt pattern:objectPattern];
+    if (!plushy.onBridge) {
+        int objectPattern = [GameScene getRandomNumberBetweenMin:1 andMax:2];
+        [self nextObject:dt pattern:objectPattern];
+    }
     
     // Showing tips
     if (plushy.tip != -1 && [MainMenuScene showTips]) {
@@ -233,6 +235,7 @@ CCSprite *handOnly;
 -(void)checkMapStatus
 {
     if (plushy.loadmap) {
+        mapCount += 1;
         [self loadMazeLayer];
         plushy.loadmap = NO;
     }
@@ -278,7 +281,7 @@ CCSprite *handOnly;
 
 -(float) timer: (ccTime) dt
 {
-    if (seconds >= 5) {
+    if (seconds >= 2) {
         plushy.sliding = true;
     }
     //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs

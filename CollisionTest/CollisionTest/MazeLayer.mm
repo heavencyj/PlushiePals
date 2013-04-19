@@ -25,6 +25,9 @@ NSInteger hardMaps[3];
         NSAssert(nil!=path, @"Invalid GameObjects file.");
         
         dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+        
+        gameObjects = [[NSMutableArray alloc] init];
+        
         self.visible = NO;
     }
     return self;
@@ -33,11 +36,11 @@ NSInteger hardMaps[3];
 // Initialize the map levels
 +(void)initMapLevels
 {
-    //Maze 4's swipe does not work well
+    //Maze 3 has issues
     easyMaps[0] = 1;
     easyMaps[1] = 2;
-    easyMaps[2] = 3;
-    easyMaps[3] = 4;
+    easyMaps[2] = 4;
+    easyMaps[3] = 5;
     easyMaps[4] = 5;
     easyMaps[5] = 6;
     easyMaps[6] = 7;
@@ -71,15 +74,15 @@ NSInteger hardMaps[3];
     
 //    if (mapCount < 5) {
 //        if ([self getRandomDouble] < diffFactor) {
-//            return easyMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//            return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
 //        }
-//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
 //    }
 //    else {
-//        if ([self getRandomDouble] < diffFactor) {
-//            return hardMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        if ([GameScene getRandomDouble] < diffFactor) {
+//            return hardMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
 //        }
-//        else return midMaps[[self getRandomNumberBetweenMin:0 andMax:2]];
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
 //    }
 }
 
@@ -94,7 +97,7 @@ NSInteger hardMaps[3];
     NSDictionary* transitionBridge = [[dictionary objectForKey:@"bridge"] objectForKey:[NSString stringWithFormat:@"%d", ofLevel]];
     NSNumber* load_x = [transitionBridge objectForKey:@"loadx"];
     NSNumber* load_y = [transitionBridge objectForKey:@"loady"];
-    [maze setPhysicsPosition:b2Vec2FromCC([load_x intValue], [load_y intValue])]; //Fix location.
+    [maze setPhysicsPosition:b2Vec2FromCC([load_x intValue], [load_y intValue])]; //Fixed location.
     
     // load in game objects
     [self loadTransitionBridge:ofLevel];
@@ -132,14 +135,13 @@ NSInteger hardMaps[3];
 	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
 }
 
--(NSMutableArray*) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object
+-(void) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object
 {
     if (nil==dict) {
-        return nil;
+        return;
     }
     
-    NSMutableArray* gameObjects = [[NSMutableArray alloc] init];
-    
+    //TODO: randomly select between 0-2 cactuses to select from each level 
     for (id key in dict) {
         NSDictionary* gameObj = [dict objectForKey:key];
         
@@ -158,9 +160,10 @@ NSInteger hardMaps[3];
         b2WeldJointDef weldJointDef;
         weldJointDef.Initialize([maze getBody], [item getBody], [item getBody]->GetWorldCenter());
         [GB2Engine sharedInstance].world->CreateJoint(&weldJointDef);
+        
+//        [item setSensor:YES];
+//        [item setVisible:NO];
     }
-    
-    return gameObjects;
 }
 
 -(void)lineUpAround:(CGPoint)pos
@@ -171,6 +174,12 @@ NSInteger hardMaps[3];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];
     self.visible = YES;
+    
+    //Set all game objects to be visible at this time and unsensor them
+//    for (Object *obj in gameObjects) {
+//        [obj setSensor:NO];
+//        [obj setVisible:YES];
+//    }
 }
 
 -(void)destroyBridgeJoint

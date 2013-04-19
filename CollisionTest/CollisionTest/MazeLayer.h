@@ -15,6 +15,7 @@
 @interface MazeLayer : CCLayer {
     NSDictionary *dictionary;
     NSString *path;
+    NSMutableArray* gameObjects;
     
     CCSprite *tutorial1;
     TransitionObject *bridge;

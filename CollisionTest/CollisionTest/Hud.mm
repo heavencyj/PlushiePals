@@ -16,6 +16,7 @@
 
 @synthesize pauseButton;
 @synthesize pauseButtonRect;
+@synthesize scoreCloud;
 
 -(id) init
 {
