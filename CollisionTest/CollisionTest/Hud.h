@@ -20,6 +20,7 @@
 }
 
 @property (readonly) CCSprite *pauseButton;
+@property (readonly) CCSprite *scoreCloud;
 @property (readonly) CGRect pauseButtonRect;
 -(id) init;
 -(void)updateScore:(int)score;

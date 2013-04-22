@@ -49,7 +49,6 @@
 		98624450171E66C300312BE0 /* Banana icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862444F171E66C300312BE0 /* Banana icon.png */; };
 		98624453171E7E7700312BE0 /* hand only.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624451171E7E7600312BE0 /* hand only.png */; };
 		98624454171E7E7700312BE0 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624452171E7E7600312BE0 /* hand.png */; };
-		98624458171F27D900312BE0 /* canyon_levels_slide.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98624457171F27D900312BE0 /* canyon_levels_slide.plist */; };
 		98624471171FC41000312BE0 /* tutorial 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862446B171FC41000312BE0 /* tutorial 1.png */; };
 		98624472171FC41000312BE0 /* tutorial 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862446C171FC41000312BE0 /* tutorial 2.png */; };
 		98624473171FC41000312BE0 /* tutorial 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862446D171FC41000312BE0 /* tutorial 3.png */; };
@@ -80,7 +79,6 @@
 		986244B217210F0000312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B117210F0000312BE0 /* Scoreboard.png */; };
 		986244B41721127500312BE0 /* Missions Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B31721127500312BE0 /* Missions Screen.png */; };
 		986244B61721D66700312BE0 /* Back icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B51721D66600312BE0 /* Back icon.png */; };
-		986244B81721E28B00312BE0 /* GameObjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244B71721E28B00312BE0 /* GameObjects.plist */; };
 		986244BC1721E2AF00312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244B91721E2AF00312BE0 /* monkeys.plist */; };
 		986244BD1721E2AF00312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244BA1721E2AF00312BE0 /* monkeys.png */; };
 		986244BE1721E2AF00312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244BB1721E2AF00312BE0 /* plushyshapes.plist */; };
@@ -340,7 +338,6 @@
 		9862444F171E66C300312BE0 /* Banana icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Banana icon.png"; sourceTree = "<group>"; };
 		98624451171E7E7600312BE0 /* hand only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hand only.png"; sourceTree = "<group>"; };
 		98624452171E7E7600312BE0 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
-		98624457171F27D900312BE0 /* canyon_levels_slide.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels_slide.plist; sourceTree = "<group>"; };
 		9862446B171FC41000312BE0 /* tutorial 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 1.png"; sourceTree = "<group>"; };
 		9862446C171FC41000312BE0 /* tutorial 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 2.png"; sourceTree = "<group>"; };
 		9862446D171FC41000312BE0 /* tutorial 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 3.png"; sourceTree = "<group>"; };
@@ -371,7 +368,6 @@
 		986244B117210F0000312BE0 /* Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scoreboard.png; sourceTree = "<group>"; };
 		986244B31721127500312BE0 /* Missions Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Missions Screen.png"; sourceTree = "<group>"; };
 		986244B51721D66600312BE0 /* Back icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back icon.png"; sourceTree = "<group>"; };
-		986244B71721E28B00312BE0 /* GameObjects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameObjects.plist; sourceTree = "<group>"; };
 		986244B91721E2AF00312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
 		986244BA1721E2AF00312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
 		986244BB1721E2AF00312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
@@ -905,12 +901,10 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
-				986244B71721E28B00312BE0 /* GameObjects.plist */,
 				986244B91721E2AF00312BE0 /* monkeys.plist */,
 				986244C11721E5F600312BE0 /* canyon_levels.plist */,
 				986244BA1721E2AF00312BE0 /* monkeys.png */,
 				986244BB1721E2AF00312BE0 /* plushyshapes.plist */,
-				98624457171F27D900312BE0 /* canyon_levels_slide.plist */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -1762,7 +1756,6 @@
 				98624450171E66C300312BE0 /* Banana icon.png in Resources */,
 				98624453171E7E7700312BE0 /* hand only.png in Resources */,
 				98624454171E7E7700312BE0 /* hand.png in Resources */,
-				98624458171F27D900312BE0 /* canyon_levels_slide.plist in Resources */,
 				98624471171FC41000312BE0 /* tutorial 1.png in Resources */,
 				98624472171FC41000312BE0 /* tutorial 2.png in Resources */,
 				98624473171FC41000312BE0 /* tutorial 3.png in Resources */,
@@ -1793,7 +1786,6 @@
 				986244B217210F0000312BE0 /* Scoreboard.png in Resources */,
 				986244B41721127500312BE0 /* Missions Screen.png in Resources */,
 				986244B61721D66700312BE0 /* Back icon.png in Resources */,
-				986244B81721E28B00312BE0 /* GameObjects.plist in Resources */,
 				986244BC1721E2AF00312BE0 /* monkeys.plist in Resources */,
 				986244BD1721E2AF00312BE0 /* monkeys.png in Resources */,
 				986244BE1721E2AF00312BE0 /* plushyshapes.plist in Resources */,

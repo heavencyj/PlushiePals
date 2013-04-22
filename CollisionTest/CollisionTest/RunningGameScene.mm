@@ -145,8 +145,10 @@ bool isSwipable;
     [self checkMapStatus];
     
     // Add objects to path
-    int objectPattern = [GameScene getRandomNumberBetweenMin:1 andMax:2];
-    [self nextObject:dt pattern:objectPattern];
+    if (!plushy.onBridge) {
+        int objectPattern = [GameScene getRandomNumberBetweenMin:1 andMax:2];
+        [self nextObject:dt pattern:objectPattern];
+    }
     
     // Showing tips
     if (plushy.tip != -1 && [MainMenuScene showTips]) {
@@ -230,6 +232,7 @@ bool isSwipable;
 -(void)checkMapStatus
 {
     if (plushy.loadmap) {
+        mapCount += 1;
         [self loadMazeLayer];
         plushy.loadmap = NO;
     }
@@ -275,7 +278,7 @@ bool isSwipable;
 
 -(float) timer: (ccTime) dt
 {
-    if (seconds >= 5) {
+    if (seconds >= 2) {
         plushy.sliding = true;
     }
     //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs
