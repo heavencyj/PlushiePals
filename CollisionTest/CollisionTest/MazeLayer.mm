@@ -37,12 +37,12 @@ NSInteger hardMaps[3];
 +(void)initMapLevels
 {
     //Maze 3 has issues
-    easyMaps[0] = 1;
+    easyMaps[0] = 10;
     easyMaps[1] = 2;
     easyMaps[2] = 4;
     easyMaps[3] = 5;
-    easyMaps[4] = 5;
-    easyMaps[5] = 6;
+    easyMaps[4] = 6;
+    easyMaps[5] = 8;
     easyMaps[6] = 7;
     easyMaps[7] = 8;
 //    easyMaps[4] = 5

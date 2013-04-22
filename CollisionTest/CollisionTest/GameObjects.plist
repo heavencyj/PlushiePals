@@ -4,19 +4,6 @@
 <dict>
 	<key>bridge</key>
 	<dict>
-		<key>11</key>
-		<dict>
-			<key>loadx</key>
-			<integer>200</integer>
-			<key>loady</key>
-			<integer>440</integer>
-			<key>x</key>
-			<integer>208</integer>
-			<key>y</key>
-			<integer>230</integer>
-			<key>r</key>
-			<integer>180</integer>
-		</dict>
 		<key>10</key>
 		<dict>
 			<key>loadx</key>
@@ -50,9 +37,9 @@
 			<key>loady</key>
 			<integer>377</integer>
 			<key>x</key>
-			<integer>315</integer>
+			<integer>319</integer>
 			<key>y</key>
-			<integer>205</integer>
+			<integer>210</integer>
 			<key>r</key>
 			<integer>180</integer>
 		</dict>
@@ -150,7 +137,80 @@
 	</dict>
 	<key>cactus bombs</key>
 	<dict>
-		<key>11</key>
+		<key>10</key>
+		<dict>
+			<key>b3</key>
+			<dict>
+				<key>x</key>
+				<integer>1220</integer>
+				<key>y</key>
+				<integer>476</integer>
+				<key>r</key>
+				<integer>0</integer>
+			</dict>
+			<key>b2</key>
+			<dict>
+				<key>x</key>
+				<integer>710</integer>
+				<key>y</key>
+				<integer>-236</integer>
+				<key>r</key>
+				<integer>0</integer>
+			</dict>
+			<key>b1</key>
+			<dict>
+				<key>x</key>
+				<integer>900</integer>
+				<key>y</key>
+				<integer>-233</integer>
+				<key>r</key>
+				<integer>0</integer>
+			</dict>
+			<key>b0</key>
+			<dict>
+				<key>x</key>
+				<integer>590</integer>
+				<key>y</key>
+				<integer>-482</integer>
+				<key>r</key>
+				<integer>180</integer>
+			</dict>
+		</dict>
+		<key>7</key>
+		<dict/>
+		<key>6</key>
+		<dict/>
+		<key>8</key>
+		<dict>
+			<key>b2</key>
+			<dict>
+				<key>x</key>
+				<integer>1304</integer>
+				<key>y</key>
+				<integer>-280</integer>
+				<key>r</key>
+				<integer>270</integer>
+			</dict>
+			<key>b1</key>
+			<dict>
+				<key>x</key>
+				<integer>950</integer>
+				<key>y</key>
+				<integer>-388</integer>
+				<key>r</key>
+				<integer>180</integer>
+			</dict>
+			<key>b0</key>
+			<dict>
+				<key>x</key>
+				<integer>659</integer>
+				<key>y</key>
+				<integer>-388</integer>
+				<key>r</key>
+				<integer>180</integer>
+			</dict>
+		</dict>
+		<key>9</key>
 		<dict/>
 		<key>5</key>
 		<dict>

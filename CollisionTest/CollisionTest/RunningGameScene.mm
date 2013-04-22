@@ -384,7 +384,6 @@ CCSprite *handOnly;
     }
 }
 
-
 +(void)addScore:(int)points {
     score += points;
 }
