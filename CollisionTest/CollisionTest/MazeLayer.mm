@@ -9,6 +9,7 @@
 #import "MazeLayer.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
+#import "RunningGameScene.h"
 
 NSInteger easyMaps[8];
 NSInteger midMaps[3];
@@ -60,7 +61,8 @@ NSInteger hardMaps[3];
 
 -(int)levelChooser
 {
-    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
+    
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:3]];
     //TODO: the first map has to be canyon level 1
     
 //    if ([MainMenuScene showFirst]) {

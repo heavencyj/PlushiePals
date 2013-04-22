@@ -27,12 +27,12 @@ int rotating1;
 int score;
 CCSprite *hand;
 CCSprite *handOnly;
+bool isSwipable;
 
 #pragma mark - GameScene
 
 // HelloWorldLayer implementation
 @implementation RunningGameScene
-@synthesize isSwipable;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -112,7 +112,7 @@ CCSprite *handOnly;
         //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         self.isTouchEnabled = YES;
-        self.isSwipable = YES;
+        isSwipable = YES;
         [self scheduleUpdate];
     }
     return self;
@@ -157,13 +157,13 @@ CCSprite *handOnly;
         switch (showingTip1) {
             case 1: {
                 // swipe left
-                tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
-                hand = [CCSprite spriteWithFile:@"hand.png"];
+                tutorial1.position = ccp(plushy.ccPosition.x - 150, plushy.ccPosition.y);
+                hand = [CCSprite spriteWithFile:@"hand.png"];                
                 hand.position = tutorial1.position;
                 [self addChild:hand z:500 tag:10];
-                id moveHandLeft = [CCMoveBy actionWithDuration:0.5 position:ccp(-20, 0)];
+                id moveHandLeft = [CCMoveBy actionWithDuration:0.5 position:ccp(-40, 0)];
                 [hand runAction:moveHandLeft];
-                self.isSwipable = YES;
+                isSwipable = YES;
                 break;
             }
             
@@ -173,17 +173,15 @@ CCSprite *handOnly;
                 hand = [CCSprite spriteWithFile:@"hand.png"];
                 hand.position = tutorial1.position;
                 [self addChild:hand z:500 tag:10];
-                id moveHandRight = [CCMoveBy actionWithDuration:0.5 position:ccp(20, 0)];
+                id moveHandRight = [CCMoveBy actionWithDuration:0.5 position:ccp(40, 0)];
                 [hand runAction:moveHandRight];
-                self.isSwipable = YES;
+                isSwipable = YES;
                 break;
             }
             
             case 3: {
                 // jump
                 tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
-                hand = [CCSprite spriteWithFile:@"hand.png"];
-                handOnly = [CCSprite spriteWithFile:@"handOnly.png"];
                 // animation seq
                 break;
                 
@@ -192,8 +190,7 @@ CCSprite *handOnly;
             case 4: {
                 // sliding
                 tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
-                hand = [CCSprite spriteWithFile:@"hand.png"];
-                handOnly = [CCSprite spriteWithFile:@"handOnly.png"];
+                
                 // animation seq
                 break;
                 
@@ -209,7 +206,7 @@ CCSprite *handOnly;
                 // arrows
                 tutorial1.scale = 0.5;
                 tutorial1.position = ccp(plushy.ccPosition.x, plushy.ccPosition.y+70);
-                self.isSwipable = YES;
+                isSwipable = YES;
                 break;
             }
                 
@@ -317,10 +314,9 @@ CCSprite *handOnly;
     if (plushy.sliding) {
         if ((showingTip1 == 4)
             && [MainMenuScene showTips]) {
-            [self removeChildByTag:10 cleanup:YES];
             [self removeChild:tutorial1 cleanup:YES];
             showingTip1 = -1;
-            self.isSwipable = NO;
+            isSwipable = NO;
         }
         plushy.sliding = false;
     }
@@ -340,17 +336,16 @@ CCSprite *handOnly;
         else if (!plushy.jumping) {
             if ((showingTip1 == 3)
                 && [MainMenuScene showTips]) {
-                [self removeChildByTag:10 cleanup:YES];
                 [self removeChild:tutorial1 cleanup:YES];
                 showingTip1 = -1;
-                self.isSwipable = NO;
+                isSwipable = NO;
             }
             else if ((showingTip1 == 5 || showingTip1 == 6)
                      && [MainMenuScene showTips]) {
                 [pauseLayer resumeGame];
                 [self removeChild:tutorial1 cleanup:YES];
                 showingTip1 = -1;
-                self.isSwipable = NO;
+                isSwipable = NO;
             }
             
             [plushy jump];
@@ -360,7 +355,7 @@ CCSprite *handOnly;
     {
         //Check if the swipe is a left swipe and long enough
         //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
-        if (firstTouch.x > lastTouch.x && swipeLength > 60 && self.isSwipable) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && isSwipable) //left swipe (90)
         {
             
             CGPoint p1 = [plushy ccNode].position;
@@ -368,7 +363,7 @@ CCSprite *handOnly;
             [currMazeLayer transformAround:p1 WithAngle:-90];
         }
         //else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && self.isSwipable) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && isSwipable) // right swipe (-90)
         {
             CGPoint p1 = [plushy ccNode].position;
             p1.y = p1.y+10;
@@ -376,12 +371,29 @@ CCSprite *handOnly;
         }
         if ((showingTip1 == 1 || showingTip1 == 2 || showingTip1 == 10 || showingTip1 == 11)
             && [MainMenuScene showTips]) {
-            self.isSwipable = NO;
+            isSwipable = NO;
+            showingTip1 = -1;
             [self removeChildByTag:10 cleanup:YES];
             [self removeChild:tutorial1 cleanup:YES];
         }
         
     }
+}
+
+- (void)setInvisible:(id)a data:(CCNode *)node{
+    node.visible = NO;
+}
+- (void)setNodeVisible:(id)a data:(CCNode *)node {
+    node.visible = YES;
+}
+
+-(void)setHandPos:(id)a data:(CCNode *)node {
+    node.position = ccp(node.position.x-15, node.position.y-10);
+}
+
++(void)resetSwipe
+{
+    isSwipable = YES;
 }
 
 +(void)addScore:(int)points {

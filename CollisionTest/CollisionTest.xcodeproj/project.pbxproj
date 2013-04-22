@@ -13,16 +13,6 @@
 		98176E1516E7A9D3009BA7AB /* Tool icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1116E7A9D3009BA7AB /* Tool icon.png */; };
 		98176E1716E7AA03009BA7AB /* Sound icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1616E7AA03009BA7AB /* Sound icon.png */; };
 		98176E1916E7AA3F009BA7AB /* Question icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1816E7AA3F009BA7AB /* Question icon.png */; };
-		98176E2616E7D7A5009BA7AB /* Level 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1C16E7D7A2009BA7AB /* Level 1.png */; };
-		98176E2716E7D7A5009BA7AB /* Level 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1D16E7D7A2009BA7AB /* Level 2.png */; };
-		98176E2816E7D7A5009BA7AB /* Level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1E16E7D7A2009BA7AB /* Level 3.png */; };
-		98176E2916E7D7A5009BA7AB /* Level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E1F16E7D7A3009BA7AB /* Level 4.png */; };
-		98176E2A16E7D7A5009BA7AB /* Level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2016E7D7A3009BA7AB /* Level 5.png */; };
-		98176E2B16E7D7A5009BA7AB /* Level 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2116E7D7A3009BA7AB /* Level 6.png */; };
-		98176E2C16E7D7A5009BA7AB /* Level 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2216E7D7A3009BA7AB /* Level 7.png */; };
-		98176E2D16E7D7A5009BA7AB /* Level 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2316E7D7A4009BA7AB /* Level 8.png */; };
-		98176E2E16E7D7A5009BA7AB /* Level 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2416E7D7A5009BA7AB /* Level 9.png */; };
-		98176E2F16E7D7A5009BA7AB /* Level 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E2516E7D7A5009BA7AB /* Level 10.png */; };
 		98176E3116E829DB009BA7AB /* Plushy Run.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E3016E829DB009BA7AB /* Plushy Run.png */; };
 		98176E3416E82ACB009BA7AB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B61AC7EE16BA338700A18443 /* Default@2x.png */; };
 		98176E3716E82B88009BA7AB /* Plushy Pals icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176E3616E82B88009BA7AB /* Plushy Pals icon.png */; };
@@ -36,7 +26,6 @@
 		98176EB316FA2116009BA7AB /* Levels icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB216FA2116009BA7AB /* Levels icon.png */; };
 		98176EB516FA21A9009BA7AB /* Play icon large.png in Resources */ = {isa = PBXBuildFile; fileRef = 98176EB416FA21A9009BA7AB /* Play icon large.png */; };
 		98176EFC17002266009BA7AB /* PlushyMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98176EFB17002264009BA7AB /* PlushyMenuScene.mm */; };
-		986244201715F07D00312BE0 /* GameObjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862441F1715F07D00312BE0 /* GameObjects.plist */; };
 		986244241717BC8C00312BE0 /* Loading screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244231717BC8C00312BE0 /* Loading screen.png */; };
 		986244261717C73200312BE0 /* Plushy icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244251717C73200312BE0 /* Plushy icon.png */; };
 		9862442A1717C82600312BE0 /* Cora icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244271717C82500312BE0 /* Cora icon.png */; };
@@ -51,7 +40,6 @@
 		9862443B1717CCC800312BE0 /* canyon level 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244331717CCC800312BE0 /* canyon level 5.plist */; };
 		9862443C1717CCC800312BE0 /* canyon level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244341717CCC800312BE0 /* canyon level 5.png */; };
 		9862443F1717D08200312BE0 /* StatScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9862443E1717D08200312BE0 /* StatScene.mm */; };
-		986244411717D23900312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244401717D23900312BE0 /* Scoreboard.png */; };
 		986244431717D9F200312BE0 /* End screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244421717D9F200312BE0 /* End screen.png */; };
 		986244461718640F00312BE0 /* GameData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 986244451718640F00312BE0 /* GameData.mm */; };
 		9862444A171E5E7500312BE0 /* End Screen background.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624447171E5E7300312BE0 /* End Screen background.png */; };
@@ -67,12 +55,38 @@
 		98624474171FC41000312BE0 /* tutorial 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862446E171FC41000312BE0 /* tutorial 4.png */; };
 		98624475171FC41000312BE0 /* tutorial 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862446F171FC41000312BE0 /* tutorial 5.png */; };
 		98624476171FC41000312BE0 /* tutorial 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624470171FC41000312BE0 /* tutorial 6.png */; };
-		9862447E171FD70000312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862447D171FD70000312BE0 /* plushyshapes.plist */; };
+		986244821720A7A700312BE0 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244811720A7A700312BE0 /* cloud.png */; };
+		986244971720AAD100312BE0 /* canyon level 6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244831720AACF00312BE0 /* canyon level 6.plist */; };
+		986244981720AAD100312BE0 /* canyon level 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244841720AACF00312BE0 /* canyon level 6.png */; };
+		986244991720AAD100312BE0 /* canyon level 7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244851720AACF00312BE0 /* canyon level 7.plist */; };
+		9862449A1720AAD100312BE0 /* canyon level 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244861720AACF00312BE0 /* canyon level 7.png */; };
+		9862449B1720AAD100312BE0 /* canyon level 8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244871720AACF00312BE0 /* canyon level 8.plist */; };
+		9862449C1720AAD100312BE0 /* canyon level 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244881720AACF00312BE0 /* canyon level 8.png */; };
+		9862449D1720AAD100312BE0 /* canyon level 9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244891720AACF00312BE0 /* canyon level 9.plist */; };
+		9862449E1720AAD100312BE0 /* canyon level 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862448A1720AAD000312BE0 /* canyon level 9.png */; };
+		9862449F1720AAD100312BE0 /* canyon level 10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862448B1720AAD000312BE0 /* canyon level 10.plist */; };
+		986244A01720AAD100312BE0 /* canyon level 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862448C1720AAD000312BE0 /* canyon level 10.png */; };
+		986244A11720AAD100312BE0 /* canyon level 11.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862448D1720AAD000312BE0 /* canyon level 11.plist */; };
+		986244A21720AAD100312BE0 /* canyon level 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862448E1720AAD000312BE0 /* canyon level 11.png */; };
+		986244A31720AAD100312BE0 /* canyon level 12.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862448F1720AAD000312BE0 /* canyon level 12.plist */; };
+		986244A41720AAD100312BE0 /* canyon level 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244901720AAD000312BE0 /* canyon level 12.png */; };
+		986244A51720AAD100312BE0 /* canyon level 13.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244911720AAD000312BE0 /* canyon level 13.plist */; };
+		986244A61720AAD100312BE0 /* canyon level 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244921720AAD100312BE0 /* canyon level 13.png */; };
+		986244A71720AAD100312BE0 /* canyon level 14.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244931720AAD100312BE0 /* canyon level 14.plist */; };
+		986244A81720AAD100312BE0 /* canyon level 14.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244941720AAD100312BE0 /* canyon level 14.png */; };
+		986244A91720AAD100312BE0 /* canyon level 15.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244951720AAD100312BE0 /* canyon level 15.plist */; };
+		986244AA1720AAD100312BE0 /* canyon level 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244961720AAD100312BE0 /* canyon level 15.png */; };
+		986244B217210F0000312BE0 /* Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B117210F0000312BE0 /* Scoreboard.png */; };
+		986244B41721127500312BE0 /* Missions Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B31721127500312BE0 /* Missions Screen.png */; };
+		986244B61721D66700312BE0 /* Back icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244B51721D66600312BE0 /* Back icon.png */; };
+		986244BC1721E2AF00312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244B91721E2AF00312BE0 /* monkeys.plist */; };
+		986244BD1721E2AF00312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 986244BA1721E2AF00312BE0 /* monkeys.png */; };
+		986244BE1721E2AF00312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244BB1721E2AF00312BE0 /* plushyshapes.plist */; };
+		986244C21721E5F600312BE0 /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986244C11721E5F600312BE0 /* canyon_levels.plist */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
 		987EE27A16D7D651003B4F59 /* Pause icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27916D7D651003B4F59 /* Pause icon.png */; };
-		98DC00FE16CECCCE009FF496 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 98DC00FD16CECCCE009FF496 /* Star.png */; };
 		98DC444F16BC4CAD0069D3CD /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */; };
 		98ECED0D16C492FE005BB243 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECED0C16C492FE005BB243 /* GameScene.mm */; };
 		98ECEF9816CC34B2005BB243 /* MainMenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98ECEF9516CC34B1005BB243 /* MainMenuScene.mm */; };
@@ -276,14 +290,6 @@
 		B6E25A3117127791008F1737 /* canyon level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6E25A3017127791008F1737 /* canyon level 1.plist */; };
 		B6E7D0AC16B32A53009C732A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7D0AB16B32A52009C732A /* RootViewController.m */; };
 		B6E7D0CC16B5D3A4009C732A /* Maze.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6E7D0CA16B5D3A3009C732A /* Maze.mm */; };
-		B6F535221720E809007A0C5D /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6F535201720E808007A0C5D /* monkeys.plist */; };
-		B6F535231720E809007A0C5D /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F535211720E808007A0C5D /* monkeys.png */; };
-		B6F535271721CD46007A0C5D /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F535261721CD45007A0C5D /* cloud.png */; };
-		B6F5352A1721D8A9007A0C5D /* canyon level 11.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6F535281721D8A8007A0C5D /* canyon level 11.plist */; };
-		B6F5352B1721D8A9007A0C5D /* canyon level 11.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F535291721D8A8007A0C5D /* canyon level 11.png */; };
-		B6F5353217233BCE007A0C5D /* canyon level 8.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6F5353017233BB9007A0C5D /* canyon level 8.plist */; };
-		B6F5353317233BCE007A0C5D /* canyon level 8.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F5353117233BBF007A0C5D /* canyon level 8.png */; };
-		B6F53535172343DA007A0C5D /* canyon_levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6F53534172343D9007A0C5D /* canyon_levels.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,16 +299,6 @@
 		98176E1116E7A9D3009BA7AB /* Tool icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tool icon.png"; sourceTree = "<group>"; };
 		98176E1616E7AA03009BA7AB /* Sound icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sound icon.png"; sourceTree = "<group>"; };
 		98176E1816E7AA3F009BA7AB /* Question icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Question icon.png"; sourceTree = "<group>"; };
-		98176E1C16E7D7A2009BA7AB /* Level 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 1.png"; sourceTree = "<group>"; };
-		98176E1D16E7D7A2009BA7AB /* Level 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 2.png"; sourceTree = "<group>"; };
-		98176E1E16E7D7A2009BA7AB /* Level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 3.png"; sourceTree = "<group>"; };
-		98176E1F16E7D7A3009BA7AB /* Level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 4.png"; sourceTree = "<group>"; };
-		98176E2016E7D7A3009BA7AB /* Level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 5.png"; sourceTree = "<group>"; };
-		98176E2116E7D7A3009BA7AB /* Level 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 6.png"; sourceTree = "<group>"; };
-		98176E2216E7D7A3009BA7AB /* Level 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 7.png"; sourceTree = "<group>"; };
-		98176E2316E7D7A4009BA7AB /* Level 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 8.png"; sourceTree = "<group>"; };
-		98176E2416E7D7A5009BA7AB /* Level 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 9.png"; sourceTree = "<group>"; };
-		98176E2516E7D7A5009BA7AB /* Level 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level 10.png"; sourceTree = "<group>"; };
 		98176E3016E829DB009BA7AB /* Plushy Run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Run.png"; sourceTree = "<group>"; };
 		98176E3616E82B88009BA7AB /* Plushy Pals icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals icon.png"; sourceTree = "<group>"; };
 		98176E3816E82BCF009BA7AB /* Plushy Pals icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy Pals icon_small.png"; sourceTree = "<group>"; };
@@ -317,7 +313,6 @@
 		98176EFA17002263009BA7AB /* PlushyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlushyMenuScene.h; sourceTree = "<group>"; };
 		98176EFB17002264009BA7AB /* PlushyMenuScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PlushyMenuScene.mm; sourceTree = "<group>"; };
 		98176EFF17002469009BA7AB /* Character screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Character screen.png"; sourceTree = "<group>"; };
-		9862441F1715F07D00312BE0 /* GameObjects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameObjects.plist; sourceTree = "<group>"; };
 		986244231717BC8C00312BE0 /* Loading screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading screen.png"; sourceTree = "<group>"; };
 		986244251717C73200312BE0 /* Plushy icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plushy icon.png"; sourceTree = "<group>"; };
 		986244271717C82500312BE0 /* Cora icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cora icon.png"; sourceTree = "<group>"; };
@@ -333,7 +328,6 @@
 		986244341717CCC800312BE0 /* canyon level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 5.png"; sourceTree = "<group>"; };
 		9862443D1717D08100312BE0 /* StatScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatScene.h; sourceTree = "<group>"; };
 		9862443E1717D08200312BE0 /* StatScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = StatScene.mm; sourceTree = "<group>"; };
-		986244401717D23900312BE0 /* Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scoreboard.png; sourceTree = "<group>"; };
 		986244421717D9F200312BE0 /* End screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "End screen.png"; sourceTree = "<group>"; };
 		986244441718640D00312BE0 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		986244451718640F00312BE0 /* GameData.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameData.mm; sourceTree = "<group>"; };
@@ -350,12 +344,38 @@
 		9862446E171FC41000312BE0 /* tutorial 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 4.png"; sourceTree = "<group>"; };
 		9862446F171FC41000312BE0 /* tutorial 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 5.png"; sourceTree = "<group>"; };
 		98624470171FC41000312BE0 /* tutorial 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial 6.png"; sourceTree = "<group>"; };
-		9862447D171FD70000312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+		986244811720A7A700312BE0 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		986244831720AACF00312BE0 /* canyon level 6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 6.plist"; sourceTree = "<group>"; };
+		986244841720AACF00312BE0 /* canyon level 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 6.png"; sourceTree = "<group>"; };
+		986244851720AACF00312BE0 /* canyon level 7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 7.plist"; sourceTree = "<group>"; };
+		986244861720AACF00312BE0 /* canyon level 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 7.png"; sourceTree = "<group>"; };
+		986244871720AACF00312BE0 /* canyon level 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 8.plist"; sourceTree = "<group>"; };
+		986244881720AACF00312BE0 /* canyon level 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 8.png"; sourceTree = "<group>"; };
+		986244891720AACF00312BE0 /* canyon level 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 9.plist"; sourceTree = "<group>"; };
+		9862448A1720AAD000312BE0 /* canyon level 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 9.png"; sourceTree = "<group>"; };
+		9862448B1720AAD000312BE0 /* canyon level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 10.plist"; sourceTree = "<group>"; };
+		9862448C1720AAD000312BE0 /* canyon level 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 10.png"; sourceTree = "<group>"; };
+		9862448D1720AAD000312BE0 /* canyon level 11.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 11.plist"; sourceTree = "<group>"; };
+		9862448E1720AAD000312BE0 /* canyon level 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 11.png"; sourceTree = "<group>"; };
+		9862448F1720AAD000312BE0 /* canyon level 12.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 12.plist"; sourceTree = "<group>"; };
+		986244901720AAD000312BE0 /* canyon level 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 12.png"; sourceTree = "<group>"; };
+		986244911720AAD000312BE0 /* canyon level 13.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 13.plist"; sourceTree = "<group>"; };
+		986244921720AAD100312BE0 /* canyon level 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 13.png"; sourceTree = "<group>"; };
+		986244931720AAD100312BE0 /* canyon level 14.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 14.plist"; sourceTree = "<group>"; };
+		986244941720AAD100312BE0 /* canyon level 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 14.png"; sourceTree = "<group>"; };
+		986244951720AAD100312BE0 /* canyon level 15.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 15.plist"; sourceTree = "<group>"; };
+		986244961720AAD100312BE0 /* canyon level 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 15.png"; sourceTree = "<group>"; };
+		986244B117210F0000312BE0 /* Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scoreboard.png; sourceTree = "<group>"; };
+		986244B31721127500312BE0 /* Missions Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Missions Screen.png"; sourceTree = "<group>"; };
+		986244B51721D66600312BE0 /* Back icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back icon.png"; sourceTree = "<group>"; };
+		986244B91721E2AF00312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
+		986244BA1721E2AF00312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		986244BB1721E2AF00312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
+		986244C11721E5F600312BE0 /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
 		987EE27916D7D651003B4F59 /* Pause icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause icon.png"; sourceTree = "<group>"; };
-		98DC00FD16CECCCE009FF496 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		98DC444D16BC4CAD0069D3CD /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		98DC444E16BC4CAD0069D3CD /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOverScene.mm; sourceTree = "<group>"; };
 		98ECED0C16C492FE005BB243 /* GameScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameScene.mm; sourceTree = "<group>"; };
@@ -787,30 +807,6 @@
 		B6F534DB1717C891007A0C5D /* GameOver.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOver.caf; sourceTree = "<group>"; };
 		B6F534DE1717E2B1007A0C5D /* Footstep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Footstep.caf; sourceTree = "<group>"; };
 		B6F534E01717EC30007A0C5D /* jump.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jump.caf; sourceTree = "<group>"; };
-		B6F534E8171C926E007A0C5D /* canyon level 6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 6.plist"; sourceTree = "<group>"; };
-		B6F534E9171C926F007A0C5D /* canyon level 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 6.png"; sourceTree = "<group>"; };
-		B6F534EA171C926F007A0C5D /* canyon level 7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 7.plist"; sourceTree = "<group>"; };
-		B6F534EB171C926F007A0C5D /* canyon level 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 7.png"; sourceTree = "<group>"; };
-		B6F534EE171C926F007A0C5D /* canyon level 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 9.plist"; sourceTree = "<group>"; };
-		B6F534EF171C926F007A0C5D /* canyon level 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 9.png"; sourceTree = "<group>"; };
-		B6F534F0171C926F007A0C5D /* canyon level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 10.plist"; sourceTree = "<group>"; };
-		B6F534F1171C926F007A0C5D /* canyon level 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 10.png"; sourceTree = "<group>"; };
-		B6F534F4171C926F007A0C5D /* canyon level 12.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 12.plist"; sourceTree = "<group>"; };
-		B6F534F5171C9270007A0C5D /* canyon level 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 12.png"; sourceTree = "<group>"; };
-		B6F534F6171C9270007A0C5D /* canyon level 13.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 13.plist"; sourceTree = "<group>"; };
-		B6F534F7171C9270007A0C5D /* canyon level 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 13.png"; sourceTree = "<group>"; };
-		B6F534F8171C9270007A0C5D /* canyon level 14.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 14.plist"; sourceTree = "<group>"; };
-		B6F534F9171C9271007A0C5D /* canyon level 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 14.png"; sourceTree = "<group>"; };
-		B6F534FA171C9271007A0C5D /* canyon level 15.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 15.plist"; sourceTree = "<group>"; };
-		B6F534FB171C9271007A0C5D /* canyon level 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 15.png"; sourceTree = "<group>"; };
-		B6F535201720E808007A0C5D /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
-		B6F535211720E808007A0C5D /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
-		B6F535261721CD45007A0C5D /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
-		B6F535281721D8A8007A0C5D /* canyon level 11.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 11.plist"; sourceTree = "<group>"; };
-		B6F535291721D8A8007A0C5D /* canyon level 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 11.png"; sourceTree = "<group>"; };
-		B6F5353017233BB9007A0C5D /* canyon level 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "canyon level 8.plist"; sourceTree = "<group>"; };
-		B6F5353117233BBF007A0C5D /* canyon level 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canyon level 8.png"; sourceTree = "<group>"; };
-		B6F53534172343D9007A0C5D /* canyon_levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = canyon_levels.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -905,11 +901,10 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
-				B6F53534172343D9007A0C5D /* canyon_levels.plist */,
-				B6F535201720E808007A0C5D /* monkeys.plist */,
-				B6F535211720E808007A0C5D /* monkeys.png */,
-				9862441F1715F07D00312BE0 /* GameObjects.plist */,
-				9862447D171FD70000312BE0 /* plushyshapes.plist */,
+				986244B91721E2AF00312BE0 /* monkeys.plist */,
+				986244C11721E5F600312BE0 /* canyon_levels.plist */,
+				986244BA1721E2AF00312BE0 /* monkeys.png */,
+				986244BB1721E2AF00312BE0 /* plushyshapes.plist */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -918,6 +913,7 @@
 			isa = PBXGroup;
 			children = (
 				98176EB416FA21A9009BA7AB /* Play icon large.png */,
+				986244B51721D66600312BE0 /* Back icon.png */,
 				9862444F171E66C300312BE0 /* Banana icon.png */,
 				986244251717C73200312BE0 /* Plushy icon.png */,
 				98176EB216FA2116009BA7AB /* Levels icon.png */,
@@ -927,16 +923,6 @@
 				98176E3E16E84AFA009BA7AB /* Question cancel icon.png */,
 				9862444D171E642B00312BE0 /* Score icon.png */,
 				98176E4016E84F4D009BA7AB /* Level button.png */,
-				98176E1C16E7D7A2009BA7AB /* Level 1.png */,
-				98176E1D16E7D7A2009BA7AB /* Level 2.png */,
-				98176E1E16E7D7A2009BA7AB /* Level 3.png */,
-				98176E1F16E7D7A3009BA7AB /* Level 4.png */,
-				98176E2016E7D7A3009BA7AB /* Level 5.png */,
-				98176E2116E7D7A3009BA7AB /* Level 6.png */,
-				98176E2216E7D7A3009BA7AB /* Level 7.png */,
-				98176E2316E7D7A4009BA7AB /* Level 8.png */,
-				98176E2416E7D7A5009BA7AB /* Level 9.png */,
-				98176E2516E7D7A5009BA7AB /* Level 10.png */,
 				98176E4416E85594009BA7AB /* Play icon.png */,
 				98176E3A16E82CED009BA7AB /* Play word icon.png */,
 				98176E1616E7AA03009BA7AB /* Sound icon.png */,
@@ -958,12 +944,13 @@
 				98624447171E5E7300312BE0 /* End Screen background.png */,
 				98624448171E5E7400312BE0 /* End Screen clouds.png */,
 				98624449171E5E7400312BE0 /* monkey bananas.png */,
-				986244401717D23900312BE0 /* Scoreboard.png */,
 				986244271717C82500312BE0 /* Cora icon.png */,
 				986244281717C82500312BE0 /* Hazel icon.png */,
 				986244291717C82500312BE0 /* Momo icon.png */,
 				B64710711702C82200561E2C /* Plushy Paradise.png */,
 				98176EFF17002469009BA7AB /* Character screen.png */,
+				986244B31721127500312BE0 /* Missions Screen.png */,
+				986244B117210F0000312BE0 /* Scoreboard.png */,
 				98176E3016E829DB009BA7AB /* Plushy Run.png */,
 				98ECEFC016CCB4A8005BB243 /* Menu screen.png */,
 				986244421717D9F200312BE0 /* End screen.png */,
@@ -975,10 +962,6 @@
 		987EE23E16D18F50003B4F59 /* mazes */ = {
 			isa = PBXGroup;
 			children = (
-				B6F5353017233BB9007A0C5D /* canyon level 8.plist */,
-				B6F5353117233BBF007A0C5D /* canyon level 8.png */,
-				B6F535281721D8A8007A0C5D /* canyon level 11.plist */,
-				B6F535291721D8A8007A0C5D /* canyon level 11.png */,
 				B6E25A3017127791008F1737 /* canyon level 1.plist */,
 				B6E25A2C1712719C008F1737 /* canyon level 1.png */,
 				9862442D1717CCC800312BE0 /* canyon level 2.plist */,
@@ -989,22 +972,26 @@
 				986244321717CCC800312BE0 /* canyon level 4.png */,
 				986244331717CCC800312BE0 /* canyon level 5.plist */,
 				986244341717CCC800312BE0 /* canyon level 5.png */,
-				B6F534E8171C926E007A0C5D /* canyon level 6.plist */,
-				B6F534E9171C926F007A0C5D /* canyon level 6.png */,
-				B6F534EA171C926F007A0C5D /* canyon level 7.plist */,
-				B6F534EB171C926F007A0C5D /* canyon level 7.png */,
-				B6F534EE171C926F007A0C5D /* canyon level 9.plist */,
-				B6F534EF171C926F007A0C5D /* canyon level 9.png */,
-				B6F534F0171C926F007A0C5D /* canyon level 10.plist */,
-				B6F534F1171C926F007A0C5D /* canyon level 10.png */,
-				B6F534F4171C926F007A0C5D /* canyon level 12.plist */,
-				B6F534F5171C9270007A0C5D /* canyon level 12.png */,
-				B6F534F6171C9270007A0C5D /* canyon level 13.plist */,
-				B6F534F7171C9270007A0C5D /* canyon level 13.png */,
-				B6F534F8171C9270007A0C5D /* canyon level 14.plist */,
-				B6F534F9171C9271007A0C5D /* canyon level 14.png */,
-				B6F534FA171C9271007A0C5D /* canyon level 15.plist */,
-				B6F534FB171C9271007A0C5D /* canyon level 15.png */,
+				986244831720AACF00312BE0 /* canyon level 6.plist */,
+				986244841720AACF00312BE0 /* canyon level 6.png */,
+				986244851720AACF00312BE0 /* canyon level 7.plist */,
+				986244861720AACF00312BE0 /* canyon level 7.png */,
+				986244871720AACF00312BE0 /* canyon level 8.plist */,
+				986244881720AACF00312BE0 /* canyon level 8.png */,
+				986244891720AACF00312BE0 /* canyon level 9.plist */,
+				9862448A1720AAD000312BE0 /* canyon level 9.png */,
+				9862448B1720AAD000312BE0 /* canyon level 10.plist */,
+				9862448C1720AAD000312BE0 /* canyon level 10.png */,
+				9862448D1720AAD000312BE0 /* canyon level 11.plist */,
+				9862448E1720AAD000312BE0 /* canyon level 11.png */,
+				9862448F1720AAD000312BE0 /* canyon level 12.plist */,
+				986244901720AAD000312BE0 /* canyon level 12.png */,
+				986244911720AAD000312BE0 /* canyon level 13.plist */,
+				986244921720AAD100312BE0 /* canyon level 13.png */,
+				986244931720AAD100312BE0 /* canyon level 14.plist */,
+				986244941720AAD100312BE0 /* canyon level 14.png */,
+				986244951720AAD100312BE0 /* canyon level 15.plist */,
+				986244961720AAD100312BE0 /* canyon level 15.png */,
 			);
 			name = mazes;
 			sourceTree = "<group>";
@@ -1112,11 +1099,10 @@
 		B6D286F116B0DA750050A460 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B6F535261721CD45007A0C5D /* cloud.png */,
 				B6BDF6AB16F79302002496CB /* heart.png */,
 				B63E2F3516F2A55300698FDA /* button red small.png */,
+				986244811720A7A700312BE0 /* cloud.png */,
 				B621FAEF16E965CF00ABAD1B /* banana single.png */,
-				98DC00FD16CECCCE009FF496 /* Star.png */,
 				98176E0D16E7A80B009BA7AB /* screens */,
 				98176E0C16E74762009BA7AB /* buttons */,
 				98176E0B16E7472B009BA7AB /* sprite_shape_sheets */,
@@ -1715,7 +1701,6 @@
 				B6D2894B16B2ED2E0050A460 /* Canyon cloud 1.png in Resources */,
 				B6D2894C16B2ED2E0050A460 /* Canyon cloud 2.png in Resources */,
 				98ECEFC116CCB4A8005BB243 /* Menu screen.png in Resources */,
-				98DC00FE16CECCCE009FF496 /* Star.png in Resources */,
 				987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */,
 				987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */,
 				987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */,
@@ -1726,16 +1711,6 @@
 				98176E1516E7A9D3009BA7AB /* Tool icon.png in Resources */,
 				98176E1716E7AA03009BA7AB /* Sound icon.png in Resources */,
 				98176E1916E7AA3F009BA7AB /* Question icon.png in Resources */,
-				98176E2616E7D7A5009BA7AB /* Level 1.png in Resources */,
-				98176E2716E7D7A5009BA7AB /* Level 2.png in Resources */,
-				98176E2816E7D7A5009BA7AB /* Level 3.png in Resources */,
-				98176E2916E7D7A5009BA7AB /* Level 4.png in Resources */,
-				98176E2A16E7D7A5009BA7AB /* Level 5.png in Resources */,
-				98176E2B16E7D7A5009BA7AB /* Level 6.png in Resources */,
-				98176E2C16E7D7A5009BA7AB /* Level 7.png in Resources */,
-				98176E2D16E7D7A5009BA7AB /* Level 8.png in Resources */,
-				98176E2E16E7D7A5009BA7AB /* Level 9.png in Resources */,
-				98176E2F16E7D7A5009BA7AB /* Level 10.png in Resources */,
 				98176E3116E829DB009BA7AB /* Plushy Run.png in Resources */,
 				98176E3416E82ACB009BA7AB /* Default@2x.png in Resources */,
 				98176E3716E82B88009BA7AB /* Plushy Pals icon.png in Resources */,
@@ -1760,7 +1735,6 @@
 				B6B55DAD1713E4A3002B48FA /* tutorial 11.png in Resources */,
 				B6B55DAE1713E4A3002B48FA /* tutorial 10.png in Resources */,
 				B6B55DBA17152905002B48FA /* PlushyParadiseTheme.mp3 in Resources */,
-				986244201715F07D00312BE0 /* GameObjects.plist in Resources */,
 				986244241717BC8C00312BE0 /* Loading screen.png in Resources */,
 				986244261717C73200312BE0 /* Plushy icon.png in Resources */,
 				9862442A1717C82600312BE0 /* Cora icon.png in Resources */,
@@ -1774,7 +1748,6 @@
 				9862443A1717CCC800312BE0 /* canyon level 4.png in Resources */,
 				9862443B1717CCC800312BE0 /* canyon level 5.plist in Resources */,
 				9862443C1717CCC800312BE0 /* canyon level 5.png in Resources */,
-				986244411717D23900312BE0 /* Scoreboard.png in Resources */,
 				986244431717D9F200312BE0 /* End screen.png in Resources */,
 				9862444A171E5E7500312BE0 /* End Screen background.png in Resources */,
 				9862444B171E5E7500312BE0 /* End Screen clouds.png in Resources */,
@@ -1789,15 +1762,34 @@
 				98624474171FC41000312BE0 /* tutorial 4.png in Resources */,
 				98624475171FC41000312BE0 /* tutorial 5.png in Resources */,
 				98624476171FC41000312BE0 /* tutorial 6.png in Resources */,
-				9862447E171FD70000312BE0 /* plushyshapes.plist in Resources */,
-				B6F535221720E809007A0C5D /* monkeys.plist in Resources */,
-				B6F535231720E809007A0C5D /* monkeys.png in Resources */,
-				B6F535271721CD46007A0C5D /* cloud.png in Resources */,
-				B6F5352A1721D8A9007A0C5D /* canyon level 11.plist in Resources */,
-				B6F5352B1721D8A9007A0C5D /* canyon level 11.png in Resources */,
-				B6F5353217233BCE007A0C5D /* canyon level 8.plist in Resources */,
-				B6F5353317233BCE007A0C5D /* canyon level 8.png in Resources */,
-				B6F53535172343DA007A0C5D /* canyon_levels.plist in Resources */,
+				986244821720A7A700312BE0 /* cloud.png in Resources */,
+				986244971720AAD100312BE0 /* canyon level 6.plist in Resources */,
+				986244981720AAD100312BE0 /* canyon level 6.png in Resources */,
+				986244991720AAD100312BE0 /* canyon level 7.plist in Resources */,
+				9862449A1720AAD100312BE0 /* canyon level 7.png in Resources */,
+				9862449B1720AAD100312BE0 /* canyon level 8.plist in Resources */,
+				9862449C1720AAD100312BE0 /* canyon level 8.png in Resources */,
+				9862449D1720AAD100312BE0 /* canyon level 9.plist in Resources */,
+				9862449E1720AAD100312BE0 /* canyon level 9.png in Resources */,
+				9862449F1720AAD100312BE0 /* canyon level 10.plist in Resources */,
+				986244A01720AAD100312BE0 /* canyon level 10.png in Resources */,
+				986244A11720AAD100312BE0 /* canyon level 11.plist in Resources */,
+				986244A21720AAD100312BE0 /* canyon level 11.png in Resources */,
+				986244A31720AAD100312BE0 /* canyon level 12.plist in Resources */,
+				986244A41720AAD100312BE0 /* canyon level 12.png in Resources */,
+				986244A51720AAD100312BE0 /* canyon level 13.plist in Resources */,
+				986244A61720AAD100312BE0 /* canyon level 13.png in Resources */,
+				986244A71720AAD100312BE0 /* canyon level 14.plist in Resources */,
+				986244A81720AAD100312BE0 /* canyon level 14.png in Resources */,
+				986244A91720AAD100312BE0 /* canyon level 15.plist in Resources */,
+				986244AA1720AAD100312BE0 /* canyon level 15.png in Resources */,
+				986244B217210F0000312BE0 /* Scoreboard.png in Resources */,
+				986244B41721127500312BE0 /* Missions Screen.png in Resources */,
+				986244B61721D66700312BE0 /* Back icon.png in Resources */,
+				986244BC1721E2AF00312BE0 /* monkeys.plist in Resources */,
+				986244BD1721E2AF00312BE0 /* monkeys.png in Resources */,
+				986244BE1721E2AF00312BE0 /* plushyshapes.plist in Resources */,
+				986244C21721E5F600312BE0 /* canyon_levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

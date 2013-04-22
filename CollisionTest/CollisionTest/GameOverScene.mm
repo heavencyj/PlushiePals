@@ -61,11 +61,11 @@ int levelScore;
         [self addChild:blueBG];
         gameoverbg = [CCSprite spriteWithFile: @"End Screen clouds.png"];
         gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
-        [self addChild:gameoverbg];
+        [self addChild:gameoverbg z:6];
 
         monkeyOnCloud = [CCSprite spriteWithFile:@"monkey bananas.png"];
         monkeyOnCloud.position = ccp(winSize.width/4, winSize.height/2);
-        [self addChild:monkeyOnCloud];
+        [self addChild:monkeyOnCloud z:10];
         
         id moveMonkeyDown = [CCMoveBy actionWithDuration:1 position:ccp(0, -30)];
         id moveMonkeyUp = [CCMoveBy actionWithDuration:1 position:ccp(0, 30)];
@@ -73,8 +73,23 @@ int levelScore;
         //[CCCallFunc actionWithTarget:self selector:@selector(resetMonkeyPosition)]
         [monkeyOnCloud runAction:[CCRepeatForever actionWithAction:seq]];
         
+        for (int i = 0; i<5; i++) {
+            CCSprite *banana = [CCSprite spriteWithFile:@"banana single.png"];
+            banana.position = ccp(70+i*90,300+i*8);
+            banana.rotation = i*45;
+            [self addChild:banana z:5];
+            
+            id bananaDroppoing = [CCMoveBy actionWithDuration:2 position:ccp(0, -200)];
+            id bananaInvisible = [CCCallFuncND actionWithTarget:self selector:@selector(setInvisible:data:) data:banana];
+            id bananaReset= [CCCallFuncND actionWithTarget:self selector:@selector(setBananaPos:data:) data:banana];
+            //id bananadelay = [CCDelayTime actionWithDuration:0.5];
+            id bananaVisible = [CCCallFuncND actionWithTarget:self selector:@selector(setNodeVisible:data:) data:banana];
+            id seq = [CCSequence actions:bananaDroppoing, bananaInvisible,bananaReset, bananaVisible, nil];
+            [banana runAction:[CCRepeatForever actionWithAction:seq]];                             
+        }
+        
         CCLayer *menuLayer = [[CCLayer alloc] init];
-        [self addChild:menuLayer];
+        [self addChild:menuLayer z:20];
         
         CCMenuItemImage *home = [CCMenuItemImage
                                  itemWithNormalImage:@"Home icon.png"
@@ -113,28 +128,20 @@ int levelScore;
         int highestscore = [[[GameData sharedGameData].highscore objectAtIndex:0] integerValue];
         
         CCLabelTTF *scoreTxtLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"YOU SCORED"]
-//                                                     dimensions:(CGSize){400,30}
-//                                                     hAlignment:kCCTextAlignmentCenter
                                                    fontName:@"GROBOLD"
                                                    fontSize:26];
         CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",levelScore]
-//                                                  dimensions:(CGSize){400,150}
-//                                                  hAlignment:kCCTextAlignmentCenter
                                                     fontName:@"GROBOLD"
                                                     fontSize:75];
         
         CCLabelTTF *highscoreLabel = [CCLabelTTF labelWithString:
                                       [NSString stringWithFormat:@"Top Score  %d",highestscore]
-//                                                      dimensions:(CGSize){400,50}
-//                                                      hAlignment:kCCTextAlignmentCenter
                                                         fontName:@"GROBOLD"
                                                         fontSize:26];
         CCSprite *bananaIcon = [CCSprite spriteWithFile:@"Banana icon.png"];
         
         CCLabelTTF *bananaLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",
                                                                [GameData sharedGameData].bananaCount]
-//                                                   dimensions:(CGSize){150,50}
-//                                                   hAlignment:kCCTextAlignmentCenter
                                                     fontName:@"GROBOLD"
                                                     fontSize:28];
         
@@ -145,7 +152,7 @@ int levelScore;
         scoreTxtLabel.position = ccp(winSize.width/5, 35);
         
         bananaLabel.color = ccc3(245, 148, 36);
-        bananaLabel.position = ccp(winSize.width/5+80, -winSize.height/4-30);
+        bananaLabel.position = ccp(winSize.width/5+70, -winSize.height/4-30);
         
         bananaIcon.position = ccp(winSize.width/5,-winSize.height/4-30);
         
@@ -157,11 +164,9 @@ int levelScore;
         CCMenuItemLabel *bananaCnt = [CCMenuItemLabel itemWithLabel:bananaLabel];
         CCMenuItemLabel *highscore = [CCMenuItemLabel itemWithLabel:highscoreLabel];
         CCMenuItemImage *bananaIconImg = [CCMenuItemImage itemWithNormalSprite:bananaIcon selectedSprite:nil];
-//        CCMenu *menu = (congrats && (curLevel != 6)) ? [CCMenu menuWithItems: home, restart, next,score, nil]
-//        : [CCMenu menuWithItems: home, restart, nil];
         CCMenu *menu = [CCMenu menuWithItems: home, restart, plushy, scoreTxt, score,
                         bananaIconImg, bananaCnt, highscore, nil];
-        [menuLayer addChild: menu];
+        [menuLayer addChild: menu z:20];
     }
     return self;
 }
@@ -189,6 +194,17 @@ int levelScore;
 {
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     monkeyOnCloud.position = ccp(winSize.width/4, winSize.height/2);
+}
+
+- (void)setInvisible:(id)a data:(CCNode *)node{
+    node.visible = NO;
+}
+- (void)setNodeVisible:(id)a data:(CCNode *)node {
+    node.visible = YES;
+}
+
+-(void)setBananaPos:(id)a data:(CCNode *)node {
+    node.position = ccp(node.position.x, node.position.y+200);
 }
 
 - (void)dealloc {
