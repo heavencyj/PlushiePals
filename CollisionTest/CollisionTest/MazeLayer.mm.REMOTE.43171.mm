@@ -12,15 +12,11 @@
 #import "RunningGameScene.h"
 #import "GameData.h"
 
-NSDictionary *easyMapsDictionary;
-NSDictionary *midMapsDictionary;
-NSDictionary *midHardMapsDictionary;
-NSDictionary *hardMapsDictionary;
-NSDictionary *difficultyDictionary;
+NSInteger easyMaps[8];
+NSInteger midMaps[3];
+NSInteger hardMaps[3];
 
 @implementation MazeLayer
-
-@synthesize bridge;
 
 -(id)init
 {
@@ -39,112 +35,93 @@ NSDictionary *difficultyDictionary;
     return self;
 }
 
-+(void)initMapDictionaries
+// Initialize the map levels
++(void)initMapLevels
 {
-    easyMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.40],
-                          [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.25],
-                          [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.27],
-                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.8],
-                          nil];
-    
-    midMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         [NSValue valueWithCGPoint:CGPointMake(1, 1)], [NSNumber numberWithDouble:0.35],
-                         [NSValue valueWithCGPoint:CGPointMake(2, 1)], [NSNumber numberWithDouble:0.30],
-                         [NSValue valueWithCGPoint:CGPointMake(7, 0)], [NSNumber numberWithDouble:0.15],
-                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20],
-                         nil];
-    
-    midHardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                             [NSValue valueWithCGPoint:CGPointMake(8, 0)], [NSNumber numberWithDouble:0.35],
-                             [NSValue valueWithCGPoint:CGPointMake(10, 0)], [NSNumber numberWithDouble:0.10],
-                             [NSValue valueWithCGPoint:CGPointMake(4, 1)], [NSNumber numberWithDouble:0.35],
-                             [NSValue valueWithCGPoint:CGPointMake(5, 1)], [NSNumber numberWithDouble:0.20], nil];
-    
-    hardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(8, 2)], [NSNumber numberWithDouble:0.20],
-                          [NSValue valueWithCGPoint:CGPointMake(10, 2)], [NSNumber numberWithDouble:0.10],
-                          [NSValue valueWithCGPoint:CGPointMake(6, 2)], [NSNumber numberWithDouble:0.33],
-                          [NSValue valueWithCGPoint:CGPointMake(7, 1)], [NSNumber numberWithDouble:0.37], nil];
-    
-    difficultyDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                            easyMapsDictionary, [NSNumber numberWithDouble:0.40],
-                            midMapsDictionary, [NSNumber numberWithDouble:0.35],
-                            midHardMapsDictionary, [NSNumber numberWithDouble:0.23],
-                            hardMapsDictionary, [NSNumber numberWithDouble:0.02], nil];
+    //Maze 3 has issues
+    easyMaps[0] = 1;
+    easyMaps[1] = 2;
+    easyMaps[2] = 4;
+    easyMaps[3] = 5;
+    easyMaps[4] = 5;
+    easyMaps[5] = 6;
+    easyMaps[6] = 7;
+    easyMaps[7] = 8;
+//    easyMaps[4] = 5
+//    easyMaps[0] = 1;
+//    easyMaps[1] = 2;
+//    easyMaps[2] = 6;
+//    easyMaps[3] = 9;
+    midMaps[0] = 4;
+    midMaps[1] = 5;
+    midMaps[2] = 7;
+    hardMaps[0] = 3;
+    hardMaps[1] = 8;
+    hardMaps[2] = 10;
 }
 
-// Returns the level and the number of game objects to add
--(CGPoint)levelChooser:(int)mapCount
+-(int)levelChooser
 {
     
-    //return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
-    CGPoint levelInfo;
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:3]];
+    //TODO: the first map has to be canyon level 1
     
-    // For tutorial map
-    if ([MainMenuScene showFirst]) {
-        [MainMenuScene setFirst:false];
-        return CGPointMake(1, 0);
-    }
-    else
-        [MainMenuScene setTips:false];
+//    if ([MainMenuScene showFirst]) {
+//        [MainMenuScene setFirst:false];
+//        return  1;
+//    }
+//    else {
+//        [MainMenuScene setTips:false];
+//        return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:4]];
+//    }
     
-    // Ensure that the first 4 maps are always easy
-    if (mapCount < 6) {
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
-    }
-    else{
-        NSDictionary *dict = (NSDictionary*)[self selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
-    }
-    
-    return levelInfo;
+//    if (mapCount < 5) {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+//    else {
+//        if ([GameScene getRandomDouble] < diffFactor) {
+//            return hardMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//    }
 }
 
--(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict
-{
-    double counter = 0;
-    for (NSNumber *key in dict) {
-        counter += [key doubleValue];
-        if (rand <= counter) {
-            return [dict objectForKey:key];
-        }
-    }
-    return nil;
-}
-
--(void) loadMaze:(int)level withObject:(int)ObjCount {
-    CCLOG(@"Current level is %d", level);
+-(void) loadMaze:(int)ofLevel {
+    CCLOG(@"Current level is %d", ofLevel);
     
     NSString *themeName;
     switch ([GameData sharedGameData].mapTheme) {
         case 1: {
-            themeName = [@"canyon level " stringByAppendingFormat:@"%d", level];
+            themeName = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
             break;
         }
         case 2: {
-            themeName =  [@"mt level " stringByAppendingFormat:@"%d", level];
+            themeName =  [@"mt level " stringByAppendingFormat:@"%d", ofLevel];
             break;
         }
-               
+            
+            
         default:
             break;
     }
     
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[themeName stringByAppendingString:@".plist"]];
-    NSString *shape = [NSString stringWithFormat:@"canyon level %d", level];
+    NSString *shape = [NSString stringWithFormat:@"canyon level %d", ofLevel];
     maze = [Maze mazeSprite:shape spriteName:[themeName stringByAppendingString:@".png"]];
     
     [maze setMazeBodySensor:YES];
     
-    NSDictionary* transitionBridge = [[dictionary objectForKey:@"bridge"] objectForKey:[NSString stringWithFormat:@"%d", level]];
+    NSDictionary* transitionBridge = [[dictionary objectForKey:@"bridge"] objectForKey:[NSString stringWithFormat:@"%d", ofLevel]];
     NSNumber* load_x = [transitionBridge objectForKey:@"loadx"];
     NSNumber* load_y = [transitionBridge objectForKey:@"loady"];
     [maze setPhysicsPosition:b2Vec2FromCC([load_x intValue], [load_y intValue])]; //Fixed location.
     
     // load in game objects
-    [self loadTransitionBridge:level];
-    [self loadGameObjects:level withNumObjects:ObjCount];
+    [self loadTransitionBridge:ofLevel];
+    [self loadGameObjects:ofLevel];
     
     [self addChild:[maze ccNode] z:40];
 }
@@ -172,23 +149,20 @@ NSDictionary *difficultyDictionary;
     [bridge setVisible:NO];
 }
 
--(void)loadGameObjects:(int)level withNumObjects:(int)objCount
+-(void)loadGameObjects:(int)level
 {
 	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
-	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB withObjCount:objCount];
+	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB];
 }
 
--(void) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object withObjCount:(int)objCount
+-(void) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object
 {
     if (nil==dict) {
         return;
     }
-    int counter = 0;
+    
     //TODO: randomly select between 0-2 cactuses to select from each level 
     for (id key in dict) {
-        if (counter >= objCount) {
-            return;
-        }
         NSDictionary* gameObj = [dict objectForKey:key];
         
         NSNumber* pos_x = [gameObj objectForKey:@"x"];
@@ -207,18 +181,25 @@ NSDictionary *difficultyDictionary;
         weldJointDef.Initialize([maze getBody], [item getBody], [item getBody]->GetWorldCenter());
         [GB2Engine sharedInstance].world->CreateJoint(&weldJointDef);
         
-        counter += 1;
+//        [item setSensor:YES];
+//        [item setVisible:NO];
     }
 }
 
 -(void)lineUpAround:(CGPoint)pos
 {
     CCLOG(@"Placing new maze at: (%f, %f)", pos.x, pos.y);
-    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-30)]; //Numbers set
+    [maze setPhysicsPosition:b2Vec2FromCC(463, pos.y-30)]; //Numbers set
     [maze setMazeBodySensor:NO];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];
     self.visible = YES;
+    
+    //Set all game objects to be visible at this time and unsensor them
+//    for (Object *obj in gameObjects) {
+//        [obj setSensor:NO];
+//        [obj setVisible:YES];
+//    }
 }
 
 -(void)destroyBridgeJoint
@@ -231,8 +212,11 @@ NSDictionary *difficultyDictionary;
     [maze setLinearVelocity:b2Vec2FromCC(0, 0)];
 }
 
--(void)reset 
+-(void)reset //TODO:
 {
+//            [maze setSensor:TRUE];
+//            [plushy resetPlushyPosition];
+//            [maze setSensor:FALSE];
     [maze setTransform:b2Vec2FromCC(100,120) angle:CC_DEGREES_TO_RADIANS(0)];
 }
 
@@ -264,8 +248,4 @@ NSDictionary *difficultyDictionary;
     return CGPointMake(newx,newy);
 }
 
-- (void) dealloc
-{
-	[super dealloc];
-}
 @end

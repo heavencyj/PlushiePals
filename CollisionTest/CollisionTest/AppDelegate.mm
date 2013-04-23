@@ -81,6 +81,10 @@
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"bananaCount"] != nil) {
         [GameData sharedGameData].bananaCount = [[defaults objectForKey:@"bananaCount"] integerValue];
+        [GameData sharedGameData].mangosteenCount = [[defaults objectForKey:@"mangosteenCount"] integerValue];
+        [GameData sharedGameData].pineappleCount = [[defaults objectForKey:@"pineappleCount"] integerValue];
+        [GameData sharedGameData].mapTheme = [[defaults objectForKey:@"mapTheme"] integerValue];
+        [GameData sharedGameData].plushy = [[defaults objectForKey:@"plushy"] integerValue];
         [GameData sharedGameData].tips = [[defaults objectForKey:@"tips"] boolValue];
         [GameData sharedGameData].mute = [[defaults objectForKey:@"mute"] boolValue];
         [GameData sharedGameData].highscore = [defaults objectForKey:@"highscore"];
@@ -126,17 +130,17 @@
 	if( [navController_ visibleViewController] == director_ )
 		[director_ stopAnimation];
     
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setInteger:[GameData sharedGameData].bananaCount
-                 forKey:@"bananaCount"];
-    [defaults setBool: [GameData sharedGameData].mute
-                 forKey:@"mute"];
-    [defaults setBool: [GameData sharedGameData].tips
-               forKey:@"tips"];
-    [defaults setObject:[GameData sharedGameData].highscore forKey:@"highscore"];
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    [defaults setInteger:[GameData sharedGameData].bananaCount
+//                  forKey:@"bananaCount"];
+//    [defaults setBool: [GameData sharedGameData].mute
+//               forKey:@"mute"];
+//    [defaults setBool: [GameData sharedGameData].tips
+//               forKey:@"tips"];
+//    [defaults setObject:[GameData sharedGameData].highscore forKey:@"highscore"];
+//    
+//    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application

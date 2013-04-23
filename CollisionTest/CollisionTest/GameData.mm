@@ -13,11 +13,11 @@
 @synthesize mute;
 @synthesize tips;
 @synthesize highscore;
-//@synthesize currentScore;
-//@synthesize currentHeart;
 @synthesize bananaCount;
 @synthesize mangosteenCount;
 @synthesize pineappleCount;
+@synthesize mapTheme;
+@synthesize plushy;
 
 static GameData *gamedata = nil;
 
@@ -37,6 +37,8 @@ static GameData *gamedata = nil;
     gamedata.bananaCount = 0;
     gamedata.mangosteenCount = 0;
     gamedata.pineappleCount = 0;
+    gamedata.mapTheme = 1;
+    gamedata.plushy = 1;
     gamedata.highscore = [NSMutableArray arrayWithObjects:
                           [NSNumber numberWithInt:0],
                           [NSNumber numberWithInt:0],

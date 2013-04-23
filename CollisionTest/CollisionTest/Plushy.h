@@ -32,8 +32,9 @@
    
 }
 
-//@property (readwrite) int bananaScore;
-@property (readwrite) int lives;
+@property (readwrite) int pineappleScore;
+@property (readwrite) int mangosteenScore;
+@property (readwrite) int bananaScore;
 @property (readonly) RunningGameScene *gameLayer;
 @property (readonly) bool jumping;
 @property (readonly) bool running;
@@ -57,11 +58,11 @@
 -(void) reset;
 -(bool)isRunning;
 -(void)moveTo:(b2Vec2)pos;
--(void)destroyLive;
--(void) regainLive;
+//-(void)destroyLive;
+//-(void) regainLive;
 -(void)resetPlushyPosition;
 -(void)setTip;
--(void) loadLives;
--(void) destroyAllLives;
+//-(void) loadLives;
+//-(void) destroyAllLives;
 +(void) playSound:(int)type;
 @end

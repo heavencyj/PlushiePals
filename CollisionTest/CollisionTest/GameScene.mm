@@ -182,22 +182,11 @@ TransitionObject *bridge;
     else if (plushy.pass) {
         pass = true;
     }
-    
     // Plushy dies if it falls out of the screen or hit the wall
     //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
-    else if (plushy.dead)
-    {
-        if (!plushy.lives) {
-            [[GB2Engine sharedInstance] deleteAllObjects];
-            // if pass, show one screen. otherwise show the other, modify gameover scene
-            [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
-        }
-        else
-        {
-            // destroy 1 life, move maze back and reset plushy
-            [plushy destroyLive];
-//            [mazeLayer reset];
-        }
+    else if (plushy.dead) {
+        [[GB2Engine sharedInstance] deleteAllObjects];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
     }
 }
 

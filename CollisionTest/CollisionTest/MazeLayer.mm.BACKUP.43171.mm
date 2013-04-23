@@ -17,10 +17,9 @@ NSDictionary *midMapsDictionary;
 NSDictionary *midHardMapsDictionary;
 NSDictionary *hardMapsDictionary;
 NSDictionary *difficultyDictionary;
+CGPoint prevMap;
 
 @implementation MazeLayer
-
-@synthesize bridge;
 
 -(id)init
 {
@@ -41,56 +40,58 @@ NSDictionary *difficultyDictionary;
 
 +(void)initMapDictionaries
 {
+    prevMap = CGPointMake(-1, 0);
     easyMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.40],
-                          [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.25],
-                          [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.27],
-                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.8],
-                          nil];
+                          [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.35],
+                          [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.30],
+                          [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.20],
+                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.15], nil];
     
     midMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                          [NSValue valueWithCGPoint:CGPointMake(1, 1)], [NSNumber numberWithDouble:0.35],
-                         [NSValue valueWithCGPoint:CGPointMake(2, 1)], [NSNumber numberWithDouble:0.30],
+                         [NSValue valueWithCGPoint:CGPointMake(2, 2)], [NSNumber numberWithDouble:0.30],
                          [NSValue valueWithCGPoint:CGPointMake(7, 0)], [NSNumber numberWithDouble:0.15],
-                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20],
-                         nil];
+                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20], nil];
     
     midHardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                              [NSValue valueWithCGPoint:CGPointMake(8, 0)], [NSNumber numberWithDouble:0.35],
                              [NSValue valueWithCGPoint:CGPointMake(10, 0)], [NSNumber numberWithDouble:0.10],
-                             [NSValue valueWithCGPoint:CGPointMake(4, 1)], [NSNumber numberWithDouble:0.35],
-                             [NSValue valueWithCGPoint:CGPointMake(5, 1)], [NSNumber numberWithDouble:0.20], nil];
+                             [NSValue valueWithCGPoint:CGPointMake(4, 3)], [NSNumber numberWithDouble:0.35],
+                             [NSValue valueWithCGPoint:CGPointMake(5, 3)], [NSNumber numberWithDouble:0.20], nil];
     
     hardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(8, 2)], [NSNumber numberWithDouble:0.20],
-                          [NSValue valueWithCGPoint:CGPointMake(10, 2)], [NSNumber numberWithDouble:0.10],
-                          [NSValue valueWithCGPoint:CGPointMake(6, 2)], [NSNumber numberWithDouble:0.33],
+                          [NSValue valueWithCGPoint:CGPointMake(8, 3)], [NSNumber numberWithDouble:0.20],
+                          [NSValue valueWithCGPoint:CGPointMake(10, 4)], [NSNumber numberWithDouble:0.10],
+                          [NSValue valueWithCGPoint:CGPointMake(6, 3)], [NSNumber numberWithDouble:0.33],
                           [NSValue valueWithCGPoint:CGPointMake(7, 1)], [NSNumber numberWithDouble:0.37], nil];
     
     difficultyDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                             easyMapsDictionary, [NSNumber numberWithDouble:0.40],
                             midMapsDictionary, [NSNumber numberWithDouble:0.35],
-                            midHardMapsDictionary, [NSNumber numberWithDouble:0.23],
-                            hardMapsDictionary, [NSNumber numberWithDouble:0.02], nil];
+                            midHardMapsDictionary, [NSNumber numberWithDouble:0.17],
+                            hardMapsDictionary, [NSNumber numberWithDouble:0.08], nil];
 }
 
 // Returns the level and the number of game objects to add
 -(CGPoint)levelChooser:(int)mapCount
 {
     
+<<<<<<< HEAD
     //return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:0]];
     CGPoint levelInfo;
     
     // For tutorial map
     if ([MainMenuScene showFirst]) {
         [MainMenuScene setFirst:false];
-        return CGPointMake(1, 0);
+        prevMap.x = 1;
+        prevMap.y = 0;
+        return prevMap;
     }
     else
         [MainMenuScene setTips:false];
     
     // Ensure that the first 4 maps are always easy
-    if (mapCount < 6) {
+    if (mapCount < 5) {
         levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
     }
     else{
@@ -98,6 +99,14 @@ NSDictionary *difficultyDictionary;
         levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
     }
     
+    // Ensure that the same map doesn't run twice
+    if (CGPointEqualToPoint(levelInfo, prevMap))
+    {
+        levelInfo = [self levelChooser:mapCount];
+    }
+    
+    prevMap.x = levelInfo.x;
+    prevMap.y = levelInfo.y;
     return levelInfo;
 }
 
@@ -115,25 +124,59 @@ NSDictionary *difficultyDictionary;
 
 -(void) loadMaze:(int)level withObject:(int)ObjCount {
     CCLOG(@"Current level is %d", level);
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", level]];
+    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
+    maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
+=======
+    return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:3]];
+    //TODO: the first map has to be canyon level 1
+    
+//    if ([MainMenuScene showFirst]) {
+//        [MainMenuScene setFirst:false];
+//        return  1;
+//    }
+//    else {
+//        [MainMenuScene setTips:false];
+//        return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:4]];
+//    }
+    
+//    if (mapCount < 5) {
+//        if ([self getRandomDouble] < diffFactor) {
+//            return easyMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+//    else {
+//        if ([GameScene getRandomDouble] < diffFactor) {
+//            return hardMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//        }
+//        else return midMaps[[GameScene getRandomNumberBetweenMin:0 andMax:2]];
+//    }
+}
+
+-(void) loadMaze:(int)ofLevel {
+    CCLOG(@"Current level is %d", ofLevel);
     
     NSString *themeName;
     switch ([GameData sharedGameData].mapTheme) {
         case 1: {
-            themeName = [@"canyon level " stringByAppendingFormat:@"%d", level];
+            themeName = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
             break;
         }
         case 2: {
-            themeName =  [@"mt level " stringByAppendingFormat:@"%d", level];
+            themeName =  [@"mt level " stringByAppendingFormat:@"%d", ofLevel];
             break;
         }
-               
+            
+            
         default:
             break;
     }
     
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[themeName stringByAppendingString:@".plist"]];
-    NSString *shape = [NSString stringWithFormat:@"canyon level %d", level];
+    NSString *shape = [NSString stringWithFormat:@"canyon level %d", ofLevel];
     maze = [Maze mazeSprite:shape spriteName:[themeName stringByAppendingString:@".png"]];
+>>>>>>> add map theme and new ending screen
     
     [maze setMazeBodySensor:YES];
     
@@ -214,7 +257,7 @@ NSDictionary *difficultyDictionary;
 -(void)lineUpAround:(CGPoint)pos
 {
     CCLOG(@"Placing new maze at: (%f, %f)", pos.x, pos.y);
-    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-30)]; //Numbers set
+    [maze setPhysicsPosition:b2Vec2FromCC(463, pos.y-30)]; //Numbers set
     [maze setMazeBodySensor:NO];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];
@@ -264,8 +307,4 @@ NSDictionary *difficultyDictionary;
     return CGPointMake(newx,newy);
 }
 
-- (void) dealloc
-{
-	[super dealloc];
-}
 @end

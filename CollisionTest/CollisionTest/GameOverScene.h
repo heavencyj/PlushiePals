@@ -20,5 +20,6 @@
 
 +(CCScene *) scene;
 +(CCScene *) scene:(int)withScore;
++(CCScene *) scene:(int)withScore wtihFruits:(NSArray*)fruits;
 +(CCScene *) scene:(bool)didpass withLevel:(int)level withScore:(int)score;
 @end

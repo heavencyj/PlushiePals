@@ -37,17 +37,35 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize showmap;
 @synthesize loadmap;
 @synthesize tip;
-//@synthesize bananaScore;
-@synthesize lives;
+@synthesize bananaScore;
 @synthesize onBridge;
+
+NSString* plushyName;
 
 bool shapechange;
 
 //TODO: which initialization is being used here?
 -(id) initWithGameLayer:(RunningGameScene*)gl
 {
+    switch ([GameData sharedGameData].plushy) {
+        case 1:
+            plushyName = @"Monkey";
+            break;
+            
+        case 2:
+            plushyName = @"Pig";
+            break;
+            
+        case 3:
+            plushyName = @"Bear";
+            break;
+            
+        default:
+            break;
+    }
+    
     self = [super initWithDynamicBody:@"Monkey"
-                      spriteFrameName:@"Monkey run 1.png"];
+                      spriteFrameName:[plushyName stringByAppendingString:@" run 1.png"]];
     
     if(self)
     {
@@ -63,9 +81,8 @@ bool shapechange;
         // store number of bananas collected
         //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
-        lives = 3;
         tip = -1;
-        [self loadLives];
+        //[self loadLives];
         
         swipeRange = true;
         
@@ -96,9 +113,8 @@ bool shapechange;
         // store number of bananas collected
         //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
-        lives = 3;
         tip = -1;
-        [self loadLives];
+        //[self loadLives];
         
         // setting initial plushy position
         initialPosition = b2Vec2FromCC(150, 180);
@@ -115,27 +131,27 @@ bool shapechange;
     [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2-50, [self ccNode].position.y)];
     
     // update animation phase
-    if (sliding) {
-        NSString *frameName;
-        animDelay -= ANIM_DELAY;
-        if(animDelay <= 0)
-        {
-            animDelay = ANIM_SPEED;
-            animPhase++;
-            if(animPhase > 3)
-            {
-                animPhase = 1;
-            }
-        }
-        // sliding
-        [self setBodyShape:@"Monkey slide"];
-        shapechange = true;
-        frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
-        [self setDisplayFrameNamed:frameName];
-        [Plushy playSound:SLIDING];
-    }
+//    if (sliding) {
+//        NSString *frameName;
+//        animDelay -= ANIM_DELAY;
+//        if(animDelay <= 0)
+//        {
+//            animDelay = ANIM_SPEED;
+//            animPhase++;
+//            if(animPhase > 3)
+//            {
+//                animPhase = 1;
+//            }
+//        }
+//        // sliding
+//        [self setBodyShape:@"Monkey slide"];
+//        shapechange = true;
+//        frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
+//        [self setDisplayFrameNamed:frameName];
+//        [Plushy playSound:SLIDING];
+//    }
     
-    else if (running && !collide && !die) {
+    if (running && !collide && !die) {
         
         NSString *frameName;        
         animDelay -= ANIM_DELAY;        
@@ -153,7 +169,7 @@ bool shapechange;
             [self setBodyShape:@"Monkey"];
             shapechange = false;
         }
-        frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" run %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         //[self playSound:RUNNING];
     }
@@ -178,7 +194,7 @@ bool shapechange;
                 [self setBodyShape:@"Monkey"];
                 shapechange = false;
             }
-            frameName = [NSString stringWithFormat:@"Monkey win %d.png", animPhase];
+            frameName = [plushyName stringByAppendingFormat:@" win %d.png", animPhase];
             [self setDisplayFrameNamed:frameName];
         }
     }
@@ -196,7 +212,7 @@ bool shapechange;
             }
         }
         // jumping
-        frameName = [NSString stringWithFormat:@"Monkey jump %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" jump %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
     
@@ -221,7 +237,7 @@ bool shapechange;
         }
         
         // collide
-        frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" collide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         if (animPhase == 1) {
             [Plushy playSound:COLLIDING];
@@ -245,7 +261,8 @@ bool shapechange;
         // die
         [self setBodyShape:@"Monkey die"];
         shapechange = true;
-        frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" die 0%d.png", animPhase];
+        //frameName = [@"Monkey" stringByAppendingFormat:@" die 0%d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
 }
@@ -256,42 +273,6 @@ bool shapechange;
     [self setBodyShape:@"Monkey"];
     [self setPhysicsPosition:initialPosition];
     [gameLayer runAction:[CCCustomFollow actionWithTarget:[self ccNode]]];
-}
-
--(void) loadLives
-{
-    //CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int x_pos = 20;
-    hearts = [[NSMutableArray alloc] initWithCapacity:3];
-    for (int i=0; i<lives; i++) {
-        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"];
-        aHeart.position = ccp(x_pos, 290);
-        x_pos += 30;
-        [hearts addObject:aHeart];
-        [gameLayer.hud addChild:aHeart z:100];
-    }
-}
-
--(void) destroyLive
-{
-    lives--;
-    if ([hearts count] != 0) {
-        CCSprite *aHeart = [hearts objectAtIndex:lives];
-        [aHeart removeFromParentAndCleanup:TRUE];
-        [hearts removeObjectAtIndex:lives];
-    }
-}
-
--(void) regainLive
-{
-    if (lives < 3) {
-        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"];
-        int x_pos = 20 + 30*lives;
-        aHeart.position = ccp(x_pos, 290);
-        lives++;
-        [hearts addObject:aHeart];
-        [gameLayer.hud addChild:aHeart z:100];
-    }
 }
 
 

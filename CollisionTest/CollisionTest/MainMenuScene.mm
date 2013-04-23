@@ -13,6 +13,7 @@
 #import "PlushyMenuScene.h"
 #import "RunningGameScene.h"
 #import "GameData.h"
+#import "MapMenuScene.h"
 
 #define DIST 25
 
@@ -104,10 +105,11 @@ CCLayer *settingLayer;
 
 - (void)hitPlay {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    // start the infinite running game
-    [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
-    [[CCDirector sharedDirector] resume];
-
+//    // start the infinite running game
+//    [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
+//    [[CCDirector sharedDirector] resume];
+    [[CCDirector sharedDirector] replaceScene:[MapMenuScene scene]];
+    
 }
 
 -(void)showSetting
@@ -151,6 +153,12 @@ CCLayer *settingLayer;
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     mute = !mute;
     [[GameData sharedGameData] setMute:mute];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool: [GameData sharedGameData].mute
+               forKey:@"mute"];    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self checkMute];
 }
 
@@ -170,6 +178,12 @@ CCLayer *settingLayer;
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     tipsOn = !tipsOn;
     [[GameData sharedGameData] setTips:tipsOn];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool: [GameData sharedGameData].tips
+               forKey:@"tips"];    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self checkTips];
 }
 

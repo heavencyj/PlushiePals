@@ -49,7 +49,7 @@
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
++(CCScene *)scene;
 +(void)resetSwipe;
 +(void)addScore:(int)points;
 -(void)loadMazeLayer;
