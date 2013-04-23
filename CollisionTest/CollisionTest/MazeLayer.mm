@@ -86,8 +86,9 @@ NSDictionary *difficultyDictionary;
         [MainMenuScene setFirst:false];
         return CGPointMake(1, 0);
     }
-    else
+    else{
         [MainMenuScene setTips:false];
+    }
     
     // Ensure that the first 4 maps are always easy
     if (mapCount < 6) {
@@ -217,7 +218,7 @@ NSDictionary *difficultyDictionary;
 -(void)lineUpAround:(CGPoint)pos
 {
     CCLOG(@"Placing new maze at: (%f, %f)", pos.x, pos.y);
-    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-30)]; //Numbers set
+    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-50)]; //Numbers set
     [maze setMazeBodySensor:NO];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];

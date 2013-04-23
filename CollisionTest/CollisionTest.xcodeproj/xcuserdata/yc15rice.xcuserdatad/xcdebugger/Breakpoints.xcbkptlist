@@ -60,57 +60,44 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388397345.440651"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "426"
-         endingLineNumber = "426">
+         startingLineNumber = "427"
+         endingLineNumber = "427">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388397345.440651"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "412"
-         endingLineNumber = "412">
+         startingLineNumber = "413"
+         endingLineNumber = "413">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388397345.440651"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "403"
-         endingLineNumber = "403"
-         landmarkName = "+addScore:"
-         landmarkType = "5">
+         startingLineNumber = "496"
+         endingLineNumber = "496">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388397345.440651"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "495"
          endingLineNumber = "495">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388397345.440651"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "494"
-         endingLineNumber = "494">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -152,68 +139,42 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388428890.888807"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
-         landmarkName = "-update:"
+         startingLineNumber = "351"
+         endingLineNumber = "351"
+         landmarkName = "-ccTouchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollisionTest/RunningGameScene.mm"
-         timestampString = "388428897.324784"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "223"
-         endingLineNumber = "223"
-         landmarkName = "-update:"
+         startingLineNumber = "381"
+         endingLineNumber = "381"
+         landmarkName = "-ccTouchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CollisionTest/GameScene.mm"
-         timestampString = "388428916.63194"
+         filePath = "CollisionTest/RunningGameScene.mm"
+         timestampString = "388434465.833205"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "188"
-         endingLineNumber = "188"
-         landmarkName = "-update:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CollisionTest/GameScene.mm"
-         timestampString = "388428923.370901"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "177"
-         endingLineNumber = "177"
-         landmarkName = "-update:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CollisionTest/GameScene.mm"
-         timestampString = "388428924.977822"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-update:"
+         startingLineNumber = "344"
+         endingLineNumber = "344"
+         landmarkName = "-ccTouchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

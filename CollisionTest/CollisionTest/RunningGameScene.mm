@@ -24,6 +24,7 @@ float diffFactor;
 bool pass1;
 float angle1;
 int rotating1;
+CCSprite *tutorial1;
 int score;
 CCSprite *hand;
 CCSprite *handOnly;
@@ -213,7 +214,7 @@ bool isSwipable;
             default:
                 break;
         }
-        [self addChild:tutorial1 z:450];
+        [self addChild:tutorial1 z:300];
         [plushy setTip];
         // show the tool tips and imgs
         // when swife, resume
@@ -256,8 +257,8 @@ bool isSwipable;
 //        // In case if the level is somehow off, it will default to level 1
 //        levelInfo.x = 1;
 //    }
-    //[currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
-    [currMazeLayer loadMaze:1 withObject:0];
+    [currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
+    //[currMazeLayer loadMaze:1 withObject:0];
     [currMazeLayer lineUpAround:[plushy ccNode].position];
 }
 
@@ -314,7 +315,7 @@ bool isSwipable;
     
     //Swipe Detection Part 2
     lastTouch = location;
-//    [self unschedule:@selector(timer:)];
+    [self unschedule:@selector(timer:)];
 //    if (plushy.sliding) {
 //        if ((showingTip1 == 4)
 //            && [MainMenuScene showTips]) {

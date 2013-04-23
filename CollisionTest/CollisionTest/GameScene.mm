@@ -131,63 +131,63 @@ TransitionObject *bridge;
 // Add new update method
 - (void)update:(ccTime)dt {
     
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
+//    CGSize winSize = [[CCDirector sharedDirector] winSize];
+//    
+//    //Delay variables decrementing
+//    if (speedDelay > 0) {
+//        speedDelay --;
+//    }
+//    if (scoreDelay > 0) {
+//        scoreDelay--;
+//    }
+//    
+//    // Update score with a little bit delay for performance concern
+//    if (scoreDelay ==0) {
+//        //[hud updateScore:plushy.bananaScore];
+//        scoreDelay = 10;
+//    }
     
-    //Delay variables decrementing
-    if (speedDelay > 0) {
-        speedDelay --;
-    }
-    if (scoreDelay > 0) {
-        scoreDelay--;
-    }
+//    if (plushy.tip != -1 && [MainMenuScene showTips]) {
+//        showingTip = plushy.tip;
+//        switch (showingTip) {
+//            case 1: case 2: case 3: case 4: case 5: case 6:
+//                [pauseLayer pauseGame];
+//                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+//                //tutorial = [CCSprite spriteWithFile:@"tutorial 1.png"];
+//                tutorial.position = ccp(winSize.width/3, winSize.height/2);
+//                [self addChild:tutorial z:500];
+//                [plushy setTip];
+//                break;
+//                
+//            case 10: case 11:
+//                [pauseLayer pauseGame];
+//                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
+//                tutorial.scale = 0.5;
+//                tutorial.position = ccp(winSize.width/2, winSize.height/3);
+//                [self addChild:tutorial z:500];
+//                [plushy setTip];
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//    }
     
-    // Update score with a little bit delay for performance concern
-    if (scoreDelay ==0) {
-        //[hud updateScore:plushy.bananaScore];
-        scoreDelay = 10;
-    }
-    
-    if (plushy.tip != -1 && [MainMenuScene showTips]) {
-        showingTip = plushy.tip;
-        switch (showingTip) {
-            case 1: case 2: case 3: case 4: case 5: case 6:
-                [pauseLayer pauseGame];
-                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-                //tutorial = [CCSprite spriteWithFile:@"tutorial 1.png"];
-                tutorial.position = ccp(winSize.width/3, winSize.height/2);
-                [self addChild:tutorial z:500];
-                [plushy setTip];
-                break;
-                
-            case 10: case 11:
-                [pauseLayer pauseGame];
-                tutorial = [CCSprite spriteWithFile:[NSString stringWithFormat:@"tutorial %d.png", showingTip]];
-                tutorial.scale = 0.5;
-                tutorial.position = ccp(winSize.width/2, winSize.height/3);
-                [self addChild:tutorial z:500];
-                [plushy setTip];
-                break;
-                
-            default:
-                break;
-        }
-    }
-    
-    if (pass) {
-        [[GB2Engine sharedInstance] deleteAllObjects];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
-    }
-    
-    // TODO: add some animations here
-    else if (plushy.pass) {
-        pass = true;
-    }
-    // Plushy dies if it falls out of the screen or hit the wall
-    //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
-    else if (plushy.dead) {
-        [[GB2Engine sharedInstance] deleteAllObjects];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
-    }
+//    if (pass) {
+//        [[GB2Engine sharedInstance] deleteAllObjects];
+//        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
+//    }
+//    
+//    // TODO: add some animations here
+//    else if (plushy.pass) {
+//        pass = true;
+//    }
+//    // Plushy dies if it falls out of the screen or hit the wall
+//    //    else if ([plushy ccNode].position.y < -50 || [plushy isDead])
+//    else if (plushy.dead) {
+//        [[GB2Engine sharedInstance] deleteAllObjects];
+//        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:pass withLevel:level withScore:0]];
+//    }
 }
 
 -(void)nextObject:(ccTime)dt pattern:(int)p

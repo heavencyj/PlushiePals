@@ -24,7 +24,6 @@
     Hud *hud;
     PauseLayer *pauseLayer;
     CCSpriteBatchNode *plushyLayer;
-    CCSprite *tutorial1;
     
     //int score;
     int showingTip1;
