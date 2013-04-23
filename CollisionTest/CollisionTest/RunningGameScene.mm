@@ -111,7 +111,7 @@ int checkMapTimer;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         self.isTouchEnabled = YES;
         isSwipable = YES;
@@ -228,8 +228,8 @@ int checkMapTimer;
     {
         NSArray* fruits = [NSArray arrayWithObjects:
                            [NSNumber numberWithInt:plushy.bananaScore],
-                           [NSNumber numberWithInt:0],
-                           [NSNumber numberWithInt:0], nil];
+                           [NSNumber numberWithInt:plushy.mangosteenScore],
+                           [NSNumber numberWithInt:plushy.pineappleScore], nil];
         [[GB2Engine sharedInstance] deleteAllObjects];
         [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score wtihFruits:fruits]];
     }

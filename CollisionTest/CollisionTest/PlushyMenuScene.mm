@@ -55,11 +55,17 @@ CCLayer* missionLayer;
                                                         fontName:@"GROBOLD"
                                                         fontSize:30];
             scoreLabel.color = ccc3(245, 148, 36);
-            scoreLabel.position = ccp(300,250-i*50);
+            
+            if (winSize.width == 480) {
+                scoreLabel.position = ccp(290, 250-i*50);
+            }
+            else scoreLabel.position = ccp(300,250-i*50);
             [scoreboard addChild:scoreLabel z:10];
         }
         
-        NSArray *fruits = [NSArray arrayWithObjects:[NSNumber numberWithInt:[GameData sharedGameData].bananaCount],[NSNumber numberWithInt:0], [NSNumber numberWithInt:0], nil];
+        NSArray *fruits = [NSArray arrayWithObjects:[NSNumber numberWithInt:[GameData sharedGameData].bananaCount],
+                                                    [NSNumber numberWithInt:[GameData sharedGameData].mangosteenCount],
+                                                    [NSNumber numberWithInt:[GameData sharedGameData].pineappleCount],nil];
         
         for (int i=0; i < 3; i++) {
             CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:
@@ -67,7 +73,10 @@ CCLayer* missionLayer;
                                                         fontName:@"GROBOLD"
                                                         fontSize:30];
             scoreLabel.color = ccc3(245, 148, 36);
-            scoreLabel.position = ccp(490, 230-i*80);
+            if (winSize.width == 480) {
+                scoreLabel.position = ccp(475, 230-i*80);
+            }
+            else scoreLabel.position = ccp(490, 230-i*80);
             [scoreboard addChild:scoreLabel z:10];
         }
         
@@ -76,14 +85,14 @@ CCLayer* missionLayer;
                                  selectedImage:nil
                                  target:self
                                  selector:@selector(goHome)];
-        home.position = ccp(-220, -120);
+        home.position = ccp(-winSize.width/2.5, -120);
         
         CCMenuItemImage *next = [CCMenuItemImage
                                  itemWithNormalImage:@"Next icon.png"
                                  selectedImage:nil
                                  target:self
                                  selector:@selector(goNext)];
-        next.position = ccp(-140, -120);
+        next.position = ccp(-winSize.width/2.5+80, -120);
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
@@ -138,14 +147,14 @@ CCLayer* missionLayer;
                              selectedImage:nil
                              target:self
                              selector:@selector(goHome)];
-    home.position = ccp(-220, -120);
+    home.position = ccp(-winSize.width/2.5, -120);
     
     CCMenuItemImage *back = [CCMenuItemImage
                              itemWithNormalImage:@"Back icon.png"
                              selectedImage:nil
                              target:self
                              selector:@selector(goBack)];
-    back.position = ccp(-140, -120);
+    back.position = ccp(-winSize.width/2.5+80, -120);
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [missionLayer addChild:menuLayer];

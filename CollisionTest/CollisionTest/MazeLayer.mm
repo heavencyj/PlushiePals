@@ -225,7 +225,7 @@ NSDictionary *difficultyDictionary;
 -(void)lineUpAround:(CGPoint)pos
 {
     CCLOG(@"Placing new maze at: (%f, %f)", pos.x, pos.y);
-    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-30)]; //Numbers set
+    [maze setPhysicsPosition:b2Vec2FromCC(594, pos.y-30)]; //Numbers set
     [maze setMazeBodySensor:NO];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];

@@ -43,7 +43,7 @@ CCMenuItemImage *hazel;
                                  selectedImage:nil
                                  target:self
                                 selector:@selector(startGame:)];
-        canyonIcon.position = ccp(-220, -10);
+        canyonIcon.position = ccp(-200, -10);
         canyonIcon.tag = 1;
         id moveIconDown1 = [CCMoveBy actionWithDuration:0.9 position:ccp(0, -30)];
         id moveIconUp1 = [CCMoveBy actionWithDuration:0.9 position:ccp(0, 30)];

@@ -115,6 +115,10 @@
 		986245BC17267BE800312BE0 /* Jungle back.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245B917267BE800312BE0 /* Jungle back.png */; };
 		986245BD17267BE800312BE0 /* Jungle background.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245BA17267BE800312BE0 /* Jungle background.png */; };
 		986245BE17267BE800312BE0 /* Jungle front.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245BB17267BE800312BE0 /* Jungle front.png */; };
+		986245C91726EE0A00312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986245C71726EE0A00312BE0 /* monkeys.plist */; };
+		986245CA1726EE0A00312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245C81726EE0A00312BE0 /* monkeys.png */; };
+		986245CE1726F39000312BE0 /* GameObjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986245CD1726F38F00312BE0 /* GameObjects.plist */; };
+		986245D21726FA9100312BE0 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986245D11726FA9100312BE0 /* plushyshapes.plist */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -151,9 +155,6 @@
 		B6CD484317268BFE00FDA5A4 /* jungle level 8.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483917268BFE00FDA5A4 /* jungle level 8.plist */; };
 		B6CD484417268BFE00FDA5A4 /* jungle level 9.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483A17268BFE00FDA5A4 /* jungle level 9.plist */; };
 		B6CD484517268BFE00FDA5A4 /* jungle level 10.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483B17268BFE00FDA5A4 /* jungle level 10.plist */; };
-		B6CD484A17268CFB00FDA5A4 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD484817268CFA00FDA5A4 /* monkeys.plist */; };
-		B6CD484B17268CFB00FDA5A4 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CD484917268CFA00FDA5A4 /* monkeys.png */; };
-		B6CD484D1726E97B00FDA5A4 /* plushyshapes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD484C1726E97B00FDA5A4 /* plushyshapes.plist */; };
 		B6D286DF16B0DA750050A460 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286DE16B0DA750050A460 /* QuartzCore.framework */; };
 		B6D286E116B0DA750050A460 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E016B0DA750050A460 /* OpenGLES.framework */; };
 		B6D286E316B0DA750050A460 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D286E216B0DA750050A460 /* OpenAL.framework */; };
@@ -448,6 +449,10 @@
 		986245B917267BE800312BE0 /* Jungle back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle back.png"; sourceTree = "<group>"; };
 		986245BA17267BE800312BE0 /* Jungle background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle background.png"; sourceTree = "<group>"; };
 		986245BB17267BE800312BE0 /* Jungle front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle front.png"; sourceTree = "<group>"; };
+		986245C71726EE0A00312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
+		986245C81726EE0A00312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		986245CD1726F38F00312BE0 /* GameObjects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameObjects.plist; sourceTree = "<group>"; };
+		986245D11726FA9100312BE0 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -495,7 +500,6 @@
 		B6CD481817267BF000FDA5A4 /* mt level 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mt level 8.plist"; sourceTree = "<group>"; };
 		B6CD481917267BF000FDA5A4 /* mt level 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mt level 9.plist"; sourceTree = "<group>"; };
 		B6CD481A17267BF000FDA5A4 /* mt level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mt level 10.plist"; sourceTree = "<group>"; };
-		B6CD482E172681E800FDA5A4 /* GameObjects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameObjects.plist; sourceTree = "<group>"; };
 		B6CD483217268BFE00FDA5A4 /* jungle level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 1.plist"; sourceTree = "<group>"; };
 		B6CD483317268BFE00FDA5A4 /* jungle level 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 2.plist"; sourceTree = "<group>"; };
 		B6CD483417268BFE00FDA5A4 /* jungle level 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 3.plist"; sourceTree = "<group>"; };
@@ -506,9 +510,6 @@
 		B6CD483917268BFE00FDA5A4 /* jungle level 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 8.plist"; sourceTree = "<group>"; };
 		B6CD483A17268BFE00FDA5A4 /* jungle level 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 9.plist"; sourceTree = "<group>"; };
 		B6CD483B17268BFE00FDA5A4 /* jungle level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 10.plist"; sourceTree = "<group>"; };
-		B6CD484817268CFA00FDA5A4 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
-		B6CD484917268CFA00FDA5A4 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
-		B6CD484C1726E97B00FDA5A4 /* plushyshapes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plushyshapes.plist; sourceTree = "<group>"; };
 		B6D286DA16B0DA750050A460 /* Plushy Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plushy Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D286DE16B0DA750050A460 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6D286E016B0DA750050A460 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1001,11 +1002,11 @@
 		98176E0B16E7472B009BA7AB /* sprite_shape_sheets */ = {
 			isa = PBXGroup;
 			children = (
-				B6CD484C1726E97B00FDA5A4 /* plushyshapes.plist */,
-				B6CD484817268CFA00FDA5A4 /* monkeys.plist */,
-				B6CD484917268CFA00FDA5A4 /* monkeys.png */,
-				B6CD482E172681E800FDA5A4 /* GameObjects.plist */,
+				986245C71726EE0A00312BE0 /* monkeys.plist */,
+				986245C81726EE0A00312BE0 /* monkeys.png */,
+				986245D11726FA9100312BE0 /* plushyshapes.plist */,
 				9862456C17265F2500312BE0 /* canyon_levels.plist */,
+				986245CD1726F38F00312BE0 /* GameObjects.plist */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -1966,7 +1967,6 @@
 				986245BC17267BE800312BE0 /* Jungle back.png in Resources */,
 				986245BD17267BE800312BE0 /* Jungle background.png in Resources */,
 				986245BE17267BE800312BE0 /* Jungle front.png in Resources */,
-				B6CD482F172681E800FDA5A4 /* GameObjects.plist in Resources */,
 				B6CD483C17268BFE00FDA5A4 /* jungle level 1.plist in Resources */,
 				B6CD483D17268BFE00FDA5A4 /* jungle level 2.plist in Resources */,
 				B6CD483E17268BFE00FDA5A4 /* jungle level 3.plist in Resources */,
@@ -1977,9 +1977,10 @@
 				B6CD484317268BFE00FDA5A4 /* jungle level 8.plist in Resources */,
 				B6CD484417268BFE00FDA5A4 /* jungle level 9.plist in Resources */,
 				B6CD484517268BFE00FDA5A4 /* jungle level 10.plist in Resources */,
-				B6CD484A17268CFB00FDA5A4 /* monkeys.plist in Resources */,
-				B6CD484B17268CFB00FDA5A4 /* monkeys.png in Resources */,
-				B6CD484D1726E97B00FDA5A4 /* plushyshapes.plist in Resources */,
+				986245C91726EE0A00312BE0 /* monkeys.plist in Resources */,
+				986245CA1726EE0A00312BE0 /* monkeys.png in Resources */,
+				986245CE1726F39000312BE0 /* GameObjects.plist in Resources */,
+				986245D21726FA9100312BE0 /* plushyshapes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
