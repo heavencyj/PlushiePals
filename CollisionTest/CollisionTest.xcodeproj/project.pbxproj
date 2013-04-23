@@ -144,6 +144,7 @@
 		B6B55DBA17152905002B48FA /* PlushyParadiseTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B6B55DB917152905002B48FA /* PlushyParadiseTheme.mp3 */; };
 		B6BFD8F616F393A500D93FAB /* BackgroundScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F516F393A500D93FAB /* BackgroundScene.mm */; };
 		B6BFD8F916F3979000D93FAB /* Hud.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD8F816F3979000D93FAB /* Hud.mm */; };
+		B6CD482F172681E800FDA5A4 /* GameObjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD482E172681E800FDA5A4 /* GameObjects.plist */; };
 		B6CD483C17268BFE00FDA5A4 /* jungle level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483217268BFE00FDA5A4 /* jungle level 1.plist */; };
 		B6CD483D17268BFE00FDA5A4 /* jungle level 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483317268BFE00FDA5A4 /* jungle level 2.plist */; };
 		B6CD483E17268BFE00FDA5A4 /* jungle level 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CD483417268BFE00FDA5A4 /* jungle level 3.plist */; };
