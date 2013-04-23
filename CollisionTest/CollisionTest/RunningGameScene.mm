@@ -279,9 +279,6 @@ bool isSwipable;
 
 -(float) timer: (ccTime) dt
 {
-    if (seconds >= 2) {
-        plushy.sliding = true;
-    }
     //whatever you do here (e.g. move sprite) will be done continuously until TouchEnded occurs
     seconds ++;
     return dt;

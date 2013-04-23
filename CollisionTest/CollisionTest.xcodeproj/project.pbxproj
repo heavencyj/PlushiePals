@@ -114,8 +114,31 @@
 		9862457F1726694F00312BE0 /* Story 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862457E1726694D00312BE0 /* Story 2.png */; };
 		98624582172669DA00312BE0 /* BackStoryScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98624581172669D800312BE0 /* BackStoryScene.mm */; };
 		9862458417266D0500312BE0 /* X icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862458317266D0500312BE0 /* X icon.png */; };
-		98624587172673AA00312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98624585172673AA00312BE0 /* monkeys.plist */; };
-		98624588172673AA00312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 98624586172673AA00312BE0 /* monkeys.png */; };
+		9862458B1726766800312BE0 /* monkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986245891726766700312BE0 /* monkeys.plist */; };
+		9862458C1726766800312BE0 /* monkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862458A1726766800312BE0 /* monkeys.png */; };
+		986245A317267B4800312BE0 /* jungle level 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862458F17267B4500312BE0 /* jungle level 2.plist */; };
+		986245A417267B4800312BE0 /* jungle level 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459017267B4500312BE0 /* jungle level 2.png */; };
+		986245A517267B4800312BE0 /* jungle level 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459117267B4600312BE0 /* jungle level 3.plist */; };
+		986245A617267B4800312BE0 /* jungle level 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459217267B4600312BE0 /* jungle level 3.png */; };
+		986245A717267B4800312BE0 /* jungle level 4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459317267B4600312BE0 /* jungle level 4.plist */; };
+		986245A817267B4800312BE0 /* jungle level 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459417267B4600312BE0 /* jungle level 4.png */; };
+		986245A917267B4800312BE0 /* jungle level 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459517267B4600312BE0 /* jungle level 5.plist */; };
+		986245AA17267B4800312BE0 /* jungle level 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459617267B4600312BE0 /* jungle level 5.png */; };
+		986245AB17267B4800312BE0 /* jungle level 6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459717267B4700312BE0 /* jungle level 6.plist */; };
+		986245AC17267B4800312BE0 /* jungle level 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459817267B4700312BE0 /* jungle level 6.png */; };
+		986245AD17267B4800312BE0 /* jungle level 7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459917267B4700312BE0 /* jungle level 7.plist */; };
+		986245AE17267B4800312BE0 /* jungle level 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459A17267B4700312BE0 /* jungle level 7.png */; };
+		986245AF17267B4800312BE0 /* jungle level 8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459B17267B4700312BE0 /* jungle level 8.plist */; };
+		986245B017267B4800312BE0 /* jungle level 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459C17267B4700312BE0 /* jungle level 8.png */; };
+		986245B117267B4800312BE0 /* jungle level 9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459D17267B4800312BE0 /* jungle level 9.plist */; };
+		986245B217267B4800312BE0 /* jungle level 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9862459E17267B4800312BE0 /* jungle level 9.png */; };
+		986245B317267B4800312BE0 /* jungle level 10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9862459F17267B4800312BE0 /* jungle level 10.plist */; };
+		986245B417267B4800312BE0 /* jungle level 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245A017267B4800312BE0 /* jungle level 10.png */; };
+		986245B717267BA000312BE0 /* jungle level 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986245B517267BA000312BE0 /* jungle level 1.plist */; };
+		986245B817267BA000312BE0 /* jungle level 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245B617267BA000312BE0 /* jungle level 1.png */; };
+		986245BC17267BE800312BE0 /* Jungle back.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245B917267BE800312BE0 /* Jungle back.png */; };
+		986245BD17267BE800312BE0 /* Jungle background.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245BA17267BE800312BE0 /* Jungle background.png */; };
+		986245BE17267BE800312BE0 /* Jungle front.png in Resources */ = {isa = PBXBuildFile; fileRef = 986245BB17267BE800312BE0 /* Jungle front.png */; };
 		987EE26E16D61EE2003B4F59 /* Home icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26B16D61EE2003B4F59 /* Home icon.png */; };
 		987EE26F16D61EE2003B4F59 /* Next icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 987EE26C16D61EE2003B4F59 /* Next icon.png */; };
 		987EE27816D7B8DB003B4F59 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */; };
@@ -434,8 +457,31 @@
 		98624580172669D700312BE0 /* BackStoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackStoryScene.h; sourceTree = "<group>"; };
 		98624581172669D800312BE0 /* BackStoryScene.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BackStoryScene.mm; sourceTree = "<group>"; };
 		9862458317266D0500312BE0 /* X icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X icon.png"; sourceTree = "<group>"; };
-		98624585172673AA00312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
-		98624586172673AA00312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		986245891726766700312BE0 /* monkeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkeys.plist; sourceTree = "<group>"; };
+		9862458A1726766800312BE0 /* monkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkeys.png; sourceTree = "<group>"; };
+		9862458F17267B4500312BE0 /* jungle level 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 2.plist"; sourceTree = "<group>"; };
+		9862459017267B4500312BE0 /* jungle level 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 2.png"; sourceTree = "<group>"; };
+		9862459117267B4600312BE0 /* jungle level 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 3.plist"; sourceTree = "<group>"; };
+		9862459217267B4600312BE0 /* jungle level 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 3.png"; sourceTree = "<group>"; };
+		9862459317267B4600312BE0 /* jungle level 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 4.plist"; sourceTree = "<group>"; };
+		9862459417267B4600312BE0 /* jungle level 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 4.png"; sourceTree = "<group>"; };
+		9862459517267B4600312BE0 /* jungle level 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 5.plist"; sourceTree = "<group>"; };
+		9862459617267B4600312BE0 /* jungle level 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 5.png"; sourceTree = "<group>"; };
+		9862459717267B4700312BE0 /* jungle level 6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 6.plist"; sourceTree = "<group>"; };
+		9862459817267B4700312BE0 /* jungle level 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 6.png"; sourceTree = "<group>"; };
+		9862459917267B4700312BE0 /* jungle level 7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 7.plist"; sourceTree = "<group>"; };
+		9862459A17267B4700312BE0 /* jungle level 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 7.png"; sourceTree = "<group>"; };
+		9862459B17267B4700312BE0 /* jungle level 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 8.plist"; sourceTree = "<group>"; };
+		9862459C17267B4700312BE0 /* jungle level 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 8.png"; sourceTree = "<group>"; };
+		9862459D17267B4800312BE0 /* jungle level 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 9.plist"; sourceTree = "<group>"; };
+		9862459E17267B4800312BE0 /* jungle level 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 9.png"; sourceTree = "<group>"; };
+		9862459F17267B4800312BE0 /* jungle level 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 10.plist"; sourceTree = "<group>"; };
+		986245A017267B4800312BE0 /* jungle level 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 10.png"; sourceTree = "<group>"; };
+		986245B517267BA000312BE0 /* jungle level 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jungle level 1.plist"; sourceTree = "<group>"; };
+		986245B617267BA000312BE0 /* jungle level 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jungle level 1.png"; sourceTree = "<group>"; };
+		986245B917267BE800312BE0 /* Jungle back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle back.png"; sourceTree = "<group>"; };
+		986245BA17267BE800312BE0 /* Jungle background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle background.png"; sourceTree = "<group>"; };
+		986245BB17267BE800312BE0 /* Jungle front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jungle front.png"; sourceTree = "<group>"; };
 		987EE26B16D61EE2003B4F59 /* Home icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home icon.png"; sourceTree = "<group>"; };
 		987EE26C16D61EE2003B4F59 /* Next icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next icon.png"; sourceTree = "<group>"; };
 		987EE27716D7B8DB003B4F59 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
@@ -966,10 +1012,10 @@
 			isa = PBXGroup;
 			children = (
 				9862450E1726543600312BE0 /* GameObjects.plist */,
-				98624585172673AA00312BE0 /* monkeys.plist */,
-				98624586172673AA00312BE0 /* monkeys.png */,
 				9862456C17265F2500312BE0 /* canyon_levels.plist */,
 				986244BB1721E2AF00312BE0 /* plushyshapes.plist */,
+				986245891726766700312BE0 /* monkeys.plist */,
+				9862458A1726766800312BE0 /* monkeys.png */,
 			);
 			name = sprite_shape_sheets;
 			sourceTree = "<group>";
@@ -1058,6 +1104,26 @@
 				9862452D17265EEF00312BE0 /* canyon level 9.png */,
 				9862452E17265EEF00312BE0 /* canyon level 10.plist */,
 				9862452F17265EEF00312BE0 /* canyon level 10.png */,
+				986245B517267BA000312BE0 /* jungle level 1.plist */,
+				986245B617267BA000312BE0 /* jungle level 1.png */,
+				9862458F17267B4500312BE0 /* jungle level 2.plist */,
+				9862459017267B4500312BE0 /* jungle level 2.png */,
+				9862459117267B4600312BE0 /* jungle level 3.plist */,
+				9862459217267B4600312BE0 /* jungle level 3.png */,
+				9862459317267B4600312BE0 /* jungle level 4.plist */,
+				9862459417267B4600312BE0 /* jungle level 4.png */,
+				9862459517267B4600312BE0 /* jungle level 5.plist */,
+				9862459617267B4600312BE0 /* jungle level 5.png */,
+				9862459717267B4700312BE0 /* jungle level 6.plist */,
+				9862459817267B4700312BE0 /* jungle level 6.png */,
+				9862459917267B4700312BE0 /* jungle level 7.plist */,
+				9862459A17267B4700312BE0 /* jungle level 7.png */,
+				9862459B17267B4700312BE0 /* jungle level 8.plist */,
+				9862459C17267B4700312BE0 /* jungle level 8.png */,
+				9862459D17267B4800312BE0 /* jungle level 9.plist */,
+				9862459E17267B4800312BE0 /* jungle level 9.png */,
+				9862459F17267B4800312BE0 /* jungle level 10.plist */,
+				986245A017267B4800312BE0 /* jungle level 10.png */,
 				9862454417265F0E00312BE0 /* mt level 1.plist */,
 				9862454517265F0E00312BE0 /* mt level 1.png */,
 				9862454617265F0E00312BE0 /* mt level 2.plist */,
@@ -1102,6 +1168,9 @@
 				B6D2894A16B2ED2E0050A460 /* Canyon cloud 2.png */,
 				986244DE1725E72C00312BE0 /* Mountain back.png */,
 				986244DF1725E72C00312BE0 /* Mountain front.png */,
+				986245B917267BE800312BE0 /* Jungle back.png */,
+				986245BA17267BE800312BE0 /* Jungle background.png */,
+				986245BB17267BE800312BE0 /* Jungle front.png */,
 			);
 			name = background;
 			sourceTree = "<group>";
@@ -1906,8 +1975,31 @@
 				9862457D1726692700312BE0 /* Story 6.png in Resources */,
 				9862457F1726694F00312BE0 /* Story 2.png in Resources */,
 				9862458417266D0500312BE0 /* X icon.png in Resources */,
-				98624587172673AA00312BE0 /* monkeys.plist in Resources */,
-				98624588172673AA00312BE0 /* monkeys.png in Resources */,
+				9862458B1726766800312BE0 /* monkeys.plist in Resources */,
+				9862458C1726766800312BE0 /* monkeys.png in Resources */,
+				986245A317267B4800312BE0 /* jungle level 2.plist in Resources */,
+				986245A417267B4800312BE0 /* jungle level 2.png in Resources */,
+				986245A517267B4800312BE0 /* jungle level 3.plist in Resources */,
+				986245A617267B4800312BE0 /* jungle level 3.png in Resources */,
+				986245A717267B4800312BE0 /* jungle level 4.plist in Resources */,
+				986245A817267B4800312BE0 /* jungle level 4.png in Resources */,
+				986245A917267B4800312BE0 /* jungle level 5.plist in Resources */,
+				986245AA17267B4800312BE0 /* jungle level 5.png in Resources */,
+				986245AB17267B4800312BE0 /* jungle level 6.plist in Resources */,
+				986245AC17267B4800312BE0 /* jungle level 6.png in Resources */,
+				986245AD17267B4800312BE0 /* jungle level 7.plist in Resources */,
+				986245AE17267B4800312BE0 /* jungle level 7.png in Resources */,
+				986245AF17267B4800312BE0 /* jungle level 8.plist in Resources */,
+				986245B017267B4800312BE0 /* jungle level 8.png in Resources */,
+				986245B117267B4800312BE0 /* jungle level 9.plist in Resources */,
+				986245B217267B4800312BE0 /* jungle level 9.png in Resources */,
+				986245B317267B4800312BE0 /* jungle level 10.plist in Resources */,
+				986245B417267B4800312BE0 /* jungle level 10.png in Resources */,
+				986245B717267BA000312BE0 /* jungle level 1.plist in Resources */,
+				986245B817267BA000312BE0 /* jungle level 1.png in Resources */,
+				986245BC17267BE800312BE0 /* Jungle back.png in Resources */,
+				986245BD17267BE800312BE0 /* Jungle background.png in Resources */,
+				986245BE17267BE800312BE0 /* Jungle front.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

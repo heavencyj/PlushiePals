@@ -100,6 +100,7 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
+    [[CCDirector sharedDirector] resume];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 
