@@ -40,13 +40,32 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize bananaScore;
 @synthesize onBridge;
 
+NSString* plushyName;
+
 bool shapechange;
 
 //TODO: which initialization is being used here?
 -(id) initWithGameLayer:(RunningGameScene*)gl
 {
+    switch ([GameData sharedGameData].plushy) {
+        case 1:
+            plushyName = @"Monkey";
+            break;
+            
+        case 2:
+            plushyName = @"Pig";
+            break;
+            
+        case 3:
+            plushyName = @"Bear";
+            break;
+            
+        default:
+            break;
+    }
+    
     self = [super initWithDynamicBody:@"Monkey"
-                      spriteFrameName:@"Monkey run 1.png"];
+                      spriteFrameName:[plushyName stringByAppendingString:@" run 1.png"]];
     
     if(self)
     {
@@ -112,27 +131,27 @@ bool shapechange;
     [self setPhysicsPosition:b2Vec2FromCC([[CCDirector sharedDirector] winSize].width/2-50, [self ccNode].position.y)];
     
     // update animation phase
-    if (sliding) {
-        NSString *frameName;
-        animDelay -= ANIM_DELAY;
-        if(animDelay <= 0)
-        {
-            animDelay = ANIM_SPEED;
-            animPhase++;
-            if(animPhase > 3)
-            {
-                animPhase = 1;
-            }
-        }
-        // sliding
-        [self setBodyShape:@"Monkey slide"];
-        shapechange = true;
-        frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
-        [self setDisplayFrameNamed:frameName];
-        [Plushy playSound:SLIDING];
-    }
+//    if (sliding) {
+//        NSString *frameName;
+//        animDelay -= ANIM_DELAY;
+//        if(animDelay <= 0)
+//        {
+//            animDelay = ANIM_SPEED;
+//            animPhase++;
+//            if(animPhase > 3)
+//            {
+//                animPhase = 1;
+//            }
+//        }
+//        // sliding
+//        [self setBodyShape:@"Monkey slide"];
+//        shapechange = true;
+//        frameName = [NSString stringWithFormat:@"Monkey slide %d.png", animPhase];
+//        [self setDisplayFrameNamed:frameName];
+//        [Plushy playSound:SLIDING];
+//    }
     
-    else if (running && !collide && !die) {
+    if (running && !collide && !die) {
         
         NSString *frameName;        
         animDelay -= ANIM_DELAY;        
@@ -150,7 +169,7 @@ bool shapechange;
             [self setBodyShape:@"Monkey"];
             shapechange = false;
         }
-        frameName = [NSString stringWithFormat:@"Monkey run %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" run %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         //[self playSound:RUNNING];
     }
@@ -175,7 +194,7 @@ bool shapechange;
                 [self setBodyShape:@"Monkey"];
                 shapechange = false;
             }
-            frameName = [NSString stringWithFormat:@"Monkey win %d.png", animPhase];
+            frameName = [plushyName stringByAppendingFormat:@" win %d.png", animPhase];
             [self setDisplayFrameNamed:frameName];
         }
     }
@@ -193,7 +212,7 @@ bool shapechange;
             }
         }
         // jumping
-        frameName = [NSString stringWithFormat:@"Monkey jump %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" jump %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
     
@@ -218,7 +237,7 @@ bool shapechange;
         }
         
         // collide
-        frameName = [NSString stringWithFormat:@"Monkey collision %d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" collide %d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
         if (animPhase == 1) {
             [Plushy playSound:COLLIDING];
@@ -242,7 +261,8 @@ bool shapechange;
         // die
         [self setBodyShape:@"Monkey die"];
         shapechange = true;
-        frameName = [NSString stringWithFormat:@"Monkey die 0%d.png", animPhase];
+        frameName = [plushyName stringByAppendingFormat:@" die 0%d.png", animPhase];
+        //frameName = [@"Monkey" stringByAppendingFormat:@" die 0%d.png", animPhase];
         [self setDisplayFrameNamed:frameName];
     }
 }

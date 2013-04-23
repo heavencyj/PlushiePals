@@ -84,6 +84,7 @@
         [GameData sharedGameData].mangosteenCount = [[defaults objectForKey:@"mangosteenCount"] integerValue];
         [GameData sharedGameData].pineappleCount = [[defaults objectForKey:@"pineappleCount"] integerValue];
         [GameData sharedGameData].mapTheme = [[defaults objectForKey:@"mapTheme"] integerValue];
+        [GameData sharedGameData].plushy = [[defaults objectForKey:@"plushy"] integerValue];
         [GameData sharedGameData].tips = [[defaults objectForKey:@"tips"] boolValue];
         [GameData sharedGameData].mute = [[defaults objectForKey:@"mute"] boolValue];
         [GameData sharedGameData].highscore = [defaults objectForKey:@"highscore"];

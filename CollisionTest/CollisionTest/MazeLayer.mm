@@ -123,28 +123,24 @@ CGPoint prevMap;
 
 -(void) loadMaze:(int)level withObject:(int)ObjCount {
     CCLOG(@"Current level is %d", level);
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", level]];
-    NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
-    maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
     
     NSString *themeName;
     switch ([GameData sharedGameData].mapTheme) {
         case 1: {
-            themeName = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
+            themeName = [@"canyon level " stringByAppendingFormat:@"%d", level];
             break;
         }
         case 2: {
-            themeName =  [@"mt level " stringByAppendingFormat:@"%d", ofLevel];
+            themeName =  [@"mt level " stringByAppendingFormat:@"%d", level];
             break;
         }
-            
-            
+               
         default:
             break;
     }
     
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[themeName stringByAppendingString:@".plist"]];
-    NSString *shape = [NSString stringWithFormat:@"canyon level %d", ofLevel];
+    NSString *shape = [NSString stringWithFormat:@"canyon level %d", level];
     maze = [Maze mazeSprite:shape spriteName:[themeName stringByAppendingString:@".png"]];
     
     [maze setMazeBodySensor:YES];

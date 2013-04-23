@@ -93,6 +93,7 @@ int theme;
             default:
                 break;
         }
+        
         [self scheduleUpdate];
     }
     return self;

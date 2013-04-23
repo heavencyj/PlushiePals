@@ -311,16 +311,16 @@ bool isSwipable;
     
     //Swipe Detection Part 2
     lastTouch = location;
-    [self unschedule:@selector(timer:)];
-    if (plushy.sliding) {
-        if ((showingTip1 == 4)
-            && [MainMenuScene showTips]) {
-            [self removeChild:tutorial1 cleanup:YES];
-            showingTip1 = -1;
-            isSwipable = NO;
-        }
-        plushy.sliding = false;
-    }
+//    [self unschedule:@selector(timer:)];
+//    if (plushy.sliding) {
+//        if ((showingTip1 == 4)
+//            && [MainMenuScene showTips]) {
+//            [self removeChild:tutorial1 cleanup:YES];
+//            showingTip1 = -1;
+//            isSwipable = NO;
+//        }
+//        plushy.sliding = false;
+//    }
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);

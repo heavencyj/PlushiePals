@@ -10,8 +10,13 @@
 #import "MainMenuScene.h"
 #import "GameData.h"
 #import "RunningGameScene.h"
+#import "BackStoryScene.h"
 
 @implementation MapMenuScene
+
+CCMenuItemImage *momo;
+CCMenuItemImage *cora;
+CCMenuItemImage *hazel;
 
 +(id) scene
 {
@@ -86,6 +91,32 @@
         jungleIcon.tag = 5;
         
         
+        momo = [CCMenuItemImage
+                   itemWithNormalImage:@"Momo icon.png"
+                   selectedImage:nil
+                   target:self
+                   selector:@selector(pickPlushy:)];
+        momo.position = ccp(-winSize.width/2+30, winSize.height/2-30);
+        momo.tag = 1;
+        
+        cora = [CCMenuItemImage
+                itemWithNormalImage:@"Cora icon.png"
+                selectedImage:nil
+                target:self
+                selector:@selector(pickPlushy:)];
+        cora.position = ccp(-winSize.width/2+30+50, winSize.height/2-30);
+        cora.tag = 2;
+        
+        hazel = [CCMenuItemImage
+                itemWithNormalImage:@"Hazel icon.png"
+                selectedImage:nil
+                target:self
+                selector:@selector(pickPlushy:)];
+        hazel.position = ccp(-winSize.width/2+30+100, winSize.height/2-30);
+        hazel.tag = 3;
+        
+        [self checkPlushy];
+        
         CCMenuItemImage *home = [CCMenuItemImage
                                  itemWithNormalImage:@"Home icon.png"
                                  selectedImage:nil
@@ -95,7 +126,7 @@
     
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
-        CCMenu *menu = [CCMenu menuWithItems: home,canyonIcon, mountainIcon,
+        CCMenu *menu = [CCMenu menuWithItems:momo, cora, hazel, home,canyonIcon, mountainIcon,
                         hillIcon,islandIcon, jungleIcon, nil];
         [menuLayer addChild: menu];
         
@@ -123,16 +154,45 @@
 
 -(void)showBackstory
 {
- 
+    [[CCDirector sharedDirector] replaceScene:[BackStoryScene scene]];
+}
+
+-(void)checkPlushy
+{
+    switch ([GameData sharedGameData].plushy) {
+        case 1:
+            [momo setNormalImage:[CCSprite spriteWithFile:@"Momo icon large.png"]];
+            [cora setNormalImage:[CCSprite spriteWithFile:@"Cora icon.png"]];
+            [hazel setNormalImage:[CCSprite spriteWithFile:@"Hazel icon.png"]];
+            break;
+            
+        case 2:
+            [cora setNormalImage:[CCSprite spriteWithFile:@"Cora icon large.png"]];
+            [momo setNormalImage:[CCSprite spriteWithFile:@"Momo icon.png"]];
+            [hazel setNormalImage:[CCSprite spriteWithFile:@"Hazel icon.png"]];
+            break;
+            
+        case 3:
+            [hazel setNormalImage:[CCSprite spriteWithFile:@"Hazel icon large.png"]];
+            [momo setNormalImage:[CCSprite spriteWithFile:@"Momo icon.png"]];
+            [cora setNormalImage:[CCSprite spriteWithFile:@"Cora icon.png"]];
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 -(void)pickPlushy:(id)sender
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:[GameData sharedGameData].mapTheme forKey:@"plushy"];
     CCMenuItemImage *button = (CCMenuItemImage *)sender;
     [GameData sharedGameData].plushy = button.tag;
+    [defaults setInteger:[GameData sharedGameData].plushy forKey:@"plushy"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self checkPlushy];
 }
 
 -(void)doNothing
