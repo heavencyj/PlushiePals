@@ -129,18 +129,6 @@
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ stopAnimation];
-    
-//    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    [defaults setInteger:[GameData sharedGameData].bananaCount
-//                  forKey:@"bananaCount"];
-//    [defaults setBool: [GameData sharedGameData].mute
-//               forKey:@"mute"];
-//    [defaults setBool: [GameData sharedGameData].tips
-//               forKey:@"tips"];
-//    [defaults setObject:[GameData sharedGameData].highscore forKey:@"highscore"];
-//    
-//    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application

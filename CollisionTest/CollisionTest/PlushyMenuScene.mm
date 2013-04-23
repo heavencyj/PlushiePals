@@ -63,7 +63,9 @@ CCLayer* missionLayer;
             [scoreboard addChild:scoreLabel z:10];
         }
         
-        NSArray *fruits = [NSArray arrayWithObjects:[NSNumber numberWithInt:[GameData sharedGameData].bananaCount],[NSNumber numberWithInt:0], [NSNumber numberWithInt:0], nil];
+        NSArray *fruits = [NSArray arrayWithObjects:[NSNumber numberWithInt:[GameData sharedGameData].bananaCount],
+                                                    [NSNumber numberWithInt:[GameData sharedGameData].mangosteenCount],
+                                                    [NSNumber numberWithInt:[GameData sharedGameData].pineappleCount],nil];
         
         for (int i=0; i < 3; i++) {
             CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:
