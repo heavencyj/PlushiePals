@@ -35,4 +35,5 @@
 -(void)destroyBridgeJoint;
 -(void) showBridge;
 +(void)initMapDictionaries;
++(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict;
 @end

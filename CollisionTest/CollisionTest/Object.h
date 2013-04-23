@@ -16,6 +16,10 @@
 #define CACTUS_BOMB 3
 #define BANANA_SINGLE 4
 #define BRIDGE 5
+#define MANGOSTEEN 6
+#define PINEAPPLE 7
+#define MUSHROOM_BOMB 8
+#define ROCK_BOMB 9
 
 #define BOMB_EXPLOSION 0
 #define BANANA_POINTS 1

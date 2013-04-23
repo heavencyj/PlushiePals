@@ -252,12 +252,12 @@ bool isSwipable;
     currMazeLayer = [[[MazeLayer alloc] init] autorelease];
     [self addChild:currMazeLayer z:10];
     CGPoint levelInfo = [currMazeLayer levelChooser:mapCount];
-    if (ceil(levelInfo.x) == 0) {
-        // In case if the level is somehow off, it will default to level 1
-        levelInfo.x = 1;
-    }
-    [currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
-    //[currMazeLayer loadMaze:1 withObject:0];
+//    if (ceil(levelInfo.x) == 0) {
+//        // In case if the level is somehow off, it will default to level 1
+//        levelInfo.x = 1;
+//    }
+    //[currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
+    [currMazeLayer loadMaze:1 withObject:0];
     [currMazeLayer lineUpAround:[plushy ccNode].position];
 }
 

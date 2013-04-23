@@ -26,6 +26,14 @@
         self = [super initWithDynamicBody:theObjName
                           spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
     }
+    else if([theObjName isEqualToString:@"rock bomb"]) {
+        self = [super initWithDynamicBody:@"cactus bomb"
+                          spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
+    }
+    else if([theObjName isEqualToString:@"mushroom bomb"]) {
+        self = [super initWithDynamicBody:@"cactus bomb"
+                          spriteFrameName:[NSString stringWithFormat:@"%@ 1.png", theObjName]];
+    }
     else{
         self = [super initWithKinematicBody:theObjName
                             spriteFrameName:[NSString stringWithFormat:@"%@.png", theObjName]];
@@ -47,17 +55,23 @@
             objName = @"banana bomb";
             break;
             
-        case BANANA_BUNCH:
-            objName = @"banana bunch";
+        case MUSHROOM_BOMB:
+            objName = @"mushroom bomb";
             break;
         case CACTUS_BOMB:
             objName = @"cactus bomb";
             break;
-        case SPIDER:
-            objName = @"spider";
+        case ROCK_BOMB:
+            objName = @"rock bomb";
             break;
         case BANANA_SINGLE:
             objName = @"banana single";
+            break;
+        case MANGOSTEEN:
+            objName = @"mangosteen";
+            break;
+        case PINEAPPLE:
+            objName = @"pineapple";
             break;
         default:
             break;
@@ -99,7 +113,7 @@
         }
         
         // running
-        frameName = [NSString stringWithFormat:@"cactus bomb %d.png", animPhase];
+        frameName = [objName stringByAppendingString:[NSString stringWithFormat:@" %d.png", animPhase]];
         [self setDisplayFrameNamed:frameName];
     }
     
@@ -118,11 +132,30 @@
             contacted = TRUE;
         }
     }
-    else
-    {
+    else if([fixtureId isEqualToString:@"banana"]) {
         if (!contacted) {
             [self playSound:BANANA_POINTS];
             ((Plushy*)[contact otherObject]).bananaScore += 1;
+            //[GameData sharedGameData].bananaCount += 1;
+            //[RunningGameScene addScore:10];
+            [[self ccNode] removeFromParentAndCleanup:YES];
+            contacted = TRUE;
+        }
+    }
+    else if([fixtureId isEqualToString:@"mangosteen"]) {
+        if (!contacted) {
+            [self playSound:BANANA_POINTS];
+            ((Plushy*)[contact otherObject]).mangosteenScore += 1;
+            //[GameData sharedGameData].bananaCount += 1;
+            //[RunningGameScene addScore:10];
+            [[self ccNode] removeFromParentAndCleanup:YES];
+            contacted = TRUE;
+        }
+    }
+    else if([fixtureId isEqualToString:@"pineapple"]) {
+        if (!contacted) {
+            [self playSound:BANANA_POINTS];
+            ((Plushy*)[contact otherObject]).pineappleScore += 1;
             //[GameData sharedGameData].bananaCount += 1;
             //[RunningGameScene addScore:10];
             [[self ccNode] removeFromParentAndCleanup:YES];

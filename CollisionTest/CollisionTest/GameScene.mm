@@ -199,24 +199,26 @@ TransitionObject *bridge;
     nextObject -= dt;
     if(nextObject <=0)
     {
+        // select a type of fruit
+        int fruit = [(NSNumber*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:plushy.plushyFruit] intValue];
         if (p == 2) {
             //arc pattern TODO:hard coded for now
             int initalX = [[CCDirector sharedDirector] winSize].width;
             int initialY = [plushy ccNode].position.y+50;
             if (initialY+30 < 280) { //TODO: ensure that the bananas don't go over the scoring HUD.
-                Object *obj1 = [Object randomObject:BANANA_SINGLE];
+                Object *obj1 = [Object randomObject:fruit];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
                 [obj1 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj1 ccNode] z:38];
-                Object *obj2 = [Object randomObject:BANANA_SINGLE];
+                Object *obj2 = [Object randomObject:fruit];
                 [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+30, initialY+30)];
                 [obj2 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj2 ccNode] z:38];
-                Object *obj3 = [Object randomObject:BANANA_SINGLE];
+                Object *obj3 = [Object randomObject:fruit];
                 [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY+30)];
                 [obj3 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj3 ccNode] z:38];
-                Object *obj4 = [Object randomObject:BANANA_SINGLE];
+                Object *obj4 = [Object randomObject:fruit];
                 [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+110, initialY)];
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj4 ccNode] z:38];
@@ -227,19 +229,19 @@ TransitionObject *bridge;
             int initalX = [[CCDirector sharedDirector] winSize].width;
             int initialY = [plushy ccNode].position.y+80;
             if (initialY < 280) {
-                Object *obj1 = [Object randomObject:BANANA_SINGLE];
+                Object *obj1 = [Object randomObject:fruit];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
                 [obj1 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj1 ccNode] z:38];
-                Object *obj2 = [Object randomObject:BANANA_SINGLE];
+                Object *obj2 = [Object randomObject:fruit];
                 [obj2 setPhysicsPosition:b2Vec2FromCC(initalX+40, initialY)];
                 [obj2 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj2 ccNode] z:38];
-                Object *obj3 = [Object randomObject:BANANA_SINGLE];
+                Object *obj3 = [Object randomObject:fruit];
                 [obj3 setPhysicsPosition:b2Vec2FromCC(initalX+80, initialY)];
                 [obj3 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj3 ccNode] z:38];
-                Object *obj4 = [Object randomObject:BANANA_SINGLE];
+                Object *obj4 = [Object randomObject:fruit];
                 [obj4 setPhysicsPosition:b2Vec2FromCC(initalX+120, initialY)];
                 [obj4 setLinearVelocity:b2Vec2(-5, 0)];
                 [self addChild:[obj4 ccNode] z:38];

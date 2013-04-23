@@ -29,9 +29,10 @@
     
     NSMutableArray *hearts;
     b2Vec2 initialPosition;
-   
+    
+    NSDictionary *plushyFruit;
 }
-
+@property (readonly) NSDictionary *plushyFruit;
 @property (readwrite) int pineappleScore;
 @property (readwrite) int mangosteenScore;
 @property (readwrite) int bananaScore;

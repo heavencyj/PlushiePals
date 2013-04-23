@@ -91,17 +91,17 @@ NSDictionary *difficultyDictionary;
     
     // Ensure that the first 4 maps are always easy
     if (mapCount < 6) {
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
+        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
     }
     else{
-        NSDictionary *dict = (NSDictionary*)[self selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
+        NSDictionary *dict = (NSDictionary*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
+        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
     }
     
     return levelInfo;
 }
 
--(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict
++(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict
 {
     double counter = 0;
     for (NSNumber *key in dict) {
