@@ -371,7 +371,30 @@ bool shapechange;
             collide = true;
             animPhase = 1;
         }
-    }    
+    }
+    else if([fixtureId isEqualToString:@"collision2"]){
+        if ([otherfixtureId hasPrefix:@"tip"]) {
+            //CCLOG(@"tip is %d", tip);
+        }
+        else if ([otherfixtureId isEqualToString:@"turn"]) {
+        }
+        else if ([otherfixtureId isEqualToString:@"noturn"]) {
+            //swipeRange = false;
+        }
+        else if ([otherfixtureId isEqualToString:@"start"]) {
+        }
+        else if ([otherfixtureId isEqualToString:@"win"]) {
+        }
+        else if([otherfixtureId isEqualToString:@"showbridge"]) {
+        }
+        else {
+            running = false;
+            jumping = false;
+            collide = true;
+            animPhase = 1;
+        }
+
+    }
 }
 
 -(void) beginContactWithTransitionObject:(GB2Contact *)contact {
