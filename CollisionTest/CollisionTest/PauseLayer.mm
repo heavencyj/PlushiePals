@@ -13,6 +13,7 @@
 #import "RunningGameScene.h"
 #import "MainMenuScene.h"
 #import "LevelMenuScene.h"
+#import "GameData.h"
 
 #define WIDTH 400
 #define HEIGHT 200
@@ -36,31 +37,23 @@
                                    selectedImage:nil
                                    target:self
                                    selector:@selector(resumeGame)];
-        resume.position = ccp(0, winSize.height/10);
+        resume.position = ccp(0, 0);
         
         CCMenuItemImage *restart = [CCMenuItemImage
                                     itemWithNormalImage:@"Return icon.png"
                                     selectedImage:nil
                                     target:self
                                     selector:@selector(restartGame)];
-        restart.position = ccp(-winSize.width/5,-winSize.height/7);
+        restart.position = ccp(-winSize.width/5,0);
         
         CCMenuItemImage *home = [CCMenuItemImage
                                  itemWithNormalImage:@"Home icon.png"
                                  selectedImage:nil
                                  target:self
                                  selector:@selector(goHome)];
-        home.position = ccp(0,-winSize.height/7);
+        home.position = ccp(winSize.width/5,0);
         
-        CCMenuItemImage *level = [CCMenuItemImage
-                                  itemWithNormalImage:@"Levels icon.png"
-                                  selectedImage:nil
-                                  target:self
-                                  selector:@selector(goLevels)];
-        level.position = ccp(winSize.width/5,-winSize.height/7);
-        
-        
-        CCMenu *menu =  [CCMenu menuWithItems: resume, restart, home, level, nil];
+        CCMenu *menu =  [CCMenu menuWithItems: resume, restart, home, nil];
         [self addChild:colorLayer];
         [self addChild:menu];
         self.visible = NO;
@@ -108,13 +101,6 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
     [[GB2Engine sharedInstance] deleteAllObjects];
     [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
-}
-
--(void)goLevels
-{
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    [[GB2Engine sharedInstance] deleteAllObjects];
-    [[CCDirector sharedDirector] replaceScene:[LevelMenuScene scene]];
 }
 
 

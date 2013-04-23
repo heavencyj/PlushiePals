@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "MainMenuScene.h"
 #import "RunningGameScene.h"
+#import "GameData.h"
 
 NSDictionary *easyMapsDictionary;
 NSDictionary *midMapsDictionary;
@@ -125,6 +126,26 @@ CGPoint prevMap;
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[@"canyon level " stringByAppendingFormat:@"%d.plist", level]];
     NSString *shape = [@"canyon level " stringByAppendingFormat:@"%d", level];
     maze = [Maze mazeSprite:shape spriteName:[shape stringByAppendingString:@".png"]];
+    
+    NSString *themeName;
+    switch ([GameData sharedGameData].mapTheme) {
+        case 1: {
+            themeName = [@"canyon level " stringByAppendingFormat:@"%d", ofLevel];
+            break;
+        }
+        case 2: {
+            themeName =  [@"mt level " stringByAppendingFormat:@"%d", ofLevel];
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[themeName stringByAppendingString:@".plist"]];
+    NSString *shape = [NSString stringWithFormat:@"canyon level %d", ofLevel];
+    maze = [Maze mazeSprite:shape spriteName:[themeName stringByAppendingString:@".png"]];
     
     [maze setMazeBodySensor:YES];
     

@@ -37,8 +37,7 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize showmap;
 @synthesize loadmap;
 @synthesize tip;
-//@synthesize bananaScore;
-@synthesize lives;
+@synthesize bananaScore;
 @synthesize onBridge;
 
 bool shapechange;
@@ -63,9 +62,8 @@ bool shapechange;
         // store number of bananas collected
         //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
-        lives = 3;
         tip = -1;
-        [self loadLives];
+        //[self loadLives];
         
         swipeRange = true;
         
@@ -96,9 +94,8 @@ bool shapechange;
         // store number of bananas collected
         //bananaScore = [[GameData sharedGameData] bananaCount];
         // initalize 3 lives for the monkey
-        lives = 3;
         tip = -1;
-        [self loadLives];
+        //[self loadLives];
         
         // setting initial plushy position
         initialPosition = b2Vec2FromCC(150, 180);
@@ -256,42 +253,6 @@ bool shapechange;
     [self setBodyShape:@"Monkey"];
     [self setPhysicsPosition:initialPosition];
     [gameLayer runAction:[CCCustomFollow actionWithTarget:[self ccNode]]];
-}
-
--(void) loadLives
-{
-    //CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int x_pos = 20;
-    hearts = [[NSMutableArray alloc] initWithCapacity:3];
-    for (int i=0; i<lives; i++) {
-        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"];
-        aHeart.position = ccp(x_pos, 290);
-        x_pos += 30;
-        [hearts addObject:aHeart];
-        [gameLayer.hud addChild:aHeart z:100];
-    }
-}
-
--(void) destroyLive
-{
-    lives--;
-    if ([hearts count] != 0) {
-        CCSprite *aHeart = [hearts objectAtIndex:lives];
-        [aHeart removeFromParentAndCleanup:TRUE];
-        [hearts removeObjectAtIndex:lives];
-    }
-}
-
--(void) regainLive
-{
-    if (lives < 3) {
-        CCSprite *aHeart = [CCSprite spriteWithFile:@"heart.png"];
-        int x_pos = 20 + 30*lives;
-        aHeart.position = ccp(x_pos, 290);
-        lives++;
-        [hearts addObject:aHeart];
-        [gameLayer.hud addChild:aHeart z:100];
-    }
 }
 
 

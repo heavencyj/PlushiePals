@@ -13,11 +13,13 @@
 #import "GameData.h"
 
 @implementation GameOverScene
-CCSprite *gameoverbg;
+//CCSprite *backgroundCloud;
 CCSprite *monkeyOnCloud;
 bool congrats;
 int curLevel;
 int levelScore;
+NSArray *fruitArray;
+CCLayer *fruitLayer;
 
 +(CCScene *) scene
 {
@@ -50,6 +52,15 @@ int levelScore;
     
 }
 
++(CCScene *) scene:(int)withScore wtihFruits:(NSArray*)fruits
+{
+    levelScore = withScore;
+    fruitArray = [NSArray arrayWithArray:fruits];
+    return [self scene];
+    
+}
+
+
 -(id) init
 {
     if( (self=[super init] )) {
@@ -59,9 +70,12 @@ int levelScore;
         blueBG.anchorPoint = ccp(0,0);
         blueBG.position = ccp(0,0);
         [self addChild:blueBG];
-        gameoverbg = [CCSprite spriteWithFile: @"End Screen clouds.png"];
-        gameoverbg.position = ccp(winSize.width/2, winSize.height/2);
-        [self addChild:gameoverbg z:6];
+        CCSprite *backgroundCloud = [CCSprite spriteWithFile: @"End Screen clouds.png"];
+        backgroundCloud.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:backgroundCloud z:6];
+        CCSprite *scorebox = [CCSprite spriteWithFile: @"End Screen box.png"];
+        scorebox.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:scorebox z:10];
 
         monkeyOnCloud = [CCSprite spriteWithFile:@"monkey bananas.png"];
         monkeyOnCloud.position = ccp(winSize.width/4, winSize.height/2);
@@ -72,6 +86,9 @@ int levelScore;
         id seq = [CCSequence actions:moveMonkeyDown,moveMonkeyUp , nil];
         //[CCCallFunc actionWithTarget:self selector:@selector(resetMonkeyPosition)]
         [monkeyOnCloud runAction:[CCRepeatForever actionWithAction:seq]];
+        
+        // Initialize fruitscreen and update highscore
+        [self fruitScreen];
         
         for (int i = 0; i<5; i++) {
             CCSprite *banana = [CCSprite spriteWithFile:@"banana single.png"];
@@ -125,6 +142,9 @@ int levelScore;
         }
         CCLOG(@"you ranked NO.%d", rank);
         CCLOG(@"high scores r %@", [GameData sharedGameData].highscore);
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[GameData sharedGameData].highscore forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         int highestscore = [[[GameData sharedGameData].highscore objectAtIndex:0] integerValue];
         
         CCLabelTTF *scoreTxtLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"YOU SCORED"]
@@ -138,42 +158,100 @@ int levelScore;
                                       [NSString stringWithFormat:@"Top Score  %d",highestscore]
                                                         fontName:@"GROBOLD"
                                                         fontSize:26];
-        CCSprite *bananaIcon = [CCSprite spriteWithFile:@"Banana icon.png"];
-        
-        CCLabelTTF *bananaLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",
-                                                               [GameData sharedGameData].bananaCount]
-                                                    fontName:@"GROBOLD"
-                                                    fontSize:28];
         
         scoreLabel.color = ccc3(245, 148, 36);
-        scoreLabel.position = ccp(winSize.width/5, -25);
+        scoreLabel.position = ccp(winSize.width/5, -10);
         
         scoreTxtLabel.color = ccc3(245, 148, 36);
-        scoreTxtLabel.position = ccp(winSize.width/5, 35);
-        
-        bananaLabel.color = ccc3(245, 148, 36);
-        bananaLabel.position = ccp(winSize.width/5+70, -winSize.height/4-30);
-        
-        bananaIcon.position = ccp(winSize.width/5,-winSize.height/4-30);
+        scoreTxtLabel.position = ccp(winSize.width/5, 50);
         
         highscoreLabel.color = ccc3(245, 148, 36);
-        highscoreLabel.position = ccp(winSize.width/5,-winSize.height/4);
+        highscoreLabel.position = ccp(winSize.width/5,-winSize.height/3);
         
         CCMenuItemLabel *scoreTxt= [CCMenuItemLabel itemWithLabel:scoreTxtLabel];
         CCMenuItemLabel *score = [CCMenuItemLabel itemWithLabel:scoreLabel];
-        CCMenuItemLabel *bananaCnt = [CCMenuItemLabel itemWithLabel:bananaLabel];
         CCMenuItemLabel *highscore = [CCMenuItemLabel itemWithLabel:highscoreLabel];
-        CCMenuItemImage *bananaIconImg = [CCMenuItemImage itemWithNormalSprite:bananaIcon selectedSprite:nil];
         CCMenu *menu = [CCMenu menuWithItems: home, restart, plushy, scoreTxt, score,
-                        bananaIconImg, bananaCnt, highscore, nil];
+                        highscore, nil];
         [menuLayer addChild: menu z:20];
+        
+        [self runAction:[CCSequence actions:
+                         //[CCCallFunc actionWithTarget:self selector:@selector(fruitScreen)],
+                         [CCDelayTime actionWithDuration:3],
+                         [CCCallFunc actionWithTarget:self selector:@selector(destroyFruitScreen)],
+                         nil]];
+        
     }
     return self;
 }
 
+-(void)fruitScreen
+{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    fruitLayer = [CCSprite spriteWithFile:@"End Screen background.png"];
+    fruitLayer.anchorPoint = ccp(0,0);
+    fruitLayer.position = ccp(0,0);
+    [self addChild:fruitLayer z:50];
+    
+    CCSprite *fruitCounts = [CCSprite spriteWithFile: @"Fruit Screen.png"];
+    fruitCounts.position = ccp(winSize.width/2, winSize.height/2);
+    [fruitLayer addChild:fruitCounts];
+    
+    int bonus = 0;
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+
+    for (int i=0; i < 3; i++) {
+        CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:
+                                  [NSString stringWithFormat:@"x%d",[fruitArray[i] integerValue]]
+                                                    fontName:@"GROBOLD"
+                                                    fontSize:30];
+        scoreLabel.color = ccc3(245, 148, 36);
+        scoreLabel.position = ccp(winSize.width/4+i*135, winSize.height/2-20);
+        [fruitLayer addChild:scoreLabel];
+        
+        bonus += [fruitArray[i] integerValue]*((i+1)*10);
+        
+        switch (i) {
+            case 0:
+                [GameData sharedGameData].bananaCount += [fruitArray[i] integerValue];
+                [defaults setInteger:[GameData sharedGameData].bananaCount forKey:@"bananaCount"];
+                break;
+                
+            case 1:
+                [GameData sharedGameData].mangosteenCount += [fruitArray[i] integerValue];
+                [defaults setInteger:[GameData sharedGameData].mangosteenCount forKey:@"mangosteenCount"];
+                break;
+                
+            case 2:
+                [GameData sharedGameData].pineappleCount += [fruitArray[i] integerValue];
+                [defaults setInteger:[GameData sharedGameData].pineappleCount forKey:@"pineappleCount"];
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    levelScore += bonus;
+    CCLabelTTF *bonusLabel = [CCLabelTTF labelWithString:
+                                  [NSString stringWithFormat:@"= %d BONUS", bonus]
+                                                    fontName:@"GROBOLD"
+                                                    fontSize:48];
+    bonusLabel.color = ccc3(245, 148, 36);
+    bonusLabel.position = ccp(winSize.width/2, winSize.height/3.8);
+    [fruitLayer addChild:bonusLabel];
+}
+
+-(void)destroyFruitScreen
+{
+    [self removeChild:fruitLayer cleanup:YES];
+}
+
 -(void)restart{
     [[SimpleAudioEngine sharedEngine] playEffect:@"Click.caf"];
-    
     [[CCDirector sharedDirector] replaceScene:[RunningGameScene scene]];
 }
 

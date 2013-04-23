@@ -134,10 +134,6 @@ bool isSwipable;
     if (scoreDelay ==0) {
         score ++ ;
         [hud updateScore:score];
-        // regain one life for every 300 points plushy gains
-        if (score % 300 == 0) {
-            [plushy regainLive];
-        }
         scoreDelay = SCORE_DELAY;
     }
     
@@ -224,8 +220,12 @@ bool isSwipable;
     }
     if (plushy.dead)
     {
+        NSArray* fruits = [NSArray arrayWithObjects:
+                           [NSNumber numberWithInt:plushy.bananaScore],
+                           [NSNumber numberWithInt:0],
+                           [NSNumber numberWithInt:0], nil];
         [[GB2Engine sharedInstance] deleteAllObjects];
-        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score]];
+        [[CCDirector sharedDirector] replaceScene:[GameOverScene scene:score wtihFruits:fruits]];
     }
 }
 
@@ -356,7 +356,7 @@ bool isSwipable;
     {
         //Check if the swipe is a left swipe and long enough
         //if (firstTouch.x > lastTouch.x && swipeLength > 60 && plushy.swipeRange) //left swipe (90)
-        if (firstTouch.x > lastTouch.x && swipeLength > 60 && isSwipable) //left swipe (90)
+        if (firstTouch.x > lastTouch.x && swipeLength > 60 && isSwipable && !plushy.onBridge) //left swipe (90)
         {
             
             CGPoint p1 = [plushy ccNode].position;
@@ -364,7 +364,7 @@ bool isSwipable;
             [currMazeLayer transformAround:p1 WithAngle:-90];
         }
         //else if(firstTouch.x < lastTouch.x && swipeLength > 60 && plushy.swipeRange) // right swipe (-90)
-        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && isSwipable) // right swipe (-90)
+        else if(firstTouch.x < lastTouch.x && swipeLength > 60 && isSwipable && !plushy.onBridge) // right swipe (-90)
         {
             CGPoint p1 = [plushy ccNode].position;
             p1.y = p1.y+10;

@@ -6,8 +6,13 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
-@interface MapMenuScene : NSObject
+@interface MapMenuScene : CCLayer
+{
+    
+}
+
++(id) scene;
 
 @end

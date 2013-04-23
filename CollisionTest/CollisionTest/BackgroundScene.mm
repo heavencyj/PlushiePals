@@ -9,6 +9,7 @@
 #import "BackgroundScene.h"
 #import "CCParallaxNode-Extras.h"
 #import "GB2Sprite.h"
+#import "GameData.h"
 
 @implementation BackgroundScene
 
@@ -18,17 +19,15 @@ CCSprite *cloud2;
 CCSprite *canyons;
 CCSprite *canyons2;
 CCParallaxNode *backgroundNode;
+int theme;
 
 -(id) init
 {
     if( (self=[super init]) ) {
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
         
-        // Adding solid background color
-        background = [CCLayerColor layerWithColor:ccc4(253,250,180,255) width:winSize.width height:winSize.height];
-        background.anchorPoint = ccp(0,0);
-        background.position = ccp(0,0);
-        [self addChild:background];
+        theme = [GameData sharedGameData].mapTheme;
+        
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         // Loading physics shapes
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"canyon_levels.plist"];
@@ -39,24 +38,61 @@ CCParallaxNode *backgroundNode;
         backgroundNode = [CCParallaxNode node];
         [self addChild:backgroundNode z:10];
         
-        // Create the continuous scrolling background
-        cloud1 = [CCSprite spriteWithFile:@"Canyon cloud 1.png"];
-        cloud2 = [CCSprite spriteWithFile:@"Canyon cloud 2.png"];
-        canyons = [CCSprite spriteWithFile:@"Canyons looped.png"];
-        canyons.tag = 1;
-        canyons2 = [CCSprite spriteWithFile:@"Canyons looped.png"];
-        canyons2.tag = 2;
-        
-        // Speeds ratio for the objects in the parallax layer
-        CGPoint cloudSpeed = ccp(0.5, 0);
-        CGPoint bgSpeed = ccp(1.0, 1.0);
-        
-        // Add children to CCParallaxNode
-        [backgroundNode addChild:canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons.contentSize.width/2, canyons.contentSize.height/2)];
-        [backgroundNode addChild:canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons2.contentSize.width+380, canyons2.contentSize.height/2)];
-        [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
-        [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width+100,winSize.height/1.2)];
-        
+        switch (theme) {
+            case 1: //canyon
+            {
+                // Adding solid background color
+                background = [CCLayerColor layerWithColor:ccc4(253,250,180,255) width:winSize.width height:winSize.height];
+                background.anchorPoint = ccp(0,0);
+                background.position = ccp(0,0);
+                [self addChild:background];
+                
+                // Create the continuous scrolling background
+                cloud1 = [CCSprite spriteWithFile:@"Canyon cloud 1.png"];
+                cloud2 = [CCSprite spriteWithFile:@"Canyon cloud 2.png"];
+                canyons = [CCSprite spriteWithFile:@"Canyons looped.png"];
+                canyons2 = [CCSprite spriteWithFile:@"Canyons looped.png"];
+                // Speeds ratio for the objects in the parallax layer
+                CGPoint cloudSpeed = ccp(0.5, 0);
+                CGPoint bgSpeed = ccp(1.0, 1.0);
+                
+                // Add children to CCParallaxNode
+                [backgroundNode addChild:canyons z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons.contentSize.width/2, canyons.contentSize.height/2)];
+                [backgroundNode addChild:canyons2 z:1 parallaxRatio:bgSpeed positionOffset:ccp(canyons2.contentSize.width+380, canyons2.contentSize.height/2)];
+                [backgroundNode addChild:cloud1 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(0,winSize.height/1.2)];
+                [backgroundNode addChild:cloud2 z:1 parallaxRatio:cloudSpeed positionOffset:ccp(cloud1.contentSize.width+100,winSize.height/1.2)];
+                break;
+            }
+                
+            case 2: //mountain
+            {
+                // Adding solid background color
+                background = [CCLayerColor layerWithColor:ccc4(163,	209,255, 255) width:winSize.width height:winSize.height];
+                background.anchorPoint = ccp(0,0);
+                background.position = ccp(0,0);
+                [self addChild:background];
+                
+                // Create the continuous scrolling background
+                cloud1 = [CCSprite spriteWithFile:@"Mountain front.png"];
+                cloud2 = [CCSprite spriteWithFile:@"Mountain front.png"];
+                canyons = [CCSprite spriteWithFile:@"Mountain back.png"];
+                canyons2 = [CCSprite spriteWithFile:@"Mountain back.png"];
+                
+                // Speeds ratio for the objects in the parallax layer
+                CGPoint frontSpeed = ccp(1.1, 1.0);
+                CGPoint backSpeed = ccp(1.0, 1.0);
+                
+                // Add children to CCParallaxNode
+                [backgroundNode addChild:canyons z:1 parallaxRatio:frontSpeed positionOffset:ccp(canyons.contentSize.width/2, canyons.contentSize.height/2)];
+                [backgroundNode addChild:canyons2 z:1 parallaxRatio:frontSpeed positionOffset:ccp(canyons2.contentSize.width+380, canyons2.contentSize.height/2)];
+                [backgroundNode addChild:cloud1 z:1 parallaxRatio:backSpeed positionOffset:ccp(cloud1.contentSize.width/2, cloud2.contentSize.height/2)];
+                [backgroundNode addChild:cloud2 z:1 parallaxRatio:backSpeed positionOffset:ccp(cloud2.contentSize.width+380, cloud2.contentSize.height/2)];
+                break;
+            }
+                
+            default:
+                break;
+        }
         [self scheduleUpdate];
     }
     return self;
@@ -68,21 +104,52 @@ CCParallaxNode *backgroundNode;
     CGPoint backgroundScrollVel = ccp(-100, 0);
     backgroundNode.position = ccpAdd(backgroundNode.position, ccpMult(backgroundScrollVel, dt));
     
-    // Add continuous scroll for clouds
-    NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
-    for (CCSprite *cloud in clouds) {
-        if ([backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
-            [backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
+    
+    switch (theme) {
+        case 1:{
+            // Add continuous scroll for clouds
+            NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
+            for (CCSprite *cloud in clouds) {
+                if ([backgroundNode convertToWorldSpace:cloud.position].x < -cloud.contentSize.width) {
+                    [backgroundNode incrementOffset:ccp(2*cloud.contentSize.width-[backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
+                }
+            }
+            
+            // Add continuous scroll for the canyon
+            NSArray *backgrounds = [NSArray arrayWithObjects: canyons, canyons2, nil];
+            for (CCSprite *bg in backgrounds) {
+                if ([backgroundNode convertToWorldSpace:bg.position].x < -450) {
+                    [backgroundNode incrementOffset:ccp(200+bg.contentSize.width-[backgroundNode convertToWorldSpace:bg.position].x,0) forChild:bg];
+                }
+            }
+            break;
         }
+           
+        case 2:
+        {
+            // Add continuous scroll for clouds
+            NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
+            for (CCSprite *cloud in clouds) {
+                if ([backgroundNode convertToWorldSpace:cloud.position].x < -450) {
+                    [backgroundNode incrementOffset:ccp(200+cloud.contentSize.width-[backgroundNode convertToWorldSpace:cloud.position].x,0) forChild:cloud];
+                }
+            }
+            
+            // Add continuous scroll for the canyon
+            NSArray *backgrounds = [NSArray arrayWithObjects: canyons, canyons2, nil];
+            for (CCSprite *bg in backgrounds) {
+                if ([backgroundNode convertToWorldSpace:bg.position].x < -450) {
+                    [backgroundNode incrementOffset:ccp(200+bg.contentSize.width-[backgroundNode convertToWorldSpace:bg.position].x,0) forChild:bg];
+                }
+            }
+            break;
+        }
+            
+        default:
+            break;
     }
     
-    // Add continuous scroll for the canyon
-    NSArray *backgrounds = [NSArray arrayWithObjects: canyons, canyons2, nil];
-    for (CCSprite *bg in backgrounds) {
-        if ([backgroundNode convertToWorldSpace:bg.position].x < -450) {
-            [backgroundNode incrementOffset:ccp(200+bg.contentSize.width-[backgroundNode convertToWorldSpace:bg.position].x,0) forChild:bg];
-        }
-    }
+
 }
 
 // on "dealloc" you need to release all your retained objects

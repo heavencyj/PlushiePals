@@ -122,9 +122,9 @@
     {
         if (!contacted) {
             [self playSound:BANANA_POINTS];
-            //((Plushy*)[contact otherObject]).bananaScore += 1;
-            [GameData sharedGameData].bananaCount += 1;
-            [RunningGameScene addScore:10];
+            ((Plushy*)[contact otherObject]).bananaScore += 1;
+            //[GameData sharedGameData].bananaCount += 1;
+            //[RunningGameScene addScore:10];
             [[self ccNode] removeFromParentAndCleanup:YES];
             contacted = TRUE;
         }
