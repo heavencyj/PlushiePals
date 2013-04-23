@@ -112,7 +112,7 @@ int checkMapTimer;
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        //[self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         self.isTouchEnabled = YES;
         isSwipable = YES;
@@ -374,7 +374,7 @@ int checkMapTimer;
             && [MainMenuScene showTips]) {
             isSwipable = NO;
             showingTip1 = -1;
-            [self removeChildByTag:10 cleanup:YES];
+            [self removeChild:hand cleanup:YES];
             [self removeChild:tutorial1 cleanup:YES];
         }
         
