@@ -29,9 +29,12 @@
     
     NSMutableArray *hearts;
     b2Vec2 initialPosition;
-   
+    
+    NSDictionary *plushyFruit;
 }
-
+@property (readonly) NSDictionary *plushyFruit;
+@property (readwrite) int pineappleScore;
+@property (readwrite) int mangosteenScore;
 @property (readwrite) int bananaScore;
 @property (readonly) RunningGameScene *gameLayer;
 @property (readonly) bool jumping;

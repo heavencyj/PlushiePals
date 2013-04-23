@@ -38,7 +38,10 @@ const float kMinDistanceFromCenter = 100.0f;
 @synthesize loadmap;
 @synthesize tip;
 @synthesize bananaScore;
+@synthesize mangosteenScore;
+@synthesize pineappleScore;
 @synthesize onBridge;
+@synthesize plushyFruit;
 
 NSString* plushyName;
 
@@ -50,14 +53,20 @@ bool shapechange;
     switch ([GameData sharedGameData].plushy) {
         case 1:
             plushyName = @"Monkey";
+            plushyFruit = [[NSDictionary alloc] initWithObjectsAndKeys:
+            [NSNumber numberWithInt:BANANA_SINGLE], [NSNumber numberWithDouble:0.85], [NSNumber numberWithInt:MANGOSTEEN], [NSNumber numberWithDouble:0.08], [NSNumber numberWithInt:PINEAPPLE], [NSNumber numberWithDouble:0.07], nil];
             break;
             
         case 2:
             plushyName = @"Pig";
+            plushyFruit = [[NSDictionary alloc] initWithObjectsAndKeys:
+                           [NSNumber numberWithInt:MANGOSTEEN], [NSNumber numberWithDouble:0.85], [NSNumber numberWithInt:PINEAPPLE], [NSNumber numberWithDouble:0.08], [NSNumber numberWithInt:BANANA_SINGLE], [NSNumber numberWithDouble:0.07], nil];
             break;
             
         case 3:
             plushyName = @"Bear";
+            plushyFruit = [[NSDictionary alloc] initWithObjectsAndKeys:
+                           [NSNumber numberWithInt:PINEAPPLE], [NSNumber numberWithDouble:0.85], [NSNumber numberWithInt:BANANA_SINGLE], [NSNumber numberWithDouble:0.08], [NSNumber numberWithInt:MANGOSTEEN], [NSNumber numberWithDouble:0.07], nil];
             break;
             
         default:
@@ -354,7 +363,7 @@ bool shapechange;
 //            showmap = true;
         }
         else if([otherfixtureId isEqualToString:@"showbridge"]) {
-            [self.gameLayer.currMazeLayer showBridge];
+            [self.gameLayer showBridge];
         }
         else {
             running = false;
@@ -432,6 +441,11 @@ bool shapechange;
     if (soundEffect.length != 0) {
         [[SimpleAudioEngine sharedEngine] playEffect:soundEffect];
     }
+}
+
+- (void) dealloc
+{
+	[super dealloc];
 }
 
 @end

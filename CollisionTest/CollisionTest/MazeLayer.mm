@@ -17,9 +17,10 @@ NSDictionary *midMapsDictionary;
 NSDictionary *midHardMapsDictionary;
 NSDictionary *hardMapsDictionary;
 NSDictionary *difficultyDictionary;
-CGPoint prevMap;
 
 @implementation MazeLayer
+
+@synthesize bridge;
 
 -(id)init
 {
@@ -40,36 +41,37 @@ CGPoint prevMap;
 
 +(void)initMapDictionaries
 {
-    prevMap = CGPointMake(-1, 0);
     easyMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.35],
-                          [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.30],
-                          [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.20],
-                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.15], nil];
+                          [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.40],
+                          [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.25],
+                          [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.27],
+                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.8],
+                          nil];
     
     midMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                          [NSValue valueWithCGPoint:CGPointMake(1, 1)], [NSNumber numberWithDouble:0.35],
-                         [NSValue valueWithCGPoint:CGPointMake(2, 2)], [NSNumber numberWithDouble:0.30],
+                         [NSValue valueWithCGPoint:CGPointMake(2, 1)], [NSNumber numberWithDouble:0.30],
                          [NSValue valueWithCGPoint:CGPointMake(7, 0)], [NSNumber numberWithDouble:0.15],
-                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20], nil];
+                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20],
+                         nil];
     
     midHardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                              [NSValue valueWithCGPoint:CGPointMake(8, 0)], [NSNumber numberWithDouble:0.35],
                              [NSValue valueWithCGPoint:CGPointMake(10, 0)], [NSNumber numberWithDouble:0.10],
-                             [NSValue valueWithCGPoint:CGPointMake(4, 3)], [NSNumber numberWithDouble:0.35],
-                             [NSValue valueWithCGPoint:CGPointMake(5, 3)], [NSNumber numberWithDouble:0.20], nil];
+                             [NSValue valueWithCGPoint:CGPointMake(4, 1)], [NSNumber numberWithDouble:0.35],
+                             [NSValue valueWithCGPoint:CGPointMake(5, 1)], [NSNumber numberWithDouble:0.20], nil];
     
     hardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSValue valueWithCGPoint:CGPointMake(8, 3)], [NSNumber numberWithDouble:0.20],
-                          [NSValue valueWithCGPoint:CGPointMake(10, 4)], [NSNumber numberWithDouble:0.10],
-                          [NSValue valueWithCGPoint:CGPointMake(6, 3)], [NSNumber numberWithDouble:0.33],
+                          [NSValue valueWithCGPoint:CGPointMake(8, 2)], [NSNumber numberWithDouble:0.20],
+                          [NSValue valueWithCGPoint:CGPointMake(10, 2)], [NSNumber numberWithDouble:0.10],
+                          [NSValue valueWithCGPoint:CGPointMake(6, 2)], [NSNumber numberWithDouble:0.33],
                           [NSValue valueWithCGPoint:CGPointMake(7, 1)], [NSNumber numberWithDouble:0.37], nil];
     
     difficultyDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                             easyMapsDictionary, [NSNumber numberWithDouble:0.40],
                             midMapsDictionary, [NSNumber numberWithDouble:0.35],
-                            midHardMapsDictionary, [NSNumber numberWithDouble:0.17],
-                            hardMapsDictionary, [NSNumber numberWithDouble:0.08], nil];
+                            midHardMapsDictionary, [NSNumber numberWithDouble:0.23],
+                            hardMapsDictionary, [NSNumber numberWithDouble:0.02], nil];
 }
 
 // Returns the level and the number of game objects to add
@@ -82,34 +84,24 @@ CGPoint prevMap;
     // For tutorial map
     if ([MainMenuScene showFirst]) {
         [MainMenuScene setFirst:false];
-        prevMap.x = 1;
-        prevMap.y = 0;
-        return prevMap;
+        return CGPointMake(1, 0);
     }
     else
         [MainMenuScene setTips:false];
     
     // Ensure that the first 4 maps are always easy
-    if (mapCount < 5) {
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
+    if (mapCount < 6) {
+        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
     }
     else{
-        NSDictionary *dict = (NSDictionary*)[self selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
-        levelInfo = [(NSValue*)[self selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
+        NSDictionary *dict = (NSDictionary*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
+        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
     }
     
-    // Ensure that the same map doesn't run twice
-    if (CGPointEqualToPoint(levelInfo, prevMap))
-    {
-        levelInfo = [self levelChooser:mapCount];
-    }
-    
-    prevMap.x = levelInfo.x;
-    prevMap.y = levelInfo.y;
     return levelInfo;
 }
 
--(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict
++(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict
 {
     double counter = 0;
     for (NSNumber *key in dict) {
@@ -225,7 +217,7 @@ CGPoint prevMap;
 -(void)lineUpAround:(CGPoint)pos
 {
     CCLOG(@"Placing new maze at: (%f, %f)", pos.x, pos.y);
-    [maze setPhysicsPosition:b2Vec2FromCC(463, pos.y-30)]; //Numbers set
+    [maze setPhysicsPosition:b2Vec2FromCC(584, pos.y-30)]; //Numbers set
     [maze setMazeBodySensor:NO];
     [bridge setBridgeBodySensor:NO];
     [maze setLinearVelocity:b2Vec2(MAZESPEED,0)];
@@ -275,4 +267,8 @@ CGPoint prevMap;
     return CGPointMake(newx,newy);
 }
 
+- (void) dealloc
+{
+	[super dealloc];
+}
 @end

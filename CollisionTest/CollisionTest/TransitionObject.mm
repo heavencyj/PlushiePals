@@ -29,14 +29,20 @@
 -(void) beginContactWithPlushy:(GB2Contact*)contact
 {
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    if([fixtureId isEqualToString:@"bridgeend"]){
-        if (!contacted_end) {
-            contacted_end = TRUE;
-            //TODO: Setting the positioning the maze at the correct spot
-            ((Plushy*)contact.otherObject).showmap = YES;
-        }
-    }
-    else if([fixtureId isEqualToString:@"bridgestart"]){
+//    if([fixtureId isEqualToString:@"bridgeend"]){
+//        if (!contacted_end) {
+//            contacted_end = TRUE;
+//            //TODO: Setting the positioning the maze at the correct spot
+//            ((Plushy*)contact.otherObject).showmap = YES;
+//        }
+//    }
+//    else if([fixtureId isEqualToString:@"bridgestart"]){
+//        if (!contacted_start) {
+//            ((Plushy*)contact.otherObject).loadmap=YES;
+//            contacted_start = TRUE;
+//        }
+//    }
+    if([fixtureId isEqualToString:@"bridgestart"]){
         if (!contacted_start) {
             ((Plushy*)contact.otherObject).loadmap=YES;
             contacted_start = TRUE;
@@ -63,6 +69,11 @@
 -(b2Body*)getBody
 {
     return body;
+}
+
+- (void) dealloc
+{
+	[super dealloc];
 }
 
 @end

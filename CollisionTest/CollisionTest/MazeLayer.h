@@ -20,9 +20,10 @@
     CCSprite *tutorial1;
     TransitionObject *bridge;
     Maze *maze;
-    
-    BOOL tutorial;
 }
+
+@property (readonly) TransitionObject *bridge;
+
 -(id)init;
 -(void)reset;
 -(void)transformAround:(CGPoint)pos WithAngle:(float)theta;
@@ -34,4 +35,5 @@
 -(void)destroyBridgeJoint;
 -(void) showBridge;
 +(void)initMapDictionaries;
++(id)selectDifficulty:(double)rand withDict:(NSDictionary*)dict;
 @end
