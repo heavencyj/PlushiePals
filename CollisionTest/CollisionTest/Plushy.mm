@@ -373,7 +373,7 @@ bool shapechange;
 //            showmap = true;
         }
         else if([otherfixtureId isEqualToString:@"showbridge"]) {
-            [self.gameLayer.currMazeLayer showBridge];
+            [self.gameLayer showBridge];
         }
         else {
             running = false;
@@ -451,6 +451,11 @@ bool shapechange;
     if (soundEffect.length != 0) {
         [[SimpleAudioEngine sharedEngine] playEffect:soundEffect];
     }
+}
+
+- (void) dealloc
+{
+	[super dealloc];
 }
 
 @end

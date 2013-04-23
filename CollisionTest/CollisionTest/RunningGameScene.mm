@@ -141,6 +141,10 @@ bool isSwipable;
         scoreDelay = SCORE_DELAY;
     }
     
+    if (score > 500) {
+        CCLOG(@"Scores");
+    }
+    
     // Check the status of the maze
     [self checkMapStatus];
     
@@ -236,11 +240,6 @@ bool isSwipable;
         [self loadMazeLayer];
         plushy.loadmap = NO;
     }
-    else if (plushy.showmap)
-    {
-        [self revealMazeLayer];
-        plushy.showmap = NO;
-    }
 }
 
 -(void)loadMazeLayer
@@ -249,16 +248,23 @@ bool isSwipable;
     if (currMazeLayer != nil) {
         [currMazeLayer setBridgeBody:b2_kinematicBody];
     }
+    prevMazeLayer = currMazeLayer;
     currMazeLayer = [[[MazeLayer alloc] init] autorelease];
     [self addChild:currMazeLayer z:10];
     CGPoint levelInfo = [currMazeLayer levelChooser:mapCount];
+    if (ceil(levelInfo.x) == 0) {
+        // In case if the level is somehow off, it will default to level 1
+        levelInfo.x = 1;
+    }
     [currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
+    //[currMazeLayer loadMaze:1 withObject:0];
+    [currMazeLayer lineUpAround:[plushy ccNode].position];
 }
 
--(void)revealMazeLayer
+-(void)showBridge
 {
-    //remove previous mazelayer
-    [currMazeLayer lineUpAround:[plushy ccNode].position];
+    [currMazeLayer showBridge];
+    [self removeChild:prevMazeLayer cleanup:YES];
 }
 
 // on "dealloc" you need to release all your retained objects

@@ -68,4 +68,9 @@
 {
     return body;
 }
+
+- (void) dealloc
+{
+	[super dealloc];
+}
 @end

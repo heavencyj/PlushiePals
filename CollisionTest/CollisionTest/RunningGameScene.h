@@ -45,12 +45,13 @@
 @interface RunningGameScene : GameScene
 {
     TransitionObject *initialBridge;
+    MazeLayer *prevMazeLayer;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 +(void)resetSwipe;
 +(void)addScore:(int)points;
--(void)revealMazeLayer;
 -(void)loadMazeLayer;
+-(void)showBridge;
 @end
