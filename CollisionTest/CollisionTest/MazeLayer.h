@@ -20,16 +20,18 @@
     CCSprite *tutorial1;
     TransitionObject *bridge;
     Maze *maze;
+    
+    BOOL tutorial;
 }
-+(void)initMapLevels;
 -(id)init;
 -(void)reset;
 -(void)transformAround:(CGPoint)pos WithAngle:(float)theta;
 -(void)stop;
 -(void)lineUpAround:(CGPoint)pos;
--(int)levelChooser;
--(void) loadMaze:(int)ofLevel;
+-(CGPoint)levelChooser:(int)mapCount;
+-(void) loadMaze:(int)level withObject:(int)ObjCount;
 -(void) setBridgeBody:(b2BodyType)type;
 -(void)destroyBridgeJoint;
 -(void) showBridge;
++(void)initMapDictionaries;
 @end

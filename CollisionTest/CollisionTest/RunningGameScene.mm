@@ -74,7 +74,7 @@ bool isSwipable;
         plushyLayer = [CCSpriteBatchNode batchNodeWithFile:@"monkeys.png" capacity:150];
         [self addChild:plushyLayer z:200];
         
-        [MazeLayer initMapLevels];
+        [MazeLayer initMapDictionaries];
 
         // add score
         scoreDelay = SCORE_DELAY;
@@ -251,7 +251,8 @@ bool isSwipable;
     }
     currMazeLayer = [[[MazeLayer alloc] init] autorelease];
     [self addChild:currMazeLayer z:10];
-    [currMazeLayer loadMaze:[currMazeLayer levelChooser]];
+    CGPoint levelInfo = [currMazeLayer levelChooser:mapCount];
+    [currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
 }
 
 -(void)revealMazeLayer
