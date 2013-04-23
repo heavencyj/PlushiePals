@@ -113,14 +113,13 @@ TransitionObject *bridge;
         // Add maze layer
 //        mazeLayer = [[MazeLayer alloc] init];
 //        [self addChild:mazeLayer z:10];
-        
         self.isTouchEnabled = YES;
         
         // following the movements of the plushy
         [self runAction:[CCCustomFollow actionWithTarget:[plushy ccNode]]];
         
         // drawing the world boundary for debugging
-//        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
+        [self addChild:[[GB2DebugDrawLayer alloc] init] z:500];
         
         [self scheduleUpdate];
     }
@@ -204,7 +203,7 @@ TransitionObject *bridge;
         if (p == 2) {
             //arc pattern TODO:hard coded for now
             int initalX = [[CCDirector sharedDirector] winSize].width;
-            int initialY = [plushy ccNode].position.y+50;
+            int initialY = [plushy ccNode].position.y+30;
             if (initialY+30 < 280) { //TODO: ensure that the bananas don't go over the scoring HUD.
                 Object *obj1 = [Object randomObject:fruit];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
@@ -227,7 +226,7 @@ TransitionObject *bridge;
         }
         if (p == 1) {
             int initalX = [[CCDirector sharedDirector] winSize].width;
-            int initialY = [plushy ccNode].position.y+80;
+            int initialY = [plushy ccNode].position.y+40;
             if (initialY < 280) {
                 Object *obj1 = [Object randomObject:fruit];
                 [obj1 setPhysicsPosition:b2Vec2FromCC(initalX, initialY)];
@@ -247,18 +246,6 @@ TransitionObject *bridge;
                 [self addChild:[obj4 ccNode] z:38];
             }
             nextObject = [GameScene getRandomNumberBetweenMin:5 andMax:10];
-        }
-        if (p == 0) {
-            // drop a banana peel for speed up
-            //            Object *obj1 = [Object randomObject:CACTUS_BOMB];
-            //            int initialX = [self getRandomNumberBetweenMin:[plushy ccNode].position.x+50 andMax:[[CCDirector sharedDirector] winSize].width ];
-            //            [obj1 setPhysicsPosition:b2Vec2FromCC(initialX, [[CCDirector sharedDirector] winSize].height)];
-            //            [obj1 setLinearVelocity:b2Vec2(0, -40)];
-            //            [obj1 ccNode].visible = NO;
-            //            //[obj1 setSensor:YES];
-            //            //TODO: make the body sensor body temporarily
-            //            [self addChild:[obj1 ccNode] z:30];
-            //            nextObject = [self getRandomNumberBetweenMin:5 andMax:8];
         }
     }
 }

@@ -28,6 +28,7 @@ int score;
 CCSprite *hand;
 CCSprite *handOnly;
 bool isSwipable;
+int checkMapTimer;
 
 #pragma mark - GameScene
 
@@ -39,7 +40,7 @@ bool isSwipable;
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
-	
+    
 	// 'layer' is an autorelease object.
     Hud *hud = [Hud node];
     BackgroundScene *bg = [BackgroundScene node];
@@ -48,7 +49,7 @@ bool isSwipable;
     mapCount = 1;
     
     RunningGameScene *game = [[[RunningGameScene alloc] initWithHud:hud] autorelease];
-	
+    
 	// add layer as a child to scene
     [scene addChild:bg z:0];
 	[scene addChild:game z:10];
@@ -75,11 +76,12 @@ bool isSwipable;
         [self addChild:plushyLayer z:200];
         
         [MazeLayer initMapDictionaries];
-
+        
         // add score
         scoreDelay = SCORE_DELAY;
         score = 0;
         nextObject= 5.0f;  // first object to appear after 3s
+        checkMapTimer = 200;
         
         // add maze
         if ([MainMenuScene showTips]) {
@@ -87,9 +89,9 @@ bool isSwipable;
         }
         else {
             // The first map should always be easy
-//            diffFactor = 1;
-//            currentLevel = [self levelChooser];
-//            diffFactor = 0.6;
+            //            diffFactor = 1;
+            //            currentLevel = [self levelChooser];
+            //            diffFactor = 0.6;
         }
         
         // load intro bridge
@@ -158,7 +160,7 @@ bool isSwipable;
             case 1: {
                 // swipe left
                 tutorial1.position = ccp(plushy.ccPosition.x - 150, plushy.ccPosition.y);
-                hand = [CCSprite spriteWithFile:@"hand.png"];                
+                hand = [CCSprite spriteWithFile:@"hand.png"];
                 hand.position = tutorial1.position;
                 [self addChild:hand z:500 tag:10];
                 id moveHandLeft = [CCMoveBy actionWithDuration:0.5 position:ccp(-40, 0)];
@@ -166,7 +168,7 @@ bool isSwipable;
                 isSwipable = YES;
                 break;
             }
-            
+                
             case 2: {
                 // swipe right
                 tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
@@ -178,7 +180,7 @@ bool isSwipable;
                 isSwipable = YES;
                 break;
             }
-            
+                
             case 3: {
                 // jump
                 tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
@@ -186,7 +188,7 @@ bool isSwipable;
                 break;
                 
             }
-            
+                
             case 4: {
                 // sliding
                 tutorial1.position = ccp(plushy.ccPosition.x - 100, plushy.ccPosition.y);
@@ -235,10 +237,13 @@ bool isSwipable;
 
 -(void)checkMapStatus
 {
-    if (plushy.loadmap) {
+    checkMapTimer ++;
+    //CCLOG(@"Time elapse for loadMaze: %d", checkMapTimer);
+    if (plushy.loadmap && checkMapTimer > 200) {
         mapCount += 1;
         [self loadMazeLayer];
         plushy.loadmap = NO;
+        checkMapTimer = 0;
     }
 }
 
@@ -252,12 +257,12 @@ bool isSwipable;
     currMazeLayer = [[[MazeLayer alloc] init] autorelease];
     [self addChild:currMazeLayer z:10];
     CGPoint levelInfo = [currMazeLayer levelChooser:mapCount];
-//    if (ceil(levelInfo.x) == 0) {
-//        // In case if the level is somehow off, it will default to level 1
-//        levelInfo.x = 1;
-//    }
-    //[currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
-    [currMazeLayer loadMaze:1 withObject:0];
+    //    if (ceil(levelInfo.x) == 0) {
+    //        // In case if the level is somehow off, it will default to level 1
+    //        levelInfo.x = 1;
+    //    }
+    [currMazeLayer loadMaze:ceil(levelInfo.x) withObject:ceil(levelInfo.y)];
+    //[currMazeLayer loadMaze:1 withObject:0];
     [currMazeLayer lineUpAround:[plushy ccNode].position];
 }
 
@@ -314,16 +319,16 @@ bool isSwipable;
     
     //Swipe Detection Part 2
     lastTouch = location;
-//    [self unschedule:@selector(timer:)];
-//    if (plushy.sliding) {
-//        if ((showingTip1 == 4)
-//            && [MainMenuScene showTips]) {
-//            [self removeChild:tutorial1 cleanup:YES];
-//            showingTip1 = -1;
-//            isSwipable = NO;
-//        }
-//        plushy.sliding = false;
-//    }
+    //    [self unschedule:@selector(timer:)];
+    //    if (plushy.sliding) {
+    //        if ((showingTip1 == 4)
+    //            && [MainMenuScene showTips]) {
+    //            [self removeChild:tutorial1 cleanup:YES];
+    //            showingTip1 = -1;
+    //            isSwipable = NO;
+    //        }
+    //        plushy.sliding = false;
+    //    }
     
     //Minimum length of the swipe
     float swipeLength = ccpDistance(firstTouch, lastTouch);

@@ -45,26 +45,26 @@ NSDictionary *difficultyDictionary;
                           [NSValue valueWithCGPoint:CGPointMake(1, 0)], [NSNumber numberWithDouble:0.40],
                           [NSValue valueWithCGPoint:CGPointMake(2, 0)], [NSNumber numberWithDouble:0.25],
                           [NSValue valueWithCGPoint:CGPointMake(4, 0)], [NSNumber numberWithDouble:0.27],
-                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.8],
+                          [NSValue valueWithCGPoint:CGPointMake(5, 0)], [NSNumber numberWithDouble:0.08],
                           nil];
     
     midMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                          [NSValue valueWithCGPoint:CGPointMake(1, 1)], [NSNumber numberWithDouble:0.35],
                          [NSValue valueWithCGPoint:CGPointMake(2, 1)], [NSNumber numberWithDouble:0.30],
                          [NSValue valueWithCGPoint:CGPointMake(7, 0)], [NSNumber numberWithDouble:0.15],
-                         [NSValue valueWithCGPoint:CGPointMake(6, 0)], [NSNumber numberWithDouble:0.20],
+                         [NSValue valueWithCGPoint:CGPointMake(5, 1)], [NSNumber numberWithDouble:0.20],
                          nil];
     
     midHardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                             [NSValue valueWithCGPoint:CGPointMake(8, 0)], [NSNumber numberWithDouble:0.35],
+                             [NSValue valueWithCGPoint:CGPointMake(8, 0)], [NSNumber numberWithDouble:0.34],
                              [NSValue valueWithCGPoint:CGPointMake(10, 0)], [NSNumber numberWithDouble:0.10],
-                             [NSValue valueWithCGPoint:CGPointMake(4, 1)], [NSNumber numberWithDouble:0.35],
+                             [NSValue valueWithCGPoint:CGPointMake(4, 1)], [NSNumber numberWithDouble:0.36],
                              [NSValue valueWithCGPoint:CGPointMake(5, 1)], [NSNumber numberWithDouble:0.20], nil];
     
     hardMapsDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
                           [NSValue valueWithCGPoint:CGPointMake(8, 2)], [NSNumber numberWithDouble:0.20],
                           [NSValue valueWithCGPoint:CGPointMake(10, 2)], [NSNumber numberWithDouble:0.10],
-                          [NSValue valueWithCGPoint:CGPointMake(6, 2)], [NSNumber numberWithDouble:0.33],
+                          [NSValue valueWithCGPoint:CGPointMake(5, 2)], [NSNumber numberWithDouble:0.33],
                           [NSValue valueWithCGPoint:CGPointMake(7, 1)], [NSNumber numberWithDouble:0.37], nil];
     
     difficultyDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -94,8 +94,12 @@ NSDictionary *difficultyDictionary;
         levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:easyMapsDictionary] CGPointValue];
     }
     else{
-        NSDictionary *dict = (NSDictionary*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:difficultyDictionary];
-        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:[GameScene getRandomDouble] withDict:dict] CGPointValue];
+        double dif = [GameScene getRandomDouble];
+        NSDictionary *dict = (NSDictionary*)[MazeLayer selectDifficulty:dif withDict:difficultyDictionary];
+        CCLOG(@"Selected difficulty dictionary %f", dif);
+        dif = [GameScene getRandomDouble];
+        levelInfo = [(NSValue*)[MazeLayer selectDifficulty:dif withDict:dict] CGPointValue];
+        CCLOG(@"Selected map %f", dif);
     }
     
     return levelInfo;
@@ -117,17 +121,21 @@ NSDictionary *difficultyDictionary;
     CCLOG(@"Current level is %d", level);
     
     NSString *themeName;
+    int gameObjectType;
     switch ([GameData sharedGameData].mapTheme) {
         case 1: {
             themeName = [@"canyon level " stringByAppendingFormat:@"%d", level];
+            gameObjectType = CACTUS_BOMB;
             break;
         }
         case 2: {
             themeName =  [@"mt level " stringByAppendingFormat:@"%d", level];
+            gameObjectType = ROCK_BOMB;
             break;
         }
         case 5: {
             themeName =  [@"jungle level " stringByAppendingFormat:@"%d", level];
+            gameObjectType = MUSHROOM_BOMB;
             break;
         }  
         default:
@@ -147,7 +155,7 @@ NSDictionary *difficultyDictionary;
     
     // load in game objects
     [self loadTransitionBridge:level];
-    [self loadGameObjects:level withNumObjects:ObjCount];
+    [self loadGameObjects:level withType:gameObjectType withNumObjects:ObjCount];
     
     [self addChild:[maze ccNode] z:40];
 }
@@ -175,10 +183,10 @@ NSDictionary *difficultyDictionary;
     [bridge setVisible:NO];
 }
 
--(void)loadGameObjects:(int)level withNumObjects:(int)objCount
+-(void)loadGameObjects:(int)level withType:(int)objType withNumObjects:(int)objCount
 {
 	NSDictionary* cactus = [[dictionary objectForKey:@"cactus bombs"] objectForKey:[NSString stringWithFormat:@"%d", level]];
-	[self processLevelFileFromDictionary:cactus withObjectType:CACTUS_BOMB withObjCount:objCount];
+	[self processLevelFileFromDictionary:cactus withObjectType:objType withObjCount:objCount];
 }
 
 -(void) processLevelFileFromDictionary:(NSDictionary*)dict withObjectType:(int)object withObjCount:(int)objCount
