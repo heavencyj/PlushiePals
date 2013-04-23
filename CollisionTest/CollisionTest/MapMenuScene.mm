@@ -86,9 +86,13 @@ CCMenuItemImage *hazel;
                                        itemWithNormalImage:@"Juniper Jungle.png"
                                        selectedImage:nil
                                        target:self
-                                       selector:@selector(doNothing)];
+                                       selector:@selector(startGame:)];
         jungleIcon.position = ccp(30, -90);
         jungleIcon.tag = 5;
+        id moveIconDown5 = [CCMoveBy actionWithDuration:1.05 position:ccp(0, -30)];
+        id moveIconUp5 = [CCMoveBy actionWithDuration:1.05 position:ccp(0, 30)];
+        id seq5 = [CCSequence actions:moveIconDown5,moveIconUp5, nil];
+        [jungleIcon runAction:[CCRepeatForever actionWithAction:seq5]];
         
         
         momo = [CCMenuItemImage

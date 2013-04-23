@@ -32,7 +32,9 @@ CCMenuItemImage *next;
     
     if( (self=[super init] )) {
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        story = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Story %d.png", 1]];
+        
+        pageNumber = 1;
+        story = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Story %d.png", pageNumber]];
         story.position = ccp(winSize.width/2, winSize.height/2);
         [self addChild:story z:1];
         

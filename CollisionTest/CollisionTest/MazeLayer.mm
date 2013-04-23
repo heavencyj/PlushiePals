@@ -126,7 +126,10 @@ NSDictionary *difficultyDictionary;
             themeName =  [@"mt level " stringByAppendingFormat:@"%d", level];
             break;
         }
-               
+        case 5: {
+            themeName =  [@"jungle level " stringByAppendingFormat:@"%d", level];
+            break;
+        }  
         default:
             break;
     }

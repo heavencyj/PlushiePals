@@ -90,6 +90,33 @@ int theme;
                 break;
             }
                 
+            case 5: //jungle
+            {
+                // Adding solid background color
+                background = [CCSprite spriteWithFile:@"Jungle background.png"];
+                background.anchorPoint = ccp(0,0);
+                background.position = ccp(0,0);
+                [self addChild:background];
+                
+                // Create the continuous scrolling background
+                cloud1 = [CCSprite spriteWithFile:@"Jungle front.png"];
+                cloud2 = [CCSprite spriteWithFile:@"Jungle front.png"];
+                canyons = [CCSprite spriteWithFile:@"Jungle back.png"];
+                canyons2 = [CCSprite spriteWithFile:@"Jungle back.png"];
+                
+                // Speeds ratio for the objects in the parallax layer
+                CGPoint frontSpeed = ccp(1.1, 1.0);
+                CGPoint backSpeed = ccp(1.0, 1.0);
+                
+                // Add children to CCParallaxNode
+                [backgroundNode addChild:canyons z:1 parallaxRatio:frontSpeed positionOffset:ccp(canyons.contentSize.width/2, canyons.contentSize.height/2)];
+                [backgroundNode addChild:canyons2 z:1 parallaxRatio:frontSpeed positionOffset:ccp(canyons2.contentSize.width+380, canyons2.contentSize.height/2)];
+                [backgroundNode addChild:cloud1 z:1 parallaxRatio:backSpeed positionOffset:ccp(cloud1.contentSize.width/2, cloud2.contentSize.height/2)];
+                [backgroundNode addChild:cloud2 z:1 parallaxRatio:backSpeed positionOffset:ccp(cloud2.contentSize.width+380, cloud2.contentSize.height/2)];
+            }
+                
+            
+                
             default:
                 break;
         }
@@ -126,7 +153,7 @@ int theme;
             break;
         }
            
-        case 2:
+        case 2: case 5:
         {
             // Add continuous scroll for clouds
             NSArray *clouds = [NSArray arrayWithObjects:cloud1, cloud2, nil];
